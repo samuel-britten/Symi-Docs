@@ -2,7 +2,11 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "8040c00cecf8c213165040220cbe162b1402ac366003184916382e289dc2ffd8"
+      "sha256": "46d1e63673e45d6421d9f311b41205de29521577e8add6822eecf0830d3e2094"
+    },
+    {
+      "path": "symi/assets/documentation/cross_language_targets.json",
+      "sha256": "5978364e289e5c83b5837f3d954756983c2bf264dc88cb4f8e91017fca3e2330"
     },
     {
       "path": "symi/assets/documentation/manual/kotlin/algebraic-transforms.md",
@@ -1045,6 +1049,26 @@
       "sha256": "33437eb487a67b2c10b17f9be369096114c4b383f0a95fe4652e458ec1e22cae"
     },
     {
+      "path": "symi/assets/documentation/publication/kotlin.json",
+      "sha256": "b303cf81f692abed87c4e25d6f26d212c1514627823d08cea2f820e1c5189047"
+    },
+    {
+      "path": "symi/assets/documentation/publication/python.json",
+      "sha256": "4db178f1cfe34c15e0d8d7b11379996918998dda28d00e77c6f80b00ed29e6ca"
+    },
+    {
+      "path": "symi/assets/documentation/publication/rust.json",
+      "sha256": "757f15a9f2ba44489de34b285e0251faa38b345e9873028f2f1093055cfe1b71"
+    },
+    {
+      "path": "symi/assets/documentation/publication/swift.json",
+      "sha256": "d8266d00e387c3cc9e0362bf6ea206cc9fcba8bde420ba389c66a3fbc4f005c4"
+    },
+    {
+      "path": "symi/assets/documentation/publication/wasm.json",
+      "sha256": "50bc7dabdae38f4918d72c7b6c317a37571c2d88d99b66363f30ec3aa4393418"
+    },
+    {
       "path": "symi/assets/documentation/search/kotlin.json",
       "sha256": "41618ca0001fdb929dd98c438717c4356fda7fd4b22ea1d27aba804ab5200d3e"
     },
@@ -1070,15 +1094,27 @@
     },
     {
       "path": "symi/assets/site/documentation.js",
-      "sha256": "05b33c60b4d7df11c011a9e95d9eb596b2b369e6e2b7d7c36c529b9aaab8e502"
+      "sha256": "f7c5dc89aa9f0929e07058ceffad71bcb6f74a8bba8adb75585848f92650c356"
+    },
+    {
+      "path": "symi/assets/site/documentation_search.js",
+      "sha256": "c699d273ddb69704119c582613da6c73315cbca11d3b46e1d62d1c5d249ba69e"
     },
     {
       "path": "symi/assets/site/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
+    },
+    {
+      "path": "symi/assets/site/logo_bright.png",
+      "sha256": "ceaa350a8f28cb30231bbc071e8e1019c3943d51a64d6cf03e0c54e4f2930f40"
+    },
+    {
+      "path": "symi/assets/site/logo_slightly_bright_bordered_mid.png",
+      "sha256": "648a5a0555c945ef945d22d3e964ac73faa47525401601b4d0fffb265216e1a9"
     },
     {
       "path": "symi/assets/site/styles.css",
-      "sha256": "2a7cc08eacde88d7eae0035a365ecfe331cb75b0ee83a56bbcc3feddfa6bf545"
+      "sha256": "771f96ecef2840e13bfad727091e697d7c56dbeacb1c34994cd3c742e6db5a5a"
     },
     {
       "path": "symi/assets/site/vendor/katex/LICENSE",
@@ -1337,432 +1373,440 @@
       "sha256": "56428f594b43eaba0d918b5bd4f7529f2a85fc4f717a96f0b37c445679c3b932"
     },
     {
+      "path": "symi/assets/site/vendor/marked/LICENSE.md",
+      "sha256": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c"
+    },
+    {
+      "path": "symi/assets/site/vendor/marked/marked.umd.js",
+      "sha256": "0a9ac62ffef63f7e3dce32a5c32bab66c0e43f3ca0aff774edc2ff33492c47ab"
+    },
+    {
       "path": "symi/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/algebraic-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/alphabetical-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/api-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/assumptions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/cad/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/category-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/combinatorics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/construction-and-parsing/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/context-safety/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/conversion-rules/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/default-context/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/deferred-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/diagnostics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/differential-equations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/distribution-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/elementary-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/evaluation-and-constants/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/expressions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/geometry/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/getting-started-javascript/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/getting-started-python/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/getting-started-rust/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/integral-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/introduction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/linear-algebra/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/logic/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/logical-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/matrix-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/matrix-construction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/matrix-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/migration/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/number-theory/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/object-model/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/optimization/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/owner-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/polynomials/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/relations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/result-type-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/serialization-and-output/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/series/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/sets/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/simplification-general/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/solving/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/special-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/specialized-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/statistics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/structured-results/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/trigonometric-complex-rewrites/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/vector-calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/kotlin/zero-equivalence/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/algebraic-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/alphabetical-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/api-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/assumptions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/cad/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/category-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/combinatorics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/construction-and-parsing/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/context-safety/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/conversion-rules/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/default-context/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/deferred-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/diagnostics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/differential-equations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/distribution-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/elementary-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/evaluation-and-constants/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/expressions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/geometry/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/getting-started-javascript/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/getting-started-python/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/getting-started-rust/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/integral-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/introduction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/linear-algebra/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/logic/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/logical-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/matrix-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/matrix-construction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/matrix-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/migration/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/number-theory/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/object-model/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/optimization/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/owner-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/polynomials/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/relations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/result-type-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/serialization-and-output/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/series/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/sets/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/simplification-general/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/solving/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/special-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/specialized-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/statistics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/structured-results/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/trigonometric-complex-rewrites/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/vector-calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/python/zero-equivalence/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/algebraic-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/alphabetical-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/api/crates.js",
@@ -19886,619 +19930,619 @@
     },
     {
       "path": "symi/rust/api-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/assumptions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/cad/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/category-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/combinatorics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/construction-and-parsing/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/context-safety/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/conversion-rules/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/default-context/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/deferred-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/diagnostics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/differential-equations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/distribution-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/elementary-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/evaluation-and-constants/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/expressions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/geometry/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/getting-started-javascript/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/getting-started-python/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/getting-started-rust/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/integral-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/introduction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/linear-algebra/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/logic/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/logical-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/matrix-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/matrix-construction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/matrix-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/migration/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/number-theory/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/object-model/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/optimization/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/owner-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/polynomials/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/relations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/result-type-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/serialization-and-output/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/series/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/sets/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/simplification-general/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/solving/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/special-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/specialized-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/statistics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/structured-results/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/trigonometric-complex-rewrites/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/vector-calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/rust/zero-equivalence/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/algebraic-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/alphabetical-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/api-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/assumptions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/cad/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/category-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/combinatorics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/construction-and-parsing/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/context-safety/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/conversion-rules/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/default-context/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/deferred-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/diagnostics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/differential-equations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/distribution-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/elementary-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/evaluation-and-constants/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/expressions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/geometry/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/getting-started-javascript/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/getting-started-python/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/getting-started-rust/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/integral-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/introduction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/linear-algebra/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/logic/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/logical-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/matrix-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/matrix-construction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/matrix-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/migration/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/number-theory/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/object-model/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/optimization/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/owner-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/polynomials/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/relations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/result-type-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/serialization-and-output/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/series/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/sets/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/simplification-general/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/solving/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/special-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/specialized-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/statistics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/structured-results/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/trigonometric-complex-rewrites/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/vector-calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/swift/zero-equivalence/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/algebraic-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/alphabetical-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/api-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/assumptions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/cad/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/category-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/combinatorics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/construction-and-parsing/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/context-safety/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/conversion-rules/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/default-context/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/deferred-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/diagnostics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/differential-equations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/distribution-reference/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/elementary-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/evaluation-and-constants/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/expressions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/geometry/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/getting-started-javascript/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/getting-started-python/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/getting-started-rust/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/integral-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/introduction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/linear-algebra/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/logic/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/logical-transforms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/matrix-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/matrix-construction/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/matrix-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/migration/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/number-theory/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/object-model/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/optimization/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/owner-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/polynomials/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/relations/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/result-type-index/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/serialization-and-output/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/series/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/sets/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/simplification-general/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/solving/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/special-functions/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/specialized-canonical-forms/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/statistics/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/structured-results/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/trigonometric-complex-rewrites/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/vector-calculus/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     },
     {
       "path": "symi/wasm/zero-equivalence/index.html",
-      "sha256": "7fbd13a2c6f04c7ff57c2ff7e7a48d1d589bf0c1de665ec9b4554822dff6b536"
+      "sha256": "8d20ba1626bb02e5c8d0757590b2d6e91f7c3ddb9c43a3e13a59c46faf9a8cc8"
     }
   ],
   "schema_version": 1,
