@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["complement","intersect","is_member","is_subset","union"]};

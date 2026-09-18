@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["abs_from_piecewise","piecewise_from_abs","piecewise_from_heaviside","piecewise_from_signum","signum_from_piecewise"]};

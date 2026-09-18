@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["BuiltinConstant","ExpressionKind"],"fn":["compute_hash","make_expression"],"mod":["binder","builders","decomposition","differentiate","free_variables","numeric_evaluate","ordering","queries","rewrite_in_terms_of","rewrites","substitute"],"struct":["Expression"],"type":["ExpressionReference"]};

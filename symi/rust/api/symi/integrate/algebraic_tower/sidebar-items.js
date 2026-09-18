@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["integrate_in_algebraic_tower"]};

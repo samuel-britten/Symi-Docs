@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["AssumptionMutationError","AssumptionProvenance","AssumptionQueryKind","AssumptionSnapshotPublicationError"],"struct":["AssumptionAssertion","AssumptionConflictReport","AssumptionKnowledgeBase","AssumptionReport","AssumptionScopeSnapshot","AssumptionSnapshotStore"],"trait":["RevisionStamped"],"type":["AssumptionSnapshot"]};

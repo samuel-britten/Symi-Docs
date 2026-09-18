@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["integrate","integrate_iterated","real_shaped"],"mod":["algebraic_tower","definite","rational","risch"]};

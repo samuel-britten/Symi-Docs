@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ThetaIndex"],"fn":["jacobi_theta_1","jacobi_theta_2","jacobi_theta_3","jacobi_theta_4","simplify_call","theta_call"],"mod":["classification","identities","modular_reduction","numeric"]};

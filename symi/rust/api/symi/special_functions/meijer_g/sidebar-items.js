@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["all_parameters_are_exact","is_meijer_g_call","meijer_g","numerator_poles_provably_collide","simplify_call","split_call_arguments"],"mod":["numeric","reductions"],"struct":["MeijerGCallParts"]};

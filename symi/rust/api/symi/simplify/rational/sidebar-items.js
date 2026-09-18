@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["cancel","factor_with_kernels","presentation_normal_form","together"]};

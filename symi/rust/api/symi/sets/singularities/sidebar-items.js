@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["SingularityKind"],"fn":["classify_singularity","continuous_domain","singularities"]};

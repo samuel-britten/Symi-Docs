@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["particular_solution","particular_solution_candidate","solves_the_forcing","undetermined_coefficients","undetermined_coefficients_candidate","variation_of_parameters"],"struct":["ParticularSolutionCandidate"]};

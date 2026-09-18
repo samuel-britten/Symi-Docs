@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["VectorCalculusError"],"fn":["curl","divergence","gradient","hessian","jacobian","laplacian"]};

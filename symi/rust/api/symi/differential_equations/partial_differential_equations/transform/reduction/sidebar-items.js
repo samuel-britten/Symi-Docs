@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["reduce_partial_differential_equation_by_transform","reduce_partial_differential_equation_by_transform_with_classification"],"struct":["PartialDifferentialEquationTransformReduction"]};

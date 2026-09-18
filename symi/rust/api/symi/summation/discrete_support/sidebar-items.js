@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["BoundForm"],"fn":["build_certificate","parse_bound","substitute_parameter_in_form"],"struct":["DiscreteSupportCertificate"]};

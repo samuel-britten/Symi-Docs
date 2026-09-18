@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["DistributionIdentifier"],"fn":["distribution_identifier_from_name","distribution_name","is_continuous","parameter_arity","parameter_names"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["roots_with_multiplicities"],"mod":["inequality","radical","solveset","system","vec"]};

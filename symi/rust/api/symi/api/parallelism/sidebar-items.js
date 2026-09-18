@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["BulkExpressionOutcome","BulkTextOutcome","ParallelBackend","ParallelismInitialization","ParallelismUnavailableReason"],"struct":["ParallelismCapability"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["summation_indefinite_rational","summation_indefinite_rational_transcendental"]};

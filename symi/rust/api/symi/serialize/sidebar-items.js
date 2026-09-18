@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["MathematicalObject"],"fn":["serialize","serialize_assumption_formula","serialize_object"],"mod":["parse"]};

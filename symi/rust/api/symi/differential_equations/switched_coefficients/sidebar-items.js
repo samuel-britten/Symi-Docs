@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["SwitchedCoefficientPartitionError","SwitchedCoefficientSolveDecline"],"fn":["assemble_piecewise_value","interface_conditions","interval_problem","partition_switched_residual","restrict_to_interval","solve_switched_request"],"struct":["SwitchedCoefficientInterval","SwitchedCoefficientPartition","SwitchedCoefficientSolution"]};

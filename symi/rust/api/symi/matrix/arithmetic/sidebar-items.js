@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["add","multiply","scalar_multiply","subtract","trace","transpose"]};

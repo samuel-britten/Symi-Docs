@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["depends_on","is_everywhere_defined","is_provably_nonzero","sum_terms_in_presentation_order"]};

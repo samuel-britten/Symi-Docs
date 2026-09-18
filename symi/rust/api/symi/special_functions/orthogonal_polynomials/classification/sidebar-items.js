@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["DegreeParity","DegreeStatus","PolynomialFamily"],"fn":["classify_degree","classify_degree_parity","degree_is_positive","every_family","family_of","small_degree"]};

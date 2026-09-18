@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["carlson_rc","carlson_rd","carlson_rf","carlson_rj","differentiate_call","simplify_call"],"mod":["numeric"]};

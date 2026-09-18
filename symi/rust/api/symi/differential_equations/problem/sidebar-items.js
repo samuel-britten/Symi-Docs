@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["OrdinaryDifferentialEquationProblemError"],"fn":["collect_dependent_occurrences","conditions_from_residuals","contains_symbol"],"struct":["OrdinaryDifferentialEquationCondition","OrdinaryDifferentialEquationProblem","OrdinaryDifferentialEquationSignature"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ComplexRootIsolationError"],"fn":["isolate_all_roots","refine_rectangle"],"struct":["RootIsolationWorkBudget"]};

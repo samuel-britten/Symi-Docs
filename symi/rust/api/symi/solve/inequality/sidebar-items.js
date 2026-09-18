@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["RelationKind"],"fn":["solve_polynomial_inequality","solve_relation_as_set","solve_relation_set_multivariate"]};

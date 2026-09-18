@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["ESPRESSO_MAX_ATOMS"],"fn":["minimize_product_of_sums","minimize_sum_of_products"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["contains_variable","polynomial_root_node","solution_set_to_vec","solve","solve_as_set"]};

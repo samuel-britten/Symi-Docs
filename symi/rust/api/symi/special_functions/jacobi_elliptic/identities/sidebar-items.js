@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["addition_formula","argument_derivative","first_order_residual","parameter_residual","pythagorean_residual","second_argument_derivative","second_order_residual","simplify_call"]};

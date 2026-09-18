@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["LogicalConversionOutcome"],"fn":["eliminate_derived_logical_connectives","introduce_derived_logical_connectives","is_derived_connective","mentions_derived_connective","public_conversion_limits"],"struct":["ConversionLimits"]};

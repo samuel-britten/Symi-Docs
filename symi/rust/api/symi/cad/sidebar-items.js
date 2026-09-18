@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["base","brown_projection","decomposition","equational_constraint","groebner_precondition","lift","operator_selection","problem","projection","well_oriented"]};

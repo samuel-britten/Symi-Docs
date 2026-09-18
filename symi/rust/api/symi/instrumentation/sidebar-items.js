@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["StructuredDomainWorkKind"],"fn":["counters","counters_are_recorded","factorization_prime_traces","reset_counters","reset_timings","reset_work_class_route_census","timings","work_class_route_census"],"struct":["FactorizationPrimeTrace","InstrumentationCounters","InstrumentationTimings","Peak","WorkClassRouteCounts"]};

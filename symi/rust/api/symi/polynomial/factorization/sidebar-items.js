@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["factor_in_finite_field","factor_squarefree_univariate","factor_univariate_over_integers"],"mod":["hensel","multivariate","multivariate_hensel"]};

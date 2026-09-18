@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["pi_multiple_of","simplify_integer_shifted_pi_multiple_call","simplify_inverse_special_value_call","simplify_pi_multiple_call","walk_apply_special_angle_lookup"]};

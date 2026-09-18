@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationOneParameterGroupDecline"],"fn":["integrate_point_symmetry_generator"],"struct":["PartialDifferentialEquationOneParameterGroup"]};

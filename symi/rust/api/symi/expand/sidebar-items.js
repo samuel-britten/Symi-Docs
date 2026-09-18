@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["combine_logarithm","expand","expand_logarithm"]};

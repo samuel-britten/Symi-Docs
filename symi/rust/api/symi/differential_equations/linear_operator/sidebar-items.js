@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["CharacteristicMode"],"fn":["homogeneous_basis_of_modes"],"struct":["LinearConstantCoefficientOperator"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["combine_columns","combine_rows","negate_column","negate_row","swap_columns","swap_rows","translate_column","translate_row"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["absolute_number","arithmetic","complex_root_count","complex_root_isolation","conversion","element","factorization","field","minimal_polynomial","polynomial_arithmetic","primitive_element","root_coordinates","root_evaluation","root_expression"]};

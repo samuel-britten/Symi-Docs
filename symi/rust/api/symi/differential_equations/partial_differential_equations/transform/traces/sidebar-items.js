@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationConditionSource"],"fn":["resolve_partial_differential_equation_origin_trace","verify_partial_differential_equation_origin_trace"],"struct":["PartialDifferentialEquationOriginTrace"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["discriminant","formal_derivative","resultant","sylvester_resultant"]};

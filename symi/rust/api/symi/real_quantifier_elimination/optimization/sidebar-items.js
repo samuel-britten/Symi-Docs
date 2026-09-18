@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["OptimizationDirection"],"fn":["global_optimum_on_semialgebraic"]};

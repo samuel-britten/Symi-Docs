@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["integer_cokernel_structure","smith_integer_kernel_basis","smith_normal_form","smith_normal_form_with_budget"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["transform_forward","transform_forward_under_assumptions","transform_inverse","transform_inverse_under_assumptions"],"mod":["inverse","rules","table"]};

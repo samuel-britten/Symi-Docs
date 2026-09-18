@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["OrthogonalityVerdict"],"fn":["orthogonality_theorem","weighted_orthogonality_integral"]};

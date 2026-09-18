@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["DEFAULT_PRECISION_BITS"],"fn":["round_precision_to_word_multiple"],"struct":["NumericEvaluator","RealInexactNumber"],"trait":["InexactArithmetic"]};

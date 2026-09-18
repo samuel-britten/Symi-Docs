@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["branch_argument_of","branch_index_of","build_branch_call","differentiate_call","evaluate_complex","evaluate_real","simplify_call"]};

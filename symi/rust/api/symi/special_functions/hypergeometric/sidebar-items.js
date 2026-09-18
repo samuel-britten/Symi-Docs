@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["argument_derivative","hypergeometric_0f1","hypergeometric_1f1","hypergeometric_2f1","hypergeometric_pfq","is_admissible_and_entire","is_entire_in_argument","is_hypergeometric_call","simplify_call","terminating_polynomial"],"mod":["numeric","parameter_analysis","reductions","relations","series","summation"]};

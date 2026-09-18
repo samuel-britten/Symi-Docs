@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["TrigonometricBasis"],"fn":["rewrite_trigonometric_basis"]};

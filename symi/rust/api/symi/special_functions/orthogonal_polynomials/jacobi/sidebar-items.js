@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["argument_derivative","as_hypergeometric","degree_one_value","differential_equation_coefficients","endpoint_value","exact_specialization","gegenbauer_zero_parameter_value","ordinary_representation_is_admissible","rodrigues_form"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["EvaluationMethod"],"fn":["evaluate","evaluate_by_descending_landen","evaluate_by_theta_quotient"],"struct":["JacobiEvaluation"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PrimalityCertificate"],"fn":["is_prime","primality_certificate"]};

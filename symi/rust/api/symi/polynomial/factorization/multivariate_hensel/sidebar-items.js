@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["multivariate_hensel_lift","shift_from_taylor","shift_to_taylor"]};

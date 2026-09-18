@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["IntegrationResult","RdeResult"],"fn":["build_tower_from_integrand","integrate_in_tower","integrate_using_risch","non_elementary_integral_placeholder","reify_with_generators","solve_risch_de"],"mod":["risch_differential_equation"],"struct":["TowerSetup"]};

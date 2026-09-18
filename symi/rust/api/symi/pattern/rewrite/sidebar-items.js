@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["apply_first_matching_rule","apply_first_matching_rule_borrowed","instantiate","rewrite_bottom_up","rewrite_bottom_up_with","rewrite_once","rewrite_to_fixpoint","rewrite_to_fixpoint_with"],"struct":["RewriteRule"],"type":["RewriteCondition"]};

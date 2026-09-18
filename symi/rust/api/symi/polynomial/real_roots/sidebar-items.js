@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["count_distinct_real_roots","isolate_real_roots","real_root_count","refine_isolating_interval","sign_at_real_root","solve_sign_partition"],"struct":["IsolatingInterval","SignPartition"]};

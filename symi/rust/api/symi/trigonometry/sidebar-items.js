@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["back_substitute_weierstrass","combine_trigonometric","contains_trigonometric","expand_trigonometric","rewrite_as_exponential","rewrite_as_trigonometric","weierstrass_substitution"],"mod":["basis","fu","hyperbolic","special_angles"]};

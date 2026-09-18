@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["embed_real","embedded_compositum","real_embedding_count","sign_of_element"],"struct":["RealEmbeddedNumberField"]};

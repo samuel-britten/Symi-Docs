@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["airy","bessel","carlson_elliptic","elliptic_integrals","gamma","hypergeometric","jacobi_elliptic","jacobi_theta","lambert_w","lerch_phi","meijer_g","orthogonal_polynomials","polylogarithm","zeta"]};

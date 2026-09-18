@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["isolate_real_roots_over_field"]};

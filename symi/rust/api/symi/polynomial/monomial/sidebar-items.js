@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["arity","constant_monomial","divide","divides","divides_fast","gcd","is_coprime","is_one","lcm","lexicographic_tiebreak","multiply","pack","packed_divides","packed_lcm","packed_multiply","total_degree","unpack","variable_monomial"],"struct":["Monomial","PackedMonomial"]};

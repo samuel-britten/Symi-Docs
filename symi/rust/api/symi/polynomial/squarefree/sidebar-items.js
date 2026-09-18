@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["yun_squarefree_factorization"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["buchberger","critical_pair","engine","f4","fglm","gao_volny_wang","ideal","implicitize","macaulay_matrix","normal_form","quotient_ring","signature","solve_system"],"struct":["PolynomialRing"]};

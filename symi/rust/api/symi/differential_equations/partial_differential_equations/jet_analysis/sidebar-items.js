@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["collect_partial_differential_equation_jets"],"struct":["PartialDifferentialEquationJet","PartialDifferentialEquationJetInventory"]};

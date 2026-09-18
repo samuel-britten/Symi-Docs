@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["evaluate_polynomial_at_point","sign_of_polynomial_at_real_point","single_variable_point"],"struct":["RealAlgebraicPoint"]};

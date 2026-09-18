@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ExtensionKind"],"fn":["base_field","extend_algebraic","extend_exponential","extend_logarithmic","find_extension","level_of","top_variable","variable_order"],"mod":["arithmetic","derivation","elementary","tower_polynomial"],"struct":["DifferentialField","Extension","RationalFunction"]};

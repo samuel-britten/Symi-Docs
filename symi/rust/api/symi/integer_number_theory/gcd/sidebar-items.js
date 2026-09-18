@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["bezout_coefficients","extended_euclidean","integer_gcd","integer_lcm"]};

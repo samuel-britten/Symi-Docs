@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["FundamentalMatrixDecline"],"fn":["certified_fundamental_matrix","variation_of_constants_state"],"struct":["CertifiedFundamentalMatrix"]};

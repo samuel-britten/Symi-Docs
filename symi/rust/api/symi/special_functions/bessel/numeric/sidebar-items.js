@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["EvaluationMethod"],"fn":["evaluate_at_working_precision","evaluate_numeric","modified_bessel_i_ratio"],"struct":["EvaluationOutcome"]};

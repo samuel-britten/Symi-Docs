@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["add","degree","divide_modulo","from_integer_polynomial","gcd_modulo","integer_mod_inverse","is_zero","modulo_canonical","monic_form","multiply","power_modulo","subtract","variable_polynomial"],"struct":["FiniteFieldPolynomial"]};

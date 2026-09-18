@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["as_rational","evaluate_to_interval","from_rational","from_squarefree_and_interval","is_rational","minimal_polynomial_of","real_root_of","refine"],"struct":["RealAlgebraicNumber"]};

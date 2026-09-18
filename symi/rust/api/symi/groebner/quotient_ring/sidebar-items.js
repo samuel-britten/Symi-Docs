@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["is_zero_dimensional","is_zero_dimensional_distributed","leading_monomials_of","quotient_ring_dimension"],"struct":["MultiplicationMatrix","QuotientRingStructure"]};

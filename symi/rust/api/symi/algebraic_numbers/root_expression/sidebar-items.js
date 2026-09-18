@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["AlgebraicRootError"],"fn":["algebraic_number_from_primitive_and_index","algebraic_numbers_for_irreducible_polynomial","conjugate_algebraic_number","conjugate_root_index","minimal_polynomial_of_algebraic_number","polynomial_root","polynomial_roots_with_multiplicities"]};

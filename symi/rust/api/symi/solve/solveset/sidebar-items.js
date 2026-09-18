@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["inverse_image_set","solveset","solveset_in_domain","solveset_polynomial"]};

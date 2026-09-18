@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["MatrixPredicate","MatrixPredicateSignature","MatrixRule"],"struct":["MatrixPredicateApplication","MatrixPredicateTag"]};

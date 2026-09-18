@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["QUINE_MCCLUSKEY_MAX_ATOMS"],"fn":["is_within_quine_mccluskey_bound","minimize_product_of_sums","minimize_sum_of_products"]};

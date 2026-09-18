@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["eliminate","integer_determinant","nullspace_basis","rank","row_reduce"],"struct":["RowEchelonForm"]};

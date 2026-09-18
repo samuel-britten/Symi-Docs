@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationCanonicalPrincipalForm","PartialDifferentialEquationCanonicalizationDecline"],"fn":["canonicalize_partial_differential_equation"],"struct":["PartialDifferentialEquationCanonicalizationResult"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["matrix_cosine","matrix_exponential","matrix_exponential_of_scalar_multiple","matrix_function_postcondition_evidence","matrix_hyperbolic_cosine","matrix_hyperbolic_sine","matrix_logarithm","matrix_sine","matrix_square_root"]};

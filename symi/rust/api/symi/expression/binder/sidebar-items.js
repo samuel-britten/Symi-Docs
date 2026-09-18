@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["binder_descriptor_for","rebuild_binder"],"struct":["BinderDescriptor"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["evaluate_inexact","evaluate_to_complex_inexact","evaluate_to_complex_inexact_in_environment","evaluate_to_float","evaluate_to_float_at","evaluate_to_float_at_point"],"mod":["builtins","complex","inexact","quadrature","verification"],"type":["SymbolEnvironment"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["complex_plane","condition_set","empty_set","finite_set","fresh_integer_parameter","image_set","integer_set","interval","real_line","set_complement","set_intersection","set_union"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["combine_powers","denest_powers","expand_power_base"]};

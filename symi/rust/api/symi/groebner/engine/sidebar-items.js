@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["DEFAULT_ENGINE"],"enum":["BasisEngine"],"fn":["default_groebner_basis","groebner_basis_distributed","groebner_basis_distributed_with_statistics","groebner_basis_with_engine","groebner_basis_with_statistics"],"struct":["BasisStatistics"]};

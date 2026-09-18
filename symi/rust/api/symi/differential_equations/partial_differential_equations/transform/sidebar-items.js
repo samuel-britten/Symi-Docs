@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationTransformDecline"],"mod":["operator_mapping","planning","reduction","solving","traces","verification"]};

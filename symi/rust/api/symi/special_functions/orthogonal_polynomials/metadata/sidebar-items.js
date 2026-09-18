@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ConditionPredicate"],"fn":["leading_coefficient","parameter_conditions","power_of_two","squared_norm","support_interval","weight"],"struct":["OrthogonalityCondition"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["GeneratingFunctionNormalization"],"fn":["generating_function"],"struct":["GeneratingFunctionRelation"]};

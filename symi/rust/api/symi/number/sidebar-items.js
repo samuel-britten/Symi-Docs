@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Number"],"fn":["add","ceiling","compare","divide","floor","from_integers","is_negative","is_one","is_zero","multiply","negate","power_integer","power_rational","subtract"]};

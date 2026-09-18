@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["is_algebraic","is_complex","is_composite","is_defined","is_even","is_extended_real","is_finite","is_infinite","is_integer","is_irrational","is_natural","is_negative","is_nonnegative","is_nonpositive","is_nonzero","is_odd","is_positive","is_positive_integer","is_prime","is_rational","is_real","is_transcendental","is_zero"]};

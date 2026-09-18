@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["solve_partial_differential_equation_by_transform","verify_partial_differential_equation_transform_solution"],"struct":["PartialDifferentialEquationTransformSolution","PartialDifferentialEquationTransformSolutionVerificationReport"]};

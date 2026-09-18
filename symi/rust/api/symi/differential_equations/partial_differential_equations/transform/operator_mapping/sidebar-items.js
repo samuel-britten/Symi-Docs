@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["map_jet_through_fourier_axis","map_jet_through_laplace_axis","map_jet_through_two_transform_axes","required_origin_trace_orders"],"struct":["PartialDifferentialEquationTransformedUnknown"]};

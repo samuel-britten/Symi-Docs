@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["constant_one_polynomial","derive_polynomial","derive_rational_function","derive_tower_variable","scale_polynomial_by_integer"]};

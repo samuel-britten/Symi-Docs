@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["minimal_polynomial_of"]};

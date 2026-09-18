@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["add","constant","distributed_polynomial_to_expression","distributed_to_recursive","expression_to_distributed_polynomial","from_terms","is_zero","leading_coefficient","leading_index","leading_monomial","make_monic","monomial_multiply","multiply","negate","scalar_multiply","subtract","zero"],"struct":["DistributedPolynomial"]};

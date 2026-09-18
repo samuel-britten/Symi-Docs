@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["evaluate_in_algebraic_root","expression_is_exactly_zero_in_algebraic_root","rational_midpoint_approximation"],"struct":["AlgebraicRootResidue"]};

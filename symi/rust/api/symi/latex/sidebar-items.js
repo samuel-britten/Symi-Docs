@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ExponentialStyle","MultiletterSymbolStyle","NaturalLogarithmStyle"],"fn":["to_latex","to_latex_with_options"],"struct":["LatexOptions"]};

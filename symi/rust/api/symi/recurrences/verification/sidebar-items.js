@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["LinearRecurrenceProblemError","LinearRecurrenceVerificationVerdict"],"fn":["verify_linear_recurrence_solution"],"struct":["LinearRecurrenceCondition","LinearRecurrenceIndexRange","LinearRecurrenceProblem","LinearRecurrenceVerificationReport","LinearRecurrenceVerificationResidual"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["continued_fraction_quadratic_irrational","continued_fraction_rational"],"struct":["QuadraticContinuedFraction"]};

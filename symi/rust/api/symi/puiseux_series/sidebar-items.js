@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["AlgebraicBranchSelector","LocalExpansionPoint","PuiseuxCoefficient","PuiseuxIncompleteReason","PuiseuxSeriesResult"],"fn":["puiseux_series_for_algebraic_function","puiseux_series_for_polynomial","reify_puiseux_branch"],"struct":["PuiseuxBranch","PuiseuxSeriesTerm","ResidualOrderCertificate","TruncatedPuiseuxSeries"]};

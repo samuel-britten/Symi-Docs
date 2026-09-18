@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["RootCoordinateError"],"fn":["imaginary_coordinate","rational_real_coordinate","real_coordinate"]};

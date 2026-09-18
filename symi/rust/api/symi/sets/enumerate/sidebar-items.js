@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["DEFAULT_ENUMERATION_LIMIT"],"enum":["EnumerationOutcome"],"fn":["enumerate_set_in_interval"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationTransformAxisKind"],"fn":["build_partial_differential_equation_transform_plan"],"struct":["PartialDifferentialEquationTransformAxis","PartialDifferentialEquationTransformAxisRequest","PartialDifferentialEquationTransformPlan"]};

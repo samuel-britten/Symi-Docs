@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["argument_derivative","as_generalized_laguerre","degree_one_value","differential_equation_coefficients","origin_value","rodrigues_form"]};

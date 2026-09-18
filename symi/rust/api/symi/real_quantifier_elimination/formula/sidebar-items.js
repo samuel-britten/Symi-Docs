@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["AtomicRelation","Quantifier"],"fn":["atom_polynomials","formula_from_expression","top_level_equational_polynomials"],"struct":["AtomicFormula","TarskiFormula"]};

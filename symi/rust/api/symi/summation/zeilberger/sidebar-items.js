@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["summation_definite_via_zeilberger"]};

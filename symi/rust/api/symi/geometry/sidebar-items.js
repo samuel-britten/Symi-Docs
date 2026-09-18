@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["GeometryError"],"fn":["circle_2d","circle_2d_to_latex","point_2d","point_2d_to_latex","polygon_2d","polygon_2d_to_latex","segment_2d","segment_2d_to_latex","triangle_2d"],"mod":["intersection"],"struct":["Circle2d","Point2d","Polygon2d","Segment2d","Triangle2d"],"type":["GeometryResult"]};

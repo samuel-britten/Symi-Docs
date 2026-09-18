@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationProblemError"],"fn":["discover_partial_differential_equation_signature"],"struct":["PartialDifferentialEquationProblem","PartialDifferentialEquationSignature"]};

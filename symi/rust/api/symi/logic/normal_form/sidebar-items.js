@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["conjunctive_normal_form","disjunctive_normal_form"]};

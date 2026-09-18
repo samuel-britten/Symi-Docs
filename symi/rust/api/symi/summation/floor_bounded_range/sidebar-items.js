@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["affine_rational_in","binomial_is_defined_at","binomial_is_zero_at","bound_expression_is_floor","evaluate_bound","exact_binomial","floor_division","partition_by_residue","recognize_floor_bound","replay_certificate","sole_free_parameter"],"struct":["AffineFloorBound","FloorBoundedRangeCertificate","ResidueStratum"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["matrix_minimal_polynomial","matrix_rational_canonical_form","matrix_rational_canonical_form_with_budget"],"struct":["MatrixRationalCanonicalForm"]};

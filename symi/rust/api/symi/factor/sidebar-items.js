@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["factor","factor_over_gaussian_integers"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Geometry2d","GeometryIntersectionComponent"],"fn":["exact_geometry_intersection"],"struct":["GeometryIntersectionResult"]};

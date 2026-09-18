@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["MonomialOrder"],"fn":["compare_monomials","elimination_order","order_from_name"]};

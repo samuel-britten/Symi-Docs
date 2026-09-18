@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ProofCertificate","ProofOutcome"],"fn":["prove_relation"],"struct":["DeclaredRegion","EndpointKinds","ProofResult"]};

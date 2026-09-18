@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["solve_linear_recurrence"],"mod":["constant_recurrence_sequence","petkovsek","polynomial_search","shape","verification"],"type":["InitialCondition"]};

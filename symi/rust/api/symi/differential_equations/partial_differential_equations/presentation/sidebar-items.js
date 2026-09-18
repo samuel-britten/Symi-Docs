@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["partial_differential_equation_problem_to_latex","partial_differential_equation_problem_to_string"]};

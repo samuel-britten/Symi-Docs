@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["equals","generator_element","integer_element","is_one","is_zero","one_element","rational_element","rational_value","zero_element"],"struct":["AlgebraicElement"]};

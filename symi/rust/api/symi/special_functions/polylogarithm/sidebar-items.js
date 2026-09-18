@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["differentiate_argument","evaluate_in_defining_disk","simplify_call"],"mod":["numeric"]};

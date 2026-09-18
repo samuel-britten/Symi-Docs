@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["coefficient_to_expression","expression_to_polynomial","expression_to_univariate","extract_variables_in_order","polynomial_to_expression"]};

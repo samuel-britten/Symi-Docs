@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationSimilarityReductionDecline"],"fn":["reduce_partial_differential_equation_by_point_symmetry","solve_partial_differential_equation_by_similarity_reduction"],"struct":["PartialDifferentialEquationSimilarityReduction","PartialDifferentialEquationSimilaritySolution"]};

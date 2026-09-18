@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["simplify_condition_set","simplify_finite_set","simplify_image_set","simplify_interval","simplify_set_complement","simplify_set_intersection","simplify_set_union"]};

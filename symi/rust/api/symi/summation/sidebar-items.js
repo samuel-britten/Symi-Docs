@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["summation_definite","summation_indefinite"],"mod":["abramov","c_finite","coefficient_field","diagnostics","discrete_support","finite_geometric","finite_integer_range","floor_bounded_range","gosper","hypergeometric_term","infinite","parametric_gosper","pascal_diagonal","trigonometric_progression","zeilberger"]};

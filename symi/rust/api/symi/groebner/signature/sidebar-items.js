@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["compare_signatures","covered_by_syzygy","rewritable","scale","signature_divides"],"struct":["Signature"]};

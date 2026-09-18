@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `symi/src/statistics/moment_generating_function/moment_generating_function.rs`."><title>moment_generating_function.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-b7b9f40b.css"><meta name="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="symi" data-themes="" data-resource-suffix="" data-rustdoc-version="1.95.0 (59807616e 2026-04-14)" data-channel="1.95.0" data-search-js="search-63369b7b.js" data-stringdex-js="stringdex-b897f86f.js" data-settings-js="settings-170eb4bf.js" ><script src="../../../../static.files/storage-41dd4d93.js"></script><script defer src="../../../../static.files/src-script-813739b1.js"></script><script defer src="../../../../src-files.js"></script><script defer src="../../../../static.files/main-5013f961.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-f7c3ffd8.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><a class="skip-main-content" href="#main-content">Skip to main content</a><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><section id="main-content" class="content" tabindex="-1"><div class="main-heading"><h1><div class="sub-heading">symi/statistics/moment_generating_function/</div>moment_generating_function.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-2"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="comment">// Moment generating function M_X(s) = E[exp(s X)] dispatched
+<a href=#2 id=2 data-nosnippet>2</a>// through the descriptor table first; falls through to a structural
+<a href=#3 id=3 data-nosnippet>3</a>// placeholder otherwise. Wiring this through the Laplace
+<a href=#4 id=4 data-nosnippet>4</a>// transform stays in scope as a future extension once the Laplace rule
+<a href=#5 id=5 data-nosnippet>5</a>// library exposes the necessary substitution hook to flip the sign convention
+<a href=#6 id=6 data-nosnippet>6</a>// (Laplace e^{-s x} -&gt; MGF e^{+s x}) on the table image. For this first cut,
+<a href=#7 id=7 data-nosnippet>7</a>// every closed-form MGF shipped in the descriptor table satisfies the
+<a href=#8 id=8 data-nosnippet>8</a>// regressions, so the placeholder is structurally correct.
+<a href=#9 id=9 data-nosnippet>9</a>
+<a href=#10 id=10 data-nosnippet>10</a></span><span class="kw">use </span><span class="kw">crate</span>::expression::{BuiltinConstant, ExpressionKind, ExpressionReference};
+<a href=#11 id=11 data-nosnippet>11</a><span class="kw">use </span><span class="kw">crate</span>::interner::Context;
+<a href=#12 id=12 data-nosnippet>12</a><span class="kw">use </span><span class="kw">crate</span>::statistics::descriptor;
+<a href=#13 id=13 data-nosnippet>13</a><span class="kw">use </span><span class="kw">crate</span>::symbol::SymbolIdentifier;
+<a href=#14 id=14 data-nosnippet>14</a>
+<a href=#15 id=15 data-nosnippet>15</a><span class="doccomment">/// Performs the advanced native `moment_generating_function` operation.
+<a href=#16 id=16 data-nosnippet>16</a></span><span class="kw">pub fn </span>moment_generating_function(
+<a href=#17 id=17 data-nosnippet>17</a>    context: <span class="kw-2">&amp;</span>Context,
+<a href=#18 id=18 data-nosnippet>18</a>    random_variable: ExpressionReference,
+<a href=#19 id=19 data-nosnippet>19</a>    auxiliary_variable: SymbolIdentifier,
+<a href=#20 id=20 data-nosnippet>20</a>) -&gt; ExpressionReference {
+<a href=#21 id=21 data-nosnippet>21</a>    <span class="comment">// Public MGF entry point. Closed-form table lookup first, structural
+<a href=#22 id=22 data-nosnippet>22</a>    // undefined otherwise.
+<a href=#23 id=23 data-nosnippet>23</a>    </span><span class="kw">if let </span>ExpressionKind::RandomVariable(<span class="kw">_</span>, underlying_distribution) = <span class="kw-2">&amp;</span>random_variable.kind {
+<a href=#24 id=24 data-nosnippet>24</a>        <span class="kw">let </span>underlying_distribution = underlying_distribution.clone();
+<a href=#25 id=25 data-nosnippet>25</a>        <span class="kw">if let </span><span class="prelude-val">Some</span>(closed_form) = descriptor::moment_generating_function_closed_form(
+<a href=#26 id=26 data-nosnippet>26</a>            context,
+<a href=#27 id=27 data-nosnippet>27</a>            <span class="kw-2">&amp;</span>underlying_distribution,
+<a href=#28 id=28 data-nosnippet>28</a>            auxiliary_variable,
+<a href=#29 id=29 data-nosnippet>29</a>        ) {
+<a href=#30 id=30 data-nosnippet>30</a>            <span class="kw">return </span>closed_form;
+<a href=#31 id=31 data-nosnippet>31</a>        }
+<a href=#32 id=32 data-nosnippet>32</a>    }
+<a href=#33 id=33 data-nosnippet>33</a>    context
+<a href=#34 id=34 data-nosnippet>34</a>        .interner
+<a href=#35 id=35 data-nosnippet>35</a>        .intern(ExpressionKind::Constant(BuiltinConstant::Undefined))
+<a href=#36 id=36 data-nosnippet>36</a>}
+</code></pre></div></section></main></body></html>

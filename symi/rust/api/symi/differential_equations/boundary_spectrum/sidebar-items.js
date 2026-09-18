@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["OrdinaryDifferentialEquationBoundarySpectrumDecline"],"fn":["analyze_ordinary_differential_equation_boundary_spectrum"],"struct":["OrdinaryDifferentialEquationBoundarySpectrum","OrdinaryDifferentialEquationSpectralModeReplay"]};

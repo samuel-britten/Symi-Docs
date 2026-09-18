@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["match_pattern","match_with_initial_bindings"]};

@@ -1,0 +1,90 @@
+:root {
+    color-scheme: light dark;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #111827;
+    color: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-height: 100vh; }
+
+a { color: #7dd3fc; }
+
+a:hover { color: #bae6fd; }
+
+.site-header {
+    align-items: center;
+    background: #172033;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    gap: 1rem;
+    min-height: 4rem;
+    padding: 0.75rem max(1rem, calc((100vw - 90rem) / 2));
+}
+
+.site-title { color: #f8fafc; font-size: 1.2rem; font-weight: 700; margin-right: auto; text-decoration: none; }
+
+.language-control, .search-control { color: #cbd5e1; font-size: 0.85rem; font-weight: 600; }
+
+select, input {
+    background: #0f172a;
+    border: 1px solid #475569;
+    border-radius: 0.35rem;
+    color: inherit;
+    font: inherit;
+    padding: 0.45rem 0.55rem;
+}
+
+.site-layout { display: grid; grid-template-columns: minmax(15rem, 20rem) minmax(0, 1fr); margin: 0 auto; max-width: 100rem; min-height: calc(100vh - 4rem); }
+
+.site-sidebar { background: #162032; border-right: 1px solid #334155; overflow-y: auto; padding: 1.25rem; }
+
+.site-sidebar input { margin: 0.4rem 0 0.8rem; width: 100%; }
+
+.site-main { min-width: 0; overflow-wrap: anywhere; padding: 2rem clamp(1rem, 4vw, 4rem); }
+
+.documentation-content { line-height: 1.6; margin: 0 auto; max-width: 65rem; }
+
+.documentation-content h1, .documentation-content h2, .documentation-content h3, .documentation-content h4 { line-height: 1.25; margin-top: 2rem; scroll-margin-top: 1rem; }
+
+.documentation-content h1 { font-size: 2rem; }
+
+.documentation-content h2 { border-bottom: 1px solid #334155; padding-bottom: 0.35rem; }
+
+.documentation-content pre { background: #020617; border: 1px solid #334155; border-radius: 0.4rem; overflow-x: auto; padding: 1rem; }
+
+.documentation-content code, .mathematics { background: #1e293b; border-radius: 0.25rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; padding: 0.1rem 0.25rem; }
+
+.documentation-content pre code { background: transparent; padding: 0; }
+
+.documentation-content table { border-collapse: collapse; display: block; max-width: 100%; overflow-x: auto; }
+
+.documentation-content th, .documentation-content td { border: 1px solid #475569; padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
+
+.documentation-content th { background: #1e293b; }
+
+.documentation-navigation ul, .search-results { list-style: none; margin: 0; padding: 0; }
+
+.documentation-navigation > section { margin-bottom: 1.1rem; }
+
+.documentation-navigation h2 { color: #f8fafc; font-size: 0.95rem; margin: 0 0 0.35rem; }
+
+.documentation-navigation li, .search-results li { margin: 0.2rem 0; }
+
+.documentation-navigation a, .search-results a { display: block; font-size: 0.9rem; padding: 0.15rem 0; text-decoration: none; }
+
+.documentation-navigation a.current { color: #f8fafc; font-weight: 700; }
+
+.search-results { background: #172033; border: 1px solid #475569; border-radius: 0.35rem; max-height: 19rem; overflow-y: auto; padding: 0.4rem; }
+
+.search-results small { color: #94a3b8; display: block; }
+
+.documentation-status { color: #fbbf24; min-height: 1.5rem; }
+
+@media (max-width: 760px) {
+    .site-header { flex-wrap: wrap; }
+    .site-title { flex-basis: 100%; }
+    .site-layout { display: block; }
+    .site-sidebar { border-bottom: 1px solid #334155; border-right: 0; max-height: 22rem; }
+}

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["decompose_period_argument","proves_admissible_parameter","proves_period_lattice_pole","proves_real_principal_amplitude_region","proves_unit_interval_parameter"],"struct":["PeriodDecomposition"]};

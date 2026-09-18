@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["reduce_lattice_translation","simplify_call","translation_multiplier"]};

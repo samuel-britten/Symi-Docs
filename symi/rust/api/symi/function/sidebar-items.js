@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["BuiltinFunction","ComparisonDirection","FunctionIdentifier"],"fn":["builtin_name","comparison_chain_direction","function_name","is_chainable_comparison_sequence"]};

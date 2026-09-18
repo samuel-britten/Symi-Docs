@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["partial_fractions"],"struct":["PartialFractionTerm"]};

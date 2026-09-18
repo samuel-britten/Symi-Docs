@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["inverse_argument_continuation","kummer_transformed_value","one_minus_argument_continuation","pfaff_transformed_value","reject_near_integer"]};

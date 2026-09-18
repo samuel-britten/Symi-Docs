@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["SelectionStrategy"],"fn":["chain_criterion","s_polynomial"],"struct":["CriticalPair","PairSet"]};

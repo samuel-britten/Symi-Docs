@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["solve_zero_dimensional"]};

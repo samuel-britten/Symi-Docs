@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["autoreduce","buchberger_with_strategy","groebner_basis"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["defining_polynomial_dense_rationals","make_number_field"],"struct":["AlgebraicFieldInterner","NumberField"]};

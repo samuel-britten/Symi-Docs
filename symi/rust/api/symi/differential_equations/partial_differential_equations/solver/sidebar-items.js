@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationSolveDecline","PartialDifferentialEquationSolveVerdict"],"fn":["solve_partial_differential_equation","solve_partial_differential_equation_with_transform_plan"],"struct":["PartialDifferentialEquationPortfolioDecline","PartialDifferentialEquationSolutionProvenance","PartialDifferentialEquationSolveResult"]};

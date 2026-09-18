@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["recognize_hypergeometric_term","recognized_series_value"],"struct":["RecognizedSeries"]};

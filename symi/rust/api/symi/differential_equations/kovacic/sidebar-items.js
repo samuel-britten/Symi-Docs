@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["solve"],"mod":["case_one","case_two","normal_form","pole_analysis","reconstruction"]};

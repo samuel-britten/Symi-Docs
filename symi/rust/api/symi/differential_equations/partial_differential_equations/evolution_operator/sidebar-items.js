@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationEvolutionOperatorDecline"],"fn":["diffusion_shape","initial_data_convolution_method","operator_applied_to","solve_by_initial_data_convolution"],"struct":["PartialDifferentialEquationDiffusionShape","PartialDifferentialEquationEvolutionOperatorSolution"]};

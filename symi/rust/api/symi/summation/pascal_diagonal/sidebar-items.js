@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["build_certificate_for_testing","replay_certificate","summation_definite_via_pascal_diagonal"],"struct":["PascalDiagonalCertificate"]};

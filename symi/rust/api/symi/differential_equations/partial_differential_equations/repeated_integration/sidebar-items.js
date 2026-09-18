@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationRepeatedIntegrationDecline"],"fn":["repeated_integration_method","solve_by_repeated_integration"],"struct":["PartialDifferentialEquationRepeatedIntegrationSolution"]};

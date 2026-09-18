@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["GosperVerdict"],"fn":["decide_hypergeometric_antidifference","summation_indefinite_combined_hypergeometric","summation_indefinite_hypergeometric"],"struct":["GosperCertificate"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationSecondOrderClassificationDecline","PartialDifferentialEquationSecondOrderType","PartialDifferentialEquationSecondOrderTypeVerdict"],"fn":["classify_partial_differential_equation_second_order"],"struct":["PartialDifferentialEquationSecondOrderClassification","PartialDifferentialEquationSecondOrderTypeCase"]};

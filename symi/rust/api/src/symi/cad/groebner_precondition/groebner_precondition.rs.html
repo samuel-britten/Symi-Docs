@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `symi/src/cad/groebner_precondition/groebner_precondition.rs`."><title>groebner_precondition.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-b7b9f40b.css"><meta name="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="symi" data-themes="" data-resource-suffix="" data-rustdoc-version="1.95.0 (59807616e 2026-04-14)" data-channel="1.95.0" data-search-js="search-63369b7b.js" data-stringdex-js="stringdex-b897f86f.js" data-settings-js="settings-170eb4bf.js" ><script src="../../../../static.files/storage-41dd4d93.js"></script><script defer src="../../../../static.files/src-script-813739b1.js"></script><script defer src="../../../../src-files.js"></script><script defer src="../../../../static.files/main-5013f961.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-f7c3ffd8.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><a class="skip-main-content" href="#main-content">Skip to main content</a><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><section id="main-content" class="content" tabindex="-1"><div class="main-heading"><h1><div class="sub-heading">symi/cad/groebner_precondition/</div>groebner_precondition.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="kw">use </span><span class="kw">crate</span>::expression::ExpressionReference;
+<a href=#2 id=2 data-nosnippet>2</a><span class="kw">use </span><span class="kw">crate</span>::groebner::PolynomialRing;
+<a href=#3 id=3 data-nosnippet>3</a><span class="kw">use </span><span class="kw">crate</span>::groebner::ideal::groebner_basis;
+<a href=#4 id=4 data-nosnippet>4</a><span class="kw">use </span><span class="kw">crate</span>::groebner::normal_form::multivariate_normal_form;
+<a href=#5 id=5 data-nosnippet>5</a><span class="kw">use </span><span class="kw">crate</span>::interner::Context;
+<a href=#6 id=6 data-nosnippet>6</a><span class="kw">use </span><span class="kw">crate</span>::polynomial::Polynomial;
+<a href=#7 id=7 data-nosnippet>7</a><span class="kw">use </span><span class="kw">crate</span>::polynomial::conversion::expression_to_polynomial;
+<a href=#8 id=8 data-nosnippet>8</a><span class="kw">use </span><span class="kw">crate</span>::polynomial::distributed::{
+<a href=#9 id=9 data-nosnippet>9</a>    <span class="self">self</span>, distributed_polynomial_to_expression, expression_to_distributed_polynomial,
+<a href=#10 id=10 data-nosnippet>10</a>};
+<a href=#11 id=11 data-nosnippet>11</a><span class="kw">use </span><span class="kw">crate</span>::polynomial::monomial_order::elimination_order;
+<a href=#12 id=12 data-nosnippet>12</a><span class="kw">use </span><span class="kw">crate</span>::symbol::SymbolIdentifier;
+<a href=#13 id=13 data-nosnippet>13</a>
+<a href=#14 id=14 data-nosnippet>14</a><span class="doccomment">/// Public native data structure named `preconditioned_constraints`.
+<a href=#15 id=15 data-nosnippet>15</a></span><span class="kw">pub struct </span>PreconditionedConstraints {
+<a href=#16 id=16 data-nosnippet>16</a>    <span class="comment">// The Gröbner-preconditioned equational-constraint set (Decision 4), recursive
+<a href=#17 id=17 data-nosnippet>17</a>    // polynomials in the CAD's reversed variable order (main variable xₙ), ready to
+<a href=#18 id=18 data-nosnippet>18</a>    // drive the equational-constraint projection.
+<a href=#19 id=19 data-nosnippet>19</a>    //
+<a href=#20 id=20 data-nosnippet>20</a>    // `constraint_polynomials` is the reduced Gröbner basis of the constraint ideal —
+<a href=#21 id=21 data-nosnippet>21</a>    // the canonical, propagation-friendly generating set, possibly a single polynomial
+<a href=#22 id=22 data-nosnippet>22</a>    // for one constraint or a smaller basis when several share a factor.
+<a href=#23 id=23 data-nosnippet>23</a>    // `other_polynomials` is each non-constraint reduced modulo that basis (its normal
+<a href=#24 id=24 data-nosnippet>24</a>    // form), which equals the original polynomial on the variety V(constraints) and so
+<a href=#25 id=25 data-nosnippet>25</a>    // preserves every on-variety sign while shrinking the input. `empty_variety` is set
+<a href=#26 id=26 data-nosnippet>26</a>    // when the basis is {1}: the constraints are inconsistent, V(constraints) = ∅, and
+<a href=#27 id=27 data-nosnippet>27</a>    // the equational-constraint CAD is trivial.
+<a href=#28 id=28 data-nosnippet>28</a>    </span><span class="doccomment">/// Stores the `constraint_polynomials` value.
+<a href=#29 id=29 data-nosnippet>29</a>    </span><span class="kw">pub </span>constraint_polynomials: Vec&lt;Polynomial&gt;,
+<a href=#30 id=30 data-nosnippet>30</a>    <span class="doccomment">/// Stores the `other_polynomials` value.
+<a href=#31 id=31 data-nosnippet>31</a>    </span><span class="kw">pub </span>other_polynomials: Vec&lt;Polynomial&gt;,
+<a href=#32 id=32 data-nosnippet>32</a>    <span class="doccomment">/// Stores the `empty_variety` value.
+<a href=#33 id=33 data-nosnippet>33</a>    </span><span class="kw">pub </span>empty_variety: bool,
+<a href=#34 id=34 data-nosnippet>34</a>}
+<a href=#35 id=35 data-nosnippet>35</a>
+<a href=#36 id=36 data-nosnippet>36</a><span class="doccomment">/// Performs the advanced native `precondition_constraints` operation.
+<a href=#37 id=37 data-nosnippet>37</a></span><span class="kw">pub fn </span>precondition_constraints(
+<a href=#38 id=38 data-nosnippet>38</a>    context: <span class="kw-2">&amp;</span>Context,
+<a href=#39 id=39 data-nosnippet>39</a>    polynomials: <span class="kw-2">&amp;</span>[ExpressionReference],
+<a href=#40 id=40 data-nosnippet>40</a>    constraints: <span class="kw-2">&amp;</span>[usize],
+<a href=#41 id=41 data-nosnippet>41</a>    variables: <span class="kw-2">&amp;</span>[SymbolIdentifier],
+<a href=#42 id=42 data-nosnippet>42</a>) -&gt; <span class="prelude-ty">Option</span>&lt;PreconditionedConstraints&gt; {
+<a href=#43 id=43 data-nosnippet>43</a>    <span class="comment">// Reduce the raw equational constraints to a reduced Gröbner basis under the CAD
+<a href=#44 id=44 data-nosnippet>44</a>    // elimination order (`groebner_basis`, transparently F4-accelerated),
+<a href=#45 id=45 data-nosnippet>45</a>    // and reduce every non-constraint polynomial modulo that basis
+<a href=#46 id=46 data-nosnippet>46</a>    // (`multivariate_normal_form`). The CAD eliminates xₙ first, so the ring's variable
+<a href=#47 id=47 data-nosnippet>47</a>    // order is the reversed list [xₙ,…,x₁] and the elimination order ranks the
+<a href=#48 id=48 data-nosnippet>48</a>    // higher-projected variables above the lower ones — a propagation-friendly basis.
+<a href=#49 id=49 data-nosnippet>49</a>    //
+<a href=#50 id=50 data-nosnippet>50</a>    // None when any constraint is non-ℚ-polynomial (inheriting `groebner_basis`'s clean
+<a href=#51 id=51 data-nosnippet>51</a>    // decline). `empty_variety` is set when the basis is {1} (the constraints are
+<a href=#52 id=52 data-nosnippet>52</a>    // inconsistent). The returned polynomials carry the reversed CAD order (main
+<a href=#53 id=53 data-nosnippet>53</a>    // variable xₙ) so they slot directly into the projection tower. Takes the problem's
+<a href=#54 id=54 data-nosnippet>54</a>    // expression polynomials (not recursive `polynomial`s) because that is the form the
+<a href=#55 id=55 data-nosnippet>55</a>    // Gröbner surface consumes; the recursive conversion happens here once.
+<a href=#56 id=56 data-nosnippet>56</a>    </span><span class="kw">let </span>constraint_set: std::collections::BTreeSet&lt;usize&gt; = constraints.iter().copied().collect();
+<a href=#57 id=57 data-nosnippet>57</a>    <span class="kw">let </span>constraint_expressions: Vec&lt;ExpressionReference&gt; = constraints
+<a href=#58 id=58 data-nosnippet>58</a>        .iter()
+<a href=#59 id=59 data-nosnippet>59</a>        .map(|<span class="kw-2">&amp;</span>index| polynomials[index].clone())
+<a href=#60 id=60 data-nosnippet>60</a>        .collect();
+<a href=#61 id=61 data-nosnippet>61</a>    <span class="kw">let </span>reversed_order: Vec&lt;SymbolIdentifier&gt; = variables.iter().rev().cloned().collect();
+<a href=#62 id=62 data-nosnippet>62</a>
+<a href=#63 id=63 data-nosnippet>63</a>    <span class="kw">let </span>ring = PolynomialRing::new(reversed_order.clone(), elimination_order(<span class="number">0</span>));
+<a href=#64 id=64 data-nosnippet>64</a>    <span class="kw">let </span>basis_expressions = groebner_basis(context, <span class="kw-2">&amp;</span>ring, <span class="kw-2">&amp;</span>constraint_expressions)<span class="question-mark">?</span>;
+<a href=#65 id=65 data-nosnippet>65</a>
+<a href=#66 id=66 data-nosnippet>66</a>    <span class="kw">if </span>basis_is_unit(<span class="kw-2">&amp;</span>basis_expressions, <span class="kw-2">&amp;</span>reversed_order) {
+<a href=#67 id=67 data-nosnippet>67</a>        <span class="kw">return </span><span class="prelude-val">Some</span>(PreconditionedConstraints {
+<a href=#68 id=68 data-nosnippet>68</a>            constraint_polynomials: Vec::new(),
+<a href=#69 id=69 data-nosnippet>69</a>            other_polynomials: Vec::new(),
+<a href=#70 id=70 data-nosnippet>70</a>            empty_variety: <span class="bool-val">true</span>,
+<a href=#71 id=71 data-nosnippet>71</a>        });
+<a href=#72 id=72 data-nosnippet>72</a>    }
+<a href=#73 id=73 data-nosnippet>73</a>
+<a href=#74 id=74 data-nosnippet>74</a>    <span class="kw">let </span><span class="kw-2">mut </span>constraint_polynomials: Vec&lt;Polynomial&gt; = Vec::with_capacity(basis_expressions.len());
+<a href=#75 id=75 data-nosnippet>75</a>    <span class="kw">for </span>expression <span class="kw">in </span>basis_expressions.iter() {
+<a href=#76 id=76 data-nosnippet>76</a>        constraint_polynomials.push(expression_to_polynomial(expression, <span class="kw-2">&amp;</span>reversed_order)<span class="question-mark">?</span>);
+<a href=#77 id=77 data-nosnippet>77</a>    }
+<a href=#78 id=78 data-nosnippet>78</a>
+<a href=#79 id=79 data-nosnippet>79</a>    <span class="kw">let </span>basis_distributed: Vec&lt;<span class="kw">_</span>&gt; = basis_expressions
+<a href=#80 id=80 data-nosnippet>80</a>        .iter()
+<a href=#81 id=81 data-nosnippet>81</a>        .map(|expression| expression_to_distributed_polynomial(expression, <span class="kw-2">&amp;</span>reversed_order))
+<a href=#82 id=82 data-nosnippet>82</a>        .collect::&lt;<span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">_</span>&gt;&gt;&gt;()<span class="question-mark">?</span>;
+<a href=#83 id=83 data-nosnippet>83</a>
+<a href=#84 id=84 data-nosnippet>84</a>    <span class="kw">let </span><span class="kw-2">mut </span>other_polynomials: Vec&lt;Polynomial&gt; = Vec::new();
+<a href=#85 id=85 data-nosnippet>85</a>    <span class="kw">for </span>(index, expression) <span class="kw">in </span>polynomials.iter().enumerate() {
+<a href=#86 id=86 data-nosnippet>86</a>        <span class="kw">if </span>constraint_set.contains(<span class="kw-2">&amp;</span>index) {
+<a href=#87 id=87 data-nosnippet>87</a>            <span class="kw">continue</span>;
+<a href=#88 id=88 data-nosnippet>88</a>        }
+<a href=#89 id=89 data-nosnippet>89</a>        <span class="kw">let </span>distributed = expression_to_distributed_polynomial(expression, <span class="kw-2">&amp;</span>reversed_order)<span class="question-mark">?</span>;
+<a href=#90 id=90 data-nosnippet>90</a>        <span class="kw">let </span>reduced = multivariate_normal_form(<span class="kw-2">&amp;</span>distributed, <span class="kw-2">&amp;</span>basis_distributed, ring.order);
+<a href=#91 id=91 data-nosnippet>91</a>        <span class="kw">let </span>reduced_expression =
+<a href=#92 id=92 data-nosnippet>92</a>            distributed_polynomial_to_expression(context, <span class="kw-2">&amp;</span>reduced, <span class="kw-2">&amp;</span>reversed_order);
+<a href=#93 id=93 data-nosnippet>93</a>        <span class="kw">let </span>reduced_polynomial = expression_to_polynomial(<span class="kw-2">&amp;</span>reduced_expression, <span class="kw-2">&amp;</span>reversed_order)<span class="question-mark">?</span>;
+<a href=#94 id=94 data-nosnippet>94</a>        other_polynomials.push(reduced_polynomial);
+<a href=#95 id=95 data-nosnippet>95</a>    }
+<a href=#96 id=96 data-nosnippet>96</a>
+<a href=#97 id=97 data-nosnippet>97</a>    <span class="prelude-val">Some</span>(PreconditionedConstraints {
+<a href=#98 id=98 data-nosnippet>98</a>        constraint_polynomials,
+<a href=#99 id=99 data-nosnippet>99</a>        other_polynomials,
+<a href=#100 id=100 data-nosnippet>100</a>        empty_variety: <span class="bool-val">false</span>,
+<a href=#101 id=101 data-nosnippet>101</a>    })
+<a href=#102 id=102 data-nosnippet>102</a>}
+<a href=#103 id=103 data-nosnippet>103</a>
+<a href=#104 id=104 data-nosnippet>104</a><span class="kw">fn </span>basis_is_unit(basis: <span class="kw-2">&amp;</span>[ExpressionReference], variables: <span class="kw-2">&amp;</span>[SymbolIdentifier]) -&gt; bool {
+<a href=#105 id=105 data-nosnippet>105</a>    <span class="comment">// A reduced Gröbner basis equal to {1} (a nonzero constant) certifies an empty
+<a href=#106 id=106 data-nosnippet>106</a>    // variety: the constraint ideal is the whole ring. Detected structurally over the
+<a href=#107 id=107 data-nosnippet>107</a>    // distributed form — the basis is a single nonzero polynomial whose only term is
+<a href=#108 id=108 data-nosnippet>108</a>    // the constant monomial (every exponent zero), so no projection variable survives.
+<a href=#109 id=109 data-nosnippet>109</a>    </span><span class="kw">if </span>basis.len() != <span class="number">1 </span>{
+<a href=#110 id=110 data-nosnippet>110</a>        <span class="kw">return </span><span class="bool-val">false</span>;
+<a href=#111 id=111 data-nosnippet>111</a>    }
+<a href=#112 id=112 data-nosnippet>112</a>    <span class="kw">match </span>expression_to_distributed_polynomial(<span class="kw-2">&amp;</span>basis[<span class="number">0</span>], variables) {
+<a href=#113 id=113 data-nosnippet>113</a>        <span class="prelude-val">Some</span>(value) =&gt; {
+<a href=#114 id=114 data-nosnippet>114</a>            !distributed::is_zero(<span class="kw-2">&amp;</span>value)
+<a href=#115 id=115 data-nosnippet>115</a>                &amp;&amp; value.terms.len() == <span class="number">1
+<a href=#116 id=116 data-nosnippet>116</a>                </span>&amp;&amp; value.terms[<span class="number">0</span>]
+<a href=#117 id=117 data-nosnippet>117</a>                    .<span class="number">0
+<a href=#118 id=118 data-nosnippet>118</a>                    </span>.exponents
+<a href=#119 id=119 data-nosnippet>119</a>                    .iter()
+<a href=#120 id=120 data-nosnippet>120</a>                    .all(|exponent| <span class="kw-2">*</span>exponent == <span class="number">0</span>)
+<a href=#121 id=121 data-nosnippet>121</a>        }
+<a href=#122 id=122 data-nosnippet>122</a>        <span class="prelude-val">None </span>=&gt; <span class="bool-val">false</span>,
+<a href=#123 id=123 data-nosnippet>123</a>    }
+<a href=#124 id=124 data-nosnippet>124</a>}
+</code></pre></div></section></main></body></html>

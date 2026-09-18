@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["binomial_power_reduction","error_function_argument","error_function_as_hypergeometric","euler_transformation","gauss_unit_argument_summation","hypergeometric_as_meijer_g","kummer_transformation"]};

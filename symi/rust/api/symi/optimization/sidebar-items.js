@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ExtremumKind","OptimizationOutcome"],"fn":["classify_unconstrained","format_optimization_outcome","karush_kuhn_tucker_points","lagrange_critical_points","unconstrained_critical_points"],"struct":["CriticalPoint"]};

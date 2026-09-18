@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["RectangleRootCountError"],"fn":["count_roots_in_rectangle"]};

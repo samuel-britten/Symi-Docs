@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["EXPANSION_DEGREE_BUDGET","EXPANSION_WEIGHT_BUDGET"],"enum":["ExpansionDecline"],"fn":["combine","estimated_expansion_weight","expand_call","expand_orthogonal_polynomial","expansion_fits_budget","finite_coefficients"]};

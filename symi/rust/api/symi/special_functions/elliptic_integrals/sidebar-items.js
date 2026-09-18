@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["complete_as_carlson","complete_as_hypergeometric","elliptic_e","elliptic_e_incomplete","elliptic_f","elliptic_k","elliptic_pi","elliptic_pi_incomplete","simplify_call"]};

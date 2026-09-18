@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["add","coefficient_to_element","divide_with_remainder","euclidean_gcd","lift_polynomial_to_algebraic","multiply","negate","pseudo_divide_over_algebraic","shift_by_generator","subtract","to_monic"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["JacobiIndex"],"fn":["differentiate_call","jacobi_amplitude","jacobi_call","jacobi_cn","jacobi_dn","jacobi_sn","simplify_call"],"mod":["classification","identities","numeric"]};

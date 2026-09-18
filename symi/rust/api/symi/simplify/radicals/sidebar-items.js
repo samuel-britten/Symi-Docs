@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["denest_quadratic_radical","split_rational_surd_term"]};

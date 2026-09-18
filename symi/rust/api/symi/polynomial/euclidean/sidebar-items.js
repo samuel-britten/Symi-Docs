@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["divide_over_rationals","extended_euclidean"]};

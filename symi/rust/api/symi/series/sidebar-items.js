@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["laurent_series","maclaurin_series","pole_order","residue","residue_unevaluated_node","residue_unevaluated_placeholder_name_value","series_unevaluated_node","series_unevaluated_placeholder_name_value","taylor_series","taylor_series_under_assumptions"]};

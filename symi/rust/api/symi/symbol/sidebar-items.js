@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ResolvedName"],"mod":["registry"],"struct":["SymbolIdentifier","SymbolTable"]};

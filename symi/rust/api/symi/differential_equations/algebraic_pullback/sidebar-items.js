@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["CylinderFamily"],"fn":["discover_cylinder_pullback","pullback_fundamental_pair"],"struct":["AlgebraicPullbackCertificate"]};

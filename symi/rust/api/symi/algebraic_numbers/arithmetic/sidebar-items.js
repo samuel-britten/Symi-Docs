@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["add","add_scalar","divide","inverse","multiply","negate","power_integer","scale_by_rational","subtract"]};

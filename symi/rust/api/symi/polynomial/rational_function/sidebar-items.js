@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["polynomial_to_rational_function","rational_function_is_constant","rational_function_to_polynomial_coefficient"],"struct":["RationalFunction"]};

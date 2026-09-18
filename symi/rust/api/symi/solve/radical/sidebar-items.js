@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["binomial_roots","cubic_roots","quartic_roots"]};

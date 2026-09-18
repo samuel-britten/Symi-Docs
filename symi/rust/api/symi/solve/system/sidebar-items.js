@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["SystemSolution"],"fn":["solve_polynomial_system"]};

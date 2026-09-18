@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationPolarDiskDecline"],"fn":["solve_regular_polar_disk_harmonic_family"],"struct":["PartialDifferentialEquationPolarDiskHarmonicSolution"]};

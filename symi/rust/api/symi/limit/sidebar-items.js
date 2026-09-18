@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["LimitDirection"],"fn":["evaluate_limit","evaluate_limit_under_assumptions","limit","unevaluated_limit_node"],"mod":["eventual_germ","gruntz","special_function_asymptotics"]};

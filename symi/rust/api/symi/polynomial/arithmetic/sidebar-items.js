@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["add","coefficients_subtract_assign","divide_coefficient_exact","divide_exact","divide_polynomial_by_coefficient","ensure_canonical","insert_or_combine","multiply","pow","pow_coefficient","pseudo_divide","shift_by_degree","subtract"]};

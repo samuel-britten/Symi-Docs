@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["matrix_jordan_decomposition"],"struct":["MatrixJordanBlock","MatrixJordanDecomposition"]};

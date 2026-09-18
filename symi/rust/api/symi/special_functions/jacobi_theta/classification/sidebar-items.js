@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["proves_upper_half_plane"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["ACCEPTED_CANDIDATE_CEILING","CERTIFICATE_BUDGET_CEILING","ORDER_SEARCH_CEILING","SYSTEM_ROW_CEILING","SYSTEM_UNKNOWN_CEILING"],"enum":["TelescopingOutcome"],"fn":["build_parameter_split","find_telescoping_recurrence","sigma_as_passive_polynomial"],"struct":["ParameterSplit","ShiftPolynomial","TelescopingRecurrence"],"type":["MonomialKey"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["CanonicalStoreError"],"struct":["CanonicalStores","Context","Interner"]};

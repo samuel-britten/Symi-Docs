@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["apply_net_once","apply_net_to_fixpoint"],"struct":["DiscriminationNet"]};

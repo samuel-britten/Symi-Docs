@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["collect_radicals","denest_radicals","rationalize_denominator"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["SpecialFunctionBasis"],"fn":["rewrite_special_functions"]};

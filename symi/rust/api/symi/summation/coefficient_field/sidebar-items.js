@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["FRACTION_FREE_MONOMIAL_CEILING"],"fn":["binomial_shift_contributions","number_to_rational","rational_from_native","rational_to_expression","rational_to_number"],"struct":["CoefficientField","FieldElement","FieldPolynomial","ParameterPolynomial"],"type":["ExponentVector"]};

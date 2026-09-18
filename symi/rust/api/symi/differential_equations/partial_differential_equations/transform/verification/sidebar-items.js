@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PartialDifferentialEquationTransformReplayFailure"],"fn":["transform_route_candidate_is_verified","verify_partial_differential_equation_transform_reduction"],"struct":["PartialDifferentialEquationTransformVerificationReport"]};

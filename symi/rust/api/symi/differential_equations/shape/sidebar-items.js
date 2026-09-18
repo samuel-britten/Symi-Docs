@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["contains_reference","dependent_function_identifier","depends_on_function","derivative_call","derivative_call_from_dependent_variable_call","solve_for_first_derivative","solve_for_highest_derivative","split_y_coefficient_and_remainder","substitute_function_application"]};

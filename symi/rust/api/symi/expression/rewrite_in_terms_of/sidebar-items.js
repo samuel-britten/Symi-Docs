@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["rewrite_in_terms_of"]};

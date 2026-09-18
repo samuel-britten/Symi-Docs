@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["denominator","numerator","numerator_denominator"]};

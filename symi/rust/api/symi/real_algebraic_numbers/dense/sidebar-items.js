@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["degree_of","derivative","divide","evaluate","exact_interval","from_dense","interval_width","make_monic","monic_gcd","normalize","number_to_rational","rational_sign","rational_to_number","reflect","reverse","squarefree_part","to_dense"]};

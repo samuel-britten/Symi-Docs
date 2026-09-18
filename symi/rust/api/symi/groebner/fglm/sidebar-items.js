@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["change_monomial_order","change_order_distributed","change_order_distributed_with_statistics"],"struct":["FglmStatistics"]};

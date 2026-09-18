@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["elimination_ideal","groebner_basis","ideal_intersection","ideal_membership","ideal_product","ideal_sum"]};

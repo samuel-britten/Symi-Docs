@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["coefficient","degree","isolate_real_roots","leading_coefficient","polynomial_gcd","resultant"]};

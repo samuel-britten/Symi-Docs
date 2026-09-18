@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["partial_cylindrical_algebraic_decomposition"],"struct":["PartialDecomposition"]};

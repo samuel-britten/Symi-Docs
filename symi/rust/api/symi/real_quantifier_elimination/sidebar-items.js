@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["constraint_solving","eliminate","formula","optimization","partial_cad","solution_formula","truth_evaluation"]};

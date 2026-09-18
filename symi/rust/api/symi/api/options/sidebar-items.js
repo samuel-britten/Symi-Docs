@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["MonomialOrdering","OrthogonalPolynomialFamily","SpecialFunctionBasis","TrigonometricBasis"],"struct":["OrthogonalPolynomialBasis"]};

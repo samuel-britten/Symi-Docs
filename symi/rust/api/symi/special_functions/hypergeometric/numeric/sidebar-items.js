@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["EvaluationMethod","NumericDeclineReason"],"fn":["cancellation_bits_between","defining_series","error_function_value","evaluate_at_working_precision","negative_power_of_two"],"mod":["continuation"],"struct":["EvaluationOutcome","SummationOutcome"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["canonical_coordinates","characteristics","classification","evolution_operator","jet_analysis","methods","point_symmetry","polar_disk","presentation","problem","repeated_integration","request","second_order_analysis","separation","solution_family","solver","spectral_boundary","transform","transformations","verification"]};

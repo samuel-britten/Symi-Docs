@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["continued_fraction","diophantine","factorization","gcd","modular","multiplicative","primality","roots"]};

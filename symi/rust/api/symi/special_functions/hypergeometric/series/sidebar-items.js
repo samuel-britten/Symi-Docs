@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["antiderivative_in_argument","maclaurin_coefficients","partial_sum"]};

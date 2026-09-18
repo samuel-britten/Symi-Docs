@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["homogeneous_basis","normalized_operator","solve","solve_family","solve_with_generated_constants"],"struct":["ConstantCoefficientFamily"]};

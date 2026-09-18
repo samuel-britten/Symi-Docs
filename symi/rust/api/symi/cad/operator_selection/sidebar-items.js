@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["CadContract"],"fn":["equational_constraint_setup","select_projection_operator"],"struct":["EquationalConstraintSetupResult","SelectedOperator"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Binding","Pattern","PatternHeadKey"],"fn":["empty_bindings","expression_head","lookup_sequence","lookup_single","pattern_head"],"mod":["discrimination_net","match_engine","rewrite"],"type":["Bindings","PatternTemplate","WildcardName","WildcardPredicate"]};

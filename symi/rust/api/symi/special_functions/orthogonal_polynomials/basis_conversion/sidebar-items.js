@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["CONVERSION_DEGREE_BUDGET"],"enum":["ConversionDecline"],"fn":["basis_coefficients","coefficient_by_inner_product","convert_polynomial_basis","orthogonal_polynomial_coefficient"]};

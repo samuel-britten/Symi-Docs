@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["DefinitionBinding"],"fn":["build_environment_from_serialized_sources","serialize_definition_source"],"struct":["ParseEnvironment"]};

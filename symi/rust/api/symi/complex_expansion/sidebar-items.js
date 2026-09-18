@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["expand_complex","imaginary_part","real_part"]};

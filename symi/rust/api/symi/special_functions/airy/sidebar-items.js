@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["airy_ai","airy_ai_prime","airy_bi","airy_bi_prime","argument_derivative","as_hypergeometric","simplify_call"],"mod":["numeric"]};

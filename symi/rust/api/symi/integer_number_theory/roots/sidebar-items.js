@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["integer_cube_root","integer_nth_root","integer_square_root"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["DiophantineSolution"],"fn":["diophantine_solution_display","diophantine_solution_to_latex","pell_solutions","solve_linear_diophantine","solve_linear_diophantine_system","solve_linear_diophantine_system_with_budget","solve_pell"]};

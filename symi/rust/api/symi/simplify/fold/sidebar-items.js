@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["extract_number","extract_product_split","extract_sum_coefficient","integer_one","integer_zero","intern_number"]};

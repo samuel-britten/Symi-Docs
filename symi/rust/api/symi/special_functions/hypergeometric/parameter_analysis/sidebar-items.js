@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["AdmissibilityClassification","ConvergenceClass"],"fn":["analyse","nonpositive_integer_magnitude","parameter_group","parameter_group_of","split_call_arguments"],"struct":["ParameterAnalysis"]};

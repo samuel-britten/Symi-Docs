@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["combine_under_quantifier","evaluate_formula_at_point","quantifier_settles"]};

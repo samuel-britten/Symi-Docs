@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["bell_number","binomial","catalan_number","falling_factorial","fibonacci_number","multinomial","multinomial_expression","partition_count","rising_factorial","stirling_first_signed","stirling_second"]};

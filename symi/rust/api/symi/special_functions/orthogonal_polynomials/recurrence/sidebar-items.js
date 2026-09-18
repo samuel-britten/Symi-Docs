@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["RECURRENCE_EXPANSION_DEGREE_BUDGET"],"fn":["expand_by_recurrence","recurrence_coefficients","recurrence_residual"],"struct":["ThreeTermRecurrence"]};

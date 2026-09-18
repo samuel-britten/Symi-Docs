@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["is_integer_one","is_integer_zero","is_numeric","is_undefined"]};

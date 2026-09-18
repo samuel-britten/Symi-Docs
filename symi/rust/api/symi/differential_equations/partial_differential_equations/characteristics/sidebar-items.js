@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["solve_by_characteristics","verified_characteristic_base_invariants"],"mod":["cauchy_data","characteristic_system","invariants"],"struct":["PartialDifferentialEquationCharacteristicSolution"]};

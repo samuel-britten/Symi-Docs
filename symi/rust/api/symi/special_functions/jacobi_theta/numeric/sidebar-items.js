@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["direct_fourier_series","theta","theta_argument_derivative"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["SummationVerdict"],"fn":["certificate_failed","insufficient_assumptions","is_tracing_enabled","not_applicable","proved_impossible","representation_unavailable","resource_exhausted","take_trace"],"struct":["ResourceMeasurement","TraceEntry"]};

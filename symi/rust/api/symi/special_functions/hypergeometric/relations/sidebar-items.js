@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ContiguousRelation"],"fn":["applicable_contiguous_relations","contiguous_relation_residual","differential_equation_residual","differential_equation_residual_of"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["chinese_remainder","modular_inverse","modular_power"]};

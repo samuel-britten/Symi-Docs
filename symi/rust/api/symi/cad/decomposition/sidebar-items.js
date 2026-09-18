@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["CellKind"],"fn":["cylindrical_algebraic_decomposition","decompose_with_operator","sample_point_as_floats"],"struct":["CadCell","CylindricalAlgebraicDecomposition"]};
