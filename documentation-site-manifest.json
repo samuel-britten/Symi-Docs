@@ -94,7 +94,7 @@
     },
     {
       "path": "symi/assets/documentation/manual/kotlin/getting-started-python.md",
-      "sha256": "e7bc72f6f397828db0fbf7040b5f303a144446d25e65d9c5041b958f0f7f3353"
+      "sha256": "d768cec2259c05d7651019ae889ea52564a558582dbbb8a91fbc590cb916f241"
     },
     {
       "path": "symi/assets/documentation/manual/kotlin/getting-started-rust.md",
@@ -298,7 +298,7 @@
     },
     {
       "path": "symi/assets/documentation/manual/python/getting-started-python.md",
-      "sha256": "088ea6babe52b8def3b752cfb8964dc90ec360f89ac3539f2ee19f78cab00df2"
+      "sha256": "d61b54951f44b5689fa5d73de4c3a7ddadd7ded9b75c528153cc2431302b831c"
     },
     {
       "path": "symi/assets/documentation/manual/python/getting-started-rust.md",
@@ -502,7 +502,7 @@
     },
     {
       "path": "symi/assets/documentation/manual/rust/getting-started-python.md",
-      "sha256": "e7bc72f6f397828db0fbf7040b5f303a144446d25e65d9c5041b958f0f7f3353"
+      "sha256": "d768cec2259c05d7651019ae889ea52564a558582dbbb8a91fbc590cb916f241"
     },
     {
       "path": "symi/assets/documentation/manual/rust/getting-started-rust.md",
@@ -706,7 +706,7 @@
     },
     {
       "path": "symi/assets/documentation/manual/swift/getting-started-python.md",
-      "sha256": "e7bc72f6f397828db0fbf7040b5f303a144446d25e65d9c5041b958f0f7f3353"
+      "sha256": "d768cec2259c05d7651019ae889ea52564a558582dbbb8a91fbc590cb916f241"
     },
     {
       "path": "symi/assets/documentation/manual/swift/getting-started-rust.md",
@@ -910,7 +910,7 @@
     },
     {
       "path": "symi/assets/documentation/manual/wasm/getting-started-python.md",
-      "sha256": "e7bc72f6f397828db0fbf7040b5f303a144446d25e65d9c5041b958f0f7f3353"
+      "sha256": "d768cec2259c05d7651019ae889ea52564a558582dbbb8a91fbc590cb916f241"
     },
     {
       "path": "symi/assets/documentation/manual/wasm/getting-started-rust.md",

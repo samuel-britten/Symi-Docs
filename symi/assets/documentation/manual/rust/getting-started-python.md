@@ -1,6 +1,14 @@
 # Getting started: Python
 
-Build the extension in the activated project environment:
+Alpha releases are published on PyPI as prebuilt wheels for CPython 3.9 or
+newer. Install the `symi-cas` distribution, then import `symi`:
+
+```bash
+python -m pip install --pre symi-cas
+```
+
+To build the extension from source instead, run in the activated project
+environment:
 
 ```bash
 cd symi-python
