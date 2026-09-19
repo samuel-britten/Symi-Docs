@@ -2,17 +2,60 @@
 
 ### taylor_series
 
+<a id="entry-presentation_python_series_capability_calculus_taylor_series_api_assumptionscope_taylor_series"></a>
 <a id="placement-placement.python.python_class.assumptionscope_taylor_series.5736549b4857"></a>
-`AssumptionScope.taylor_series(input_expression, variable, expansion_point, truncation_order)`
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+```python signature
+taylor_series(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    expansion_point: ExpressionLike,
+    truncation_order: int,
+) -> Expression
+```
+
+<a id="entry-presentation_python_series_capability_calculus_taylor_series_api_session_taylor_series"></a>
+<a id="placement-placement.python.python_module.module_taylor_series.0b4cd2addb32"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+taylor_series(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    expansion_point: ExpressionLike,
+    order: int,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_taylor_series.751307bc3e60"></a>
-`Context.taylor_series(input_expression, variable, expansion_point, order)`
+<p class="symi-entry-owner">Explicit context: <code>Context.taylor_series</code></p>
 
+```python signature
+taylor_series(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    expansion_point: ExpressionLike,
+    order: int,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_series_capability_calculus_taylor_series_api_expression_taylor_series"></a>
 <a id="placement-placement.python.python_class.expression_taylor_series.3fcdb5395680"></a>
-`Expression.taylor_series(variable, expansion_point, order)`
+<p class="symi-entry-owner">Expression method</p>
 
-<a id="placement-placement.python.python_module.module_taylor_series.0b4cd2addb32"></a>
-`symi.taylor_series(input_expression, variable, expansion_point, order)`
+```python signature
+taylor_series(
+    variable: VariableLike,
+    expansion_point: ExpressionLike,
+    order: int,
+) -> Expression
+```
 
 
 Truncated Taylor expansion about `expansion_point`, keeping terms of degree
@@ -23,28 +66,88 @@ symbolic differentiation.
 
 ### maclaurin_series
 
-<a id="placement-placement.python.python_class.context_maclaurin_series.e8542b678e16"></a>
-`Context.maclaurin_series(input_expression, variable, order)`
-
-<a id="placement-placement.python.python_class.expression_maclaurin_series.5db0d2e0e680"></a>
-`Expression.maclaurin_series(variable, order)`
-
+<a id="entry-presentation_python_series_capability_calculus_maclaurin_series_api_analysis_session_maclaurin_series"></a>
 <a id="placement-placement.python.python_module.module_maclaurin_series.5223942bba31"></a>
-`symi.maclaurin_series(input_expression, variable, order)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+maclaurin_series(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    order: int,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_maclaurin_series.e8542b678e16"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.maclaurin_series</code></p>
+
+```python signature
+maclaurin_series(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    order: int,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_series_capability_calculus_maclaurin_series_api_expression_operations_expression_maclaurin_series"></a>
+<a id="placement-placement.python.python_class.expression_maclaurin_series.5db0d2e0e680"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+maclaurin_series(variable: VariableLike, order: int) -> Expression
+```
 
 
 `taylor_series` specialised to expansion point 0.
 
 ### laurent_series
 
-<a id="placement-placement.python.python_class.context_laurent_series.20501b6592dd"></a>
-`Context.laurent_series(input_expression, variable, center, order)`
-
-<a id="placement-placement.python.python_class.expression_laurent_series.1eabdc09f426"></a>
-`Expression.laurent_series(variable, center, order)`
-
+<a id="entry-presentation_python_series_capability_calculus_laurent_series_api_session_laurent_series"></a>
 <a id="placement-placement.python.python_module.module_laurent_series.d619a8cfcae9"></a>
-`symi.laurent_series(input_expression, variable, center, order)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+laurent_series(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    center: ExpressionLike,
+    order: int,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_laurent_series.20501b6592dd"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.laurent_series</code></p>
+
+```python signature
+laurent_series(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    center: ExpressionLike,
+    order: int,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_series_capability_calculus_laurent_series_api_expression_laurent_series"></a>
+<a id="placement-placement.python.python_class.expression_laurent_series.1eabdc09f426"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+laurent_series(
+    variable: VariableLike,
+    center: ExpressionLike,
+    order: int,
+) -> Expression
+```
 
 
 Truncated Laurent expansion at `center`: every \((\operatorname{variable} - \operatorname{center})^k\) term
@@ -55,14 +158,41 @@ because no finite truncation of the principal part is correct.
 
 ### residue
 
-<a id="placement-placement.python.python_class.context_residue.8809e0c25093"></a>
-`Context.residue(input_expression, variable, center)`
-
-<a id="placement-placement.python.python_class.expression_residue.bf75be4b16ee"></a>
-`Expression.residue(variable, center)`
-
+<a id="entry-presentation_python_series_capability_calculus_residue_api_analysis_session_residue"></a>
 <a id="placement-placement.python.python_module.module_residue.a318d22183f0"></a>
-`symi.residue(input_expression, variable, center)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+residue(
+    input_expression: ExpressionLike,
+    variable: Any,
+    center: Any,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_residue.8809e0c25093"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.residue</code></p>
+
+```python signature
+residue(
+    input_expression: ExpressionLike,
+    variable: Any,
+    center: Any,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_series_capability_calculus_residue_api_expression_operations_expression_residue"></a>
+<a id="placement-placement.python.python_class.expression_residue.bf75be4b16ee"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+residue(variable: Any, center: Any) -> Expression
+```
 
 
 Coefficient of \((\operatorname{variable} - \operatorname{center})^{-1}\) in the Laurent expansion at
@@ -74,14 +204,44 @@ explicit algebraic centers do not need to occur as structural factors.
 
 ### pole_order
 
-<a id="placement-placement.python.python_class.context_pole_order.fbcfe73bae51"></a>
-`Context.pole_order(input_expression, variable, center)`
-
-<a id="placement-placement.python.python_class.expression_pole_order.412f4c586190"></a>
-`Expression.pole_order(variable, center)`
-
+<a id="entry-presentation_python_series_capability_calculus_pole_order_api_analysis_session_pole_order"></a>
 <a id="placement-placement.python.python_module.module_pole_order.9ba61a8cd618"></a>
-`symi.pole_order(input_expression, variable, center)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+pole_order(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    center: ExpressionLike,
+) -> Optional[int]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_pole_order.fbcfe73bae51"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.pole_order</code></p>
+
+```python signature
+pole_order(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    center: ExpressionLike,
+) -> Optional[int]
+```
+
+</details>
+
+<a id="entry-presentation_python_series_capability_calculus_pole_order_api_expression_operations_expression_pole_order"></a>
+<a id="placement-placement.python.python_class.expression_pole_order.412f4c586190"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+pole_order(
+    variable: VariableLike,
+    center: ExpressionLike,
+) -> Optional[int]
+```
 
 
 Order of the singularity at `center`: `0` for analytic/removable points,

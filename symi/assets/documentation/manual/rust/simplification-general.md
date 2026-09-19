@@ -8,14 +8,35 @@ presentation passes are on
 
 ### simplify
 
+<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_assumptionscope_simplify_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_assumptionscope_simplify.763214b33bd0"></a>
-`symi::api::AssumptionScope — pub fn simplify(&self, target: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::AssumptionScope method</p>
 
+```rust signature
+pub fn simplify(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_expression_simplify_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_simplify.fc65f20d22e1"></a>
-`symi::api::Expression — pub fn simplify(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
 
+```rust signature
+pub fn simplify(&self) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_session_simplify_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_simplify.64a0e68b22a8"></a>
-`symi::api::Session — pub fn simplify(&self, target: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn simplify(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 
@@ -69,11 +90,24 @@ guards:
 
 ### cancel
 
+<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_expression_cancel_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_cancel.14cbf888f35c"></a>
-`symi::api::Expression — pub fn cancel(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
 
+```rust signature
+pub fn cancel(&self) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_session_cancel_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_cancel.aaaaae2b335c"></a>
-`symi::api::Session — pub fn cancel(&self, target: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn cancel(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 
@@ -82,11 +116,24 @@ polynomial GCD of numerator and denominator.
 
 ### together
 
+<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_expression_together_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_together.d506a1bfefb0"></a>
-`symi::api::Expression — pub fn together(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
 
+```rust signature
+pub fn together(&self) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_session_together_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_together.de0b5add18e1"></a>
-`symi::api::Session — pub fn together(&self, target: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn together(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 

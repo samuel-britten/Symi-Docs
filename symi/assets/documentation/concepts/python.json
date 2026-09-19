@@ -1,0 +1,1342 @@
+{
+  "schema_version": 1,
+  "language": "python",
+  "concepts": [
+    {
+      "title": "Symi language APIs",
+      "page_identifier": "introduction",
+      "page_title": "Symi language APIs",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Symi is a general-purpose computer algebra system written in Rust. It has five context-safe language surfaces:"
+    },
+    {
+      "title": "Names in each language",
+      "page_identifier": "introduction",
+      "page_title": "Symi language APIs",
+      "anchor": "names_in_each_language",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Getting started: Python",
+      "page_identifier": "getting-started-python",
+      "page_title": "Getting started: Python",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Alpha releases are published on PyPI as prebuilt wheels for CPython 3.9 or newer. Install the symi-cas distribution, then import symi:"
+    },
+    {
+      "title": "The default context and module-level functions",
+      "page_identifier": "default-context",
+      "page_title": "The default context and module-level functions",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Every operation in Symi runs against a context — the symbol table, the assumption records, and the hash-consed expression store. You can manage contexts…"
+    },
+    {
+      "title": "Functions",
+      "page_identifier": "default-context",
+      "page_title": "The default context and module-level functions",
+      "anchor": "functions",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "default-context",
+      "page_title": "The default context and module-level functions",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Object model",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Each class is named for the Symi operation vocabulary and spelled the way its host language spells a class: Python uses CapWords (Expression, Point2d),…"
+    },
+    {
+      "title": "context",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "context",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "expression",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "expression",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "matrix",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "matrix",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Geometry classes",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "geometry_classes",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "undefined_function",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "undefined_function",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Result-shape classes (WASM only)",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "result_shape_classes_wasm_only",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Three-valued logic",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "three_valued_logic",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "object-model",
+      "page_title": "Object model",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Conversions and collections",
+      "page_identifier": "conversion-rules",
+      "page_title": "Conversions and collections",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Automatic conversion is limited to values whose symbolic meaning is exact, unambiguous, context-safe, and unsurprising in the host language."
+    },
+    {
+      "title": "Expression-like values",
+      "page_identifier": "conversion-rules",
+      "page_title": "Conversions and collections",
+      "anchor": "expression_like_values",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Variable-like values",
+      "page_identifier": "conversion-rules",
+      "page_title": "Conversions and collections",
+      "anchor": "variable_like_values",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Collection categories",
+      "page_identifier": "conversion-rules",
+      "page_title": "Conversions and collections",
+      "anchor": "collection_categories",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Options",
+      "page_identifier": "conversion-rules",
+      "page_title": "Conversions and collections",
+      "anchor": "options",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Context safety",
+      "page_identifier": "context-safety",
+      "page_title": "Context safety",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "A context owns its symbols, assumptions, interned expressions, and structural objects. Rust calls this owner a Session. Every returned expression, matrix,…"
+    },
+    {
+      "title": "Diagnostics and outcomes",
+      "page_identifier": "diagnostics",
+      "page_title": "Diagnostics and outcomes",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Public failures use a shared diagnostic taxonomy:"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "diagnostics",
+      "page_title": "Diagnostics and outcomes",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Migration",
+      "page_identifier": "migration",
+      "page_title": "Migration",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Wrap the generated module with createFacade(rawModule) and use the returned facade as the default public API."
+    },
+    {
+      "title": "Python",
+      "page_identifier": "migration",
+      "page_title": "Migration",
+      "anchor": "python",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "JavaScript",
+      "page_identifier": "migration",
+      "page_title": "Migration",
+      "anchor": "javascript",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Rust",
+      "page_identifier": "migration",
+      "page_title": "Migration",
+      "anchor": "rust",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Construction and parsing",
+      "page_identifier": "construction-and-parsing",
+      "page_title": "Construction and parsing",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Build expressions, matrices, geometry values, and callable functions from exact host values or parsed text. Every value belongs to the context that created it."
+    },
+    {
+      "title": "Context lifecycle",
+      "page_identifier": "construction-and-parsing",
+      "page_title": "Construction and parsing",
+      "anchor": "context_lifecycle",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Parsing and building",
+      "page_identifier": "construction-and-parsing",
+      "page_title": "Construction and parsing",
+      "anchor": "parsing_and_building",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "construction-and-parsing",
+      "page_title": "Construction and parsing",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "construction-and-parsing",
+      "page_title": "Construction and parsing",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Serialization and output",
+      "page_identifier": "serialization-and-output",
+      "page_title": "Serialization and output",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Serialization is a lossless interchange format for supported mathematical objects. Rendering is a presentation operation and does not change the object."
+    },
+    {
+      "title": "Output and serialization",
+      "page_identifier": "serialization-and-output",
+      "page_title": "Serialization and output",
+      "anchor": "output_and_serialization",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "serialization-and-output",
+      "page_title": "Serialization and output",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "serialization-and-output",
+      "page_title": "Serialization and output",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Deferred forms",
+      "page_identifier": "deferred-forms",
+      "page_title": "Deferred forms",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Deferred forms preserve an operation symbolically until its variables, bounds, or assumptions are sufficiently known. Use execute or the corresponding eager…"
+    },
+    {
+      "title": "Unevaluated form constructors",
+      "page_identifier": "deferred-forms",
+      "page_title": "Deferred forms",
+      "anchor": "unevaluated_form_constructors",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "deferred-forms",
+      "page_title": "Deferred forms",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Evaluation and constants",
+      "page_identifier": "evaluation-and-constants",
+      "page_title": "Evaluation and constants",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Symi distinguishes construction, symbolic execution, direct eager evaluation, and host-language truth queries."
+    },
+    {
+      "title": "Constants",
+      "page_identifier": "evaluation-and-constants",
+      "page_title": "Evaluation and constants",
+      "anchor": "constants",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "evaluation-and-constants",
+      "page_title": "Evaluation and constants",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Elementary functions",
+      "page_identifier": "elementary-functions",
+      "page_title": "Elementary functions",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Elementary functions simplify when their arguments provide enough exact information."
+    },
+    {
+      "title": "Example",
+      "page_identifier": "elementary-functions",
+      "page_title": "Elementary functions",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Relations and predicates",
+      "page_identifier": "relations",
+      "page_title": "Relations and predicates",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Relations construct symbolic formulas. They are distinct from host-language truth queries."
+    },
+    {
+      "title": "Relations",
+      "page_identifier": "relations",
+      "page_title": "Relations and predicates",
+      "anchor": "relations",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "relations",
+      "page_title": "Relations and predicates",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Special functions",
+      "page_identifier": "special-functions",
+      "page_title": "Special functions",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Special functions retain their symbolic form when a closed expression is not available."
+    },
+    {
+      "title": "Gamma family",
+      "page_identifier": "special-functions",
+      "page_title": "Special functions",
+      "anchor": "gamma_family",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Generalized hypergeometric family",
+      "page_identifier": "special-functions",
+      "page_title": "Special functions",
+      "anchor": "generalized_hypergeometric_family",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Meijer G-function",
+      "page_identifier": "special-functions",
+      "page_title": "Special functions",
+      "anchor": "meijer_g_function",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Bessel, Hankel, spherical-Bessel, and Airy families",
+      "page_identifier": "special-functions",
+      "page_title": "Special functions",
+      "anchor": "bessel_hankel_spherical_bessel_and_airy_families",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Classical orthogonal polynomials",
+      "page_identifier": "special-functions",
+      "page_title": "Special functions",
+      "anchor": "classical_orthogonal_polynomials",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "special-functions",
+      "page_title": "Special functions",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "special-functions",
+      "page_title": "Special functions",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Expression methods",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Single-subject operations (transforms, calculus, solving, output) are also available directly as methods on Expression — e.simplify(),…"
+    },
+    {
+      "title": "Arithmetic",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "arithmetic",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Substitution and structure",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "substitution_and_structure",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Numeric evaluation",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "numeric_evaluation",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Equality",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "equality",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Shape queries",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "shape_queries",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Assumption queries (three-valued)",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "assumption_queries_three_valued",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Structural accessors",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "structural_accessors",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "String conversion",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "string_conversion",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "General simplification",
+      "page_identifier": "simplification-general",
+      "page_title": "General simplification",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "The general simplification ladder and the two rational-form operations it is built on. Directed algebraic rewrites are on algebraic transforms, and the…"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "simplification-general",
+      "page_title": "General simplification",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Algebraic transforms",
+      "page_identifier": "algebraic-transforms",
+      "page_title": "Algebraic transforms",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Directed algebraic rewrites change the form of an expression while preserving its value on the documented domain. Each operation applies one named…"
+    },
+    {
+      "title": "Algebraic form changes",
+      "page_identifier": "algebraic-transforms",
+      "page_title": "Algebraic transforms",
+      "anchor": "algebraic_form_changes",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "algebraic-transforms",
+      "page_title": "Algebraic transforms",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Trigonometric and complex rewrites",
+      "page_identifier": "trigonometric-complex-rewrites",
+      "page_title": "Trigonometric and complex rewrites",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Trigonometric, logarithmic, exponential, and complex rewrites are separated from general simplification because their identities depend on domains and branch…"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "trigonometric-complex-rewrites",
+      "page_title": "Trigonometric and complex rewrites",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Specialized canonical forms",
+      "page_identifier": "specialized-canonical-forms",
+      "page_title": "Specialized canonical forms",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "These transformations have a fixed normal-form contract: each one produces a determined shape and never runs the heuristic search used by simplify. Use them…"
+    },
+    {
+      "title": "Canonical presentation passes",
+      "page_identifier": "specialized-canonical-forms",
+      "page_title": "Specialized canonical forms",
+      "anchor": "canonical_presentation_passes",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "specialized-canonical-forms",
+      "page_title": "Specialized canonical forms",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Calculus",
+      "page_identifier": "calculus",
+      "page_title": "Calculus",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Calculus follows a uniform construct-versus-evaluate model; the summary table is in Evaluation and constants. Every variable parameter accepts a name or a…"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "calculus",
+      "page_title": "Calculus",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "calculus",
+      "page_title": "Calculus",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Series and residues",
+      "page_identifier": "series",
+      "page_title": "Series and residues",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Truncated Taylor expansion about expansion_point, keeping terms of degree strictly less than order (the remainder is O((x-a)^{\\operatorname{order}}). Returns…"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "series",
+      "page_title": "Series and residues",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Integral transforms",
+      "page_identifier": "integral-transforms",
+      "page_title": "Integral transforms",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "All four entries are eager dispatchers: a table of closed-form atoms fires first, then algebraic rules (linearity, shifts, scaling, derivative, convolution),…"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "integral-transforms",
+      "page_title": "Integral transforms",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Solving",
+      "page_identifier": "solving",
+      "page_title": "Solving",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Solve an equation (an equal node, or an expression implicitly equated to zero) for variable, returning a list of solutions. Solutions outside the solver&#39;s…"
+    },
+    {
+      "title": "Real quantifier elimination and semialgebraic solving",
+      "page_identifier": "solving",
+      "page_title": "Solving",
+      "anchor": "real_quantifier_elimination_and_semialgebraic_solving",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "solving",
+      "page_title": "Solving",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "solving",
+      "page_title": "Solving",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Differential and recurrence equations",
+      "page_identifier": "differential-equations",
+      "page_title": "Differential and recurrence equations",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "The unknown function is written with undefined_function, and its derivatives with the derivative method on it:"
+    },
+    {
+      "title": "Partial differential equation requests and point symmetries",
+      "page_identifier": "differential-equations",
+      "page_title": "Differential and recurrence equations",
+      "anchor": "partial_differential_equation_requests_and_point_symmetries",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Optimization",
+      "page_identifier": "optimization",
+      "page_title": "Optimization",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Local symbolic optimization finds critical points of an objective and classifies them by second-order conditions. The layer is local and exact — it finds and…"
+    },
+    {
+      "title": "Result accessors (WASM)",
+      "page_identifier": "optimization",
+      "page_title": "Optimization",
+      "anchor": "result_accessors_wasm",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Global optimization on semialgebraic sets",
+      "page_identifier": "optimization",
+      "page_title": "Optimization",
+      "anchor": "global_optimization_on_semialgebraic_sets",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "optimization",
+      "page_title": "Optimization",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "optimization",
+      "page_title": "Optimization",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Polynomial queries",
+      "page_identifier": "polynomials",
+      "page_title": "Polynomial queries",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "These take ordinary expressions plus a variable name; the named variable becomes the main polynomial variable and every other free variable rides along…"
+    },
+    {
+      "title": "Gröbner bases and ideals",
+      "page_identifier": "polynomials",
+      "page_title": "Polynomial queries",
+      "anchor": "gr_bner_bases_and_ideals",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Order change and implicitisation",
+      "page_identifier": "polynomials",
+      "page_title": "Polynomial queries",
+      "anchor": "order_change_and_implicitisation",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "polynomials",
+      "page_title": "Polynomial queries",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "polynomials",
+      "page_title": "Polynomial queries",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Matrix construction and access",
+      "page_identifier": "matrix-construction",
+      "page_title": "Matrix construction and access",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Construct matrices from ordered rows or from identity, zero, and diagonal families. Shape and entry access preserve row-major ordering."
+    },
+    {
+      "title": "Constructors",
+      "page_identifier": "matrix-construction",
+      "page_title": "Matrix construction and access",
+      "anchor": "constructors",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Shape and access",
+      "page_identifier": "matrix-construction",
+      "page_title": "Matrix construction and access",
+      "anchor": "shape_and_access",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "matrix-construction",
+      "page_title": "Matrix construction and access",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "matrix-construction",
+      "page_title": "Matrix construction and access",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Linear algebra",
+      "page_identifier": "linear-algebra",
+      "page_title": "Linear algebra",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Matrix arithmetic and linear algebra operations are exact symbolic operations."
+    },
+    {
+      "title": "Arithmetic",
+      "page_identifier": "linear-algebra",
+      "page_title": "Linear algebra",
+      "anchor": "arithmetic",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Matrix assumptions",
+      "page_identifier": "linear-algebra",
+      "page_title": "Linear algebra",
+      "anchor": "matrix_assumptions",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "linear-algebra",
+      "page_title": "Linear algebra",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "linear-algebra",
+      "page_title": "Linear algebra",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Matrix canonical forms",
+      "page_identifier": "matrix-canonical-forms",
+      "page_title": "Matrix canonical forms",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Canonical and integer forms return structured decompositions when metadata such as transformations, rank, pivots, or invariant factors is part of the result.…"
+    },
+    {
+      "title": "Canonical and integer forms",
+      "page_identifier": "matrix-canonical-forms",
+      "page_title": "Matrix canonical forms",
+      "anchor": "canonical_and_integer_forms",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "matrix-canonical-forms",
+      "page_title": "Matrix canonical forms",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "matrix-canonical-forms",
+      "page_title": "Matrix canonical forms",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Matrix functions and Jordan form",
+      "page_identifier": "matrix-functions",
+      "page_title": "Matrix functions and Jordan form",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Matrix exponential, logarithm, trigonometric, hyperbolic, and Jordan operations are exact symbolic operations."
+    },
+    {
+      "title": "Example",
+      "page_identifier": "matrix-functions",
+      "page_title": "Matrix functions and Jordan form",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "matrix-functions",
+      "page_title": "Matrix functions and Jordan form",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Cylindrical algebraic decomposition",
+      "page_identifier": "cad",
+      "page_title": "Cylindrical algebraic decomposition",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "A CylindricalAlgebraicDecomposition partitions \\mathbb{R}^n into finitely many cells on each of which every input polynomial has constant sign, with an exact…"
+    },
+    {
+      "title": "Construction",
+      "page_identifier": "cad",
+      "page_title": "Cylindrical algebraic decomposition",
+      "anchor": "construction",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Accessors",
+      "page_identifier": "cad",
+      "page_title": "Cylindrical algebraic decomposition",
+      "anchor": "accessors",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "cad",
+      "page_title": "Cylindrical algebraic decomposition",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Sets",
+      "page_identifier": "sets",
+      "page_title": "Sets",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Sets are ordinary Expression values; constructors route through auto-simplification (degenerate intervals collapse, unions splice and deduplicate, etc.). Take…"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "sets",
+      "page_title": "Sets",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Boolean algebra and logic",
+      "page_identifier": "logic",
+      "page_title": "Boolean algebra and logic",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "See Evaluation and constants for the distinction between symbolic relations, execute, logical simplification, and the exact three-valued host query."
+    },
+    {
+      "title": "Example",
+      "page_identifier": "logic",
+      "page_title": "Boolean algebra and logic",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Logical transforms",
+      "page_identifier": "logical-transforms",
+      "page_title": "Logical transforms",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Logical normal forms and Boolean simplification operate on symbolic relations. They do not coerce an unknown proposition into a host Boolean."
+    },
+    {
+      "title": "Normal forms and Boolean simplification",
+      "page_identifier": "logical-transforms",
+      "page_title": "Logical transforms",
+      "anchor": "normal_forms_and_boolean_simplification",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Directed basis conversion",
+      "page_identifier": "logical-transforms",
+      "page_title": "Logical transforms",
+      "anchor": "directed_basis_conversion",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Integer number theory",
+      "page_identifier": "number-theory",
+      "page_title": "Integer number theory",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "All functions take and return Expression objects holding integer leaves, so arbitrary precision flows through the existing machinery; passing a non-integer…"
+    },
+    {
+      "title": "Diophantine equations",
+      "page_identifier": "number-theory",
+      "page_title": "Integer number theory",
+      "anchor": "diophantine_equations",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "number-theory",
+      "page_title": "Integer number theory",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Combinatorics",
+      "page_identifier": "combinatorics",
+      "page_title": "Combinatorics",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Same convention as integer number theory: integer-leaf expressions in, integer-leaf expressions out; non-integer input raises, as do arguments outside each…"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "combinatorics",
+      "page_title": "Combinatorics",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Statistics",
+      "page_identifier": "statistics",
+      "page_title": "Statistics",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Symbolic probability distributions (univariate first tier) and random-variable algebra. A distribution node names a parametrised family; a random variable…"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "statistics",
+      "page_title": "Statistics",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Probability distribution registry",
+      "page_identifier": "distribution-reference",
+      "page_title": "Probability distribution registry",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "The table below lists every distribution family accepted by context.distribution. Parameters are ordered exactly as shown. An entry marked unevaluated remains…"
+    },
+    {
+      "title": "Geometry",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Exact symbolic plane geometry. Coordinates, lengths, and angles are Expression values."
+    },
+    {
+      "title": "Constructors",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "constructors",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "point_2d methods",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "point_2d_methods",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "segment_2d methods",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "segment_2d_methods",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "polygon_2d and triangle_2d",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "polygon_2d_and_triangle_2d",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "circle_2d methods",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "circle_2d_methods",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Exact boundary intersections",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "exact_boundary_intersections",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Output",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "output",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "geometry",
+      "page_title": "Geometry",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Vector calculus",
+      "page_identifier": "vector-calculus",
+      "page_title": "Vector calculus",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Coordinates are passed as a list of variable names; vector fields as a list of component expressions in the same order. Empty variable lists and…"
+    },
+    {
+      "title": "Example",
+      "page_identifier": "vector-calculus",
+      "page_title": "Vector calculus",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "vector-calculus",
+      "page_title": "Vector calculus",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Structured results",
+      "page_identifier": "structured-results",
+      "page_title": "Structured results",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Some operations return a result record rather than one expression. A record keeps the mathematical value separate from information needed to interpret it:…"
+    },
+    {
+      "title": "Outcome records",
+      "page_identifier": "structured-results",
+      "page_title": "Structured results",
+      "anchor": "outcome_records",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Ordered components and paired fields",
+      "page_identifier": "structured-results",
+      "page_title": "Structured results",
+      "anchor": "ordered_components_and_paired_fields",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "A result-handling workflow",
+      "page_identifier": "structured-results",
+      "page_title": "Structured results",
+      "anchor": "a_result_handling_workflow",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Assumptions",
+      "page_identifier": "assumptions",
+      "page_title": "Assumptions",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Assumptions are typed, canonical propositions over scalar expressions. They are kept separately from the legacy per-symbol compatibility record, so compound…"
+    },
+    {
+      "title": "Proposition builders",
+      "page_identifier": "assumptions",
+      "page_title": "Assumptions",
+      "anchor": "proposition_builders",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Matrix proposition builders",
+      "page_identifier": "assumptions",
+      "page_title": "Assumptions",
+      "anchor": "matrix_proposition_builders",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Scalar classification",
+      "page_identifier": "assumptions",
+      "page_title": "Assumptions",
+      "anchor": "scalar_classification",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Proposition objects",
+      "page_identifier": "assumptions",
+      "page_title": "Assumptions",
+      "anchor": "proposition_objects",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Durable contexts and scopes",
+      "page_identifier": "assumptions",
+      "page_title": "Assumptions",
+      "anchor": "durable_contexts_and_scopes",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "assumptions",
+      "page_title": "Assumptions",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Zero equivalence",
+      "page_identifier": "zero-equivalence",
+      "page_title": "Zero equivalence",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Proves whether an expression is zero at every point where the input expression is defined within the declared region. &quot;true&quot; is an exact theorem…"
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "zero-equivalence",
+      "page_title": "Zero equivalence",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Complete placement index",
+      "page_identifier": "api-reference",
+      "page_title": "Complete placement index",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Decompose real space into sign-invariant cells for the given polynomials, in the given variable order."
+    },
+    {
+      "title": "Category index",
+      "page_identifier": "category-index",
+      "page_title": "Category index",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": ""
+    },
+    {
+      "title": "Alphabetical index",
+      "page_identifier": "alphabetical-index",
+      "page_title": "Alphabetical index",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": ""
+    },
+    {
+      "title": "Owner index",
+      "page_identifier": "owner-index",
+      "page_title": "Owner index",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": ""
+    },
+    {
+      "title": "Result-type index",
+      "page_identifier": "result-type-index",
+      "page_title": "Result-type index",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": ""
+    }
+  ]
+}

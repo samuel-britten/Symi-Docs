@@ -54,8 +54,13 @@ API. Each call returns a new handle to the same underlying context.
 
 ### clear_assumptions
 
+<a id="entry-presentation_kotlin_default_context_capability_contexts_clear_assumptions_api_session_clear_assumptions"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_clearassumptions.5fa18574aca9"></a>
-`UniffiSession.clearAssumptions(variable: kotlin.String): Unit`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun clearAssumptions(variable: kotlin.String): Unit
+```
 
 
 Reset one symbol's assumptions to the default (complex domain, every property
@@ -66,8 +71,13 @@ a re-declaration you actually intend.
 
 ### assumptions_of
 
+<a id="entry-presentation_kotlin_default_context_capability_contexts_assumptions_of_api_session_assumptions_of"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_assumptionsof.2819e73538d3"></a>
-`UniffiSession.assumptionsOf(variable: kotlin.String): List<UniffiAssumptionProposition>`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun assumptionsOf(variable: kotlin.String): List<UniffiAssumptionProposition>
+```
 
 
 Return the symbol's current assumptions as a native Python mapping or
@@ -78,8 +88,13 @@ is one of `complex`, `real`, `rational`, `integer`, `natural`, or
 
 ### interner_length
 
+<a id="entry-presentation_kotlin_default_context_capability_contexts_interner_length_api_session_interner_length"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_internerlength.230c51d4351f"></a>
-`UniffiSession.internerLength(): kotlin.ULong`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun internerLength(): kotlin.ULong
+```
 
 
 Number of live expressions currently interned in the context. Dead entries

@@ -31,14 +31,41 @@ because no finite truncation of the principal part is correct.
 
 ### residue
 
-<a id="placement-placement.wasm.wasm_class.context_residue.d125c14f4192"></a>
-Raw WebAssembly: `pub fn residue(&self, input_expression: &Expression, variable: &str, center: &Expression) -> Result<Expression, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.expression_residue.8d5e9c55a6de"></a>
-Raw WebAssembly: `pub fn residue(&self, variable: &str, center: &Expression) -> Result<Expression, JsError>`
-
+<a id="entry-presentation_wasm_series_capability_calculus_residue_api_analysis_session_residue"></a>
 <a id="placement-placement.wasm.wasm_module.module_residue.7086b98f8e0d"></a>
-Raw WebAssembly: `fn residue(input_expression: &Expression, variable: &str, center: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+residue(
+    input_expression: Expression,
+    variable: string,
+    center: Expression,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_residue.d125c14f4192"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.residue</code></p>
+
+```typescript signature
+residue(
+    input_expression: Expression,
+    variable: string,
+    center: Expression,
+): Expression
+```
+
+</details>
+
+<a id="entry-presentation_wasm_series_capability_calculus_residue_api_expression_operations_expression_residue"></a>
+<a id="placement-placement.wasm.wasm_class.expression_residue.8d5e9c55a6de"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+residue(variable: string, center: Expression): Expression
+```
 
 
 Coefficient of \((\operatorname{variable} - \operatorname{center})^{-1}\) in the Laurent expansion at
@@ -68,73 +95,164 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
-<a id="placement-placement.wasm.wasm_class.assumptionscope_taylorseries.c3cad65c2ce1"></a>
-### AssumptionScope.taylorSeries
+### laurentSeries
 
-`pub fn taylor_series(&self, input_expression: &Expression, variable: &str, expansion_point: &Expression, truncation_order: usize) -> Result<Expression, JsError>`
+<a id="entry-presentation_wasm_series_capability_calculus_laurent_series_api_session_laurent_series"></a>
+<a id="placement-placement.wasm.wasm_module.module_laurentseries.0b961aee8cd4"></a>
+<p class="symi-entry-owner">Default context</p>
 
-Returns `Result<expression, JsError>`.
+```typescript signature
+laurentSeries(
+    input_expression: Expression,
+    variable: string,
+    center: Expression,
+    order: number,
+): Expression
+```
+
+Truncated Laurent expansion at `center`: every \((\operatorname{variable} - \operatorname{center})^k\) term with \(-m \le k < \operatorname{order}\), where `m` is the pole order. Analytic points degrade to the Taylor expansion. At an essential singularity (where `pole_order` declines) the result is an unevaluated `series_unevaluated(...)` placeholder, because no finite truncation of the principal part is correct.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_laurentseries.e8316922ebf6"></a>
-### Context.laurentSeries
+<p class="symi-entry-owner">Explicit context: <code>Context.laurentSeries</code></p>
 
-`pub fn laurent_series(&self, input_expression: &Expression, variable: &str, center: &Expression, order: usize) -> Result<Expression, JsError>`
+```typescript signature
+laurentSeries(
+    input_expression: Expression,
+    variable: string,
+    center: Expression,
+    order: number,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### laurentSeries
+
+<a id="entry-presentation_wasm_series_capability_calculus_laurent_series_api_expression_laurent_series"></a>
+<a id="placement-placement.wasm.wasm_class.expression_laurentseries.d0f2974aa39d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+laurentSeries(
+    variable: string,
+    center: Expression,
+    order: number,
+): Expression
+```
+
+Truncated Laurent expansion at `center`: every \((\operatorname{variable} - \operatorname{center})^k\) term with \(-m \le k < \operatorname{order}\), where `m` is the pole order. Analytic points degrade to the Taylor expansion. At an essential singularity (where `pole_order` declines) the result is an unevaluated `series_unevaluated(...)` placeholder, because no finite truncation of the principal part is correct.
+
+### maclaurinSeries
+
+<a id="entry-presentation_wasm_series_capability_calculus_maclaurin_series_api_analysis_session_maclaurin_series"></a>
+<a id="placement-placement.wasm.wasm_module.module_maclaurinseries.607a15898ae4"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+maclaurinSeries(
+    input_expression: Expression,
+    variable: string,
+    order: number,
+): Expression
+```
+
+`taylor_series` specialised to expansion point 0.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_maclaurinseries.9c0c4610a21a"></a>
-### Context.maclaurinSeries
+<p class="symi-entry-owner">Explicit context: <code>Context.maclaurinSeries</code></p>
 
-`pub fn maclaurin_series(&self, input_expression: &Expression, variable: &str, order: usize) -> Result<Expression, JsError>`
+```typescript signature
+maclaurinSeries(
+    input_expression: Expression,
+    variable: string,
+    order: number,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### maclaurinSeries
+
+<a id="entry-presentation_wasm_series_capability_calculus_maclaurin_series_api_expression_operations_expression_maclaurin_series"></a>
+<a id="placement-placement.wasm.wasm_class.expression_maclaurinseries.61e0610232f5"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+maclaurinSeries(variable: string, order: number): Expression
+```
+
+`taylor_series` specialised to expansion point 0.
+
+### taylorSeries
+
+<a id="entry-presentation_wasm_series_capability_calculus_taylor_series_api_assumptionscope_taylor_series"></a>
+<a id="placement-placement.wasm.wasm_class.assumptionscope_taylorseries.c3cad65c2ce1"></a>
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+```typescript signature
+taylorSeries(
+    input_expression: Expression,
+    variable: string,
+    expansion_point: Expression,
+    truncation_order: number,
+): Expression
+```
+
+Compute a Taylor polynomial using the scope's immutable assumptions.
+
+### taylorSeries
+
+<a id="entry-presentation_wasm_series_capability_calculus_taylor_series_api_session_taylor_series"></a>
+<a id="placement-placement.wasm.wasm_module.module_taylorseries.e1b8fff7e6aa"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+taylorSeries(
+    input_expression: Expression,
+    variable: string,
+    expansion_point: Expression,
+    order: number,
+): Expression
+```
+
+Truncated Taylor expansion about `expansion_point`, keeping terms of degree strictly less than `order` (the remainder is \(O((x-a)^{\operatorname{order}})\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_taylorseries.2224e0e71344"></a>
-### Context.taylorSeries
+<p class="symi-entry-owner">Explicit context: <code>Context.taylorSeries</code></p>
 
-`pub fn taylor_series(&self, input_expression: &Expression, variable: &str, expansion_point: &Expression, order: usize) -> Result<Expression, JsError>`
+```typescript signature
+taylorSeries(
+    input_expression: Expression,
+    variable: string,
+    expansion_point: Expression,
+    order: number,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
 
-<a id="placement-placement.wasm.wasm_class.expression_laurentseries.d0f2974aa39d"></a>
-### Expression.laurentSeries
+### taylorSeries
 
-`pub fn laurent_series(&self, variable: &str, center: &Expression, order: usize) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_maclaurinseries.61e0610232f5"></a>
-### Expression.maclaurinSeries
-
-`pub fn maclaurin_series(&self, variable: &str, order: usize) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
+<a id="entry-presentation_wasm_series_capability_calculus_taylor_series_api_expression_taylor_series"></a>
 <a id="placement-placement.wasm.wasm_class.expression_taylorseries.34401ae1c495"></a>
-### Expression.taylorSeries
+<p class="symi-entry-owner">Expression method</p>
 
-`pub fn taylor_series(&self, variable: &str, expansion_point: &Expression, order: usize) -> Result<Expression, JsError>`
+```typescript signature
+taylorSeries(
+    variable: string,
+    expansion_point: Expression,
+    order: number,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_laurentseries.0b961aee8cd4"></a>
-### module.laurentSeries
-
-`fn laurent_series(input_expression: &Expression, variable: &str, center: &Expression, order: usize) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_maclaurinseries.607a15898ae4"></a>
-### module.maclaurinSeries
-
-`fn maclaurin_series(input_expression: &Expression, variable: &str, order: usize) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_taylorseries.e1b8fff7e6aa"></a>
-### module.taylorSeries
-
-`fn taylor_series(input_expression: &Expression, variable: &str, expansion_point: &Expression, order: usize) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
+Truncated Taylor expansion about `expansion_point`, keeping terms of degree strictly less than `order` (the remainder is \(O((x-a)^{\operatorname{order}})\).
 

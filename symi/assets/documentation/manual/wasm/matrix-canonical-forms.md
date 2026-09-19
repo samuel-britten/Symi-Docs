@@ -82,8 +82,13 @@ Returns the free rank and nontrivial torsion invariant factors of
 
 ### smith
 
+<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_smith_api_results_smithnormalformdecomposition_smith"></a>
 <a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_smith.a82ae363b1ec"></a>
-Raw WebAssembly: `pub fn smith(&self) -> Matrix`
+<p class="symi-entry-owner">SmithNormalFormDecomposition property</p>
+
+```typescript signature
+readonly smith: Matrix
+```
 
 
 ### row_transformation
@@ -134,18 +139,16 @@ these form the canonical basis of `M Z^n`.
 
 ### hermite
 
+<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_hermite_api_results_hermitenormalformdecomposition_hermite"></a>
 <a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_hermite.f2a2b5ea8b10"></a>
-Raw WebAssembly: `pub fn hermite(&self) -> Matrix`
+<p class="symi-entry-owner">HermiteNormalFormDecomposition property</p>
+
+```typescript signature
+readonly hermite: Matrix
+```
 
 
 ### transformation
-
-<a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_transformation.d7078a78935f"></a>
-Raw WebAssembly: `pub fn transformation(&self) -> Matrix`
-
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationcanonicalizationresult_transformation.4b578977217f"></a>
-Raw WebAssembly: `pub fn transformation(&self) -> Option<PartialDifferentialEquationTransformationResult>`
-
 
 ### pivot_columns
 
@@ -162,24 +165,63 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
+### columnHermiteNormalForm
+
+<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_column_hermite_normal_form_api_matrix_operations_matrix_column_hermite_normal_form"></a>
 <a id="placement-placement.wasm.wasm_class.matrix_columnhermitenormalform.d56e378a6a37"></a>
-### Matrix.columnHermiteNormalForm
+<p class="symi-entry-owner">Matrix method</p>
 
-`pub fn column_hermite_normal_form(&self) -> Result<HermiteNormalFormDecomposition, JsError>`
+```typescript signature
+columnHermiteNormalForm(): HermiteNormalFormDecomposition
+```
 
-Returns `Result<hermite_normal_form_decomposition, JsError>`.
+The transpose-dual column form, returning `H`, a unimodular `V` satisfying \(M V = H\), the rank, and pivot metadata. Notes: WASM returns a `hermite_normal_form_decomposition` object.
 
+### hermiteNormalForm
+
+<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_hermite_normal_form_api_matrix_operations_matrix_hermite_normal_form"></a>
 <a id="placement-placement.wasm.wasm_class.matrix_hermitenormalform.5ca2e19e0780"></a>
-### Matrix.hermiteNormalForm
+<p class="symi-entry-owner">Matrix method</p>
 
-`pub fn hermite_normal_form(&self) -> Result<HermiteNormalFormDecomposition, JsError>`
+```typescript signature
+hermiteNormalForm(): HermiteNormalFormDecomposition
+```
 
-Returns `Result<hermite_normal_form_decomposition, JsError>`.
+Returns the canonical row-oriented Hermite normal form `H`, a unimodular transformation `U` satisfying \(U M = H\), the rank, and the strictly increasing pivot-column indices. Entries must be exact integers. Every result is verified for Hermite shape, the certificate identity, and unimodularity before return. Notes: WASM returns a `hermite_normal_form_decomposition` object carrying the same four results as getters.
 
+### smithNormalForm
+
+<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_smith_normal_form_api_matrix_operations_matrix_smith_normal_form"></a>
 <a id="placement-placement.wasm.wasm_class.matrix_smithnormalform.6d537d6b9035"></a>
-### Matrix.smithNormalForm
+<p class="symi-entry-owner">Matrix method</p>
 
-`pub fn smith_normal_form(&self) -> Result<SmithNormalFormDecomposition, JsError>`
+```typescript signature
+smithNormalForm(): SmithNormalFormDecomposition
+```
 
-Returns `Result<smith_normal_form_decomposition, JsError>`.
+Returns the canonical integer Smith normal form `D`, unimodular transformations `U` and `V` satisfying \(U M V = D\), the rank, and the invariant factors including trailing zeros. The nonnegative positive prefix is divisibility-ordered. Every result is verified for diagonal shape, divisibility, the exact certificate, and unimodularity of both transformations before return. Notes: WASM returns a `smith_normal_form_decomposition` object carrying the same results as getters.
+
+### transformation
+
+<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_transformation_api_results_hermitenormalformdecomposition_transformation"></a>
+<a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_transformation.d7078a78935f"></a>
+<p class="symi-entry-owner">HermiteNormalFormDecomposition property</p>
+
+```typescript signature
+readonly transformation: Matrix
+```
+
+The unimodular transformation `U` satisfying `U * matrix == H`.
+
+### transformation
+
+<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_transformation_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_transformation"></a>
+<a id="placement-placement.wasm.wasm_class.partialdifferentialequationcanonicalizationresult_transformation.4b578977217f"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationCanonicalizationResult property</p>
+
+```typescript signature
+readonly transformation: PartialDifferentialEquationTransformationResult | undefined
+```
+
+The verified coordinate transformation of a successful canonicalization.
 

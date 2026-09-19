@@ -1,101 +1,189 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="kotlin">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>General simplification — Symi Kotlin documentation</title>
+        <meta name="description" content="The general simplification ladder and the two rational-form operations it is built on. Directed algebraic rewrites are on algebraic transforms, and the…" />
+        <link rel="canonical" href="/symi/kotlin/simplification-general/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="simplification-general" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/kotlin/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the Kotlin documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">Kotlin</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: Kotlin"><span>Kotlin</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/simplification-general/" data-language="python" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/simplification-general/" data-language="wasm" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/simplification-general/" data-language="kotlin" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/simplification-general/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/simplification-general/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/getting-started-kotlin/">Getting started: Kotlin</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/default-context/">The default context and module-level functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-default-context" data-page="default-context"><span class="symi-visually-hidden">Show entries in The default context and module-level functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-default-context" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/context-safety/">Context safety</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/simplification-general/" aria-current="page">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Hide entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/kotlin/simplification-general/#entry-presentation_kotlin_simplification_general_capability_expression_transformations_cancel_api_session_cancel"><code>cancel</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/simplification-general/#entry-presentation_kotlin_simplification_general_capability_expression_transformations_cancel_api_expression_cancel"><code>cancel</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/simplification-general/#entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_session_simplify"><code>simplify</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/simplification-general/#entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_expression_simplify"><code>simplify</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/simplification-general/#entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify"><code>simplify</code> <span class="symi-nav-entry-owner">UniffiAssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/simplification-general/#entry-presentation_kotlin_simplification_general_capability_expression_transformations_together_api_session_together"><code>together</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/simplification-general/#entry-presentation_kotlin_simplification_general_capability_expression_transformations_together_api_expression_together"><code>together</code> <span class="symi-nav-entry-owner">Expression method</span></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/specialized-canonical-forms/">Specialized canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-specialized-canonical-forms" data-page="specialized-canonical-forms"><span class="symi-visually-hidden">Show entries in Specialized canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-specialized-canonical-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/integral-transforms/">Integral transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-integral-transforms" data-page="integral-transforms"><span class="symi-visually-hidden">Show entries in Integral transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-integral-transforms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/logical-transforms/">Logical transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logical-transforms" data-page="logical-transforms"><span class="symi-visually-hidden">Show entries in Logical transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logical-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/zero-equivalence/">Zero equivalence</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-zero-equivalence" data-page="zero-equivalence"><span class="symi-visually-hidden">Show entries in Zero equivalence</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-zero-equivalence" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/kotlin/introduction/">Kotlin</a></li><li>Simplification and rewriting</li><li><span aria-current="page">General simplification</span></li></ol></nav>
+                
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#simplify" data-outline-target="simplify">simplify</a></li><li class="symi-outline-depth-3"><a href="#cancel" data-outline-target="cancel">cancel</a></li><li class="symi-outline-depth-3"><a href="#together" data-outline-target="together">together</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">General simplification</h1>
+<p>The general simplification ladder and the two rational-form operations it is
+built on. Directed algebraic rewrites are on
+<a href="/symi/kotlin/algebraic-transforms/">algebraic transforms</a>, and the fixed-contract
+presentation passes are on
+<a href="/symi/kotlin/specialized-canonical-forms/">specialized canonical forms</a>.</p>
+<h3 id="simplify">simplify<a class="symi-heading-permalink" href="#simplify" aria-label="Link to this section: simplify">#</a></h3>
+<p><a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_session_simplify"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_simplify.e3d0c73b4f6a"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">simplify</span><span class="token punctuation">(</span>target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_expression_simplify"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_simplify.4ca432c39c20"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">simplify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_simplify.22a5ee0da4a6"></a></p>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">simplify</span><span class="token punctuation">(</span>target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>The full heuristic simplification ladder: weighted-complexity-guided search
+over rational normal form, radical denesting, trigonometric/log rewrites,
+parity and absolute-value rules. The result is never accepted if its weighted
+complexity grows. Principal square roots extract structural square content
+only under a realness proof: <code>sqrt(x^2)</code> becomes <code>abs(x)</code> for real <code>x</code>, while
+<code>sqrt(z^2)</code> remains unchanged for a default-complex <code>z</code>.</p>
+<p>Declared symbol assumptions also enable a small set of branch-aware principal-power reductions.
+For a negative real <code>z</code>, <code>sqrt(1 / z)</code> normalizes to <code>-z ** (-1 / 2)</code>; for a strictly positive
+factor <code>p</code>, <code>(u * p) ** w</code> may extract <code>p ** w</code>; and a declared-integer exponent distributes over
+a product. Each rule declines without its exact guard. <code>abs(a + i*b)</code> can reduce through exact,
+wrapper-free Cartesian components only when its squared norm simplifies to a smaller form, such as
+<code>abs(3 - sqrt(7) + i*sqrt(6*sqrt(7) - 15)) == 1</code>.</p>
+<h4 id="radicals_and_perfect_powers">Radicals and perfect powers<a class="symi-heading-permalink" href="#radicals_and_perfect_powers" aria-label="Link to this section: Radicals and perfect powers">#</a></h4>
+<p>These four rules are applied by ordinary construction, so they hold for every
+expression the library builds, not only for the results of <code>simplify</code>.</p>
+<p>A <strong>positive rational base under a rational exponent</strong> has its perfect-power
+content removed exactly whenever the degree of that content divides the
+exponent&#39;s reduced denominator. So <code>991026973 ** Fraction(1, 6)</code> becomes
+<code>sqrt(997)</code>, because <code>991026973 = 997^3</code> and <code>3</code> divides <code>6</code>; the base is never
+factored, only exact integer roots of the degrees the denominator admits are
+tried. A rational base reduces only when its numerator and denominator are both
+exact roots of the same degree. Content whose degree does not divide the
+denominator is left to the ordinary surd canonicalizer, so <code>sqrt(8)</code> is still
+<code>2*sqrt(2)</code>. Negative and non-real bases are excluded: <code>(-8) ** Fraction(1, 3)</code>
+stays a principal power, because extracting an odd perfect power from a
+negative base does not preserve the principal argument.</p>
+<p>An <strong>expanded binomial square</strong> — a three-term sum such as <code>1 + 4*sqrt(r) + 4*r</code>
+— is recognised only through an exact replayed witness: a candidate binomial is
+built from the square roots of two of the terms and is accepted only when
+expanding its square reproduces the original sum exactly. Nothing is matched by
+pattern, so a middle term that differs by one is refused rather than repaired.</p>
+<p>The witness proves squareness, not a branch. Its two consumers carry separate
+guards:</p>
+<ul>
+<li>under a <strong>square root</strong>, <code>sqrt(u^2)</code> returns <code>abs(u)</code> for a witness proved
+real, and the ordinary exact sign procedure then folds the absolute value
+when the sign is decided; and</li>
+<li>under <strong>any other exponent</strong>, <code>(u^2) ** a</code> becomes <code>u ** (2*a)</code> only for a
+witness proved <em>strictly positive</em>, because the principal-power composition
+law is available only on the positive real axis. A real witness of unknown
+sign reaches the absolute value but not the nested power.</li>
+</ul>
+<h3 id="cancel">cancel<a class="symi-heading-permalink" href="#cancel" aria-label="Link to this section: cancel">#</a></h3>
+<p><a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_cancel_api_session_cancel"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_cancel.6ee6797ea13e"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">cancel</span><span class="token punctuation">(</span>target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_cancel_api_expression_cancel"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_cancel.6e7b38c5b929"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Rational normal form: write as a single fraction and divide out the
+polynomial GCD of numerator and denominator.</p>
+<h3 id="together">together<a class="symi-heading-permalink" href="#together" aria-label="Link to this section: together">#</a></h3>
+<p><a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_together_api_session_together"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_together.acdc6fd9ec58"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">together</span><span class="token punctuation">(</span>target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_together_api_expression_together"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_together.3b9e22c0006a"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">together</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Combine a sum of fractions over a common denominator. On Symi&#39;s
+representation <code>together</code> and <code>cancel</code> coincide; both names exist because
+they are distinct user intents.</p>
+<h2 id="example">Example<a class="symi-heading-permalink" href="#example" aria-label="Link to this section: Example">#</a></h2>
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Simplification and rewriting</h2><ul class="symi-related-list"><li><a href="/symi/kotlin/expressions/">Expression methods</a></li><li><a href="/symi/kotlin/algebraic-transforms/">Algebraic transforms</a></li><li><a href="/symi/kotlin/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a></li><li><a href="/symi/kotlin/specialized-canonical-forms/">Specialized canonical forms</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/kotlin/expressions/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Expression methods</span></a><a class="symi-pager-link symi-pager-next" href="/symi/kotlin/algebraic-transforms/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Algebraic transforms</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · Kotlin</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#simplify" data-outline-target="simplify">simplify</a></li><li class="symi-outline-depth-3"><a href="#cancel" data-outline-target="cancel">cancel</a></li><li class="symi-outline-depth-3"><a href="#together" data-outline-target="together">together</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

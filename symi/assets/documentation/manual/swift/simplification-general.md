@@ -8,14 +8,29 @@ presentation passes are on
 
 ### simplify
 
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_simplify.7723216756b6"></a>
-`UniffiAssumptionScope.simplify(target: UniffiExpression) -> UniffiExpression`
-
-<a id="placement-placement.swift.swift_object.uniffiexpression_simplify.981c0cc8505d"></a>
-`UniffiExpression.simplify() -> UniffiExpression`
-
+<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_simplify_api_session_simplify"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_simplify.809faad16187"></a>
-`UniffiSession.simplify(target: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func simplify(target: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_simplify_api_expression_simplify"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_simplify.981c0cc8505d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func simplify() -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_simplify.7723216756b6"></a>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+```swift signature
+func simplify(target: UniffiExpression) -> UniffiExpression
+```
 
 
 
@@ -69,11 +84,21 @@ guards:
 
 ### cancel
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_cancel.602b185ecf1a"></a>
-`UniffiExpression.cancel() -> UniffiExpression`
-
+<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_cancel_api_session_cancel"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_cancel.1ced49e0fc6d"></a>
-`UniffiSession.cancel(target: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func cancel(target: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_cancel_api_expression_cancel"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_cancel.602b185ecf1a"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func cancel() -> UniffiExpression
+```
 
 
 
@@ -82,11 +107,21 @@ polynomial GCD of numerator and denominator.
 
 ### together
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_together.3d006fc5c43a"></a>
-`UniffiExpression.together() -> UniffiExpression`
-
+<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_together_api_session_together"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_together.2e844db94287"></a>
-`UniffiSession.together(target: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func together(target: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_together_api_expression_together"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_together.3d006fc5c43a"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func together() -> UniffiExpression
+```
 
 
 

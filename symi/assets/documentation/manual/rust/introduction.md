@@ -1,13 +1,15 @@
 # Symi language APIs
 
-Symi is a general-purpose computer algebra system written in Rust. It has
-three recommended, context-safe language surfaces:
+Symi is a general-purpose computer algebra system written in Rust. It has five
+context-safe language surfaces:
 
 - `symi` for Python;
 - the JavaScript facade in `symi-wasm/facade`;
+- generated Kotlin bindings in `app.symi`;
+- generated Swift bindings in the `Symi` module; and
 - `symi::api` for native Rust.
 
-All three surfaces use complete Symi names and the same mathematical
+All five surfaces use complete Symi names and the same mathematical
 semantics. Their host-language mechanics are deliberately idiomatic: Python
 uses operators and native mappings, JavaScript uses records and non-destructive
 iterables, and Rust uses typed `Result` values and owned handles.
@@ -46,9 +48,14 @@ exact, unambiguous, context-safe, and unsurprising. Integers and exact
 rationals are expression-like; floating-point values and strings are not
 implicitly converted into symbolic expressions.
 
+Reference headings use bare operation names such as `integrate(...)`. The
+heading identifies one operation; the rendered signature supplies the receiver,
+host spelling, parameters, and return type for the language being read. The
+examples retain the imports and receivers that executable code requires.
+
 Start with the guide for [Python](getting-started-python.md),
-[JavaScript](getting-started-javascript.md), or
-[Rust](getting-started-rust.md). The normative details are in
+[JavaScript](getting-started-javascript.md), [Kotlin](getting-started-kotlin.md),
+[Swift](getting-started-swift.md), or [Rust](getting-started-rust.md). The normative details are in
 [Conversions and collections](conversion-rules.md),
 [Evaluation and constants](evaluation-and-constants.md),
 [Context safety](context-safety.md), and

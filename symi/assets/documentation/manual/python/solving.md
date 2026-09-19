@@ -2,14 +2,39 @@
 
 ### solve
 
-<a id="placement-placement.python.python_class.context_solve.a86d08ec4a06"></a>
-`Context.solve(input_expression, variable)`
-
-<a id="placement-placement.python.python_class.expression_solve.a98fe09639f3"></a>
-`Expression.solve(variable)`
-
+<a id="entry-presentation_python_solving_capability_equations_solve_api_solving_session_solve"></a>
 <a id="placement-placement.python.python_module.module_solve.644a18093e3a"></a>
-`symi.solve(input_expression, variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> list[Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve.a86d08ec4a06"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve</code></p>
+
+```python signature
+solve(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> list[Expression]
+```
+
+</details>
+
+<a id="entry-presentation_python_solving_capability_equations_solve_api_expression_operations_expression_solve"></a>
+<a id="placement-placement.python.python_class.expression_solve.a98fe09639f3"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+solve(variable: VariableLike) -> list[Expression]
+```
 
 
 Solve an equation (an `equal` node, or an expression implicitly equated to
@@ -19,14 +44,44 @@ solver's reach are simply absent — prefer `solveset` when you need an honest
 
 ### solveset
 
-<a id="placement-placement.python.python_class.context_solveset.18f6f50c216e"></a>
-`Context.solveset(input_expression, variable, domain = None)`
-
-<a id="placement-placement.python.python_class.expression_solveset.e204d9960687"></a>
-`Expression.solveset(variable, domain = None)`
-
+<a id="entry-presentation_python_solving_capability_equations_solveset_api_solving_session_solveset"></a>
 <a id="placement-placement.python.python_module.module_solveset.d687000dc23c"></a>
-`symi.solveset(input_expression, variable, domain = None)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solveset(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    domain: Optional[ExpressionLike] = None,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solveset.18f6f50c216e"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solveset</code></p>
+
+```python signature
+solveset(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    domain: Optional[ExpressionLike] = None,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_solving_capability_equations_solveset_api_expression_operations_expression_solveset"></a>
+<a id="placement-placement.python.python_class.expression_solveset.e204d9960687"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+solveset(
+    variable: VariableLike,
+    domain: Optional[ExpressionLike] = None,
+) -> Expression
+```
 
 
 Solution **set** of the equation or inequality: a finite set, interval,
@@ -147,11 +202,33 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### solveset_in_domain
 
-<a id="placement-placement.python.python_class.context_solveset_in_domain.8f623844d249"></a>
-`Context.solveset_in_domain(equation, variable, domain)`
-
+<a id="entry-presentation_python_solving_capability_equations_solveset_in_domain_api_solving_session_solveset_in_domain"></a>
 <a id="placement-placement.python.python_module.module_solveset_in_domain.5dc47cc84338"></a>
-`symi.solveset_in_domain(equation, variable, domain)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solveset_in_domain(
+    equation: ExpressionLike,
+    variable: VariableLike,
+    domain: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solveset_in_domain.8f623844d249"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solveset_in_domain</code></p>
+
+```python signature
+solveset_in_domain(
+    equation: ExpressionLike,
+    variable: VariableLike,
+    domain: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 `solveset` restricted to an explicit domain set (e.g. `real_line()`,
@@ -159,14 +236,39 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### roots_with_multiplicities
 
-<a id="placement-placement.python.python_class.context_roots_with_multiplicities.9ad8376a40ce"></a>
-`Context.roots_with_multiplicities(input_expression, variable)`
-
-<a id="placement-placement.python.python_class.expression_roots_with_multiplicities.30879349c706"></a>
-`Expression.roots_with_multiplicities(variable)`
-
+<a id="entry-presentation_python_solving_capability_equations_roots_with_multiplicities_api_solving_session_roots_with_multiplicities"></a>
 <a id="placement-placement.python.python_module.module_roots_with_multiplicities.a15c88775319"></a>
-`symi.roots_with_multiplicities(input_expression, variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+roots_with_multiplicities(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Any
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_roots_with_multiplicities.9ad8376a40ce"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.roots_with_multiplicities</code></p>
+
+```python signature
+roots_with_multiplicities(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Any
+```
+
+</details>
+
+<a id="entry-presentation_python_solving_capability_equations_roots_with_multiplicities_api_expression_operations_expression_roots_with_multiplicities"></a>
+<a id="placement-placement.python.python_class.expression_roots_with_multiplicities.30879349c706"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+roots_with_multiplicities(variable: VariableLike) -> Any
+```
 
 
 Roots of a polynomial with their multiplicities. **Notes:** Python returns a
@@ -174,11 +276,33 @@ dict keyed by root; WASM returns an array of `RootMultiplicity` objects.
 
 ### polynomial_root
 
-<a id="placement-placement.python.python_class.context_polynomial_root.5cdc7cff6490"></a>
-`Context.polynomial_root(input_expression, variable, index)`
-
+<a id="entry-presentation_python_solving_capability_equations_polynomial_root_api_solving_session_polynomial_root"></a>
 <a id="placement-placement.python.python_module.module_polynomial_root.078947de5378"></a>
-`symi.polynomial_root(input_expression, variable, index)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+polynomial_root(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    index: int,
+) -> Optional[Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_polynomial_root.5cdc7cff6490"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.polynomial_root</code></p>
+
+```python signature
+polynomial_root(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    index: int,
+) -> Optional[Expression]
+```
+
+</details>
 
 
 Construct the zero-based `index`-th exact root of a univariate rational
@@ -195,11 +319,31 @@ explicit, separate operation.
 
 ### minimal_polynomial_of
 
-<a id="placement-placement.python.python_class.context_minimal_polynomial_of.0f4e1c41aa2a"></a>
-`Context.minimal_polynomial_of(input_expression, variable)`
-
+<a id="entry-presentation_python_solving_capability_equations_minimal_polynomial_of_api_algebra_session_minimal_polynomial_of"></a>
 <a id="placement-placement.python.python_module.module_minimal_polynomial_of.55b3ebd83e25"></a>
-`symi.minimal_polynomial_of(input_expression, variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+minimal_polynomial_of(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Optional[Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_minimal_polynomial_of.0f4e1c41aa2a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.minimal_polynomial_of</code></p>
+
+```python signature
+minimal_polynomial_of(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Optional[Expression]
+```
+
+</details>
 
 
 Return an exact polynomial in the requested variable for a first-class
@@ -212,11 +356,31 @@ Has `root` and `multiplicity` getters; see object model.
 
 ### solve_polynomial_system
 
-<a id="placement-placement.python.python_class.context_solve_polynomial_system.2f65455835ec"></a>
-`Context.solve_polynomial_system(equations, variables)`
-
+<a id="entry-presentation_python_solving_capability_equations_solve_polynomial_system_api_solving_session_solve_polynomial_system"></a>
 <a id="placement-placement.python.python_module.module_solve_polynomial_system.2a04d647f98e"></a>
-`symi.solve_polynomial_system(equations, variables)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_polynomial_system(
+    equations: Iterable[ExpressionLike],
+    variables: Iterable[VariableLike],
+) -> Any
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_polynomial_system.2f65455835ec"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_polynomial_system</code></p>
+
+```python signature
+solve_polynomial_system(
+    equations: Iterable[ExpressionLike],
+    variables: Iterable[VariableLike],
+) -> Any
+```
+
+</details>
 
 
 Solve a multivariate polynomial system `{ equation_i = 0 }` for the named
@@ -239,34 +403,6 @@ The WASM return of `solve_polynomial_system`. Python returns a plain dict in its
 place.
 
 ### verdict
-
-<a id="placement-placement.python.python_class.definiteintegrationresult_verdict.be0b21cf7d5e"></a>
-`DefiniteIntegrationResult.verdict`
-
-<a id="placement-placement.python.python_class.ordinarydifferentialequationsolveresult_verdict.592a8fe7421b"></a>
-`OrdinaryDifferentialEquationSolveResult.verdict`
-
-<a id="placement-placement.python.python_class.ordinarydifferentialequationsystemsolveresult_verdict.ee565ebcb9d3"></a>
-`OrdinaryDifferentialEquationSystemSolveResult.verdict`
-
-<a id="placement-placement.python.python_class.ordinarydifferentialequationsystemverificationreport_verdict.c3b045f19390"></a>
-`OrdinaryDifferentialEquationSystemVerificationReport.verdict`
-
-<a id="placement-placement.python.python_class.partialdifferentialequationsecondorderclassification_verdict.b16642fd9fa2"></a>
-`PartialDifferentialEquationSecondOrderClassification.verdict`
-
-<a id="placement-placement.python.python_class.partialdifferentialequationsolveresult_verdict.a23066465fd2"></a>
-`PartialDifferentialEquationSolveResult.verdict`
-
-<a id="placement-placement.python.python_class.partialdifferentialequationtransformationverificationreport_verdict.9f9cab5a462b"></a>
-`PartialDifferentialEquationTransformationVerificationReport.verdict`
-
-<a id="placement-placement.python.python_class.partialdifferentialequationverificationreport_verdict.92b062023cbc"></a>
-`PartialDifferentialEquationVerificationReport.verdict`
-
-<a id="placement-placement.python.python_class.partialdifferentialequationverificationresidual_verdict.24f8a5481097"></a>
-`PartialDifferentialEquationVerificationResidual.verdict`
-
 Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`,
 `"empty"`, `"positive_dimensional"`, or `"declined"`.
 
@@ -303,11 +439,35 @@ Getter on `SystemAssignment`: the assigned value expressions, aligned with
 
 ### real_root_count
 
-<a id="placement-placement.python.python_class.context_real_root_count.c9cb8cec0801"></a>
-`Context.real_root_count(input_expression, variable, lower, upper)`
-
+<a id="entry-presentation_python_solving_capability_equations_real_root_count_api_solving_session_real_root_count"></a>
 <a id="placement-placement.python.python_module.module_real_root_count.85194a5b19fc"></a>
-`symi.real_root_count(input_expression, variable, lower, upper)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+real_root_count(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    lower: int,
+    upper: int,
+) -> Optional[int]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_real_root_count.c9cb8cec0801"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.real_root_count</code></p>
+
+```python signature
+real_root_count(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    lower: int,
+    upper: int,
+) -> Optional[int]
+```
+
+</details>
 
 
 Number of distinct real roots of a univariate polynomial in the interval
@@ -316,11 +476,31 @@ univariate polynomial over the rationals.
 
 ### count_distinct_real_roots
 
-<a id="placement-placement.python.python_class.context_count_distinct_real_roots.cb5e1140209d"></a>
-`Context.count_distinct_real_roots(input_expression, variable)`
-
+<a id="entry-presentation_python_solving_capability_equations_count_distinct_real_roots_api_solving_session_count_distinct_real_roots"></a>
 <a id="placement-placement.python.python_module.module_count_distinct_real_roots.a838a3619f68"></a>
-`symi.count_distinct_real_roots(input_expression, variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+count_distinct_real_roots(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Optional[int]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_count_distinct_real_roots.cb5e1140209d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.count_distinct_real_roots</code></p>
+
+```python signature
+count_distinct_real_roots(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Optional[int]
+```
+
+</details>
 
 
 Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions as
@@ -328,11 +508,33 @@ Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions
 
 ### real_root_sign
 
-<a id="placement-placement.python.python_class.context_real_root_sign.806570800d2b"></a>
-`Context.real_root_sign(input_expression, variable, index)`
-
+<a id="entry-presentation_python_solving_capability_equations_real_root_sign_api_solving_session_real_root_sign"></a>
 <a id="placement-placement.python.python_module.module_real_root_sign.c8e22d8c4a52"></a>
-`symi.real_root_sign(input_expression, variable, index)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+real_root_sign(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    index: int,
+) -> Optional[int]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_real_root_sign.806570800d2b"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.real_root_sign</code></p>
+
+```python signature
+real_root_sign(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    index: int,
+) -> Optional[int]
+```
+
+</details>
 
 
 The exact sign (`-1`, `0`, or `1`) of the `index`-th smallest real root of a
@@ -343,11 +545,39 @@ is out of range.
 
 ### compare_real_roots
 
-<a id="placement-placement.python.python_class.context_compare_real_roots.d672290897f7"></a>
-`Context.compare_real_roots(first_expression, first_variable, first_index, second_expression, second_variable, second_index)`
-
+<a id="entry-presentation_python_solving_capability_equations_compare_real_roots_api_solving_session_compare_real_roots"></a>
 <a id="placement-placement.python.python_module.module_compare_real_roots.64c6a3af0b12"></a>
-`symi.compare_real_roots(first_expression, first_variable, first_index, second_expression, second_variable, second_index)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+compare_real_roots(
+    first_expression: ExpressionLike,
+    first_variable: VariableLike,
+    first_index: int,
+    second_expression: ExpressionLike,
+    second_variable: VariableLike,
+    second_index: int,
+) -> Optional[int]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_compare_real_roots.d672290897f7"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.compare_real_roots</code></p>
+
+```python signature
+compare_real_roots(
+    first_expression: ExpressionLike,
+    first_variable: VariableLike,
+    first_index: int,
+    second_expression: ExpressionLike,
+    second_variable: VariableLike,
+    second_index: int,
+) -> Optional[int]
+```
+
+</details>
 
 
 Compare two real algebraic numbers exactly, each given as the `index`-th smallest
@@ -361,11 +591,33 @@ polynomial over the rationals or an index is out of range.
 
 ### eliminate_quantifiers
 
-<a id="placement-placement.python.python_class.context_eliminate_quantifiers.a0758faf0945"></a>
-`Context.eliminate_quantifiers(matrix, quantifiers, variables)`
-
+<a id="entry-presentation_python_solving_capability_equations_eliminate_quantifiers_api_logic_session_eliminate_quantifiers"></a>
 <a id="placement-placement.python.python_module.module_eliminate_quantifiers.671ab41c3767"></a>
-`symi.eliminate_quantifiers(matrix, quantifiers, variables)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+eliminate_quantifiers(
+    matrix: ExpressionLike,
+    quantifiers: list[str],
+    variables: Iterable[VariableLike],
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_eliminate_quantifiers.a0758faf0945"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.eliminate_quantifiers</code></p>
+
+```python signature
+eliminate_quantifiers(
+    matrix: ExpressionLike,
+    quantifiers: list[str],
+    variables: Iterable[VariableLike],
+) -> Expression
+```
+
+</details>
 
 `context.eliminate_quantifiers(matrix, quantifiers: list[str], variables: list[VariableLike])`
 
@@ -382,11 +634,31 @@ decline, or when the solution formula cannot be certified.
 
 ### solve_semialgebraic
 
-<a id="placement-placement.python.python_class.context_solve_semialgebraic.6453846cb1b9"></a>
-`Context.solve_semialgebraic(matrix, variables)`
-
+<a id="entry-presentation_python_solving_capability_equations_solve_semialgebraic_api_logic_session_solve_semialgebraic"></a>
 <a id="placement-placement.python.python_module.module_solve_semialgebraic.150db5c326a7"></a>
-`symi.solve_semialgebraic(matrix, variables)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_semialgebraic(
+    matrix: ExpressionLike,
+    variables: Iterable[VariableLike],
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_semialgebraic.6453846cb1b9"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_semialgebraic</code></p>
+
+```python signature
+solve_semialgebraic(
+    matrix: ExpressionLike,
+    variables: Iterable[VariableLike],
+) -> Expression
+```
+
+</details>
 
 `context.solve_semialgebraic(matrix, variables: list[VariableLike])`
 
@@ -412,4 +684,115 @@ print(symi.solveset(symi.sin(x), "x"))
 print(symi.solveset_in_domain(x**2 - 2, "x", symi.real_line))
 print(symi.roots_with_multiplicities(x**3 - x, "x"))
 ```
+
+
+## Additional API
+
+### verdict
+
+<a id="entry-presentation_python_solving_capability_calculus_verdict_api_results_definiteintegrationresult_verdict"></a>
+<a id="placement-placement.python.python_class.definiteintegrationresult_verdict.be0b21cf7d5e"></a>
+<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
+
+```python signature
+verdict: str
+```
+
+Whether the request was evaluated, proved divergent, or declined.
+
+### verdict
+
+<a id="entry-presentation_python_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verdict"></a>
+<a id="placement-placement.python.python_class.ordinarydifferentialequationsolveresult_verdict.592a8fe7421b"></a>
+<p class="symi-entry-owner">OrdinaryDifferentialEquationSolveResult property</p>
+
+```python signature
+verdict: str
+```
+
+Whether the request was solved or declined.
+
+### verdict
+
+<a id="entry-presentation_python_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verdict"></a>
+<a id="placement-placement.python.python_class.ordinarydifferentialequationsystemsolveresult_verdict.ee565ebcb9d3"></a>
+<p class="symi-entry-owner">OrdinaryDifferentialEquationSystemSolveResult property</p>
+
+```python signature
+verdict: str
+```
+
+Whether the system was solved or declined.
+
+### verdict
+
+<a id="entry-presentation_python_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_verdict"></a>
+<a id="placement-placement.python.python_class.ordinarydifferentialequationsystemverificationreport_verdict.c3b045f19390"></a>
+<p class="symi-entry-owner">OrdinaryDifferentialEquationSystemVerificationReport property</p>
+
+```python signature
+verdict: str
+```
+
+The decision on every equation residual and every datum of the supplied assignment.
+
+### verdict
+
+<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_verdict"></a>
+<a id="placement-placement.python.python_class.partialdifferentialequationsecondorderclassification_verdict.b16642fd9fa2"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationSecondOrderClassification property</p>
+
+```python signature
+verdict: str
+```
+
+Whether one type, a complete case table, or neither was proved.
+
+### verdict
+
+<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsolveresult_verdict"></a>
+<a id="placement-placement.python.python_class.partialdifferentialequationsolveresult_verdict.a23066465fd2"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationSolveResult property</p>
+
+```python signature
+verdict: str
+```
+
+Whether the dispatcher solved or honestly declined.
+
+### verdict
+
+<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_verdict"></a>
+<a id="placement-placement.python.python_class.partialdifferentialequationtransformationverificationreport_verdict.9f9cab5a462b"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationTransformationVerificationReport property</p>
+
+```python signature
+verdict: str
+```
+
+The aggregate exact verification verdict.
+
+### verdict
+
+<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationreport_verdict"></a>
+<a id="placement-placement.python.python_class.partialdifferentialequationverificationreport_verdict.92b062023cbc"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationVerificationReport property</p>
+
+```python signature
+verdict: str
+```
+
+The aggregate exact verification verdict.
+
+### verdict
+
+<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationresidual_verdict"></a>
+<a id="placement-placement.python.python_class.partialdifferentialequationverificationresidual_verdict.24f8a5481097"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationVerificationResidual property</p>
+
+```python signature
+verdict: str
+```
+
+The exact verdict proved about this one residual.
 

@@ -93,17 +93,27 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
-<a id="placement-placement.wasm.javascript_facade.symifacade.ff8eea78fa52"></a>
 ### SymiFacade
 
-`export interface SymiFacade {`
+<a id="entry-presentation_wasm_cad_capability_algebra_symi_facade_unresolved"></a>
+<a id="placement-placement.wasm.javascript_facade.symifacade.ff8eea78fa52"></a>
+<p class="symi-entry-owner">Type</p>
 
-Returns `symi_facade`.
+```typescript signature
+interface SymiFacade
+```
 
+Public type placement for SymiFacade.
+
+### createFacade
+
+<a id="entry-presentation_wasm_cad_capability_algebra_create_facade_unresolved"></a>
 <a id="placement-placement.wasm.javascript_facade.module_createfacade.ec941be21075"></a>
-### module.createFacade
+<p class="symi-entry-owner">Default context</p>
 
-`symi.export function createFacade(rawModule: unknown): SymiFacade`
+```typescript signature
+function createFacade(rawModule: unknown): SymiFacade
+```
 
-Returns `unknown`.
+Public function placement for createFacade.
 

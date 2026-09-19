@@ -1,101 +1,206 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="python">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Matrix functions and Jordan form — Symi Python documentation</title>
+        <meta name="description" content="Matrix exponential, logarithm, trigonometric, hyperbolic, and Jordan operations are exact symbolic operations." />
+        <link rel="canonical" href="/symi/python/matrix-functions/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="matrix-functions" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/python/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the Python documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">Python</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: Python"><span>Python</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/matrix-functions/" data-language="python" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/matrix-functions/" data-language="wasm" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/matrix-functions/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/matrix-functions/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/matrix-functions/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/getting-started-python/">Getting started: Python</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/default-context/">The default context and module-level functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-default-context" data-page="default-context"><span class="symi-visually-hidden">Show entries in The default context and module-level functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-default-context" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/context-safety/">Context safety</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-context-safety" data-page="context-safety"><span class="symi-visually-hidden">Show entries in Context safety</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-context-safety" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/specialized-canonical-forms/">Specialized canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-specialized-canonical-forms" data-page="specialized-canonical-forms"><span class="symi-visually-hidden">Show entries in Specialized canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-specialized-canonical-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/integral-transforms/">Integral transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-integral-transforms" data-page="integral-transforms"><span class="symi-visually-hidden">Show entries in Integral transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-integral-transforms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-functions/" aria-current="page">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Hide entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/python/matrix-functions/#entry-presentation_python_matrix_functions_capability_algebra_cosine_api_matrix_operations_matrix_cosine"><code>cosine</code></a></li><li><a class="symi-nav-entry" href="/symi/python/matrix-functions/#entry-presentation_python_matrix_functions_capability_algebra_exponential_api_matrix_operations_matrix_exponential"><code>exponential</code></a></li><li><a class="symi-nav-entry" href="/symi/python/matrix-functions/#entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_cosine_api_matrix_operations_matrix_hyperbolic_cosine"><code>hyperbolic_cosine</code></a></li><li><a class="symi-nav-entry" href="/symi/python/matrix-functions/#entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_sine_api_matrix_operations_matrix_hyperbolic_sine"><code>hyperbolic_sine</code></a></li><li><a class="symi-nav-entry" href="/symi/python/matrix-functions/#entry-presentation_python_matrix_functions_capability_algebra_jordan_decomposition_api_matrix_operations_matrix_jordan_decomposition"><code>jordan_decomposition</code></a></li><li><a class="symi-nav-entry" href="/symi/python/matrix-functions/#entry-presentation_python_matrix_functions_capability_algebra_logarithm_api_matrix_operations_matrix_logarithm"><code>logarithm</code></a></li><li><a class="symi-nav-entry" href="/symi/python/matrix-functions/#entry-presentation_python_matrix_functions_capability_algebra_similarity_api_results_rationalcanonicalform_similarity"><code>similarity</code></a></li><li><a class="symi-nav-entry" href="/symi/python/matrix-functions/#entry-presentation_python_matrix_functions_capability_algebra_sine_api_matrix_operations_matrix_sine"><code>sine</code></a></li><li><a class="symi-nav-entry" href="/symi/python/matrix-functions/#entry-presentation_python_matrix_functions_capability_algebra_square_root_api_matrix_operations_matrix_square_root"><code>square_root</code></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logical-transforms/">Logical transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logical-transforms" data-page="logical-transforms"><span class="symi-visually-hidden">Show entries in Logical transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logical-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/zero-equivalence/">Zero equivalence</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-zero-equivalence" data-page="zero-equivalence"><span class="symi-visually-hidden">Show entries in Zero equivalence</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-zero-equivalence" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/python/introduction/">Python</a></li><li>Algebra and matrices</li><li><span aria-current="page">Matrix functions and Jordan form</span></li></ol></nav>
+                
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#exponential" data-outline-target="exponential">exponential</a></li><li class="symi-outline-depth-3"><a href="#logarithm" data-outline-target="logarithm">logarithm</a></li><li class="symi-outline-depth-3"><a href="#square_root" data-outline-target="square_root">square_root</a></li><li class="symi-outline-depth-3"><a href="#sine" data-outline-target="sine">sine</a></li><li class="symi-outline-depth-3"><a href="#cosine" data-outline-target="cosine">cosine</a></li><li class="symi-outline-depth-3"><a href="#hyperbolic_sine" data-outline-target="hyperbolic_sine">hyperbolic_sine</a></li><li class="symi-outline-depth-3"><a href="#hyperbolic_cosine" data-outline-target="hyperbolic_cosine">hyperbolic_cosine</a></li><li class="symi-outline-depth-3"><a href="#jordan_decomposition" data-outline-target="jordan_decomposition">jordan_decomposition</a></li><li class="symi-outline-depth-3"><a href="#jordan_decomposition_wasm_result_class" data-outline-target="jordan_decomposition_wasm_result_class">jordan_decomposition (WASM result class)</a></li><li class="symi-outline-depth-3"><a href="#similarity" data-outline-target="similarity">similarity</a></li><li class="symi-outline-depth-3"><a href="#jordan_form" data-outline-target="jordan_form">jordan_form</a></li><li class="symi-outline-depth-3"><a href="#blocks" data-outline-target="blocks">blocks</a></li><li class="symi-outline-depth-3"><a href="#jordan_block_wasm_result_class" data-outline-target="jordan_block_wasm_result_class">jordan_block (WASM result class)</a></li><li class="symi-outline-depth-3"><a href="#size" data-outline-target="size">size</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#similarity_2" data-outline-target="similarity_2">similarity</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">Matrix functions and Jordan form</h1>
+<p>Matrix exponential, logarithm, trigonometric, hyperbolic, and Jordan operations are exact symbolic operations.</p>
+<h3 id="exponential">exponential<a class="symi-heading-permalink" href="#exponential" aria-label="Link to this section: exponential">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_exponential_api_matrix_operations_matrix_exponential"></a>
+<a id="placement-placement.python.python_class.matrix_exponential.7d6e158a0a7b"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">exponential<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Matrix</code></pre></div>
+<p>The matrix exponential <code>exp(M)</code>, evaluated through the certified Jordan
+decomposition. Declines on inputs whose eigenvalues cannot be certified
+exactly.</p>
+<h3 id="logarithm">logarithm<a class="symi-heading-permalink" href="#logarithm" aria-label="Link to this section: logarithm">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_logarithm_api_matrix_operations_matrix_logarithm"></a>
+<a id="placement-placement.python.python_class.matrix_logarithm.a05822635c14"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">logarithm<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Matrix</code></pre></div>
+<p>The principal matrix logarithm <code>log(M)</code>. Raises on a zero or negative-real
+eigenvalue (principal branch cut).</p>
+<h3 id="square_root">square_root<a class="symi-heading-permalink" href="#square_root" aria-label="Link to this section: square_root">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_square_root_api_matrix_operations_matrix_square_root"></a>
+<a id="placement-placement.python.python_class.matrix_square_root.2ee200ff9ec2"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">square_root<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Matrix</code></pre></div>
+<p>The principal matrix square root <code>sqrt(M)</code>; the result is verified to square
+back to <code>M</code>. Raises on a negative-real eigenvalue, or on a nontrivial zero
+eigenblock (non-analytic).</p>
+<h3 id="sine">sine<a class="symi-heading-permalink" href="#sine" aria-label="Link to this section: sine">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_sine_api_matrix_operations_matrix_sine"></a>
+<a id="placement-placement.python.python_class.matrix_sine.0de13f4135d8"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">sine<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Matrix</code></pre></div>
+<p>The primary matrix sine <code>sin(M)</code>, evaluated exactly through the certified
+Jordan decomposition. The result is certified together with the matrix cosine
+by <code>sin(M)^2 + cos(M)^2 = I</code>.</p>
+<h3 id="cosine">cosine<a class="symi-heading-permalink" href="#cosine" aria-label="Link to this section: cosine">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_cosine_api_matrix_operations_matrix_cosine"></a>
+<a id="placement-placement.python.python_class.matrix_cosine.5dc77fea11d2"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">cosine<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Matrix</code></pre></div>
+<p>The primary matrix cosine <code>cos(M)</code>, evaluated exactly through the certified
+Jordan decomposition and the trigonometric identity certificate.</p>
+<h3 id="hyperbolic_sine">hyperbolic_sine<a class="symi-heading-permalink" href="#hyperbolic_sine" aria-label="Link to this section: hyperbolic_sine">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_sine_api_matrix_operations_matrix_hyperbolic_sine"></a>
+<a id="placement-placement.python.python_class.matrix_hyperbolic_sine.85e1bc19a042"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">hyperbolic_sine<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Matrix</code></pre></div>
+<p>The primary hyperbolic matrix sine <code>sinh(M)</code>, evaluated exactly through the
+certified Jordan decomposition. The result is certified together with the
+hyperbolic matrix cosine by <code>cosh(M)^2 - sinh(M)^2 = I</code>.</p>
+<h3 id="hyperbolic_cosine">hyperbolic_cosine<a class="symi-heading-permalink" href="#hyperbolic_cosine" aria-label="Link to this section: hyperbolic_cosine">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_cosine_api_matrix_operations_matrix_hyperbolic_cosine"></a>
+<a id="placement-placement.python.python_class.matrix_hyperbolic_cosine.00c37ee8827b"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">hyperbolic_cosine<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Matrix</code></pre></div>
+<p>The primary hyperbolic matrix cosine <code>cosh(M)</code>, evaluated exactly through the
+certified Jordan decomposition and the hyperbolic identity certificate.</p>
+<h3 id="jordan_decomposition">jordan_decomposition<a class="symi-heading-permalink" href="#jordan_decomposition" aria-label="Link to this section: jordan_decomposition">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_jordan_decomposition_api_matrix_operations_matrix_jordan_decomposition"></a>
+<a id="placement-placement.python.python_class.matrix_jordan_decomposition.53a3aeac78c1"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">jordan_decomposition<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">tuple</span><span class="token punctuation">[</span>Matrix<span class="token punctuation">,</span> Matrix<span class="token punctuation">,</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">tuple</span><span class="token punctuation">[</span>Expression<span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
+<p>The Jordan decomposition returned as <code>(similarity, jordan_form, blocks)</code> with
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">similarity</mi><mo>⁡</mo><mi mathvariant="normal">jordan_form</mi><mo>⁡</mo><msup><mrow><mi mathvariant="normal">similarity</mi><mo>⁡</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">\operatorname{similarity} \operatorname{jordan\_form} \operatorname{similarity}^{-1} = M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2084em;vertical-align:-0.31em;"></span><span class="mop"><span class="mord mathrm" style="margin-right:0.01389em;">similarity</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">jordan_form</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop"><span class="mord mathrm" style="margin-right:0.01389em;">similarity</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984em;"><span style="top:-3.1473em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>, where <code>blocks</code> lists each
+Jordan block as an <code>(eigenvalue, size)</code> pair. Every root is certified over an
+exact algebraic field. <strong>Notes:</strong> WASM returns a <code>JordanDecomposition</code>
+result class with <code>similarity</code>/<code>jordan_form</code>/<code>blocks</code> getters, each block a
+<code>JordanBlock</code> with <code>eigenvalue</code>/<code>size</code> getters.</p>
+<h3 id="jordan_decomposition_wasm_result_class">jordan_decomposition (WASM result class)<a class="symi-heading-permalink" href="#jordan_decomposition_wasm_result_class" aria-label="Link to this section: jordan_decomposition (WASM result class)">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_jordan_decomposition_api_matrix_operations_matrix_jordan_decomposition"></a>
+<a id="placement-placement.python.python_class.matrix_jordan_decomposition.53a3aeac78c1"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">jordan_decomposition<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">tuple</span><span class="token punctuation">[</span>Matrix<span class="token punctuation">,</span> Matrix<span class="token punctuation">,</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">tuple</span><span class="token punctuation">[</span>Expression<span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
+<h3 id="similarity">similarity<a class="symi-heading-permalink" href="#similarity" aria-label="Link to this section: similarity">#</a></h3>
+<h3 id="jordan_form">jordan_form<a class="symi-heading-permalink" href="#jordan_form" aria-label="Link to this section: jordan_form">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/kotlin/matrix-functions/#jordan_form"><code>UniffiJordanDecomposition.jordanForm</code></a> in Kotlin, <a href="/symi/swift/matrix-functions/#jordan_form"><code>UniffiJordanDecomposition.jordanForm</code></a> in Swift, <a href="/symi/rust/matrix-functions/#jordan_form"><code>api::results::JordanDecomposition::jordan_form</code></a> in Rust.</em></p>
+<h3 id="blocks">blocks<a class="symi-heading-permalink" href="#blocks" aria-label="Link to this section: blocks">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/kotlin/matrix-functions/#blocks"><code>UniffiJordanDecomposition.blocks</code></a> in Kotlin, <a href="/symi/swift/matrix-functions/#blocks"><code>UniffiJordanDecomposition.blocks</code></a> in Swift, <a href="/symi/rust/matrix-functions/#blocks"><code>api::results::JordanDecomposition::blocks</code></a> in Rust.</em></p>
+<h3 id="jordan_block_wasm_result_class"><span id="jordan_block" class="symi-legacy-anchor"></span>jordan_block (WASM result class)<a class="symi-heading-permalink" href="#jordan_block_wasm_result_class" aria-label="Link to this section: jordan_block (WASM result class)">#</a></h3>
+<h3 id="size">size<a class="symi-heading-permalink" href="#size" aria-label="Link to this section: size">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/kotlin/matrix-functions/#size"><code>UniffiJordanBlock.size</code></a> in Kotlin, <a href="/symi/swift/matrix-functions/#size"><code>UniffiJordanBlock.size</code></a> in Swift, <a href="/symi/rust/matrix-functions/#size"><code>api::results::JordanBlock::size</code></a> in Rust.</em></p>
+<p>The <code>jordan_block.eigenvalue -&gt; Expression</code> getter reuses the shared
+<code>eigenvalue</code> heading documented above.</p>
+<h2 id="example">Example<a class="symi-heading-permalink" href="#example" aria-label="Link to this section: Example">#</a></h2>
+<p>Spectral decompositions of an exact matrix.</p>
+<figure class="symi-code symi-code-example" data-code-language="python" data-code-kind="example"><figcaption class="symi-code-header"><span class="symi-code-label">Python</span></figcaption><pre class="symi-code-body language-python" tabindex="0"><code class="language-python"><span class="token keyword">import</span> symi
+
+matrix <span class="token operator">=</span> symi<span class="token punctuation">.</span>Matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+similarity<span class="token punctuation">,</span> jordan_form<span class="token punctuation">,</span> blocks <span class="token operator">=</span> matrix<span class="token punctuation">.</span>jordan_decomposition<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>matrix<span class="token punctuation">.</span>eigenvalues<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>matrix<span class="token punctuation">.</span>characteristic_polynomial<span class="token punctuation">(</span><span class="token string">"x"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>blocks<span class="token punctuation">)</span></code></pre></figure>
+<h2 id="additional_api">Additional API<a class="symi-heading-permalink" href="#additional_api" aria-label="Link to this section: Additional API">#</a></h2>
+<h3 id="similarity_2">similarity<a class="symi-heading-permalink" href="#similarity_2" aria-label="Link to this section: similarity">#</a></h3>
+<p><a id="entry-presentation_python_matrix_functions_capability_algebra_similarity_api_results_rationalcanonicalform_similarity"></a>
+<a id="placement-placement.python.python_class.rationalcanonicalform_similarity.40c9ac5f68c3"></a></p>
+<p class="symi-entry-owner">RationalCanonicalForm property</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">similarity<span class="token punctuation">:</span> Matrix</code></pre></div>
+<p>The certified change of basis <code>S</code>, satisfying <code>matrix * S == S * canonical_form</code>.</p>
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Algebra and matrices</h2><ul class="symi-related-list"><li><a href="/symi/python/polynomials/">Polynomial queries</a></li><li><a href="/symi/python/matrix-construction/">Matrix construction and access</a></li><li><a href="/symi/python/linear-algebra/">Linear algebra</a></li><li><a href="/symi/python/matrix-canonical-forms/">Matrix canonical forms</a></li><li><a href="/symi/python/cad/">Cylindrical algebraic decomposition</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/python/matrix-canonical-forms/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Matrix canonical forms</span></a><a class="symi-pager-link symi-pager-next" href="/symi/python/cad/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Cylindrical algebraic decomposition</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · Python</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#exponential" data-outline-target="exponential">exponential</a></li><li class="symi-outline-depth-3"><a href="#logarithm" data-outline-target="logarithm">logarithm</a></li><li class="symi-outline-depth-3"><a href="#square_root" data-outline-target="square_root">square_root</a></li><li class="symi-outline-depth-3"><a href="#sine" data-outline-target="sine">sine</a></li><li class="symi-outline-depth-3"><a href="#cosine" data-outline-target="cosine">cosine</a></li><li class="symi-outline-depth-3"><a href="#hyperbolic_sine" data-outline-target="hyperbolic_sine">hyperbolic_sine</a></li><li class="symi-outline-depth-3"><a href="#hyperbolic_cosine" data-outline-target="hyperbolic_cosine">hyperbolic_cosine</a></li><li class="symi-outline-depth-3"><a href="#jordan_decomposition" data-outline-target="jordan_decomposition">jordan_decomposition</a></li><li class="symi-outline-depth-3"><a href="#jordan_decomposition_wasm_result_class" data-outline-target="jordan_decomposition_wasm_result_class">jordan_decomposition (WASM result class)</a></li><li class="symi-outline-depth-3"><a href="#similarity" data-outline-target="similarity">similarity</a></li><li class="symi-outline-depth-3"><a href="#jordan_form" data-outline-target="jordan_form">jordan_form</a></li><li class="symi-outline-depth-3"><a href="#blocks" data-outline-target="blocks">blocks</a></li><li class="symi-outline-depth-3"><a href="#jordan_block_wasm_result_class" data-outline-target="jordan_block_wasm_result_class">jordan_block (WASM result class)</a></li><li class="symi-outline-depth-3"><a href="#size" data-outline-target="size">size</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#similarity_2" data-outline-target="similarity_2">similarity</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

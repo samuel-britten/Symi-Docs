@@ -18,27 +18,54 @@ Normal forms and Boolean simplification are documented in
 
 ### logical_true
 
+<a id="entry-presentation_rust_logic_capability_rust_native_rust_api_session_logical_true_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_logical_true.622bf65ac118"></a>
-`symi::api::Session — pub fn logical_true(&self) -> Expression`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn logical_true(&self) -> Expression
+```
 
 
 The Boolean constant true (\(\top\)).
 
 ### logical_false
 
+<a id="entry-presentation_rust_logic_capability_rust_native_rust_api_session_logical_false_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_logical_false.73e7fda3fc79"></a>
-`symi::api::Session — pub fn logical_false(&self) -> Expression`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn logical_false(&self) -> Expression
+```
 
 
 The Boolean constant false (\(\bot\)).
 
 ### evaluate_truth
 
+<a id="entry-presentation_rust_logic_capability_evaluate_truth_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_evaluate_truth.175a083346f4"></a>
-`symi::api::Expression — pub fn evaluate_truth(&self) -> Result<TruthValue, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
+
+```rust signature
+pub fn evaluate_truth(&self) -> Result<TruthValue, ApiError>
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.rust.native_rust.api_session_evaluate_truth.06c39256d903"></a>
-`symi::api::Session — pub fn evaluate_truth(&self, target: &Expression) -> Result<TruthValue, ApiError>`
+<p class="symi-entry-owner">api::Session method: <code>api::Session::evaluate_truth</code></p>
+
+```rust signature
+pub fn evaluate_truth(
+    &self,
+    target: &Expression,
+) -> Result<TruthValue, ApiError>
+```
+
+</details>
 
 
 `evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or

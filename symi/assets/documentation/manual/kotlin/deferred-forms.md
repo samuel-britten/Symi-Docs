@@ -6,8 +6,18 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
+<a id="entry-presentation_kotlin_deferred_forms_capability_construction_integral_api_analysis_session_integral"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integral.67144f955bf9"></a>
-`UniffiSession.integral(integrand: UniffiExpression, variable: kotlin.String, lower: UniffiExpression?, upper: UniffiExpression?): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun integral(
+    integrand: UniffiExpression,
+    variable: kotlin.String,
+    lower: UniffiExpression?,
+    upper: UniffiExpression?,
+): UniffiExpression
+```
 
 
 Build an *unevaluated* integral node (indefinite when bounds are omitted).
@@ -22,8 +32,18 @@ be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 ### summation
 
+<a id="entry-presentation_kotlin_deferred_forms_capability_construction_summation_api_analysis_session_summation"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_summation.d4c85cdddba3"></a>
-`UniffiSession.summation(summand: UniffiExpression, index: kotlin.String, lower: UniffiExpression, upper: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun summation(
+    summand: UniffiExpression,
+    index: kotlin.String,
+    lower: UniffiExpression,
+    upper: UniffiExpression,
+): UniffiExpression
+```
 
 
 Build a summation node \(\sum\). `execute` evaluates it when a closed form or
@@ -116,8 +136,18 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
+<a id="entry-presentation_kotlin_deferred_forms_capability_construction_product_api_analysis_session_product"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_product.be5af850a478"></a>
-`UniffiSession.product(multiplicand: UniffiExpression, index: kotlin.String, lower: UniffiExpression, upper: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun product(
+    multiplicand: UniffiExpression,
+    index: kotlin.String,
+    lower: UniffiExpression,
+    upper: UniffiExpression,
+): UniffiExpression
+```
 
 
 Definite indexed product \(\prod_{\mathit{index}=\mathit{lower}}^{\mathit{upper}} \mathit{multiplicand}\), a first-class
@@ -176,8 +206,16 @@ placeholder rather than a guess.
 
 ### product_indefinite
 
+<a id="entry-presentation_kotlin_deferred_forms_capability_construction_product_indefinite_api_analysis_session_product_indefinite"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_productindefinite.1d631ed31126"></a>
-`UniffiSession.productIndefinite(multiplicand: UniffiExpression, index: kotlin.String): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun productIndefinite(
+    multiplicand: UniffiExpression,
+    index: kotlin.String,
+): UniffiExpression
+```
 
 
 Indefinite (anti-quotient) product: the `P(k)` satisfying

@@ -33,37 +33,84 @@ route through the auto-simplifying builders.
 
 ### divide
 
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_divide_api_expression_divide"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_divide.0b155bc736f4"></a>
-`Expression.divide(other: ExpressionLike): Expression`
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+divide(other: ExpressionLike): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_divide.5255284e4cf1"></a>
-Raw WebAssembly: `pub fn divide(&self, other: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Expression method: <code>Expression.divide</code></p>
+
+```typescript signature
+divide(other: Expression): Expression
+```
+
+</details>
 
 
 ### power
 
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_power_api_expression_power"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_power.87eb729715d1"></a>
-`Expression.power(exponent: ExpressionLike): Expression`
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+power(exponent: ExpressionLike): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_power.61c34f700b84"></a>
-Raw WebAssembly: `pub fn power(&self, exponent: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Expression method: <code>Expression.power</code></p>
+
+```typescript signature
+power(exponent: Expression): Expression
+```
+
+</details>
 
 
 ### negate
 
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_negate_api_expression_negate"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_negate.1e2d3469633f"></a>
-`Expression.negate(): Expression`
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+negate(): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_negate.2e41e0b07df3"></a>
-Raw WebAssembly: `pub fn negate(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Expression method: <code>Expression.negate</code></p>
+
+```typescript signature
+negate(): Expression
+```
+
+</details>
 
 
 ## Substitution and structure
 
 ### substitute
 
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_substitute_api_expression_substitute"></a>
 <a id="placement-placement.wasm.wasm_class.expression_substitute.617d58709370"></a>
-Raw WebAssembly: `pub fn substitute(&self, variable: &str, value: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+substitute(variable: string, value: Expression): Expression
+```
 
 
 Replace every free occurrence of the named symbol with `value`, re-running
@@ -115,11 +162,25 @@ simplifier; useful for comparing alternative forms.
 
 ### duplicate
 
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_duplicate_api_expression_duplicate"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_duplicate.d4be0ef54df8"></a>
-`Expression.duplicate(): Expression`
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+duplicate(): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_duplicate.97b5cc29d8db"></a>
-Raw WebAssembly: `pub fn duplicate(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Expression method: <code>Expression.duplicate</code></p>
+
+```typescript signature
+duplicate(): Expression
+```
+
+</details>
 
 
 An independent handle to the same underlying expression. The recommended
@@ -181,8 +242,13 @@ identity `W_k(z)*exp(W_k(z)) = z` are preserved by the branch-aware result.
 
 ### equals
 
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_equals_api_expression_operations_expression_equals"></a>
 <a id="placement-placement.wasm.wasm_class.expression_equals.48b56c74b7ad"></a>
-Raw WebAssembly: `pub fn equals(&self, other: &Expression) -> Result<bool, JsError>`
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+equals(other: Expression): boolean
+```
 
 
 Mathematical equality test: \(\operatorname{simplify}(\operatorname{self} - \operatorname{other}) = 0\). A `False` result
@@ -390,40 +456,106 @@ factors. Python returns a two-tuple and the JavaScript facade returns a record.
 
 ### numerator
 
-<a id="placement-placement.wasm.javascript_facade.expression_numerator.3d9f01a0881d"></a>
-`Expression.numerator(): Expression`
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_numerator_api_session_numerator"></a>
+<a id="placement-placement.wasm.wasm_module.module_numerator.86af5abc3af7"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.numeratordenominator_numerator.875fb10bce86"></a>
-`NumeratorDenominator.numerator: Expression`
+```typescript signature
+numerator(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_numerator.9937af07591e"></a>
-Raw WebAssembly: `pub fn numerator(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Explicit context: <code>Context.numerator</code></p>
+
+```typescript signature
+numerator(input_expression: Expression): Expression
+```
+
+</details>
+
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_numerator_api_expression_numerator"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_numerator.3d9f01a0881d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+numerator(): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_numerator.093c06d610d6"></a>
-Raw WebAssembly: `pub fn numerator(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Expression method: <code>Expression.numerator</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_numerator.86af5abc3af7"></a>
-Raw WebAssembly: `fn numerator(input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+numerator(): Expression
+```
+
+</details>
+
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_numerator_api_results_numeratordenominator_numerator"></a>
+<a id="placement-placement.wasm.javascript_facade.numeratordenominator_numerator.875fb10bce86"></a>
+<p class="symi-entry-owner">NumeratorDenominator property</p>
+
+```typescript signature
+numerator: Expression
+```
 
 
 Returns the structural numerator from `numerator_denominator`.
 
 ### denominator
 
-<a id="placement-placement.wasm.javascript_facade.expression_denominator.9d6d160c4432"></a>
-`Expression.denominator(): Expression`
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_denominator_api_session_denominator"></a>
+<a id="placement-placement.wasm.wasm_module.module_denominator.b4393447d319"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.numeratordenominator_denominator.9141100064f1"></a>
-`NumeratorDenominator.denominator: Expression`
+```typescript signature
+denominator(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_denominator.fed5cc8af821"></a>
-Raw WebAssembly: `pub fn denominator(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Explicit context: <code>Context.denominator</code></p>
+
+```typescript signature
+denominator(input_expression: Expression): Expression
+```
+
+</details>
+
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_denominator_api_expression_denominator"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_denominator.9d6d160c4432"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+denominator(): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_denominator.4666a5313067"></a>
-Raw WebAssembly: `pub fn denominator(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Expression method: <code>Expression.denominator</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_denominator.b4393447d319"></a>
-Raw WebAssembly: `fn denominator(input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+denominator(): Expression
+```
+
+</details>
+
+<a id="entry-presentation_wasm_expressions_capability_expression_transformations_denominator_api_results_numeratordenominator_denominator"></a>
+<a id="placement-placement.wasm.javascript_facade.numeratordenominator_denominator.9141100064f1"></a>
+<p class="symi-entry-owner">NumeratorDenominator property</p>
+
+```typescript signature
+denominator: Expression
+```
 
 
 Returns the structural denominator from `numerator_denominator`.

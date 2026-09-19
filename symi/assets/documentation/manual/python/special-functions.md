@@ -10,44 +10,100 @@ arbitrary-precision numeric evaluation (real and complex) all apply.
 
 ### gamma
 
-<a id="placement-placement.python.python_class.context_gamma.aad9a3424c1f"></a>
-`Context.gamma(x)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_gamma_api_session_gamma"></a>
 <a id="placement-placement.python.python_module.module_gamma.3519c91de883"></a>
-`symi.gamma(x)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+gamma(x: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_gamma.aad9a3424c1f"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.gamma</code></p>
+
+```python signature
+gamma(x: Any) -> Expression
+```
+
+</details>
 
 
 The gamma function \(\Gamma(x)\), the analytic continuation of `(x-1)!`.
 
 ### log_gamma
 
-<a id="placement-placement.python.python_class.context_log_gamma.8d10f8895f42"></a>
-`Context.log_gamma(x)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_log_gamma_api_session_log_gamma"></a>
 <a id="placement-placement.python.python_module.module_log_gamma.72b9b1adff8c"></a>
-`symi.log_gamma(x)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+log_gamma(x: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_log_gamma.8d10f8895f42"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.log_gamma</code></p>
+
+```python signature
+log_gamma(x: Any) -> Expression
+```
+
+</details>
 
 
 The principal-branch log-gamma function (not `log(gamma(x))` off the real axis).
 
 ### digamma
 
-<a id="placement-placement.python.python_class.context_digamma.9d7c3431a68a"></a>
-`Context.digamma(x)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_digamma_api_session_digamma"></a>
 <a id="placement-placement.python.python_module.module_digamma.483bce136a30"></a>
-`symi.digamma(x)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+digamma(x: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_digamma.9d7c3431a68a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.digamma</code></p>
+
+```python signature
+digamma(x: Any) -> Expression
+```
+
+</details>
 
 
 The digamma function \(\psi(x) = \Gamma'(x)/\Gamma(x)\).
 
 ### polygamma
 
-<a id="placement-placement.python.python_class.context_polygamma.e82a3d78a52c"></a>
-`Context.polygamma(order, x)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_polygamma_api_session_polygamma"></a>
 <a id="placement-placement.python.python_module.module_polygamma.c31121e20084"></a>
-`symi.polygamma(order, x)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+polygamma(order: Any, x: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_polygamma.e82a3d78a52c"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.polygamma</code></p>
+
+```python signature
+polygamma(order: Any, x: Any) -> Expression
+```
+
+</details>
 
 
 The polygamma function \(\psi^{(n)}(x)\), the order-th derivative of digamma;
@@ -55,22 +111,50 @@ The polygamma function \(\psi^{(n)}(x)\), the order-th derivative of digamma;
 
 ### beta
 
-<a id="placement-placement.python.python_class.context_beta.cb0ca7293444"></a>
-`Context.beta(x, y)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_beta_api_session_beta"></a>
 <a id="placement-placement.python.python_module.module_beta.d5028cced6a3"></a>
-`symi.beta(x, y)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+beta(x: Any, y: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_beta.cb0ca7293444"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.beta</code></p>
+
+```python signature
+beta(x: Any, y: Any) -> Expression
+```
+
+</details>
 
 
 The beta function \(\operatorname{B}(x, y) = \Gamma(x)\Gamma(y)/\Gamma(x+y)\).
 
 ### zeta
 
-<a id="placement-placement.python.python_class.context_zeta.ac939043bdfd"></a>
-`Context.zeta(s)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_zeta_api_session_zeta"></a>
 <a id="placement-placement.python.python_module.module_zeta.0c28cf4de55a"></a>
-`symi.zeta(s)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+zeta(s: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_zeta.ac939043bdfd"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.zeta</code></p>
+
+```python signature
+zeta(s: Any) -> Expression
+```
+
+</details>
 
 
 The Riemann zeta function \(\zeta(s) = \sum_{k\geq 1} k^{-s}\). Even positive integers fold to
@@ -82,11 +166,25 @@ arbitrary precision over \(\mathbb{R}\) and \(\mathbb{C}\).
 
 ### hurwitz_zeta
 
-<a id="placement-placement.python.python_class.context_hurwitz_zeta.38cdd5341786"></a>
-`Context.hurwitz_zeta(s, a)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_hurwitz_zeta_api_session_hurwitz_zeta"></a>
 <a id="placement-placement.python.python_module.module_hurwitz_zeta.21812eff4922"></a>
-`symi.hurwitz_zeta(s, a)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+hurwitz_zeta(s: Any, a: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_hurwitz_zeta.38cdd5341786"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.hurwitz_zeta</code></p>
+
+```python signature
+hurwitz_zeta(s: Any, a: Any) -> Expression
+```
+
+</details>
 
 
 The Hurwitz zeta function \(\zeta(s, a) = \sum_{k\geq 0} (k+a)^{-s}\), the numeric primitive of
@@ -97,11 +195,25 @@ polynomial in `a`.
 
 ### polylogarithm
 
-<a id="placement-placement.python.python_class.context_polylogarithm.6e31a0b33842"></a>
-`Context.polylogarithm(order, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_polylogarithm_api_session_polylogarithm"></a>
 <a id="placement-placement.python.python_module.module_polylogarithm.9a8d6c19e530"></a>
-`symi.polylogarithm(order, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+polylogarithm(order: Any, argument: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_polylogarithm.6e31a0b33842"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.polylogarithm</code></p>
+
+```python signature
+polylogarithm(order: Any, argument: Any) -> Expression
+```
+
+</details>
 
 
 The principal-branch polylogarithm \(\operatorname{Li}_s(z)\). The defining-series values
@@ -116,11 +228,29 @@ routes decline numerically rather than returning a low-confidence value.
 
 ### lerch_phi
 
-<a id="placement-placement.python.python_class.context_lerch_phi.46a90ad2c2da"></a>
-`Context.lerch_phi(argument, order, shift)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_lerch_phi_api_session_lerch_phi"></a>
 <a id="placement-placement.python.python_module.module_lerch_phi.1dc5c9bba868"></a>
-`symi.lerch_phi(argument, order, shift)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+lerch_phi(argument: Any, order: Any, shift: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_lerch_phi.46a90ad2c2da"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.lerch_phi</code></p>
+
+```python signature
+lerch_phi(
+    argument: ExpressionLike,
+    order: ExpressionLike,
+    shift: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The principal Lerch transcendent \(\Phi(z, s, a)\), whose canonical argument order is
@@ -178,11 +308,33 @@ genuinely diverges when it fails.
 
 ### hypergeometric_pfq
 
-<a id="placement-placement.python.python_class.context_hypergeometric_pfq.547a7193c550"></a>
-`Context.hypergeometric_pfq(upper_parameters, lower_parameters, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_hypergeometric_pfq_api_session_hypergeometric_pfq"></a>
 <a id="placement-placement.python.python_module.module_hypergeometric_pfq.02a265af88b6"></a>
-`symi.hypergeometric_pfq(upper_parameters, lower_parameters, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+hypergeometric_pfq(
+    upper_parameters: Any,
+    lower_parameters: Any,
+    argument: Any,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_hypergeometric_pfq.547a7193c550"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.hypergeometric_pfq</code></p>
+
+```python signature
+hypergeometric_pfq(
+    upper_parameters: Any,
+    lower_parameters: Any,
+    argument: Any,
+) -> Expression
+```
+
+</details>
 
 
 The generalized hypergeometric function \({}_pF_q(\mathbf a; \mathbf b; z)\). The two parameter
@@ -191,33 +343,93 @@ rejected.
 
 ### hypergeometric_0f1
 
-<a id="placement-placement.python.python_class.context_hypergeometric_0f1.ee153e00052e"></a>
-`Context.hypergeometric_0f1(lower_parameter, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_hypergeometric_0f1_api_session_hypergeometric_0f1"></a>
 <a id="placement-placement.python.python_module.module_hypergeometric_0f1.e8b6f213dd26"></a>
-`symi.hypergeometric_0f1(lower_parameter, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+hypergeometric_0f1(lower_parameter: Any, argument: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_hypergeometric_0f1.ee153e00052e"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.hypergeometric_0f1</code></p>
+
+```python signature
+hypergeometric_0f1(lower_parameter: Any, argument: Any) -> Expression
+```
+
+</details>
 
 
 The confluent limit \({}_0F_1(; b; z)\), lowered to `hypergeometric_pfq`.
 
 ### hypergeometric_1f1
 
-<a id="placement-placement.python.python_class.context_hypergeometric_1f1.b74f5b16e6ae"></a>
-`Context.hypergeometric_1f1(upper_parameter, lower_parameter, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_hypergeometric_1f1_api_session_hypergeometric_1f1"></a>
 <a id="placement-placement.python.python_module.module_hypergeometric_1f1.69ebe7116c8a"></a>
-`symi.hypergeometric_1f1(upper_parameter, lower_parameter, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+hypergeometric_1f1(
+    upper_parameter: Any,
+    lower_parameter: Any,
+    argument: Any,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_hypergeometric_1f1.b74f5b16e6ae"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.hypergeometric_1f1</code></p>
+
+```python signature
+hypergeometric_1f1(
+    upper_parameter: Any,
+    lower_parameter: Any,
+    argument: Any,
+) -> Expression
+```
+
+</details>
 
 
 Kummer's confluent hypergeometric function \({}_1F_1(a; b; z)\).
 
 ### hypergeometric_2f1
 
-<a id="placement-placement.python.python_class.context_hypergeometric_2f1.bc54ac19e954"></a>
-`Context.hypergeometric_2f1(first_upper_parameter, second_upper_parameter, lower_parameter, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_hypergeometric_2f1_api_session_hypergeometric_2f1"></a>
 <a id="placement-placement.python.python_module.module_hypergeometric_2f1.5e19c8c8c3b3"></a>
-`symi.hypergeometric_2f1(first_upper_parameter, second_upper_parameter, lower_parameter, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+hypergeometric_2f1(
+    first_upper_parameter: Any,
+    second_upper_parameter: Any,
+    lower_parameter: Any,
+    argument: Any,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_hypergeometric_2f1.bc54ac19e954"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.hypergeometric_2f1</code></p>
+
+```python signature
+hypergeometric_2f1(
+    first_upper_parameter: Any,
+    second_upper_parameter: Any,
+    lower_parameter: Any,
+    argument: Any,
+) -> Expression
+```
+
+</details>
 
 
 The Gauss hypergeometric function \({}_2F_1(a, b; c; z)\).
@@ -226,11 +438,37 @@ The Gauss hypergeometric function \({}_2F_1(a, b; c; z)\).
 
 ### meijer_g
 
-<a id="placement-placement.python.python_class.context_meijer_g.7e3dafcc8ee5"></a>
-`Context.meijer_g(upper_numerator_parameters, upper_denominator_parameters, lower_numerator_parameters, lower_denominator_parameters, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_meijer_g_api_session_meijer_g"></a>
 <a id="placement-placement.python.python_module.module_meijer_g.e1235747d7bb"></a>
-`symi.meijer_g(upper_numerator_parameters, upper_denominator_parameters, lower_numerator_parameters, lower_denominator_parameters, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+meijer_g(
+    upper_numerator_parameters: Any,
+    upper_denominator_parameters: Any,
+    lower_numerator_parameters: Any,
+    lower_denominator_parameters: Any,
+    argument: Any,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_meijer_g.7e3dafcc8ee5"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.meijer_g</code></p>
+
+```python signature
+meijer_g(
+    upper_numerator_parameters: Any,
+    upper_denominator_parameters: Any,
+    lower_numerator_parameters: Any,
+    lower_denominator_parameters: Any,
+    argument: Any,
+) -> Expression
+```
+
+</details>
 
 
 The Meijer G-function \(G_{p,q}^{m,n}\) from its four ordered parameter groups. The orders `m`,
@@ -378,99 +616,289 @@ is the physicists' \(H_n\).
 
 ### jacobi_polynomial
 
-<a id="placement-placement.python.python_class.context_jacobi_polynomial.64fc0d037154"></a>
-`Context.jacobi_polynomial(degree, first_parameter, second_parameter, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_polynomial_api_session_jacobi_polynomial"></a>
 <a id="placement-placement.python.python_module.module_jacobi_polynomial.5d9827799e23"></a>
-`symi.jacobi_polynomial(degree, first_parameter, second_parameter, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_polynomial(
+    degree: ExpressionLike,
+    first_parameter: ExpressionLike,
+    second_parameter: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_jacobi_polynomial.64fc0d037154"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_polynomial</code></p>
+
+```python signature
+jacobi_polynomial(
+    degree: ExpressionLike,
+    first_parameter: ExpressionLike,
+    second_parameter: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The Jacobi polynomial \(P_n^{(\alpha,\beta)}(x)\).
 
 ### gegenbauer_polynomial
 
-<a id="placement-placement.python.python_class.context_gegenbauer_polynomial.f06cf4026ee5"></a>
-`Context.gegenbauer_polynomial(degree, parameter, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_gegenbauer_polynomial_api_session_gegenbauer_polynomial"></a>
 <a id="placement-placement.python.python_module.module_gegenbauer_polynomial.7c074bcbda06"></a>
-`symi.gegenbauer_polynomial(degree, parameter, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+gegenbauer_polynomial(
+    degree: ExpressionLike,
+    parameter: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_gegenbauer_polynomial.f06cf4026ee5"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.gegenbauer_polynomial</code></p>
+
+```python signature
+gegenbauer_polynomial(
+    degree: ExpressionLike,
+    parameter: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The Gegenbauer polynomial \(C_n^{(\lambda)}(x)\).
 
 ### chebyshev_polynomial_first_kind
 
-<a id="placement-placement.python.python_class.context_chebyshev_polynomial_first_kind.ce659e770f44"></a>
-`Context.chebyshev_polynomial_first_kind(degree, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_chebyshev_polynomial_first_kind_api_session_chebyshev_polynomial_first_kind"></a>
 <a id="placement-placement.python.python_module.module_chebyshev_polynomial_first_kind.14d02036658d"></a>
-`symi.chebyshev_polynomial_first_kind(degree, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+chebyshev_polynomial_first_kind(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_chebyshev_polynomial_first_kind.ce659e770f44"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.chebyshev_polynomial_first_kind</code></p>
+
+```python signature
+chebyshev_polynomial_first_kind(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The Chebyshev polynomial of the first kind \(T_n(x)\).
 
 ### chebyshev_polynomial_second_kind
 
-<a id="placement-placement.python.python_class.context_chebyshev_polynomial_second_kind.7d9175943d75"></a>
-`Context.chebyshev_polynomial_second_kind(degree, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_chebyshev_polynomial_second_kind_api_session_chebyshev_polynomial_second_kind"></a>
 <a id="placement-placement.python.python_module.module_chebyshev_polynomial_second_kind.72deb4c741ac"></a>
-`symi.chebyshev_polynomial_second_kind(degree, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+chebyshev_polynomial_second_kind(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_chebyshev_polynomial_second_kind.7d9175943d75"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.chebyshev_polynomial_second_kind</code></p>
+
+```python signature
+chebyshev_polynomial_second_kind(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The Chebyshev polynomial of the second kind \(U_n(x)\).
 
 ### legendre_polynomial
 
-<a id="placement-placement.python.python_class.context_legendre_polynomial.d36238a04be6"></a>
-`Context.legendre_polynomial(degree, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_legendre_polynomial_api_session_legendre_polynomial"></a>
 <a id="placement-placement.python.python_module.module_legendre_polynomial.e888215e86b2"></a>
-`symi.legendre_polynomial(degree, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+legendre_polynomial(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_legendre_polynomial.d36238a04be6"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.legendre_polynomial</code></p>
+
+```python signature
+legendre_polynomial(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The Legendre polynomial \(P_n(x)\).
 
 ### generalized_laguerre_polynomial
 
-<a id="placement-placement.python.python_class.context_generalized_laguerre_polynomial.d6199cb6c12a"></a>
-`Context.generalized_laguerre_polynomial(degree, parameter, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_generalized_laguerre_polynomial_api_session_generalized_laguerre_polynomial"></a>
 <a id="placement-placement.python.python_module.module_generalized_laguerre_polynomial.474a0697b788"></a>
-`symi.generalized_laguerre_polynomial(degree, parameter, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+generalized_laguerre_polynomial(
+    degree: ExpressionLike,
+    parameter: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_generalized_laguerre_polynomial.d6199cb6c12a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.generalized_laguerre_polynomial</code></p>
+
+```python signature
+generalized_laguerre_polynomial(
+    degree: ExpressionLike,
+    parameter: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The generalized Laguerre polynomial \(L_n^{(\alpha)}(x)\).
 
 ### hermite_polynomial
 
-<a id="placement-placement.python.python_class.context_hermite_polynomial.2a58c9ae6e11"></a>
-`Context.hermite_polynomial(degree, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_hermite_polynomial_api_session_hermite_polynomial"></a>
 <a id="placement-placement.python.python_module.module_hermite_polynomial.69f56e849918"></a>
-`symi.hermite_polynomial(degree, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+hermite_polynomial(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_hermite_polynomial.2a58c9ae6e11"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.hermite_polynomial</code></p>
+
+```python signature
+hermite_polynomial(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The physicists' Hermite polynomial \(H_n(x)\).
 
 ### ultraspherical_polynomial
 
-<a id="placement-placement.python.python_class.context_ultraspherical_polynomial.8d171095fa05"></a>
-`Context.ultraspherical_polynomial(degree, parameter, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_ultraspherical_polynomial_api_session_ultraspherical_polynomial"></a>
 <a id="placement-placement.python.python_module.module_ultraspherical_polynomial.8990d481e4a3"></a>
-`symi.ultraspherical_polynomial(degree, parameter, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+ultraspherical_polynomial(
+    degree: ExpressionLike,
+    parameter: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_ultraspherical_polynomial.8d171095fa05"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.ultraspherical_polynomial</code></p>
+
+```python signature
+ultraspherical_polynomial(
+    degree: ExpressionLike,
+    parameter: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The ultraspherical polynomial, lowered to its canonical Gegenbauer head.
 
 ### laguerre_polynomial
 
-<a id="placement-placement.python.python_class.context_laguerre_polynomial.26db128f463a"></a>
-`Context.laguerre_polynomial(degree, argument)`
-
+<a id="entry-presentation_python_special_functions_capability_special_functions_laguerre_polynomial_api_session_laguerre_polynomial"></a>
 <a id="placement-placement.python.python_module.module_laguerre_polynomial.fa6a108a7e43"></a>
-`symi.laguerre_polynomial(degree, argument)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+laguerre_polynomial(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_laguerre_polynomial.26db128f463a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.laguerre_polynomial</code></p>
+
+```python signature
+laguerre_polynomial(
+    degree: ExpressionLike,
+    argument: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 The Laguerre polynomial, lowered to its canonical generalized Laguerre head.
@@ -491,255 +919,541 @@ print(symi.digamma(1))
 
 ## Additional API
 
+### carlson_rc
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_carlson_rc_api_session_carlson_rc"></a>
+<a id="placement-placement.python.python_module.module_carlson_rc.7a62fd509b45"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+carlson_rc(
+    first_argument: ExpressionLike,
+    second_argument: ExpressionLike,
+) -> Expression
+```
+
+Carlson's degenerate symmetric elliptic integral \(R_C(x,y)\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.python.python_class.context_carlson_rc.1f21e8d8e888"></a>
-### Context.carlson_rc
+<p class="symi-entry-owner">Explicit context: <code>Context.carlson_rc</code></p>
 
-`Context.carlson_rc(first_argument, second_argument)`
+```python signature
+carlson_rc(
+    first_argument: ExpressionLike,
+    second_argument: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### carlson_rd
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_carlson_rd_api_session_carlson_rd"></a>
+<a id="placement-placement.python.python_module.module_carlson_rd.b8aad0a4cb2d"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+carlson_rd(
+    first_argument: ExpressionLike,
+    second_argument: ExpressionLike,
+    third_argument: ExpressionLike,
+) -> Expression
+```
+
+Carlson's symmetric elliptic integral \(R_D(x,y,z)\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_carlson_rd.bf2f40edb4fe"></a>
-### Context.carlson_rd
+<p class="symi-entry-owner">Explicit context: <code>Context.carlson_rd</code></p>
 
-`Context.carlson_rd(first_argument, second_argument, third_argument)`
+```python signature
+carlson_rd(
+    first_argument: ExpressionLike,
+    second_argument: ExpressionLike,
+    third_argument: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### carlson_rf
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_carlson_rf_api_session_carlson_rf"></a>
+<a id="placement-placement.python.python_module.module_carlson_rf.e1b92d7a3eb3"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+carlson_rf(
+    first_argument: ExpressionLike,
+    second_argument: ExpressionLike,
+    third_argument: ExpressionLike,
+) -> Expression
+```
+
+Carlson's symmetric elliptic integral \(R_F(x,y,z)\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_carlson_rf.4916bc8c8484"></a>
-### Context.carlson_rf
+<p class="symi-entry-owner">Explicit context: <code>Context.carlson_rf</code></p>
 
-`Context.carlson_rf(first_argument, second_argument, third_argument)`
+```python signature
+carlson_rf(
+    first_argument: ExpressionLike,
+    second_argument: ExpressionLike,
+    third_argument: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### carlson_rj
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_carlson_rj_api_session_carlson_rj"></a>
+<a id="placement-placement.python.python_module.module_carlson_rj.92717308a5ed"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+carlson_rj(
+    first_argument: ExpressionLike,
+    second_argument: ExpressionLike,
+    third_argument: ExpressionLike,
+    fourth_argument: ExpressionLike,
+) -> Expression
+```
+
+Carlson's symmetric elliptic integral \(R_J(x,y,z,p)\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_carlson_rj.23f9fee36cbe"></a>
-### Context.carlson_rj
+<p class="symi-entry-owner">Explicit context: <code>Context.carlson_rj</code></p>
 
-`Context.carlson_rj(first_argument, second_argument, third_argument, fourth_argument)`
+```python signature
+carlson_rj(
+    first_argument: ExpressionLike,
+    second_argument: ExpressionLike,
+    third_argument: ExpressionLike,
+    fourth_argument: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### elliptic_e
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_e_api_session_elliptic_e"></a>
+<a id="placement-placement.python.python_module.module_elliptic_e.d2350530f40b"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+elliptic_e(parameter: ExpressionLike) -> Expression
+```
+
+The complete second-kind elliptic integral \(E(m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_elliptic_e.9dfd1152c911"></a>
-### Context.elliptic_e
+<p class="symi-entry-owner">Explicit context: <code>Context.elliptic_e</code></p>
 
-`Context.elliptic_e(parameter)`
+```python signature
+elliptic_e(parameter: ExpressionLike) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### elliptic_e_incomplete
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_e_incomplete_api_session_elliptic_e_incomplete"></a>
+<a id="placement-placement.python.python_module.module_elliptic_e_incomplete.9daed527f7c1"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+elliptic_e_incomplete(
+    amplitude: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
+
+The incomplete second-kind elliptic integral \(E(\phi\mid m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_elliptic_e_incomplete.7586b09c4274"></a>
-### Context.elliptic_e_incomplete
+<p class="symi-entry-owner">Explicit context: <code>Context.elliptic_e_incomplete</code></p>
 
-`Context.elliptic_e_incomplete(amplitude, parameter)`
+```python signature
+elliptic_e_incomplete(
+    amplitude: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### elliptic_f
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_f_api_session_elliptic_f"></a>
+<a id="placement-placement.python.python_module.module_elliptic_f.9ae910ef2fdf"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+elliptic_f(
+    amplitude: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
+
+The incomplete first-kind elliptic integral \(F(\phi\mid m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_elliptic_f.4c30eecd1dd7"></a>
-### Context.elliptic_f
+<p class="symi-entry-owner">Explicit context: <code>Context.elliptic_f</code></p>
 
-`Context.elliptic_f(amplitude, parameter)`
+```python signature
+elliptic_f(
+    amplitude: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### elliptic_k
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_k_api_session_elliptic_k"></a>
+<a id="placement-placement.python.python_module.module_elliptic_k.f59acccd7929"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+elliptic_k(parameter: ExpressionLike) -> Expression
+```
+
+The complete first-kind elliptic integral \(K(m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_elliptic_k.8ad4e51cb50b"></a>
-### Context.elliptic_k
+<p class="symi-entry-owner">Explicit context: <code>Context.elliptic_k</code></p>
 
-`Context.elliptic_k(parameter)`
+```python signature
+elliptic_k(parameter: ExpressionLike) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### elliptic_pi
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_pi_api_session_elliptic_pi"></a>
+<a id="placement-placement.python.python_module.module_elliptic_pi.b2caf9b2f483"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+elliptic_pi(
+    characteristic: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
+
+The complete third-kind elliptic integral \(\Pi(n\mid m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_elliptic_pi.9a25def03094"></a>
-### Context.elliptic_pi
+<p class="symi-entry-owner">Explicit context: <code>Context.elliptic_pi</code></p>
 
-`Context.elliptic_pi(characteristic, parameter)`
+```python signature
+elliptic_pi(
+    characteristic: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### elliptic_pi_incomplete
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_pi_incomplete_api_session_elliptic_pi_incomplete"></a>
+<a id="placement-placement.python.python_module.module_elliptic_pi_incomplete.6998450e30c4"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+elliptic_pi_incomplete(
+    characteristic: ExpressionLike,
+    amplitude: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
+
+The incomplete third-kind elliptic integral \(\Pi(n;\phi\mid m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_elliptic_pi_incomplete.07e6d87d5004"></a>
-### Context.elliptic_pi_incomplete
+<p class="symi-entry-owner">Explicit context: <code>Context.elliptic_pi_incomplete</code></p>
 
-`Context.elliptic_pi_incomplete(characteristic, amplitude, parameter)`
+```python signature
+elliptic_pi_incomplete(
+    characteristic: ExpressionLike,
+    amplitude: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### jacobi_amplitude
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_amplitude_api_session_jacobi_amplitude"></a>
+<a id="placement-placement.python.python_module.module_jacobi_amplitude.bcc9ba96ede7"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_amplitude(
+    argument: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
+
+The pinned Jacobi amplitude \(\operatorname{am}(u\mid m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_jacobi_amplitude.033cc0b6ade5"></a>
-### Context.jacobi_amplitude
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_amplitude</code></p>
 
-`Context.jacobi_amplitude(argument, parameter)`
+```python signature
+jacobi_amplitude(
+    argument: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### jacobi_cn
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_cn_api_session_jacobi_cn"></a>
+<a id="placement-placement.python.python_module.module_jacobi_cn.ef9f43c6c15b"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_cn(
+    argument: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
+
+Jacobi's elliptic function \(\operatorname{cn}(u\mid m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_jacobi_cn.838844e73195"></a>
-### Context.jacobi_cn
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_cn</code></p>
 
-`Context.jacobi_cn(argument, parameter)`
+```python signature
+jacobi_cn(
+    argument: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### jacobi_dn
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_dn_api_session_jacobi_dn"></a>
+<a id="placement-placement.python.python_module.module_jacobi_dn.0d987137c1d8"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_dn(
+    argument: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
+
+Jacobi's elliptic function \(\operatorname{dn}(u\mid m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_jacobi_dn.d9719f1481c2"></a>
-### Context.jacobi_dn
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_dn</code></p>
 
-`Context.jacobi_dn(argument, parameter)`
+```python signature
+jacobi_dn(
+    argument: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### jacobi_sn
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_sn_api_session_jacobi_sn"></a>
+<a id="placement-placement.python.python_module.module_jacobi_sn.acd020b3768d"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_sn(
+    argument: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
+
+Jacobi's elliptic function \(\operatorname{sn}(u\mid m)\), with parameter \(m=k^2\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_jacobi_sn.42e4320c635b"></a>
-### Context.jacobi_sn
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_sn</code></p>
 
-`Context.jacobi_sn(argument, parameter)`
+```python signature
+jacobi_sn(
+    argument: ExpressionLike,
+    parameter: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### jacobi_theta_1
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_1_api_session_jacobi_theta_1"></a>
+<a id="placement-placement.python.python_module.module_jacobi_theta_1.2824d6af6ed1"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_theta_1(
+    argument: ExpressionLike,
+    tau: ExpressionLike,
+) -> Expression
+```
+
+Jacobi's first theta function \(\theta_1(z\mid\tau)\), with half-period ratio \(\tau\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_jacobi_theta_1.433614f2018d"></a>
-### Context.jacobi_theta_1
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_theta_1</code></p>
 
-`Context.jacobi_theta_1(argument, tau)`
+```python signature
+jacobi_theta_1(
+    argument: ExpressionLike,
+    tau: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### jacobi_theta_2
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_2_api_session_jacobi_theta_2"></a>
+<a id="placement-placement.python.python_module.module_jacobi_theta_2.47ed91301e1f"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_theta_2(
+    argument: ExpressionLike,
+    tau: ExpressionLike,
+) -> Expression
+```
+
+Jacobi's second theta function \(\theta_2(z\mid\tau)\), with half-period ratio \(\tau\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_jacobi_theta_2.7f97046acb10"></a>
-### Context.jacobi_theta_2
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_theta_2</code></p>
 
-`Context.jacobi_theta_2(argument, tau)`
+```python signature
+jacobi_theta_2(
+    argument: ExpressionLike,
+    tau: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### jacobi_theta_3
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_3_api_session_jacobi_theta_3"></a>
+<a id="placement-placement.python.python_module.module_jacobi_theta_3.40b6b95af764"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_theta_3(
+    argument: ExpressionLike,
+    tau: ExpressionLike,
+) -> Expression
+```
+
+Jacobi's third theta function \(\theta_3(z\mid\tau)\), with half-period ratio \(\tau\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_jacobi_theta_3.ceee5bc43fc4"></a>
-### Context.jacobi_theta_3
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_theta_3</code></p>
 
-`Context.jacobi_theta_3(argument, tau)`
+```python signature
+jacobi_theta_3(
+    argument: ExpressionLike,
+    tau: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
+</details>
+
+### jacobi_theta_4
+
+<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_4_api_session_jacobi_theta_4"></a>
+<a id="placement-placement.python.python_module.module_jacobi_theta_4.63583e3ae5cc"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_theta_4(
+    argument: ExpressionLike,
+    tau: ExpressionLike,
+) -> Expression
+```
+
+Jacobi's fourth theta function \(\theta_4(z\mid\tau)\), with half-period ratio \(\tau\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_jacobi_theta_4.d4c146604932"></a>
-### Context.jacobi_theta_4
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_theta_4</code></p>
 
-`Context.jacobi_theta_4(argument, tau)`
+```python signature
+jacobi_theta_4(
+    argument: ExpressionLike,
+    tau: ExpressionLike,
+) -> Expression
+```
 
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_carlson_rc.7a62fd509b45"></a>
-### module.carlson_rc
-
-`symi.carlson_rc(first_argument, second_argument)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_carlson_rd.b8aad0a4cb2d"></a>
-### module.carlson_rd
-
-`symi.carlson_rd(first_argument, second_argument, third_argument)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_carlson_rf.e1b92d7a3eb3"></a>
-### module.carlson_rf
-
-`symi.carlson_rf(first_argument, second_argument, third_argument)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_carlson_rj.92717308a5ed"></a>
-### module.carlson_rj
-
-`symi.carlson_rj(first_argument, second_argument, third_argument, fourth_argument)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_elliptic_e.d2350530f40b"></a>
-### module.elliptic_e
-
-`symi.elliptic_e(parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_elliptic_e_incomplete.9daed527f7c1"></a>
-### module.elliptic_e_incomplete
-
-`symi.elliptic_e_incomplete(amplitude, parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_elliptic_f.9ae910ef2fdf"></a>
-### module.elliptic_f
-
-`symi.elliptic_f(amplitude, parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_elliptic_k.f59acccd7929"></a>
-### module.elliptic_k
-
-`symi.elliptic_k(parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_elliptic_pi.b2caf9b2f483"></a>
-### module.elliptic_pi
-
-`symi.elliptic_pi(characteristic, parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_elliptic_pi_incomplete.6998450e30c4"></a>
-### module.elliptic_pi_incomplete
-
-`symi.elliptic_pi_incomplete(characteristic, amplitude, parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_jacobi_amplitude.bcc9ba96ede7"></a>
-### module.jacobi_amplitude
-
-`symi.jacobi_amplitude(argument, parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_jacobi_cn.ef9f43c6c15b"></a>
-### module.jacobi_cn
-
-`symi.jacobi_cn(argument, parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_jacobi_dn.0d987137c1d8"></a>
-### module.jacobi_dn
-
-`symi.jacobi_dn(argument, parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_jacobi_sn.acd020b3768d"></a>
-### module.jacobi_sn
-
-`symi.jacobi_sn(argument, parameter)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_jacobi_theta_1.2824d6af6ed1"></a>
-### module.jacobi_theta_1
-
-`symi.jacobi_theta_1(argument, tau)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_jacobi_theta_2.47ed91301e1f"></a>
-### module.jacobi_theta_2
-
-`symi.jacobi_theta_2(argument, tau)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_jacobi_theta_3.40b6b95af764"></a>
-### module.jacobi_theta_3
-
-`symi.jacobi_theta_3(argument, tau)`
-
-Returns `expression`.
-
-<a id="placement-placement.python.python_module.module_jacobi_theta_4.63583e3ae5cc"></a>
-### module.jacobi_theta_4
-
-`symi.jacobi_theta_4(argument, tau)`
-
-Returns `expression`.
+</details>
 

@@ -43,17 +43,39 @@ other former module calls must remove the parentheses.
 
 ### pi
 
-<a id="placement-placement.wasm.javascript_facade.context_pi.eadf6aa4f2e3"></a>
-`Context.readonly pi: Expression`
+<a id="entry-presentation_wasm_evaluation_and_constants_capability_constants_pi_api_session_pi"></a>
+<a id="placement-placement.wasm.wasm_module.module_pi.0a6bfb246d23"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.symifacade_pi.650aba83836c"></a>
-`SymiFacade.readonly pi: Expression`
+```typescript signature
+pi(): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_pi.eadf6aa4f2e3"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.pi</code></p>
+
+```typescript signature
+readonly pi: Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_pi.a8999ab0df5a"></a>
-Raw WebAssembly: `pub fn pi(&self) -> Expression`
+<p class="symi-entry-owner">Explicit context: <code>Context.pi</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_pi.0a6bfb246d23"></a>
-Raw WebAssembly: `fn pi() -> Expression`
+```typescript signature
+readonly pi: Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_pi.650aba83836c"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.pi</code></p>
+
+```typescript signature
+readonly pi: Expression
+```
+
+</details>
 
 
 The circle constant \(\pi\). Exact in every arithmetic operation; use
@@ -62,17 +84,39 @@ decimal value.
 
 ### e
 
-<a id="placement-placement.wasm.javascript_facade.context_e.44cbd15853e1"></a>
-`Context.readonly e: Expression`
+<a id="entry-presentation_wasm_evaluation_and_constants_capability_constants_e_api_session_e"></a>
+<a id="placement-placement.wasm.wasm_module.module_e.52105aa78b4d"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.symifacade_e.e814399adf66"></a>
-`SymiFacade.readonly e: Expression`
+```typescript signature
+e(): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_e.44cbd15853e1"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.e</code></p>
+
+```typescript signature
+readonly e: Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_e.8c51aa37c2b8"></a>
-Raw WebAssembly: `pub fn e(&self) -> Expression`
+<p class="symi-entry-owner">Explicit context: <code>Context.e</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_e.52105aa78b4d"></a>
-Raw WebAssembly: `fn e() -> Expression`
+```typescript signature
+readonly e: Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_e.e814399adf66"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.e</code></p>
+
+```typescript signature
+readonly e: Expression
+```
+
+</details>
 
 
 Euler's number \(e\), the base of the natural logarithm. `exp(1)` and this
@@ -98,17 +142,39 @@ decompose a complex expression.
 
 ### infinity
 
-<a id="placement-placement.wasm.javascript_facade.context_infinity.43c79a8d626e"></a>
-`Context.readonly infinity: Expression`
+<a id="entry-presentation_wasm_evaluation_and_constants_capability_constants_infinity_api_session_infinity"></a>
+<a id="placement-placement.wasm.wasm_module.module_infinity.d225021217a9"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.symifacade_infinity.bf44254ac060"></a>
-`SymiFacade.readonly infinity: Expression`
+```typescript signature
+infinity(): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_infinity.43c79a8d626e"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.infinity</code></p>
+
+```typescript signature
+readonly infinity: Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_infinity.bfd6a5bf4701"></a>
-Raw WebAssembly: `pub fn infinity(&self) -> Expression`
+<p class="symi-entry-owner">Explicit context: <code>Context.infinity</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_infinity.d225021217a9"></a>
-Raw WebAssembly: `fn infinity() -> Expression`
+```typescript signature
+readonly infinity: Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_infinity.bf44254ac060"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.infinity</code></p>
+
+```typescript signature
+readonly infinity: Expression
+```
+
+</details>
 
 
 Unsigned positive infinity \(\infty\). Negate it for \(-\infty\). Both are accepted

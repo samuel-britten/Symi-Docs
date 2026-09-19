@@ -13,11 +13,21 @@ are described in [Boolean algebra and logic](logic.md).
 
 ### disjunctive_normal_form
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_disjunctivenormalform.6ff7181c01d1"></a>
-`UniffiExpression.disjunctiveNormalForm() -> UniffiExpression`
-
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_disjunctive_normal_form_api_logic_session_disjunctive_normal_form"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_disjunctivenormalform.d7fbc2e09d23"></a>
-`UniffiSession.disjunctiveNormalForm(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func disjunctiveNormalForm(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_disjunctive_normal_form_api_expression_operations_expression_disjunctive_normal_form"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_disjunctivenormalform.6ff7181c01d1"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func disjunctiveNormalForm() -> UniffiExpression
+```
 
 
 Rewrite a propositional formula into a reduced disjunctive normal form (an
@@ -27,11 +37,21 @@ contradictory, duplicate, and subsumed terms are dropped.
 
 ### conjunctive_normal_form
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_conjunctivenormalform.0bb096f8b61e"></a>
-`UniffiExpression.conjunctiveNormalForm() -> UniffiExpression`
-
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_conjunctive_normal_form_api_logic_session_conjunctive_normal_form"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_conjunctivenormalform.fbd29ab4e82b"></a>
-`UniffiSession.conjunctiveNormalForm(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func conjunctiveNormalForm(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_conjunctive_normal_form_api_expression_operations_expression_conjunctive_normal_form"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_conjunctivenormalform.0bb096f8b61e"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func conjunctiveNormalForm() -> UniffiExpression
+```
 
 
 The dual of `disjunctive_normal_form`: a reduced conjunctive normal form (an
@@ -39,11 +59,21 @@ AND of OR-clauses over literals).
 
 ### minimize_logical
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_minimizelogical.b8ad7ddea25e"></a>
-`UniffiExpression.minimizeLogical() -> UniffiExpression`
-
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_minimize_logical_api_logic_session_minimize_logical"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_minimizelogical.0ecf4ae38ecf"></a>
-`UniffiSession.minimizeLogical(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func minimizeLogical(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_minimize_logical_api_expression_operations_expression_minimize_logical"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_minimizelogical.b8ad7ddea25e"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func minimizeLogical() -> UniffiExpression
+```
 
 
 The smaller of the minimum sum-of-products and product-of-sums two-level
@@ -54,11 +84,21 @@ provably minimal — cover.
 
 ### simplify_logical
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_simplifylogical.d7244d884a0c"></a>
-`UniffiExpression.simplifyLogical() -> UniffiExpression`
-
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_simplify_logical_api_logic_session_simplify_logical"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_simplifylogical.5c4e301d1b64"></a>
-`UniffiSession.simplifyLogical(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func simplifyLogical(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_simplify_logical_api_expression_operations_expression_simplify_logical"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_simplifylogical.d7244d884a0c"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func simplifyLogical() -> UniffiExpression
+```
 
 
 Return whichever of the original form, the disjunctive and conjunctive
@@ -76,11 +116,21 @@ either of them, and neither performs hidden normal-form work.
 
 ### eliminate_derived_logical_connectives
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_eliminatederivedlogicalconnectives.6e3674e0a7cc"></a>
-`UniffiExpression.eliminateDerivedLogicalConnectives() -> UniffiExpression`
-
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_logic_session_eliminate_derived_logical_connectives"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_eliminatederivedlogicalconnectives.861d478ba8ed"></a>
-`UniffiSession.eliminateDerivedLogicalConnectives(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func eliminateDerivedLogicalConnectives(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_expression_operations_expression_eliminate_derived_logical_connectives"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_eliminatederivedlogicalconnectives.6e3674e0a7cc"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func eliminateDerivedLogicalConnectives() -> UniffiExpression
+```
 
 
 Rewrite every `implies`, `equivalent`, and `exclusive_or` occurrence in a
@@ -128,11 +178,21 @@ already in the basis also comes back unchanged.
 
 ### introduce_derived_logical_connectives
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_introducederivedlogicalconnectives.53bf85f1bdd1"></a>
-`UniffiExpression.introduceDerivedLogicalConnectives() -> UniffiExpression`
-
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_introduce_derived_logical_connectives_api_logic_session_introduce_derived_logical_connectives"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_introducederivedlogicalconnectives.9692fcb4ad9f"></a>
-`UniffiSession.introduceDerivedLogicalConnectives(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func introduceDerivedLogicalConnectives(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_logical_transforms_capability_discrete_mathematics_introduce_derived_logical_connectives_api_expression_operations_expression_introduce_derived_logical_connectives"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_introducederivedlogicalconnectives.53bf85f1bdd1"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func introduceDerivedLogicalConnectives() -> UniffiExpression
+```
 
 
 The inverse presentation direction. Recognise the exact canonical definitions

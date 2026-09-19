@@ -4,11 +4,21 @@ Trigonometric, logarithmic, exponential, and complex rewrites are separated from
 
 ### expand_complex
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_expandcomplex.a6ec49c593ff"></a>
-`UniffiExpression.expandComplex() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_algebra_session_expand_complex"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_expandcomplex.10e7c2d7d775"></a>
-`UniffiSession.expandComplex(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func expandComplex(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_expression_operations_expression_expand_complex"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_expandcomplex.a6ec49c593ff"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func expandComplex() -> UniffiExpression
+```
 
 
 
@@ -23,11 +33,21 @@ unsupported modulus arguments remain unchanged or wrapper-bearing.
 
 ### real_part
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_realpart.ba36a259050e"></a>
-`UniffiExpression.realPart() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_real_part_api_session_real_part"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_realpart.5f1a5e54e6b6"></a>
-`UniffiSession.realPart(target: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func realPart(target: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_real_part_api_expression_real_part"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_realpart.ba36a259050e"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func realPart() -> UniffiExpression
+```
 
 
 
@@ -37,11 +57,21 @@ Return the exact real component of an expression. For example, if `y` is declare
 
 ### imaginary_part
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_imaginarypart.53a60ee88b34"></a>
-`UniffiExpression.imaginaryPart() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_imaginary_part_api_session_imaginary_part"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_imaginarypart.cb7731527162"></a>
-`UniffiSession.imaginaryPart(target: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func imaginaryPart(target: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_imaginary_part_api_expression_imaginary_part"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_imaginarypart.53a60ee88b34"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func imaginaryPart() -> UniffiExpression
+```
 
 
 
@@ -51,11 +81,21 @@ Return the exact imaginary component of an expression. For example, if `y` is de
 
 ### combine_powers
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_combinepowers.0c443e507fad"></a>
-`UniffiExpression.combinePowers() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_combine_powers_api_algebra_session_combine_powers"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_combinepowers.d59fd8e67728"></a>
-`UniffiSession.combinePowers(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func combinePowers(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_combine_powers_api_expression_operations_expression_combine_powers"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_combinepowers.0c443e507fad"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func combinePowers() -> UniffiExpression
+```
 
 
 
@@ -75,11 +115,21 @@ unchanged, and an expression with no provable site is returned as-is.
 
 ### expand_power_base
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_expandpowerbase.18638e0afc1d"></a>
-`UniffiExpression.expandPowerBase() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_expand_power_base_api_algebra_session_expand_power_base"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_expandpowerbase.9795002c6ea7"></a>
-`UniffiSession.expandPowerBase(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func expandPowerBase(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_expand_power_base_api_expression_operations_expression_expand_power_base"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_expandpowerbase.18638e0afc1d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func expandPowerBase() -> UniffiExpression
+```
 
 
 
@@ -94,11 +144,21 @@ product is never decomposed, so `6^x` is not split into `2^x * 3^x`.
 
 ### denest_powers
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_denestpowers.98e0069e9002"></a>
-`UniffiExpression.denestPowers() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_denest_powers_api_algebra_session_denest_powers"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_denestpowers.bc71d1e41188"></a>
-`UniffiSession.denestPowers(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func denestPowers(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_denest_powers_api_expression_operations_expression_denest_powers"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_denestpowers.98e0069e9002"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func denestPowers() -> UniffiExpression
+```
 
 
 
@@ -111,11 +171,21 @@ there is no force mode. A base that is not structurally a power is untouched.
 
 ### simplify_trigonometric
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_simplifytrigonometric.9aaf2cdb41e2"></a>
-`UniffiExpression.simplifyTrigonometric() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_session_simplify_trigonometric"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_simplifytrigonometric.7e8037005fde"></a>
-`UniffiSession.simplifyTrigonometric(target: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func simplifyTrigonometric(target: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_expression_simplify_trigonometric"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_simplifytrigonometric.9aaf2cdb41e2"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func simplifyTrigonometric() -> UniffiExpression
+```
 
 
 
@@ -123,11 +193,21 @@ Fu-style trigonometric simplification toward fewer/cheaper trig calls.
 
 ### expand_trigonometric
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_expandtrigonometric.49913e755db6"></a>
-`UniffiExpression.expandTrigonometric() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_session_expand_trigonometric"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_expandtrigonometric.ddeaea8cce53"></a>
-`UniffiSession.expandTrigonometric(target: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func expandTrigonometric(target: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_expression_expand_trigonometric"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_expandtrigonometric.49913e755db6"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func expandTrigonometric() -> UniffiExpression
+```
 
 
 
@@ -138,11 +218,21 @@ admitted sums are expanded in the same pass.
 
 ### combine_trigonometric
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_combinetrigonometric.fc6b740ce454"></a>
-`UniffiExpression.combineTrigonometric() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_session_combine_trigonometric"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_combinetrigonometric.d451139c9e39"></a>
-`UniffiSession.combineTrigonometric(target: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func combineTrigonometric(target: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_expression_combine_trigonometric"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_combinetrigonometric.fc6b740ce454"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func combineTrigonometric() -> UniffiExpression
+```
 
 
 
@@ -151,11 +241,21 @@ angle-recombination rules.
 
 ### combine_logarithm
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_combinelogarithm.0bdc7eb3a1f8"></a>
-`UniffiExpression.combineLogarithm() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_algebra_session_combine_logarithm"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_combinelogarithm.76ac0d3a69ea"></a>
-`UniffiSession.combineLogarithm(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func combineLogarithm(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_expression_operations_expression_combine_logarithm"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_combinelogarithm.0bdc7eb3a1f8"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func combineLogarithm() -> UniffiExpression
+```
 
 
 
@@ -164,11 +264,21 @@ preserves the expression's domain.
 
 ### expand_logarithm
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_expandlogarithm.3539d6fcf19f"></a>
-`UniffiExpression.expandLogarithm() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_algebra_session_expand_logarithm"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_expandlogarithm.962f51c8cd33"></a>
-`UniffiSession.expandLogarithm(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func expandLogarithm(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_expression_operations_expression_expand_logarithm"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_expandlogarithm.3539d6fcf19f"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func expandLogarithm() -> UniffiExpression
+```
 
 
 
@@ -178,11 +288,21 @@ unchanged.
 
 ### rewrite_as_exponential
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_rewriteasexponential.63699520e6e6"></a>
-`UniffiExpression.rewriteAsExponential() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_exponential_api_algebra_session_rewrite_as_exponential"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_rewriteasexponential.7f6c80832b9d"></a>
-`UniffiSession.rewriteAsExponential(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func rewriteAsExponential(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_exponential_api_expression_operations_expression_rewrite_as_exponential"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_rewriteasexponential.63699520e6e6"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func rewriteAsExponential() -> UniffiExpression
+```
 
 
 
@@ -191,11 +311,21 @@ equivalent complex-exponential expression (bottom-up).
 
 ### rewrite_as_trigonometric
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_rewriteastrigonometric.8c5e139dc49d"></a>
-`UniffiExpression.rewriteAsTrigonometric() -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_algebra_session_rewrite_as_trigonometric"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_rewriteastrigonometric.a7e77f830197"></a>
-`UniffiSession.rewriteAsTrigonometric(inputExpression: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func rewriteAsTrigonometric(inputExpression: UniffiExpression) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_expression_operations_expression_rewrite_as_trigonometric"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_rewriteastrigonometric.8c5e139dc49d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func rewriteAsTrigonometric() -> UniffiExpression
+```
 
 
 
@@ -205,11 +335,24 @@ through unchanged, so the round trip is the identity.
 
 ### rewrite_trigonometric_basis
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_rewritetrigonometricbasis.1e0cbfd99f8f"></a>
-`UniffiExpression.rewriteTrigonometricBasis(basis: UniffiTrigonometricBasis) -> UniffiExpression`
-
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_session_rewrite_trigonometric_basis"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_rewritetrigonometricbasis.a113505204d1"></a>
-`UniffiSession.rewriteTrigonometricBasis(target: UniffiExpression, basis: UniffiTrigonometricBasis) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func rewriteTrigonometricBasis(
+    target: UniffiExpression,
+    basis: UniffiTrigonometricBasis,
+) -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_expression_rewrite_trigonometric_basis"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_rewritetrigonometricbasis.1e0cbfd99f8f"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func rewriteTrigonometricBasis(basis: UniffiTrigonometricBasis) -> UniffiExpression
+```
 
 
 

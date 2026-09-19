@@ -17,6 +17,7 @@ maturin develop --release
 
 Prefer a qualified import so Symi names do not shadow Python builtins:
 
+<!-- symi-example: identifier=python.getting-started.exact-arithmetic kind=runnable placements=placement.python.python_module.module_symbol.13b49e0351f9,placement.python.python_class.expression_factor.a7b06dfc4e7c,placement.python.python_module.module_integrate.135ca8b1419e,placement.python.python_class.expression_substitute.bb8b8e243847,placement.python.python_module.module_integer.49c85c5856ea expectation=output -->
 ```python
 from fractions import Fraction
 import symi
@@ -24,11 +25,19 @@ import symi
 x = symi.symbol("x", positive=True)
 polynomial = x**2 + 2*x + 1
 
-print(polynomial.factor())                  # (1 + x)^2
+print(polynomial.factor())                  # (x + 1)^2
 print(symi.integrate(symi.sin(x), x))
 print(polynomial.substitute(x, 3))
 print(symi.rational(2, 3) + Fraction(1, 3))
-assert symi.integer(1 << 4096) == 1 << 4096
+assert str(symi.integer(1 << 4096)) == str(1 << 4096)
+```
+
+<!-- symi-example: kind=output example=python.getting-started.exact-arithmetic -->
+```text
+(x + 1)^2
+-cos(x)
+16
+1
 ```
 
 Python `int`, excluding `bool`, is accepted anywhere an expression-like value

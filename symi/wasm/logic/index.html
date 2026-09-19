@@ -1,101 +1,375 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="wasm">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Boolean algebra and logic — Symi WASM / JavaScript documentation</title>
+        <meta name="description" content="See Evaluation and constants for the distinction between symbolic relations, execute, logical simplification, and the exact three-valued host query." />
+        <link rel="canonical" href="/symi/wasm/logic/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="logic" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/wasm/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the WASM / JavaScript documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">WASM / JavaScript</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: WASM / JavaScript"><span>WASM / JavaScript</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/logic/" data-language="python" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/logic/" data-language="wasm" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/logic/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/logic/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/logic/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/getting-started-javascript/">Getting started: JavaScript / WASM</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/default-context/">The default context and module-level functions</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/context-safety/">Context safety</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/specialized-canonical-forms/">Specialized canonical forms</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/integral-transforms/">Integral transforms</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logic/" aria-current="page">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Hide entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_logic_session_eliminate_derived_logical_connectives"><code>eliminateDerivedLogicalConnectives</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_expression_operations_expression_eliminate_derived_logical_connectives"><code>eliminateDerivedLogicalConnectives</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_evaluate_truth_api_session_evaluate_truth"><code>evaluateTruth</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_evaluate_truth_api_expression_evaluate_truth"><code>evaluateTruth</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_introduce_derived_logical_connectives_api_logic_session_introduce_derived_logical_connectives"><code>introduceDerivedLogicalConnectives</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_introduce_derived_logical_connectives_api_expression_operations_expression_introduce_derived_logical_connectives"><code>introduceDerivedLogicalConnectives</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_logical_false_api_session_logical_false"><code>logicalFalse</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_logical_true_api_session_logical_true"><code>logicalTrue</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_minimize_logical_api_logic_session_minimize_logical"><code>minimizeLogical</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_minimize_logical_api_expression_operations_expression_minimize_logical"><code>minimizeLogical</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_simplify_logical_api_logic_session_simplify_logical"><code>simplifyLogical</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/logic/#entry-presentation_wasm_logic_capability_discrete_mathematics_simplify_logical_api_expression_operations_expression_simplify_logical"><code>simplifyLogical</code> <span class="symi-nav-entry-owner">Expression method</span></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logical-transforms/">Logical transforms</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/zero-equivalence/">Zero equivalence</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/wasm/introduction/">WASM / JavaScript</a></li><li>Discrete mathematics</li><li><span aria-current="page">Boolean algebra and logic</span></li></ol></nav>
+                <p class="symi-notice">Signatures in the WASM / JavaScript view are TypeScript. Where the JavaScript facade wraps an operation its form is listed first; the other calling forms are the raw wasm-bindgen exports.</p>
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#logical_true" data-outline-target="logical_true">logical_true</a></li><li class="symi-outline-depth-3"><a href="#logical_false" data-outline-target="logical_false">logical_false</a></li><li class="symi-outline-depth-3"><a href="#evaluate_truth" data-outline-target="evaluate_truth">evaluate_truth</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#eliminatederivedlogicalconnectives" data-outline-target="eliminatederivedlogicalconnectives">eliminateDerivedLogicalConnectives</a></li><li class="symi-outline-depth-3"><a href="#eliminatederivedlogicalconnectives_2" data-outline-target="eliminatederivedlogicalconnectives_2">eliminateDerivedLogicalConnectives</a></li><li class="symi-outline-depth-3"><a href="#evaluatetruth" data-outline-target="evaluatetruth">evaluateTruth</a></li><li class="symi-outline-depth-3"><a href="#evaluatetruth_2" data-outline-target="evaluatetruth_2">evaluateTruth</a></li><li class="symi-outline-depth-3"><a href="#introducederivedlogicalconnectives" data-outline-target="introducederivedlogicalconnectives">introduceDerivedLogicalConnectives</a></li><li class="symi-outline-depth-3"><a href="#introducederivedlogicalconnectives_2" data-outline-target="introducederivedlogicalconnectives_2">introduceDerivedLogicalConnectives</a></li><li class="symi-outline-depth-3"><a href="#logicalfalse" data-outline-target="logicalfalse">logicalFalse</a></li><li class="symi-outline-depth-3"><a href="#logicaltrue" data-outline-target="logicaltrue">logicalTrue</a></li><li class="symi-outline-depth-3"><a href="#minimizelogical" data-outline-target="minimizelogical">minimizeLogical</a></li><li class="symi-outline-depth-3"><a href="#minimizelogical_2" data-outline-target="minimizelogical_2">minimizeLogical</a></li><li class="symi-outline-depth-3"><a href="#simplifylogical" data-outline-target="simplifylogical">simplifyLogical</a></li><li class="symi-outline-depth-3"><a href="#simplifylogical_2" data-outline-target="simplifylogical_2">simplifyLogical</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">Boolean algebra and logic</h1>
+<p>See <a href="/symi/wasm/evaluation-and-constants/">Evaluation and constants</a> for the distinction
+between symbolic relations, <code>execute</code>, logical simplification, and the exact
+three-valued host query.</p>
+<p>Logical formulas are built from the connective heads <code>logical_and</code>,
+<code>logical_or</code>, <code>logical_not</code>, <code>implies</code>, <code>equivalent</code> (the n-ary &quot;all
+arguments equal&quot; biconditional), and <code>exclusive_or</code> (n-ary parity), applied
+through <code>parse</code> or <code>call</code>/<code>function_call</code> over the relational atoms
+(<code>equal</code>, <code>less_than</code>, …) and ordinary symbols treated as Boolean
+variables. The associative-commutative connectives auto-simplify to a flat,
+sorted, deduplicated, constant- and complement-folded canonical form. The
+two Boolean constants are <code>logical_true</code> and <code>logical_false</code>.</p>
+<p>Normal forms and Boolean simplification are documented in
+<a href="/symi/wasm/logical-transforms/">logical transforms</a>.</p>
+<h3 id="logical_true">logical_true<a class="symi-heading-permalink" href="#logical_true" aria-label="Link to this section: logical_true">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/logic/#logical_true"><code>Context.logical_true</code></a> in Python, <a href="/symi/kotlin/logic/#logical_true"><code>UniffiSession.logicalTrue</code></a> in Kotlin, <a href="/symi/swift/logic/#logical_true"><code>UniffiSession.logicalTrue</code></a> in Swift, <a href="/symi/rust/logic/#logical_true"><code>api::Session::logical_true</code></a> in Rust.</em></p>
+<p>The Boolean constant true (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">⊤</mi></mrow><annotation encoding="application/x-tex">\top</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">⊤</span></span></span></span>).</p>
+<h3 id="logical_false">logical_false<a class="symi-heading-permalink" href="#logical_false" aria-label="Link to this section: logical_false">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/logic/#logical_false"><code>Context.logical_false</code></a> in Python, <a href="/symi/kotlin/logic/#logical_false"><code>UniffiSession.logicalFalse</code></a> in Kotlin, <a href="/symi/swift/logic/#logical_false"><code>UniffiSession.logicalFalse</code></a> in Swift, <a href="/symi/rust/logic/#logical_false"><code>api::Session::logical_false</code></a> in Rust.</em></p>
+<p>The Boolean constant false (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">⊥</mi></mrow><annotation encoding="application/x-tex">\bot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">⊥</span></span></span></span>).</p>
+<h3 id="evaluate_truth">evaluate_truth<a class="symi-heading-permalink" href="#evaluate_truth" aria-label="Link to this section: evaluate_truth">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/logic/#evaluate_truth"><code>Context.evaluate_truth</code></a> in Python, <a href="/symi/kotlin/logic/#evaluate_truth"><code>UniffiExpression.evaluateTruth</code></a> in Kotlin, <a href="/symi/swift/logic/#evaluate_truth"><code>UniffiExpression.evaluateTruth</code></a> in Swift, <a href="/symi/rust/logic/#evaluate_truth"><code>api::Expression::evaluate_truth</code></a> in Rust.</em></p>
+<p><code>evaluate_truth(predicate)</code> uses exact three-valued logic. Python returns <code>True</code>, <code>False</code>, or
+<code>None</code>; JavaScript returns <code>true</code>, <code>false</code>, or <code>null</code>; Rust returns <code>TruthValue</code>. Non-logical
+numeric expressions are rejected.</p>
+<p><strong>The third value means undecided, never false.</strong> A <code>None</code> / <code>null</code> / <code>unknown</code> result says the
+procedure could not prove either verdict — not that the predicate is false. This distinction is
+load-bearing at the call site, because a host-language <code>if</code> treats <code>None</code> and <code>null</code> as falsy: a
+test written <code>if evaluate_truth(...)</code> silently reads every undecided relation as false. Compare
+against <code>True</code> / <code>False</code> (or <code>true</code> / <code>false</code>) explicitly whenever the undecided case matters.</p>
+<p>Order, equality and sign relations are decided exactly, by rational and polynomial arithmetic
+only — no floating point ever enters the decision. The decided class is the closed-form real
+constants: integer and rational literals, <code>pi</code>, real algebraic numbers, sums, products, integer
+powers, and rational powers of a positive base (so <code>sqrt</code> and nested radicals), together with
+<code>abs</code> and <code>signum</code> over those. Within that class a comparison is decided in full, including
+values that need term collection to become constant at all, such as <code>x + sqrt(5) &lt; x + 3</code>.</p>
+<p>Outside it the answer is <code>unknown</code> by design, not by accident: comparisons whose difference
+involves <code>e</code>, <code>log 2</code> or a special-function value, order between unassumed symbols, and any
+relation with a provably non-real operand — <code>sqrt(-4)</code> is <code>2i</code>, about which no order verdict is
+meaningful — all decline rather than guess.</p>
+<h2 id="example">Example<a class="symi-heading-permalink" href="#example" aria-label="Link to this section: Example">#</a></h2>
+<p>Logical expressions carry a three-valued outcome.</p>
+<figure class="symi-code symi-code-example" data-code-language="javascript" data-code-kind="example"><figcaption class="symi-code-header"><span class="symi-code-label">JavaScript</span></figcaption><pre class="symi-code-body language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> x <span class="token operator">=</span> symi<span class="token punctuation">.</span><span class="token function">symbol</span><span class="token punctuation">(</span><span class="token string">"x"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span><span class="token function">evaluateTruth</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span><span class="token function">lessThan</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span><span class="token function">rational</span><span class="token punctuation">(</span><span class="token number">1n</span><span class="token punctuation">,</span> <span class="token number">3n</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span><span class="token function">evaluateTruth</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span><span class="token function">lessThan</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure>
+<h2 id="additional_api">Additional API<a class="symi-heading-permalink" href="#additional_api" aria-label="Link to this section: Additional API">#</a></h2>
+<h3 id="eliminatederivedlogicalconnectives"><span id="eliminateDerivedLogicalConnectives" class="symi-legacy-anchor"></span>eliminateDerivedLogicalConnectives<a class="symi-heading-permalink" href="#eliminatederivedlogicalconnectives" aria-label="Link to this section: eliminateDerivedLogicalConnectives">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_logic_session_eliminate_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.wasm_module.module_eliminatederivedlogicalconnectives.86334ce1fe59"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eliminateDerivedLogicalConnectives</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite every <code>implies</code>, <code>equivalent</code>, and <code>exclusive_or</code> occurrence into the <code>logical_and</code> / <code>logical_or</code> / <code>logical_not</code> basis. This is a directed presentation request, not a cost decision, so the result may be larger than the input; a formula already in the basis, and a conversion that would cross the fixed size ceiling, both return the input unchanged.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_eliminatederivedlogicalconnectives.fbf21e222b48"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.eliminateDerivedLogicalConnectives</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eliminateDerivedLogicalConnectives</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_eliminatederivedlogicalconnectives.3556bcb58aec"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.eliminateDerivedLogicalConnectives</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eliminateDerivedLogicalConnectives</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_eliminatederivedlogicalconnectives.ac05ca331ca5"></a></p>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.eliminateDerivedLogicalConnectives</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eliminateDerivedLogicalConnectives</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="eliminatederivedlogicalconnectives_2">eliminateDerivedLogicalConnectives<a class="symi-heading-permalink" href="#eliminatederivedlogicalconnectives_2" aria-label="Link to this section: eliminateDerivedLogicalConnectives">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_expression_operations_expression_eliminate_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_eliminatederivedlogicalconnectives.03dbed4ef109"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eliminateDerivedLogicalConnectives</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite every <code>implies</code>, <code>equivalent</code>, and <code>exclusive_or</code> occurrence in this formula into the <code>logical_and</code> / <code>logical_or</code> / <code>logical_not</code> basis. This is a directed presentation request, not a cost decision, so the result may be larger than the input; a formula already in the basis, and a conversion that would cross the fixed size ceiling, both return the input unchanged.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_eliminatederivedlogicalconnectives.1f7a9ae4427f"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.eliminateDerivedLogicalConnectives</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eliminateDerivedLogicalConnectives</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="evaluatetruth"><span id="evaluateTruth" class="symi-legacy-anchor"></span>evaluateTruth<a class="symi-heading-permalink" href="#evaluatetruth" aria-label="Link to this section: evaluateTruth">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_evaluate_truth_api_session_evaluate_truth"></a>
+<a id="placement-placement.wasm.wasm_module.module_evaluatetruth.fb0e4e2d9223"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">evaluateTruth</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p><code>evaluate_truth(predicate)</code> uses exact three-valued logic. Python returns <code>True</code>, <code>False</code>, or <code>None</code>; JavaScript returns <code>true</code>, <code>false</code>, or <code>null</code>; Rust returns <code>truth_value</code>. The third value means undecided, never false: a host-language <code>if</code> reads it as falsy, so compare against <code>True</code> / <code>False</code> explicitly. Order, equality and sign relations between closed-form real constants — rationals, <code>pi</code>, radicals and real algebraic numbers — are decided exactly by rational arithmetic; transcendental, symbolic and provably non-real operands decline rather than guess.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_evaluatetruth.a9ce02ce8752"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.evaluateTruth</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">evaluateTruth</span><span class="token punctuation">(</span>predicate<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_evaluatetruth.863d04a2419d"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.evaluateTruth</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">evaluateTruth</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_evaluatetruth.b770fcd9faa8"></a></p>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.evaluateTruth</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">evaluateTruth</span><span class="token punctuation">(</span>predicate<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+</details>
+
+<h3 id="evaluatetruth_2">evaluateTruth<a class="symi-heading-permalink" href="#evaluatetruth_2" aria-label="Link to this section: evaluateTruth">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_evaluate_truth_api_expression_evaluate_truth"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_evaluatetruth.e2bc58e39b58"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">evaluateTruth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p><code>evaluate_truth(predicate)</code> uses exact three-valued logic. Python returns <code>True</code>, <code>False</code>, or <code>None</code>; JavaScript returns <code>true</code>, <code>false</code>, or <code>null</code>; Rust returns <code>truth_value</code>. The third value means undecided, never false: a host-language <code>if</code> reads it as falsy, so compare against <code>True</code> / <code>False</code> explicitly. Order, equality and sign relations between closed-form real constants — rationals, <code>pi</code>, radicals and real algebraic numbers — are decided exactly by rational arithmetic; transcendental, symbolic and provably non-real operands decline rather than guess.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_evaluatetruth.1071ae13c246"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.evaluateTruth</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">evaluateTruth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="introducederivedlogicalconnectives"><span id="introduceDerivedLogicalConnectives" class="symi-legacy-anchor"></span>introduceDerivedLogicalConnectives<a class="symi-heading-permalink" href="#introducederivedlogicalconnectives" aria-label="Link to this section: introduceDerivedLogicalConnectives">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_introduce_derived_logical_connectives_api_logic_session_introduce_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.wasm_module.module_introducederivedlogicalconnectives.83816a1b06a4"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">introduceDerivedLogicalConnectives</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Recognise the exact canonical definitions of implication, equivalence, and exclusive-or inside an and/or/not formula and replace each match with the derived connective, but only where the replacement is strictly smaller. It is a local structural compressor: a formula merely equivalent to a definition, without matching it, is left unchanged.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_introducederivedlogicalconnectives.1178bb7be801"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.introduceDerivedLogicalConnectives</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">introduceDerivedLogicalConnectives</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_introducederivedlogicalconnectives.b3bbbe9c8c71"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.introduceDerivedLogicalConnectives</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">introduceDerivedLogicalConnectives</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_introducederivedlogicalconnectives.d87c58b06818"></a></p>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.introduceDerivedLogicalConnectives</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">introduceDerivedLogicalConnectives</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="introducederivedlogicalconnectives_2">introduceDerivedLogicalConnectives<a class="symi-heading-permalink" href="#introducederivedlogicalconnectives_2" aria-label="Link to this section: introduceDerivedLogicalConnectives">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_introduce_derived_logical_connectives_api_expression_operations_expression_introduce_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_introducederivedlogicalconnectives.d61df7a5125f"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">introduceDerivedLogicalConnectives</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Recognise the exact canonical definitions of implication, equivalence, and exclusive-or inside this and/or/not formula and replace each match with the derived connective, but only where the replacement is strictly smaller. It is a local structural compressor: a formula merely equivalent to a definition, without matching it, is left unchanged.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_introducederivedlogicalconnectives.174398edf818"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.introduceDerivedLogicalConnectives</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">introduceDerivedLogicalConnectives</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="logicalfalse"><span id="logicalFalse" class="symi-legacy-anchor"></span>logicalFalse<a class="symi-heading-permalink" href="#logicalfalse" aria-label="Link to this section: logicalFalse">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_logical_false_api_session_logical_false"></a>
+<a id="placement-placement.wasm.wasm_module.module_logicalfalse.6aee9d3550be"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">logicalFalse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The Boolean constant false (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">⊥</mi></mrow><annotation encoding="application/x-tex">\bot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">⊥</span></span></span></span>).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_logicalfalse.9bc67d1ef760"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.logicalFalse</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> logicalFalse<span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_logicalfalse.94e8b3dd883e"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.logicalFalse</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">logicalFalse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_logicalfalse.2e267b20bbb1"></a></p>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.logicalFalse</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> logicalFalse<span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="logicaltrue"><span id="logicalTrue" class="symi-legacy-anchor"></span>logicalTrue<a class="symi-heading-permalink" href="#logicaltrue" aria-label="Link to this section: logicalTrue">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_logical_true_api_session_logical_true"></a>
+<a id="placement-placement.wasm.wasm_module.module_logicaltrue.8c894af8e323"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">logicalTrue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The Boolean constant true (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">⊤</mi></mrow><annotation encoding="application/x-tex">\top</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">⊤</span></span></span></span>).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_logicaltrue.9727eb1248c1"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.logicalTrue</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> logicalTrue<span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_logicaltrue.e8dfff3d592b"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.logicalTrue</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">logicalTrue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_logicaltrue.42cc56407238"></a></p>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.logicalTrue</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> logicalTrue<span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="minimizelogical"><span id="minimizeLogical" class="symi-legacy-anchor"></span>minimizeLogical<a class="symi-heading-permalink" href="#minimizelogical" aria-label="Link to this section: minimizeLogical">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_minimize_logical_api_logic_session_minimize_logical"></a>
+<a id="placement-placement.wasm.wasm_module.module_minimizelogical.b1927e04de80"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">minimizeLogical</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The smaller of the minimum sum-of-products and product-of-sums two-level forms. Within a practical atom bound this is the exact Quine–McCluskey minimum (prime implicants, essential extraction, and Petrick&#39;s method on the residual chart); above it, an Espresso-style heuristic returns a good — not provably minimal — cover.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_minimizelogical.e8634cea64ca"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.minimizeLogical</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">minimizeLogical</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="minimizelogical_2">minimizeLogical<a class="symi-heading-permalink" href="#minimizelogical_2" aria-label="Link to this section: minimizeLogical">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_minimize_logical_api_expression_operations_expression_minimize_logical"></a>
+<a id="placement-placement.wasm.wasm_class.expression_minimizelogical.1eeedfe07389"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">minimizeLogical</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The smaller of the minimum sum-of-products and product-of-sums two-level forms. Within a practical atom bound this is the exact Quine–McCluskey minimum (prime implicants, essential extraction, and Petrick&#39;s method on the residual chart); above it, an Espresso-style heuristic returns a good — not provably minimal — cover.</p>
+<h3 id="simplifylogical"><span id="simplifyLogical" class="symi-legacy-anchor"></span>simplifyLogical<a class="symi-heading-permalink" href="#simplifylogical" aria-label="Link to this section: simplifyLogical">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_simplify_logical_api_logic_session_simplify_logical"></a>
+<a id="placement-placement.wasm.wasm_module.module_simplifylogical.c91f7d3e4b36"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplifyLogical</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Return whichever of the original form, the disjunctive and conjunctive normal forms, and the two minimal two-level forms has the smallest weighted size.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_simplifylogical.d5a84750401d"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.simplifyLogical</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplifyLogical</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_simplifylogical.0449b898501d"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.simplifyLogical</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplifyLogical</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_simplifylogical.7e8c3741add9"></a></p>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.simplifyLogical</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplifyLogical</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="simplifylogical_2">simplifyLogical<a class="symi-heading-permalink" href="#simplifylogical_2" aria-label="Link to this section: simplifyLogical">#</a></h3>
+<p><a id="entry-presentation_wasm_logic_capability_discrete_mathematics_simplify_logical_api_expression_operations_expression_simplify_logical"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_simplifylogical.dce05b71d665"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplifyLogical</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Return whichever of the original form, the disjunctive and conjunctive normal forms, and the two minimal two-level forms has the smallest weighted size.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_simplifylogical.b150d8671266"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.simplifyLogical</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplifyLogical</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Discrete mathematics</h2><ul class="symi-related-list"><li><a href="/symi/wasm/sets/">Sets</a></li><li><a href="/symi/wasm/logical-transforms/">Logical transforms</a></li><li><a href="/symi/wasm/number-theory/">Integer number theory</a></li><li><a href="/symi/wasm/combinatorics/">Combinatorics</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/wasm/sets/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Sets</span></a><a class="symi-pager-link symi-pager-next" href="/symi/wasm/logical-transforms/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Logical transforms</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · WASM / JavaScript</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#logical_true" data-outline-target="logical_true">logical_true</a></li><li class="symi-outline-depth-3"><a href="#logical_false" data-outline-target="logical_false">logical_false</a></li><li class="symi-outline-depth-3"><a href="#evaluate_truth" data-outline-target="evaluate_truth">evaluate_truth</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#eliminatederivedlogicalconnectives" data-outline-target="eliminatederivedlogicalconnectives">eliminateDerivedLogicalConnectives</a></li><li class="symi-outline-depth-3"><a href="#eliminatederivedlogicalconnectives_2" data-outline-target="eliminatederivedlogicalconnectives_2">eliminateDerivedLogicalConnectives</a></li><li class="symi-outline-depth-3"><a href="#evaluatetruth" data-outline-target="evaluatetruth">evaluateTruth</a></li><li class="symi-outline-depth-3"><a href="#evaluatetruth_2" data-outline-target="evaluatetruth_2">evaluateTruth</a></li><li class="symi-outline-depth-3"><a href="#introducederivedlogicalconnectives" data-outline-target="introducederivedlogicalconnectives">introduceDerivedLogicalConnectives</a></li><li class="symi-outline-depth-3"><a href="#introducederivedlogicalconnectives_2" data-outline-target="introducederivedlogicalconnectives_2">introduceDerivedLogicalConnectives</a></li><li class="symi-outline-depth-3"><a href="#logicalfalse" data-outline-target="logicalfalse">logicalFalse</a></li><li class="symi-outline-depth-3"><a href="#logicaltrue" data-outline-target="logicaltrue">logicalTrue</a></li><li class="symi-outline-depth-3"><a href="#minimizelogical" data-outline-target="minimizelogical">minimizeLogical</a></li><li class="symi-outline-depth-3"><a href="#minimizelogical_2" data-outline-target="minimizelogical_2">minimizeLogical</a></li><li class="symi-outline-depth-3"><a href="#simplifylogical" data-outline-target="simplifylogical">simplifyLogical</a></li><li class="symi-outline-depth-3"><a href="#simplifylogical_2" data-outline-target="simplifylogical_2">simplifyLogical</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

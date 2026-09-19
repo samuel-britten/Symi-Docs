@@ -2,13 +2,6 @@
 
 ### zero_equivalent
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_zeroequivalent.742441c0a4e3"></a>
-`UniffiExpression.zeroEquivalent(constraint: UniffiExpression?) -> UniffiZeroEquivalenceVerdict`
-
-<a id="placement-placement.swift.swift_object.uniffisession_zeroequivalent.15dad0925fdd"></a>
-`UniffiSession.zeroEquivalent(target: UniffiExpression, constraint: UniffiExpression?) -> UniffiZeroEquivalenceVerdict`
-
-
 
 Proves whether an expression is zero at every point where the input expression is defined within
 the declared region. `"true"` is an exact theorem replay, `"false"` has an exact counterexample,
@@ -22,4 +15,34 @@ the declared region.
 The initial admitted routes are the principal-branch Gudermannian identity for a real variable on
 `-pi/2 < x < pi/2`, and the Riemann zeta reflection relation. The latter remains a nonzero-shaped
 expression under ordinary simplification because its written factors have exceptional points.
+
+
+## Additional API
+
+### zero_equivalent
+
+<a id="entry-presentation_swift_zero_equivalence_capability_algebra_zero_equivalent_api_session_zero_equivalent"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_zeroequivalent.15dad0925fdd"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func zeroEquivalent(
+    target: UniffiExpression,
+    constraint: UniffiExpression?,
+) -> UniffiZeroEquivalenceVerdict
+```
+
+Provides the `zero_equivalent` operation on this mobile object.
+
+### zero_equivalent
+
+<a id="entry-presentation_swift_zero_equivalence_capability_algebra_zero_equivalent_api_expression_zero_equivalent"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_zeroequivalent.742441c0a4e3"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func zeroEquivalent(constraint: UniffiExpression?) -> UniffiZeroEquivalenceVerdict
+```
+
+Provides the `zero_equivalent` operation on this mobile object.
 

@@ -18,36 +18,83 @@ Normal forms and Boolean simplification are documented in
 
 ### logical_true
 
-<a id="placement-placement.python.python_class.context_logical_true.2245ad3a5ca6"></a>
-`Context.logical_true`
-
+<a id="entry-presentation_python_logic_capability_discrete_mathematics_logical_true_api_session_logical_true"></a>
 <a id="placement-placement.python.python_module.module_logical_true.ef761df9ca2e"></a>
-`symi.logical_true`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+logical_true: expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_logical_true.2245ad3a5ca6"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.logical_true</code></p>
+
+```python signature
+logical_true: Expression
+```
+
+</details>
 
 
 The Boolean constant true (\(\top\)).
 
 ### logical_false
 
-<a id="placement-placement.python.python_class.context_logical_false.2a29c31f903d"></a>
-`Context.logical_false`
-
+<a id="entry-presentation_python_logic_capability_discrete_mathematics_logical_false_api_session_logical_false"></a>
 <a id="placement-placement.python.python_module.module_logical_false.35969dae5f4e"></a>
-`symi.logical_false`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+logical_false: expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_logical_false.2a29c31f903d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.logical_false</code></p>
+
+```python signature
+logical_false: Expression
+```
+
+</details>
 
 
 The Boolean constant false (\(\bot\)).
 
 ### evaluate_truth
 
-<a id="placement-placement.python.python_class.context_evaluate_truth.a421c2b10040"></a>
-`Context.evaluate_truth(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_evaluate_truth.2acfc1c52e62"></a>
-`Expression.evaluate_truth()`
-
+<a id="entry-presentation_python_logic_capability_discrete_mathematics_evaluate_truth_api_session_evaluate_truth"></a>
 <a id="placement-placement.python.python_module.module_evaluate_truth.973391b33da4"></a>
-`symi.evaluate_truth(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+evaluate_truth(input_expression: ExpressionLike) -> Optional[bool]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_evaluate_truth.a421c2b10040"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.evaluate_truth</code></p>
+
+```python signature
+evaluate_truth(input_expression: ExpressionLike) -> Optional[bool]
+```
+
+</details>
+
+<a id="entry-presentation_python_logic_capability_discrete_mathematics_evaluate_truth_api_expression_evaluate_truth"></a>
+<a id="placement-placement.python.python_class.expression_evaluate_truth.2acfc1c52e62"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+evaluate_truth() -> Optional[bool]
+```
 
 
 `evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or

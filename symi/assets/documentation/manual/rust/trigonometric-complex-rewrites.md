@@ -4,11 +4,24 @@ Trigonometric, logarithmic, exponential, and complex rewrites are separated from
 
 ### expand_complex
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_algebra_session_expand_complex_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_expand_complex.8aa76ff87554"></a>
-`symi::api::algebra::Session — pub fn expand_complex(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
 
+```rust signature
+pub fn expand_complex(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_operations_expression_expand_complex_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_expand_complex.9c293f464f3e"></a>
-`symi::api::expression_operations::Expression — pub fn expand_complex(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn expand_complex(&self) -> Result<Expression, ApiError>
+```
 
 
 
@@ -23,11 +36,28 @@ unsupported modulus arguments remain unchanged or wrapper-bearing.
 
 ### real_part
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_real_part_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_real_part.a37e6d768c29"></a>
-`symi::api::Expression — pub fn real_part(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
+
+```rust signature
+pub fn real_part(&self) -> Result<Expression, ApiError>
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.rust.native_rust.api_session_real_part.38bcca50a70e"></a>
-`symi::api::Session — pub fn real_part(&self, target: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method: <code>api::Session::real_part</code></p>
+
+```rust signature
+pub fn real_part(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+</details>
 
 
 
@@ -37,11 +67,28 @@ Return the exact real component of an expression. For example, if `y` is declare
 
 ### imaginary_part
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_imaginary_part_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_imaginary_part.73bc1b4e2851"></a>
-`symi::api::Expression — pub fn imaginary_part(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
+
+```rust signature
+pub fn imaginary_part(&self) -> Result<Expression, ApiError>
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.rust.native_rust.api_session_imaginary_part.b4771edd5c0c"></a>
-`symi::api::Session — pub fn imaginary_part(&self, target: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method: <code>api::Session::imaginary_part</code></p>
+
+```rust signature
+pub fn imaginary_part(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+</details>
 
 
 
@@ -51,11 +98,24 @@ Return the exact imaginary component of an expression. For example, if `y` is de
 
 ### combine_powers
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_algebra_session_combine_powers_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_combine_powers.4547ac2b3231"></a>
-`symi::api::algebra::Session — pub fn combine_powers(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
 
+```rust signature
+pub fn combine_powers(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_operations_expression_combine_powers_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_combine_powers.ab07ff93f33a"></a>
-`symi::api::expression_operations::Expression — pub fn combine_powers(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn combine_powers(&self) -> Result<Expression, ApiError>
+```
 
 
 
@@ -75,11 +135,24 @@ unchanged, and an expression with no provable site is returned as-is.
 
 ### expand_power_base
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_algebra_session_expand_power_base_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_expand_power_base.358396965966"></a>
-`symi::api::algebra::Session — pub fn expand_power_base(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
 
+```rust signature
+pub fn expand_power_base(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_operations_expression_expand_power_base_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_expand_power_base.fb010d02f61c"></a>
-`symi::api::expression_operations::Expression — pub fn expand_power_base(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn expand_power_base(&self) -> Result<Expression, ApiError>
+```
 
 
 
@@ -94,11 +167,24 @@ product is never decomposed, so `6^x` is not split into `2^x * 3^x`.
 
 ### denest_powers
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_algebra_session_denest_powers_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_denest_powers.68e29c497595"></a>
-`symi::api::algebra::Session — pub fn denest_powers(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
 
+```rust signature
+pub fn denest_powers(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_operations_expression_denest_powers_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_denest_powers.f656252fc1d5"></a>
-`symi::api::expression_operations::Expression — pub fn denest_powers(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn denest_powers(&self) -> Result<Expression, ApiError>
+```
 
 
 
@@ -111,11 +197,24 @@ there is no force mode. A base that is not structurally a power is untouched.
 
 ### simplify_trigonometric
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_simplify_trigonometric_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_simplify_trigonometric.f7433e1e8f42"></a>
-`symi::api::Expression — pub fn simplify_trigonometric(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
 
+```rust signature
+pub fn simplify_trigonometric(&self) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_session_simplify_trigonometric_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_simplify_trigonometric.43b076acd6ce"></a>
-`symi::api::Session — pub fn simplify_trigonometric(&self, target: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn simplify_trigonometric(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 
@@ -123,11 +222,24 @@ Fu-style trigonometric simplification toward fewer/cheaper trig calls.
 
 ### expand_trigonometric
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_expand_trigonometric_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_expand_trigonometric.9dea62c54355"></a>
-`symi::api::Expression — pub fn expand_trigonometric(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
 
+```rust signature
+pub fn expand_trigonometric(&self) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_session_expand_trigonometric_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_expand_trigonometric.a57496d47117"></a>
-`symi::api::Session — pub fn expand_trigonometric(&self, target: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn expand_trigonometric(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 
@@ -138,11 +250,24 @@ admitted sums are expanded in the same pass.
 
 ### combine_trigonometric
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_combine_trigonometric_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_combine_trigonometric.73b4736028bc"></a>
-`symi::api::Expression — pub fn combine_trigonometric(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
 
+```rust signature
+pub fn combine_trigonometric(&self) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_session_combine_trigonometric_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_combine_trigonometric.4583d3fa6760"></a>
-`symi::api::Session — pub fn combine_trigonometric(&self, target: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn combine_trigonometric(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 
@@ -151,11 +276,24 @@ angle-recombination rules.
 
 ### combine_logarithm
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_algebra_session_combine_logarithm_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_combine_logarithm.9b071189a169"></a>
-`symi::api::algebra::Session — pub fn combine_logarithm(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
 
+```rust signature
+pub fn combine_logarithm(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_operations_expression_combine_logarithm_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_combine_logarithm.ac24e7937d41"></a>
-`symi::api::expression_operations::Expression — pub fn combine_logarithm(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn combine_logarithm(&self) -> Result<Expression, ApiError>
+```
 
 
 
@@ -164,11 +302,24 @@ preserves the expression's domain.
 
 ### expand_logarithm
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_algebra_session_expand_logarithm_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_expand_logarithm.f662c7ef374a"></a>
-`symi::api::algebra::Session — pub fn expand_logarithm(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
 
+```rust signature
+pub fn expand_logarithm(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_operations_expression_expand_logarithm_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_expand_logarithm.1a10c25fffd1"></a>
-`symi::api::expression_operations::Expression — pub fn expand_logarithm(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn expand_logarithm(&self) -> Result<Expression, ApiError>
+```
 
 
 
@@ -178,11 +329,24 @@ unchanged.
 
 ### rewrite_as_exponential
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_algebra_session_rewrite_as_exponential_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_rewrite_as_exponential.34463dfa137a"></a>
-`symi::api::algebra::Session — pub fn rewrite_as_exponential(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
 
+```rust signature
+pub fn rewrite_as_exponential(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_operations_expression_rewrite_as_exponential_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_rewrite_as_exponential.08b190fc4dc8"></a>
-`symi::api::expression_operations::Expression — pub fn rewrite_as_exponential(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn rewrite_as_exponential(&self) -> Result<Expression, ApiError>
+```
 
 
 
@@ -191,11 +355,24 @@ equivalent complex-exponential expression (bottom-up).
 
 ### rewrite_as_trigonometric
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_algebra_session_rewrite_as_trigonometric_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_rewrite_as_trigonometric.c6cfcdc0cf87"></a>
-`symi::api::algebra::Session — pub fn rewrite_as_trigonometric(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
 
+```rust signature
+pub fn rewrite_as_trigonometric(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_operations_expression_rewrite_as_trigonometric_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_rewrite_as_trigonometric.124d839b8232"></a>
-`symi::api::expression_operations::Expression — pub fn rewrite_as_trigonometric(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn rewrite_as_trigonometric(&self) -> Result<Expression, ApiError>
+```
 
 
 
@@ -205,11 +382,28 @@ through unchanged, so the round trip is the identity.
 
 ### rewrite_trigonometric_basis
 
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_expression_rewrite_trigonometric_basis_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_rewrite_trigonometric_basis.4346282c9656"></a>
-`symi::api::Expression — pub fn rewrite_trigonometric_basis(&self, basis: TrigonometricBasis) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
 
+```rust signature
+pub fn rewrite_trigonometric_basis(
+    &self,
+    basis: TrigonometricBasis,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_trigonometric_complex_rewrites_capability_rust_native_rust_api_session_rewrite_trigonometric_basis_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_rewrite_trigonometric_basis.067c21de75e6"></a>
-`symi::api::Session — pub fn rewrite_trigonometric_basis(&self, target: &Expression, basis: TrigonometricBasis) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn rewrite_trigonometric_basis(
+    &self,
+    target: &Expression,
+    basis: TrigonometricBasis,
+) -> Result<Expression, ApiError>
+```
 
 
 

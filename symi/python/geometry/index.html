@@ -1,101 +1,450 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="python">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Geometry — Symi Python documentation</title>
+        <meta name="description" content="Exact symbolic plane geometry. Coordinates, lengths, and angles are Expression values." />
+        <link rel="canonical" href="/symi/python/geometry/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="geometry" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/python/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the Python documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">Python</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: Python"><span>Python</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/geometry/" data-language="python" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/geometry/" data-language="wasm" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/geometry/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/geometry/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/geometry/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/getting-started-python/">Getting started: Python</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/default-context/">The default context and module-level functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-default-context" data-page="default-context"><span class="symi-visually-hidden">Show entries in The default context and module-level functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-default-context" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/context-safety/">Context safety</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-context-safety" data-page="context-safety"><span class="symi-visually-hidden">Show entries in Context safety</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-context-safety" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/specialized-canonical-forms/">Specialized canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-specialized-canonical-forms" data-page="specialized-canonical-forms"><span class="symi-visually-hidden">Show entries in Specialized canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-specialized-canonical-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/integral-transforms/">Integral transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-integral-transforms" data-page="integral-transforms"><span class="symi-visually-hidden">Show entries in Integral transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-integral-transforms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logical-transforms/">Logical transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logical-transforms" data-page="logical-transforms"><span class="symi-visually-hidden">Show entries in Logical transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logical-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/geometry/" aria-current="page">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Hide entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_getattribute_unresolved"><code>__getattribute__</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_repr_unresolved"><code>__repr__</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_area_api_circle2d_area"><code>area</code> <span class="symi-nav-entry-owner">Circle2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_area_api_polygon2d_area"><code>area</code> <span class="symi-nav-entry-owner">Polygon2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_area_api_triangle2d_area"><code>area</code> <span class="symi-nav-entry-owner">Triangle2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_center_api_circle2d_center"><code>center</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_centroid_api_polygon2d_centroid"><code>centroid</code> <span class="symi-nav-entry-owner">Polygon2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_centroid_api_geometry_operations_triangle2d_centroid"><code>centroid</code> <span class="symi-nav-entry-owner">Triangle2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_circle_2d_api_session_circle_2d"><code>circle_2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_circle_2d_api_circle2d"><code>Circle2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_circumference_api_circle2d_circumference"><code>circumference</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_coordinates_api_point2d_coordinates"><code>coordinates</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_distance_to_api_point2d_distance_to"><code>distance_to</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_equation_api_geometry_operations_circle2d_equation"><code>equation</code> <span class="symi-nav-entry-owner">Circle2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_equation_api_partial_differential_equations_partialdifferentialequationproblem_equation"><code>equation</code> <span class="symi-nav-entry-owner">PartialDifferentialEquationProblem property</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_interior_angles_api_geometry_operations_polygon2d_interior_angles"><code>interior_angles</code> <span class="symi-nav-entry-owner">Polygon2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_interior_angles_api_geometry_operations_triangle2d_interior_angles"><code>interior_angles</code> <span class="symi-nav-entry-owner">Triangle2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_intersection_api_circle2d_intersection"><code>intersection</code> <span class="symi-nav-entry-owner">Circle2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_intersection_api_point2d_intersection"><code>intersection</code> <span class="symi-nav-entry-owner">Point2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_intersection_api_polygon2d_intersection"><code>intersection</code> <span class="symi-nav-entry-owner">Polygon2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_intersection_api_segment2d_intersection"><code>intersection</code> <span class="symi-nav-entry-owner">Segment2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_intersection_api_triangle2d_intersection"><code>intersection</code> <span class="symi-nav-entry-owner">Triangle2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_midpoint_api_segment2d_midpoint"><code>midpoint</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_perimeter_api_polygon2d_perimeter"><code>perimeter</code> <span class="symi-nav-entry-owner">Polygon2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_perimeter_api_triangle2d_perimeter"><code>perimeter</code> <span class="symi-nav-entry-owner">Triangle2d method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_perpendicular_bisector_equation_api_geometry_operations_segment2d_perpendicular_bisector_equation"><code>perpendicular_bisector_equation</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_point_2d_api_session_point_2d"><code>point_2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_point_2d_api_point2d"><code>Point2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_polygon_2d_api_session_polygon_2d"><code>polygon_2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_polygon_2d_api_polygon2d"><code>Polygon2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_radius_api_circle2d_radius"><code>radius</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_segment_2d_api_session_segment_2d"><code>segment_2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_segment_2d_api_segment2d"><code>Segment2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_triangle_2d_api_session_triangle_2d"><code>triangle_2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_triangle_2d_api_triangle2d"><code>Triangle2d</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_x_api_point2d_x"><code>x</code></a></li><li><a class="symi-nav-entry" href="/symi/python/geometry/#entry-presentation_python_geometry_capability_geometry_y_api_point2d_y"><code>y</code></a></li></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/zero-equivalence/">Zero equivalence</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-zero-equivalence" data-page="zero-equivalence"><span class="symi-visually-hidden">Show entries in Zero equivalence</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-zero-equivalence" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/python/introduction/">Python</a></li><li>Geometry</li><li><span aria-current="page">Geometry</span></li></ol></nav>
+                
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-2"><a href="#constructors" data-outline-target="constructors">Constructors</a></li><li class="symi-outline-depth-3"><a href="#point_2d" data-outline-target="point_2d">point_2d</a></li><li class="symi-outline-depth-3"><a href="#segment_2d" data-outline-target="segment_2d">segment_2d</a></li><li class="symi-outline-depth-3"><a href="#polygon_2d" data-outline-target="polygon_2d">polygon_2d</a></li><li class="symi-outline-depth-3"><a href="#triangle_2d" data-outline-target="triangle_2d">triangle_2d</a></li><li class="symi-outline-depth-3"><a href="#circle_2d" data-outline-target="circle_2d">circle_2d</a></li><li class="symi-outline-depth-2"><a href="#point_2d_methods" data-outline-target="point_2d_methods">point_2d methods</a></li><li class="symi-outline-depth-3"><a href="#x" data-outline-target="x">x</a></li><li class="symi-outline-depth-3"><a href="#y" data-outline-target="y">y</a></li><li class="symi-outline-depth-3"><a href="#coordinates" data-outline-target="coordinates">coordinates</a></li><li class="symi-outline-depth-3"><a href="#distance_to" data-outline-target="distance_to">distance_to</a></li><li class="symi-outline-depth-2"><a href="#segment_2d_methods" data-outline-target="segment_2d_methods">segment_2d methods</a></li><li class="symi-outline-depth-3"><a href="#length" data-outline-target="length">length</a></li><li class="symi-outline-depth-3"><a href="#midpoint" data-outline-target="midpoint">midpoint</a></li><li class="symi-outline-depth-3"><a href="#perpendicular_bisector_equation" data-outline-target="perpendicular_bisector_equation">perpendicular_bisector_equation</a></li><li class="symi-outline-depth-2"><a href="#polygon_2d_and_triangle_2d" data-outline-target="polygon_2d_and_triangle_2d">polygon_2d and triangle_2d</a></li><li class="symi-outline-depth-3"><a href="#area" data-outline-target="area">area</a></li><li class="symi-outline-depth-3"><a href="#circle2d_area" data-outline-target="circle2d_area">Circle2d area</a></li><li class="symi-outline-depth-3"><a href="#perimeter" data-outline-target="perimeter">perimeter</a></li><li class="symi-outline-depth-3"><a href="#centroid" data-outline-target="centroid">centroid</a></li><li class="symi-outline-depth-3"><a href="#interior_angles" data-outline-target="interior_angles">interior_angles</a></li><li class="symi-outline-depth-3"><a href="#vertex_angle_wasm_result_class" data-outline-target="vertex_angle_wasm_result_class">vertex_angle (WASM result class)</a></li><li class="symi-outline-depth-3"><a href="#vertex" data-outline-target="vertex">vertex</a></li><li class="symi-outline-depth-3"><a href="#angle" data-outline-target="angle">angle</a></li><li class="symi-outline-depth-2"><a href="#circle_2d_methods" data-outline-target="circle_2d_methods">circle_2d methods</a></li><li class="symi-outline-depth-3"><a href="#center" data-outline-target="center">center</a></li><li class="symi-outline-depth-3"><a href="#radius" data-outline-target="radius">radius</a></li><li class="symi-outline-depth-3"><a href="#circumference" data-outline-target="circumference">circumference</a></li><li class="symi-outline-depth-3"><a href="#equation" data-outline-target="equation">equation</a></li><li class="symi-outline-depth-2"><a href="#exact_boundary_intersections" data-outline-target="exact_boundary_intersections">Exact boundary intersections</a></li><li class="symi-outline-depth-3"><a href="#intersection" data-outline-target="intersection">intersection</a></li><li class="symi-outline-depth-2"><a href="#output" data-outline-target="output">Output</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#circle2d" data-outline-target="circle2d">Circle2d</a></li><li class="symi-outline-depth-3"><a href="#point2d" data-outline-target="point2d">Point2d</a></li><li class="symi-outline-depth-3"><a href="#polygon2d" data-outline-target="polygon2d">Polygon2d</a></li><li class="symi-outline-depth-3"><a href="#segment2d" data-outline-target="segment2d">Segment2d</a></li><li class="symi-outline-depth-3"><a href="#triangle2d" data-outline-target="triangle2d">Triangle2d</a></li><li class="symi-outline-depth-3"><a href="#getattribute" data-outline-target="getattribute">getattribute</a></li><li class="symi-outline-depth-3"><a href="#repr" data-outline-target="repr">repr</a></li><li class="symi-outline-depth-3"><a href="#area_2" data-outline-target="area_2">area</a></li><li class="symi-outline-depth-3"><a href="#centroid_2" data-outline-target="centroid_2">centroid</a></li><li class="symi-outline-depth-3"><a href="#centroid_3" data-outline-target="centroid_3">centroid</a></li><li class="symi-outline-depth-3"><a href="#equation_2" data-outline-target="equation_2">equation</a></li><li class="symi-outline-depth-3"><a href="#equation_3" data-outline-target="equation_3">equation</a></li><li class="symi-outline-depth-3"><a href="#interior_angles_2" data-outline-target="interior_angles_2">interior_angles</a></li><li class="symi-outline-depth-3"><a href="#interior_angles_3" data-outline-target="interior_angles_3">interior_angles</a></li><li class="symi-outline-depth-3"><a href="#intersection_2" data-outline-target="intersection_2">intersection</a></li><li class="symi-outline-depth-3"><a href="#intersection_3" data-outline-target="intersection_3">intersection</a></li><li class="symi-outline-depth-3"><a href="#intersection_4" data-outline-target="intersection_4">intersection</a></li><li class="symi-outline-depth-3"><a href="#intersection_5" data-outline-target="intersection_5">intersection</a></li><li class="symi-outline-depth-3"><a href="#intersection_6" data-outline-target="intersection_6">intersection</a></li><li class="symi-outline-depth-3"><a href="#perimeter_2" data-outline-target="perimeter_2">perimeter</a></li><li class="symi-outline-depth-3"><a href="#perimeter_3" data-outline-target="perimeter_3">perimeter</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">Geometry</h1>
+<p>Exact symbolic plane geometry. Coordinates, lengths, and angles are
+<code>Expression</code> values.</p>
+<h2 id="constructors">Constructors<a class="symi-heading-permalink" href="#constructors" aria-label="Link to this section: Constructors">#</a></h2>
+<p>Constructing a geometry class directly uses the shared default context.
+The matching <code>Context</code> method constructs the object in an explicit context.</p>
+<h3 id="point_2d">point_2d<a class="symi-heading-permalink" href="#point_2d" aria-label="Link to this section: point_2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_point_2d_api_session_point_2d"></a>
+<a id="placement-placement.python.python_class.context_point_2d.d9bef617e242"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">point_2d<span class="token punctuation">(</span>x<span class="token punctuation">:</span> Any<span class="token punctuation">,</span> y<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Point2d</code></pre></div>
+<h3 id="segment_2d">segment_2d<a class="symi-heading-permalink" href="#segment_2d" aria-label="Link to this section: segment_2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_segment_2d_api_session_segment_2d"></a>
+<a id="placement-placement.python.python_class.context_segment_2d.2b58460d9c77"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">segment_2d<span class="token punctuation">(</span>start<span class="token punctuation">:</span> Point2d<span class="token punctuation">,</span> end<span class="token punctuation">:</span> Point2d<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Segment2d</code></pre></div>
+<h3 id="polygon_2d">polygon_2d<a class="symi-heading-permalink" href="#polygon_2d" aria-label="Link to this section: polygon_2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_polygon_2d_api_session_polygon_2d"></a>
+<a id="placement-placement.python.python_class.context_polygon_2d.d8c8d3df3d19"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">polygon_2d<span class="token punctuation">(</span>vertices<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">[</span>Point2d<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Polygon2d</code></pre></div>
+<p>Simple polygon from its vertex list in order; degenerate inputs raise.</p>
+<h3 id="triangle_2d">triangle_2d<a class="symi-heading-permalink" href="#triangle_2d" aria-label="Link to this section: triangle_2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_triangle_2d_api_session_triangle_2d"></a>
+<a id="placement-placement.python.python_class.context_triangle_2d.a18dab1716eb"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">triangle_2d<span class="token punctuation">(</span>
+    point_a<span class="token punctuation">:</span> Point2d<span class="token punctuation">,</span>
+    point_b<span class="token punctuation">:</span> Point2d<span class="token punctuation">,</span>
+    point_c<span class="token punctuation">:</span> Point2d<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Triangle2d</code></pre></div>
+<p>Collinear vertices raise.</p>
+<h3 id="circle_2d">circle_2d<a class="symi-heading-permalink" href="#circle_2d" aria-label="Link to this section: circle_2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_circle_2d_api_session_circle_2d"></a>
+<a id="placement-placement.python.python_class.context_circle_2d.fa59e94268b5"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">circle_2d<span class="token punctuation">(</span>center<span class="token punctuation">:</span> Point2d<span class="token punctuation">,</span> radius<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Circle2d</code></pre></div>
+<h2 id="point_2d_methods">point_2d methods<a class="symi-heading-permalink" href="#point_2d_methods" aria-label="Link to this section: point_2d methods">#</a></h2>
+<h3 id="x">x<a class="symi-heading-permalink" href="#x" aria-label="Link to this section: x">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_x_api_point2d_x"></a>
+<a id="placement-placement.python.python_class.point2d_x.affc4d96fb49"></a></p>
+<p class="symi-entry-owner">Point2d property</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">x<span class="token punctuation">:</span> Expression</code></pre></div>
+<h3 id="y">y<a class="symi-heading-permalink" href="#y" aria-label="Link to this section: y">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_y_api_point2d_y"></a>
+<a id="placement-placement.python.python_class.point2d_y.69721eedd783"></a></p>
+<p class="symi-entry-owner">Point2d property</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">y<span class="token punctuation">:</span> Expression</code></pre></div>
+<h3 id="coordinates">coordinates<a class="symi-heading-permalink" href="#coordinates" aria-label="Link to this section: coordinates">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_coordinates_api_point2d_coordinates"></a>
+<a id="placement-placement.python.python_class.point2d_coordinates.57a972dc52de"></a></p>
+<p class="symi-entry-owner">Point2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">coordinates<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">tuple</span><span class="token punctuation">[</span>Expression<span class="token punctuation">,</span> Expression<span class="token punctuation">]</span></code></pre></div>
+<h3 id="distance_to">distance_to<a class="symi-heading-permalink" href="#distance_to" aria-label="Link to this section: distance_to">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_distance_to_api_point2d_distance_to"></a>
+<a id="placement-placement.python.python_class.point2d_distance_to.2efda0af0a60"></a></p>
+<p class="symi-entry-owner">Point2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">distance_to<span class="token punctuation">(</span>other<span class="token punctuation">:</span> Point2d<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Euclidean distance, exact (a <code>sqrt</code> expression in general).</p>
+<h2 id="segment_2d_methods">segment_2d methods<a class="symi-heading-permalink" href="#segment_2d_methods" aria-label="Link to this section: segment_2d methods">#</a></h2>
+<h3 id="length">length<a class="symi-heading-permalink" href="#length" aria-label="Link to this section: length">#</a></h3>
+<p>Also the finite-set length accessor on <code>Expression</code> in WASM; context
+disambiguates.</p>
+<h3 id="midpoint">midpoint<a class="symi-heading-permalink" href="#midpoint" aria-label="Link to this section: midpoint">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_midpoint_api_segment2d_midpoint"></a>
+<a id="placement-placement.python.python_class.segment2d_midpoint.aed94451d883"></a></p>
+<p class="symi-entry-owner">Segment2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">midpoint<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Point2d</code></pre></div>
+<h3 id="perpendicular_bisector_equation">perpendicular_bisector_equation<a class="symi-heading-permalink" href="#perpendicular_bisector_equation" aria-label="Link to this section: perpendicular_bisector_equation">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_perpendicular_bisector_equation_api_geometry_operations_segment2d_perpendicular_bisector_equation"></a>
+<a id="placement-placement.python.python_class.segment2d_perpendicular_bisector_equation.c50cf31224c2"></a></p>
+<p class="symi-entry-owner">Segment2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">perpendicular_bisector_equation<span class="token punctuation">(</span>
+    variable_x<span class="token punctuation">:</span> Any<span class="token punctuation">,</span>
+    variable_y<span class="token punctuation">:</span> Any<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>The bisector line as an <code>equal</code> relation in x and y.</p>
+<h2 id="polygon_2d_and_triangle_2d">polygon_2d and triangle_2d<a class="symi-heading-permalink" href="#polygon_2d_and_triangle_2d" aria-label="Link to this section: polygon_2d and triangle_2d">#</a></h2>
+<h3 id="area">area<a class="symi-heading-permalink" href="#area" aria-label="Link to this section: area">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_area_api_polygon2d_area"></a>
+<a id="placement-placement.python.python_class.polygon2d_area.e4af71191e84"></a></p>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">area<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p><a id="entry-presentation_python_geometry_capability_geometry_area_api_triangle2d_area"></a>
+<a id="placement-placement.python.python_class.triangle2d_area.85b4e88e0921"></a></p>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">area<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>For a <code>Polygon2d</code> or <code>Triangle2d</code>, this is the unsigned shoelace area of the
+ordered boundary. It is separate from <code>Circle2d.area()</code>, which returns
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\pi r^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>. A polygon&#39;s orientation therefore does not change its area.</p>
+<h3 id="circle2d_area"><span id="Circle2d" class="symi-legacy-anchor"></span>Circle2d area<a class="symi-heading-permalink" href="#circle2d_area" aria-label="Link to this section: Circle2d area">#</a></h3>
+<p>The exact disk area <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\pi r^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>, using the circle&#39;s symbolic radius. This is
+not the polygon/triangle shoelace operation; both are displayed as <code>area</code> in
+the reference, under their distinct owners.</p>
+<h3 id="perimeter">perimeter<a class="symi-heading-permalink" href="#perimeter" aria-label="Link to this section: perimeter">#</a></h3>
+<h3 id="centroid">centroid<a class="symi-heading-permalink" href="#centroid" aria-label="Link to this section: centroid">#</a></h3>
+<h3 id="interior_angles">interior_angles<a class="symi-heading-permalink" href="#interior_angles" aria-label="Link to this section: interior_angles">#</a></h3>
+<p>Each vertex paired with its interior angle. <strong>Notes:</strong> WASM returns
+<code>VertexAngle</code> objects with <code>vertex</code>/<code>angle</code> getters.</p>
+<h3 id="vertex_angle_wasm_result_class"><span id="vertex_angle" class="symi-legacy-anchor"></span>vertex_angle (WASM result class)<a class="symi-heading-permalink" href="#vertex_angle_wasm_result_class" aria-label="Link to this section: vertex_angle (WASM result class)">#</a></h3>
+<h3 id="vertex">vertex<a class="symi-heading-permalink" href="#vertex" aria-label="Link to this section: vertex">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/kotlin/geometry/#vertex"><code>UniffiVertexAngle.vertex</code></a> in Kotlin, <a href="/symi/swift/geometry/#vertex"><code>UniffiVertexAngle.vertex</code></a> in Swift, <a href="/symi/rust/geometry/#vertex"><code>api::results::VertexAngle::vertex</code></a> in Rust.</em></p>
+<h3 id="angle">angle<a class="symi-heading-permalink" href="#angle" aria-label="Link to this section: angle">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/kotlin/geometry/#angle"><code>UniffiVertexAngle.angle</code></a> in Kotlin, <a href="/symi/swift/geometry/#angle"><code>UniffiVertexAngle.angle</code></a> in Swift, <a href="/symi/rust/geometry/#angle"><code>api::results::VertexAngle::angle</code></a> in Rust.</em></p>
+<h2 id="circle_2d_methods">circle_2d methods<a class="symi-heading-permalink" href="#circle_2d_methods" aria-label="Link to this section: circle_2d methods">#</a></h2>
+<h3 id="center">center<a class="symi-heading-permalink" href="#center" aria-label="Link to this section: center">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_center_api_circle2d_center"></a>
+<a id="placement-placement.python.python_class.circle2d_center.64927d469d56"></a></p>
+<p class="symi-entry-owner">Circle2d property</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">center<span class="token punctuation">:</span> Point2d</code></pre></div>
+<h3 id="radius">radius<a class="symi-heading-permalink" href="#radius" aria-label="Link to this section: radius">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_radius_api_circle2d_radius"></a>
+<a id="placement-placement.python.python_class.circle2d_radius.0d3f0082c2d0"></a></p>
+<p class="symi-entry-owner">Circle2d property</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">radius<span class="token punctuation">:</span> Expression</code></pre></div>
+<h3 id="circumference">circumference<a class="symi-heading-permalink" href="#circumference" aria-label="Link to this section: circumference">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_circumference_api_circle2d_circumference"></a>
+<a id="placement-placement.python.python_class.circle2d_circumference.0e47a445fea7"></a></p>
+<p class="symi-entry-owner">Circle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">circumference<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<h3 id="equation">equation<a class="symi-heading-permalink" href="#equation" aria-label="Link to this section: equation">#</a></h3>
+<p>The circle as an <code>equal</code> relation in x and y.</p>
+<h2 id="exact_boundary_intersections">Exact boundary intersections<a class="symi-heading-permalink" href="#exact_boundary_intersections" aria-label="Link to this section: Exact boundary intersections">#</a></h2>
+<h3 id="intersection">intersection<a class="symi-heading-permalink" href="#intersection" aria-label="Link to this section: intersection">#</a></h3>
+<p>Every point, segment, polygon, triangle, and circle exposes the same symmetric
+<code>intersection</code> method. Polygon and triangle operands mean their closed boundary;
+circle operands mean their circumference. Isolated intersections are returned as
+<code>Point2d</code> objects, while a shared edge or coincident circle is returned as the
+corresponding <code>Segment2d</code> or <code>Circle2d</code> component instead of sampled points.
+The component sequence is exact and deterministic. If any required symbolic
+predicate cannot be decided, the operation declines instead of returning an
+incomplete list. Both operands must belong to the same context.</p>
+<h2 id="output">Output<a class="symi-heading-permalink" href="#output" aria-label="Link to this section: Output">#</a></h2>
+<p>All geometry classes also provide <code>to_latex</code> (and <code>serialize_object</code> in
+WASM; Python serializes through <code>Context.serializeObject</code>).</p>
+<h2 id="example">Example<a class="symi-heading-permalink" href="#example" aria-label="Link to this section: Example">#</a></h2>
+<p>Geometry objects return exact symbolic measurements.</p>
+<figure class="symi-code symi-code-example" data-code-language="python" data-code-kind="example"><figcaption class="symi-code-header"><span class="symi-code-label">Python</span></figcaption><pre class="symi-code-body language-python" tabindex="0"><code class="language-python"><span class="token keyword">import</span> symi
+
+context <span class="token operator">=</span> symi<span class="token punctuation">.</span>Context<span class="token punctuation">(</span><span class="token punctuation">)</span>
+first <span class="token operator">=</span> context<span class="token punctuation">.</span>point_2d<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+second <span class="token operator">=</span> context<span class="token punctuation">.</span>point_2d<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+segment <span class="token operator">=</span> context<span class="token punctuation">.</span>segment_2d<span class="token punctuation">(</span>first<span class="token punctuation">,</span> second<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>segment<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>segment<span class="token punctuation">.</span>midpoint<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>coordinates<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span>circle_2d<span class="token punctuation">(</span>first<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>area<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></figure>
+<h2 id="additional_api">Additional API<a class="symi-heading-permalink" href="#additional_api" aria-label="Link to this section: Additional API">#</a></h2>
+<h3 id="circle2d">Circle2d<a class="symi-heading-permalink" href="#circle2d" aria-label="Link to this section: Circle2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_circle_2d_api_circle2d"></a>
+<a id="placement-placement.python.python_class.circle2d.6c9303592f3a"></a></p>
+<p class="symi-entry-owner">Circle2d constructor</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">Circle2d<span class="token punctuation">(</span>center<span class="token punctuation">:</span> Point2d<span class="token punctuation">,</span> radius<span class="token punctuation">:</span> Any<span class="token punctuation">)</span></code></pre></div>
+<p>Construct the circle with the given center and radius.</p>
+<h3 id="point2d"><span id="Point2d" class="symi-legacy-anchor"></span>Point2d<a class="symi-heading-permalink" href="#point2d" aria-label="Link to this section: Point2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_point_2d_api_point2d"></a>
+<a id="placement-placement.python.python_class.point2d.153a29295a96"></a></p>
+<p class="symi-entry-owner">Point2d constructor</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">Point2d<span class="token punctuation">(</span>x<span class="token punctuation">:</span> Any<span class="token punctuation">,</span> y<span class="token punctuation">:</span> Any<span class="token punctuation">)</span></code></pre></div>
+<p>Construct the point <code>(x, y)</code>.</p>
+<h3 id="polygon2d"><span id="Polygon2d" class="symi-legacy-anchor"></span>Polygon2d<a class="symi-heading-permalink" href="#polygon2d" aria-label="Link to this section: Polygon2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_polygon_2d_api_polygon2d"></a>
+<a id="placement-placement.python.python_class.polygon2d.c3c332796a52"></a></p>
+<p class="symi-entry-owner">Polygon2d constructor</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">Polygon2d<span class="token punctuation">(</span>vertices<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">[</span>Point2d<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre></div>
+<p>Simple polygon from its vertex list in order; degenerate inputs raise.</p>
+<h3 id="segment2d"><span id="Segment2d" class="symi-legacy-anchor"></span>Segment2d<a class="symi-heading-permalink" href="#segment2d" aria-label="Link to this section: Segment2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_segment_2d_api_segment2d"></a>
+<a id="placement-placement.python.python_class.segment2d.6a9df7cf01ed"></a></p>
+<p class="symi-entry-owner">Segment2d constructor</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">Segment2d<span class="token punctuation">(</span>start<span class="token punctuation">:</span> Point2d<span class="token punctuation">,</span> end<span class="token punctuation">:</span> Point2d<span class="token punctuation">)</span></code></pre></div>
+<p>Construct the segment running from <code>start</code> to <code>end</code>.</p>
+<h3 id="triangle2d"><span id="Triangle2d" class="symi-legacy-anchor"></span>Triangle2d<a class="symi-heading-permalink" href="#triangle2d" aria-label="Link to this section: Triangle2d">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_triangle_2d_api_triangle2d"></a>
+<a id="placement-placement.python.python_class.triangle2d.af8da7a77c95"></a></p>
+<p class="symi-entry-owner">Triangle2d constructor</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">Triangle2d<span class="token punctuation">(</span>point_a<span class="token punctuation">:</span> Point2d<span class="token punctuation">,</span> point_b<span class="token punctuation">:</span> Point2d<span class="token punctuation">,</span> point_c<span class="token punctuation">:</span> Point2d<span class="token punctuation">)</span></code></pre></div>
+<p>Collinear vertices raise.</p>
+<h3 id="getattribute"><strong>getattribute</strong><a class="symi-heading-permalink" href="#getattribute" aria-label="Link to this section: getattribute">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_getattribute_unresolved"></a>
+<a id="placement-placement.python.python_class.circle2d_getattribute.4de339a907b9"></a></p>
+<p class="symi-entry-owner">Circle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__getattribute__<span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Any</code></pre></div>
+<p>Reject attribute access on a stale object before delegating to the default lookup.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.point2d_getattribute.156c5902a8a3"></a></p>
+<p class="symi-entry-owner">Point2d method: <code>Point2d.__getattribute__</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__getattribute__<span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Any</code></pre></div>
+<p><a id="placement-placement.python.python_class.polygon2d_getattribute.99cad6c2189d"></a></p>
+<p class="symi-entry-owner">Polygon2d method: <code>Polygon2d.__getattribute__</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__getattribute__<span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Any</code></pre></div>
+<p><a id="placement-placement.python.python_class.segment2d_getattribute.8cfed938535c"></a></p>
+<p class="symi-entry-owner">Segment2d method: <code>Segment2d.__getattribute__</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__getattribute__<span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Any</code></pre></div>
+<p><a id="placement-placement.python.python_class.triangle2d_getattribute.0c24333baf71"></a></p>
+<p class="symi-entry-owner">Triangle2d method: <code>Triangle2d.__getattribute__</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__getattribute__<span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Any</code></pre></div>
+</details>
+
+<h3 id="repr"><strong>repr</strong><a class="symi-heading-permalink" href="#repr" aria-label="Link to this section: repr">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_repr_unresolved"></a>
+<a id="placement-placement.python.python_class.circle2d_repr.6e0e1433e6a7"></a></p>
+<p class="symi-entry-owner">Circle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__repr__<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span></code></pre></div>
+<p>The <code>repr()</code> text, which reports staleness instead of failing.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.point2d_repr.17286d81f9e9"></a></p>
+<p class="symi-entry-owner">Point2d method: <code>Point2d.__repr__</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__repr__<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span></code></pre></div>
+<p><a id="placement-placement.python.python_class.polygon2d_repr.294b5ad11963"></a></p>
+<p class="symi-entry-owner">Polygon2d method: <code>Polygon2d.__repr__</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__repr__<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span></code></pre></div>
+<p><a id="placement-placement.python.python_class.segment2d_repr.7652049b4002"></a></p>
+<p class="symi-entry-owner">Segment2d method: <code>Segment2d.__repr__</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__repr__<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span></code></pre></div>
+<p><a id="placement-placement.python.python_class.triangle2d_repr.647cad2b16d7"></a></p>
+<p class="symi-entry-owner">Triangle2d method: <code>Triangle2d.__repr__</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">__repr__<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span></code></pre></div>
+</details>
+
+<h3 id="area_2">area<a class="symi-heading-permalink" href="#area_2" aria-label="Link to this section: area">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_area_api_circle2d_area"></a>
+<a id="placement-placement.python.python_class.circle2d_area.62258c6d409d"></a></p>
+<p class="symi-entry-owner">Circle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">area<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Area of the circle, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\pi r^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>.</p>
+<h3 id="centroid_2">centroid<a class="symi-heading-permalink" href="#centroid_2" aria-label="Link to this section: centroid">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_centroid_api_polygon2d_centroid"></a>
+<a id="placement-placement.python.python_class.polygon2d_centroid.99cf20e83389"></a></p>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">centroid<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Point2d</code></pre></div>
+<p>Centroid of the polygon&#39;s vertices.</p>
+<h3 id="centroid_3">centroid<a class="symi-heading-permalink" href="#centroid_3" aria-label="Link to this section: centroid">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_centroid_api_geometry_operations_triangle2d_centroid"></a>
+<a id="placement-placement.python.python_class.triangle2d_centroid.e785148e690b"></a></p>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">centroid<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Point2d</code></pre></div>
+<p>Centroid of the triangle&#39;s vertices.</p>
+<h3 id="equation_2">equation<a class="symi-heading-permalink" href="#equation_2" aria-label="Link to this section: equation">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_equation_api_geometry_operations_circle2d_equation"></a>
+<a id="placement-placement.python.python_class.circle2d_equation.765e8748a8f0"></a></p>
+<p class="symi-entry-owner">Circle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">equation<span class="token punctuation">(</span>variable_x<span class="token punctuation">:</span> Any<span class="token punctuation">,</span> variable_y<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>The circle as an <code>equal</code> relation in x and y.</p>
+<h3 id="equation_3">equation<a class="symi-heading-permalink" href="#equation_3" aria-label="Link to this section: equation">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_equation_api_partial_differential_equations_partialdifferentialequationproblem_equation"></a>
+<a id="placement-placement.python.python_class.partialdifferentialequationproblem_equation.86790941a045"></a></p>
+<p class="symi-entry-owner">PartialDifferentialEquationProblem property</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">equation<span class="token punctuation">:</span> Expression</code></pre></div>
+<p>The governing residual, interpreted as equal to zero.</p>
+<h3 id="interior_angles_2">interior_angles<a class="symi-heading-permalink" href="#interior_angles_2" aria-label="Link to this section: interior_angles">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_interior_angles_api_geometry_operations_polygon2d_interior_angles"></a>
+<a id="placement-placement.python.python_class.polygon2d_interior_angles.b4642f1f180f"></a></p>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">interior_angles<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">tuple</span><span class="token punctuation">[</span>Point2d<span class="token punctuation">,</span> Expression<span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
+<p>Each vertex paired with its interior angle. Notes: WASM returns <code>vertex_angle</code> objects with <code>vertex</code>/<code>angle</code> getters.</p>
+<h3 id="interior_angles_3">interior_angles<a class="symi-heading-permalink" href="#interior_angles_3" aria-label="Link to this section: interior_angles">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_interior_angles_api_geometry_operations_triangle2d_interior_angles"></a>
+<a id="placement-placement.python.python_class.triangle2d_interior_angles.8c95a27939cc"></a></p>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">interior_angles<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">tuple</span><span class="token punctuation">[</span>Point2d<span class="token punctuation">,</span> Expression<span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
+<p>Each vertex paired with its interior angle. Notes: WASM returns <code>vertex_angle</code> objects with <code>vertex</code>/<code>angle</code> getters.</p>
+<h3 id="intersection_2">intersection<a class="symi-heading-permalink" href="#intersection_2" aria-label="Link to this section: intersection">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_intersection_api_circle2d_intersection"></a>
+<a id="placement-placement.python.python_class.circle2d_intersection.5b868562e8f7"></a></p>
+<p class="symi-entry-owner">Circle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">intersection<span class="token punctuation">(</span>other<span class="token punctuation">:</span> Geometry2D<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">[</span>GeometryIntersectionComponent<span class="token punctuation">]</span></code></pre></div>
+<p>Return the complete exact boundary intersection with another supported plane geometry.</p>
+<h3 id="intersection_3">intersection<a class="symi-heading-permalink" href="#intersection_3" aria-label="Link to this section: intersection">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_intersection_api_point2d_intersection"></a>
+<a id="placement-placement.python.python_class.point2d_intersection.9dd75de58565"></a></p>
+<p class="symi-entry-owner">Point2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">intersection<span class="token punctuation">(</span>other<span class="token punctuation">:</span> Geometry2D<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">[</span>GeometryIntersectionComponent<span class="token punctuation">]</span></code></pre></div>
+<p>Return the complete exact boundary intersection with another supported plane geometry.</p>
+<h3 id="intersection_4">intersection<a class="symi-heading-permalink" href="#intersection_4" aria-label="Link to this section: intersection">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_intersection_api_polygon2d_intersection"></a>
+<a id="placement-placement.python.python_class.polygon2d_intersection.beb34d128bc7"></a></p>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">intersection<span class="token punctuation">(</span>other<span class="token punctuation">:</span> Geometry2D<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">[</span>GeometryIntersectionComponent<span class="token punctuation">]</span></code></pre></div>
+<p>Return the complete exact boundary intersection with another supported plane geometry.</p>
+<h3 id="intersection_5">intersection<a class="symi-heading-permalink" href="#intersection_5" aria-label="Link to this section: intersection">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_intersection_api_segment2d_intersection"></a>
+<a id="placement-placement.python.python_class.segment2d_intersection.7f191e5c0acb"></a></p>
+<p class="symi-entry-owner">Segment2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">intersection<span class="token punctuation">(</span>other<span class="token punctuation">:</span> Geometry2D<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">[</span>GeometryIntersectionComponent<span class="token punctuation">]</span></code></pre></div>
+<p>Return the complete exact boundary intersection with another supported plane geometry.</p>
+<h3 id="intersection_6">intersection<a class="symi-heading-permalink" href="#intersection_6" aria-label="Link to this section: intersection">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_intersection_api_triangle2d_intersection"></a>
+<a id="placement-placement.python.python_class.triangle2d_intersection.103be0069423"></a></p>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">intersection<span class="token punctuation">(</span>other<span class="token punctuation">:</span> Geometry2D<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">[</span>GeometryIntersectionComponent<span class="token punctuation">]</span></code></pre></div>
+<p>Return the complete exact boundary intersection with another supported plane geometry.</p>
+<h3 id="perimeter_2">perimeter<a class="symi-heading-permalink" href="#perimeter_2" aria-label="Link to this section: perimeter">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_perimeter_api_polygon2d_perimeter"></a>
+<a id="placement-placement.python.python_class.polygon2d_perimeter.95a07f03ed62"></a></p>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">perimeter<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Perimeter of the polygon, the sum of its edge lengths.</p>
+<h3 id="perimeter_3">perimeter<a class="symi-heading-permalink" href="#perimeter_3" aria-label="Link to this section: perimeter">#</a></h3>
+<p><a id="entry-presentation_python_geometry_capability_geometry_perimeter_api_triangle2d_perimeter"></a>
+<a id="placement-placement.python.python_class.triangle2d_perimeter.81a3b4e357e1"></a></p>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">perimeter<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Perimeter of the triangle, the sum of its side lengths.</p>
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages" hidden></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/python/distribution-reference/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Probability distribution registry</span></a><a class="symi-pager-link symi-pager-next" href="/symi/python/vector-calculus/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Vector calculus</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · Python</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-2"><a href="#constructors" data-outline-target="constructors">Constructors</a></li><li class="symi-outline-depth-3"><a href="#point_2d" data-outline-target="point_2d">point_2d</a></li><li class="symi-outline-depth-3"><a href="#segment_2d" data-outline-target="segment_2d">segment_2d</a></li><li class="symi-outline-depth-3"><a href="#polygon_2d" data-outline-target="polygon_2d">polygon_2d</a></li><li class="symi-outline-depth-3"><a href="#triangle_2d" data-outline-target="triangle_2d">triangle_2d</a></li><li class="symi-outline-depth-3"><a href="#circle_2d" data-outline-target="circle_2d">circle_2d</a></li><li class="symi-outline-depth-2"><a href="#point_2d_methods" data-outline-target="point_2d_methods">point_2d methods</a></li><li class="symi-outline-depth-3"><a href="#x" data-outline-target="x">x</a></li><li class="symi-outline-depth-3"><a href="#y" data-outline-target="y">y</a></li><li class="symi-outline-depth-3"><a href="#coordinates" data-outline-target="coordinates">coordinates</a></li><li class="symi-outline-depth-3"><a href="#distance_to" data-outline-target="distance_to">distance_to</a></li><li class="symi-outline-depth-2"><a href="#segment_2d_methods" data-outline-target="segment_2d_methods">segment_2d methods</a></li><li class="symi-outline-depth-3"><a href="#length" data-outline-target="length">length</a></li><li class="symi-outline-depth-3"><a href="#midpoint" data-outline-target="midpoint">midpoint</a></li><li class="symi-outline-depth-3"><a href="#perpendicular_bisector_equation" data-outline-target="perpendicular_bisector_equation">perpendicular_bisector_equation</a></li><li class="symi-outline-depth-2"><a href="#polygon_2d_and_triangle_2d" data-outline-target="polygon_2d_and_triangle_2d">polygon_2d and triangle_2d</a></li><li class="symi-outline-depth-3"><a href="#area" data-outline-target="area">area</a></li><li class="symi-outline-depth-3"><a href="#circle2d_area" data-outline-target="circle2d_area">Circle2d area</a></li><li class="symi-outline-depth-3"><a href="#perimeter" data-outline-target="perimeter">perimeter</a></li><li class="symi-outline-depth-3"><a href="#centroid" data-outline-target="centroid">centroid</a></li><li class="symi-outline-depth-3"><a href="#interior_angles" data-outline-target="interior_angles">interior_angles</a></li><li class="symi-outline-depth-3"><a href="#vertex_angle_wasm_result_class" data-outline-target="vertex_angle_wasm_result_class">vertex_angle (WASM result class)</a></li><li class="symi-outline-depth-3"><a href="#vertex" data-outline-target="vertex">vertex</a></li><li class="symi-outline-depth-3"><a href="#angle" data-outline-target="angle">angle</a></li><li class="symi-outline-depth-2"><a href="#circle_2d_methods" data-outline-target="circle_2d_methods">circle_2d methods</a></li><li class="symi-outline-depth-3"><a href="#center" data-outline-target="center">center</a></li><li class="symi-outline-depth-3"><a href="#radius" data-outline-target="radius">radius</a></li><li class="symi-outline-depth-3"><a href="#circumference" data-outline-target="circumference">circumference</a></li><li class="symi-outline-depth-3"><a href="#equation" data-outline-target="equation">equation</a></li><li class="symi-outline-depth-2"><a href="#exact_boundary_intersections" data-outline-target="exact_boundary_intersections">Exact boundary intersections</a></li><li class="symi-outline-depth-3"><a href="#intersection" data-outline-target="intersection">intersection</a></li><li class="symi-outline-depth-2"><a href="#output" data-outline-target="output">Output</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#circle2d" data-outline-target="circle2d">Circle2d</a></li><li class="symi-outline-depth-3"><a href="#point2d" data-outline-target="point2d">Point2d</a></li><li class="symi-outline-depth-3"><a href="#polygon2d" data-outline-target="polygon2d">Polygon2d</a></li><li class="symi-outline-depth-3"><a href="#segment2d" data-outline-target="segment2d">Segment2d</a></li><li class="symi-outline-depth-3"><a href="#triangle2d" data-outline-target="triangle2d">Triangle2d</a></li><li class="symi-outline-depth-3"><a href="#getattribute" data-outline-target="getattribute">getattribute</a></li><li class="symi-outline-depth-3"><a href="#repr" data-outline-target="repr">repr</a></li><li class="symi-outline-depth-3"><a href="#area_2" data-outline-target="area_2">area</a></li><li class="symi-outline-depth-3"><a href="#centroid_2" data-outline-target="centroid_2">centroid</a></li><li class="symi-outline-depth-3"><a href="#centroid_3" data-outline-target="centroid_3">centroid</a></li><li class="symi-outline-depth-3"><a href="#equation_2" data-outline-target="equation_2">equation</a></li><li class="symi-outline-depth-3"><a href="#equation_3" data-outline-target="equation_3">equation</a></li><li class="symi-outline-depth-3"><a href="#interior_angles_2" data-outline-target="interior_angles_2">interior_angles</a></li><li class="symi-outline-depth-3"><a href="#interior_angles_3" data-outline-target="interior_angles_3">interior_angles</a></li><li class="symi-outline-depth-3"><a href="#intersection_2" data-outline-target="intersection_2">intersection</a></li><li class="symi-outline-depth-3"><a href="#intersection_3" data-outline-target="intersection_3">intersection</a></li><li class="symi-outline-depth-3"><a href="#intersection_4" data-outline-target="intersection_4">intersection</a></li><li class="symi-outline-depth-3"><a href="#intersection_5" data-outline-target="intersection_5">intersection</a></li><li class="symi-outline-depth-3"><a href="#intersection_6" data-outline-target="intersection_6">intersection</a></li><li class="symi-outline-depth-3"><a href="#perimeter_2" data-outline-target="perimeter_2">perimeter</a></li><li class="symi-outline-depth-3"><a href="#perimeter_3" data-outline-target="perimeter_3">perimeter</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

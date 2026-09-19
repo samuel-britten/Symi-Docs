@@ -1,101 +1,624 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="kotlin">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Calculus — Symi Kotlin documentation</title>
+        <meta name="description" content="Calculus follows a uniform construct-versus-evaluate model; the summary table is in Evaluation and constants. Every variable parameter accepts a name or a…" />
+        <link rel="canonical" href="/symi/kotlin/calculus/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="calculus" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/kotlin/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the Kotlin documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">Kotlin</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: Kotlin"><span>Kotlin</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/calculus/" data-language="python" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/calculus/" data-language="wasm" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/calculus/" data-language="kotlin" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/calculus/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/calculus/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/getting-started-kotlin/">Getting started: Kotlin</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/default-context/">The default context and module-level functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-default-context" data-page="default-context"><span class="symi-visually-hidden">Show entries in The default context and module-level functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-default-context" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/context-safety/">Context safety</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/specialized-canonical-forms/">Specialized canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-specialized-canonical-forms" data-page="specialized-canonical-forms"><span class="symi-visually-hidden">Show entries in Specialized canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-specialized-canonical-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/calculus/" aria-current="page">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Hide entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_continuous_domain_api_session_continuous_domain"><code>continuous_domain</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_continuous_domain_api_expression_continuous_domain"><code>continuous_domain</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_continuous_domain_api_assumptionscope_continuous_domain"><code>continuous_domain</code> <span class="symi-nav-entry-owner">UniffiAssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_decline_reason_api_results_definiteintegrationresult_decline_reason"><code>decline_reason</code></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_derivative_api_session_derivative"><code>derivative</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_derivative_api_expression_derivative"><code>derivative</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_derivative_api_undefinedfunction_derivative"><code>derivative</code> <span class="symi-nav-entry-owner">UniffiUndefinedFunction method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_differentiate_api_session_differentiate"><code>differentiate</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_differentiate_api_expression_differentiate"><code>differentiate</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_divergence_direction_api_results_definiteintegrationresult_divergence_direction"><code>divergence_direction</code></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_evaluate_limit_api_session_evaluate_limit"><code>evaluate_limit</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_evaluate_limit_api_expression_evaluate_limit"><code>evaluate_limit</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_evaluate_limit_api_assumptionscope_evaluate_limit"><code>evaluate_limit</code> <span class="symi-nav-entry-owner">UniffiAssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_evaluate_numeric_api_analysis_session_evaluate_numeric"><code>evaluate_numeric</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_evaluate_numeric_api_expression_operations_expression_evaluate_numeric"><code>evaluate_numeric</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_evaluate_on_grid_api_analysis_session_evaluate_on_grid"><code>evaluate_on_grid</code></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_evaluate_on_grid_points_api_analysis_session_evaluate_on_grid_points"><code>evaluate_on_grid_points</code></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_execute_api_session_execute"><code>execute</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_execute_api_expression_execute"><code>execute</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_execute_api_matrix_execute"><code>execute</code> <span class="symi-nav-entry-owner">UniffiMatrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_api_session_integrate"><code>integrate</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_api_expression_integrate"><code>integrate</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_api_assumptionscope_integrate"><code>integrate</code> <span class="symi-nav-entry-owner">UniffiAssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_api_analysis_session_integrate_definite"><code>integrate_definite</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_api_expression_operations_expression_integrate_definite"><code>integrate_definite</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_api_assumptionscope_integrate_definite"><code>integrate_definite</code> <span class="symi-nav-entry-owner">UniffiAssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_detailed_api_session_integrate_definite_detailed"><code>integrate_definite_detailed</code></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_numeric_api_analysis_session_integrate_definite_numeric"><code>integrate_definite_numeric</code></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_iterated_api_analysis_session_integrate_iterated"><code>integrate_iterated</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_integrate_iterated_api_expression_operations_expression_integrate_iterated"><code>integrate_iterated</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_interpretation_api_results_definiteintegrationresult_interpretation"><code>interpretation</code></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_limit_api_session_limit"><code>limit</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_limit_api_expression_limit"><code>limit</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_singularities_api_session_singularities"><code>singularities</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_singularities_api_expression_singularities"><code>singularities</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_singularities_api_assumptionscope_singularities"><code>singularities</code> <span class="symi-nav-entry-owner">UniffiAssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_summation_indefinite_api_analysis_session_summation_indefinite"><code>summation_indefinite</code> <span class="symi-nav-entry-owner">Explicit context</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_summation_indefinite_api_expression_operations_expression_summation_indefinite"><code>summation_indefinite</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/kotlin/calculus/#entry-presentation_kotlin_calculus_capability_calculus_value_api_results_definiteintegrationresult_value"><code>value</code></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/integral-transforms/">Integral transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-integral-transforms" data-page="integral-transforms"><span class="symi-visually-hidden">Show entries in Integral transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-integral-transforms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/logical-transforms/">Logical transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logical-transforms" data-page="logical-transforms"><span class="symi-visually-hidden">Show entries in Logical transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logical-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/zero-equivalence/">Zero equivalence</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-zero-equivalence" data-page="zero-equivalence"><span class="symi-visually-hidden">Show entries in Zero equivalence</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-zero-equivalence" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/kotlin/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/kotlin/introduction/">Kotlin</a></li><li>Calculus</li><li><span aria-current="page">Calculus</span></li></ol></nav>
+                
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#differentiate" data-outline-target="differentiate">differentiate</a></li><li class="symi-outline-depth-3"><a href="#integrate" data-outline-target="integrate">integrate</a></li><li class="symi-outline-depth-3"><a href="#integrate_definite" data-outline-target="integrate_definite">integrate_definite</a></li><li class="symi-outline-depth-3"><a href="#integrate_definite_detailed" data-outline-target="integrate_definite_detailed">integrate_definite_detailed</a></li><li class="symi-outline-depth-3"><a href="#definiteintegrationresult" data-outline-target="definiteintegrationresult">DefiniteIntegrationResult</a></li><li class="symi-outline-depth-3"><a href="#integrate_definite_numeric" data-outline-target="integrate_definite_numeric">integrate_definite_numeric</a></li><li class="symi-outline-depth-3"><a href="#numericdefiniteintegrationresult" data-outline-target="numericdefiniteintegrationresult">NumericDefiniteIntegrationResult</a></li><li class="symi-outline-depth-3"><a href="#integrate_iterated" data-outline-target="integrate_iterated">integrate_iterated</a></li><li class="symi-outline-depth-3"><a href="#limit" data-outline-target="limit">limit</a></li><li class="symi-outline-depth-3"><a href="#evaluate_limit" data-outline-target="evaluate_limit">evaluate_limit</a></li><li class="symi-outline-depth-3"><a href="#singularities" data-outline-target="singularities">singularities</a></li><li class="symi-outline-depth-3"><a href="#continuous_domain" data-outline-target="continuous_domain">continuous_domain</a></li><li class="symi-outline-depth-3"><a href="#summation_indefinite" data-outline-target="summation_indefinite">summation_indefinite</a></li><li class="symi-outline-depth-3"><a href="#evaluate_numeric" data-outline-target="evaluate_numeric">evaluate_numeric</a></li><li class="symi-outline-depth-3"><a href="#evaluate_on_grid" data-outline-target="evaluate_on_grid">evaluate_on_grid</a></li><li class="symi-outline-depth-3"><a href="#evaluate_on_grid_points" data-outline-target="evaluate_on_grid_points">evaluate_on_grid_points</a></li><li class="symi-outline-depth-3"><a href="#execute" data-outline-target="execute">execute</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#decline_reason" data-outline-target="decline_reason">decline_reason</a></li><li class="symi-outline-depth-3"><a href="#derivative" data-outline-target="derivative">derivative</a></li><li class="symi-outline-depth-3"><a href="#derivative_2" data-outline-target="derivative_2">derivative</a></li><li class="symi-outline-depth-3"><a href="#derivative_3" data-outline-target="derivative_3">derivative</a></li><li class="symi-outline-depth-3"><a href="#divergence_direction" data-outline-target="divergence_direction">divergence_direction</a></li><li class="symi-outline-depth-3"><a href="#execute_2" data-outline-target="execute_2">execute</a></li><li class="symi-outline-depth-3"><a href="#execute_3" data-outline-target="execute_3">execute</a></li><li class="symi-outline-depth-3"><a href="#execute_4" data-outline-target="execute_4">execute</a></li><li class="symi-outline-depth-3"><a href="#integrate_2" data-outline-target="integrate_2">integrate</a></li><li class="symi-outline-depth-3"><a href="#integrate_3" data-outline-target="integrate_3">integrate</a></li><li class="symi-outline-depth-3"><a href="#integrate_4" data-outline-target="integrate_4">integrate</a></li><li class="symi-outline-depth-3"><a href="#interpretation" data-outline-target="interpretation">interpretation</a></li><li class="symi-outline-depth-3"><a href="#value" data-outline-target="value">value</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">Calculus</h1>
+<p>Calculus follows a uniform construct-versus-evaluate model; the summary table
+is in <a href="/symi/kotlin/evaluation-and-constants/">Evaluation and constants</a>. Every variable
+parameter accepts a name or a same-context symbol expression.</p>
+<h3 id="differentiate">differentiate<a class="symi-heading-permalink" href="#differentiate" aria-label="Link to this section: differentiate">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_differentiate_api_session_differentiate"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_differentiate.4163170fe501"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">differentiate</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_differentiate_api_expression_differentiate"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_differentiate.a3a3dc48ebb3"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">differentiate</span><span class="token punctuation">(</span>variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Symbolic derivative with respect to <code>variable</code>. The derivative is total: unknown
+function calls produce derivative nodes.</p>
+<h3 id="integrate">integrate<a class="symi-heading-permalink" href="#integrate" aria-label="Link to this section: integrate">#</a></h3>
+<p>Indefinite integration (no constant of integration). When every symbolic
+strategy fails, the result is an <em>unevaluated</em> <code>integral</code> node, never a
+guess. Real symbolic parameters can produce a <code>piecewise</code> antiderivative
+whose conditions describe the supported parameter strata. A parameter value
+outside every branch is undefined rather than a hidden declined branch.</p>
+<h3 id="integrate_definite">integrate_definite<a class="symi-heading-permalink" href="#integrate_definite" aria-label="Link to this section: integrate_definite">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_api_analysis_session_integrate_definite"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_integratedefinite.9ad17c7b4af7"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrateDefinite</span><span class="token punctuation">(</span>
+    inputExpression<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    lower<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    upper<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_api_expression_operations_expression_integrate_definite"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_integratedefinite.439ea06365b9"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrateDefinite</span><span class="token punctuation">(</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    lower<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    upper<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_api_assumptionscope_integrate_definite"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_integratedefinite.6ff304696b21"></a></p>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrateDefinite</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    lowerBound<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    upperBound<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Definite integration over <code>[lower, upper]</code> (bounds may be infinite). Falls
+back to an unevaluated bounded <code>integral</code> node when no exact evaluation
+exists. For supported real radicals, absolute values, and explicit piecewise
+expressions, the evaluator forms an exact ordered partition at domain, zero,
+pole, and branch boundaries. It integrates the selected formula on each open
+cell and accepts it only after an exact derivative residual check. Singular
+or excluded endpoints are evaluated by the appropriate one-sided limit.
+Reversed bounds negate the forward integral. The operation uses ordinary
+improper-integral semantics and never infers a Cauchy principal value; an
+undecidable order, sign, domain, branch, or limit makes the whole route
+decline atomically. Use <code>integrate_definite_detailed</code> when a proved
+divergence, a principal value, or a declared parameter region matters.</p>
+<h3 id="integrate_definite_detailed">integrate_definite_detailed<a class="symi-heading-permalink" href="#integrate_definite_detailed" aria-label="Link to this section: integrate_definite_detailed">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_detailed_api_session_integrate_definite_detailed"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_integratedefinitedetailed.7bd8dd3ea9d1"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrateDefiniteDetailed</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    lowerBound<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    upperBound<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    interpretation<span class="token operator">:</span> UniffiDefiniteIntegrationInterpretation<span class="token punctuation">,</span>
+    constraint<span class="token operator">:</span> UniffiExpression<span class="token operator">?</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiDefiniteIntegrationResult</code></pre></div>
+<p>Definite integration that keeps its verdict distinct from its value, so a
+proved divergence is never confused with a declined request. <code>interpretation</code>
+is <code>ordinary</code> (every one-sided improper contribution must converge
+independently) or <code>cauchy_principal_value</code> (an independent symmetric
+exclusion about each finite interior singularity, and a symmetric truncation
+of a whole-line request; a singular finite bound or a single infinite bound
+stays an ordinary limit). Divergence is proved from the integrand itself: at
+each singular point and each infinite bound a certified leading power and
+logarithm term is compared with the integrable threshold, so no closed
+antiderivative is needed. A principal value is taken as the limit of one
+grouped truncated expression per cutoff, never as a difference of separately
+divergent halves. An undecided bound order, an incomplete singular set, or an
+unsettled limit declines with a typed reason. <code>constraint</code> is a logical
+expression on the parameters that holds throughout the request and reaches
+every strategy; a malformed or contradictory constraint is an error. WASM
+takes <code>interpretation</code> and <code>constraint</code> as optional arguments, and a
+constraint handle is taken by value. Kotlin and Swift take the interpretation
+as a typed enumeration.</p>
+<h3 id="definiteintegrationresult"><span id="DefiniteIntegrationResult" class="symi-legacy-anchor"></span>DefiniteIntegrationResult<a class="symi-heading-permalink" href="#definiteintegrationresult" aria-label="Link to this section: DefiniteIntegrationResult">#</a></h3>
+<p><em>Not exposed by the Kotlin bindings. Available as <a href="/symi/python/calculus/#DefiniteIntegrationResult"><code>DefiniteIntegrationResult</code></a> in Python, <a href="/symi/rust/calculus/#DefiniteIntegrationResult"><code>api::DefiniteIntegrationResult</code></a> in Rust.</em></p>
+<p><code>interpretation</code>, <code>verdict</code> (<code>evaluated</code>, <code>divergent</code> or <code>declined</code>), <code>value</code>
+(present exactly when evaluated), <code>divergence_direction</code> (<code>positive_infinity</code>
+or <code>negative_infinity</code>, present only when a single signed infinity was
+established), and <code>decline_reason</code> (<code>unsupported_family</code>,
+<code>incomplete_singularity_analysis</code>, <code>unknown_endpoint_behavior</code>,
+<code>unknown_bound_order</code> or <code>unsupported_region</code>, present exactly when declined).</p>
+<h3 id="integrate_definite_numeric">integrate_definite_numeric<a class="symi-heading-permalink" href="#integrate_definite_numeric" aria-label="Link to this section: integrate_definite_numeric">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_numeric_api_analysis_session_integrate_definite_numeric"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_integratedefinitenumeric.5847bf838fcb"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrateDefiniteNumeric</span><span class="token punctuation">(</span>
+    inputExpression<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    lower<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    upper<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    precisionBits<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>ULong<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiNumericDefiniteIntegrationResult</code></pre></div>
+<p>Explicit finite-interval quadrature. This is separate from symbolic definite
+integration: it returns no value when convergence is not established and never
+substitutes an unevaluated symbolic integral. The requested precision is in bits.</p>
+<h3 id="numericdefiniteintegrationresult"><span id="NumericDefiniteIntegrationResult" class="symi-legacy-anchor"></span>NumericDefiniteIntegrationResult<a class="symi-heading-permalink" href="#numericdefiniteintegrationresult" aria-label="Link to this section: NumericDefiniteIntegrationResult">#</a></h3>
+<p><em>Not exposed by the Kotlin bindings. Available as <a href="/symi/python/calculus/#NumericDefiniteIntegrationResult"><code>NumericDefiniteIntegrationResult</code></a> in Python, <a href="/symi/rust/calculus/#NumericDefiniteIntegrationResult"><code>api::NumericDefiniteIntegrationResult</code></a> in Rust.</em></p>
+<p><code>value</code> is an optional <code>(real, imaginary)</code> pair. When present,
+<code>estimated_absolute_error</code> is the final difference between successive quadrature
+rules; <code>precision_bits</code> and <code>node_count</code> identify the accepted rule.</p>
+<h3 id="integrate_iterated">integrate_iterated<a class="symi-heading-permalink" href="#integrate_iterated" aria-label="Link to this section: integrate_iterated">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_iterated_api_analysis_session_integrate_iterated"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_integrateiterated.70c767c11b0b"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrateIterated</span><span class="token punctuation">(</span>
+    inputExpression<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variables<span class="token operator">:</span> List<span class="token operator">&lt;</span>kotlin<span class="token punctuation">.</span>String<span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_iterated_api_expression_operations_expression_integrate_iterated"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_integrateiterated.567bd8dabd92"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrateIterated</span><span class="token punctuation">(</span>variables<span class="token operator">:</span> List<span class="token operator">&lt;</span>kotlin<span class="token punctuation">.</span>String<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Iterated indefinite integration, applying the single-variable pipeline once
+per entry of <code>variables</code> in <strong>left-to-right order (innermost binder first)</strong>.
+An empty list returns the input unchanged. If any stage fails to close, the
+remaining binders wrap the intermediate as nested unevaluated <code>integral</code>
+nodes — no partial evaluation through an unclosed inner integral.</p>
+<h3 id="limit">limit<a class="symi-heading-permalink" href="#limit" aria-label="Link to this section: limit">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_limit_api_session_limit"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_limit.243c11b2abe8"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">limit</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    point<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    direction<span class="token operator">:</span> UniffiLimitDirection<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_limit_api_expression_limit"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_limit.a7e2725115bb"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">limit</span><span class="token punctuation">(</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    point<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    direction<span class="token operator">:</span> UniffiLimitDirection<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><code>limit(expression, variable, point, direction=&quot;two_sided&quot;)</code> constructs a deferred limit.</p>
+<h3 id="evaluate_limit">evaluate_limit<a class="symi-heading-permalink" href="#evaluate_limit" aria-label="Link to this section: evaluate_limit">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_limit_api_session_evaluate_limit"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_evaluatelimit.e3e85e7882bc"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">evaluateLimit</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    point<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    direction<span class="token operator">:</span> UniffiLimitDirection<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_limit_api_expression_evaluate_limit"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_evaluatelimit.e2a022a26bea"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">evaluateLimit</span><span class="token punctuation">(</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    point<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    direction<span class="token operator">:</span> UniffiLimitDirection<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_limit_api_assumptionscope_evaluate_limit"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_evaluatelimit.6b6c342e3856"></a></p>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">evaluateLimit</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    point<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    direction<span class="token operator">:</span> UniffiLimitDirection<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><code>evaluate_limit(expression, variable, point, direction=&quot;two_sided&quot;)</code> runs the eager limit engine.
+It returns an unevaluated limit when the engine cannot close the result.</p>
+<p>Limit of the expression as <code>variable</code> approaches <code>point</code>. <code>direction</code> is one
+of <code>&quot;two_sided&quot;</code>, <code>&quot;from_left&quot;</code>, <code>&quot;from_right&quot;</code>. Undecidable limits return an
+unevaluated form.</p>
+<p>Beyond direct substitution and simple poles, every closed limit rests on
+symbolic evidence: continuity of the composed germ, proved signs, and
+expansions whose residuals are carried to the end. A numeric sample never
+authorises a result. The certified routes are:</p>
+<ul>
+<li><strong>Eventual germ signs.</strong> <code>abs(g)</code> and <code>signum(g)</code> reduce to the branch valid
+on the requested approach side once the sign of <code>g</code> is proved on a punctured
+one-sided neighbourhood — from the local parameter and its powers, from exact
+constant multiples and products, or from a leading term that strictly
+dominates its own certified residual. So <code>limit(x/abs(x), x, 0, &quot;from_right&quot;)</code>
+is <code>1</code> and <code>limit(signum((x-2)^3), x, 2, &quot;from_left&quot;)</code> is <code>-1</code>, while a
+two-sided limit whose one-sided values disagree stays unevaluated.</li>
+<li><strong>Bounded perturbations.</strong> A uniformly bounded remainder is discarded against
+a divergent scale by a squeeze certificate, so
+<code>limit(log(x)/(log(x)+sin(x)), x, infinity)</code> is <code>1</code> and
+<code>limit(sin(x)/log(x), x, infinity)</code> is <code>0</code>. The bounded grammar is exact
+constants, <code>sin</code>, <code>cos</code>, <code>signum</code>, <code>abs</code>, and their sums, products and
+nonnegative integer powers; a reciprocal needs a separately proved positive
+lower bound.</li>
+<li><strong>Exponential-logarithmic dominance.</strong> At infinity, and one-sidedly at a
+finite real point through the substitution <code>a + 1/t</code> or <code>a - 1/t</code>, the most rapidly
+varying exponential and logarithmic subexpressions are rewritten as powers of
+a small auxiliary variable and expanded recursively through the slower
+scales. A cancelled leading term requests further terms instead of dropping a
+residual, so an exponentially small correction amplified by a large
+exponential is kept:
+<code>limit((exp(x*exp(-x)/(exp(-x)+exp(-2*x^2/(x+1))))-exp(x))/x, x, infinity)</code>
+is <code>-exp(2)</code>, and
+<code>limit(x*log(x)*log(x*exp(x)-x^2)^2/log(log(x^2+2*exp(exp(3*x^3*log(x))))), x, infinity)</code>
+is <code>1/3</code>.</li>
+<li><strong>Gamma asymptotics.</strong> <code>factorial</code>, <code>gamma</code> and <code>log_gamma</code> of an argument
+<code>c*t + h</code>, with <code>c &gt; 0</code> and a shift <code>h</code> independent of the limit variable,
+expand through Stirling&#39;s series with the shifted Bernoulli-polynomial
+corrections and explicitly bounded remainders. The shift may be symbolic or
+complex, so <code>limit(gamma(z+a)/gamma(z)*exp(-a*log(z)), z, infinity)</code> is <code>1</code>
+for every fixed <code>a</code>, and <code>limit(factorial(n)^(1/n)/n, n, infinity)</code> is <code>1/e</code>.
+A principal logarithm or a non-integer power of a Gamma value requires a
+real shift.</li>
+<li><strong>Local meromorphic data.</strong> <code>zeta</code> near <code>s = 1</code> contributes its pole and
+finite part, <code>1/(s-1) + euler_gamma + O(s-1)</code>, to ordinary local arithmetic,
+so <code>limit(zeta(x) - 1/(x-1), x, 1)</code> is <code>euler_gamma</code>. A cancellation that
+needs further Laurent coefficients declines; no numeric Stieltjes constant is
+substituted.</li>
+<li><strong>Hypergeometric reduction.</strong> Admissible parameter cancellation and the
+binomial identity <code>hypergeometric_pfq([a], [], u) = (1-u)^(-a)</code> on the disk
+<code>|u| &lt; 1</code> apply before asymptotics, so
+<code>limit(hypergeometric_pfq([1, k], [1], z/k), k, infinity)</code> is <code>exp(z)</code> for
+every fixed complex <code>z</code>. Cancellation never passes through a nonpositive
+integer lower parameter.</li>
+<li><strong>Products and integrals.</strong> A definite <code>product</code> of affine factors is
+reduced to its rising-factorial Gamma form, checked by its initial value and
+shift quotient, before the Gamma asymptotics apply. A sequence limit needs
+the index proved to be a positive integer, for example inside
+<code>assuming(positive_integer_assumption(n))</code>; there
+<code>n^x/(x*product(1 + x/k, k, 1, n))</code> tends to <code>gamma(x)</code>. At the excluded
+parameters <code>x = 0, -1, -2, ...</code> the input is undefined and no value is
+returned, and without integer evidence the limit stays unevaluated. A bounded
+<code>integral</code> whose endpoint moves with the limit variable is expanded from a
+local series of an analytic integrand together with its integrated remainder,
+in either orientation, so
+<code>limit(x*integral(exp(-t^2), t, 0, x)/(1-exp(-x^2)), x, 0)</code> is <code>1</code>.</li>
+</ul>
+<p>The decline boundary is deliberate, not incidental. A bound is not a limit, so
+<code>limit(sin(x), x, infinity)</code> and <code>limit(exp(sin(x)), x, infinity)</code> stay
+unevaluated; so does a reciprocal of an expression that may cross zero, such as
+<code>limit(1/sin(x), x, infinity)</code>, and any cancellation between two unrelated
+oscillations. A real logarithm is only approached from the side on which its
+argument is positive: <code>limit(arctan(-log(x)), x, 0, &quot;from_right&quot;)</code> is <code>pi/2</code>,
+while the left and two-sided limits stay unevaluated. The Gamma routes decline
+unless the argument tends to positive infinity along the real axis, so a
+negative-axis argument, an argument approaching a Gamma pole, and a shift that
+moves with the limit variable all stay unevaluated. An unresolved constant sign
+or equality, an unsupported branch, and an improper integral whose limit would
+have to be interchanged with integration also decline. Exact identities keep
+priority over asymptotic normalisation, and every proof or rewrite budget
+exhaustion returns the unevaluated form rather than a guess.</p>
+<h3 id="singularities">singularities<a class="symi-heading-permalink" href="#singularities" aria-label="Link to this section: singularities">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_singularities_api_session_singularities"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_singularities.bb2128925af6"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">singularities</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_singularities_api_expression_singularities"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_singularities.4cc6adbdf928"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">singularities</span><span class="token punctuation">(</span>variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_singularities_api_assumptionscope_singularities"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_singularities.462c53d0d91e"></a></p>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">singularities</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>The singular points of the expression in the complex plane, as a set
+expression (finite set, union, image set for periodic families, …). Rational
+denominators are solved over the complex numbers even when the variable has
+real assumptions. Multivalued functions contribute their finite branch
+points; a conventional principal-branch cut is not returned as though every
+point on it were singular.</p>
+<h3 id="continuous_domain">continuous_domain<a class="symi-heading-permalink" href="#continuous_domain" aria-label="Link to this section: continuous_domain">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_continuous_domain_api_session_continuous_domain"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_continuousdomain.c8b5b4c7a7af"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">continuousDomain</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_continuous_domain_api_expression_continuous_domain"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_continuousdomain.6f7439e44ba0"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">continuousDomain</span><span class="token punctuation">(</span>variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_continuous_domain_api_assumptionscope_continuous_domain"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_continuousdomain.adb23b58015a"></a></p>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">continuousDomain</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>The subset of the real line on which the expression is continuous in
+<code>variable</code>, as a set expression. Compound rational square-root radicands are
+lowered to an exact univariate semialgebraic condition when supported, so,
+for example, <code>sqrt(x + 1/x - 2)</code> has continuous real domain <code>(0, infinity)</code>.</p>
+<h3 id="summation_indefinite">summation_indefinite<a class="symi-heading-permalink" href="#summation_indefinite" aria-label="Link to this section: summation_indefinite">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_summation_indefinite_api_analysis_session_summation_indefinite"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_summationindefinite.b98122313c4f"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">summationIndefinite</span><span class="token punctuation">(</span>
+    summand<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    index<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_summation_indefinite_api_expression_operations_expression_summation_indefinite"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_summationindefinite.8a902513c551"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">summationIndefinite</span><span class="token punctuation">(</span>index<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Anti-difference: a closed form <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span> with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi mathvariant="normal">index</mi><mo>⁡</mo><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi mathvariant="normal">index</mi><mo>⁡</mo><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="normal">summand</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">F(\operatorname{index}+1) - F(\operatorname{index}) = \operatorname{summand}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">index</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">index</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mop"><span class="mord mathrm">summand</span></span></span></span></span>.
+Strategy stack: constant summands, linearity, polynomial power sums, rational
+summands (Abramov), hypergeometric summands (Gosper), and finally C-finite
+summands solved in a finite sequence state algebra (see <code>summation</code> on the
+construction page for that admitted class — <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mi>F</mi><mo stretchy="false">(</mo><mi>k</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum F(k)^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> closes here). Outside that
+scope the result is an unevaluated <code>summation</code> placeholder. The existing
+<code>summation</code> binding (construction page) remains the definite/unevaluated entry
+point.</p>
+<p>Gosper runs as a decision procedure over the term&#39;s own coefficient field
+<code>Q(parameters)</code>, so symbolic parameters inside binomial, factorial, Pochhammer
+or Gamma arguments are admitted rather than rejected — <code>binomial(n, k)</code> and
+<code>2^(-n) * binomial(n, k)</code> are read the same way <code>binomial(7, k)</code> is. A summand
+that is a <em>sum</em> is first tested for being a rational multiple of one
+hypergeometric term, because a binomial difference such as
+<code>2^(-n)*binomial(n,k) - 2^(-(n+1))*binomial(n+1,k)</code> has an anti-difference
+while neither half does; only when that fails does linearity distribute.</p>
+<p>Three outcomes are distinguished internally and all three surface as the
+unevaluated placeholder, which is never a claim that no closed form exists:
+the summand is outside the admitted term class; the term is admitted and
+Gosper <em>proves</em> it has no hypergeometric anti-difference (the classical
+<code>binomial(n, k)</code> case); or a resource ceiling stopped the search before its
+mathematical bound. Anti-differences carrying combinatorial factors are proved
+on the non-negative-integer domain — the convention under which
+<code>binomial(n, k)</code> is zero outside <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">0 \le k \le n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> — and are not claimed as
+unrestricted Gamma-analytic identities.</p>
+<h3 id="evaluate_numeric">evaluate_numeric<a class="symi-heading-permalink" href="#evaluate_numeric" aria-label="Link to this section: evaluate_numeric">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_numeric_api_analysis_session_evaluate_numeric"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_evaluatenumeric.3c3fee56026c"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">evaluateNumeric</span><span class="token punctuation">(</span>inputExpression<span class="token operator">:</span> UniffiExpression<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_numeric_api_expression_operations_expression_evaluate_numeric"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_evaluatenumeric.1c4a2fc2ec10"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">evaluateNumeric</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Numerically evaluate to a float and re-encode as an exact rational literal;
+returns the input unchanged when the expression has no numeric value.
+For direct float output use <code>expression.evaluate_to_float</code>.</p>
+<h3 id="evaluate_on_grid">evaluate_on_grid<a class="symi-heading-permalink" href="#evaluate_on_grid" aria-label="Link to this section: evaluate_on_grid">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_on_grid_api_analysis_session_evaluate_on_grid"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_evaluateongrid.7ca12540a366"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">evaluateOnGrid</span><span class="token punctuation">(</span>
+    inputExpression<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    grid<span class="token operator">:</span> List<span class="token operator">&lt;</span>kotlin<span class="token punctuation">.</span>Double<span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> List<span class="token operator">&lt;</span>kotlin<span class="token punctuation">.</span>Double<span class="token operator">></span></code></pre></div>
+<p>Evaluate at each grid point, substituting <code>variable</code>. Positions where
+evaluation fails (pole, complex value, unbound symbol) hold NaN. Intended for
+plotting.</p>
+<h3 id="evaluate_on_grid_points">evaluate_on_grid_points<a class="symi-heading-permalink" href="#evaluate_on_grid_points" aria-label="Link to this section: evaluate_on_grid_points">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_on_grid_points_api_analysis_session_evaluate_on_grid_points"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_evaluateongridpoints.a02ed099a181"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">evaluateOnGridPoints</span><span class="token punctuation">(</span>
+    inputExpression<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variables<span class="token operator">:</span> List<span class="token operator">&lt;</span>kotlin<span class="token punctuation">.</span>String<span class="token operator">></span><span class="token punctuation">,</span>
+    points<span class="token operator">:</span> List<span class="token operator">&lt;</span>kotlin<span class="token punctuation">.</span>Double<span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> List<span class="token operator">&lt;</span>kotlin<span class="token punctuation">.</span>Double<span class="token operator">></span></code></pre></div>
+<p>Multi-variable companion to <code>evaluate_on_grid</code>: evaluate at each point of a
+flat row-major coordinate array (one coordinate per variable, so the points
+length must be a multiple of the variable count), returning one float per
+point. Positions where evaluation fails hold NaN. Raises when <code>variables</code> is
+empty or the lengths disagree. Intended for sampling surfaces and implicit
+curves.</p>
+<h3 id="execute">execute<a class="symi-heading-permalink" href="#execute" aria-label="Link to this section: execute">#</a></h3>
+<p>Re-dispatch every unevaluated node (integral, derivative, summation,
+transform, ODE/recurrence placeholder) in the expression; useful after
+substitution has changed the inputs.</p>
+<h2 id="example">Example<a class="symi-heading-permalink" href="#example" aria-label="Link to this section: Example">#</a></h2>
+<h2 id="additional_api">Additional API<a class="symi-heading-permalink" href="#additional_api" aria-label="Link to this section: Additional API">#</a></h2>
+<h3 id="decline_reason">decline_reason<a class="symi-heading-permalink" href="#decline_reason" aria-label="Link to this section: decline_reason">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_decline_reason_api_results_definiteintegrationresult_decline_reason"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_declinereason.f8d4f9b20509"></a></p>
+<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">declineReason</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiDefiniteIntegrationDeclineReason<span class="token operator">?</span></code></pre></div>
+<p>The reason, present exactly when the verdict is <code>declined</code>.</p>
+<h3 id="derivative">derivative<a class="symi-heading-permalink" href="#derivative" aria-label="Link to this section: derivative">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_derivative_api_session_derivative"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_derivative.0bd3a90fb4d5"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">derivative</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    order<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>ULong<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use <code>execute</code> to evaluate it.</p>
+<h3 id="derivative_2">derivative<a class="symi-heading-permalink" href="#derivative_2" aria-label="Link to this section: derivative">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_derivative_api_expression_derivative"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_derivative.daaa1d9a5854"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">derivative</span><span class="token punctuation">(</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+    order<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>ULong<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use <code>execute</code> to evaluate it.</p>
+<h3 id="derivative_3">derivative<a class="symi-heading-permalink" href="#derivative_3" aria-label="Link to this section: derivative">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_derivative_api_undefinedfunction_derivative"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiundefinedfunction_derivative.a0cbaac666e1"></a></p>
+<p class="symi-entry-owner">UniffiUndefinedFunction method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">derivative</span><span class="token punctuation">(</span>
+    orders<span class="token operator">:</span> List<span class="token operator">&lt;</span>kotlin<span class="token punctuation">.</span>ULong<span class="token operator">></span><span class="token punctuation">,</span>
+    arguments<span class="token operator">:</span> List<span class="token operator">&lt;</span>UniffiExpression<span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use <code>execute</code> to evaluate it.</p>
+<h3 id="divergence_direction">divergence_direction<a class="symi-heading-permalink" href="#divergence_direction" aria-label="Link to this section: divergence_direction">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_divergence_direction_api_results_definiteintegrationresult_divergence_direction"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_divergencedirection.90ae735944bd"></a></p>
+<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">divergenceDirection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiDefiniteIntegrationDivergenceDirection<span class="token operator">?</span></code></pre></div>
+<p>The signed infinity of a divergent request, when a single direction was established.</p>
+<h3 id="execute_2">execute<a class="symi-heading-permalink" href="#execute_2" aria-label="Link to this section: execute">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_execute_api_session_execute"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_execute.ea743bf51e81"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">execute</span><span class="token punctuation">(</span>target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.</p>
+<h3 id="execute_3">execute<a class="symi-heading-permalink" href="#execute_3" aria-label="Link to this section: execute">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_execute_api_expression_execute"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_execute.24b5e1861d9a"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.</p>
+<h3 id="execute_4">execute<a class="symi-heading-permalink" href="#execute_4" aria-label="Link to this section: execute">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_execute_api_matrix_execute"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_execute.c928aef513f8"></a></p>
+<p class="symi-entry-owner">UniffiMatrix method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiMatrix</code></pre></div>
+<p>Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.</p>
+<h3 id="integrate_2">integrate<a class="symi-heading-permalink" href="#integrate_2" aria-label="Link to this section: integrate">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_api_session_integrate"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_integrate.69552df7dd0f"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrate</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Indefinite integration (no constant of integration).</p>
+<h3 id="integrate_3">integrate<a class="symi-heading-permalink" href="#integrate_3" aria-label="Link to this section: integrate">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_api_expression_integrate"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_integrate.a24e2ba753a1"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrate</span><span class="token punctuation">(</span>variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Indefinite integration (no constant of integration).</p>
+<h3 id="integrate_4">integrate<a class="symi-heading-permalink" href="#integrate_4" aria-label="Link to this section: integrate">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_api_assumptionscope_integrate"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_integrate.b7023011912f"></a></p>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">integrate</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> UniffiExpression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> kotlin<span class="token punctuation">.</span>String<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression</code></pre></div>
+<p>Integrate an expression using the scope&#39;s immutable assumptions.</p>
+<h3 id="interpretation">interpretation<a class="symi-heading-permalink" href="#interpretation" aria-label="Link to this section: interpretation">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_interpretation_api_results_definiteintegrationresult_interpretation"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_interpretation.f9f52508874d"></a></p>
+<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">interpretation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiDefiniteIntegrationInterpretation</code></pre></div>
+<p>The interpretation under which the request was answered.</p>
+<h3 id="value">value<a class="symi-heading-permalink" href="#value" aria-label="Link to this section: value">#</a></h3>
+<p><a id="entry-presentation_kotlin_calculus_capability_calculus_value_api_results_definiteintegrationresult_value"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_value.28d800f5f090"></a></p>
+<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+
+<div class="symi-signature" data-code-language="kotlin"><pre class="language-kotlin" tabindex="0"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> UniffiExpression<span class="token operator">?</span></code></pre></div>
+<p>The exact value, present exactly when the verdict is <code>evaluated</code>.</p>
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Calculus</h2><ul class="symi-related-list"><li><a href="/symi/kotlin/series/">Series and residues</a></li><li><a href="/symi/kotlin/integral-transforms/">Integral transforms</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/kotlin/specialized-canonical-forms/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Specialized canonical forms</span></a><a class="symi-pager-link symi-pager-next" href="/symi/kotlin/series/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Series and residues</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · Kotlin</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#differentiate" data-outline-target="differentiate">differentiate</a></li><li class="symi-outline-depth-3"><a href="#integrate" data-outline-target="integrate">integrate</a></li><li class="symi-outline-depth-3"><a href="#integrate_definite" data-outline-target="integrate_definite">integrate_definite</a></li><li class="symi-outline-depth-3"><a href="#integrate_definite_detailed" data-outline-target="integrate_definite_detailed">integrate_definite_detailed</a></li><li class="symi-outline-depth-3"><a href="#definiteintegrationresult" data-outline-target="definiteintegrationresult">DefiniteIntegrationResult</a></li><li class="symi-outline-depth-3"><a href="#integrate_definite_numeric" data-outline-target="integrate_definite_numeric">integrate_definite_numeric</a></li><li class="symi-outline-depth-3"><a href="#numericdefiniteintegrationresult" data-outline-target="numericdefiniteintegrationresult">NumericDefiniteIntegrationResult</a></li><li class="symi-outline-depth-3"><a href="#integrate_iterated" data-outline-target="integrate_iterated">integrate_iterated</a></li><li class="symi-outline-depth-3"><a href="#limit" data-outline-target="limit">limit</a></li><li class="symi-outline-depth-3"><a href="#evaluate_limit" data-outline-target="evaluate_limit">evaluate_limit</a></li><li class="symi-outline-depth-3"><a href="#singularities" data-outline-target="singularities">singularities</a></li><li class="symi-outline-depth-3"><a href="#continuous_domain" data-outline-target="continuous_domain">continuous_domain</a></li><li class="symi-outline-depth-3"><a href="#summation_indefinite" data-outline-target="summation_indefinite">summation_indefinite</a></li><li class="symi-outline-depth-3"><a href="#evaluate_numeric" data-outline-target="evaluate_numeric">evaluate_numeric</a></li><li class="symi-outline-depth-3"><a href="#evaluate_on_grid" data-outline-target="evaluate_on_grid">evaluate_on_grid</a></li><li class="symi-outline-depth-3"><a href="#evaluate_on_grid_points" data-outline-target="evaluate_on_grid_points">evaluate_on_grid_points</a></li><li class="symi-outline-depth-3"><a href="#execute" data-outline-target="execute">execute</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#decline_reason" data-outline-target="decline_reason">decline_reason</a></li><li class="symi-outline-depth-3"><a href="#derivative" data-outline-target="derivative">derivative</a></li><li class="symi-outline-depth-3"><a href="#derivative_2" data-outline-target="derivative_2">derivative</a></li><li class="symi-outline-depth-3"><a href="#derivative_3" data-outline-target="derivative_3">derivative</a></li><li class="symi-outline-depth-3"><a href="#divergence_direction" data-outline-target="divergence_direction">divergence_direction</a></li><li class="symi-outline-depth-3"><a href="#execute_2" data-outline-target="execute_2">execute</a></li><li class="symi-outline-depth-3"><a href="#execute_3" data-outline-target="execute_3">execute</a></li><li class="symi-outline-depth-3"><a href="#execute_4" data-outline-target="execute_4">execute</a></li><li class="symi-outline-depth-3"><a href="#integrate_2" data-outline-target="integrate_2">integrate</a></li><li class="symi-outline-depth-3"><a href="#integrate_3" data-outline-target="integrate_3">integrate</a></li><li class="symi-outline-depth-3"><a href="#integrate_4" data-outline-target="integrate_4">integrate</a></li><li class="symi-outline-depth-3"><a href="#interpretation" data-outline-target="interpretation">interpretation</a></li><li class="symi-outline-depth-3"><a href="#value" data-outline-target="value">value</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

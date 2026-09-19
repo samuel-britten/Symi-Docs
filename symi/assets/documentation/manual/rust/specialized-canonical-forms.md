@@ -12,11 +12,24 @@ Related rewrites are on [algebraic transforms](algebraic-transforms.md) and
 
 ### piecewise_fold
 
+<a id="entry-presentation_rust_specialized_canonical_forms_capability_rust_native_rust_api_expression_operations_expression_piecewise_fold_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_piecewise_fold.a5c09a8260de"></a>
-`symi::api::expression_operations::Expression — pub fn piecewise_fold(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
 
+```rust signature
+pub fn piecewise_fold(&self) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_specialized_canonical_forms_capability_rust_native_rust_api_solving_session_piecewise_fold_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_piecewise_fold.d9d06877bd84"></a>
-`symi::api::solving::Session — pub fn piecewise_fold(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn piecewise_fold(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 
@@ -34,11 +47,28 @@ equality-preserving expression and may therefore return the input unchanged.
 
 ### rewrite_special_functions
 
+<a id="entry-presentation_rust_specialized_canonical_forms_capability_rust_native_rust_api_expression_rewrite_special_functions_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_rewrite_special_functions.862d5aececd0"></a>
-`symi::api::Expression — pub fn rewrite_special_functions(&self, basis: SpecialFunctionBasis) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Expression method</p>
 
+```rust signature
+pub fn rewrite_special_functions(
+    &self,
+    basis: SpecialFunctionBasis,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_specialized_canonical_forms_capability_rust_native_rust_api_session_rewrite_special_functions_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_rewrite_special_functions.c348e1dbfa43"></a>
-`symi::api::Session — pub fn rewrite_special_functions(&self, target: &Expression, basis: SpecialFunctionBasis) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn rewrite_special_functions(
+    &self,
+    target: &Expression,
+    basis: SpecialFunctionBasis,
+) -> Result<Expression, ApiError>
+```
 
 
 
@@ -59,11 +89,24 @@ force mode.
 
 ### presentation_normal_form
 
+<a id="entry-presentation_rust_specialized_canonical_forms_capability_rust_native_rust_api_algebra_session_presentation_normal_form_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_presentation_normal_form.9876501ffad2"></a>
-`symi::api::algebra::Session — pub fn presentation_normal_form(&self, input_expression: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
 
+```rust signature
+pub fn presentation_normal_form(
+    &self,
+    input_expression: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<a id="entry-presentation_rust_specialized_canonical_forms_capability_rust_native_rust_api_expression_operations_expression_presentation_normal_form_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_presentation_normal_form.2520484683fe"></a>
-`symi::api::expression_operations::Expression — pub fn presentation_normal_form(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn presentation_normal_form(&self) -> Result<Expression, ApiError>
+```
 
 
 

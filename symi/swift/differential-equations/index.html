@@ -1,101 +1,401 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="swift">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Differential and recurrence equations — Symi Swift documentation</title>
+        <meta name="description" content="The unknown function is written with undefined_function, and its derivatives with the derivative method on it:" />
+        <link rel="canonical" href="/symi/swift/differential-equations/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="differential-equations" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/swift/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the Swift documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">Swift</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: Swift"><span>Swift</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/differential-equations/" data-language="python" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/differential-equations/" data-language="wasm" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/differential-equations/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/differential-equations/" data-language="swift" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/differential-equations/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/getting-started-swift/">Getting started: Swift</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/default-context/">The default context and module-level functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-default-context" data-page="default-context"><span class="symi-visually-hidden">Show entries in The default context and module-level functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-default-context" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/context-safety/">Context safety</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/specialized-canonical-forms/">Specialized canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-specialized-canonical-forms" data-page="specialized-canonical-forms"><span class="symi-visually-hidden">Show entries in Specialized canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-specialized-canonical-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/integral-transforms/">Integral transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-integral-transforms" data-page="integral-transforms"><span class="symi-visually-hidden">Show entries in Integral transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-integral-transforms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/differential-equations/" aria-current="page">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Hide entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_construct_partial_differential_equation_point_symmetry_action_api_partial_differential_equations_session_construct_partial_differential_equation_point_symmetry_action"><code>construct_partial_differential_equation_point_symmetry_action</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_derive_partial_differential_equation_point_symmetries_api_partial_differential_equations_session_derive_partial_differential_equation_point_symmetries"><code>derive_partial_differential_equation_point_symmetries</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_establishes_completeness_api_partial_differential_equations_partialdifferentialequationsolutionfamily_establishes_completeness"><code>establishes_completeness</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_partial_differential_equation_point_symmetry_generator_api_partial_differential_equations_session_partial_differential_equation_point_symmetry_generator"><code>partial_differential_equation_point_symmetry_generator</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_equations_solve_linear_recurrence_api_solving_session_solve_linear_recurrence"><code>solve_linear_recurrence</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_equations_solve_ordinary_differential_equation_api_solving_session_solve_ordinary_differential_equation"><code>solve_ordinary_differential_equation</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_solve_ordinary_differential_equation_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_request"><code>solve_ordinary_differential_equation_request</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_solve_ordinary_differential_equation_system_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_system_request"><code>solve_ordinary_differential_equation_system_request</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_solve_ordinary_differential_equation_with_history_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_with_history"><code>solve_ordinary_differential_equation_with_history</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_equations_solve_ordinary_differential_equation_with_particular_solution_api_solving_session_solve_ordinary_differential_equation_with_particular_solution"><code>solve_ordinary_differential_equation_with_particular_solution</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_solve_partial_differential_equation_by_similarity_reduction_api_partial_differential_equations_session_solve_partial_differential_equation_by_similarity_reduction"><code>solve_partial_differential_equation_by_similarity_reduction</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_solve_partial_differential_equation_request_api_partial_differential_equations_session_solve_partial_differential_equation_request"><code>solve_partial_differential_equation_request</code></a></li><li><a class="symi-nav-entry" href="/symi/swift/differential-equations/#entry-presentation_swift_differential_equations_capability_contexts_verify_ordinary_differential_equation_system_solution_api_ordinary_differential_equations_session_verify_ordinary_differential_equation_system_solution"><code>verify_ordinary_differential_equation_system_solution</code></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/logical-transforms/">Logical transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logical-transforms" data-page="logical-transforms"><span class="symi-visually-hidden">Show entries in Logical transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logical-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/zero-equivalence/">Zero equivalence</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-zero-equivalence" data-page="zero-equivalence"><span class="symi-visually-hidden">Show entries in Zero equivalence</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-zero-equivalence" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/swift/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/swift/introduction/">Swift</a></li><li>Equations and optimization</li><li><span aria-current="page">Differential and recurrence equations</span></li></ol></nav>
+                
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#derivative" data-outline-target="derivative">derivative</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation" data-outline-target="solve_ordinary_differential_equation">solve_ordinary_differential_equation</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation_request" data-outline-target="solve_ordinary_differential_equation_request">solve_ordinary_differential_equation_request</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation_with_history" data-outline-target="solve_ordinary_differential_equation_with_history">solve_ordinary_differential_equation_with_history</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation_system_request" data-outline-target="solve_ordinary_differential_equation_system_request">solve_ordinary_differential_equation_system_request</a></li><li class="symi-outline-depth-3"><a href="#verify_ordinary_differential_equation_system_solution" data-outline-target="verify_ordinary_differential_equation_system_solution">verify_ordinary_differential_equation_system_solution</a></li><li class="symi-outline-depth-3"><a href="#ordinarydifferentialequationsolveresult" data-outline-target="ordinarydifferentialequationsolveresult">OrdinaryDifferentialEquationSolveResult</a></li><li class="symi-outline-depth-3"><a href="#ordinarydifferentialequationsystemsolveresult" data-outline-target="ordinarydifferentialequationsystemsolveresult">OrdinaryDifferentialEquationSystemSolveResult</a></li><li class="symi-outline-depth-3"><a href="#ordinarydifferentialequationsystemverificationreport" data-outline-target="ordinarydifferentialequationsystemverificationreport">OrdinaryDifferentialEquationSystemVerificationReport</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation_with_particular_solution" data-outline-target="solve_ordinary_differential_equation_with_particular_solution">solve_ordinary_differential_equation_with_particular_solution</a></li><li class="symi-outline-depth-3"><a href="#solve_linear_recurrence" data-outline-target="solve_linear_recurrence">solve_linear_recurrence</a></li><li class="symi-outline-depth-2"><a href="#partial_differential_equation_requests_and_point_symmetries" data-outline-target="partial_differential_equation_requests_and_point_symmetries">Partial differential equation requests and point symmetries</a></li><li class="symi-outline-depth-3"><a href="#solve_partial_differential_equation_request" data-outline-target="solve_partial_differential_equation_request">solve_partial_differential_equation_request</a></li><li class="symi-outline-depth-3"><a href="#establishes_completeness" data-outline-target="establishes_completeness">establishes_completeness</a></li><li class="symi-outline-depth-3"><a href="#derive_partial_differential_equation_point_symmetries" data-outline-target="derive_partial_differential_equation_point_symmetries">derive_partial_differential_equation_point_symmetries</a></li><li class="symi-outline-depth-3"><a href="#construct_partial_differential_equation_point_symmetry_action" data-outline-target="construct_partial_differential_equation_point_symmetry_action">construct_partial_differential_equation_point_symmetry_action</a></li><li class="symi-outline-depth-3"><a href="#partial_differential_equation_point_symmetry_generator" data-outline-target="partial_differential_equation_point_symmetry_generator">partial_differential_equation_point_symmetry_generator</a></li><li class="symi-outline-depth-3"><a href="#solve_partial_differential_equation_by_similarity_reduction" data-outline-target="solve_partial_differential_equation_by_similarity_reduction">solve_partial_differential_equation_by_similarity_reduction</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">Differential and recurrence equations</h1>
+<p>The unknown function is written with <code>undefined_function</code>, and its
+derivatives with the <code>derivative</code> method on it:</p>
+<p>Solutions are returned in whatever form the closing route produces: an
+implicit zero-equated expression with fresh integration constants
+(first-order routes), or an explicit <code>equal(y(x), …)</code> form
+(constant-coefficient route).</p>
+<p>The expression-returning entries below are compatibility projections. When the
+data, method, family scope, history, or regularity is part of the question, use
+the request entries, whose results keep the evidence behind the answer: the
+method that actually ran, the independent verifier&#39;s verdict, the rank verdict
+behind a complete-family claim, the constants the family treats as free, and a
+typed decline reason. A request that cannot be answered as stated declines; it
+is never projected onto a weaker question whose answer is then reported under
+the stronger one.</p>
+<h3 id="derivative">derivative<a class="symi-heading-permalink" href="#derivative" aria-label="Link to this section: derivative">#</a></h3>
+<p>The structural derivative node of the named function — the shape the ODE
+solver recognises. One order per argument: <code>y.derivative([1], [x])</code> is
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">y&#x27;(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span>, <code>y.derivative([2], [x])</code> is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mrow><mo mathvariant="normal">′</mo><mo mathvariant="normal">′</mo></mrow></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">y&#x27;&#x27;(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′′</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span>. <strong>Notes:</strong> this is distinct from
+<code>context.derivative</code>, which wraps an arbitrary <em>expression</em>
+in a deferred-differentiation placeholder; equations built from that
+placeholder are not recognised by the ODE classifier.</p>
+<h3 id="solve_ordinary_differential_equation">solve_ordinary_differential_equation<a class="symi-heading-permalink" href="#solve_ordinary_differential_equation" aria-label="Link to this section: solve_ordinary_differential_equation">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_equations_solve_ordinary_differential_equation_api_solving_session_solve_ordinary_differential_equation"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_solveordinarydifferentialequation.cad98ea962d9"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">solveOrdinaryDifferentialEquation</span><span class="token punctuation">(</span>
+    equation<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    dependentFunctionCall<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    independentVariable<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span>
+    initialConditions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpressionExpressionTuple</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiExpression</span></code></pre></div>
+<p>Solve an ODE for the unknown function named by <code>dependent_function_call</code>
+(e.g. <code>y(x)</code>). The classifier ladder covers separable, linear first-order,
+exact (with integrating factor), Bernoulli, Riccati (with particular
+solution via the dedicated entry below), Lie-symmetry patterns, Kovacic
+second-order linear, and constant-coefficient linear of any order. Equations
+outside the ladder return the unevaluated <code>ordinary_differential_equation</code>
+placeholder.</p>
+<p><code>initial_conditions</code> is a list of <code>(point, value)</code> pairs meaning
+<code>y(point) = value</code>. They constrain the request, rather than merely advising a
+preferred route: Symi fits the generated data and independently replays
+every supplied condition before returning a particular solution. If it cannot
+fit and verify those data, it declines instead of returning the unconstrained
+family. <strong>Notes:</strong> this compatibility entry can express value data only; use
+<code>solve_ordinary_differential_equation_request</code> for derivative data. WASM
+passes a flat interleaved array <code>[point_0, value_0, ...]</code>.</p>
+<h3 id="solve_ordinary_differential_equation_request">solve_ordinary_differential_equation_request<a class="symi-heading-permalink" href="#solve_ordinary_differential_equation_request" aria-label="Link to this section: solve_ordinary_differential_equation_request">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_solve_ordinary_differential_equation_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_request"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_solveordinarydifferentialequationrequest.8857696c6519"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">solveOrdinaryDifferentialEquationRequest</span><span class="token punctuation">(</span>
+    equation<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    dependentFunctionCall<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    independentVariable<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span>
+    scope<span class="token punctuation">:</span> <span class="token class-name">UniffiDifferentialEquationSolutionScope</span><span class="token punctuation">,</span>
+    conditionResiduals<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    method<span class="token punctuation">:</span> <span class="token class-name">UniffiOrdinaryDifferentialEquationMethod</span><span class="token punctuation">,</span>
+    regularity<span class="token punctuation">:</span> <span class="token class-name">UniffiOrdinaryDifferentialEquationRegularity</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiOrdinaryDifferentialEquationSolveResult</span></code></pre></div>
+<p>Solve one scalar ODE request. Each condition residual is read as equal to zero
+and states one value or derivative datum at a coordinate-free point:
+<code>f(0)</code> states <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f(0)=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> and <code>f.derivative([1], [0]) - 2</code> states <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">f&#x27;(0)=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>.</p>
+<ul>
+<li><code>scope</code> is required: <code>general</code> asks for the complete family on a regular
+chart and is answered only when the map from the generated constants to the
+initial jet has full rank; <code>particular</code> asks for one solution through the data.</li>
+<li><code>method</code> is <code>automatic</code> or <code>laplace_transform</code>. The transform method runs the
+forward transform, frequency-domain solve, and inversion, and declines when a
+step does not apply; it never substitutes the classification ladder.</li>
+<li><code>regularity</code> is <code>classical</code> or <code>piecewise_classical</code>. An equation whose
+coefficient switches at a point (a <code>sign</code> or <code>piecewise</code> coefficient) must be
+requested as <code>piecewise_classical</code>: its solution is classical on each side and
+matched in value and slope across the switch, not twice differentiable there.</li>
+<li>A residual that integrates the unknown (a finite-memory Volterra term) is
+answered by a memory-state reduction and replayed against the original
+integral equation. A residual that evaluates the unknown at a lag is refused
+here, because its history is part of the question: use
+<code>solve_ordinary_differential_equation_with_history</code>.</li>
+</ul>
+<p><strong>Errors:</strong> a regularity that does not match the equation, a lag with no
+history, or an unreadable condition residual is an invalid-argument error
+naming the offending parameter.</p>
+<h3 id="solve_ordinary_differential_equation_with_history">solve_ordinary_differential_equation_with_history<a class="symi-heading-permalink" href="#solve_ordinary_differential_equation_with_history" aria-label="Link to this section: solve_ordinary_differential_equation_with_history">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_solve_ordinary_differential_equation_with_history_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_with_history"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_solveordinarydifferentialequationwithhistory.c81f91692ead"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">solveOrdinaryDifferentialEquationWithHistory</span><span class="token punctuation">(</span>
+    equation<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    dependentFunctionCall<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    independentVariable<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span>
+    historyValue<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    historyStart<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    historyEnd<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiOrdinaryDifferentialEquationSolveResult</span></code></pre></div>
+<p>Solve a retarded delay ODE from a constant history on the stated interval
+<code>[history_start, history_end]</code>, which must cover every lag. The interval is
+never inferred, so a delay equation cannot acquire a history it was not given.
+The supported class is a scalar first-order linear equation with constant lags
+and constant history; it is answered by an exact method-of-steps family valid
+for every time, certified by induction on the step index. One history is one
+solution, so the request is particular.</p>
+<h3 id="solve_ordinary_differential_equation_system_request">solve_ordinary_differential_equation_system_request<a class="symi-heading-permalink" href="#solve_ordinary_differential_equation_system_request" aria-label="Link to this section: solve_ordinary_differential_equation_system_request">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_solve_ordinary_differential_equation_system_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_system_request"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_solveordinarydifferentialequationsystemrequest.679e85c7d64a"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">solveOrdinaryDifferentialEquationSystemRequest</span><span class="token punctuation">(</span>
+    equations<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    dependentFunctionCalls<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    independentVariable<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span>
+    conditionResiduals<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    method<span class="token punctuation">:</span> <span class="token class-name">UniffiOrdinaryDifferentialEquationSystemMethod</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiOrdinaryDifferentialEquationSystemSolveResult</span></code></pre></div>
+<p>Solve a system of ODEs in one coordinate, one equation per declared unknown.
+Each condition residual states one datum on exactly one component.
+<code>method</code> is <code>automatic</code>, <code>sequential</code> (scalar requests solved one at a time,
+each with its own fresh integration datum; declines when no elimination order
+exists), or <code>fundamental_matrix</code> (the coupled route through a certified
+fundamental matrix of the first-order state form). Every returned assignment is
+verified against every equation and datum.</p>
+<h3 id="verify_ordinary_differential_equation_system_solution">verify_ordinary_differential_equation_system_solution<a class="symi-heading-permalink" href="#verify_ordinary_differential_equation_system_solution" aria-label="Link to this section: verify_ordinary_differential_equation_system_solution">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_verify_ordinary_differential_equation_system_solution_api_ordinary_differential_equations_session_verify_ordinary_differential_equation_system_solution"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_verifyordinarydifferentialequationsystemsolution.ce4739e5761d"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">verifyOrdinaryDifferentialEquationSystemSolution</span><span class="token punctuation">(</span>
+    equations<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    dependentFunctionCalls<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    independentVariable<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span>
+    components<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    generatedConstants<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    conditionResiduals<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiOrdinaryDifferentialEquationSystemVerificationReport</span></code></pre></div>
+<p>Check a supplied assignment without solving: no solver runs, so a swapped
+component or a missing mode is reported against the assignment as given rather
+than repaired. The report carries <code>verdict</code>, <code>generality</code> (the rank verdict on
+the map from <code>generated_constants</code> to the initial jet), and <code>required_rank</code>.</p>
+<h3 id="ordinarydifferentialequationsolveresult"><span id="OrdinaryDifferentialEquationSolveResult" class="symi-legacy-anchor"></span>OrdinaryDifferentialEquationSolveResult<a class="symi-heading-permalink" href="#ordinarydifferentialequationsolveresult" aria-label="Link to this section: OrdinaryDifferentialEquationSolveResult">#</a></h3>
+<p><em>Not exposed by the Swift bindings. Available as <a href="/symi/python/differential-equations/#OrdinaryDifferentialEquationSolveResult"><code>OrdinaryDifferentialEquationSolveResult</code></a> in Python, <a href="/symi/rust/differential-equations/#OrdinaryDifferentialEquationSolveResult"><code>api::OrdinaryDifferentialEquationSolveResult</code></a> in Rust.</em></p>
+<p><code>verdict</code> (<code>solved</code>/<code>declined</code>), <code>method</code>, <code>solution</code>, <code>form</code>
+(<code>explicit</code>/<code>implicit</code>), <code>generated_constants</code>, <code>verification</code>
+(<code>verified</code>/<code>rejected</code>/<code>inconclusive</code>), <code>generality</code>
+(<code>full_rank</code>/<code>deficient</code>/<code>inconclusive</code>), <code>decline</code>, and, for a Laplace
+transform solution, <code>frequency_domain_equation</code> and <code>image</code>.</p>
+<h3 id="ordinarydifferentialequationsystemsolveresult"><span id="OrdinaryDifferentialEquationSystemSolveResult" class="symi-legacy-anchor"></span>OrdinaryDifferentialEquationSystemSolveResult<a class="symi-heading-permalink" href="#ordinarydifferentialequationsystemsolveresult" aria-label="Link to this section: OrdinaryDifferentialEquationSystemSolveResult">#</a></h3>
+<p><em>Not exposed by the Swift bindings. Available as <a href="/symi/python/differential-equations/#OrdinaryDifferentialEquationSystemSolveResult"><code>OrdinaryDifferentialEquationSystemSolveResult</code></a> in Python, <a href="/symi/rust/differential-equations/#OrdinaryDifferentialEquationSystemSolveResult"><code>api::OrdinaryDifferentialEquationSystemSolveResult</code></a> in Rust.</em></p>
+<p><code>verdict</code>, <code>method</code>, <code>route</code> (<code>sequential</code>, <code>fundamental_matrix</code>, or
+<code>dependency_blocks</code>), <code>components</code> in declaration order, <code>generated_constants</code>,
+<code>verification</code>, <code>generality</code>, and <code>decline</code>.</p>
+<h3 id="ordinarydifferentialequationsystemverificationreport"><span id="OrdinaryDifferentialEquationSystemVerificationReport" class="symi-legacy-anchor"></span>OrdinaryDifferentialEquationSystemVerificationReport<a class="symi-heading-permalink" href="#ordinarydifferentialequationsystemverificationreport" aria-label="Link to this section: OrdinaryDifferentialEquationSystemVerificationReport">#</a></h3>
+<p><em>Not exposed by the Swift bindings. Available as <a href="/symi/python/differential-equations/#OrdinaryDifferentialEquationSystemVerificationReport"><code>OrdinaryDifferentialEquationSystemVerificationReport</code></a> in Python, <a href="/symi/rust/differential-equations/#OrdinaryDifferentialEquationSystemVerificationReport"><code>api::OrdinaryDifferentialEquationSystemVerificationReport</code></a> in Rust.</em></p>
+<p><code>verdict</code>, <code>generality</code>, and <code>required_rank</code>.</p>
+<h3 id="solve_ordinary_differential_equation_with_particular_solution">solve_ordinary_differential_equation_with_particular_solution<a class="symi-heading-permalink" href="#solve_ordinary_differential_equation_with_particular_solution" aria-label="Link to this section: solve_ordinary_differential_equation_with_particular_solution">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_equations_solve_ordinary_differential_equation_with_particular_solution_api_solving_session_solve_ordinary_differential_equation_with_particular_solution"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_solveordinarydifferentialequationwithparticularsolution.a9d91e602cce"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">solveOrdinaryDifferentialEquationWithParticularSolution</span><span class="token punctuation">(</span>
+    equation<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    dependentFunctionCall<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    independentVariable<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span>
+    particularSolution<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiExpression</span></code></pre></div>
+<p>Riccati-specific entry: with a known particular solution <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">y_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, the
+substitution <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">y = y_1 + 1/v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span> reduces the Riccati equation to a linear
+first-order ODE. Falls back to the unevaluated placeholder when the shape is
+not Riccati.</p>
+<h3 id="solve_linear_recurrence">solve_linear_recurrence<a class="symi-heading-permalink" href="#solve_linear_recurrence" aria-label="Link to this section: solve_linear_recurrence">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_equations_solve_linear_recurrence_api_solving_session_solve_linear_recurrence"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_solvelinearrecurrence.0ea7bb33e69a"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">solveLinearRecurrence</span><span class="token punctuation">(</span>
+    equation<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    sequenceCall<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+    indexVariable<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span>
+    initialConditions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpressionExpressionTuple</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiExpression</span></code></pre></div>
+<p>Solve a linear recurrence for the unknown sequence named by <code>sequence_call</code>
+(e.g. <code>a(n)</code>). Backward shifts are normalised by translating the whole
+equation. Homogeneous recurrences with polynomial coefficients use Petkovšek&#39;s
+Hyper algorithm; the general solution carries one fresh symbolic constant per
+basis element. Constant-coefficient recurrences may be inhomogeneous when the
+forcing is a sum of polynomial-times-exponential terms, with resonant trials
+raised by the root multiplicity; recurrences whose coefficients are rational in
+<code>n</code> and <code>c^n</code> are solved in that mixed field when a rational solution exists.
+Other shapes return the unevaluated <code>recurrence_equation</code> placeholder.
+<code>initial_conditions</code> is a list of <code>(index, value)</code> pairs. WASM passes a flat
+interleaved array.</p>
+<p><strong>Constant coefficients.</strong> When every coefficient is a rational constant and
+Petkovšek&#39;s basis is incomplete, the characteristic polynomial is factored over
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">Q</mi></mrow><annotation encoding="application/x-tex">\mathbb{Q}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8556em;vertical-align:-0.1667em;"></span><span class="mord mathbb">Q</span></span></span></span> and each irreducible factor solved in radicals, giving the
+algebraic-exponential basis <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mi>j</mi></msup><msup><mrow><mi mathvariant="normal">root</mi><mo>⁡</mo></mrow><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">n^j \operatorname{root}^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8247em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop"><span class="mord mathrm">root</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6694em;"><span style="top:-3.068em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> with the multiplicity factors
+included. This is what closes recurrences whose characteristic roots are
+irrational — <code>a(n+2) = a(n+1) + a(n)</code> with <code>a(0) = 0, a(1) = 1</code> returns
+Binet&#39;s formula rather than the placeholder. Exact fitting is performed for
+irreducible factors up to degree two; a cubic or higher irreducible factor
+declines to the placeholder rather than eliminating over nested Cardano and
+Ferrari radicals.</p>
+<p><strong>Initial conditions.</strong> A complete window determines <em>every</em> constant, not just
+the first: the window gives a square linear system in the constants which is
+solved by exact symbolic elimination, and the fitted result is replayed against
+each supplied condition before it is returned. A window that does not determine
+the constants leaves the symbolic-constant general solution intact.</p>
+<h2 id="partial_differential_equation_requests_and_point_symmetries">Partial differential equation requests and point symmetries<a class="symi-heading-permalink" href="#partial_differential_equation_requests_and_point_symmetries" aria-label="Link to this section: Partial differential equation requests and point symmetries">#</a></h2>
+<h3 id="solve_partial_differential_equation_request">solve_partial_differential_equation_request<a class="symi-heading-permalink" href="#solve_partial_differential_equation_request" aria-label="Link to this section: solve_partial_differential_equation_request">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_solve_partial_differential_equation_request_api_partial_differential_equations_session_solve_partial_differential_equation_request"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_solvepartialdifferentialequationrequest.e31d00b727dc"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">solvePartialDifferentialEquationRequest</span><span class="token punctuation">(</span>
+    problem<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationProblem</span><span class="token punctuation">,</span>
+    scope<span class="token punctuation">:</span> <span class="token class-name">UniffiDifferentialEquationSolutionScope</span><span class="token punctuation">,</span>
+    geometricDomain<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationGeometricDomain</span><span class="token punctuation">,</span>
+    regularity<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationRegularity</span><span class="token punctuation">,</span>
+    solutionClass<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationSolutionClass</span><span class="token punctuation">,</span>
+    method<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationMethod</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiPartialDifferentialEquationSolveResult</span></code></pre></div>
+<p>Solve a PDE request in which the geometry, regularity, and solution class are
+part of the question. <code>geometric_domain</code> is <code>whole_space</code>, <code>disk</code> (radial then
+angular variable, origin interior), or <code>real_line_evolution</code> (whole-line
+spatial variable then positive evolution variable). <code>regularity</code> is
+<code>unrestricted</code> or <code>origin_regular_periodic</code> (disk only). <code>solution_class</code> is
+<code>unrestricted</code> or <code>polynomial_growth</code>.</p>
+<p>A <code>general</code> request is answered only by a family whose completeness theorem is
+proved over the requested class. Otherwise the result declines with
+<code>complete_family_not_established</code> or
+<code>completeness_holds_only_on_a_narrower_solution_class</code> — the latter is the
+verdict for the unrestricted heat request, whose initial-data representation is
+complete only among solutions of polynomial growth. Geometry or regularity no
+implemented method supports declines with <code>declared_geometry_not_supported</code> or
+<code>declared_regularity_not_supported</code>.</p>
+<h3 id="establishes_completeness">establishes_completeness<a class="symi-heading-permalink" href="#establishes_completeness" aria-label="Link to this section: establishes_completeness">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_establishes_completeness_api_partial_differential_equations_partialdifferentialequationsolutionfamily_establishes_completeness"></a>
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationsolutionfamily_establishescompleteness.2b72b820437b"></a></p>
+<p class="symi-entry-owner">UniffiPartialDifferentialEquationSolutionFamily method</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">establishesCompleteness</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span></code></pre></div>
+<p>Whether the family carries a completeness theorem whose every identity was
+proved. A verified residual proves membership in the solution set, never
+coverage of it.</p>
+<h3 id="derive_partial_differential_equation_point_symmetries">derive_partial_differential_equation_point_symmetries<a class="symi-heading-permalink" href="#derive_partial_differential_equation_point_symmetries" aria-label="Link to this section: derive_partial_differential_equation_point_symmetries">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_derive_partial_differential_equation_point_symmetries_api_partial_differential_equations_session_derive_partial_differential_equation_point_symmetries"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_derivepartialdifferentialequationpointsymmetries.ab5aad630d79"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">derivePartialDifferentialEquationPointSymmetries</span><span class="token punctuation">(</span>problem<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationProblem</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiPartialDifferentialEquationPointSymmetryAlgebra</span></code></pre></div>
+<p>Derive the point-symmetry algebra of a scalar first- or second-order PDE from
+its prolonged determining equations. Each basis generator is verified by an
+independent infinitesimal-criterion check. For a linear homogeneous equation
+the additive solution symmetry is reported separately
+(<code>admits_additive_solution_symmetry</code>), because it is constrained to solutions
+rather than being an arbitrary function. Problems carrying initial or boundary
+data decline, as do infinite-dimensional algebras the bounded reduction cannot
+close. The result carries <code>decline</code>, <code>parameters</code>, <code>basis</code>,
+<code>general_generator</code>, <code>determining_equations</code>, and <code>outstanding_obligations</code>;
+discrete symmetries are never claimed.</p>
+<h3 id="construct_partial_differential_equation_point_symmetry_action">construct_partial_differential_equation_point_symmetry_action<a class="symi-heading-permalink" href="#construct_partial_differential_equation_point_symmetry_action" aria-label="Link to this section: construct_partial_differential_equation_point_symmetry_action">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_construct_partial_differential_equation_point_symmetry_action_api_partial_differential_equations_session_construct_partial_differential_equation_point_symmetry_action"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_constructpartialdifferentialequationpointsymmetryaction.2a5c44859f49"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">constructPartialDifferentialEquationPointSymmetryAction</span><span class="token punctuation">(</span>problem<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationProblem</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiPartialDifferentialEquationPointSymmetryAction</span></code></pre></div>
+<p>Integrate every basis generator into a one-parameter group, verify each group
+by its own intertwining identity, and certify their composition as the
+connected local action <code>u = a + A f(X)</code>. The result carries <code>parameters</code>,
+<code>transformed_coordinates</code>, <code>amplitude</code>, <code>multiplier</code>, <code>intertwining</code>,
+<code>invertibility</code>, <code>outstanding_obligations</code>, and <code>decline</code> or
+<code>point_symmetry_decline</code>. <code>applied_to_seed(seed)</code> returns <code>A f(X)</code> and
+<code>applied_to_seed_with_additive_solution(seed, additive_solution)</code> returns
+<code>a + A f(X)</code>; the transformed coordinates must lie in the seed&#39;s chart.</p>
+<h3 id="partial_differential_equation_point_symmetry_generator">partial_differential_equation_point_symmetry_generator<a class="symi-heading-permalink" href="#partial_differential_equation_point_symmetry_generator" aria-label="Link to this section: partial_differential_equation_point_symmetry_generator">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_partial_differential_equation_point_symmetry_generator_api_partial_differential_equations_session_partial_differential_equation_point_symmetry_generator"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_partialdifferentialequationpointsymmetrygenerator.5fa81229de42"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">partialDifferentialEquationPointSymmetryGenerator</span><span class="token punctuation">(</span>
+    problem<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationProblem</span><span class="token punctuation">,</span>
+    coordinateInfinitesimals<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">UniffiExpression</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    dependentInfinitesimal<span class="token punctuation">:</span> <span class="token class-name">UniffiExpression</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiPartialDifferentialEquationPointSymmetryGenerator</span></code></pre></div>
+<p>A candidate generator, one coordinate infinitesimal per independent variable
+and a dependent infinitesimal written in the unknown evaluated at them. It is a
+candidate, not a certificate: every consumer verifies it is a symmetry.</p>
+<h3 id="solve_partial_differential_equation_by_similarity_reduction">solve_partial_differential_equation_by_similarity_reduction<a class="symi-heading-permalink" href="#solve_partial_differential_equation_by_similarity_reduction" aria-label="Link to this section: solve_partial_differential_equation_by_similarity_reduction">#</a></h3>
+<p><a id="entry-presentation_swift_differential_equations_capability_contexts_solve_partial_differential_equation_by_similarity_reduction_api_partial_differential_equations_session_solve_partial_differential_equation_by_similarity_reduction"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_solvepartialdifferentialequationbysimilarityreduction.0e7f570c4d72"></a></p>
+<p class="symi-entry-owner">Explicit context</p>
+
+<div class="symi-signature" data-code-language="swift"><pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">solvePartialDifferentialEquationBySimilarityReduction</span><span class="token punctuation">(</span>
+    problem<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationProblem</span><span class="token punctuation">,</span>
+    generator<span class="token punctuation">:</span> <span class="token class-name">UniffiPartialDifferentialEquationPointSymmetryGenerator</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UniffiPartialDifferentialEquationSimilaritySolution</span></code></pre></div>
+<p>Reduce a two-variable PDE by a fiber-linear point symmetry to an ODE in the
+invariant, solve that ODE as a complete family, and lift the family back. The
+result carries <code>invariant</code>, <code>similarity_variable</code>, <code>weight</code>,
+<code>reduced_equation</code>, <code>multiplier</code>, <code>lifted_family</code>, <code>lifted_constants</code>,
+<code>lifted_family_verification</code>, <code>outstanding_obligations</code>, and <code>decline</code>. The
+lifted family is a family of invariant solutions and always carries the
+obligation that it is not the general solution.</p>
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Equations and optimization</h2><ul class="symi-related-list"><li><a href="/symi/swift/solving/">Solving</a></li><li><a href="/symi/swift/optimization/">Optimization</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/swift/solving/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Solving</span></a><a class="symi-pager-link symi-pager-next" href="/symi/swift/optimization/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Optimization</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · Swift</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#derivative" data-outline-target="derivative">derivative</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation" data-outline-target="solve_ordinary_differential_equation">solve_ordinary_differential_equation</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation_request" data-outline-target="solve_ordinary_differential_equation_request">solve_ordinary_differential_equation_request</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation_with_history" data-outline-target="solve_ordinary_differential_equation_with_history">solve_ordinary_differential_equation_with_history</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation_system_request" data-outline-target="solve_ordinary_differential_equation_system_request">solve_ordinary_differential_equation_system_request</a></li><li class="symi-outline-depth-3"><a href="#verify_ordinary_differential_equation_system_solution" data-outline-target="verify_ordinary_differential_equation_system_solution">verify_ordinary_differential_equation_system_solution</a></li><li class="symi-outline-depth-3"><a href="#ordinarydifferentialequationsolveresult" data-outline-target="ordinarydifferentialequationsolveresult">OrdinaryDifferentialEquationSolveResult</a></li><li class="symi-outline-depth-3"><a href="#ordinarydifferentialequationsystemsolveresult" data-outline-target="ordinarydifferentialequationsystemsolveresult">OrdinaryDifferentialEquationSystemSolveResult</a></li><li class="symi-outline-depth-3"><a href="#ordinarydifferentialequationsystemverificationreport" data-outline-target="ordinarydifferentialequationsystemverificationreport">OrdinaryDifferentialEquationSystemVerificationReport</a></li><li class="symi-outline-depth-3"><a href="#solve_ordinary_differential_equation_with_particular_solution" data-outline-target="solve_ordinary_differential_equation_with_particular_solution">solve_ordinary_differential_equation_with_particular_solution</a></li><li class="symi-outline-depth-3"><a href="#solve_linear_recurrence" data-outline-target="solve_linear_recurrence">solve_linear_recurrence</a></li><li class="symi-outline-depth-2"><a href="#partial_differential_equation_requests_and_point_symmetries" data-outline-target="partial_differential_equation_requests_and_point_symmetries">Partial differential equation requests and point symmetries</a></li><li class="symi-outline-depth-3"><a href="#solve_partial_differential_equation_request" data-outline-target="solve_partial_differential_equation_request">solve_partial_differential_equation_request</a></li><li class="symi-outline-depth-3"><a href="#establishes_completeness" data-outline-target="establishes_completeness">establishes_completeness</a></li><li class="symi-outline-depth-3"><a href="#derive_partial_differential_equation_point_symmetries" data-outline-target="derive_partial_differential_equation_point_symmetries">derive_partial_differential_equation_point_symmetries</a></li><li class="symi-outline-depth-3"><a href="#construct_partial_differential_equation_point_symmetry_action" data-outline-target="construct_partial_differential_equation_point_symmetry_action">construct_partial_differential_equation_point_symmetry_action</a></li><li class="symi-outline-depth-3"><a href="#partial_differential_equation_point_symmetry_generator" data-outline-target="partial_differential_equation_point_symmetry_generator">partial_differential_equation_point_symmetry_generator</a></li><li class="symi-outline-depth-3"><a href="#solve_partial_differential_equation_by_similarity_reduction" data-outline-target="solve_partial_differential_equation_by_similarity_reduction">solve_partial_differential_equation_by_similarity_reduction</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

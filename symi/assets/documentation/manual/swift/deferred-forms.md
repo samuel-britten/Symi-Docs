@@ -6,8 +6,18 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
+<a id="entry-presentation_swift_deferred_forms_capability_construction_integral_api_analysis_session_integral"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integral.b86a5ce3c649"></a>
-`UniffiSession.integral(integrand: UniffiExpression, variable: String, lower: UniffiExpression?, upper: UniffiExpression?) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func integral(
+    integrand: UniffiExpression,
+    variable: String,
+    lower: UniffiExpression?,
+    upper: UniffiExpression?,
+) -> UniffiExpression
+```
 
 
 Build an *unevaluated* integral node (indefinite when bounds are omitted).
@@ -22,8 +32,18 @@ be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 ### summation
 
+<a id="entry-presentation_swift_deferred_forms_capability_construction_summation_api_analysis_session_summation"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_summation.4a767531b0be"></a>
-`UniffiSession.summation(summand: UniffiExpression, index: String, lower: UniffiExpression, upper: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func summation(
+    summand: UniffiExpression,
+    index: String,
+    lower: UniffiExpression,
+    upper: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 Build a summation node \(\sum\). `execute` evaluates it when a closed form or
@@ -116,8 +136,18 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
+<a id="entry-presentation_swift_deferred_forms_capability_construction_product_api_analysis_session_product"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_product.2f4593fd98e4"></a>
-`UniffiSession.product(multiplicand: UniffiExpression, index: String, lower: UniffiExpression, upper: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func product(
+    multiplicand: UniffiExpression,
+    index: String,
+    lower: UniffiExpression,
+    upper: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 Definite indexed product \(\prod_{\mathit{index}=\mathit{lower}}^{\mathit{upper}} \mathit{multiplicand}\), a first-class
@@ -176,8 +206,16 @@ placeholder rather than a guess.
 
 ### product_indefinite
 
+<a id="entry-presentation_swift_deferred_forms_capability_construction_product_indefinite_api_analysis_session_product_indefinite"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_productindefinite.705e037b04c5"></a>
-`UniffiSession.productIndefinite(multiplicand: UniffiExpression, index: String) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func productIndefinite(
+    multiplicand: UniffiExpression,
+    index: String,
+) -> UniffiExpression
+```
 
 
 Indefinite (anti-quotient) product: the `P(k)` satisfying

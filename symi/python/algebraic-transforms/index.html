@@ -1,101 +1,383 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="python">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Algebraic transforms — Symi Python documentation</title>
+        <meta name="description" content="Directed algebraic rewrites change the form of an expression while preserving its value on the documented domain. Each operation applies one named…" />
+        <link rel="canonical" href="/symi/python/algebraic-transforms/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="algebraic-transforms" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/python/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the Python documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">Python</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: Python"><span>Python</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/algebraic-transforms/" data-language="python" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/algebraic-transforms/" data-language="wasm" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/algebraic-transforms/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/algebraic-transforms/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/algebraic-transforms/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/getting-started-python/">Getting started: Python</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/default-context/">The default context and module-level functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-default-context" data-page="default-context"><span class="symi-visually-hidden">Show entries in The default context and module-level functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-default-context" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/context-safety/">Context safety</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-context-safety" data-page="context-safety"><span class="symi-visually-hidden">Show entries in Context safety</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-context-safety" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/algebraic-transforms/" aria-current="page">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Hide entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_api_algebra_session_collect"><code>collect</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_api_expression_operations_expression_collect"><code>collect</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_radicals_api_algebra_session_collect_radicals"><code>collect_radicals</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_radicals_api_expression_operations_expression_collect_radicals"><code>collect_radicals</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square"><code>complete_the_square</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_complete_the_square_api_expression_operations_expression_complete_the_square"><code>complete_the_square</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_denest_radicals_api_algebra_session_denest_radicals"><code>denest_radicals</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_denest_radicals_api_expression_operations_expression_denest_radicals"><code>denest_radicals</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_expand_api_session_expand"><code>expand</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_expand_api_expression_expand"><code>expand</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_api_session_factor"><code>factor</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_api_expression_factor"><code>factor</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_algebra_session_factor_common_terms"><code>factor_common_terms</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_expression_operations_expression_factor_common_terms"><code>factor_common_terms</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions"><code>partial_fractions</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_partial_fractions_api_expression_operations_expression_partial_fractions"><code>partial_fractions</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_algebra_session_rationalize_denominator"><code>rationalize_denominator</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/algebraic-transforms/#entry-presentation_python_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_expression_operations_expression_rationalize_denominator"><code>rationalize_denominator</code> <span class="symi-nav-entry-owner">Expression method</span></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/specialized-canonical-forms/">Specialized canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-specialized-canonical-forms" data-page="specialized-canonical-forms"><span class="symi-visually-hidden">Show entries in Specialized canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-specialized-canonical-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/integral-transforms/">Integral transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-integral-transforms" data-page="integral-transforms"><span class="symi-visually-hidden">Show entries in Integral transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-integral-transforms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logical-transforms/">Logical transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logical-transforms" data-page="logical-transforms"><span class="symi-visually-hidden">Show entries in Logical transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logical-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/zero-equivalence/">Zero equivalence</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-zero-equivalence" data-page="zero-equivalence"><span class="symi-visually-hidden">Show entries in Zero equivalence</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-zero-equivalence" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/python/introduction/">Python</a></li><li>Simplification and rewriting</li><li><span aria-current="page">Algebraic transforms</span></li></ol></nav>
+                
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#expand" data-outline-target="expand">expand</a></li><li class="symi-outline-depth-3"><a href="#partial_fractions" data-outline-target="partial_fractions">partial_fractions</a></li><li class="symi-outline-depth-2"><a href="#algebraic_form_changes" data-outline-target="algebraic_form_changes">Algebraic form changes</a></li><li class="symi-outline-depth-3"><a href="#factor" data-outline-target="factor">factor</a></li><li class="symi-outline-depth-3"><a href="#collect" data-outline-target="collect">collect</a></li><li class="symi-outline-depth-3"><a href="#complete_the_square" data-outline-target="complete_the_square">complete_the_square</a></li><li class="symi-outline-depth-3"><a href="#factor_common_terms" data-outline-target="factor_common_terms">factor_common_terms</a></li><li class="symi-outline-depth-3"><a href="#rationalize_denominator" data-outline-target="rationalize_denominator">rationalize_denominator</a></li><li class="symi-outline-depth-3"><a href="#collect_radicals" data-outline-target="collect_radicals">collect_radicals</a></li><li class="symi-outline-depth-3"><a href="#denest_radicals" data-outline-target="denest_radicals">denest_radicals</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">Algebraic transforms</h1>
+<p>Directed algebraic rewrites change the form of an expression while preserving
+its value on the documented domain. Each operation applies one named
+transformation rather than searching, so the result shape is predictable. For
+the search-based ladder see
+<a href="/symi/python/simplification-general/">general simplification</a>.</p>
+<h3 id="expand">expand<a class="symi-heading-permalink" href="#expand" aria-label="Link to this section: expand">#</a></h3>
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_expand_api_session_expand"></a>
+<a id="placement-placement.python.python_module.module_expand.bf48fd44714c"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">expand<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_expand.585710e373a6"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.expand</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">expand<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_expand_api_expression_expand"></a>
+<a id="placement-placement.python.python_class.expression_expand.208ce69fd96e"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">expand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Expand products, integer powers, and supported algebraic forms.</p>
+<h3 id="partial_fractions">partial_fractions<a class="symi-heading-permalink" href="#partial_fractions" aria-label="Link to this section: partial_fractions">#</a></h3>
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions"></a>
+<a id="placement-placement.python.python_module.module_partial_fractions.77aeeee3940d"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">partial_fractions<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    variable<span class="token punctuation">:</span> VariableLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_partial_fractions.1771414a71ed"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.partial_fractions</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">partial_fractions<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    variable<span class="token punctuation">:</span> VariableLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_partial_fractions_api_expression_operations_expression_partial_fractions"></a>
+<a id="placement-placement.python.python_class.expression_partial_fractions.1ab445c3df44"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">partial_fractions<span class="token punctuation">(</span>variable<span class="token punctuation">:</span> VariableLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Decompose a rational expression into polynomial and proper-fraction terms over
+the named variable.</p>
+<p>For factorization, cancellation, collection, and radical operations, use
+<a href="/symi/python/simplification-general/">general simplification</a>.</p>
+<h2 id="algebraic_form_changes">Algebraic form changes<a class="symi-heading-permalink" href="#algebraic_form_changes" aria-label="Link to this section: Algebraic form changes">#</a></h2>
+<h3 id="factor">factor<a class="symi-heading-permalink" href="#factor" aria-label="Link to this section: factor">#</a></h3>
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_api_session_factor"></a>
+<a id="placement-placement.python.python_module.module_factor.8c065906aae5"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">factor<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    gaussian<span class="token punctuation">:</span> <span class="token builtin">bool</span> <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_factor.46063153da4a"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.factor</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">factor<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    gaussian<span class="token punctuation">:</span> <span class="token builtin">bool</span> <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_api_expression_factor"></a>
+<a id="placement-placement.python.python_class.expression_factor.a7b06dfc4e7c"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">factor<span class="token punctuation">(</span>gaussian<span class="token punctuation">:</span> <span class="token builtin">bool</span> <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Polynomial factorization over the rationals (full multivariate). With
+<code>gaussian=True</code>, factor a univariate polynomial over the Gaussian integers
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">Z</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">\mathbb{Z}[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbb">Z</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span></span></span></span>; this form requires exactly one free variable and raises otherwise.</p>
+<h3 id="collect">collect<a class="symi-heading-permalink" href="#collect" aria-label="Link to this section: collect">#</a></h3>
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_api_algebra_session_collect"></a>
+<a id="placement-placement.python.python_module.module_collect.e27d1ac4f0a7"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">collect<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    generator<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_collect.11eea93b82f8"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.collect</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">collect<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    generator<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_api_expression_operations_expression_collect"></a>
+<a id="placement-placement.python.python_class.expression_collect.fc2b21333cc6"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">collect<span class="token punctuation">(</span>generator<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Regroup the additive terms of <code>expression</code> by the numeric (integer or rational)
+powers of a single <code>generator</code>, which may be a variable or an arbitrary
+subexpression, writing the result as a sum of <code>generator^k * coefficient(k)</code>
+terms without expanding the coefficients. For example, collecting
+<code>a*x^2 + b*x^2 + a*x - b*x + c</code> by <code>x</code> yields <code>x^2*(a + b) + x*(a - b) + c</code>. The
+rewrite is exact and equality-preserving; a numeric-literal generator, or a
+generator that appears with only a single power, returns the input unchanged.</p>
+<h3 id="complete_the_square">complete_the_square<a class="symi-heading-permalink" href="#complete_the_square" aria-label="Link to this section: complete_the_square">#</a></h3>
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square"></a>
+<a id="placement-placement.python.python_module.module_complete_the_square.0af89b745f9f"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">complete_the_square<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    variable<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_complete_the_square.0b69c1ad269a"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.complete_the_square</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">complete_the_square<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    variable<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_complete_the_square_api_expression_operations_expression_complete_the_square"></a>
+<a id="placement-placement.python.python_class.expression_complete_the_square.db1de38470f1"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">complete_the_square<span class="token punctuation">(</span>variable<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Rewrite an expression that is quadratic in <code>variable</code> into the exact vertex form
+<code>a*(variable - h)^2 + k</code>, with <code>h = -b/(2*a)</code> and <code>k = c - b^2/(4*a)</code> built from
+the degree-2, degree-1 and degree-0 coefficients <code>a</code>, <code>b</code>, <code>c</code> of the expression
+collected in <code>variable</code>. For example, <code>2*x^2 - 4*x + 7</code> becomes <code>2*(x - 1)^2 + 5</code>.
+The coefficients may contain other symbols freely, so the multivariate case is
+the per-variable quadratic slice: <code>x^2 + 2*x*y + 3</code> becomes <code>(x + y)^2 - y^2 + 3</code>
+in <code>x</code>. The rewrite is exact and equality-preserving, and the square is never
+expanded.</p>
+<p>The input is returned unchanged whenever the rewrite does not apply: when
+<code>variable</code> is not a symbol (a kernel generator such as <code>sin(x)</code> is not supported
+in this release); when the expression is not a quadratic polynomial slice in
+<code>variable</code> — its collected powers of <code>variable</code> must be exactly <code>{2}</code>, <code>{2, 0}</code>,
+<code>{2, 1}</code> or <code>{2, 1, 0}</code> and every coefficient must be free of <code>variable</code>, so
+<code>x^3 + x</code>, <code>x^(1/2) + x</code>, <code>x + 1</code> and <code>sin(x)*x^2 + x</code> all decline; when <code>b = 0</code>
+and the expression is therefore already in vertex form (<code>3*x^2 + 5</code>); and when
+the leading coefficient <code>a</code> is not provably nonzero. A numeric <code>a</code> always
+qualifies, while a symbolic <code>a</code> qualifies only when the assumption context proves
+it nonzero — dividing by a possibly-zero leading coefficient would make the
+emitted form invalid on the <code>a = 0</code> locus, so <code>a*x^2 + x</code> declines for an
+unrestricted <code>a</code> and completes when <code>a</code> is assumed positive.</p>
+<h3 id="factor_common_terms">factor_common_terms<a class="symi-heading-permalink" href="#factor_common_terms" aria-label="Link to this section: factor_common_terms">#</a></h3>
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_algebra_session_factor_common_terms"></a>
+<a id="placement-placement.python.python_module.module_factor_common_terms.7a3852d245ce"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">factor_common_terms<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_factor_common_terms.0ebab65aba2b"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.factor_common_terms</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">factor_common_terms<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_expression_operations_expression_factor_common_terms"></a>
+<a id="placement-placement.python.python_class.expression_factor_common_terms.4d5c920b9d2c"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">factor_common_terms<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Pull the greatest common monomial and exact rational content out of the terms
+of a general — not necessarily polynomial — sum, producing a single product of
+a common factor and a reduced sum, without invoking full polynomial
+factorization. For example, <code>6*x*y + 9*x^2*sin(z)</code> becomes
+<code>3*x*(2*y + 3*x*sin(z))</code>. The numeric content is negative exactly when every
+term is negative (<code>-2*x - 4*y</code> pulls <code>-2</code>, while <code>2*x - 4*y</code> and <code>x^3 - 3*x</code>
+pull positive content), a kernel with numeric exponents is extracted at
+its minimum exponent only when that minimum is positive (<code>x + 1/x</code> is left for
+<code>cancel</code>/<code>together</code>), and a kernel with a symbolic exponent is extracted whole
+only when the exponent is structurally identical in every term
+(<code>a*x^n + b*x^n</code> becomes <code>x^n*(a + b)</code>). The rewrite is exact and
+equality-preserving; when no nontrivial common factor exists, or the input is
+not a sum, the input is returned unchanged. The reduced sum is never factored
+further — that is <code>factor</code>&#39;s job.</p>
+<h3 id="rationalize_denominator">rationalize_denominator<a class="symi-heading-permalink" href="#rationalize_denominator" aria-label="Link to this section: rationalize_denominator">#</a></h3>
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_algebra_session_rationalize_denominator"></a>
+<a id="placement-placement.python.python_module.module_rationalize_denominator.0d2e5bcc5c21"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">rationalize_denominator<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_rationalize_denominator.0bb0cd8bf012"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.rationalize_denominator</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">rationalize_denominator<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_expression_operations_expression_rationalize_denominator"></a>
+<a id="placement-placement.python.python_class.expression_rationalize_denominator.5a59210169df"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">rationalize_denominator<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Rationalize a radical denominator through exact multiquadratic conjugation or
+extended-Euclidean inversion in one rational n-th-root extension. For example,
+<code>1 / (sqrt(3) - sqrt(2))</code> becomes <code>sqrt(3) + sqrt(2)</code>, and
+<code>1 / (1 + 2^(1/3))</code> becomes <code>(1 - 2^(1/3) + 2^(2/3))/3</code>. The operation is
+directed and returns its input unchanged when the denominator is outside its
+bounded supported radical class or the exact remultiplication check fails.</p>
+<h3 id="collect_radicals">collect_radicals<a class="symi-heading-permalink" href="#collect_radicals" aria-label="Link to this section: collect_radicals">#</a></h3>
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_radicals_api_algebra_session_collect_radicals"></a>
+<a id="placement-placement.python.python_module.module_collect_radicals.2166b63cfde2"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">collect_radicals<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_collect_radicals.b801115ab1d4"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.collect_radicals</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">collect_radicals<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_radicals_api_expression_operations_expression_collect_radicals"></a>
+<a id="placement-placement.python.python_class.expression_collect_radicals.a98951be6352"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">collect_radicals<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Collect like numeric radical kernels in a top-level sum. For example,
+<code>a*sqrt(2) + b*sqrt(2) + 3</code> becomes <code>(a + b)*sqrt(2) + 3</code>. At most eight
+distinct kernels are considered; inputs beyond that bound return unchanged.</p>
+<h3 id="denest_radicals">denest_radicals<a class="symi-heading-permalink" href="#denest_radicals" aria-label="Link to this section: denest_radicals">#</a></h3>
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_denest_radicals_api_algebra_session_denest_radicals"></a>
+<a id="placement-placement.python.python_module.module_denest_radicals.44c973e4db68"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">denest_radicals<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_denest_radicals.dae89df7c52f"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.denest_radicals</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">denest_radicals<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_denest_radicals_api_expression_operations_expression_denest_radicals"></a>
+<a id="placement-placement.python.python_class.expression_denest_radicals.c120755a651c"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">denest_radicals<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Denest the bounded depth-two real-radical subset bottom-up: rational quadratic
+surds, up to three inner quadratic surds, and <code>cbrt(a + b*sqrt(c))</code> when its
+exact resolvent has a rational root. For example, <code>sqrt(3 + 2*sqrt(2))</code> becomes
+<code>1 + sqrt(2)</code> and <code>cbrt(2 + sqrt(5))</code> becomes <code>(1 + sqrt(5))/2</code>. A form outside
+this decidable subset, such as <code>sqrt(1 + sqrt(2))</code>, is returned unchanged. Every
+candidate is verified by exact repowering and principal-real-sign selection.</p>
+<h2 id="example">Example<a class="symi-heading-permalink" href="#example" aria-label="Link to this section: Example">#</a></h2>
+<p>Rewrite one rational expression through several directed forms.</p>
+<figure class="symi-code symi-code-example" data-code-language="python" data-code-kind="example"><figcaption class="symi-code-header"><span class="symi-code-label">Python</span></figcaption><pre class="symi-code-body language-python" tabindex="0"><code class="language-python"><span class="token keyword">import</span> symi
+
+x <span class="token operator">=</span> symi<span class="token punctuation">.</span>symbol<span class="token punctuation">(</span><span class="token string">"x"</span><span class="token punctuation">)</span>
+rational_function <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span>cancel<span class="token punctuation">(</span>rational_function<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span>expand<span class="token punctuation">(</span><span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span>partial_fractions<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> <span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"x"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span>collect<span class="token punctuation">(</span>x <span class="token operator">*</span> symi<span class="token punctuation">.</span>symbol<span class="token punctuation">(</span><span class="token string">"y"</span><span class="token punctuation">)</span> <span class="token operator">+</span> x<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></figure>
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Simplification and rewriting</h2><ul class="symi-related-list"><li><a href="/symi/python/expressions/">Expression methods</a></li><li><a href="/symi/python/simplification-general/">General simplification</a></li><li><a href="/symi/python/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a></li><li><a href="/symi/python/specialized-canonical-forms/">Specialized canonical forms</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/python/simplification-general/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">General simplification</span></a><a class="symi-pager-link symi-pager-next" href="/symi/python/trigonometric-complex-rewrites/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Trigonometric and complex rewrites</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · Python</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#expand" data-outline-target="expand">expand</a></li><li class="symi-outline-depth-3"><a href="#partial_fractions" data-outline-target="partial_fractions">partial_fractions</a></li><li class="symi-outline-depth-2"><a href="#algebraic_form_changes" data-outline-target="algebraic_form_changes">Algebraic form changes</a></li><li class="symi-outline-depth-3"><a href="#factor" data-outline-target="factor">factor</a></li><li class="symi-outline-depth-3"><a href="#collect" data-outline-target="collect">collect</a></li><li class="symi-outline-depth-3"><a href="#complete_the_square" data-outline-target="complete_the_square">complete_the_square</a></li><li class="symi-outline-depth-3"><a href="#factor_common_terms" data-outline-target="factor_common_terms">factor_common_terms</a></li><li class="symi-outline-depth-3"><a href="#rationalize_denominator" data-outline-target="rationalize_denominator">rationalize_denominator</a></li><li class="symi-outline-depth-3"><a href="#collect_radicals" data-outline-target="collect_radicals">collect_radicals</a></li><li class="symi-outline-depth-3"><a href="#denest_radicals" data-outline-target="denest_radicals">denest_radicals</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

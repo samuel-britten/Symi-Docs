@@ -30,8 +30,21 @@ placeholder are not recognised by the ODE classifier.
 
 ### solve_ordinary_differential_equation
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_solving_session_solve_ordinary_differential_equation_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_solve_ordinary_differential_equation.cb49c577c3d6"></a>
-`symi::api::solving::Session — pub fn solve_ordinary_differential_equation<'a, VariableType>(&self, equation: &Expression, dependent_function_call: &Expression, independent_variable: VariableType, initial_conditions: Option<&[(Expression, Expression)]>) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn solve_ordinary_differential_equation<'a, VariableType>(
+    &self,
+    equation: &Expression,
+    dependent_function_call: &Expression,
+    independent_variable: VariableType,
+    initial_conditions: Option<&[(Expression, Expression)]>,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Solve an ODE for the unknown function named by `dependent_function_call`
@@ -53,8 +66,24 @@ passes a flat interleaved array `[point_0, value_0, ...]`.
 
 ### solve_ordinary_differential_equation_request
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_request_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_session_solve_ordinary_differential_equation_request.19c753e87898"></a>
-`symi::api::ordinary_differential_equations::Session — pub fn solve_ordinary_differential_equation_request<'a, VariableType>(&self, equation: &Expression, dependent_function_call: &Expression, independent_variable: VariableType, scope: DifferentialEquationSolutionScope, condition_residuals: &[Expression], method: OrdinaryDifferentialEquationMethod, regularity: OrdinaryDifferentialEquationRegularity) -> Result<OrdinaryDifferentialEquationSolveResult, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::ordinary_differential_equations::Session method</p>
+
+```rust signature
+pub fn solve_ordinary_differential_equation_request<'a, VariableType>(
+    &self,
+    equation: &Expression,
+    dependent_function_call: &Expression,
+    independent_variable: VariableType,
+    scope: DifferentialEquationSolutionScope,
+    condition_residuals: &[Expression],
+    method: OrdinaryDifferentialEquationMethod,
+    regularity: OrdinaryDifferentialEquationRegularity,
+) -> Result<OrdinaryDifferentialEquationSolveResult, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Solve one scalar ODE request. Each condition residual is read as equal to zero
@@ -83,8 +112,23 @@ naming the offending parameter.
 
 ### solve_ordinary_differential_equation_with_history
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_with_history_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_session_solve_ordinary_differential_equation_with_history.7143acaddad1"></a>
-`symi::api::ordinary_differential_equations::Session — pub fn solve_ordinary_differential_equation_with_history<'a, VariableType>(&self, equation: &Expression, dependent_function_call: &Expression, independent_variable: VariableType, history_value: &Expression, history_start: &Expression, history_end: &Expression) -> Result<OrdinaryDifferentialEquationSolveResult, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::ordinary_differential_equations::Session method</p>
+
+```rust signature
+pub fn solve_ordinary_differential_equation_with_history<'a, VariableType>(
+    &self,
+    equation: &Expression,
+    dependent_function_call: &Expression,
+    independent_variable: VariableType,
+    history_value: &Expression,
+    history_start: &Expression,
+    history_end: &Expression,
+) -> Result<OrdinaryDifferentialEquationSolveResult, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Solve a retarded delay ODE from a constant history on the stated interval
@@ -97,8 +141,22 @@ solution, so the request is particular.
 
 ### solve_ordinary_differential_equation_system_request
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_system_request_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_session_solve_ordinary_differential_equation_system_request.d56586578cd1"></a>
-`symi::api::ordinary_differential_equations::Session — pub fn solve_ordinary_differential_equation_system_request<'a, VariableType>(&self, equations: &[Expression], dependent_function_calls: &[Expression], independent_variable: VariableType, condition_residuals: &[Expression], method: OrdinaryDifferentialEquationSystemMethod) -> Result<OrdinaryDifferentialEquationSystemSolveResult, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::ordinary_differential_equations::Session method</p>
+
+```rust signature
+pub fn solve_ordinary_differential_equation_system_request<'a, VariableType>(
+    &self,
+    equations: &[Expression],
+    dependent_function_calls: &[Expression],
+    independent_variable: VariableType,
+    condition_residuals: &[Expression],
+    method: OrdinaryDifferentialEquationSystemMethod,
+) -> Result<OrdinaryDifferentialEquationSystemSolveResult, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Solve a system of ODEs in one coordinate, one equation per declared unknown.
@@ -111,8 +169,23 @@ verified against every equation and datum.
 
 ### verify_ordinary_differential_equation_system_solution
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinary_differential_equations_session_verify_ordinary_differential_equation_system_solution_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_session_verify_ordinary_differential_equation_system_solution.5711aa94fff5"></a>
-`symi::api::ordinary_differential_equations::Session — pub fn verify_ordinary_differential_equation_system_solution<'a, VariableType>(&self, equations: &[Expression], dependent_function_calls: &[Expression], independent_variable: VariableType, components: &[Expression], generated_constants: &[Expression], condition_residuals: &[Expression]) -> Result<OrdinaryDifferentialEquationSystemVerificationReport, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::ordinary_differential_equations::Session method</p>
+
+```rust signature
+pub fn verify_ordinary_differential_equation_system_solution<'a, VariableType>(
+    &self,
+    equations: &[Expression],
+    dependent_function_calls: &[Expression],
+    independent_variable: VariableType,
+    components: &[Expression],
+    generated_constants: &[Expression],
+    condition_residuals: &[Expression],
+) -> Result<OrdinaryDifferentialEquationSystemVerificationReport, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Check a supplied assignment without solving: no solver runs, so a swapped
@@ -122,11 +195,13 @@ the map from `generated_constants` to the initial jet), and `required_rank`.
 
 ### OrdinaryDifferentialEquationSolveResult
 
-<a id="placement-placement.rust.native_rust.api_ordinarydifferentialequationsolveresult.27829b1f77dc"></a>
-`symi::api — pub use ordinary_differential_equations::OrdinaryDifferentialEquationSolveResult;`
-
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_ordinarydifferentialequationsolveresult.5a59293dfb16"></a>
-`symi::api::ordinary_differential_equations — pub struct OrdinaryDifferentialEquationSolveResult {`
+<p class="symi-entry-owner">Type</p>
+
+```rust signature
+pub struct OrdinaryDifferentialEquationSolveResult
+```
 
 `verdict` (`solved`/`declined`), `method`, `solution`, `form`
 (`explicit`/`implicit`), `generated_constants`, `verification`
@@ -136,11 +211,13 @@ transform solution, `frequency_domain_equation` and `image`.
 
 ### OrdinaryDifferentialEquationSystemSolveResult
 
-<a id="placement-placement.rust.native_rust.api_ordinarydifferentialequationsystemsolveresult.ee4952621424"></a>
-`symi::api — pub use ordinary_differential_equations::OrdinaryDifferentialEquationSystemSolveResult;`
-
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult.57c9f9e84fc2"></a>
-`symi::api::ordinary_differential_equations — pub struct OrdinaryDifferentialEquationSystemSolveResult {`
+<p class="symi-entry-owner">Type</p>
+
+```rust signature
+pub struct OrdinaryDifferentialEquationSystemSolveResult
+```
 
 `verdict`, `method`, `route` (`sequential`, `fundamental_matrix`, or
 `dependency_blocks`), `components` in declaration order, `generated_constants`,
@@ -148,18 +225,33 @@ transform solution, `frequency_domain_equation` and `image`.
 
 ### OrdinaryDifferentialEquationSystemVerificationReport
 
-<a id="placement-placement.rust.native_rust.api_ordinarydifferentialequationsystemverificationreport.ba8db9cddd3f"></a>
-`symi::api — pub use ordinary_differential_equations::OrdinaryDifferentialEquationSystemVerificationReport;`
-
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport.fb0f2ca8738b"></a>
-`symi::api::ordinary_differential_equations — pub struct OrdinaryDifferentialEquationSystemVerificationReport {`
+<p class="symi-entry-owner">Type</p>
+
+```rust signature
+pub struct OrdinaryDifferentialEquationSystemVerificationReport
+```
 
 `verdict`, `generality`, and `required_rank`.
 
 ### solve_ordinary_differential_equation_with_particular_solution
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_solving_session_solve_ordinary_differential_equation_with_particular_solution_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_solve_ordinary_differential_equation_with_particular_solution.4fd9a06c9dd9"></a>
-`symi::api::solving::Session — pub fn solve_ordinary_differential_equation_with_particular_solution<'a, VariableType>(&self, equation: &Expression, dependent_function_call: &Expression, independent_variable: VariableType, particular_solution: &Expression) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn solve_ordinary_differential_equation_with_particular_solution<'a, VariableType>(
+    &self,
+    equation: &Expression,
+    dependent_function_call: &Expression,
+    independent_variable: VariableType,
+    particular_solution: &Expression,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Riccati-specific entry: with a known particular solution \(y_1\), the
@@ -169,8 +261,21 @@ not Riccati.
 
 ### solve_linear_recurrence
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_solving_session_solve_linear_recurrence_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_solve_linear_recurrence.398e06473c63"></a>
-`symi::api::solving::Session — pub fn solve_linear_recurrence<'a, VariableType>(&self, equation: &Expression, sequence_call: &Expression, index_variable: VariableType, initial_conditions: Option<&[(Expression, Expression)]>) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn solve_linear_recurrence<'a, VariableType>(
+    &self,
+    equation: &Expression,
+    sequence_call: &Expression,
+    index_variable: VariableType,
+    initial_conditions: Option<&[(Expression, Expression)]>,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Solve a linear recurrence for the unknown sequence named by `sequence_call`
@@ -206,8 +311,21 @@ the constants leaves the symbolic-constant general solution intact.
 
 ### solve_partial_differential_equation_request
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_partial_differential_equations_session_solve_partial_differential_equation_request_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_partial_differential_equations_session_solve_partial_differential_equation_request.f91e445e417a"></a>
-`symi::api::partial_differential_equations::Session — pub fn solve_partial_differential_equation_request(&self, problem: &PartialDifferentialEquationProblem, scope: DifferentialEquationSolutionScope, geometric_domain: PartialDifferentialEquationGeometricDomain, regularity: PartialDifferentialEquationRegularity, solution_class: PartialDifferentialEquationSolutionClass, method: PartialDifferentialEquationMethod) -> Result<PartialDifferentialEquationSolveResult, ApiError>`
+<p class="symi-entry-owner">api::partial_differential_equations::Session method</p>
+
+```rust signature
+pub fn solve_partial_differential_equation_request(
+    &self,
+    problem: &PartialDifferentialEquationProblem,
+    scope: DifferentialEquationSolutionScope,
+    geometric_domain: PartialDifferentialEquationGeometricDomain,
+    regularity: PartialDifferentialEquationRegularity,
+    solution_class: PartialDifferentialEquationSolutionClass,
+    method: PartialDifferentialEquationMethod,
+) -> Result<PartialDifferentialEquationSolveResult, ApiError>
+```
 
 
 Solve a PDE request in which the geometry, regularity, and solution class are
@@ -228,8 +346,13 @@ implemented method supports declines with `declared_geometry_not_supported` or
 
 ### establishes_completeness
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationsolutionfamily_establishes_completeness_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationsolutionfamily_establishes_completeness.7177118a3000"></a>
-`symi::api::partial_differential_equations::PartialDifferentialEquationSolutionFamily — pub fn establishes_completeness(&self) -> Result<bool, ApiError>`
+<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationSolutionFamily method</p>
+
+```rust signature
+pub fn establishes_completeness(&self) -> Result<bool, ApiError>
+```
 
 
 Whether the family carries a completeness theorem whose every identity was
@@ -238,8 +361,16 @@ coverage of it.
 
 ### derive_partial_differential_equation_point_symmetries
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_partial_differential_equations_session_derive_partial_differential_equation_point_symmetries_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_partial_differential_equations_session_derive_partial_differential_equation_point_symmetries.978a235aebd2"></a>
-`symi::api::partial_differential_equations::Session — pub fn derive_partial_differential_equation_point_symmetries(&self, problem: &PartialDifferentialEquationProblem) -> Result<PartialDifferentialEquationPointSymmetryAlgebra, ApiError>`
+<p class="symi-entry-owner">api::partial_differential_equations::Session method</p>
+
+```rust signature
+pub fn derive_partial_differential_equation_point_symmetries(
+    &self,
+    problem: &PartialDifferentialEquationProblem,
+) -> Result<PartialDifferentialEquationPointSymmetryAlgebra, ApiError>
+```
 
 
 Derive the point-symmetry algebra of a scalar first- or second-order PDE from
@@ -255,8 +386,16 @@ discrete symmetries are never claimed.
 
 ### construct_partial_differential_equation_point_symmetry_action
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_partial_differential_equations_session_construct_partial_differential_equation_point_symmetry_action_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_partial_differential_equations_session_construct_partial_differential_equation_point_symmetry_action.1a5585cc69e9"></a>
-`symi::api::partial_differential_equations::Session — pub fn construct_partial_differential_equation_point_symmetry_action(&self, problem: &PartialDifferentialEquationProblem) -> Result<PartialDifferentialEquationPointSymmetryAction, ApiError>`
+<p class="symi-entry-owner">api::partial_differential_equations::Session method</p>
+
+```rust signature
+pub fn construct_partial_differential_equation_point_symmetry_action(
+    &self,
+    problem: &PartialDifferentialEquationProblem,
+) -> Result<PartialDifferentialEquationPointSymmetryAction, ApiError>
+```
 
 
 Integrate every basis generator into a one-parameter group, verify each group
@@ -270,8 +409,18 @@ connected local action `u = a + A f(X)`. The result carries `parameters`,
 
 ### partial_differential_equation_point_symmetry_generator
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_partial_differential_equations_session_partial_differential_equation_point_symmetry_generator_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_partial_differential_equations_session_partial_differential_equation_point_symmetry_generator.2d3393e1eb39"></a>
-`symi::api::partial_differential_equations::Session — pub fn partial_differential_equation_point_symmetry_generator(&self, problem: &PartialDifferentialEquationProblem, coordinate_infinitesimals: &[Expression], dependent_infinitesimal: &Expression) -> Result<PartialDifferentialEquationPointSymmetryGenerator, ApiError>`
+<p class="symi-entry-owner">api::partial_differential_equations::Session method</p>
+
+```rust signature
+pub fn partial_differential_equation_point_symmetry_generator(
+    &self,
+    problem: &PartialDifferentialEquationProblem,
+    coordinate_infinitesimals: &[Expression],
+    dependent_infinitesimal: &Expression,
+) -> Result<PartialDifferentialEquationPointSymmetryGenerator, ApiError>
+```
 
 
 A candidate generator, one coordinate infinitesimal per independent variable
@@ -280,8 +429,17 @@ candidate, not a certificate: every consumer verifies it is a symmetry.
 
 ### solve_partial_differential_equation_by_similarity_reduction
 
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_partial_differential_equations_session_solve_partial_differential_equation_by_similarity_reduction_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_partial_differential_equations_session_solve_partial_differential_equation_by_similarity_reduction.a927faa83715"></a>
-`symi::api::partial_differential_equations::Session — pub fn solve_partial_differential_equation_by_similarity_reduction(&self, problem: &PartialDifferentialEquationProblem, generator: &PartialDifferentialEquationPointSymmetryGenerator) -> Result<PartialDifferentialEquationSimilaritySolution, ApiError>`
+<p class="symi-entry-owner">api::partial_differential_equations::Session method</p>
+
+```rust signature
+pub fn solve_partial_differential_equation_by_similarity_reduction(
+    &self,
+    problem: &PartialDifferentialEquationProblem,
+    generator: &PartialDifferentialEquationPointSymmetryGenerator,
+) -> Result<PartialDifferentialEquationSimilaritySolution, ApiError>
+```
 
 
 Reduce a two-variable PDE by a fiber-linear point symmetry to an ODE in the
@@ -291,3 +449,42 @@ result carries `invariant`, `similarity_variable`, `weight`,
 `lifted_family_verification`, `outstanding_obligations`, and `decline`. The
 lifted family is a family of invariant solutions and always carries the
 obligation that it is not the general solution.
+
+## Additional API
+
+### OrdinaryDifferentialEquationSolveResult
+
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinarydifferentialequationsolveresult_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_ordinarydifferentialequationsolveresult.27829b1f77dc"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use ordinary_differential_equations::OrdinaryDifferentialEquationSolveResult;
+```
+
+`verdict` (`solved`/`declined`), `method`, `solution`, `form` (`explicit`/`implicit`), `generated_constants`, `verification` (`verified`/`rejected`/`inconclusive`), `generality` (`full_rank`/`deficient`/`inconclusive`), `decline`, and, for a Laplace transform solution, `frequency_domain_equation` and `image`.
+
+### OrdinaryDifferentialEquationSystemSolveResult
+
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinarydifferentialequationsystemsolveresult_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_ordinarydifferentialequationsystemsolveresult.ee4952621424"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use ordinary_differential_equations::OrdinaryDifferentialEquationSystemSolveResult;
+```
+
+`verdict`, `method`, `route` (`sequential`, `fundamental_matrix`, or `dependency_blocks`), `components` in declaration order, `generated_constants`, `verification`, `generality`, and `decline`.
+
+### OrdinaryDifferentialEquationSystemVerificationReport
+
+<a id="entry-presentation_rust_differential_equations_capability_rust_native_rust_api_ordinarydifferentialequationsystemverificationreport_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_ordinarydifferentialequationsystemverificationreport.ba8db9cddd3f"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use ordinary_differential_equations::OrdinaryDifferentialEquationSystemVerificationReport;
+```
+
+`verdict`, `generality`, and `required_rank`.
+

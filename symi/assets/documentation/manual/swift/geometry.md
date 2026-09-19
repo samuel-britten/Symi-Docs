@@ -10,24 +10,45 @@ The matching `Context` method constructs the object in an explicit context.
 
 ### point_2d
 
+<a id="entry-presentation_swift_geometry_capability_geometry_point_2d_api_session_point_2d"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_point2d.429601595489"></a>
-`UniffiSession.point2d(coordinateX: UniffiExpression, coordinateY: UniffiExpression) -> UniffiPoint2d`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func point2d(
+    coordinateX: UniffiExpression,
+    coordinateY: UniffiExpression,
+) -> UniffiPoint2d
+```
 
 
 
 
 ### segment_2d
 
+<a id="entry-presentation_swift_geometry_capability_geometry_segment_2d_api_session_segment_2d"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_segment2d.746a17d01409"></a>
-`UniffiSession.segment2d(start: UniffiPoint2d, end: UniffiPoint2d) -> UniffiSegment2d`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func segment2d(
+    start: UniffiPoint2d,
+    end: UniffiPoint2d,
+) -> UniffiSegment2d
+```
 
 
 
 
 ### polygon_2d
 
+<a id="entry-presentation_swift_geometry_capability_geometry_polygon_2d_api_session_polygon_2d"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_polygon2d.1ac41d341131"></a>
-`UniffiSession.polygon2d(vertices: [UniffiPoint2d]) -> UniffiPolygon2d`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func polygon2d(vertices: [UniffiPoint2d]) -> UniffiPolygon2d
+```
 
 
 
@@ -36,8 +57,17 @@ Simple polygon from its vertex list in order; degenerate inputs raise.
 
 ### triangle_2d
 
+<a id="entry-presentation_swift_geometry_capability_geometry_triangle_2d_api_session_triangle_2d"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_triangle2d.12422bd9a32e"></a>
-`UniffiSession.triangle2d(first: UniffiPoint2d, second: UniffiPoint2d, third: UniffiPoint2d) -> UniffiTriangle2d`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func triangle2d(
+    first: UniffiPoint2d,
+    second: UniffiPoint2d,
+    third: UniffiPoint2d,
+) -> UniffiTriangle2d
+```
 
 
 
@@ -46,8 +76,16 @@ Collinear vertices raise.
 
 ### circle_2d
 
+<a id="entry-presentation_swift_geometry_capability_geometry_circle_2d_api_session_circle_2d"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_circle2d.7ad6661b3c5f"></a>
-`UniffiSession.circle2d(center: UniffiPoint2d, radius: UniffiExpression) -> UniffiCircle2d`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func circle2d(
+    center: UniffiPoint2d,
+    radius: UniffiExpression,
+) -> UniffiCircle2d
+```
 
 
 
@@ -56,26 +94,46 @@ Collinear vertices raise.
 
 ### x
 
+<a id="entry-presentation_swift_geometry_capability_geometry_x_api_point2d_x"></a>
 <a id="placement-placement.swift.swift_object.uniffipoint2d_x.e4b7e4083adf"></a>
-`UniffiPoint2d.x() -> UniffiExpression`
+<p class="symi-entry-owner">UniffiPoint2d method</p>
+
+```swift signature
+func x() -> UniffiExpression
+```
 
 
 ### y
 
+<a id="entry-presentation_swift_geometry_capability_geometry_y_api_point2d_y"></a>
 <a id="placement-placement.swift.swift_object.uniffipoint2d_y.4e32112a02e0"></a>
-`UniffiPoint2d.y() -> UniffiExpression`
+<p class="symi-entry-owner">UniffiPoint2d method</p>
+
+```swift signature
+func y() -> UniffiExpression
+```
 
 
 ### coordinates
 
+<a id="entry-presentation_swift_geometry_capability_geometry_coordinates_api_point2d_coordinates"></a>
 <a id="placement-placement.swift.swift_object.uniffipoint2d_coordinates.f5db58b8ad15"></a>
-`UniffiPoint2d.coordinates() -> UniffiExpressionExpressionTuple`
+<p class="symi-entry-owner">UniffiPoint2d method</p>
+
+```swift signature
+func coordinates() -> UniffiExpressionExpressionTuple
+```
 
 
 ### distance_to
 
+<a id="entry-presentation_swift_geometry_capability_geometry_distance_to_api_point2d_distance_to"></a>
 <a id="placement-placement.swift.swift_object.uniffipoint2d_distanceto.6761c5ee2620"></a>
-`UniffiPoint2d.distanceTo(other: UniffiPoint2d) -> UniffiExpression`
+<p class="symi-entry-owner">UniffiPoint2d method</p>
+
+```swift signature
+func distanceTo(other: UniffiPoint2d) -> UniffiExpression
+```
 
 
 Euclidean distance, exact (a `sqrt` expression in general).
@@ -89,14 +147,27 @@ disambiguates.
 
 ### midpoint
 
+<a id="entry-presentation_swift_geometry_capability_geometry_midpoint_api_segment2d_midpoint"></a>
 <a id="placement-placement.swift.swift_object.uniffisegment2d_midpoint.f047888a4b6b"></a>
-`UniffiSegment2d.midpoint() -> UniffiPoint2d`
+<p class="symi-entry-owner">UniffiSegment2d method</p>
+
+```swift signature
+func midpoint() -> UniffiPoint2d
+```
 
 
 ### perpendicular_bisector_equation
 
+<a id="entry-presentation_swift_geometry_capability_geometry_perpendicular_bisector_equation_api_geometry_operations_segment2d_perpendicular_bisector_equation"></a>
 <a id="placement-placement.swift.swift_object.uniffisegment2d_perpendicularbisectorequation.3df29bde8f4d"></a>
-`UniffiSegment2d.perpendicularBisectorEquation(variableX: String, variableY: String) -> UniffiExpression`
+<p class="symi-entry-owner">UniffiSegment2d method</p>
+
+```swift signature
+func perpendicularBisectorEquation(
+    variableX: String,
+    variableY: String,
+) -> UniffiExpression
+```
 
 
 The bisector line as an `equal` relation in x and y.
@@ -105,44 +176,42 @@ The bisector line as an `equal` relation in x and y.
 
 ### area
 
-<a id="placement-placement.swift.swift_object.unifficircle2d_area.4db07d536230"></a>
-`UniffiCircle2d.area() -> UniffiExpression`
-
+<a id="entry-presentation_swift_geometry_capability_geometry_area_api_polygon2d_area"></a>
 <a id="placement-placement.swift.swift_object.uniffipolygon2d_area.032aa3c0b868"></a>
-`UniffiPolygon2d.area() -> UniffiExpression`
+<p class="symi-entry-owner">UniffiPolygon2d method</p>
 
+```swift signature
+func area() -> UniffiExpression
+```
+
+<a id="entry-presentation_swift_geometry_capability_geometry_area_api_triangle2d_area"></a>
 <a id="placement-placement.swift.swift_object.uniffitriangle2d_area.cd5b24d6194a"></a>
-`UniffiTriangle2d.area() -> UniffiExpression`
+<p class="symi-entry-owner">UniffiTriangle2d method</p>
+
+```swift signature
+func area() -> UniffiExpression
+```
 
 
-Shoelace area (also on `Circle2d`).
+For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the
+ordered boundary. It is separate from `Circle2d.area()`, which returns
+\(\pi r^2\). A polygon's orientation therefore does not change its area.
+
+### Circle2d area
+
+*Not exposed by the Swift bindings. Available as [`Circle2d`](/symi/python/geometry#Circle2d) in Python.*
+
+
+
+The exact disk area \(\pi r^2\), using the circle's symbolic radius. This is
+not the polygon/triangle shoelace operation; both are displayed as `area` in
+the reference, under their distinct owners.
 
 ### perimeter
 
-<a id="placement-placement.swift.swift_object.uniffipolygon2d_perimeter.58be7a3d3af3"></a>
-`UniffiPolygon2d.perimeter() -> UniffiExpression`
-
-<a id="placement-placement.swift.swift_object.uniffitriangle2d_perimeter.fdd4770c89cf"></a>
-`UniffiTriangle2d.perimeter() -> UniffiExpression`
-
-
 ### centroid
 
-<a id="placement-placement.swift.swift_object.uniffipolygon2d_centroid.32c4cf63dc46"></a>
-`UniffiPolygon2d.centroid() -> UniffiPoint2d`
-
-<a id="placement-placement.swift.swift_object.uniffitriangle2d_centroid.96b8698ac325"></a>
-`UniffiTriangle2d.centroid() -> UniffiPoint2d`
-
-
 ### interior_angles
-
-<a id="placement-placement.swift.swift_object.uniffipolygon2d_interiorangles.aa84c2fad989"></a>
-`UniffiPolygon2d.interiorAngles() -> [UniffiVertexAngle]`
-
-<a id="placement-placement.swift.swift_object.uniffitriangle2d_interiorangles.9b867172f544"></a>
-`UniffiTriangle2d.interiorAngles() -> [UniffiVertexAngle]`
-
 
 Each vertex paired with its interior angle. **Notes:** WASM returns
 `VertexAngle` objects with `vertex`/`angle` getters.
@@ -151,66 +220,68 @@ Each vertex paired with its interior angle. **Notes:** WASM returns
 
 ### vertex
 
+<a id="entry-presentation_swift_geometry_capability_geometry_vertex_api_results_vertexangle_vertex"></a>
 <a id="placement-placement.swift.swift_object.uniffivertexangle_vertex.77d6f6c98bb9"></a>
-`UniffiVertexAngle.vertex() -> UniffiPoint2d`
+<p class="symi-entry-owner">UniffiVertexAngle method</p>
+
+```swift signature
+func vertex() -> UniffiPoint2d
+```
 
 
 ### angle
 
+<a id="entry-presentation_swift_geometry_capability_geometry_angle_api_results_vertexangle_angle"></a>
 <a id="placement-placement.swift.swift_object.uniffivertexangle_angle.e1a0c8f03fdf"></a>
-`UniffiVertexAngle.angle() -> UniffiExpression`
+<p class="symi-entry-owner">UniffiVertexAngle method</p>
+
+```swift signature
+func angle() -> UniffiExpression
+```
 
 
 ## circle_2d methods
 
 ### center
 
+<a id="entry-presentation_swift_geometry_capability_geometry_center_api_circle2d_center"></a>
 <a id="placement-placement.swift.swift_object.unifficircle2d_center.9333ca418819"></a>
-`UniffiCircle2d.center() -> UniffiPoint2d`
+<p class="symi-entry-owner">UniffiCircle2d method</p>
+
+```swift signature
+func center() -> UniffiPoint2d
+```
 
 
 ### radius
 
+<a id="entry-presentation_swift_geometry_capability_geometry_radius_api_circle2d_radius"></a>
 <a id="placement-placement.swift.swift_object.unifficircle2d_radius.330a91d8d4dc"></a>
-`UniffiCircle2d.radius() -> UniffiExpression`
+<p class="symi-entry-owner">UniffiCircle2d method</p>
+
+```swift signature
+func radius() -> UniffiExpression
+```
 
 
 ### circumference
 
+<a id="entry-presentation_swift_geometry_capability_geometry_circumference_api_circle2d_circumference"></a>
 <a id="placement-placement.swift.swift_object.unifficircle2d_circumference.256d4f26d4a3"></a>
-`UniffiCircle2d.circumference() -> UniffiExpression`
+<p class="symi-entry-owner">UniffiCircle2d method</p>
+
+```swift signature
+func circumference() -> UniffiExpression
+```
 
 
 ### equation
-
-<a id="placement-placement.swift.swift_object.unifficircle2d_equation.a3c977955091"></a>
-`UniffiCircle2d.equation(variableX: String, variableY: String) -> UniffiExpression`
-
-<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationproblem_equation.ec9c58168b92"></a>
-`UniffiPartialDifferentialEquationProblem.equation() -> UniffiExpression`
-
 
 The circle as an `equal` relation in x and y.
 
 ## Exact boundary intersections
 
 ### intersection
-
-<a id="placement-placement.swift.swift_object.unifficircle2d_intersection.4e76d8e58778"></a>
-`UniffiCircle2d.intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]`
-
-<a id="placement-placement.swift.swift_object.uniffipoint2d_intersection.5db7c2c61e0b"></a>
-`UniffiPoint2d.intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]`
-
-<a id="placement-placement.swift.swift_object.uniffipolygon2d_intersection.6690e8cb9d3d"></a>
-`UniffiPolygon2d.intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]`
-
-<a id="placement-placement.swift.swift_object.uniffisegment2d_intersection.884f766e8f08"></a>
-`UniffiSegment2d.intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]`
-
-<a id="placement-placement.swift.swift_object.uniffitriangle2d_intersection.dc34220764fe"></a>
-`UniffiTriangle2d.intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]`
-
 
 Every point, segment, polygon, triangle, and circle exposes the same symmetric
 `intersection` method. Polygon and triangle operands mean their closed boundary;
@@ -227,4 +298,175 @@ All geometry classes also provide `to_latex` (and `serialize_object` in
 WASM; Python serializes through `Context.serializeObject`).
 
 ## Example
+
+
+## Additional API
+
+### area
+
+<a id="entry-presentation_swift_geometry_capability_geometry_area_api_circle2d_area"></a>
+<a id="placement-placement.swift.swift_object.unifficircle2d_area.4db07d536230"></a>
+<p class="symi-entry-owner">UniffiCircle2d method</p>
+
+```swift signature
+func area() -> UniffiExpression
+```
+
+Area of the circle, \(\pi r^2\).
+
+### centroid
+
+<a id="entry-presentation_swift_geometry_capability_geometry_centroid_api_polygon2d_centroid"></a>
+<a id="placement-placement.swift.swift_object.uniffipolygon2d_centroid.32c4cf63dc46"></a>
+<p class="symi-entry-owner">UniffiPolygon2d method</p>
+
+```swift signature
+func centroid() -> UniffiPoint2d
+```
+
+Centroid of the polygon's vertices.
+
+### centroid
+
+<a id="entry-presentation_swift_geometry_capability_geometry_centroid_api_geometry_operations_triangle2d_centroid"></a>
+<a id="placement-placement.swift.swift_object.uniffitriangle2d_centroid.96b8698ac325"></a>
+<p class="symi-entry-owner">UniffiTriangle2d method</p>
+
+```swift signature
+func centroid() -> UniffiPoint2d
+```
+
+Centroid of the triangle's vertices.
+
+### equation
+
+<a id="entry-presentation_swift_geometry_capability_geometry_equation_api_geometry_operations_circle2d_equation"></a>
+<a id="placement-placement.swift.swift_object.unifficircle2d_equation.a3c977955091"></a>
+<p class="symi-entry-owner">UniffiCircle2d method</p>
+
+```swift signature
+func equation(variableX: String, variableY: String) -> UniffiExpression
+```
+
+The circle as an `equal` relation in x and y.
+
+### equation
+
+<a id="entry-presentation_swift_geometry_capability_geometry_equation_api_partial_differential_equations_partialdifferentialequationproblem_equation"></a>
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationproblem_equation.ec9c58168b92"></a>
+<p class="symi-entry-owner">UniffiPartialDifferentialEquationProblem method</p>
+
+```swift signature
+func equation() -> UniffiExpression
+```
+
+The governing residual, interpreted as equal to zero.
+
+### interior_angles
+
+<a id="entry-presentation_swift_geometry_capability_geometry_interior_angles_api_geometry_operations_polygon2d_interior_angles"></a>
+<a id="placement-placement.swift.swift_object.uniffipolygon2d_interiorangles.aa84c2fad989"></a>
+<p class="symi-entry-owner">UniffiPolygon2d method</p>
+
+```swift signature
+func interiorAngles() -> [UniffiVertexAngle]
+```
+
+Each vertex paired with its interior angle. Notes: WASM returns `vertex_angle` objects with `vertex`/`angle` getters.
+
+### interior_angles
+
+<a id="entry-presentation_swift_geometry_capability_geometry_interior_angles_api_geometry_operations_triangle2d_interior_angles"></a>
+<a id="placement-placement.swift.swift_object.uniffitriangle2d_interiorangles.9b867172f544"></a>
+<p class="symi-entry-owner">UniffiTriangle2d method</p>
+
+```swift signature
+func interiorAngles() -> [UniffiVertexAngle]
+```
+
+Each vertex paired with its interior angle. Notes: WASM returns `vertex_angle` objects with `vertex`/`angle` getters.
+
+### intersection
+
+<a id="entry-presentation_swift_geometry_capability_geometry_intersection_api_circle2d_intersection"></a>
+<a id="placement-placement.swift.swift_object.unifficircle2d_intersection.4e76d8e58778"></a>
+<p class="symi-entry-owner">UniffiCircle2d method</p>
+
+```swift signature
+func intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### intersection
+
+<a id="entry-presentation_swift_geometry_capability_geometry_intersection_api_point2d_intersection"></a>
+<a id="placement-placement.swift.swift_object.uniffipoint2d_intersection.5db7c2c61e0b"></a>
+<p class="symi-entry-owner">UniffiPoint2d method</p>
+
+```swift signature
+func intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### intersection
+
+<a id="entry-presentation_swift_geometry_capability_geometry_intersection_api_polygon2d_intersection"></a>
+<a id="placement-placement.swift.swift_object.uniffipolygon2d_intersection.6690e8cb9d3d"></a>
+<p class="symi-entry-owner">UniffiPolygon2d method</p>
+
+```swift signature
+func intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### intersection
+
+<a id="entry-presentation_swift_geometry_capability_geometry_intersection_api_segment2d_intersection"></a>
+<a id="placement-placement.swift.swift_object.uniffisegment2d_intersection.884f766e8f08"></a>
+<p class="symi-entry-owner">UniffiSegment2d method</p>
+
+```swift signature
+func intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### intersection
+
+<a id="entry-presentation_swift_geometry_capability_geometry_intersection_api_triangle2d_intersection"></a>
+<a id="placement-placement.swift.swift_object.uniffitriangle2d_intersection.dc34220764fe"></a>
+<p class="symi-entry-owner">UniffiTriangle2d method</p>
+
+```swift signature
+func intersection(other: UniffiGeometry2d) -> [UniffiGeometryIntersectionComponent]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### perimeter
+
+<a id="entry-presentation_swift_geometry_capability_geometry_perimeter_api_polygon2d_perimeter"></a>
+<a id="placement-placement.swift.swift_object.uniffipolygon2d_perimeter.58be7a3d3af3"></a>
+<p class="symi-entry-owner">UniffiPolygon2d method</p>
+
+```swift signature
+func perimeter() -> UniffiExpression
+```
+
+Perimeter of the polygon, the sum of its edge lengths.
+
+### perimeter
+
+<a id="entry-presentation_swift_geometry_capability_geometry_perimeter_api_triangle2d_perimeter"></a>
+<a id="placement-placement.swift.swift_object.uniffitriangle2d_perimeter.fdd4770c89cf"></a>
+<p class="symi-entry-owner">UniffiTriangle2d method</p>
+
+```swift signature
+func perimeter() -> UniffiExpression
+```
+
+Perimeter of the triangle, the sum of its side lengths.
 

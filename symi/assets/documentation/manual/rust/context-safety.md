@@ -32,8 +32,13 @@ passing a value in an array does not unexpectedly free the caller's value.
 
 ### execution_mode
 
+<a id="entry-presentation_rust_context_safety_capability_rust_native_rust_api_session_execution_mode_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_execution_mode.8304b6ac3006"></a>
-`symi::api::Session — pub fn execution_mode(&self) -> ExecutionMode`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn execution_mode(&self) -> ExecutionMode
+```
 
 
 Sessions expose `sequential` and `automatic` execution modes and start in
@@ -78,8 +83,16 @@ can oversubscribe the device.
 
 ### simplify_bulk
 
+<a id="entry-presentation_rust_context_safety_capability_rust_native_rust_api_session_simplify_bulk_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_simplify_bulk.c1dc33b71c3d"></a>
-`symi::api::Session — pub fn simplify_bulk(&self, targets: &[Expression]) -> Result<Vec<BulkExpressionOutcome>, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn simplify_bulk(
+    &self,
+    targets: &[Expression],
+) -> Result<Vec<BulkExpressionOutcome>, ApiError>
+```
 
 
 The ordered bulk operations `simplify_bulk`, `expand_bulk`,

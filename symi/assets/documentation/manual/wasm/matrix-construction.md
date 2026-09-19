@@ -6,19 +6,6 @@ Construct matrices from ordered rows or from identity, zero, and diagonal famili
 
 ### matrix
 
-<a id="placement-placement.wasm.javascript_facade.context_matrix.31619139102f"></a>
-`Context.matrix(rows: Iterable<Iterable<ExpressionLike>>): Matrix`
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_matrix.e3d8245c690c"></a>
-`SymiFacade.matrix(rows: Iterable<Iterable<ExpressionLike>>): Matrix`
-
-<a id="placement-placement.wasm.wasm_class.context_matrix.6a9f56e8356c"></a>
-Raw WebAssembly: `pub fn matrix(&self, rows: usize, columns: usize, entries: Vec<Expression>) -> Result<Matrix, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationprincipalpart_matrix.f4debc79ad6d"></a>
-Raw WebAssembly: `pub fn matrix(&self) -> Matrix`
-
-
 
 
 Build a matrix from ordered rows. Direct Python construction and the facade
@@ -52,29 +39,71 @@ list raises.
 
 ### rows
 
+<a id="entry-presentation_wasm_matrix_construction_capability_algebra_rows_api_matrix_rows"></a>
 <a id="placement-placement.wasm.javascript_facade.matrix_rows.5a09e96bea77"></a>
-`Matrix.readonly rows: number`
+<p class="symi-entry-owner">Matrix property</p>
+
+```typescript signature
+readonly rows: number
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.matrix_rows.e17a7bb5b346"></a>
-Raw WebAssembly: `pub fn rows(&self) -> usize`
+<p class="symi-entry-owner">Matrix property: <code>Matrix.rows</code></p>
+
+```typescript signature
+readonly rows: number
+```
+
+</details>
 
 
 ### columns
 
+<a id="entry-presentation_wasm_matrix_construction_capability_algebra_columns_api_matrix_columns"></a>
 <a id="placement-placement.wasm.javascript_facade.matrix_columns.30f3e2e7c0cf"></a>
-`Matrix.readonly columns: number`
+<p class="symi-entry-owner">Matrix property</p>
+
+```typescript signature
+readonly columns: number
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.matrix_columns.4b3f7bc5d61b"></a>
-Raw WebAssembly: `pub fn columns(&self) -> usize`
+<p class="symi-entry-owner">Matrix property: <code>Matrix.columns</code></p>
+
+```typescript signature
+readonly columns: number
+```
+
+</details>
 
 
 ### entry
 
+<a id="entry-presentation_wasm_matrix_construction_capability_algebra_entry_api_matrix_entry"></a>
 <a id="placement-placement.wasm.javascript_facade.matrix_entry.720b6a063946"></a>
-`Matrix.entry(row: number, column: number): Expression`
+<p class="symi-entry-owner">Matrix method</p>
+
+```typescript signature
+entry(row: number, column: number): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.matrix_entry.53b08ca2f069"></a>
-Raw WebAssembly: `pub fn entry(&self, row: usize, column: usize) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Matrix method: <code>Matrix.entry</code></p>
+
+```typescript signature
+entry(row: number, column: number): Expression
+```
+
+</details>
 
 
 Element access. **Notes:** Python uses indexing `m[row, column]` instead.
@@ -90,4 +119,50 @@ const matrix = symi.matrix([[1, x], [x, 1]]);
 console.log(matrix.rows(), matrix.columns());
 console.log(matrix.entry(0, 1).toString());
 ```
+
+
+## Additional API
+
+### matrix
+
+<a id="entry-presentation_wasm_matrix_construction_capability_algebra_matrix_api_session_matrix"></a>
+<a id="placement-placement.wasm.javascript_facade.context_matrix.31619139102f"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```typescript signature
+matrix(rows: Iterable<Iterable<ExpressionLike>>): Matrix
+```
+
+Build a matrix from ordered rows. Direct Python construction and the facade module function use the shared default context. The raw wasm-bindgen compatibility layer retains `(rows, columns, flat_entries)`; new JavaScript code should use the nested facade form.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_matrix.6a9f56e8356c"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.matrix</code></p>
+
+```typescript signature
+matrix(rows: number, columns: number, entries: Expression[]): Matrix
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_matrix.e3d8245c690c"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.matrix</code></p>
+
+```typescript signature
+matrix(rows: Iterable<Iterable<ExpressionLike>>): Matrix
+```
+
+</details>
+
+### matrix
+
+<a id="entry-presentation_wasm_matrix_construction_capability_algebra_matrix_api_partial_differential_equations_partialdifferentialequationprincipalpart_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.partialdifferentialequationprincipalpart_matrix.f4debc79ad6d"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationPrincipalPart property</p>
+
+```typescript signature
+readonly matrix: Matrix
+```
+
+The symmetric principal matrix whose quadratic form is the exact principal symbol.
 

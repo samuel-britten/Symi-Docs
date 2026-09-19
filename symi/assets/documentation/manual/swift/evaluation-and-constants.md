@@ -43,8 +43,13 @@ other former module calls must remove the parentheses.
 
 ### pi
 
+<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_pi_api_session_pi"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_pi.a7ec0ad34999"></a>
-`UniffiSession.pi() -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func pi() -> UniffiExpression
+```
 
 
 The circle constant \(\pi\). Exact in every arithmetic operation; use
@@ -53,8 +58,13 @@ decimal value.
 
 ### e
 
+<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_e_api_session_e"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_e.0a37694253d9"></a>
-`UniffiSession.e() -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func e() -> UniffiExpression
+```
 
 
 Euler's number \(e\), the base of the natural logarithm. `exp(1)` and this
@@ -62,8 +72,13 @@ constant are the same expression.
 
 ### euler_gamma
 
+<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_euler_gamma_api_session_euler_gamma"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_eulergamma.e86e7eafac44"></a>
-`UniffiSession.eulerGamma() -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func eulerGamma() -> UniffiExpression
+```
 
 
 The Euler–Mascheroni constant \(\gamma\). It appears in closed forms produced by
@@ -71,8 +86,13 @@ The Euler–Mascheroni constant \(\gamma\). It appears in closed forms produced 
 
 ### imaginary_unit
 
+<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_imaginary_unit_api_session_imaginary_unit"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_imaginaryunit.2eeb81ac47dc"></a>
-`UniffiSession.imaginaryUnit() -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func imaginaryUnit() -> UniffiExpression
+```
 
 
 The imaginary unit \(i\) with \(i^2 = -1\). Use
@@ -82,8 +102,13 @@ decompose a complex expression.
 
 ### infinity
 
+<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_infinity_api_session_infinity"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_infinity.1ec42ec6dc32"></a>
-`UniffiSession.infinity() -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func infinity() -> UniffiExpression
+```
 
 
 Unsigned positive infinity \(\infty\). Negate it for \(-\infty\). Both are accepted

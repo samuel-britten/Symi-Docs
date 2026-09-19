@@ -2,13 +2,6 @@
 
 ### zero_equivalent
 
-<a id="placement-placement.rust.native_rust.api_expression_zero_equivalent.ff80aa751848"></a>
-`symi::api::Expression — pub fn zero_equivalent(&self, constraint: Option<&Expression>) -> Result<crate::zero_equivalence::ZeroEquivalenceVerdict, ApiError>`
-
-<a id="placement-placement.rust.native_rust.api_session_zero_equivalent.58c8fe79d263"></a>
-`symi::api::Session — pub fn zero_equivalent(&self, target: &Expression, constraint: Option<&Expression>) -> Result<crate::zero_equivalence::ZeroEquivalenceVerdict, ApiError>`
-
-
 
 Proves whether an expression is zero at every point where the input expression is defined within
 the declared region. `"true"` is an exact theorem replay, `"false"` has an exact counterexample,
@@ -34,4 +27,38 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+
+## Additional API
+
+### zero_equivalent
+
+<a id="entry-presentation_rust_zero_equivalence_capability_rust_native_rust_api_expression_zero_equivalent_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_expression_zero_equivalent.ff80aa751848"></a>
+<p class="symi-entry-owner">api::Expression method</p>
+
+```rust signature
+pub fn zero_equivalent(
+    &self,
+    constraint: Option<&Expression>,
+) -> Result<crate::zero_equivalence::ZeroEquivalenceVerdict, ApiError>
+```
+
+Proves whether an expression is zero at every point where the input expression is defined within the declared region. `"true"` is an exact theorem replay, `"false"` has an exact counterexample, and `"unknown"` is an honest decline. Numeric evaluation is never proof evidence.
+
+### zero_equivalent
+
+<a id="entry-presentation_rust_zero_equivalence_capability_rust_native_rust_api_session_zero_equivalent_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_session_zero_equivalent.58c8fe79d263"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn zero_equivalent(
+    &self,
+    target: &Expression,
+    constraint: Option<&Expression>,
+) -> Result<crate::zero_equivalence::ZeroEquivalenceVerdict, ApiError>
+```
+
+Proves whether an expression is zero at every point where the input expression is defined within the declared region. `"true"` is an exact theorem replay, `"false"` has an exact counterexample, and `"unknown"` is an honest decline. Numeric evaluation is never proof evidence.
 

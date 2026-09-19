@@ -58,199 +58,359 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
-<a id="placement-placement.wasm.wasm_class.circle2d_serializeobject.4ffca9023185"></a>
-### Circle2d.serializeObject
+### parseLatex
 
-`pub fn serialize_object(&self) -> Result<String, JsError>`
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_parse_latex_api_serialization_session_parse_latex"></a>
+<a id="placement-placement.wasm.wasm_module.module_parselatex.f6216d8e0b47"></a>
+<p class="symi-entry-owner">Default context</p>
 
-Returns `Result<String, JsError>`.
+```typescript signature
+parseLatex(latex: string): any
+```
 
-<a id="placement-placement.wasm.wasm_class.circle2d_tolatex.2d6cae698d4b"></a>
-### Circle2d.toLatex
+Parse a LaTeX string in Symi's canonical input dialect — the inverse of `to_latex` and the parser the Symi frontend uses. Returns whichever top-level object the input denotes: an ordinary Expression, a `\begin{matrix}…\end{matrix}`, or a geometry figure (`(x, y)` point, segment, polygon, or circle), wrapped in the matching exported class exactly as `parse_serialized_object` does. Coverage spans arithmetic, powers, fractions, roots, the elementary and many special functions, comparisons, integrals (including the bare-`d` differential), Leibniz derivatives (`\frac{d}{dx}` — differentiated eagerly), limits, summations, products, determinants, and actuarial annuities. The resolution is context-aware in a way `parse` is not: a bare `i` is the imaginary unit and a bare `e` is Euler's number unless the letter is a bound index (a summation / product / limit index shadows the constant), and `\mathrm{d}` — or a bare `d` that closes an integral — is the differential operator while a bare `d` elsewhere is an ordinary variable. Raises on syntax errors.
 
-`pub fn to_latex(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_parselatex.691f111b5629"></a>
-### Context.parseLatex
+<p class="symi-entry-owner">Explicit context: <code>Context.parseLatex</code></p>
 
-`pub fn parse_latex(&self, latex: &str) -> Result<JsValue, JsError>`
+```typescript signature
+parseLatex(latex: string): any
+```
 
-Returns `Result<JsValue, JsError>`.
+</details>
+
+### parseLatexWithEnvironment
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_parse_latex_with_environment_api_serialization_session_parse_latex_with_environment"></a>
+<a id="placement-placement.wasm.wasm_module.module_parselatexwithenvironment.0d0f63f757f1"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+parseLatexWithEnvironment(
+    latex: string,
+    serialized_definitions: any[],
+): any
+```
+
+Parse LaTeX after building an ordered definition environment. Each serialized definition is a string with four fields separated by ASCII Unit Separator (`U+001F`): `kind`, `name`, `parameters`, and `body_latex`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_parselatexwithenvironment.3e3cebf3e09b"></a>
-### Context.parseLatexWithEnvironment
+<p class="symi-entry-owner">Explicit context: <code>Context.parseLatexWithEnvironment</code></p>
 
-`pub fn parse_latex_with_environment(&self, latex: &str, serialized_definitions: Box<[JsValue]>) -> Result<JsValue, JsError>`
+```typescript signature
+parseLatexWithEnvironment(
+    latex: string,
+    serialized_definitions: any[],
+): any
+```
 
-Returns `Result<JsValue, JsError>`.
+</details>
+
+### parseSerializedObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_parse_serialized_object_api_serialization_session_parse_serialized_object"></a>
+<a id="placement-placement.wasm.wasm_module.module_parseserializedobject.d18b5b415e87"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+parseSerializedObject(text: string): any
+```
+
+Inverse of `serialize_object`; returns the matching surface class.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_parseserializedobject.c34fdf0f8316"></a>
-### Context.parseSerializedObject
+<p class="symi-entry-owner">Explicit context: <code>Context.parseSerializedObject</code></p>
 
-`pub fn parse_serialized_object(&self, text: &str) -> Result<JsValue, JsError>`
+```typescript signature
+parseSerializedObject(text: string): any
+```
 
-Returns `Result<JsValue, JsError>`.
+</details>
+
+### serializeObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_circle2d_serialize_object"></a>
+<a id="placement-placement.wasm.wasm_class.circle2d_serializeobject.4ffca9023185"></a>
+<p class="symi-entry-owner">Circle2d method</p>
+
+```typescript signature
+serializeObject(): string
+```
+
+Serialize an Expression, Matrix, or geometry object to the stable Symi serialization format, round-trippable via `parse_serialized_object`.
+
+### serializeObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_expression_serialize_object"></a>
+<a id="placement-placement.wasm.wasm_class.expression_serializeobject.0e7634ac3af8"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+serializeObject(): string
+```
+
+Serialize an Expression, Matrix, or geometry object to the stable Symi serialization format, round-trippable via `parse_serialized_object`.
+
+### serializeObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_matrix_serialize_object"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_serializeobject.da3d7d802113"></a>
+<p class="symi-entry-owner">Matrix method</p>
+
+```typescript signature
+serializeObject(): string
+```
+
+Serialize an Expression, Matrix, or geometry object to the stable Symi serialization format, round-trippable via `parse_serialized_object`.
+
+### serializeObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_partial_differential_equations_partialdifferentialequationcoordinatechange_serialize_object"></a>
+<a id="placement-placement.wasm.wasm_class.partialdifferentialequationcoordinatechange_serializeobject.15bd50391c28"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationCoordinateChange method</p>
+
+```typescript signature
+serializeObject(): string
+```
+
+Serialize this coordinate change in the versioned canonical object grammar.
+
+### serializeObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_partial_differential_equations_partialdifferentialequationproblem_serialize_object"></a>
+<a id="placement-placement.wasm.wasm_class.partialdifferentialequationproblem_serializeobject.cf6d279e96f9"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationProblem method</p>
+
+```typescript signature
+serializeObject(): string
+```
+
+Serialize this problem in the versioned canonical object grammar.
+
+### serializeObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_point2d_serialize_object"></a>
+<a id="placement-placement.wasm.wasm_class.point2d_serializeobject.aa39b3c501d6"></a>
+<p class="symi-entry-owner">Point2d method</p>
+
+```typescript signature
+serializeObject(): string
+```
+
+Serialize an Expression, Matrix, or geometry object to the stable Symi serialization format, round-trippable via `parse_serialized_object`.
+
+### serializeObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_polygon2d_serialize_object"></a>
+<a id="placement-placement.wasm.wasm_class.polygon2d_serializeobject.db8e31e4b335"></a>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+```typescript signature
+serializeObject(): string
+```
+
+Serialize an Expression, Matrix, or geometry object to the stable Symi serialization format, round-trippable via `parse_serialized_object`.
+
+### serializeObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_segment2d_serialize_object"></a>
+<a id="placement-placement.wasm.wasm_class.segment2d_serializeobject.47c37e175e6d"></a>
+<p class="symi-entry-owner">Segment2d method</p>
+
+```typescript signature
+serializeObject(): string
+```
+
+Serialize an Expression, Matrix, or geometry object to the stable Symi serialization format, round-trippable via `parse_serialized_object`.
+
+### serializeObject
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_triangle2d_serialize_object"></a>
+<a id="placement-placement.wasm.wasm_class.triangle2d_serializeobject.75e809239ee9"></a>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+```typescript signature
+serializeObject(): string
+```
+
+Serialize an Expression, Matrix, or geometry object to the stable Symi serialization format, round-trippable via `parse_serialized_object`.
+
+### toLatex
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_circle2d_to_latex"></a>
+<a id="placement-placement.wasm.wasm_class.circle2d_tolatex.2d6cae698d4b"></a>
+<p class="symi-entry-owner">Circle2d method</p>
+
+```typescript signature
+toLatex(): string
+```
+
+Render an expression as LaTeX. Matrices and geometry objects have their own `to_latex` methods.
+
+### toLatex
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_session_to_latex"></a>
+<a id="placement-placement.wasm.wasm_module.module_tolatex.9d339325aaff"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+toLatex(input_expression: Expression): string
+```
+
+Render an expression as LaTeX. Matrices and geometry objects have their own `to_latex` methods.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_tolatex.be83ad30b575"></a>
-### Context.toLatex
+<p class="symi-entry-owner">Explicit context: <code>Context.toLatex</code></p>
 
-`pub fn to_latex(&self, input_expression: &Expression) -> Result<String, JsError>`
+```typescript signature
+toLatex(input_expression: Expression): string
+```
 
-Returns `Result<String, JsError>`.
+</details>
+
+### toLatex
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_expression_to_latex"></a>
+<a id="placement-placement.wasm.wasm_class.expression_tolatex.1ec6388c2f23"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+toLatex(): string
+```
+
+Render an expression as LaTeX. Matrices and geometry objects have their own `to_latex` methods.
+
+### toLatex
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_serialization_matrix_to_latex"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_tolatex.c244544a6fc7"></a>
+<p class="symi-entry-owner">Matrix method</p>
+
+```typescript signature
+toLatex(): string
+```
+
+Render an expression as LaTeX. Matrices and geometry objects have their own `to_latex` methods.
+
+### toLatex
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_partial_differential_equations_partialdifferentialequationproblem_to_latex"></a>
+<a id="placement-placement.wasm.wasm_class.partialdifferentialequationproblem_tolatex.101fc04fe4e5"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationProblem method</p>
+
+```typescript signature
+toLatex(): string
+```
+
+Render this problem as LaTeX, as a system when it carries conditions.
+
+### toLatex
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_point2d_to_latex"></a>
+<a id="placement-placement.wasm.wasm_class.point2d_tolatex.f41c507935a0"></a>
+<p class="symi-entry-owner">Point2d method</p>
+
+```typescript signature
+toLatex(): string
+```
+
+Render an expression as LaTeX. Matrices and geometry objects have their own `to_latex` methods.
+
+### toLatex
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_polygon2d_to_latex"></a>
+<a id="placement-placement.wasm.wasm_class.polygon2d_tolatex.b367ecb5ca3c"></a>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+```typescript signature
+toLatex(): string
+```
+
+Render an expression as LaTeX. Matrices and geometry objects have their own `to_latex` methods.
+
+### toLatex
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_segment2d_to_latex"></a>
+<a id="placement-placement.wasm.wasm_class.segment2d_tolatex.e2e4c68ded95"></a>
+<p class="symi-entry-owner">Segment2d method</p>
+
+```typescript signature
+toLatex(): string
+```
+
+Render an expression as LaTeX. Matrices and geometry objects have their own `to_latex` methods.
+
+### toLatex
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_geometry_operations_triangle2d_to_latex"></a>
+<a id="placement-placement.wasm.wasm_class.triangle2d_tolatex.2dd59c291c87"></a>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+```typescript signature
+toLatex(): string
+```
+
+Render an expression as LaTeX. Matrices and geometry objects have their own `to_latex` methods.
+
+### toLatexWithOptions
+
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_with_options_api_serialization_session_to_latex_with_options"></a>
+<a id="placement-placement.wasm.wasm_module.module_tolatexwithoptions.91e728aa5fb0"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+toLatexWithOptions(
+    input_expression: Expression,
+    exponential_style: string,
+    natural_logarithm_style: string,
+    multiletter_symbol_style: string,
+): string
+```
+
+Render an expression as LaTeX with presentation flags. Each argument is a string naming the choice for one flag; an unrecognized name falls back to that flag's canonical default (so `to_latex_with_options(e, "", "", "")` equals `to_latex(e)`):
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_tolatexwithoptions.1022577595e7"></a>
-### Context.toLatexWithOptions
+<p class="symi-entry-owner">Explicit context: <code>Context.toLatexWithOptions</code></p>
 
-`pub fn to_latex_with_options(&self, input_expression: &Expression, exponential_style: &str, natural_logarithm_style: &str, multiletter_symbol_style: &str) -> Result<String, JsError>`
+```typescript signature
+toLatexWithOptions(
+    input_expression: Expression,
+    exponential_style: string,
+    natural_logarithm_style: string,
+    multiletter_symbol_style: string,
+): string
+```
 
-Returns `Result<String, JsError>`.
+</details>
 
-<a id="placement-placement.wasm.wasm_class.expression_serializeobject.0e7634ac3af8"></a>
-### Expression.serializeObject
+### toLatexWithOptions
 
-`pub fn serialize_object(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_tolatex.1ec6388c2f23"></a>
-### Expression.toLatex
-
-`pub fn to_latex(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
+<a id="entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_with_options_api_serialization_expression_to_latex_with_options"></a>
 <a id="placement-placement.wasm.wasm_class.expression_tolatexwithoptions.e10c150aa233"></a>
-### Expression.toLatexWithOptions
+<p class="symi-entry-owner">Expression method</p>
 
-`pub fn to_latex_with_options(&self, exponential_style: &str, natural_logarithm_style: &str, multiletter_symbol_style: &str) -> Result<String, JsError>`
+```typescript signature
+toLatexWithOptions(
+    exponential_style: string,
+    natural_logarithm_style: string,
+    multiletter_symbol_style: string,
+): string
+```
 
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.matrix_serializeobject.da3d7d802113"></a>
-### Matrix.serializeObject
-
-`pub fn serialize_object(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.matrix_tolatex.c244544a6fc7"></a>
-### Matrix.toLatex
-
-`pub fn to_latex(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationcoordinatechange_serializeobject.15bd50391c28"></a>
-### PartialDifferentialEquationCoordinateChange.serializeObject
-
-`pub fn serialize_object(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationproblem_serializeobject.cf6d279e96f9"></a>
-### PartialDifferentialEquationProblem.serializeObject
-
-`pub fn serialize_object(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationproblem_tolatex.101fc04fe4e5"></a>
-### PartialDifferentialEquationProblem.toLatex
-
-`pub fn to_latex(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.point2d_serializeobject.aa39b3c501d6"></a>
-### Point2d.serializeObject
-
-`pub fn serialize_object(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.point2d_tolatex.f41c507935a0"></a>
-### Point2d.toLatex
-
-`pub fn to_latex(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.polygon2d_serializeobject.db8e31e4b335"></a>
-### Polygon2d.serializeObject
-
-`pub fn serialize_object(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.polygon2d_tolatex.b367ecb5ca3c"></a>
-### Polygon2d.toLatex
-
-`pub fn to_latex(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.segment2d_serializeobject.47c37e175e6d"></a>
-### Segment2d.serializeObject
-
-`pub fn serialize_object(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.segment2d_tolatex.e2e4c68ded95"></a>
-### Segment2d.toLatex
-
-`pub fn to_latex(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.triangle2d_serializeobject.75e809239ee9"></a>
-### Triangle2d.serializeObject
-
-`pub fn serialize_object(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.triangle2d_tolatex.2dd59c291c87"></a>
-### Triangle2d.toLatex
-
-`pub fn to_latex(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_parselatex.f6216d8e0b47"></a>
-### module.parseLatex
-
-`fn parse_latex(latex: &str) -> Result<JsValue, JsError>`
-
-Returns `Result<JsValue, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_parselatexwithenvironment.0d0f63f757f1"></a>
-### module.parseLatexWithEnvironment
-
-`fn parse_latex_with_environment(latex: &str, serialized_definitions: Box<[JsValue]>) -> Result<JsValue, JsError>`
-
-Returns `Result<JsValue, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_parseserializedobject.d18b5b415e87"></a>
-### module.parseSerializedObject
-
-`fn parse_serialized_object(text: &str) -> Result<JsValue, JsError>`
-
-Returns `Result<JsValue, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_tolatex.9d339325aaff"></a>
-### module.toLatex
-
-`fn to_latex(input_expression: &Expression) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_tolatexwithoptions.91e728aa5fb0"></a>
-### module.toLatexWithOptions
-
-`fn to_latex_with_options(input_expression: &Expression, exponential_style: &str, natural_logarithm_style: &str, multiletter_symbol_style: &str) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
+Render an expression as LaTeX with presentation flags. Each argument is a string naming the choice for one flag; an unrecognized name falls back to that flag's canonical default (so `to_latex_with_options(e, "", "", "")` equals `to_latex(e)`):
 

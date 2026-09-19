@@ -2,11 +2,32 @@
 
 ### solve
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_expression_operations_expression_solve_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_solve.41dd6fdfd259"></a>
-`symi::api::expression_operations::Expression — pub fn solve<'a, VariableType>(&self, variable: VariableType) -> Result<Vec<Expression>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
 
+```rust signature
+pub fn solve<'a, VariableType>(
+    &self,
+    variable: VariableType,
+) -> Result<Vec<Expression>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_solve_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_solve.4f174656bd13"></a>
-`symi::api::solving::Session — pub fn solve<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType) -> Result<Vec<Expression>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn solve<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+) -> Result<Vec<Expression>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Solve an equation (an `equal` node, or an expression implicitly equated to
@@ -16,11 +37,32 @@ solver's reach are simply absent — prefer `solveset` when you need an honest
 
 ### solveset
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_expression_operations_expression_solveset_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_solveset.6ccdeb8785dd"></a>
-`symi::api::expression_operations::Expression — pub fn solveset<'a, VariableType>(&self, variable: VariableType) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
 
+```rust signature
+pub fn solveset<'a, VariableType>(
+    &self,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_solveset_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_solveset.a55c6810eed4"></a>
-`symi::api::solving::Session — pub fn solveset<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn solveset<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Solution **set** of the equation or inequality: a finite set, interval,
@@ -141,11 +183,20 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### solveset_in_domain
 
-<a id="placement-placement.rust.native_rust.api_expression_operations_expression_solveset_in_domain.fffc24879cfb"></a>
-`symi::api::expression_operations::Expression — pub fn solveset_in_domain<'a, VariableType>(&self, variable: VariableType, domain: &Expression) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
-
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_solveset_in_domain_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_solveset_in_domain.53c9937247f3"></a>
-`symi::api::solving::Session — pub fn solveset_in_domain<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType, domain: &Expression) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn solveset_in_domain<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+    domain: &Expression,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 `solveset` restricted to an explicit domain set (e.g. `real_line()`,
@@ -153,11 +204,32 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### roots_with_multiplicities
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_expression_operations_expression_roots_with_multiplicities_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_roots_with_multiplicities.e3f124509357"></a>
-`symi::api::expression_operations::Expression — pub fn roots_with_multiplicities<'a, VariableType>(&self, variable: VariableType) -> Result<Vec<RootMultiplicity>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
 
+```rust signature
+pub fn roots_with_multiplicities<'a, VariableType>(
+    &self,
+    variable: VariableType,
+) -> Result<Vec<RootMultiplicity>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_roots_with_multiplicities_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_roots_with_multiplicities.d3864d0f9154"></a>
-`symi::api::solving::Session — pub fn roots_with_multiplicities<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType) -> Result<Vec<RootMultiplicity>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn roots_with_multiplicities<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+) -> Result<Vec<RootMultiplicity>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Roots of a polynomial with their multiplicities. **Notes:** Python returns a
@@ -165,8 +237,20 @@ dict keyed by root; WASM returns an array of `RootMultiplicity` objects.
 
 ### polynomial_root
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_polynomial_root_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_polynomial_root.948e1374c79d"></a>
-`symi::api::solving::Session — pub fn polynomial_root<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType, index: usize) -> Result<Option<Expression>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn polynomial_root<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+    index: usize,
+) -> Result<Option<Expression>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Construct the zero-based `index`-th exact root of a univariate rational
@@ -183,8 +267,19 @@ explicit, separate operation.
 
 ### minimal_polynomial_of
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_algebra_session_minimal_polynomial_of_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_minimal_polynomial_of.0fbb6052e6d7"></a>
-`symi::api::algebra::Session — pub fn minimal_polynomial_of<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType) -> Result<Option<Expression>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn minimal_polynomial_of<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+) -> Result<Option<Expression>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Return an exact polynomial in the requested variable for a first-class
@@ -197,8 +292,20 @@ Has `root` and `multiplicity` getters; see object model.
 
 ### solve_polynomial_system
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_solve_polynomial_system_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_solve_polynomial_system.2ea4a3ecf5e0"></a>
-`symi::api::solving::Session — pub fn solve_polynomial_system<'a, IteratorType, VariableType>(&self, equations: &[Expression], variables: IteratorType) -> Result<PolynomialSystemSolution, ApiError> where IteratorType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn solve_polynomial_system<'a, IteratorType, VariableType>(
+    &self,
+    equations: &[Expression],
+    variables: IteratorType,
+) -> Result<PolynomialSystemSolution, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Solve a multivariate polynomial system `{ equation_i = 0 }` for the named
@@ -221,58 +328,22 @@ The WASM return of `solve_polynomial_system`. Python returns a plain dict in its
 place.
 
 ### verdict
-
-<a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verdict.ad770dd183d8"></a>
-`symi::api::ordinary_differential_equations::OrdinaryDifferentialEquationSolveResult — pub fn verdict(&self) -> OrdinaryDifferentialEquationSolveVerdict`
-
-<a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verdict.c2f53c117307"></a>
-`symi::api::ordinary_differential_equations::OrdinaryDifferentialEquationSystemSolveResult — pub fn verdict(&self) -> OrdinaryDifferentialEquationSolveVerdict`
-
-<a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_verdict.0244ad1caf67"></a>
-`symi::api::ordinary_differential_equations::OrdinaryDifferentialEquationSystemVerificationReport — pub fn verdict(&self) -> OrdinaryDifferentialEquationVerificationVerdict`
-
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationsecondorderclassification_verdict.ab7028887c9e"></a>
-`symi::api::partial_differential_equations::PartialDifferentialEquationSecondOrderClassification — pub fn verdict(&self) -> PartialDifferentialEquationSecondOrderTypeVerdict`
-
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationsolveresult_verdict.edb7687242c6"></a>
-`symi::api::partial_differential_equations::PartialDifferentialEquationSolveResult — pub fn verdict(&self) -> PartialDifferentialEquationSolveVerdict`
-
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_verdict.2863448e1082"></a>
-`symi::api::partial_differential_equations::PartialDifferentialEquationTransformationVerificationReport — pub fn verdict(&self) -> PartialDifferentialEquationVerificationVerdict`
-
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationverificationreport_verdict.c594b62c4cd1"></a>
-`symi::api::partial_differential_equations::PartialDifferentialEquationVerificationReport — pub fn verdict(&self) -> PartialDifferentialEquationVerificationVerdict`
-
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationverificationresidual_verdict.c2cee104eae5"></a>
-`symi::api::partial_differential_equations::PartialDifferentialEquationVerificationResidual — pub fn verdict(&self) -> PartialDifferentialEquationVerificationVerdict`
-
-<a id="placement-placement.rust.native_rust.api_results_definiteintegrationresult_verdict.e47ff697c492"></a>
-`symi::api::results::DefiniteIntegrationResult — pub fn verdict(&self) -> DefiniteIntegrationVerdict`
-
-<a id="placement-placement.rust.native_rust.api_results_optimizationoutcome_verdict.dca4ffa727c7"></a>
-`symi::api::results::OptimizationOutcome — pub fn verdict(&self) -> OptimizationVerdict`
-
-<a id="placement-placement.rust.native_rust.api_results_polynomialsystemsolution_verdict.3a1a9e238f68"></a>
-`symi::api::results::PolynomialSystemSolution — pub fn verdict(&self) -> SystemVerdict`
-
 Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`,
 `"empty"`, `"positive_dimensional"`, or `"declined"`.
 
 ### complete
-
-<a id="placement-placement.rust.native_rust.api_results_optimizationoutcome_complete.59d38f151b43"></a>
-`symi::api::results::OptimizationOutcome — pub fn complete(&self) -> bool`
-
-<a id="placement-placement.rust.native_rust.api_results_polynomialsystemsolution_complete.7849113da2b0"></a>
-`symi::api::results::PolynomialSystemSolution — pub fn complete(&self) -> bool`
-
 Getter on `PolynomialSystemSolution`: whether the solver certified it found
 every solution.
 
 ### solutions
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_polynomialsystemsolution_solutions_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_results_polynomialsystemsolution_solutions.88ee482802c7"></a>
-`symi::api::results::PolynomialSystemSolution — pub fn solutions(&self) -> Vec<SystemAssignment>`
+<p class="symi-entry-owner">api::results::PolynomialSystemSolution method</p>
+
+```rust signature
+pub fn solutions(&self) -> Vec<SystemAssignment>
+```
 
 Getter on `PolynomialSystemSolution`: the array of `SystemAssignment` tuples
 (empty for the non-finite verdicts).
@@ -282,30 +353,29 @@ Getter on `PolynomialSystemSolution`: the array of `SystemAssignment` tuples
 One solution tuple of a polynomial system, pairing each unknown with its value.
 
 ### variables
-
-<a id="placement-placement.rust.native_rust.api_results_criticalpoint_variables.6d6886ffaaef"></a>
-`symi::api::results::CriticalPoint — pub fn variables(&self) -> Vec<String>`
-
-<a id="placement-placement.rust.native_rust.api_results_systemassignment_variables.32f538264467"></a>
-`symi::api::results::SystemAssignment — pub fn variables(&self) -> Vec<String>`
-
 Getter on `SystemAssignment`: the unknown names, in order.
 
 ### values
-
-<a id="placement-placement.rust.native_rust.api_results_criticalpoint_values.bcdf7f87b478"></a>
-`symi::api::results::CriticalPoint — pub fn values(&self) -> Vec<Expression>`
-
-<a id="placement-placement.rust.native_rust.api_results_systemassignment_values.42d0df2c35d1"></a>
-`symi::api::results::SystemAssignment — pub fn values(&self) -> Vec<Expression>`
-
 Getter on `SystemAssignment`: the assigned value expressions, aligned with
 `variables`.
 
 ### real_root_count
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_real_root_count_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_real_root_count.9e780400281d"></a>
-`symi::api::solving::Session — pub fn real_root_count<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType, lower: i64, upper: i64) -> Result<Option<usize>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn real_root_count<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+    lower: i64,
+    upper: i64,
+) -> Result<Option<usize>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Number of distinct real roots of a univariate polynomial in the interval
@@ -314,8 +384,19 @@ univariate polynomial over the rationals.
 
 ### count_distinct_real_roots
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_count_distinct_real_roots_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_count_distinct_real_roots.51d733a2074a"></a>
-`symi::api::solving::Session — pub fn count_distinct_real_roots<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType) -> Result<Option<usize>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn count_distinct_real_roots<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+) -> Result<Option<usize>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions as
@@ -323,8 +404,20 @@ Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions
 
 ### real_root_sign
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_real_root_sign_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_real_root_sign.15e3dd9c35b8"></a>
-`symi::api::solving::Session — pub fn real_root_sign<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType, index: usize) -> Result<Option<i64>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn real_root_sign<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+    index: usize,
+) -> Result<Option<i64>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 The exact sign (`-1`, `0`, or `1`) of the `index`-th smallest real root of a
@@ -335,8 +428,24 @@ is out of range.
 
 ### compare_real_roots
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_solving_session_compare_real_roots_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_compare_real_roots.8096f9e6b134"></a>
-`symi::api::solving::Session — pub fn compare_real_roots<'a, 'b, FirstVariableType, SecondVariableType>(&self, first_expression: &Expression, first_variable: FirstVariableType, first_index: usize, second_expression: &Expression, second_variable: SecondVariableType, second_index: usize) -> Result<Option<i64>, ApiError> where FirstVariableType: Into<VariableLike<'a>>, SecondVariableType: Into<VariableLike<'b>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn compare_real_roots<'a, 'b, FirstVariableType, SecondVariableType>(
+    &self,
+    first_expression: &Expression,
+    first_variable: FirstVariableType,
+    first_index: usize,
+    second_expression: &Expression,
+    second_variable: SecondVariableType,
+    second_index: usize,
+) -> Result<Option<i64>, ApiError>
+where
+    FirstVariableType: Into<VariableLike<'a>>,
+    SecondVariableType: Into<VariableLike<'b>>,
+```
 
 
 Compare two real algebraic numbers exactly, each given as the `index`-th smallest
@@ -350,8 +459,21 @@ polynomial over the rationals or an index is out of range.
 
 ### eliminate_quantifiers
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_logic_session_eliminate_quantifiers_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_logic_session_eliminate_quantifiers.8d40588f7af2"></a>
-`symi::api::logic::Session — pub fn eliminate_quantifiers<'a, IteratorType, VariableType>(&self, matrix: &Expression, quantifiers: &[Quantifier], variables: IteratorType) -> Result<Expression, ApiError> where IteratorType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::logic::Session method</p>
+
+```rust signature
+pub fn eliminate_quantifiers<'a, IteratorType, VariableType>(
+    &self,
+    matrix: &Expression,
+    quantifiers: &[Quantifier],
+    variables: IteratorType,
+) -> Result<Expression, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
 
 `context.eliminate_quantifiers(matrix, quantifiers: list[str], variables: list[VariableLike])`
 
@@ -368,8 +490,20 @@ decline, or when the solution formula cannot be certified.
 
 ### solve_semialgebraic
 
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_logic_session_solve_semialgebraic_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_logic_session_solve_semialgebraic.00013bc94d61"></a>
-`symi::api::logic::Session — pub fn solve_semialgebraic<'a, IteratorType, VariableType>(&self, matrix: &Expression, variables: IteratorType) -> Result<Expression, ApiError> where IteratorType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::logic::Session method</p>
+
+```rust signature
+pub fn solve_semialgebraic<'a, IteratorType, VariableType>(
+    &self,
+    matrix: &Expression,
+    variables: IteratorType,
+) -> Result<Expression, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
 
 `context.solve_semialgebraic(matrix, variables: list[VariableLike])`
 
@@ -397,4 +531,231 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+
+## Additional API
+
+### complete
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_optimizationoutcome_complete_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_optimizationoutcome_complete.59d38f151b43"></a>
+<p class="symi-entry-owner">api::results::OptimizationOutcome method</p>
+
+```rust signature
+pub fn complete(&self) -> bool
+```
+
+Getter on `PolynomialSystemSolution`: whether the solver certified it found every solution.
+
+### complete
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_polynomialsystemsolution_complete_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_polynomialsystemsolution_complete.7849113da2b0"></a>
+<p class="symi-entry-owner">api::results::PolynomialSystemSolution method</p>
+
+```rust signature
+pub fn complete(&self) -> bool
+```
+
+Getter on `PolynomialSystemSolution`: whether the solver certified it found every solution.
+
+### solveset_in_domain
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_expression_operations_expression_solveset_in_domain_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_expression_operations_expression_solveset_in_domain.fffc24879cfb"></a>
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn solveset_in_domain<'a, VariableType>(
+    &self,
+    variable: VariableType,
+    domain: &Expression,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+`solveset` restricted to an explicit domain set (e.g. `real_line()`, `integer_set()`, an interval).
+
+### values
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_criticalpoint_values_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_criticalpoint_values.bcdf7f87b478"></a>
+<p class="symi-entry-owner">api::results::CriticalPoint method</p>
+
+```rust signature
+pub fn values(&self) -> Vec<Expression>
+```
+
+Getter on `SystemAssignment`: the assigned value expressions, aligned with `variables`.
+
+### values
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_systemassignment_values_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_systemassignment_values.42d0df2c35d1"></a>
+<p class="symi-entry-owner">api::results::SystemAssignment method</p>
+
+```rust signature
+pub fn values(&self) -> Vec<Expression>
+```
+
+Getter on `SystemAssignment`: the assigned value expressions, aligned with `variables`.
+
+### variables
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_criticalpoint_variables_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_criticalpoint_variables.6d6886ffaaef"></a>
+<p class="symi-entry-owner">api::results::CriticalPoint method</p>
+
+```rust signature
+pub fn variables(&self) -> Vec<String>
+```
+
+Getter on `SystemAssignment`: the unknown names, in order.
+
+### variables
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_systemassignment_variables_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_systemassignment_variables.32f538264467"></a>
+<p class="symi-entry-owner">api::results::SystemAssignment method</p>
+
+```rust signature
+pub fn variables(&self) -> Vec<String>
+```
+
+Getter on `SystemAssignment`: the unknown names, in order.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verdict.ad770dd183d8"></a>
+<p class="symi-entry-owner">api::ordinary_differential_equations::OrdinaryDifferentialEquationSolveResult method</p>
+
+```rust signature
+pub fn verdict(&self) -> OrdinaryDifferentialEquationSolveVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verdict.c2f53c117307"></a>
+<p class="symi-entry-owner">api::ordinary_differential_equations::OrdinaryDifferentialEquationSystemSolveResult method</p>
+
+```rust signature
+pub fn verdict(&self) -> OrdinaryDifferentialEquationSolveVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_verdict.0244ad1caf67"></a>
+<p class="symi-entry-owner">api::ordinary_differential_equations::OrdinaryDifferentialEquationSystemVerificationReport method</p>
+
+```rust signature
+pub fn verdict(&self) -> OrdinaryDifferentialEquationVerificationVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationsecondorderclassification_verdict.ab7028887c9e"></a>
+<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationSecondOrderClassification method</p>
+
+```rust signature
+pub fn verdict(
+    &self,
+) -> PartialDifferentialEquationSecondOrderTypeVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationsolveresult_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationsolveresult_verdict.edb7687242c6"></a>
+<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationSolveResult method</p>
+
+```rust signature
+pub fn verdict(&self) -> PartialDifferentialEquationSolveVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_verdict.2863448e1082"></a>
+<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationTransformationVerificationReport method</p>
+
+```rust signature
+pub fn verdict(&self) -> PartialDifferentialEquationVerificationVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationverificationreport_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationverificationreport_verdict.c594b62c4cd1"></a>
+<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationVerificationReport method</p>
+
+```rust signature
+pub fn verdict(&self) -> PartialDifferentialEquationVerificationVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationverificationresidual_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationverificationresidual_verdict.c2cee104eae5"></a>
+<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationVerificationResidual method</p>
+
+```rust signature
+pub fn verdict(&self) -> PartialDifferentialEquationVerificationVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_definiteintegrationresult_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationresult_verdict.e47ff697c492"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn verdict(&self) -> DefiniteIntegrationVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_optimizationoutcome_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_optimizationoutcome_verdict.dca4ffa727c7"></a>
+<p class="symi-entry-owner">api::results::OptimizationOutcome method</p>
+
+```rust signature
+pub fn verdict(&self) -> OptimizationVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
+
+### verdict
+
+<a id="entry-presentation_rust_solving_capability_rust_native_rust_api_results_polynomialsystemsolution_verdict_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_polynomialsystemsolution_verdict.3a1a9e238f68"></a>
+<p class="symi-entry-owner">api::results::PolynomialSystemSolution method</p>
+
+```rust signature
+pub fn verdict(&self) -> SystemVerdict
+```
+
+Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`, `"empty"`, `"positive_dimensional"`, or `"declined"`.
 

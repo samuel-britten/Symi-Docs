@@ -11,206 +11,90 @@ Queries are three-valued: `True` means entailed, `False` means refuted, and
 ## Proposition builders
 
 ### real_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_realassumption.bbf444970b17"></a>
-`UniffiSession.realAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is real.
 
 ### rational_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_rationalassumption.29a77ad6ce79"></a>
-`UniffiSession.rationalAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is rational.
 
 ### integer_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_integerassumption.42b0ac0add7b"></a>
-`UniffiSession.integerAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is an integer.
 
 ### natural_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_naturalassumption.5256556afcd7"></a>
-`UniffiSession.naturalAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is a natural number.
 
 ### positive_integer_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_positiveintegerassumption.54531ccb0bec"></a>
-`UniffiSession.positiveIntegerAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is a positive integer.
 
 ### positive_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_positiveassumption.b77092a60c87"></a>
-`UniffiSession.positiveAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is strictly positive.
 
 ### negative_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_negativeassumption.e4b6ed74ebc5"></a>
-`UniffiSession.negativeAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is strictly negative.
 
 ### nonzero_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_nonzeroassumption.ce8b24f738de"></a>
-`UniffiSession.nonzeroAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is nonzero.
 
 ### finite_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_finiteassumption.dd3e29eb286b"></a>
-`UniffiSession.finiteAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is finite.
 
 ### complex_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_complexassumption.14b12126c031"></a>
-`UniffiSession.complexAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is a finite complex number.
 
 ### extended_real_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_extendedrealassumption.93149f42d6ca"></a>
-`UniffiSession.extendedRealAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is an extended real, including signed infinity.
 
 ### infinite_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_infiniteassumption.5f0ffd93265c"></a>
-`UniffiSession.infiniteAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is one of the two signed infinities.
 
 ### irrational_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_irrationalassumption.4a60885215fb"></a>
-`UniffiSession.irrationalAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is real and not rational.
 
 ### zero_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_zeroassumption.2df7ff800b3f"></a>
-`UniffiSession.zeroAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is exactly zero.
 
 ### even_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_evenassumption.eb455d3c7e37"></a>
-`UniffiSession.evenAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is an even integer.
 
 ### odd_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_oddassumption.3839750742e9"></a>
-`UniffiSession.oddAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is an odd integer.
 
 ### prime_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_primeassumption.6ca6c19ac317"></a>
-`UniffiSession.primeAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is a proven ordinary prime integer.
 
 ### composite_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_compositeassumption.db30dc0b9a45"></a>
-`UniffiSession.compositeAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is a proven ordinary composite integer.
 
 ### algebraic_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_algebraicassumption.6c368d6a57ac"></a>
-`UniffiSession.algebraicAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is algebraic over the rationals.
 
 ### transcendental_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_transcendentalassumption.ad9c5fdb0497"></a>
-`UniffiSession.transcendentalAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression is transcendental over the rationals.
 
 ### defined_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_definedassumption.1f2338dbf585"></a>
-`UniffiSession.definedAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a proposition asserting that an expression denotes one scalar value at the active point. Its negation asserts that the expression is undefined there; definedness alone authorizes no value, finiteness, realness, sign, continuity, or analyticity.
 
 ### equal_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_equalassumption.7f6a866dd7d2"></a>
-`UniffiSession.equalAssumption(left: UniffiExpression, right: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a defined scalar equality proposition.
 
 ### not_equal_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_notequalassumption.5dd2a6d5af7d"></a>
-`UniffiSession.notEqualAssumption(left: UniffiExpression, right: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a defined scalar disequality proposition.
 
 ### less_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_lessassumption.16f33e296e90"></a>
-`UniffiSession.lessAssumption(left: UniffiExpression, right: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a strict extended-real order proposition.
 
 ### less_or_equal_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_lessorequalassumption.62cbd18952df"></a>
-`UniffiSession.lessOrEqualAssumption(left: UniffiExpression, right: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a non-strict extended-real order proposition.
 
 ### greater_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_greaterassumption.7e82fd06ea5e"></a>
-`UniffiSession.greaterAssumption(left: UniffiExpression, right: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a strict extended-real order proposition by reversing its operands canonically.
 
 ### greater_or_equal_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_greaterorequalassumption.82a8d9a0ba56"></a>
-`UniffiSession.greaterOrEqualAssumption(left: UniffiExpression, right: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a non-strict extended-real order proposition by reversing its operands canonically.
 
 ### member_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_memberassumption.9fbbc0c96b78"></a>
-`UniffiSession.memberAssumption(element: UniffiExpression, setExpression: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build a scalar-membership proposition.
 
 ### congruent_assumption
-
-<a id="placement-placement.swift.swift_object.uniffisession_congruentassumption.ddedeba63093"></a>
-`UniffiSession.congruentAssumption(left: UniffiExpression, right: UniffiExpression, modulus: UniffiExpression) -> UniffiAssumptionProposition`
-
 Build an integer-congruence proposition with a positive integer modulus.
 
 ### assumption_equal
@@ -262,10 +146,6 @@ Construct a scalar-membership proposition.
 Construct an integer congruence proposition.
 
 ### assumption_proposition_from_logical_expression
-
-<a id="placement-placement.swift.swift_object.uniffisession_assumptionpropositionfromlogicalexpression.31ad9b84f19a"></a>
-`UniffiSession.assumptionPropositionFromLogicalExpression(logicalExpression: UniffiExpression) -> UniffiAssumptionProposition`
-
 Convert a supported Boolean relation expression into a typed assumption proposition.
 
 ## Matrix proposition builders
@@ -355,127 +235,54 @@ unknown and is never exposed as a symbolic prime fact.
 An immutable, context-owned Boolean assumption formula.
 
 ### and
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_and.6ac7a88ceb7d"></a>
-`UniffiAssumptionProposition.and(other: UniffiAssumptionProposition) -> UniffiAssumptionProposition`
-
 Conjoin two propositions and return a canonical proposition.
 
 ### or
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_or.1c0024fcb508"></a>
-`UniffiAssumptionProposition.or(other: UniffiAssumptionProposition) -> UniffiAssumptionProposition`
-
 Disjoin two propositions and return a canonical proposition.
 
 ### not
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_not.4c7fd8190b0b"></a>
-`UniffiAssumptionProposition.not() -> UniffiAssumptionProposition`
-
 Negate a proposition and return a canonical proposition.
 
 ### relation_kind
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_relationkind.605f26847e27"></a>
-`UniffiAssumptionProposition.relationKind() -> String?`
-
 Return the canonical relation kind for a relation atom.
 
 ### left_operand
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_leftoperand.d99a11a816a2"></a>
-`UniffiAssumptionProposition.leftOperand() -> UniffiExpression?`
-
 Return the left relation or congruence operand when present.
 
 ### right_operand
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_rightoperand.1597382b6322"></a>
-`UniffiAssumptionProposition.rightOperand() -> UniffiExpression?`
-
 Return the right relation or congruence operand when present.
 
 ### membership_element
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_membershipelement.9171da3c3f16"></a>
-`UniffiAssumptionProposition.membershipElement() -> UniffiExpression?`
-
 Return the membership element when present.
 
 ### membership_set
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_membershipset.834f9ae1b814"></a>
-`UniffiAssumptionProposition.membershipSet() -> UniffiExpression?`
-
 Return the membership set expression when present.
 
 ### congruence_modulus
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_congruencemodulus.5dff126ededb"></a>
-`UniffiAssumptionProposition.congruenceModulus() -> UniffiExpression?`
-
 Return the congruence modulus when present.
 
 ### serialize
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_serialize.f2074b7cca5d"></a>
-`UniffiAssumptionProposition.serialize() -> String`
-
 Serialize a proposition in the versioned canonical formula grammar.
 
 ### deserialize_assumption_proposition
-
-<a id="placement-placement.swift.swift_object.uniffisession_deserializeassumptionproposition.2b2cc7ba0175"></a>
-`UniffiSession.deserializeAssumptionProposition(text: String) -> UniffiAssumptionProposition`
-
 Parse a versioned canonical assumption proposition in the receiving context.
 
 ## Durable contexts and scopes
 
 ### add_assumptions
-
-<a id="placement-placement.swift.swift_object.uniffisession_addassumptions.fa255787959b"></a>
-`UniffiSession.addAssumptions(proposition: UniffiAssumptionProposition) -> Void`
-
 Atomically add a proposition to the durable assumption context. Contradictory
 updates are rejected without changing the prior state.
 
 ### clear_all_assumptions
-
-<a id="placement-placement.swift.swift_object.uniffisession_clearallassumptions.718b639c5307"></a>
-`UniffiSession.clearAllAssumptions() -> Void`
-
 Clear both durable formulas and legacy symbol assumptions.
 
 ### ask
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_ask.5025036e4885"></a>
-`UniffiAssumptionScope.ask(proposition: UniffiAssumptionProposition) -> UniffiTruthValue`
-
-<a id="placement-placement.swift.swift_object.uniffisession_ask.0c0006984973"></a>
-`UniffiSession.ask(proposition: UniffiAssumptionProposition) -> UniffiTruthValue`
-
 Return whether a proposition is entailed by the current durable context.
 
 ### could_hold
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_couldhold.0f01d9d1216a"></a>
-`UniffiAssumptionScope.couldHold(proposition: UniffiAssumptionProposition) -> UniffiTruthValue`
-
-<a id="placement-placement.swift.swift_object.uniffisession_couldhold.298e72c27693"></a>
-`UniffiSession.couldHold(proposition: UniffiAssumptionProposition) -> UniffiTruthValue`
-
 Return whether the current durable context is compatible with a proposition.
 
 ### assuming
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_assuming.3cbffeb9c1ab"></a>
-`UniffiAssumptionScope.assuming(proposition: UniffiAssumptionProposition) -> UniffiAssumptionScope`
-
-<a id="placement-placement.swift.swift_object.uniffisession_assuming.0c8d2bd1e320"></a>
-`UniffiSession.assuming(proposition: UniffiAssumptionProposition) -> UniffiAssumptionScope`
-
 Create an immutable local scope by overlaying a proposition. The overlay does
 not change the owning context.
 
@@ -491,14 +298,659 @@ checked for the requested operation, the operation keeps its ordinary
 unevaluated or declined result rather than guessing a branch.
 
 ### refine
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_refine.53a6330a7e27"></a>
-`UniffiAssumptionScope.refine(target: UniffiExpression) -> UniffiExpression`
-
-<a id="placement-placement.swift.swift_object.uniffiexpression_refine.198c320bf37e"></a>
-`UniffiExpression.refine(assumptions: UniffiAssumptionProposition?) -> UniffiExpression`
-
-<a id="placement-placement.swift.swift_object.uniffisession_refine.ccb92f973860"></a>
-`UniffiSession.refine(target: UniffiExpression, assumptions: UniffiAssumptionProposition?) -> UniffiExpression`
-
 Simplify an expression using durable assumptions or one checked local proposition.
+
+## Additional API
+
+### add_assumptions
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_add_assumptions_api_session_add_assumptions"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_addassumptions.fa255787959b"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func addAssumptions(proposition: UniffiAssumptionProposition) -> Void
+```
+
+Provides the `add_assumptions` operation on this mobile object.
+
+### algebraic_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_algebraic_assumption_api_session_algebraic_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_algebraicassumption.6c368d6a57ac"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func algebraicAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `algebraic_assumption` operation on this mobile object.
+
+### and
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_and_api_assumptionproposition_and"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_and.6ac7a88ceb7d"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func and(other: UniffiAssumptionProposition) -> UniffiAssumptionProposition
+```
+
+Provides the `and` operation on this mobile object.
+
+### ask
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_ask_api_session_ask"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_ask.0c0006984973"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func ask(proposition: UniffiAssumptionProposition) -> UniffiTruthValue
+```
+
+Provides the `ask` operation on this mobile object.
+
+### ask
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_ask_api_assumptionscope_ask"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_ask.5025036e4885"></a>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+```swift signature
+func ask(proposition: UniffiAssumptionProposition) -> UniffiTruthValue
+```
+
+Provides the `ask` operation on this mobile object.
+
+### assuming
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_assuming_api_session_assuming"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_assuming.0c8d2bd1e320"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func assuming(proposition: UniffiAssumptionProposition) -> UniffiAssumptionScope
+```
+
+Provides the `assuming` operation on this mobile object.
+
+### assuming
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_assuming_api_assumptionscope_assuming"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_assuming.3cbffeb9c1ab"></a>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+```swift signature
+func assuming(proposition: UniffiAssumptionProposition) -> UniffiAssumptionScope
+```
+
+Provides the `assuming` operation on this mobile object.
+
+### assumption_proposition_from_logical_expression
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_assumption_proposition_from_logical_expression_api_session_assumption_proposition_from_logical_expression"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_assumptionpropositionfromlogicalexpression.31ad9b84f19a"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func assumptionPropositionFromLogicalExpression(logicalExpression: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `assumption_proposition_from_logical_expression` operation on this mobile object.
+
+### clear_all_assumptions
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_clear_all_assumptions_api_session_clear_all_assumptions"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_clearallassumptions.718b639c5307"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func clearAllAssumptions() -> Void
+```
+
+Provides the `clear_all_assumptions` operation on this mobile object.
+
+### complex_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_complex_assumption_api_session_complex_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_complexassumption.14b12126c031"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func complexAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `complex_assumption` operation on this mobile object.
+
+### composite_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_composite_assumption_api_session_composite_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_compositeassumption.db30dc0b9a45"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func compositeAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `composite_assumption` operation on this mobile object.
+
+### congruence_modulus
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_congruence_modulus_api_assumptionproposition_congruence_modulus"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_congruencemodulus.5dff126ededb"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func congruenceModulus() -> UniffiExpression?
+```
+
+Provides the `congruence_modulus` operation on this mobile object.
+
+### congruent_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_congruent_assumption_api_defaults_session_congruent_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_congruentassumption.ddedeba63093"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func congruentAssumption(
+    left: UniffiExpression,
+    right: UniffiExpression,
+    modulus: UniffiExpression,
+) -> UniffiAssumptionProposition
+```
+
+Provides the `congruent_assumption` operation on this mobile object.
+
+### could_hold
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_could_hold_api_session_could_hold"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_couldhold.298e72c27693"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func couldHold(proposition: UniffiAssumptionProposition) -> UniffiTruthValue
+```
+
+Provides the `could_hold` operation on this mobile object.
+
+### could_hold
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_could_hold_api_assumptionscope_could_hold"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_couldhold.0f01d9d1216a"></a>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+```swift signature
+func couldHold(proposition: UniffiAssumptionProposition) -> UniffiTruthValue
+```
+
+Provides the `could_hold` operation on this mobile object.
+
+### defined_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_defined_assumption_api_session_defined_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_definedassumption.1f2338dbf585"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func definedAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `defined_assumption` operation on this mobile object.
+
+### deserialize_assumption_proposition
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_deserialize_assumption_proposition_api_session_deserialize_assumption_proposition"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_deserializeassumptionproposition.2b2cc7ba0175"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func deserializeAssumptionProposition(text: String) -> UniffiAssumptionProposition
+```
+
+Provides the `deserialize_assumption_proposition` operation on this mobile object.
+
+### equal_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_equal_assumption_api_defaults_session_equal_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_equalassumption.7f6a866dd7d2"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func equalAssumption(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiAssumptionProposition
+```
+
+Provides the `equal_assumption` operation on this mobile object.
+
+### even_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_even_assumption_api_session_even_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_evenassumption.eb455d3c7e37"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func evenAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `even_assumption` operation on this mobile object.
+
+### extended_real_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_extended_real_assumption_api_session_extended_real_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_extendedrealassumption.93149f42d6ca"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func extendedRealAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `extended_real_assumption` operation on this mobile object.
+
+### finite_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_finite_assumption_api_session_finite_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_finiteassumption.dd3e29eb286b"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func finiteAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `finite_assumption` operation on this mobile object.
+
+### greater_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_greater_assumption_api_defaults_session_greater_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_greaterassumption.7e82fd06ea5e"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func greaterAssumption(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiAssumptionProposition
+```
+
+Provides the `greater_assumption` operation on this mobile object.
+
+### greater_or_equal_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_greater_or_equal_assumption_api_defaults_session_greater_or_equal_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_greaterorequalassumption.82a8d9a0ba56"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func greaterOrEqualAssumption(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiAssumptionProposition
+```
+
+Provides the `greater_or_equal_assumption` operation on this mobile object.
+
+### infinite_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_infinite_assumption_api_session_infinite_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_infiniteassumption.5f0ffd93265c"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func infiniteAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `infinite_assumption` operation on this mobile object.
+
+### integer_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_integer_assumption_api_session_integer_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_integerassumption.42b0ac0add7b"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func integerAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `integer_assumption` operation on this mobile object.
+
+### irrational_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_irrational_assumption_api_session_irrational_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_irrationalassumption.4a60885215fb"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func irrationalAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `irrational_assumption` operation on this mobile object.
+
+### left_operand
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_left_operand_api_assumptionproposition_left_operand"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_leftoperand.d99a11a816a2"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func leftOperand() -> UniffiExpression?
+```
+
+Provides the `left_operand` operation on this mobile object.
+
+### less_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_less_assumption_api_defaults_session_less_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_lessassumption.16f33e296e90"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func lessAssumption(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiAssumptionProposition
+```
+
+Provides the `less_assumption` operation on this mobile object.
+
+### less_or_equal_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_less_or_equal_assumption_api_defaults_session_less_or_equal_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_lessorequalassumption.62cbd18952df"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func lessOrEqualAssumption(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiAssumptionProposition
+```
+
+Provides the `less_or_equal_assumption` operation on this mobile object.
+
+### member_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_member_assumption_api_defaults_session_member_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_memberassumption.9fbbc0c96b78"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func memberAssumption(
+    element: UniffiExpression,
+    setExpression: UniffiExpression,
+) -> UniffiAssumptionProposition
+```
+
+Provides the `member_assumption` operation on this mobile object.
+
+### membership_element
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_membership_element_api_assumptionproposition_membership_element"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_membershipelement.9171da3c3f16"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func membershipElement() -> UniffiExpression?
+```
+
+Provides the `membership_element` operation on this mobile object.
+
+### membership_set
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_membership_set_api_assumptionproposition_membership_set"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_membershipset.834f9ae1b814"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func membershipSet() -> UniffiExpression?
+```
+
+Provides the `membership_set` operation on this mobile object.
+
+### natural_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_natural_assumption_api_session_natural_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_naturalassumption.5256556afcd7"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func naturalAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `natural_assumption` operation on this mobile object.
+
+### negative_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_negative_assumption_api_session_negative_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_negativeassumption.e4b6ed74ebc5"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func negativeAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `negative_assumption` operation on this mobile object.
+
+### nonzero_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_nonzero_assumption_api_session_nonzero_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_nonzeroassumption.ce8b24f738de"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func nonzeroAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `nonzero_assumption` operation on this mobile object.
+
+### not
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_not_api_assumptionproposition_not"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_not.4c7fd8190b0b"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func not() -> UniffiAssumptionProposition
+```
+
+Provides the `not` operation on this mobile object.
+
+### not_equal_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_not_equal_assumption_api_defaults_session_not_equal_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_notequalassumption.5dd2a6d5af7d"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func notEqualAssumption(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiAssumptionProposition
+```
+
+Provides the `not_equal_assumption` operation on this mobile object.
+
+### odd_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_odd_assumption_api_session_odd_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_oddassumption.3839750742e9"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func oddAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `odd_assumption` operation on this mobile object.
+
+### or
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_or_api_assumptionproposition_or"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_or.1c0024fcb508"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func or(other: UniffiAssumptionProposition) -> UniffiAssumptionProposition
+```
+
+Provides the `or` operation on this mobile object.
+
+### positive_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_positive_assumption_api_session_positive_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_positiveassumption.b77092a60c87"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func positiveAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `positive_assumption` operation on this mobile object.
+
+### positive_integer_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_positive_integer_assumption_api_session_positive_integer_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_positiveintegerassumption.54531ccb0bec"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func positiveIntegerAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `positive_integer_assumption` operation on this mobile object.
+
+### prime_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_prime_assumption_api_session_prime_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_primeassumption.6ca6c19ac317"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func primeAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `prime_assumption` operation on this mobile object.
+
+### rational_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_rational_assumption_api_session_rational_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_rationalassumption.29a77ad6ce79"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func rationalAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `rational_assumption` operation on this mobile object.
+
+### real_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_real_assumption_api_session_real_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_realassumption.bbf444970b17"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func realAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `real_assumption` operation on this mobile object.
+
+### refine
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_refine_api_session_refine"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_refine.ccb92f973860"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func refine(
+    target: UniffiExpression,
+    assumptions: UniffiAssumptionProposition?,
+) -> UniffiExpression
+```
+
+Provides the `refine` operation on this mobile object.
+
+### refine
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_refine_api_expression_refine"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_refine.198c320bf37e"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func refine(assumptions: UniffiAssumptionProposition?) -> UniffiExpression
+```
+
+Provides the `refine` operation on this mobile object.
+
+### refine
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_refine_api_assumptionscope_refine"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_refine.53a6330a7e27"></a>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+```swift signature
+func refine(target: UniffiExpression) -> UniffiExpression
+```
+
+Provides the `refine` operation on this mobile object.
+
+### relation_kind
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_relation_kind_api_assumptionproposition_relation_kind"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_relationkind.605f26847e27"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func relationKind() -> String?
+```
+
+Provides the `relation_kind` operation on this mobile object.
+
+### right_operand
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_right_operand_api_assumptionproposition_right_operand"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_rightoperand.1597382b6322"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func rightOperand() -> UniffiExpression?
+```
+
+Provides the `right_operand` operation on this mobile object.
+
+### serialize
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_serialize_api_assumptionproposition_serialize"></a>
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_serialize.f2074b7cca5d"></a>
+<p class="symi-entry-owner">UniffiAssumptionProposition method</p>
+
+```swift signature
+func serialize() -> String
+```
+
+Provides the `serialize` operation on this mobile object.
+
+### transcendental_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_transcendental_assumption_api_session_transcendental_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_transcendentalassumption.ad9c5fdb0497"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func transcendentalAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `transcendental_assumption` operation on this mobile object.
+
+### zero_assumption
+
+<a id="entry-presentation_swift_assumptions_capability_algebra_zero_assumption_api_session_zero_assumption"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_zeroassumption.2df7ff800b3f"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func zeroAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition
+```
+
+Provides the `zero_assumption` operation on this mobile object.
+

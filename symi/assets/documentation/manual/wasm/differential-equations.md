@@ -277,45 +277,105 @@ obligation that it is not the general solution.
 
 ## Additional API
 
+### solveLinearRecurrence
+
+<a id="entry-presentation_wasm_differential_equations_capability_equations_solve_linear_recurrence_api_solving_session_solve_linear_recurrence"></a>
+<a id="placement-placement.wasm.wasm_module.module_solvelinearrecurrence.84dcdba77acf"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+solveLinearRecurrence(
+    equation: Expression,
+    sequence_call: Expression,
+    index_variable: string,
+    initial_conditions?: Expression[] | null,
+): Expression
+```
+
+Solve a linear recurrence with polynomial coefficients for the unknown sequence named by `sequence_call` (e.g. `a(n)`), via Petkovšek's Hyper algorithm. The general solution carries one fresh symbolic constant per basis element; `initial_conditions` is a list of `(index, value)` pairs fitted by back-substitution. Constant-coefficient polynomial-exponential forcing and coefficients rational in `n` and `c^n` are also solved; other shapes return the unevaluated `recurrence_equation` placeholder. WASM passes a flat interleaved array.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.wasm.wasm_class.context_solvelinearrecurrence.8809c44f6227"></a>
-### Context.solveLinearRecurrence
+<p class="symi-entry-owner">Explicit context: <code>Context.solveLinearRecurrence</code></p>
 
-`pub fn solve_linear_recurrence(&self, equation: &Expression, sequence_call: &Expression, index_variable: &str, initial_conditions: Option<Vec<Expression>>) -> Result<Expression, JsError>`
+```typescript signature
+solveLinearRecurrence(
+    equation: Expression,
+    sequence_call: Expression,
+    index_variable: string,
+    initial_conditions?: Expression[] | null,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### solveOrdinaryDifferentialEquation
+
+<a id="entry-presentation_wasm_differential_equations_capability_equations_solve_ordinary_differential_equation_api_solving_session_solve_ordinary_differential_equation"></a>
+<a id="placement-placement.wasm.wasm_module.module_solveordinarydifferentialequation.79ae565de443"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+solveOrdinaryDifferentialEquation(
+    equation: Expression,
+    dependent_function_call: Expression,
+    independent_variable: string,
+    initial_conditions?: Expression[] | null,
+): Expression
+```
+
+Solve an ODE for the unknown function named by `dependent_function_call` (e.g. `y(x)`).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_solveordinarydifferentialequation.efb98185cf3b"></a>
-### Context.solveOrdinaryDifferentialEquation
+<p class="symi-entry-owner">Explicit context: <code>Context.solveOrdinaryDifferentialEquation</code></p>
 
-`pub fn solve_ordinary_differential_equation(&self, equation: &Expression, dependent_function_call: &Expression, independent_variable: &str, initial_conditions: Option<Vec<Expression>>) -> Result<Expression, JsError>`
+```typescript signature
+solveOrdinaryDifferentialEquation(
+    equation: Expression,
+    dependent_function_call: Expression,
+    independent_variable: string,
+    initial_conditions?: Expression[] | null,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### solveOrdinaryDifferentialEquationWithParticularSolution
+
+<a id="entry-presentation_wasm_differential_equations_capability_equations_solve_ordinary_differential_equation_with_particular_solution_api_solving_session_solve_ordinary_differential_equation_with_particular_solution"></a>
+<a id="placement-placement.wasm.wasm_module.module_solveordinarydifferentialequationwithparticularsolution.9f86687333f8"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+solveOrdinaryDifferentialEquationWithParticularSolution(
+    equation: Expression,
+    dependent_function_call: Expression,
+    independent_variable: string,
+    particular_solution: Expression,
+): Expression
+```
+
+Riccati-specific entry: with a known particular solution \(y_1\), the substitution \(y = y_1 + 1/v\) reduces the Riccati equation to a linear first-order ODE. Falls back to the unevaluated placeholder when the shape is not Riccati.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_solveordinarydifferentialequationwithparticularsolution.a068b73acc6d"></a>
-### Context.solveOrdinaryDifferentialEquationWithParticularSolution
+<p class="symi-entry-owner">Explicit context: <code>Context.solveOrdinaryDifferentialEquationWithParticularSolution</code></p>
 
-`pub fn solve_ordinary_differential_equation_with_particular_solution(&self, equation: &Expression, dependent_function_call: &Expression, independent_variable: &str, particular_solution: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+solveOrdinaryDifferentialEquationWithParticularSolution(
+    equation: Expression,
+    dependent_function_call: Expression,
+    independent_variable: string,
+    particular_solution: Expression,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_solvelinearrecurrence.84dcdba77acf"></a>
-### module.solveLinearRecurrence
-
-`fn solve_linear_recurrence(equation: &Expression, sequence_call: &Expression, index_variable: &str, initial_conditions: Option<Vec<Expression>>) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_solveordinarydifferentialequation.79ae565de443"></a>
-### module.solveOrdinaryDifferentialEquation
-
-`fn solve_ordinary_differential_equation(equation: &Expression, dependent_function_call: &Expression, independent_variable: &str, initial_conditions: Option<Vec<Expression>>) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_solveordinarydifferentialequationwithparticularsolution.9f86687333f8"></a>
-### module.solveOrdinaryDifferentialEquationWithParticularSolution
-
-`fn solve_ordinary_differential_equation_with_particular_solution(equation: &Expression, dependent_function_call: &Expression, independent_variable: &str, particular_solution: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
+</details>
 

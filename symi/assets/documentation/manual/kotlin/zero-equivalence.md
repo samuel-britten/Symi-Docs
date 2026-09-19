@@ -2,13 +2,6 @@
 
 ### zero_equivalent
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_zeroequivalent.2023a1153ee4"></a>
-`UniffiExpression.zeroEquivalent(constraint: UniffiExpression?): UniffiZeroEquivalenceVerdict`
-
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_zeroequivalent.86ef8fbb442e"></a>
-`UniffiSession.zeroEquivalent(target: UniffiExpression, constraint: UniffiExpression?): UniffiZeroEquivalenceVerdict`
-
-
 
 Proves whether an expression is zero at every point where the input expression is defined within
 the declared region. `"true"` is an exact theorem replay, `"false"` has an exact counterexample,
@@ -22,4 +15,34 @@ the declared region.
 The initial admitted routes are the principal-branch Gudermannian identity for a real variable on
 `-pi/2 < x < pi/2`, and the Riemann zeta reflection relation. The latter remains a nonzero-shaped
 expression under ordinary simplification because its written factors have exceptional points.
+
+
+## Additional API
+
+### zero_equivalent
+
+<a id="entry-presentation_kotlin_zero_equivalence_capability_algebra_zero_equivalent_api_session_zero_equivalent"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_zeroequivalent.86ef8fbb442e"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun zeroEquivalent(
+    target: UniffiExpression,
+    constraint: UniffiExpression?,
+): UniffiZeroEquivalenceVerdict
+```
+
+Provides the `zero_equivalent` operation on this mobile object.
+
+### zero_equivalent
+
+<a id="entry-presentation_kotlin_zero_equivalence_capability_algebra_zero_equivalent_api_expression_zero_equivalent"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_zeroequivalent.2023a1153ee4"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun zeroEquivalent(constraint: UniffiExpression?): UniffiZeroEquivalenceVerdict
+```
+
+Provides the `zero_equivalent` operation on this mobile object.
 

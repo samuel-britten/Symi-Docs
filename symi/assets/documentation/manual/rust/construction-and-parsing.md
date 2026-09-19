@@ -11,8 +11,13 @@ Create a fresh context with an empty symbol table and expression store.
 
 ### reset_context
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_session_reset_context_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_reset_context.a0cb4531009e"></a>
-`symi::api::Session — pub fn reset_context(&self) -> Result<(), ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn reset_context(&self) -> Result<(), ApiError>
+```
 
 
 Replace the context's entire symbol table and expression store with fresh
@@ -27,8 +32,13 @@ weak expression store already keeps memory bounded by live objects (see
 
 ### parse
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_session_parse_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_parse.98b4924e2023"></a>
-`symi::api::Session — pub fn parse(&self, text: &str) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn parse(&self, text: &str) -> Result<Expression, ApiError>
+```
 
 
 Parse Symi textual syntax into an expression. Accepts `^` and `**` for
@@ -39,8 +49,16 @@ parameters.
 
 ### parse_latex
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_serialization_session_parse_latex_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_serialization_session_parse_latex.79a92eea5dd7"></a>
-`symi::api::serialization::Session — pub fn parse_latex(&self, latex: &str) -> Result<MathematicalObject, ApiError>`
+<p class="symi-entry-owner">api::serialization::Session method</p>
+
+```rust signature
+pub fn parse_latex(
+    &self,
+    latex: &str,
+) -> Result<MathematicalObject, ApiError>
+```
 
 
 Parse a LaTeX string in Symi's canonical input dialect — the inverse of
@@ -68,8 +86,17 @@ expansion.
 
 ### parse_latex_with_environment
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_serialization_session_parse_latex_with_environment_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_serialization_session_parse_latex_with_environment.05017f9a72f3"></a>
-`symi::api::serialization::Session — pub fn parse_latex_with_environment(&self, latex: &str, serialized_definitions: &[String]) -> Result<MathematicalObject, ApiError>`
+<p class="symi-entry-owner">api::serialization::Session method</p>
+
+```rust signature
+pub fn parse_latex_with_environment(
+    &self,
+    latex: &str,
+    serialized_definitions: &[String],
+) -> Result<MathematicalObject, ApiError>
+```
 
 
 Parse LaTeX after building an ordered definition environment. Each serialized
@@ -84,8 +111,13 @@ as a module-level function.
 
 ### symbol
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_session_symbol_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_symbol.9302d6a9670a"></a>
-`symi::api::Session — pub fn symbol(&self, name: &str) -> Expression`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn symbol(&self, name: &str) -> Expression
+```
 
 
 Intern a symbol and (optionally) attach assumptions used by the assumption
@@ -104,11 +136,28 @@ over.
 
 ### integer
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_integer_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_integer.b307d00d6db8"></a>
-`symi::api::Session — pub fn integer<IntegerType: ExactIntegerInput>(&self, value: IntegerType) -> Expression`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn integer<IntegerType: ExactIntegerInput>(
+    &self,
+    value: IntegerType,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.rust.native_rust.api_symboldeclaration_integer.f5df3ac24a91"></a>
-`symi::api::SymbolDeclaration — pub integer:`
+<p class="symi-entry-owner">api::SymbolDeclaration field: <code>api::SymbolDeclaration::integer</code></p>
+
+```rust signature
+pub integer:
+```
+
+</details>
 
 
 Build an arbitrary-precision exact integer. Python `bool` values are rejected. JavaScript's
@@ -116,11 +165,29 @@ recommended facade accepts `bigint` and safe integral `number` values.
 
 ### rational
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rational_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_rational.f8635006d2e3"></a>
-`symi::api::Session — pub fn rational<NumeratorType: ExactIntegerInput, DenominatorType: ExactIntegerInput>(&self, numerator: NumeratorType, denominator: DenominatorType) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn rational<NumeratorType: ExactIntegerInput, DenominatorType: ExactIntegerInput>(
+    &self,
+    numerator: NumeratorType,
+    denominator: DenominatorType,
+) -> Result<Expression, ApiError>
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.rust.native_rust.api_symboldeclaration_rational.f7d69b438646"></a>
-`symi::api::SymbolDeclaration — pub rational:`
+<p class="symi-entry-owner">api::SymbolDeclaration field: <code>api::SymbolDeclaration::rational</code></p>
+
+```rust signature
+pub rational:
+```
+
+</details>
 
 
 
@@ -130,16 +197,33 @@ integers. A zero denominator is an argument error. Python also accepts
 
 ### integer_from_string
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_session_integer_from_string_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_integer_from_string.4bd26e7f245f"></a>
-`symi::api::Session — pub fn integer_from_string(&self, text: &str) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn integer_from_string(
+    &self,
+    text: &str,
+) -> Result<Expression, ApiError>
+```
 
 
 Build an arbitrary-precision integer literal from its decimal string.
 
 ### rational_from_float
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_analysis_session_rational_from_float_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_rational_from_float.4700f138745f"></a>
-`symi::api::analysis::Session — pub fn rational_from_float(&self, value: f64, maximum_denominator: u64) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::analysis::Session method</p>
+
+```rust signature
+pub fn rational_from_float(
+    &self,
+    value: f64,
+    maximum_denominator: u64,
+) -> Result<Expression, ApiError>
+```
 
 
 Closest rational with denominator \(\leq\) `max_denominator` (the
@@ -147,8 +231,16 @@ Closest rational with denominator \(\leq\) `max_denominator` (the
 
 ### undefined_function
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_session_undefined_function_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_undefined_function.b08154793cea"></a>
-`symi::api::Session — pub fn undefined_function(&self, name: impl Into<String>) -> UndefinedFunction`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn undefined_function(
+    &self,
+    name: impl Into<String>,
+) -> UndefinedFunction
+```
 
 
 A callable proxy for a user-named function. Calling it with expression
@@ -157,8 +249,18 @@ the worked ODE example).
 
 ### call
 
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_undefinedfunction_call_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_undefinedfunction_call.965b62005306"></a>
-`symi::api::UndefinedFunction — pub fn call<IteratorType>(&self, arguments: IteratorType) -> Result<Expression, ApiError> where IteratorType: IntoIterator<Item = Expression>`
+<p class="symi-entry-owner">api::UndefinedFunction method</p>
+
+```rust signature
+pub fn call<IteratorType>(
+    &self,
+    arguments: IteratorType,
+) -> Result<Expression, ApiError>
+where
+    IteratorType: IntoIterator<Item = Expression>,
+```
 
 
 WASM spelling of the Python `f(x, …)` call syntax on `UndefinedFunction`.
@@ -184,10 +286,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Additional API
 
+### Symbol
+
+<a id="entry-presentation_rust_construction_and_parsing_capability_rust_native_rust_api_variablelike_symbol_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_variablelike_symbol.ea108610c8bd"></a>
-### api::VariableLike::Symbol
+<p class="symi-entry-owner">api::VariableLike variant</p>
 
-`symi::api::VariableLike — Symbol(&'a Expression)`
+```rust signature
+Symbol(&'a Expression)
+```
 
-Returns `variant`.
+Public variant placement for Symbol.
 

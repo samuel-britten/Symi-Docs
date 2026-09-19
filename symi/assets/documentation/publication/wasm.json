@@ -88,12 +88,12 @@
   "language": "wasm",
   "navigation_artifacts": [
     {
-      "entry_count": 1242,
+      "entry_count": 850,
       "language": "python",
       "path": "navigation/python.json"
     },
     {
-      "entry_count": 1593,
+      "entry_count": 1026,
       "language": "wasm",
       "path": "navigation/wasm.json"
     },
@@ -108,7 +108,7 @@
       "path": "navigation/swift.json"
     },
     {
-      "entry_count": 7749,
+      "entry_count": 7717,
       "language": "rust",
       "path": "navigation/rust.json"
     }
@@ -456,6 +456,26 @@
     },
     {
       "canonical_urls": {
+        "kotlin": "/symi/kotlin/getting-started-kotlin",
+        "python": "/symi/python/getting-started-kotlin",
+        "rust": "/symi/rust/getting-started-kotlin",
+        "swift": "/symi/swift/getting-started-kotlin",
+        "wasm": "/symi/wasm/getting-started-kotlin"
+      },
+      "category_identifier": "introduction",
+      "language_paths": {
+        "kotlin": "manual/kotlin/getting-started-kotlin.md",
+        "python": "manual/python/getting-started-kotlin.md",
+        "rust": "manual/rust/getting-started-kotlin.md",
+        "swift": "manual/swift/getting-started-kotlin.md",
+        "wasm": "manual/wasm/getting-started-kotlin.md"
+      },
+      "page_identifier": "getting-started-kotlin",
+      "path": "getting-started-kotlin.md",
+      "title": "Getting started: Kotlin"
+    },
+    {
+      "canonical_urls": {
         "kotlin": "/symi/kotlin/getting-started-python",
         "python": "/symi/python/getting-started-python",
         "rust": "/symi/rust/getting-started-python",
@@ -493,6 +513,26 @@
       "page_identifier": "getting-started-rust",
       "path": "getting-started-rust.md",
       "title": "Getting started: Rust"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/getting-started-swift",
+        "python": "/symi/python/getting-started-swift",
+        "rust": "/symi/rust/getting-started-swift",
+        "swift": "/symi/swift/getting-started-swift",
+        "wasm": "/symi/wasm/getting-started-swift"
+      },
+      "category_identifier": "introduction",
+      "language_paths": {
+        "kotlin": "manual/kotlin/getting-started-swift.md",
+        "python": "manual/python/getting-started-swift.md",
+        "rust": "manual/rust/getting-started-swift.md",
+        "swift": "manual/swift/getting-started-swift.md",
+        "wasm": "manual/wasm/getting-started-swift.md"
+      },
+      "page_identifier": "getting-started-swift",
+      "path": "getting-started-swift.md",
+      "title": "Getting started: Swift"
     },
     {
       "canonical_urls": {
@@ -2730,7 +2770,34 @@
     "placement.wasm.wasm_module.module_zeromatrix.3561defba5d5",
     "placement.wasm.wasm_module.module_zeta.25f1de1c8802"
   ],
-  "schema_version": 4,
+  "presentation_artifacts": [
+    {
+      "entry_count": 850,
+      "language": "python",
+      "path": "presentation/python.json"
+    },
+    {
+      "entry_count": 1026,
+      "language": "wasm",
+      "path": "presentation/wasm.json"
+    },
+    {
+      "entry_count": 837,
+      "language": "kotlin",
+      "path": "presentation/kotlin.json"
+    },
+    {
+      "entry_count": 837,
+      "language": "swift",
+      "path": "presentation/swift.json"
+    },
+    {
+      "entry_count": 7717,
+      "language": "rust",
+      "path": "presentation/rust.json"
+    }
+  ],
+  "schema_version": 5,
   "search_artifact": "search/wasm.json",
   "search_artifacts": [
     {

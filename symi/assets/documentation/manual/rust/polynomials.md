@@ -8,8 +8,19 @@ makes the query decline — `None` for `degree`, an error for the others.
 
 ### degree
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_degree_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_degree.a11d0fca0af0"></a>
-`symi::api::algebra::Session — pub fn degree<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType) -> Result<Option<usize>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn degree<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+) -> Result<Option<usize>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Degree in `variable`. `None` when the expression is not polynomial in
@@ -18,8 +29,19 @@ under the core convention).
 
 ### leading_coefficient
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_leading_coefficient_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_leading_coefficient.316e8ad21cfc"></a>
-`symi::api::algebra::Session — pub fn leading_coefficient<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn leading_coefficient<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Coefficient of the highest power of `variable`; may contain the other free
@@ -27,23 +49,25 @@ variables. Errors on non-polynomial or zero input.
 
 ### coefficient
 
-<a id="placement-placement.rust.native_rust.api_algebra_session_coefficient.1b8ac623d88d"></a>
-`symi::api::algebra::Session — pub fn coefficient<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType, power: usize) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
-
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationjetcoefficient_coefficient.2517447716de"></a>
-`symi::api::partial_differential_equations::PartialDifferentialEquationJetCoefficient — pub fn coefficient(&self) -> Expression`
-
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationprincipalcoefficient_coefficient.36c84887f4a8"></a>
-`symi::api::partial_differential_equations::PartialDifferentialEquationPrincipalCoefficient — pub fn coefficient(&self) -> Expression`
-
-
 Coefficient of `variable^power`; integer 0 when the term is absent. Errors
 on non-polynomial input.
 
 ### polynomial_gcd
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_polynomial_gcd_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_polynomial_gcd.f1a1e5671e14"></a>
-`symi::api::algebra::Session — pub fn polynomial_gcd<'a, VariableType>(&self, left: &Expression, right: &Expression, variable: VariableType) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn polynomial_gcd<'a, VariableType>(
+    &self,
+    left: &Expression,
+    right: &Expression,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Greatest common divisor of the two expressions as polynomials in `variable`
@@ -52,8 +76,20 @@ not polynomial in `variable`.
 
 ### resultant
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_resultant_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_resultant.defd7ec67600"></a>
-`symi::api::algebra::Session — pub fn resultant<'a, VariableType>(&self, left: &Expression, right: &Expression, variable: VariableType) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn resultant<'a, VariableType>(
+    &self,
+    left: &Expression,
+    right: &Expression,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Resultant with respect to `variable`; zero exactly when the two polynomials
@@ -61,11 +97,19 @@ share a root (over the algebraic closure). Errors on non-polynomial input.
 
 ### isolate_real_roots
 
-<a id="placement-placement.rust.native_rust.api_expression_operations_expression_isolate_real_roots.fc1b6ebe7acd"></a>
-`symi::api::expression_operations::Expression — pub fn isolate_real_roots<'a, VariableType>(&self, variable: VariableType) -> Result<Vec<IsolatingInterval>, ApiError> where VariableType: Into<VariableLike<'a>>`
-
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_solving_session_isolate_real_roots_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_isolate_real_roots.5561fe04483f"></a>
-`symi::api::solving::Session — pub fn isolate_real_roots<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType) -> Result<Vec<IsolatingInterval>, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn isolate_real_roots<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+) -> Result<Vec<IsolatingInterval>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 One `(lower, upper)` rational isolating interval per distinct real root,
@@ -78,14 +122,24 @@ getters.
 
 ### lower
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_results_isolatinginterval_lower_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_results_isolatinginterval_lower.6f3689208e56"></a>
-`symi::api::results::IsolatingInterval — pub fn lower(&self) -> Expression`
+<p class="symi-entry-owner">api::results::IsolatingInterval method</p>
+
+```rust signature
+pub fn lower(&self) -> Expression
+```
 
 
 ### upper
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_results_isolatinginterval_upper_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_results_isolatinginterval_upper.e57c65a14ea8"></a>
-`symi::api::results::IsolatingInterval — pub fn upper(&self) -> Expression`
+<p class="symi-entry-owner">api::results::IsolatingInterval method</p>
+
+```rust signature
+pub fn upper(&self) -> Expression
+```
 
 
 ## Gröbner bases and ideals
@@ -113,8 +167,21 @@ no new method to call.
 
 ### groebner_basis
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_groebner_basis_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_groebner_basis.84428111421f"></a>
-`symi::api::algebra::Session — pub fn groebner_basis<'a, IteratorType, VariableType>(&self, generators: &[Expression], variables: IteratorType, order: MonomialOrdering) -> Result<Option<Vec<Expression>>, ApiError> where IteratorType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn groebner_basis<'a, IteratorType, VariableType>(
+    &self,
+    generators: &[Expression],
+    variables: IteratorType,
+    order: MonomialOrdering,
+) -> Result<Option<Vec<Expression>>, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 The canonical reduced Gröbner basis of the ideal `<generators>` under the named
@@ -123,8 +190,22 @@ monomial order — monic, autoreduced, and sorted, so it is unique for the
 
 ### ideal_membership
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_ideal_membership_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_ideal_membership.528f883ec50e"></a>
-`symi::api::algebra::Session — pub fn ideal_membership<'a, IteratorType, VariableType>(&self, element: &Expression, generators: &[Expression], variables: IteratorType, order: MonomialOrdering) -> Result<Option<bool>, ApiError> where IteratorType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn ideal_membership<'a, IteratorType, VariableType>(
+    &self,
+    element: &Expression,
+    generators: &[Expression],
+    variables: IteratorType,
+    order: MonomialOrdering,
+) -> Result<Option<bool>, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Whether `element` lies in the ideal `<generators>`, decided by reducing it to
@@ -134,8 +215,22 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### ideal_sum
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_ideal_sum_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_ideal_sum.07c6b3070971"></a>
-`symi::api::algebra::Session — pub fn ideal_sum<'a, IteratorType, VariableType>(&self, generators_left: &[Expression], generators_right: &[Expression], variables: IteratorType, order: MonomialOrdering) -> Result<Option<Vec<Expression>>, ApiError> where IteratorType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn ideal_sum<'a, IteratorType, VariableType>(
+    &self,
+    generators_left: &[Expression],
+    generators_right: &[Expression],
+    variables: IteratorType,
+    order: MonomialOrdering,
+) -> Result<Option<Vec<Expression>>, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 A Gröbner basis of the ideal sum `I + J`, the ideal generated by the two
@@ -143,8 +238,22 @@ generator lists together. `None` on a non-\(\mathbb{Q}[\text{variables}]\) gener
 
 ### ideal_product
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_ideal_product_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_ideal_product.3209f1425a99"></a>
-`symi::api::algebra::Session — pub fn ideal_product<'a, IteratorType, VariableType>(&self, generators_left: &[Expression], generators_right: &[Expression], variables: IteratorType, order: MonomialOrdering) -> Result<Option<Vec<Expression>>, ApiError> where IteratorType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn ideal_product<'a, IteratorType, VariableType>(
+    &self,
+    generators_left: &[Expression],
+    generators_right: &[Expression],
+    variables: IteratorType,
+    order: MonomialOrdering,
+) -> Result<Option<Vec<Expression>>, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 A Gröbner basis of the ideal product \(I J\), generated by all pairwise
@@ -152,8 +261,22 @@ products of the two generator lists. `None` on a non-\(\mathbb{Q}[\text{variable
 
 ### ideal_intersection
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_ideal_intersection_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_ideal_intersection.227abfe301ad"></a>
-`symi::api::algebra::Session — pub fn ideal_intersection<'a, IteratorType, VariableType>(&self, generators_left: &[Expression], generators_right: &[Expression], variables: IteratorType, order: MonomialOrdering) -> Result<Option<Vec<Expression>>, ApiError> where IteratorType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn ideal_intersection<'a, IteratorType, VariableType>(
+    &self,
+    generators_left: &[Expression],
+    generators_right: &[Expression],
+    variables: IteratorType,
+    order: MonomialOrdering,
+) -> Result<Option<Vec<Expression>>, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 A generating set of the ideal intersection \(I \cap J\), computed by the standard
@@ -162,8 +285,23 @@ non-\(\mathbb{Q}[\text{variables}]\) generator.
 
 ### elimination_ideal
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_elimination_ideal_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_elimination_ideal.7548ef12a96f"></a>
-`symi::api::algebra::Session — pub fn elimination_ideal<'a, 'b, VariablesType, EliminateType, VariableType, EliminatedType>(&self, generators: &[Expression], variables: VariablesType, eliminate: EliminateType) -> Result<Option<Vec<Expression>>, ApiError> where VariablesType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>, EliminateType: IntoIterator<Item = EliminatedType>, EliminatedType: Into<VariableLike<'b>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn elimination_ideal<'a, 'b, VariablesType, EliminateType, VariableType, EliminatedType>(
+    &self,
+    generators: &[Expression],
+    variables: VariablesType,
+    eliminate: EliminateType,
+) -> Result<Option<Vec<Expression>>, ApiError>
+where
+    VariablesType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+    EliminateType: IntoIterator<Item = EliminatedType>,
+    EliminatedType: Into<VariableLike<'b>>,
+```
 
 
 A Gröbner basis of the elimination ideal \(\langle\operatorname{generators}\rangle \cap
@@ -181,8 +319,22 @@ elimination with the rational-parametrisation saturation wired in.
 
 ### change_monomial_order
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_change_monomial_order_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_change_monomial_order.a590b4e5fa99"></a>
-`symi::api::algebra::Session — pub fn change_monomial_order<'a, IteratorType, VariableType>(&self, basis: &[Expression], variables: IteratorType, source_order: MonomialOrdering, target_order: MonomialOrdering) -> Result<Option<Vec<Expression>>, ApiError> where IteratorType: IntoIterator<Item = VariableType>, VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn change_monomial_order<'a, IteratorType, VariableType>(
+    &self,
+    basis: &[Expression],
+    variables: IteratorType,
+    source_order: MonomialOrdering,
+    target_order: MonomialOrdering,
+) -> Result<Option<Vec<Expression>>, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Convert a Gröbner basis of a **zero-dimensional** ideal from `source_order` to
@@ -197,8 +349,23 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### implicitize
 
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_implicitize_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_implicitize.6a1744e798b0"></a>
-`symi::api::algebra::Session — pub fn implicitize<'a, 'b, CoordinatesType, ParametersType, CoordinateType, ParameterType>(&self, coordinates: CoordinatesType, parameters: ParametersType, parametric_expressions: &[Expression]) -> Result<Option<Vec<Expression>>, ApiError> where CoordinatesType: IntoIterator<Item = CoordinateType>, CoordinateType: Into<VariableLike<'a>>, ParametersType: IntoIterator<Item = ParameterType>, ParameterType: Into<VariableLike<'b>>`
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn implicitize<'a, 'b, CoordinatesType, ParametersType, CoordinateType, ParameterType>(
+    &self,
+    coordinates: CoordinatesType,
+    parameters: ParametersType,
+    parametric_expressions: &[Expression],
+) -> Result<Option<Vec<Expression>>, ApiError>
+where
+    CoordinatesType: IntoIterator<Item = CoordinateType>,
+    CoordinateType: Into<VariableLike<'a>>,
+    ParametersType: IntoIterator<Item = ParameterType>,
+    ParameterType: Into<VariableLike<'b>>,
+```
 
 
 The implicit ideal of a parametric curve or surface \(x_i = f_i(\operatorname{parameters})\) (the
@@ -219,17 +386,87 @@ This family is not part of the recommended `symi::api` facade in this release. C
 
 ## Additional API
 
+### Matrix
+
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_matrix_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix.2ba95f0af754"></a>
-### api::Matrix
+<p class="symi-entry-owner">Type</p>
 
-`symi::api — pub struct Matrix {`
+```rust signature
+pub struct Matrix
+```
 
-Returns `unknown`.
+Public type placement for Matrix.
 
+### Matrix
+
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_serialization_mathematicalobject_matrix_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_serialization_mathematicalobject_matrix.183aef3672be"></a>
-### api::serialization::MathematicalObject::Matrix
+<p class="symi-entry-owner">api::serialization::MathematicalObject variant</p>
 
-`symi::api::serialization::MathematicalObject — Matrix(Matrix)`
+```rust signature
+Matrix(Matrix)
+```
 
-Returns `variant`.
+Public variant placement for Matrix.
+
+### coefficient
+
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_algebra_session_coefficient_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_algebra_session_coefficient.1b8ac623d88d"></a>
+<p class="symi-entry-owner">api::algebra::Session method</p>
+
+```rust signature
+pub fn coefficient<'a, VariableType>(
+    &self,
+    input_expression: &Expression,
+    variable: VariableType,
+    power: usize,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+Coefficient of `variable^power`; integer 0 when the term is absent. Errors on non-polynomial input.
+
+### coefficient
+
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationjetcoefficient_coefficient_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationjetcoefficient_coefficient.2517447716de"></a>
+<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationJetCoefficient method</p>
+
+```rust signature
+pub fn coefficient(&self) -> Expression
+```
+
+Coefficient of `variable^power`; integer 0 when the term is absent. Errors on non-polynomial input.
+
+### coefficient
+
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationprincipalcoefficient_coefficient_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationprincipalcoefficient_coefficient.36c84887f4a8"></a>
+<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationPrincipalCoefficient method</p>
+
+```rust signature
+pub fn coefficient(&self) -> Expression
+```
+
+Coefficient of `variable^power`; integer 0 when the term is absent. Errors on non-polynomial input.
+
+### isolate_real_roots
+
+<a id="entry-presentation_rust_polynomials_capability_rust_native_rust_api_expression_operations_expression_isolate_real_roots_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_expression_operations_expression_isolate_real_roots.fc1b6ebe7acd"></a>
+<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+
+```rust signature
+pub fn isolate_real_roots<'a, VariableType>(
+    &self,
+    variable: VariableType,
+) -> Result<Vec<IsolatingInterval>, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+One `(lower, upper)` rational isolating interval per distinct real root, sorted ascending; a collapsed pair `(r, r)` marks an exact rational root. Requires a non-zero univariate polynomial with rational coefficients. Notes: WASM returns `IsolatingInterval` objects with `lower`/`upper` getters.
 

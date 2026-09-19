@@ -51,20 +51,35 @@ Collinear vertices raise.
 
 ### x
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_x_api_point2d_x"></a>
 <a id="placement-placement.wasm.wasm_class.point2d_x.c0a31a0b13c6"></a>
-Raw WebAssembly: `pub fn x(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Point2d property</p>
+
+```typescript signature
+readonly x: Expression
+```
 
 
 ### y
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_y_api_point2d_y"></a>
 <a id="placement-placement.wasm.wasm_class.point2d_y.09cc1987c90a"></a>
-Raw WebAssembly: `pub fn y(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Point2d property</p>
+
+```typescript signature
+readonly y: Expression
+```
 
 
 ### coordinates
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_coordinates_api_point2d_coordinates"></a>
 <a id="placement-placement.wasm.wasm_class.point2d_coordinates.16f05ca0798a"></a>
-Raw WebAssembly: `pub fn coordinates(&self) -> Result<Vec<Expression>, JsError>`
+<p class="symi-entry-owner">Point2d method</p>
+
+```typescript signature
+coordinates(): Expression[]
+```
 
 
 ### distance_to
@@ -78,8 +93,13 @@ Euclidean distance, exact (a `sqrt` expression in general).
 
 ### length
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_length_api_segment2d_length"></a>
 <a id="placement-placement.wasm.wasm_class.segment2d_length.b45e4ea3f5e4"></a>
-Raw WebAssembly: `pub fn length(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Segment2d method</p>
+
+```typescript signature
+length(): Expression
+```
 
 
 Also the finite-set length accessor on `Expression` in WASM; context
@@ -87,8 +107,13 @@ disambiguates.
 
 ### midpoint
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_midpoint_api_segment2d_midpoint"></a>
 <a id="placement-placement.wasm.wasm_class.segment2d_midpoint.62abdcfc22e3"></a>
-Raw WebAssembly: `pub fn midpoint(&self) -> Result<Point2d, JsError>`
+<p class="symi-entry-owner">Segment2d method</p>
+
+```typescript signature
+midpoint(): Point2d
+```
 
 
 ### perpendicular_bisector_equation
@@ -102,35 +127,37 @@ The bisector line as an `equal` relation in x and y.
 
 ### area
 
-<a id="placement-placement.wasm.wasm_class.circle2d_area.743b71e37a1b"></a>
-Raw WebAssembly: `pub fn area(&self) -> Result<Expression, JsError>`
-
+<a id="entry-presentation_wasm_geometry_capability_geometry_area_api_polygon2d_area"></a>
 <a id="placement-placement.wasm.wasm_class.polygon2d_area.7c6f2cf22633"></a>
-Raw WebAssembly: `pub fn area(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Polygon2d method</p>
 
+```typescript signature
+area(): Expression
+```
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_area_api_triangle2d_area"></a>
 <a id="placement-placement.wasm.wasm_class.triangle2d_area.33cc19cca2b3"></a>
-Raw WebAssembly: `pub fn area(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Triangle2d method</p>
+
+```typescript signature
+area(): Expression
+```
 
 
-Shoelace area (also on `Circle2d`).
+For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the
+ordered boundary. It is separate from `Circle2d.area()`, which returns
+\(\pi r^2\). A polygon's orientation therefore does not change its area.
+
+### Circle2d area
+
+
+The exact disk area \(\pi r^2\), using the circle's symbolic radius. This is
+not the polygon/triangle shoelace operation; both are displayed as `area` in
+the reference, under their distinct owners.
 
 ### perimeter
 
-<a id="placement-placement.wasm.wasm_class.polygon2d_perimeter.a5ef1f895818"></a>
-Raw WebAssembly: `pub fn perimeter(&self) -> Result<Expression, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.triangle2d_perimeter.227221b7c2c3"></a>
-Raw WebAssembly: `pub fn perimeter(&self) -> Result<Expression, JsError>`
-
-
 ### centroid
-
-<a id="placement-placement.wasm.wasm_class.polygon2d_centroid.5adb349efb75"></a>
-Raw WebAssembly: `pub fn centroid(&self) -> Result<Point2d, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.triangle2d_centroid.7503e63742f6"></a>
-Raw WebAssembly: `pub fn centroid(&self) -> Result<Point2d, JsError>`
-
 
 ### interior_angles
 
@@ -144,66 +171,68 @@ Each vertex paired with its interior angle. **Notes:** WASM returns
 
 ### vertex
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_vertex_api_results_vertexangle_vertex"></a>
 <a id="placement-placement.wasm.wasm_class.vertexangle_vertex.bbfbe7953588"></a>
-Raw WebAssembly: `pub fn vertex(&self) -> Point2d`
+<p class="symi-entry-owner">VertexAngle property</p>
+
+```typescript signature
+readonly vertex: Point2d
+```
 
 
 ### angle
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_angle_api_results_vertexangle_angle"></a>
 <a id="placement-placement.wasm.wasm_class.vertexangle_angle.987977655236"></a>
-Raw WebAssembly: `pub fn angle(&self) -> Expression`
+<p class="symi-entry-owner">VertexAngle property</p>
+
+```typescript signature
+readonly angle: Expression
+```
 
 
 ## circle_2d methods
 
 ### center
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_center_api_circle2d_center"></a>
 <a id="placement-placement.wasm.wasm_class.circle2d_center.0e20868fec4f"></a>
-Raw WebAssembly: `pub fn center(&self) -> Result<Point2d, JsError>`
+<p class="symi-entry-owner">Circle2d property</p>
+
+```typescript signature
+readonly center: Point2d
+```
 
 
 ### radius
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_radius_api_circle2d_radius"></a>
 <a id="placement-placement.wasm.wasm_class.circle2d_radius.fa13be61ae3c"></a>
-Raw WebAssembly: `pub fn radius(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Circle2d property</p>
+
+```typescript signature
+readonly radius: Expression
+```
 
 
 ### circumference
 
+<a id="entry-presentation_wasm_geometry_capability_geometry_circumference_api_circle2d_circumference"></a>
 <a id="placement-placement.wasm.wasm_class.circle2d_circumference.6d0e340e969d"></a>
-Raw WebAssembly: `pub fn circumference(&self) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Circle2d method</p>
+
+```typescript signature
+circumference(): Expression
+```
 
 
 ### equation
-
-<a id="placement-placement.wasm.wasm_class.circle2d_equation.f2d8bb126725"></a>
-Raw WebAssembly: `pub fn equation(&self, variable_x: &str, variable_y: &str) -> Result<Expression, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationproblem_equation.f2fc4e648569"></a>
-Raw WebAssembly: `pub fn equation(&self) -> Result<Expression, JsError>`
-
 
 The circle as an `equal` relation in x and y.
 
 ## Exact boundary intersections
 
 ### intersection
-
-<a id="placement-placement.wasm.wasm_class.circle2d_intersection.a7bed6c77edd"></a>
-Raw WebAssembly: `pub fn intersection(&self, other: &JsValue) -> Result<Box<[JsValue]>, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.point2d_intersection.031a02927b5c"></a>
-Raw WebAssembly: `pub fn intersection(&self, other: &JsValue) -> Result<Box<[JsValue]>, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.polygon2d_intersection.5d3e8cf15ec1"></a>
-Raw WebAssembly: `pub fn intersection(&self, other: &JsValue) -> Result<Box<[JsValue]>, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.segment2d_intersection.f98c7d6bf866"></a>
-Raw WebAssembly: `pub fn intersection(&self, other: &JsValue) -> Result<Box<[JsValue]>, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.triangle2d_intersection.bbb401de2277"></a>
-Raw WebAssembly: `pub fn intersection(&self, other: &JsValue) -> Result<Box<[JsValue]>, JsError>`
-
 
 Every point, segment, polygon, triangle, and circle exposes the same symmetric
 `intersection` method. Polygon and triangle operands mean their closed boundary;
@@ -226,136 +255,367 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
-<a id="placement-placement.wasm.wasm_class.circle2d.b811b7e71dd1"></a>
 ### Circle2d
 
-`pub fn new(center: &Point2d, radius: &Expression) -> Result<Circle2d, JsError>`
+<a id="entry-presentation_wasm_geometry_capability_geometry_circle_2d_api_circle2d"></a>
+<a id="placement-placement.wasm.wasm_class.circle2d.b811b7e71dd1"></a>
+<p class="symi-entry-owner">Circle2d constructor</p>
 
-Returns `Result<circle_2d, JsError>`.
+```typescript signature
+new Circle2d(center: Point2d, radius: Expression)
+```
 
-<a id="placement-placement.wasm.wasm_class.circle2d_tostring.fc0197c0b351"></a>
-### Circle2d.toString
+Construct the circle with the given center and radius.
 
-`pub fn to_js_string(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.context_circle2d.b6b5bff08685"></a>
-### Context.circle2d
-
-`pub fn circle_2d(&self, center: &Point2d, radius: &Expression) -> Result<Circle2d, JsError>`
-
-Returns `Result<circle_2d, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.context_point2d.7290572ebc0b"></a>
-### Context.point2d
-
-`pub fn point_2d(&self, x: &Expression, y: &Expression) -> Result<Point2d, JsError>`
-
-Returns `Result<point_2d, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.context_polygon2d.7769a1368f42"></a>
-### Context.polygon2d
-
-`pub fn polygon_2d(&self, vertices: Vec<Point2d>) -> Result<Polygon2d, JsError>`
-
-Returns `Result<polygon_2d, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.context_segment2d.bdd743314ff7"></a>
-### Context.segment2d
-
-`pub fn segment_2d(&self, start: &Point2d, end: &Point2d) -> Result<Segment2d, JsError>`
-
-Returns `Result<segment_2d, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.context_triangle2d.c3cf16ee529a"></a>
-### Context.triangle2d
-
-`pub fn triangle_2d(&self, point_a: &Point2d, point_b: &Point2d, point_c: &Point2d) -> Result<Triangle2d, JsError>`
-
-Returns `Result<triangle_2d, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.point2d.dca54a617fe2"></a>
 ### Point2d
 
-`pub fn new(x: &Expression, y: &Expression) -> Result<Point2d, JsError>`
+<a id="entry-presentation_wasm_geometry_capability_geometry_point_2d_api_point2d"></a>
+<a id="placement-placement.wasm.wasm_class.point2d.dca54a617fe2"></a>
+<p class="symi-entry-owner">Point2d constructor</p>
 
-Returns `Result<point_2d, JsError>`.
+```typescript signature
+new Point2d(x: Expression, y: Expression)
+```
 
-<a id="placement-placement.wasm.wasm_class.point2d_distanceto.7fec84f47201"></a>
-### Point2d.distanceTo
+Construct the point `(x, y)`.
 
-`pub fn distance_to(&self, other: &Point2d) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.point2d_tostring.dcea6d65a5d8"></a>
-### Point2d.toString
-
-`pub fn to_js_string(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.polygon2d.4810488732bd"></a>
 ### Polygon2d
 
-`pub fn new(vertices: Vec<Point2d>) -> Result<Polygon2d, JsError>`
+<a id="entry-presentation_wasm_geometry_capability_geometry_polygon_2d_api_polygon2d"></a>
+<a id="placement-placement.wasm.wasm_class.polygon2d.4810488732bd"></a>
+<p class="symi-entry-owner">Polygon2d constructor</p>
 
-Returns `Result<polygon_2d, JsError>`.
+```typescript signature
+new Polygon2d(vertices: Point2d[])
+```
 
-<a id="placement-placement.wasm.wasm_class.polygon2d_interiorangles.d871d0f39590"></a>
-### Polygon2d.interiorAngles
+Construct the polygon with the given vertices, in order.
 
-`pub fn interior_angles(&self) -> Result<Vec<VertexAngle>, JsError>`
-
-Returns `Result<Vec<vertex_angle>, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.polygon2d_tostring.1f9c721c2fbb"></a>
-### Polygon2d.toString
-
-`pub fn to_js_string(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.segment2d.119b443ccd78"></a>
 ### Segment2d
 
-`pub fn new(start: &Point2d, end: &Point2d) -> Result<Segment2d, JsError>`
+<a id="entry-presentation_wasm_geometry_capability_geometry_segment_2d_api_segment2d"></a>
+<a id="placement-placement.wasm.wasm_class.segment2d.119b443ccd78"></a>
+<p class="symi-entry-owner">Segment2d constructor</p>
 
-Returns `Result<segment_2d, JsError>`.
+```typescript signature
+new Segment2d(start: Point2d, end: Point2d)
+```
 
-<a id="placement-placement.wasm.wasm_class.segment2d_perpendicularbisectorequation.d8f930147b9c"></a>
-### Segment2d.perpendicularBisectorEquation
+Construct the segment running from `start` to `end`.
 
-`pub fn perpendicular_bisector_equation(&self, variable_x: &str, variable_y: &str) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.segment2d_tostring.e994a8c59a1e"></a>
-### Segment2d.toString
-
-`pub fn to_js_string(&self) -> Result<String, JsError>`
-
-Returns `Result<String, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.triangle2d.73179d4e894b"></a>
 ### Triangle2d
 
-`pub fn new(point_a: &Point2d, point_b: &Point2d, point_c: &Point2d) -> Result<Triangle2d, JsError>`
+<a id="entry-presentation_wasm_geometry_capability_geometry_triangle_2d_api_triangle2d"></a>
+<a id="placement-placement.wasm.wasm_class.triangle2d.73179d4e894b"></a>
+<p class="symi-entry-owner">Triangle2d constructor</p>
 
-Returns `Result<triangle_2d, JsError>`.
+```typescript signature
+new Triangle2d(point_a: Point2d, point_b: Point2d, point_c: Point2d)
+```
 
+Construct the triangle with the given vertices.
+
+### area
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_area_api_circle2d_area"></a>
+<a id="placement-placement.wasm.wasm_class.circle2d_area.743b71e37a1b"></a>
+<p class="symi-entry-owner">Circle2d method</p>
+
+```typescript signature
+area(): Expression
+```
+
+Area of the circle, \(\pi r^2\).
+
+### centroid
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_centroid_api_polygon2d_centroid"></a>
+<a id="placement-placement.wasm.wasm_class.polygon2d_centroid.5adb349efb75"></a>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+```typescript signature
+centroid(): Point2d
+```
+
+Centroid of the polygon's vertices.
+
+### centroid
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_centroid_api_geometry_operations_triangle2d_centroid"></a>
+<a id="placement-placement.wasm.wasm_class.triangle2d_centroid.7503e63742f6"></a>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+```typescript signature
+centroid(): Point2d
+```
+
+Centroid of the triangle's vertices.
+
+### circle2d
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_circle_2d_api_session_circle_2d"></a>
+<a id="placement-placement.wasm.wasm_class.context_circle2d.b6b5bff08685"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```typescript signature
+circle2d(center: Point2d, radius: Expression): Circle2d
+```
+
+Construct the circle with the given center and radius.
+
+### distanceTo
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_distance_to_api_point2d_distance_to"></a>
+<a id="placement-placement.wasm.wasm_class.point2d_distanceto.7fec84f47201"></a>
+<p class="symi-entry-owner">Point2d method</p>
+
+```typescript signature
+distanceTo(other: Point2d): Expression
+```
+
+Euclidean distance, exact (a `sqrt` expression in general).
+
+### equation
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_equation_api_geometry_operations_circle2d_equation"></a>
+<a id="placement-placement.wasm.wasm_class.circle2d_equation.f2d8bb126725"></a>
+<p class="symi-entry-owner">Circle2d method</p>
+
+```typescript signature
+equation(variable_x: string, variable_y: string): Expression
+```
+
+The circle as an `equal` relation in x and y.
+
+### equation
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_equation_api_partial_differential_equations_partialdifferentialequationproblem_equation"></a>
+<a id="placement-placement.wasm.wasm_class.partialdifferentialequationproblem_equation.f2fc4e648569"></a>
+<p class="symi-entry-owner">PartialDifferentialEquationProblem property</p>
+
+```typescript signature
+readonly equation: Expression
+```
+
+The governing residual, interpreted as equal to zero.
+
+### interiorAngles
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_interior_angles_api_geometry_operations_polygon2d_interior_angles"></a>
+<a id="placement-placement.wasm.wasm_class.polygon2d_interiorangles.d871d0f39590"></a>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+```typescript signature
+interiorAngles(): VertexAngle[]
+```
+
+Each vertex paired with its interior angle. Notes: WASM returns `vertex_angle` objects with `vertex`/`angle` getters.
+
+### interiorAngles
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_interior_angles_api_geometry_operations_triangle2d_interior_angles"></a>
 <a id="placement-placement.wasm.wasm_class.triangle2d_interiorangles.4cd4d0d93fa8"></a>
-### Triangle2d.interiorAngles
+<p class="symi-entry-owner">Triangle2d method</p>
 
-`pub fn interior_angles(&self) -> Result<Vec<VertexAngle>, JsError>`
+```typescript signature
+interiorAngles(): VertexAngle[]
+```
 
-Returns `Result<Vec<vertex_angle>, JsError>`.
+Each vertex paired with its interior angle. Notes: WASM returns `vertex_angle` objects with `vertex`/`angle` getters.
+
+### intersection
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_intersection_api_circle2d_intersection"></a>
+<a id="placement-placement.wasm.wasm_class.circle2d_intersection.a7bed6c77edd"></a>
+<p class="symi-entry-owner">Circle2d method</p>
+
+```typescript signature
+intersection(other: any): any[]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### intersection
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_intersection_api_point2d_intersection"></a>
+<a id="placement-placement.wasm.wasm_class.point2d_intersection.031a02927b5c"></a>
+<p class="symi-entry-owner">Point2d method</p>
+
+```typescript signature
+intersection(other: any): any[]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### intersection
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_intersection_api_polygon2d_intersection"></a>
+<a id="placement-placement.wasm.wasm_class.polygon2d_intersection.5d3e8cf15ec1"></a>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+```typescript signature
+intersection(other: any): any[]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### intersection
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_intersection_api_segment2d_intersection"></a>
+<a id="placement-placement.wasm.wasm_class.segment2d_intersection.f98c7d6bf866"></a>
+<p class="symi-entry-owner">Segment2d method</p>
+
+```typescript signature
+intersection(other: any): any[]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### intersection
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_intersection_api_triangle2d_intersection"></a>
+<a id="placement-placement.wasm.wasm_class.triangle2d_intersection.bbb401de2277"></a>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+```typescript signature
+intersection(other: any): any[]
+```
+
+Return the complete exact boundary intersection with another supported plane geometry.
+
+### perimeter
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_perimeter_api_polygon2d_perimeter"></a>
+<a id="placement-placement.wasm.wasm_class.polygon2d_perimeter.a5ef1f895818"></a>
+<p class="symi-entry-owner">Polygon2d method</p>
+
+```typescript signature
+perimeter(): Expression
+```
+
+Perimeter of the polygon, the sum of its edge lengths.
+
+### perimeter
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_perimeter_api_triangle2d_perimeter"></a>
+<a id="placement-placement.wasm.wasm_class.triangle2d_perimeter.227221b7c2c3"></a>
+<p class="symi-entry-owner">Triangle2d method</p>
+
+```typescript signature
+perimeter(): Expression
+```
+
+Perimeter of the triangle, the sum of its side lengths.
+
+### perpendicularBisectorEquation
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_perpendicular_bisector_equation_api_geometry_operations_segment2d_perpendicular_bisector_equation"></a>
+<a id="placement-placement.wasm.wasm_class.segment2d_perpendicularbisectorequation.d8f930147b9c"></a>
+<p class="symi-entry-owner">Segment2d method</p>
+
+```typescript signature
+perpendicularBisectorEquation(
+    variable_x: string,
+    variable_y: string,
+): Expression
+```
+
+The bisector line as an `equal` relation in x and y.
+
+### point2d
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_point_2d_api_session_point_2d"></a>
+<a id="placement-placement.wasm.wasm_class.context_point2d.7290572ebc0b"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```typescript signature
+point2d(x: Expression, y: Expression): Point2d
+```
+
+Construct the point `(x, y)`.
+
+### polygon2d
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_polygon_2d_api_session_polygon_2d"></a>
+<a id="placement-placement.wasm.wasm_class.context_polygon2d.7769a1368f42"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```typescript signature
+polygon2d(vertices: Point2d[]): Polygon2d
+```
+
+Simple polygon from its vertex list in order; degenerate inputs raise.
+
+### segment2d
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_segment_2d_api_session_segment_2d"></a>
+<a id="placement-placement.wasm.wasm_class.context_segment2d.bdd743314ff7"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```typescript signature
+segment2d(start: Point2d, end: Point2d): Segment2d
+```
+
+Construct the segment running from `start` to `end`.
+
+### toString
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_to_js_string_unresolved"></a>
+<a id="placement-placement.wasm.wasm_class.circle2d_tostring.fc0197c0b351"></a>
+<p class="symi-entry-owner">Circle2d method</p>
+
+```typescript signature
+toString(): string
+```
+
+The mathematical text of this object, as a JavaScript string.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.point2d_tostring.dcea6d65a5d8"></a>
+<p class="symi-entry-owner">Point2d method: <code>Point2d.toString</code></p>
+
+```typescript signature
+toString(): string
+```
+
+<a id="placement-placement.wasm.wasm_class.polygon2d_tostring.1f9c721c2fbb"></a>
+<p class="symi-entry-owner">Polygon2d method: <code>Polygon2d.toString</code></p>
+
+```typescript signature
+toString(): string
+```
+
+<a id="placement-placement.wasm.wasm_class.segment2d_tostring.e994a8c59a1e"></a>
+<p class="symi-entry-owner">Segment2d method: <code>Segment2d.toString</code></p>
+
+```typescript signature
+toString(): string
+```
 
 <a id="placement-placement.wasm.wasm_class.triangle2d_tostring.63289bc04e2d"></a>
-### Triangle2d.toString
+<p class="symi-entry-owner">Triangle2d method: <code>Triangle2d.toString</code></p>
 
-`pub fn to_js_string(&self) -> String`
+```typescript signature
+toString(): string
+```
 
-Returns `String`.
+</details>
+
+### triangle2d
+
+<a id="entry-presentation_wasm_geometry_capability_geometry_triangle_2d_api_session_triangle_2d"></a>
+<a id="placement-placement.wasm.wasm_class.context_triangle2d.c3cf16ee529a"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```typescript signature
+triangle2d(
+    point_a: Point2d,
+    point_b: Point2d,
+    point_c: Point2d,
+): Triangle2d
+```
+
+Collinear vertices raise.
 

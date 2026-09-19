@@ -6,8 +6,21 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
+<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_analysis_session_integral_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_integral.080cbf1c911a"></a>
-`symi::api::analysis::Session — pub fn integral<'a, VariableType>(&self, integrand: &Expression, variable: VariableType, lower: Option<&Expression>, upper: Option<&Expression>) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::analysis::Session method</p>
+
+```rust signature
+pub fn integral<'a, VariableType>(
+    &self,
+    integrand: &Expression,
+    variable: VariableType,
+    lower: Option<&Expression>,
+    upper: Option<&Expression>,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Build an *unevaluated* integral node (indefinite when bounds are omitted).
@@ -22,8 +35,21 @@ be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 ### summation
 
+<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_analysis_session_summation_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_summation.e22d295b8180"></a>
-`symi::api::analysis::Session — pub fn summation<'a, VariableType>(&self, summand: &Expression, index: VariableType, lower: &Expression, upper: &Expression) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::analysis::Session method</p>
+
+```rust signature
+pub fn summation<'a, VariableType>(
+    &self,
+    summand: &Expression,
+    index: VariableType,
+    lower: &Expression,
+    upper: &Expression,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Build a summation node \(\sum\). `execute` evaluates it when a closed form or
@@ -116,8 +142,21 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
+<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_analysis_session_product_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_product.91517c170a43"></a>
-`symi::api::analysis::Session — pub fn product<'a, VariableType>(&self, multiplicand: &Expression, index: VariableType, lower: &Expression, upper: &Expression) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::analysis::Session method</p>
+
+```rust signature
+pub fn product<'a, VariableType>(
+    &self,
+    multiplicand: &Expression,
+    index: VariableType,
+    lower: &Expression,
+    upper: &Expression,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Definite indexed product \(\prod_{\mathit{index}=\mathit{lower}}^{\mathit{upper}} \mathit{multiplicand}\), a first-class
@@ -176,8 +215,19 @@ placeholder rather than a guess.
 
 ### product_indefinite
 
+<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_analysis_session_product_indefinite_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_product_indefinite.56c49f13639d"></a>
-`symi::api::analysis::Session — pub fn product_indefinite<'a, VariableType>(&self, multiplicand: &Expression, index: VariableType) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
+<p class="symi-entry-owner">api::analysis::Session method</p>
+
+```rust signature
+pub fn product_indefinite<'a, VariableType>(
+    &self,
+    multiplicand: &Expression,
+    index: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
 
 
 Indefinite (anti-quotient) product: the `P(k)` satisfying
@@ -193,8 +243,17 @@ form is in scope.
 
 ### piecewise
 
+<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_solving_session_piecewise_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_piecewise.adb8a1ad3b3e"></a>
-`symi::api::solving::Session — pub fn piecewise(&self, branches: &[PiecewiseBranch], otherwise: Option<&Expression>) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::solving::Session method</p>
+
+```rust signature
+pub fn piecewise(
+    &self,
+    branches: &[PiecewiseBranch],
+    otherwise: Option<&Expression>,
+) -> Result<Expression, ApiError>
+```
 
 
 Build a piecewise expression from `(value, condition)` pairs with first-match

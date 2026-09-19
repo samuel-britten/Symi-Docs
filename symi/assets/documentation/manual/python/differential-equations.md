@@ -40,11 +40,35 @@ placeholder are not recognised by the ODE classifier.
 
 ### solve_ordinary_differential_equation
 
-<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation.8b5bb9481206"></a>
-`Context.solve_ordinary_differential_equation(equation, dependent_function_call, independent_variable, initial_conditions = None)`
-
+<a id="entry-presentation_python_differential_equations_capability_equations_solve_ordinary_differential_equation_api_solving_session_solve_ordinary_differential_equation"></a>
 <a id="placement-placement.python.python_module.module_solve_ordinary_differential_equation.34bcba790969"></a>
-`symi.solve_ordinary_differential_equation(equation, dependent_function_call, independent_variable, initial_conditions = None)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_ordinary_differential_equation(
+    equation: ExpressionLike,
+    dependent_function_call: ExpressionLike,
+    independent_variable: VariableLike,
+    initial_conditions: Optional[Iterable[tuple[ExpressionLike, ExpressionLike]]] = None,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation.8b5bb9481206"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_ordinary_differential_equation</code></p>
+
+```python signature
+solve_ordinary_differential_equation(
+    equation: ExpressionLike,
+    dependent_function_call: ExpressionLike,
+    independent_variable: VariableLike,
+    initial_conditions: Optional[Iterable[tuple[ExpressionLike, ExpressionLike]]] = None,
+) -> Expression
+```
+
+</details>
 
 
 Solve an ODE for the unknown function named by `dependent_function_call`
@@ -66,11 +90,41 @@ passes a flat interleaved array `[point_0, value_0, ...]`.
 
 ### solve_ordinary_differential_equation_request
 
-<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation_request.9b6e95f2b190"></a>
-`Context.solve_ordinary_differential_equation_request(equation, dependent_function_call, independent_variable, scope, condition_residuals=None, method="automatic", regularity="classical")`
-
+<a id="entry-presentation_python_differential_equations_capability_contexts_solve_ordinary_differential_equation_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_request"></a>
 <a id="placement-placement.python.python_module.module_solve_ordinary_differential_equation_request.162390703771"></a>
-`symi.solve_ordinary_differential_equation_request(equation, dependent_function_call, independent_variable, scope, condition_residuals=None, method="automatic", regularity="classical")`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_ordinary_differential_equation_request(
+    equation: expression_input,
+    dependent_function_call: expression_input,
+    independent_variable: variable_input,
+    scope: str,
+    condition_residuals: Optional[expression_collection_input] = None,
+    method: str = "automatic",
+    regularity: str = "classical",
+) -> ordinary_differential_equation_solve_result
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation_request.9b6e95f2b190"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_ordinary_differential_equation_request</code></p>
+
+```python signature
+solve_ordinary_differential_equation_request(
+    equation: expression_input,
+    dependent_function_call: expression_input,
+    independent_variable: variable_input,
+    scope: str,
+    condition_residuals: Optional[expression_collection_input] = None,
+    method: str = "automatic",
+    regularity: str = "classical",
+) -> ordinary_differential_equation_solve_result
+```
+
+</details>
 
 
 Solve one scalar ODE request. Each condition residual is read as equal to zero
@@ -99,11 +153,39 @@ naming the offending parameter.
 
 ### solve_ordinary_differential_equation_with_history
 
-<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation_with_history.44447471321c"></a>
-`Context.solve_ordinary_differential_equation_with_history(equation, dependent_function_call, independent_variable, history_value, history_start, history_end)`
-
+<a id="entry-presentation_python_differential_equations_capability_contexts_solve_ordinary_differential_equation_with_history_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_with_history"></a>
 <a id="placement-placement.python.python_module.module_solve_ordinary_differential_equation_with_history.92044eea17ea"></a>
-`symi.solve_ordinary_differential_equation_with_history(equation, dependent_function_call, independent_variable, history_value, history_start, history_end)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_ordinary_differential_equation_with_history(
+    equation: expression_input,
+    dependent_function_call: expression_input,
+    independent_variable: variable_input,
+    history_value: expression_input,
+    history_start: expression_input,
+    history_end: expression_input,
+) -> ordinary_differential_equation_solve_result
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation_with_history.44447471321c"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_ordinary_differential_equation_with_history</code></p>
+
+```python signature
+solve_ordinary_differential_equation_with_history(
+    equation: expression_input,
+    dependent_function_call: expression_input,
+    independent_variable: variable_input,
+    history_value: expression_input,
+    history_start: expression_input,
+    history_end: expression_input,
+) -> ordinary_differential_equation_solve_result
+```
+
+</details>
 
 
 Solve a retarded delay ODE from a constant history on the stated interval
@@ -116,11 +198,37 @@ solution, so the request is particular.
 
 ### solve_ordinary_differential_equation_system_request
 
-<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation_system_request.a85a23b83559"></a>
-`Context.solve_ordinary_differential_equation_system_request(equations, dependent_function_calls, independent_variable, condition_residuals=None, method="automatic")`
-
+<a id="entry-presentation_python_differential_equations_capability_contexts_solve_ordinary_differential_equation_system_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_system_request"></a>
 <a id="placement-placement.python.python_module.module_solve_ordinary_differential_equation_system_request.7413c2777014"></a>
-`symi.solve_ordinary_differential_equation_system_request(equations, dependent_function_calls, independent_variable, condition_residuals=None, method="automatic")`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_ordinary_differential_equation_system_request(
+    equations: expression_collection_input,
+    dependent_function_calls: expression_collection_input,
+    independent_variable: variable_input,
+    condition_residuals: Optional[expression_collection_input] = None,
+    method: str = "automatic",
+) -> ordinary_differential_equation_system_solve_result
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation_system_request.a85a23b83559"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_ordinary_differential_equation_system_request</code></p>
+
+```python signature
+solve_ordinary_differential_equation_system_request(
+    equations: expression_collection_input,
+    dependent_function_calls: expression_collection_input,
+    independent_variable: variable_input,
+    condition_residuals: Optional[expression_collection_input] = None,
+    method: str = "automatic",
+) -> ordinary_differential_equation_system_solve_result
+```
+
+</details>
 
 
 Solve a system of ODEs in one coordinate, one equation per declared unknown.
@@ -133,11 +241,39 @@ verified against every equation and datum.
 
 ### verify_ordinary_differential_equation_system_solution
 
-<a id="placement-placement.python.python_class.context_verify_ordinary_differential_equation_system_solution.8454d965cf59"></a>
-`Context.verify_ordinary_differential_equation_system_solution(equations, dependent_function_calls, independent_variable, components, generated_constants, condition_residuals=None)`
-
+<a id="entry-presentation_python_differential_equations_capability_contexts_verify_ordinary_differential_equation_system_solution_api_ordinary_differential_equations_session_verify_ordinary_differential_equation_system_solution"></a>
 <a id="placement-placement.python.python_module.module_verify_ordinary_differential_equation_system_solution.e89c19aef2c2"></a>
-`symi.verify_ordinary_differential_equation_system_solution(equations, dependent_function_calls, independent_variable, components, generated_constants, condition_residuals=None)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+verify_ordinary_differential_equation_system_solution(
+    equations: expression_collection_input,
+    dependent_function_calls: expression_collection_input,
+    independent_variable: variable_input,
+    components: expression_collection_input,
+    generated_constants: expression_collection_input,
+    condition_residuals: Optional[expression_collection_input] = None,
+) -> ordinary_differential_equation_system_verification_report
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_verify_ordinary_differential_equation_system_solution.8454d965cf59"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.verify_ordinary_differential_equation_system_solution</code></p>
+
+```python signature
+verify_ordinary_differential_equation_system_solution(
+    equations: expression_collection_input,
+    dependent_function_calls: expression_collection_input,
+    independent_variable: variable_input,
+    components: expression_collection_input,
+    generated_constants: expression_collection_input,
+    condition_residuals: Optional[expression_collection_input] = None,
+) -> ordinary_differential_equation_system_verification_report
+```
+
+</details>
 
 
 Check a supplied assignment without solving: no solver runs, so a swapped
@@ -147,8 +283,13 @@ the map from `generated_constants` to the initial jet), and `required_rank`.
 
 ### OrdinaryDifferentialEquationSolveResult
 
+<a id="entry-presentation_python_differential_equations_capability_contexts_ordinarydifferentialequationsolveresult_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult"></a>
 <a id="placement-placement.python.python_class.ordinarydifferentialequationsolveresult.d2d24a57b343"></a>
-`class symi.OrdinaryDifferentialEquationSolveResult`
+<p class="symi-entry-owner">Type</p>
+
+```python signature
+class OrdinaryDifferentialEquationSolveResult
+```
 
 `verdict` (`solved`/`declined`), `method`, `solution`, `form`
 (`explicit`/`implicit`), `generated_constants`, `verification`
@@ -158,8 +299,13 @@ transform solution, `frequency_domain_equation` and `image`.
 
 ### OrdinaryDifferentialEquationSystemSolveResult
 
+<a id="entry-presentation_python_differential_equations_capability_contexts_ordinarydifferentialequationsystemsolveresult_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult"></a>
 <a id="placement-placement.python.python_class.ordinarydifferentialequationsystemsolveresult.0c154c915822"></a>
-`class symi.OrdinaryDifferentialEquationSystemSolveResult`
+<p class="symi-entry-owner">Type</p>
+
+```python signature
+class OrdinaryDifferentialEquationSystemSolveResult
+```
 
 `verdict`, `method`, `route` (`sequential`, `fundamental_matrix`, or
 `dependency_blocks`), `components` in declaration order, `generated_constants`,
@@ -167,18 +313,47 @@ transform solution, `frequency_domain_equation` and `image`.
 
 ### OrdinaryDifferentialEquationSystemVerificationReport
 
+<a id="entry-presentation_python_differential_equations_capability_contexts_ordinarydifferentialequationsystemverificationreport_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport"></a>
 <a id="placement-placement.python.python_class.ordinarydifferentialequationsystemverificationreport.92e863cb4a59"></a>
-`class symi.OrdinaryDifferentialEquationSystemVerificationReport`
+<p class="symi-entry-owner">Type</p>
+
+```python signature
+class OrdinaryDifferentialEquationSystemVerificationReport
+```
 
 `verdict`, `generality`, and `required_rank`.
 
 ### solve_ordinary_differential_equation_with_particular_solution
 
-<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation_with_particular_solution.81aaefb22c81"></a>
-`Context.solve_ordinary_differential_equation_with_particular_solution(equation, dependent_function_call, independent_variable, particular_solution)`
-
+<a id="entry-presentation_python_differential_equations_capability_equations_solve_ordinary_differential_equation_with_particular_solution_api_solving_session_solve_ordinary_differential_equation_with_particular_solution"></a>
 <a id="placement-placement.python.python_module.module_solve_ordinary_differential_equation_with_particular_solution.5526cb26f075"></a>
-`symi.solve_ordinary_differential_equation_with_particular_solution(equation, dependent_function_call, independent_variable, particular_solution)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_ordinary_differential_equation_with_particular_solution(
+    equation: ExpressionLike,
+    dependent_function_call: ExpressionLike,
+    independent_variable: VariableLike,
+    particular_solution: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_ordinary_differential_equation_with_particular_solution.81aaefb22c81"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_ordinary_differential_equation_with_particular_solution</code></p>
+
+```python signature
+solve_ordinary_differential_equation_with_particular_solution(
+    equation: ExpressionLike,
+    dependent_function_call: ExpressionLike,
+    independent_variable: VariableLike,
+    particular_solution: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 Riccati-specific entry: with a known particular solution \(y_1\), the
@@ -188,11 +363,35 @@ not Riccati.
 
 ### solve_linear_recurrence
 
-<a id="placement-placement.python.python_class.context_solve_linear_recurrence.4787f699ed82"></a>
-`Context.solve_linear_recurrence(equation, sequence_call, index_variable, initial_conditions = None)`
-
+<a id="entry-presentation_python_differential_equations_capability_equations_solve_linear_recurrence_api_solving_session_solve_linear_recurrence"></a>
 <a id="placement-placement.python.python_module.module_solve_linear_recurrence.7c6ba50bd5f2"></a>
-`symi.solve_linear_recurrence(equation, sequence_call, index_variable, initial_conditions = None)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_linear_recurrence(
+    equation: ExpressionLike,
+    sequence_call: ExpressionLike,
+    index_variable: VariableLike,
+    initial_conditions: Optional[Iterable[tuple[ExpressionLike, ExpressionLike]]] = None,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_linear_recurrence.4787f699ed82"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_linear_recurrence</code></p>
+
+```python signature
+solve_linear_recurrence(
+    equation: ExpressionLike,
+    sequence_call: ExpressionLike,
+    index_variable: VariableLike,
+    initial_conditions: Optional[Iterable[tuple[ExpressionLike, ExpressionLike]]] = None,
+) -> Expression
+```
+
+</details>
 
 
 Solve a linear recurrence for the unknown sequence named by `sequence_call`
@@ -228,11 +427,39 @@ the constants leaves the symbolic-constant general solution intact.
 
 ### solve_partial_differential_equation_request
 
-<a id="placement-placement.python.python_class.context_solve_partial_differential_equation_request.0c3a5e7d1260"></a>
-`Context.solve_partial_differential_equation_request(problem, scope, geometric_domain="whole_space", regularity="unrestricted", solution_class="unrestricted", method="automatic")`
-
+<a id="entry-presentation_python_differential_equations_capability_contexts_solve_partial_differential_equation_request_api_partial_differential_equations_session_solve_partial_differential_equation_request"></a>
 <a id="placement-placement.python.python_module.module_solve_partial_differential_equation_request.cc18fc38960b"></a>
-`symi.solve_partial_differential_equation_request(problem, scope, geometric_domain="whole_space", regularity="unrestricted", solution_class="unrestricted", method="automatic")`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_partial_differential_equation_request(
+    problem: partial_differential_equation_problem,
+    scope: str,
+    geometric_domain: str = "whole_space",
+    regularity: str = "unrestricted",
+    solution_class: str = "unrestricted",
+    method: str = "automatic",
+) -> partial_differential_equation_solve_result
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_partial_differential_equation_request.0c3a5e7d1260"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_partial_differential_equation_request</code></p>
+
+```python signature
+solve_partial_differential_equation_request(
+    problem: partial_differential_equation_problem,
+    scope: str,
+    geometric_domain: str = "whole_space",
+    regularity: str = "unrestricted",
+    solution_class: str = "unrestricted",
+    method: str = "automatic",
+) -> partial_differential_equation_solve_result
+```
+
+</details>
 
 
 Solve a PDE request in which the geometry, regularity, and solution class are
@@ -253,8 +480,13 @@ implemented method supports declines with `declared_geometry_not_supported` or
 
 ### establishes_completeness
 
+<a id="entry-presentation_python_differential_equations_capability_contexts_establishes_completeness_api_partial_differential_equations_partialdifferentialequationsolutionfamily_establishes_completeness"></a>
 <a id="placement-placement.python.python_class.partialdifferentialequationsolutionfamily_establishes_completeness.d0d1c58db829"></a>
-`PartialDifferentialEquationSolutionFamily.establishes_completeness`
+<p class="symi-entry-owner">PartialDifferentialEquationSolutionFamily property</p>
+
+```python signature
+establishes_completeness: bool
+```
 
 
 Whether the family carries a completeness theorem whose every identity was
@@ -263,11 +495,25 @@ coverage of it.
 
 ### derive_partial_differential_equation_point_symmetries
 
-<a id="placement-placement.python.python_class.context_derive_partial_differential_equation_point_symmetries.ee176ee754ab"></a>
-`Context.derive_partial_differential_equation_point_symmetries(problem)`
-
+<a id="entry-presentation_python_differential_equations_capability_contexts_derive_partial_differential_equation_point_symmetries_api_partial_differential_equations_session_derive_partial_differential_equation_point_symmetries"></a>
 <a id="placement-placement.python.python_module.module_derive_partial_differential_equation_point_symmetries.d34c8c04e073"></a>
-`symi.derive_partial_differential_equation_point_symmetries(problem)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+derive_partial_differential_equation_point_symmetries(problem: partial_differential_equation_problem) -> partial_differential_equation_point_symmetry_algebra
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_derive_partial_differential_equation_point_symmetries.ee176ee754ab"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.derive_partial_differential_equation_point_symmetries</code></p>
+
+```python signature
+derive_partial_differential_equation_point_symmetries(problem: partial_differential_equation_problem) -> partial_differential_equation_point_symmetry_algebra
+```
+
+</details>
 
 
 Derive the point-symmetry algebra of a scalar first- or second-order PDE from
@@ -283,11 +529,25 @@ discrete symmetries are never claimed.
 
 ### construct_partial_differential_equation_point_symmetry_action
 
-<a id="placement-placement.python.python_class.context_construct_partial_differential_equation_point_symmetry_action.7eeb86f85ac4"></a>
-`Context.construct_partial_differential_equation_point_symmetry_action(problem)`
-
+<a id="entry-presentation_python_differential_equations_capability_contexts_construct_partial_differential_equation_point_symmetry_action_api_partial_differential_equations_session_construct_partial_differential_equation_point_symmetry_action"></a>
 <a id="placement-placement.python.python_module.module_construct_partial_differential_equation_point_symmetry_action.d6484ffbc4bd"></a>
-`symi.construct_partial_differential_equation_point_symmetry_action(problem)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+construct_partial_differential_equation_point_symmetry_action(problem: partial_differential_equation_problem) -> partial_differential_equation_point_symmetry_action
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_construct_partial_differential_equation_point_symmetry_action.7eeb86f85ac4"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.construct_partial_differential_equation_point_symmetry_action</code></p>
+
+```python signature
+construct_partial_differential_equation_point_symmetry_action(problem: partial_differential_equation_problem) -> partial_differential_equation_point_symmetry_action
+```
+
+</details>
 
 
 Integrate every basis generator into a one-parameter group, verify each group
@@ -301,11 +561,33 @@ connected local action `u = a + A f(X)`. The result carries `parameters`,
 
 ### partial_differential_equation_point_symmetry_generator
 
-<a id="placement-placement.python.python_class.context_partial_differential_equation_point_symmetry_generator.29e8c6c05930"></a>
-`Context.partial_differential_equation_point_symmetry_generator(problem, coordinate_infinitesimals, dependent_infinitesimal)`
-
+<a id="entry-presentation_python_differential_equations_capability_contexts_partial_differential_equation_point_symmetry_generator_api_partial_differential_equations_session_partial_differential_equation_point_symmetry_generator"></a>
 <a id="placement-placement.python.python_module.module_partial_differential_equation_point_symmetry_generator.780b1859c271"></a>
-`symi.partial_differential_equation_point_symmetry_generator(problem, coordinate_infinitesimals, dependent_infinitesimal)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+partial_differential_equation_point_symmetry_generator(
+    problem: partial_differential_equation_problem,
+    coordinate_infinitesimals: expression_collection_input,
+    dependent_infinitesimal: expression_input,
+) -> partial_differential_equation_point_symmetry_generator
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_partial_differential_equation_point_symmetry_generator.29e8c6c05930"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.partial_differential_equation_point_symmetry_generator</code></p>
+
+```python signature
+partial_differential_equation_point_symmetry_generator(
+    problem: partial_differential_equation_problem,
+    coordinate_infinitesimals: expression_collection_input,
+    dependent_infinitesimal: expression_input,
+) -> partial_differential_equation_point_symmetry_generator
+```
+
+</details>
 
 
 A candidate generator, one coordinate infinitesimal per independent variable
@@ -314,11 +596,31 @@ candidate, not a certificate: every consumer verifies it is a symmetry.
 
 ### solve_partial_differential_equation_by_similarity_reduction
 
-<a id="placement-placement.python.python_class.context_solve_partial_differential_equation_by_similarity_reduction.e866455641db"></a>
-`Context.solve_partial_differential_equation_by_similarity_reduction(problem, generator)`
-
+<a id="entry-presentation_python_differential_equations_capability_contexts_solve_partial_differential_equation_by_similarity_reduction_api_partial_differential_equations_session_solve_partial_differential_equation_by_similarity_reduction"></a>
 <a id="placement-placement.python.python_module.module_solve_partial_differential_equation_by_similarity_reduction.f01d7b81443a"></a>
-`symi.solve_partial_differential_equation_by_similarity_reduction(problem, generator)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_partial_differential_equation_by_similarity_reduction(
+    problem: partial_differential_equation_problem,
+    generator: partial_differential_equation_point_symmetry_generator,
+) -> partial_differential_equation_similarity_solution
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_partial_differential_equation_by_similarity_reduction.e866455641db"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_partial_differential_equation_by_similarity_reduction</code></p>
+
+```python signature
+solve_partial_differential_equation_by_similarity_reduction(
+    problem: partial_differential_equation_problem,
+    generator: partial_differential_equation_point_symmetry_generator,
+) -> partial_differential_equation_similarity_solution
+```
+
+</details>
 
 
 Reduce a two-variable PDE by a fiber-linear point symmetry to an ODE in the

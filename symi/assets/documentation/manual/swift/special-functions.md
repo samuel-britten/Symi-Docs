@@ -10,32 +10,55 @@ arbitrary-precision numeric evaluation (real and complex) all apply.
 
 ### gamma
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_gamma_api_session_gamma"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_gamma.5e1040887cef"></a>
-`UniffiSession.gamma(argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func gamma(argument: UniffiExpression) -> UniffiExpression
+```
 
 
 The gamma function \(\Gamma(x)\), the analytic continuation of `(x-1)!`.
 
 ### log_gamma
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_log_gamma_api_session_log_gamma"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_loggamma.d3d8b2917264"></a>
-`UniffiSession.logGamma(argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func logGamma(argument: UniffiExpression) -> UniffiExpression
+```
 
 
 The principal-branch log-gamma function (not `log(gamma(x))` off the real axis).
 
 ### digamma
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_digamma_api_session_digamma"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_digamma.6e7dc6f55806"></a>
-`UniffiSession.digamma(argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func digamma(argument: UniffiExpression) -> UniffiExpression
+```
 
 
 The digamma function \(\psi(x) = \Gamma'(x)/\Gamma(x)\).
 
 ### polygamma
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_polygamma_api_session_polygamma"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_polygamma.ad163e50ac95"></a>
-`UniffiSession.polygamma(order: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func polygamma(
+    order: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The polygamma function \(\psi^{(n)}(x)\), the order-th derivative of digamma;
@@ -43,16 +66,29 @@ The polygamma function \(\psi^{(n)}(x)\), the order-th derivative of digamma;
 
 ### beta
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_beta_api_session_beta"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_beta.40c50c0fa055"></a>
-`UniffiSession.beta(left: UniffiExpression, right: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func beta(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The beta function \(\operatorname{B}(x, y) = \Gamma(x)\Gamma(y)/\Gamma(x+y)\).
 
 ### zeta
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_zeta_api_session_zeta"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_zeta.ca91cb3d34c1"></a>
-`UniffiSession.zeta(argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func zeta(argument: UniffiExpression) -> UniffiExpression
+```
 
 
 The Riemann zeta function \(\zeta(s) = \sum_{k\geq 1} k^{-s}\). Even positive integers fold to
@@ -64,8 +100,16 @@ arbitrary precision over \(\mathbb{R}\) and \(\mathbb{C}\).
 
 ### hurwitz_zeta
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_hurwitz_zeta_api_session_hurwitz_zeta"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_hurwitzzeta.9184e588028c"></a>
-`UniffiSession.hurwitzZeta(s: UniffiExpression, a: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func hurwitzZeta(
+    s: UniffiExpression,
+    a: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The Hurwitz zeta function \(\zeta(s, a) = \sum_{k\geq 0} (k+a)^{-s}\), the numeric primitive of
@@ -76,8 +120,16 @@ polynomial in `a`.
 
 ### polylogarithm
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_polylogarithm_api_session_polylogarithm"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_polylogarithm.ba44f655ad31"></a>
-`UniffiSession.polylogarithm(order: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func polylogarithm(
+    order: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The principal-branch polylogarithm \(\operatorname{Li}_s(z)\). The defining-series values
@@ -92,8 +144,17 @@ routes decline numerically rather than returning a low-confidence value.
 
 ### lerch_phi
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_lerch_phi_api_session_lerch_phi"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_lerchphi.52818c9ab1da"></a>
-`UniffiSession.lerchPhi(argument: UniffiExpression, order: UniffiExpression, shift: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func lerchPhi(
+    argument: UniffiExpression,
+    order: UniffiExpression,
+    shift: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The principal Lerch transcendent \(\Phi(z, s, a)\), whose canonical argument order is
@@ -151,8 +212,17 @@ genuinely diverges when it fails.
 
 ### hypergeometric_pfq
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_hypergeometric_pfq_api_session_hypergeometric_pfq"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_hypergeometricpfq.ad7b0213f884"></a>
-`UniffiSession.hypergeometricPfq(upperParameters: [UniffiExpression], lowerParameters: [UniffiExpression], argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func hypergeometricPfq(
+    upperParameters: [UniffiExpression],
+    lowerParameters: [UniffiExpression],
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The generalized hypergeometric function \({}_pF_q(\mathbf a; \mathbf b; z)\). The two parameter
@@ -161,24 +231,51 @@ rejected.
 
 ### hypergeometric_0f1
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_hypergeometric_0f1_api_session_hypergeometric_0f1"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_hypergeometric0f1.d1bbb1fd9665"></a>
-`UniffiSession.hypergeometric0f1(lowerParameter: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func hypergeometric0f1(
+    lowerParameter: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The confluent limit \({}_0F_1(; b; z)\), lowered to `hypergeometric_pfq`.
 
 ### hypergeometric_1f1
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_hypergeometric_1f1_api_session_hypergeometric_1f1"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_hypergeometric1f1.97d99f29d4a7"></a>
-`UniffiSession.hypergeometric1f1(upperParameter: UniffiExpression, lowerParameter: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func hypergeometric1f1(
+    upperParameter: UniffiExpression,
+    lowerParameter: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 Kummer's confluent hypergeometric function \({}_1F_1(a; b; z)\).
 
 ### hypergeometric_2f1
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_hypergeometric_2f1_api_session_hypergeometric_2f1"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_hypergeometric2f1.d9cde3d644c1"></a>
-`UniffiSession.hypergeometric2f1(firstUpperParameter: UniffiExpression, secondUpperParameter: UniffiExpression, lowerParameter: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func hypergeometric2f1(
+    firstUpperParameter: UniffiExpression,
+    secondUpperParameter: UniffiExpression,
+    lowerParameter: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The Gauss hypergeometric function \({}_2F_1(a, b; c; z)\).
@@ -187,8 +284,19 @@ The Gauss hypergeometric function \({}_2F_1(a, b; c; z)\).
 
 ### meijer_g
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_meijer_g_api_session_meijer_g"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_meijerg.7f9bbc27e31d"></a>
-`UniffiSession.meijerG(upperNumeratorParameters: [UniffiExpression], upperDenominatorParameters: [UniffiExpression], lowerNumeratorParameters: [UniffiExpression], lowerDenominatorParameters: [UniffiExpression], argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func meijerG(
+    upperNumeratorParameters: [UniffiExpression],
+    upperDenominatorParameters: [UniffiExpression],
+    lowerNumeratorParameters: [UniffiExpression],
+    lowerDenominatorParameters: [UniffiExpression],
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The Meijer G-function \(G_{p,q}^{m,n}\) from its four ordered parameter groups. The orders `m`,
@@ -336,72 +444,149 @@ is the physicists' \(H_n\).
 
 ### jacobi_polynomial
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_jacobi_polynomial_api_session_jacobi_polynomial"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobipolynomial.4a5121ca3733"></a>
-`UniffiSession.jacobiPolynomial(degree: UniffiExpression, firstParameter: UniffiExpression, secondParameter: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func jacobiPolynomial(
+    degree: UniffiExpression,
+    firstParameter: UniffiExpression,
+    secondParameter: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The Jacobi polynomial \(P_n^{(\alpha,\beta)}(x)\).
 
 ### gegenbauer_polynomial
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_gegenbauer_polynomial_api_session_gegenbauer_polynomial"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_gegenbauerpolynomial.b0d601ea9dd1"></a>
-`UniffiSession.gegenbauerPolynomial(degree: UniffiExpression, parameter: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func gegenbauerPolynomial(
+    degree: UniffiExpression,
+    parameter: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The Gegenbauer polynomial \(C_n^{(\lambda)}(x)\).
 
 ### chebyshev_polynomial_first_kind
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_chebyshev_polynomial_first_kind_api_session_chebyshev_polynomial_first_kind"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_chebyshevpolynomialfirstkind.ce946e50f2ec"></a>
-`UniffiSession.chebyshevPolynomialFirstKind(degree: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func chebyshevPolynomialFirstKind(
+    degree: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The Chebyshev polynomial of the first kind \(T_n(x)\).
 
 ### chebyshev_polynomial_second_kind
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_chebyshev_polynomial_second_kind_api_session_chebyshev_polynomial_second_kind"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_chebyshevpolynomialsecondkind.1d926819dba5"></a>
-`UniffiSession.chebyshevPolynomialSecondKind(degree: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func chebyshevPolynomialSecondKind(
+    degree: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The Chebyshev polynomial of the second kind \(U_n(x)\).
 
 ### legendre_polynomial
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_legendre_polynomial_api_session_legendre_polynomial"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_legendrepolynomial.e714550087dc"></a>
-`UniffiSession.legendrePolynomial(degree: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func legendrePolynomial(
+    degree: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The Legendre polynomial \(P_n(x)\).
 
 ### generalized_laguerre_polynomial
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_generalized_laguerre_polynomial_api_session_generalized_laguerre_polynomial"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_generalizedlaguerrepolynomial.45f5c032564b"></a>
-`UniffiSession.generalizedLaguerrePolynomial(degree: UniffiExpression, parameter: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func generalizedLaguerrePolynomial(
+    degree: UniffiExpression,
+    parameter: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The generalized Laguerre polynomial \(L_n^{(\alpha)}(x)\).
 
 ### hermite_polynomial
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_hermite_polynomial_api_session_hermite_polynomial"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_hermitepolynomial.aa63d58adf88"></a>
-`UniffiSession.hermitePolynomial(degree: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func hermitePolynomial(
+    degree: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The physicists' Hermite polynomial \(H_n(x)\).
 
 ### ultraspherical_polynomial
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_ultraspherical_polynomial_api_session_ultraspherical_polynomial"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_ultrasphericalpolynomial.1b625b189f2a"></a>
-`UniffiSession.ultrasphericalPolynomial(degree: UniffiExpression, parameter: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func ultrasphericalPolynomial(
+    degree: UniffiExpression,
+    parameter: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The ultraspherical polynomial, lowered to its canonical Gegenbauer head.
 
 ### laguerre_polynomial
 
+<a id="entry-presentation_swift_special_functions_capability_special_functions_laguerre_polynomial_api_session_laguerre_polynomial"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_laguerrepolynomial.6d371ca7ab4a"></a>
-`UniffiSession.laguerrePolynomial(degree: UniffiExpression, argument: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func laguerrePolynomial(
+    degree: UniffiExpression,
+    argument: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The Laguerre polynomial, lowered to its canonical generalized Laguerre head.
@@ -411,129 +596,272 @@ The Laguerre polynomial, lowered to its canonical generalized Laguerre head.
 
 ## Additional API
 
+### carlson_rc
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_carlson_rc_api_session_carlson_rc"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_carlsonrc.e915c608fd8d"></a>
-### UniffiSession.carlsonRc
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.carlsonRc(firstArgument: UniffiExpression, secondArgument: UniffiExpression) -> UniffiExpression`
+```swift signature
+func carlsonRc(
+    firstArgument: UniffiExpression,
+    secondArgument: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Carlson's degenerate symmetric elliptic integral \(R_C(x,y)\).
 
+### carlson_rd
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_carlson_rd_api_session_carlson_rd"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_carlsonrd.e61f4245cf04"></a>
-### UniffiSession.carlsonRd
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.carlsonRd(firstArgument: UniffiExpression, secondArgument: UniffiExpression, thirdArgument: UniffiExpression) -> UniffiExpression`
+```swift signature
+func carlsonRd(
+    firstArgument: UniffiExpression,
+    secondArgument: UniffiExpression,
+    thirdArgument: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Carlson's symmetric elliptic integral \(R_D(x,y,z)\).
 
+### carlson_rf
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_carlson_rf_api_session_carlson_rf"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_carlsonrf.2f0815dd0fe8"></a>
-### UniffiSession.carlsonRf
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.carlsonRf(firstArgument: UniffiExpression, secondArgument: UniffiExpression, thirdArgument: UniffiExpression) -> UniffiExpression`
+```swift signature
+func carlsonRf(
+    firstArgument: UniffiExpression,
+    secondArgument: UniffiExpression,
+    thirdArgument: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Carlson's symmetric elliptic integral \(R_F(x,y,z)\).
 
+### carlson_rj
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_carlson_rj_api_session_carlson_rj"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_carlsonrj.92222a0ed573"></a>
-### UniffiSession.carlsonRj
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.carlsonRj(firstArgument: UniffiExpression, secondArgument: UniffiExpression, thirdArgument: UniffiExpression, fourthArgument: UniffiExpression) -> UniffiExpression`
+```swift signature
+func carlsonRj(
+    firstArgument: UniffiExpression,
+    secondArgument: UniffiExpression,
+    thirdArgument: UniffiExpression,
+    fourthArgument: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Carlson's symmetric elliptic integral \(R_J(x,y,z,p)\).
 
+### elliptic_e
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_elliptic_e_api_session_elliptic_e"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_elliptice.cf5a42b30d76"></a>
-### UniffiSession.ellipticE
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.ellipticE(parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func ellipticE(parameter: UniffiExpression) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+The complete second-kind elliptic integral \(E(m)\), with parameter \(m=k^2\).
 
+### elliptic_e_incomplete
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_elliptic_e_incomplete_api_session_elliptic_e_incomplete"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_ellipticeincomplete.d94f9c32b90b"></a>
-### UniffiSession.ellipticEIncomplete
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.ellipticEIncomplete(amplitude: UniffiExpression, parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func ellipticEIncomplete(
+    amplitude: UniffiExpression,
+    parameter: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+The incomplete second-kind elliptic integral \(E(\phi\mid m)\), with parameter \(m=k^2\).
 
+### elliptic_f
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_elliptic_f_api_session_elliptic_f"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_ellipticf.97b11e7c5598"></a>
-### UniffiSession.ellipticF
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.ellipticF(amplitude: UniffiExpression, parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func ellipticF(
+    amplitude: UniffiExpression,
+    parameter: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+The incomplete first-kind elliptic integral \(F(\phi\mid m)\), with parameter \(m=k^2\).
 
+### elliptic_k
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_elliptic_k_api_session_elliptic_k"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_elliptick.f833a54d5966"></a>
-### UniffiSession.ellipticK
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.ellipticK(parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func ellipticK(parameter: UniffiExpression) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+The complete first-kind elliptic integral \(K(m)\), with parameter \(m=k^2\).
 
+### elliptic_pi
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_elliptic_pi_api_session_elliptic_pi"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_ellipticpi.9add60e9df2b"></a>
-### UniffiSession.ellipticPi
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.ellipticPi(characteristic: UniffiExpression, parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func ellipticPi(
+    characteristic: UniffiExpression,
+    parameter: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+The complete third-kind elliptic integral \(\Pi(n\mid m)\), with parameter \(m=k^2\).
 
+### elliptic_pi_incomplete
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_elliptic_pi_incomplete_api_session_elliptic_pi_incomplete"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_ellipticpiincomplete.7006379e79cc"></a>
-### UniffiSession.ellipticPiIncomplete
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.ellipticPiIncomplete(characteristic: UniffiExpression, amplitude: UniffiExpression, parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func ellipticPiIncomplete(
+    characteristic: UniffiExpression,
+    amplitude: UniffiExpression,
+    parameter: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+The incomplete third-kind elliptic integral \(\Pi(n;\phi\mid m)\), with parameter \(m=k^2\).
 
+### jacobi_amplitude
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_jacobi_amplitude_api_session_jacobi_amplitude"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobiamplitude.bb4745d9af75"></a>
-### UniffiSession.jacobiAmplitude
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.jacobiAmplitude(argument: UniffiExpression, parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func jacobiAmplitude(
+    argument: UniffiExpression,
+    parameter: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+The pinned Jacobi amplitude \(\operatorname{am}(u\mid m)\), with parameter \(m=k^2\).
 
+### jacobi_cn
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_jacobi_cn_api_session_jacobi_cn"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobicn.c9222575f34d"></a>
-### UniffiSession.jacobiCn
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.jacobiCn(argument: UniffiExpression, parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func jacobiCn(
+    argument: UniffiExpression,
+    parameter: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Jacobi's elliptic function \(\operatorname{cn}(u\mid m)\), with parameter \(m=k^2\).
 
+### jacobi_dn
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_jacobi_dn_api_session_jacobi_dn"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobidn.2df0068956e5"></a>
-### UniffiSession.jacobiDn
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.jacobiDn(argument: UniffiExpression, parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func jacobiDn(
+    argument: UniffiExpression,
+    parameter: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Jacobi's elliptic function \(\operatorname{dn}(u\mid m)\), with parameter \(m=k^2\).
 
+### jacobi_sn
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_jacobi_sn_api_session_jacobi_sn"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobisn.1f2ed097af66"></a>
-### UniffiSession.jacobiSn
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.jacobiSn(argument: UniffiExpression, parameter: UniffiExpression) -> UniffiExpression`
+```swift signature
+func jacobiSn(
+    argument: UniffiExpression,
+    parameter: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Jacobi's elliptic function \(\operatorname{sn}(u\mid m)\), with parameter \(m=k^2\).
 
+### jacobi_theta_1
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_jacobi_theta_1_api_session_jacobi_theta_1"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobitheta1.f139b23a8a32"></a>
-### UniffiSession.jacobiTheta1
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.jacobiTheta1(argument: UniffiExpression, halfPeriodRatio: UniffiExpression) -> UniffiExpression`
+```swift signature
+func jacobiTheta1(
+    argument: UniffiExpression,
+    halfPeriodRatio: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Jacobi's first theta function \(\theta_1(z\mid\tau)\), with half-period ratio \(\tau\).
 
+### jacobi_theta_2
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_jacobi_theta_2_api_session_jacobi_theta_2"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobitheta2.bf44bd13abee"></a>
-### UniffiSession.jacobiTheta2
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.jacobiTheta2(argument: UniffiExpression, halfPeriodRatio: UniffiExpression) -> UniffiExpression`
+```swift signature
+func jacobiTheta2(
+    argument: UniffiExpression,
+    halfPeriodRatio: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Jacobi's second theta function \(\theta_2(z\mid\tau)\), with half-period ratio \(\tau\).
 
+### jacobi_theta_3
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_jacobi_theta_3_api_session_jacobi_theta_3"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobitheta3.481c68b94053"></a>
-### UniffiSession.jacobiTheta3
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.jacobiTheta3(argument: UniffiExpression, halfPeriodRatio: UniffiExpression) -> UniffiExpression`
+```swift signature
+func jacobiTheta3(
+    argument: UniffiExpression,
+    halfPeriodRatio: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Jacobi's third theta function \(\theta_3(z\mid\tau)\), with half-period ratio \(\tau\).
 
+### jacobi_theta_4
+
+<a id="entry-presentation_swift_special_functions_capability_special_functions_jacobi_theta_4_api_session_jacobi_theta_4"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobitheta4.444826350c97"></a>
-### UniffiSession.jacobiTheta4
+<p class="symi-entry-owner">Explicit context</p>
 
-`UniffiSession.jacobiTheta4(argument: UniffiExpression, halfPeriodRatio: UniffiExpression) -> UniffiExpression`
+```swift signature
+func jacobiTheta4(
+    argument: UniffiExpression,
+    halfPeriodRatio: UniffiExpression,
+) -> UniffiExpression
+```
 
-Returns `UniffiExpression`.
+Jacobi's fourth theta function \(\theta_4(z\mid\tau)\), with half-period ratio \(\tau\).
 

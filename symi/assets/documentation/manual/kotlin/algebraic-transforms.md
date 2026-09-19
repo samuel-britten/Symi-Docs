@@ -8,11 +8,21 @@ the search-based ladder see
 
 ### expand
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_expand.422487fa6eb9"></a>
-`UniffiExpression.expand(): UniffiExpression`
-
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_expand_api_session_expand"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_expand.da532704e086"></a>
-`UniffiSession.expand(target: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun expand(target: UniffiExpression): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_expand_api_expression_expand"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_expand.422487fa6eb9"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun expand(): UniffiExpression
+```
 
 
 
@@ -20,11 +30,24 @@ Expand products, integer powers, and supported algebraic forms.
 
 ### partial_fractions
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_partialfractions.37badf8d446a"></a>
-`UniffiExpression.partialFractions(variable: kotlin.String): UniffiExpression`
-
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_partialfractions.5f8aaf403de5"></a>
-`UniffiSession.partialFractions(inputExpression: UniffiExpression, variable: kotlin.String): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun partialFractions(
+    inputExpression: UniffiExpression,
+    variable: kotlin.String,
+): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_partial_fractions_api_expression_operations_expression_partial_fractions"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_partialfractions.37badf8d446a"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun partialFractions(variable: kotlin.String): UniffiExpression
+```
 
 
 
@@ -38,11 +61,21 @@ For factorization, cancellation, collection, and radical operations, use
 
 ### factor
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_factor.55dedc5f6079"></a>
-`UniffiExpression.factor(): UniffiExpression`
-
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_factor_api_session_factor"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_factor.1b442ebdb1ff"></a>
-`UniffiSession.factor(target: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun factor(target: UniffiExpression): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_factor_api_expression_factor"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_factor.55dedc5f6079"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun factor(): UniffiExpression
+```
 
 
 
@@ -52,11 +85,24 @@ Polynomial factorization over the rationals (full multivariate). With
 
 ### collect
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_collect.c4efd231ab7d"></a>
-`UniffiExpression.collect(generator: UniffiExpression): UniffiExpression`
-
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_collect_api_algebra_session_collect"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_collect.2571e76f2ee4"></a>
-`UniffiSession.collect(inputExpression: UniffiExpression, generator: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun collect(
+    inputExpression: UniffiExpression,
+    generator: UniffiExpression,
+): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_collect_api_expression_operations_expression_collect"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_collect.c4efd231ab7d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun collect(generator: UniffiExpression): UniffiExpression
+```
 
 
 
@@ -70,11 +116,24 @@ generator that appears with only a single power, returns the input unchanged.
 
 ### complete_the_square
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_completethesquare.35974729f836"></a>
-`UniffiExpression.completeTheSquare(variable: UniffiExpression): UniffiExpression`
-
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_completethesquare.b3c47f503e7b"></a>
-`UniffiSession.completeTheSquare(inputExpression: UniffiExpression, variable: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun completeTheSquare(
+    inputExpression: UniffiExpression,
+    variable: UniffiExpression,
+): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_complete_the_square_api_expression_operations_expression_complete_the_square"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_completethesquare.35974729f836"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun completeTheSquare(variable: UniffiExpression): UniffiExpression
+```
 
 
 
@@ -102,11 +161,21 @@ unrestricted `a` and completes when `a` is assumed positive.
 
 ### factor_common_terms
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_factorcommonterms.72c3d3249a82"></a>
-`UniffiExpression.factorCommonTerms(): UniffiExpression`
-
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_algebra_session_factor_common_terms"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_factorcommonterms.164047906815"></a>
-`UniffiSession.factorCommonTerms(inputExpression: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun factorCommonTerms(inputExpression: UniffiExpression): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_expression_operations_expression_factor_common_terms"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_factorcommonterms.72c3d3249a82"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun factorCommonTerms(): UniffiExpression
+```
 
 
 
@@ -127,11 +196,21 @@ further — that is `factor`'s job.
 
 ### rationalize_denominator
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_rationalizedenominator.ddc2dfd61639"></a>
-`UniffiExpression.rationalizeDenominator(): UniffiExpression`
-
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_algebra_session_rationalize_denominator"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_rationalizedenominator.696b26f4302d"></a>
-`UniffiSession.rationalizeDenominator(inputExpression: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun rationalizeDenominator(inputExpression: UniffiExpression): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_expression_operations_expression_rationalize_denominator"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_rationalizedenominator.ddc2dfd61639"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun rationalizeDenominator(): UniffiExpression
+```
 
 
 
@@ -144,11 +223,21 @@ bounded supported radical class or the exact remultiplication check fails.
 
 ### collect_radicals
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_collectradicals.34ef590c8524"></a>
-`UniffiExpression.collectRadicals(): UniffiExpression`
-
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_collect_radicals_api_algebra_session_collect_radicals"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_collectradicals.0abe4246adf2"></a>
-`UniffiSession.collectRadicals(inputExpression: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun collectRadicals(inputExpression: UniffiExpression): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_collect_radicals_api_expression_operations_expression_collect_radicals"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_collectradicals.34ef590c8524"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun collectRadicals(): UniffiExpression
+```
 
 
 
@@ -158,11 +247,21 @@ distinct kernels are considered; inputs beyond that bound return unchanged.
 
 ### denest_radicals
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_denestradicals.7c4576295d2c"></a>
-`UniffiExpression.denestRadicals(): UniffiExpression`
-
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_denest_radicals_api_algebra_session_denest_radicals"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_denestradicals.d919ebce059a"></a>
-`UniffiSession.denestRadicals(inputExpression: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun denestRadicals(inputExpression: UniffiExpression): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_algebraic_transforms_capability_expression_transformations_denest_radicals_api_expression_operations_expression_denest_radicals"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_denestradicals.7c4576295d2c"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun denestRadicals(): UniffiExpression
+```
 
 
 

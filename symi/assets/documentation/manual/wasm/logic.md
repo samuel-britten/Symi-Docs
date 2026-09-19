@@ -71,248 +71,363 @@ console.log(symi.evaluateTruth(symi.lessThan(x, 1)));
 
 ## Additional API
 
+### eliminateDerivedLogicalConnectives
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_logic_session_eliminate_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.wasm_module.module_eliminatederivedlogicalconnectives.86334ce1fe59"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+eliminateDerivedLogicalConnectives(input_expression: Expression): Expression
+```
+
+Rewrite every `implies`, `equivalent`, and `exclusive_or` occurrence into the `logical_and` / `logical_or` / `logical_not` basis. This is a directed presentation request, not a cost decision, so the result may be larger than the input; a formula already in the basis, and a conversion that would cross the fixed size ceiling, both return the input unchanged.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.wasm.javascript_facade.context_eliminatederivedlogicalconnectives.fbf21e222b48"></a>
-### Context.eliminateDerivedLogicalConnectives
+<p class="symi-entry-owner">Explicit context: <code>Context.eliminateDerivedLogicalConnectives</code></p>
 
-`Context.eliminateDerivedLogicalConnectives(value: ExpressionLike): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.context_evaluatetruth.a9ce02ce8752"></a>
-### Context.evaluateTruth
-
-`Context.evaluateTruth(predicate: ExpressionLike): boolean | null`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.context_introducederivedlogicalconnectives.1178bb7be801"></a>
-### Context.introduceDerivedLogicalConnectives
-
-`Context.introduceDerivedLogicalConnectives(value: ExpressionLike): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.context_logicalfalse.9bc67d1ef760"></a>
-### Context.logicalFalse
-
-`Context.readonly logicalFalse: Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.javascript_facade.context_logicaltrue.9727eb1248c1"></a>
-### Context.logicalTrue
-
-`Context.readonly logicalTrue: Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.javascript_facade.context_simplifylogical.d5a84750401d"></a>
-### Context.simplifyLogical
-
-`Context.simplifyLogical(value: ExpressionLike): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.expression_eliminatederivedlogicalconnectives.03dbed4ef109"></a>
-### Expression.eliminateDerivedLogicalConnectives
-
-`Expression.eliminateDerivedLogicalConnectives(): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.expression_evaluatetruth.e2bc58e39b58"></a>
-### Expression.evaluateTruth
-
-`Expression.evaluateTruth(): boolean | null`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.expression_introducederivedlogicalconnectives.d61df7a5125f"></a>
-### Expression.introduceDerivedLogicalConnectives
-
-`Expression.introduceDerivedLogicalConnectives(): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.expression_simplifylogical.dce05b71d665"></a>
-### Expression.simplifyLogical
-
-`Expression.simplifyLogical(): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_eliminatederivedlogicalconnectives.ac05ca331ca5"></a>
-### SymiFacade.eliminateDerivedLogicalConnectives
-
-`SymiFacade.eliminateDerivedLogicalConnectives(value: ExpressionLike): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_evaluatetruth.b770fcd9faa8"></a>
-### SymiFacade.evaluateTruth
-
-`SymiFacade.evaluateTruth(predicate: ExpressionLike): boolean | null`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_introducederivedlogicalconnectives.d87c58b06818"></a>
-### SymiFacade.introduceDerivedLogicalConnectives
-
-`SymiFacade.introduceDerivedLogicalConnectives(value: ExpressionLike): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_logicalfalse.2e267b20bbb1"></a>
-### SymiFacade.logicalFalse
-
-`SymiFacade.readonly logicalFalse: Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_logicaltrue.42cc56407238"></a>
-### SymiFacade.logicalTrue
-
-`SymiFacade.readonly logicalTrue: Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_simplifylogical.7e8c3741add9"></a>
-### SymiFacade.simplifyLogical
-
-`SymiFacade.simplifyLogical(value: ExpressionLike): Expression`
-
-Returns `unknown`.
+```typescript signature
+eliminateDerivedLogicalConnectives(value: ExpressionLike): Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_eliminatederivedlogicalconnectives.3556bcb58aec"></a>
-### Context.eliminateDerivedLogicalConnectives
+<p class="symi-entry-owner">Explicit context: <code>Context.eliminateDerivedLogicalConnectives</code></p>
 
-`pub fn eliminate_derived_logical_connectives(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+eliminateDerivedLogicalConnectives(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+<a id="placement-placement.wasm.javascript_facade.symifacade_eliminatederivedlogicalconnectives.ac05ca331ca5"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.eliminateDerivedLogicalConnectives</code></p>
 
-<a id="placement-placement.wasm.wasm_class.context_evaluatetruth.863d04a2419d"></a>
-### Context.evaluateTruth
+```typescript signature
+eliminateDerivedLogicalConnectives(value: ExpressionLike): Expression
+```
 
-`pub fn evaluate_truth(&self, input_expression: &Expression) -> Result<Option<bool>, JsError>`
+</details>
 
-Returns `Result<Option<bool>, JsError>`.
+### eliminateDerivedLogicalConnectives
 
-<a id="placement-placement.wasm.wasm_class.context_introducederivedlogicalconnectives.b3bbbe9c8c71"></a>
-### Context.introduceDerivedLogicalConnectives
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_expression_operations_expression_eliminate_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_eliminatederivedlogicalconnectives.03dbed4ef109"></a>
+<p class="symi-entry-owner">Expression method</p>
 
-`pub fn introduce_derived_logical_connectives(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+eliminateDerivedLogicalConnectives(): Expression
+```
 
-Returns `Result<expression, JsError>`.
+Rewrite every `implies`, `equivalent`, and `exclusive_or` occurrence in this formula into the `logical_and` / `logical_or` / `logical_not` basis. This is a directed presentation request, not a cost decision, so the result may be larger than the input; a formula already in the basis, and a conversion that would cross the fixed size ceiling, both return the input unchanged.
 
-<a id="placement-placement.wasm.wasm_class.context_logicalfalse.94e8b3dd883e"></a>
-### Context.logicalFalse
-
-`pub fn logical_false(&self) -> Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.wasm_class.context_logicaltrue.e8dfff3d592b"></a>
-### Context.logicalTrue
-
-`pub fn logical_true(&self) -> Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.wasm_class.context_minimizelogical.e8634cea64ca"></a>
-### Context.minimizeLogical
-
-`pub fn minimize_logical(&self, input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.context_simplifylogical.0449b898501d"></a>
-### Context.simplifyLogical
-
-`pub fn simplify_logical(&self, input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_eliminatederivedlogicalconnectives.1f7a9ae4427f"></a>
-### Expression.eliminateDerivedLogicalConnectives
+<p class="symi-entry-owner">Expression method: <code>Expression.eliminateDerivedLogicalConnectives</code></p>
 
-`pub fn eliminate_derived_logical_connectives(&self) -> Result<Expression, JsError>`
+```typescript signature
+eliminateDerivedLogicalConnectives(): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### evaluateTruth
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_evaluate_truth_api_session_evaluate_truth"></a>
+<a id="placement-placement.wasm.wasm_module.module_evaluatetruth.fb0e4e2d9223"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+evaluateTruth(input_expression: Expression): boolean | undefined
+```
+
+`evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or `None`; JavaScript returns `true`, `false`, or `null`; Rust returns `truth_value`. The third value means undecided, never false: a host-language `if` reads it as falsy, so compare against `True` / `False` explicitly. Order, equality and sign relations between closed-form real constants — rationals, `pi`, radicals and real algebraic numbers — are decided exactly by rational arithmetic; transcendental, symbolic and provably non-real operands decline rather than guess.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_evaluatetruth.a9ce02ce8752"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.evaluateTruth</code></p>
+
+```typescript signature
+evaluateTruth(predicate: ExpressionLike): boolean | null
+```
+
+<a id="placement-placement.wasm.wasm_class.context_evaluatetruth.863d04a2419d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.evaluateTruth</code></p>
+
+```typescript signature
+evaluateTruth(input_expression: Expression): boolean | undefined
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_evaluatetruth.b770fcd9faa8"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.evaluateTruth</code></p>
+
+```typescript signature
+evaluateTruth(predicate: ExpressionLike): boolean | null
+```
+
+</details>
+
+### evaluateTruth
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_evaluate_truth_api_expression_evaluate_truth"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_evaluatetruth.e2bc58e39b58"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+evaluateTruth(): boolean | null
+```
+
+`evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or `None`; JavaScript returns `true`, `false`, or `null`; Rust returns `truth_value`. The third value means undecided, never false: a host-language `if` reads it as falsy, so compare against `True` / `False` explicitly. Order, equality and sign relations between closed-form real constants — rationals, `pi`, radicals and real algebraic numbers — are decided exactly by rational arithmetic; transcendental, symbolic and provably non-real operands decline rather than guess.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_evaluatetruth.1071ae13c246"></a>
-### Expression.evaluateTruth
+<p class="symi-entry-owner">Expression method: <code>Expression.evaluateTruth</code></p>
 
-`pub fn evaluate_truth(&self) -> Result<Option<bool>, JsError>`
+```typescript signature
+evaluateTruth(): boolean | undefined
+```
 
-Returns `Result<Option<bool>, JsError>`.
+</details>
+
+### introduceDerivedLogicalConnectives
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_introduce_derived_logical_connectives_api_logic_session_introduce_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.wasm_module.module_introducederivedlogicalconnectives.83816a1b06a4"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(input_expression: Expression): Expression
+```
+
+Recognise the exact canonical definitions of implication, equivalence, and exclusive-or inside an and/or/not formula and replace each match with the derived connective, but only where the replacement is strictly smaller. It is a local structural compressor: a formula merely equivalent to a definition, without matching it, is left unchanged.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_introducederivedlogicalconnectives.1178bb7be801"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.introduceDerivedLogicalConnectives</code></p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_introducederivedlogicalconnectives.b3bbbe9c8c71"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.introduceDerivedLogicalConnectives</code></p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_introducederivedlogicalconnectives.d87c58b06818"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.introduceDerivedLogicalConnectives</code></p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(value: ExpressionLike): Expression
+```
+
+</details>
+
+### introduceDerivedLogicalConnectives
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_introduce_derived_logical_connectives_api_expression_operations_expression_introduce_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_introducederivedlogicalconnectives.d61df7a5125f"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(): Expression
+```
+
+Recognise the exact canonical definitions of implication, equivalence, and exclusive-or inside this and/or/not formula and replace each match with the derived connective, but only where the replacement is strictly smaller. It is a local structural compressor: a formula merely equivalent to a definition, without matching it, is left unchanged.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_introducederivedlogicalconnectives.174398edf818"></a>
-### Expression.introduceDerivedLogicalConnectives
+<p class="symi-entry-owner">Expression method: <code>Expression.introduceDerivedLogicalConnectives</code></p>
 
-`pub fn introduce_derived_logical_connectives(&self) -> Result<Expression, JsError>`
+```typescript signature
+introduceDerivedLogicalConnectives(): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
 
+### logicalFalse
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_logical_false_api_session_logical_false"></a>
+<a id="placement-placement.wasm.wasm_module.module_logicalfalse.6aee9d3550be"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+logicalFalse(): Expression
+```
+
+The Boolean constant false (\(\bot\)).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_logicalfalse.9bc67d1ef760"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.logicalFalse</code></p>
+
+```typescript signature
+readonly logicalFalse: Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_logicalfalse.94e8b3dd883e"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.logicalFalse</code></p>
+
+```typescript signature
+logicalFalse(): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_logicalfalse.2e267b20bbb1"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.logicalFalse</code></p>
+
+```typescript signature
+readonly logicalFalse: Expression
+```
+
+</details>
+
+### logicalTrue
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_logical_true_api_session_logical_true"></a>
+<a id="placement-placement.wasm.wasm_module.module_logicaltrue.8c894af8e323"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+logicalTrue(): Expression
+```
+
+The Boolean constant true (\(\top\)).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_logicaltrue.9727eb1248c1"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.logicalTrue</code></p>
+
+```typescript signature
+readonly logicalTrue: Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_logicaltrue.e8dfff3d592b"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.logicalTrue</code></p>
+
+```typescript signature
+logicalTrue(): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_logicaltrue.42cc56407238"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.logicalTrue</code></p>
+
+```typescript signature
+readonly logicalTrue: Expression
+```
+
+</details>
+
+### minimizeLogical
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_minimize_logical_api_logic_session_minimize_logical"></a>
+<a id="placement-placement.wasm.wasm_module.module_minimizelogical.b1927e04de80"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+minimizeLogical(input_expression: Expression): Expression
+```
+
+The smaller of the minimum sum-of-products and product-of-sums two-level forms. Within a practical atom bound this is the exact Quine–McCluskey minimum (prime implicants, essential extraction, and Petrick's method on the residual chart); above it, an Espresso-style heuristic returns a good — not provably minimal — cover.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_minimizelogical.e8634cea64ca"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.minimizeLogical</code></p>
+
+```typescript signature
+minimizeLogical(input_expression: Expression): Expression
+```
+
+</details>
+
+### minimizeLogical
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_minimize_logical_api_expression_operations_expression_minimize_logical"></a>
 <a id="placement-placement.wasm.wasm_class.expression_minimizelogical.1eeedfe07389"></a>
-### Expression.minimizeLogical
+<p class="symi-entry-owner">Expression method</p>
 
-`pub fn minimize_logical(&self) -> Result<Expression, JsError>`
+```typescript signature
+minimizeLogical(): Expression
+```
 
-Returns `Result<expression, JsError>`.
+The smaller of the minimum sum-of-products and product-of-sums two-level forms. Within a practical atom bound this is the exact Quine–McCluskey minimum (prime implicants, essential extraction, and Petrick's method on the residual chart); above it, an Espresso-style heuristic returns a good — not provably minimal — cover.
+
+### simplifyLogical
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_simplify_logical_api_logic_session_simplify_logical"></a>
+<a id="placement-placement.wasm.wasm_module.module_simplifylogical.c91f7d3e4b36"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+simplifyLogical(input_expression: Expression): Expression
+```
+
+Return whichever of the original form, the disjunctive and conjunctive normal forms, and the two minimal two-level forms has the smallest weighted size.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_simplifylogical.d5a84750401d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.simplifyLogical</code></p>
+
+```typescript signature
+simplifyLogical(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_simplifylogical.0449b898501d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.simplifyLogical</code></p>
+
+```typescript signature
+simplifyLogical(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_simplifylogical.7e8c3741add9"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.simplifyLogical</code></p>
+
+```typescript signature
+simplifyLogical(value: ExpressionLike): Expression
+```
+
+</details>
+
+### simplifyLogical
+
+<a id="entry-presentation_wasm_logic_capability_discrete_mathematics_simplify_logical_api_expression_operations_expression_simplify_logical"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_simplifylogical.dce05b71d665"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+simplifyLogical(): Expression
+```
+
+Return whichever of the original form, the disjunctive and conjunctive normal forms, and the two minimal two-level forms has the smallest weighted size.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_simplifylogical.b150d8671266"></a>
-### Expression.simplifyLogical
+<p class="symi-entry-owner">Expression method: <code>Expression.simplifyLogical</code></p>
 
-`pub fn simplify_logical(&self) -> Result<Expression, JsError>`
+```typescript signature
+simplifyLogical(): Expression
+```
 
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_eliminatederivedlogicalconnectives.86334ce1fe59"></a>
-### module.eliminateDerivedLogicalConnectives
-
-`fn eliminate_derived_logical_connectives(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_evaluatetruth.fb0e4e2d9223"></a>
-### module.evaluateTruth
-
-`fn evaluate_truth(input_expression: &Expression) -> Result<Option<bool>, JsError>`
-
-Returns `Result<Option<bool>, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_introducederivedlogicalconnectives.83816a1b06a4"></a>
-### module.introduceDerivedLogicalConnectives
-
-`fn introduce_derived_logical_connectives(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_logicalfalse.6aee9d3550be"></a>
-### module.logicalFalse
-
-`fn logical_false() -> Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.wasm_module.module_logicaltrue.8c894af8e323"></a>
-### module.logicalTrue
-
-`fn logical_true() -> Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.wasm_module.module_minimizelogical.b1927e04de80"></a>
-### module.minimizeLogical
-
-`fn minimize_logical(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_simplifylogical.c91f7d3e4b36"></a>
-### module.simplifyLogical
-
-`fn simplify_logical(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
+</details>
 

@@ -1,695 +1,659 @@
-import { documentation_entry_url, search_documentation_entries } from "./documentation_search.js";
+import { create_routes, documentation_artifact_url, documentation_entry_url } from "./documentation_routes.js";
+import { language_menu_items_html, navigation_entries_html } from "./documentation_layout.js";
+import { copy_text, escape_html } from "./documentation_render.js";
+import { first_sentence, prepare_search_concept, prepare_search_entry, search_documentation } from "./documentation_search.js";
 
-// The static site serves every page from `/symi/<language>/<page>/`, and every generated
-// artifact from `/symi/assets/documentation/`. The site manifest lists the published
-// languages; everything else is read from the same publication records the manual is built
-// from.
-export const site_root = "/symi";
-export const documentation_base_path = `${site_root}/assets/documentation/`;
+// Every route arrives prerendered: article, navigation, outline, and language menu are
+// already in the HTML. This script only adds behaviour — theme choice, the phone navigation
+// drawer, on-demand topic lists, semantic language switching, search, copy controls, and
+// deep-link reveal — and the page stays fully readable when it does not run.
 
-let site_manifest = { languages: [], pages: [], categories: [] };
+const theme_storage_key = "symi-documentation-theme";
+const language_storage_key = "symi-documentation-language";
+const theme_choices = ["system", "light", "dark"];
+const theme_labels = { system: "match system", light: "light", dark: "dark" };
+const phone_layout_query = window.matchMedia("(max-width: 56rem)");
 
-function load_template_(identifier) {
-    const template = document.getElementById(identifier);
-    const template_element = template instanceof HTMLTemplateElement ? template.content.firstElementChild : null;
-    if (!(template_element instanceof HTMLElement)) {
-        throw new Error(`Template with identifier "${identifier}" not found.`);
-    }
-    return document.importNode(template_element, true);
-}
+const state = {
+    site_manifest: null,
+    routes: null,
+    language: document.documentElement.dataset.language || "python",
+    page: document.body.dataset.page || "",
+    navigation_entries: null,
+    cross_language_targets: null,
+};
 
-export function available_documentation_languages() {
-    return site_manifest.languages;
-}
-
-export function language_is_available(language) {
-    return available_documentation_languages().some(item => item.language_identifier === language);
-}
-
-export function sanitize_page_name(page_name) {
-    const cleaned = String(page_name || "").replace(/[^a-z0-9-]/g, "");
-    return cleaned === "" ? "introduction" : cleaned;
-}
-
-export function sanitize_language(language) {
-    const languages = available_documentation_languages();
-    return languages.some(item => item.language_identifier === language)
-        ? language
-        : languages[0].language_identifier;
-}
-
-export function current_documentation_route() {
-    const prefix = `${site_root}/`;
-    const path = window.location.pathname.startsWith(prefix)
-        ? window.location.pathname.slice(prefix.length)
-        : "";
-    const segments = path.split("/").filter(segment => segment !== "" && segment !== "index.html");
-    return {
-        language: sanitize_language(segments[0]),
-        page_name: sanitize_page_name(segments[1]),
-        anchor: window.location.hash.replace(/^#/, ""),
-        neutral_root: segments.length === 0,
-    };
-}
-
-export function rewrite_documentation_links(container, language) {
-    for (const anchor of container.querySelectorAll("a")) {
-        const href = anchor.getAttribute("href") || "";
-        const [path, hash = ""] = href.split("#", 2);
-        const page_route = path.match(new RegExp(`^${site_root}/([a-z]+)/([a-z0-9-]+)/?$`));
-        if (path.endsWith(".md") && !href.includes("://")) {
-            anchor.setAttribute("href", create_language_target(language, path.replace(/^\.\//, "").replace(/\.md$/, ""), hash));
-        } else if (page_route != null && language_is_available(page_route[1])) {
-            anchor.setAttribute("href", create_language_target(page_route[1], page_route[2], hash));
-        } else if (href.includes("://")) {
-            anchor.setAttribute("target", "_blank");
-            anchor.setAttribute("rel", "noopener");
-        }
-    }
-}
-
-export function documentation_artifact_url(path) {
-    return documentation_base_path + path;
-}
-
-export async function fetch_json(path) {
+async function fetch_json(path) {
     const response = await fetch(documentation_artifact_url(path));
     if (!response.ok) {
-        throw new Error("documentation artifact unavailable: " + path);
+        throw new Error(`documentation artifact unavailable: ${path}`);
     }
     return await response.json();
 }
 
-function page_is_published(language, page_name) {
-    return site_manifest.pages.some(page => (
-        page.page_identifier === page_name && page.canonical_urls[language] != null
-    ));
-}
-
-export function language_page_name(language, page_name) {
-    const cleaned_page_name = sanitize_page_name(page_name);
-    if (!cleaned_page_name.startsWith("getting-started-")) {
-        return cleaned_page_name;
-    }
-    const language_guide = language === "wasm" ? "getting-started-javascript" : `getting-started-${language}`;
-    return page_is_published(language, language_guide) ? language_guide : cleaned_page_name;
-}
-
-export async function fetch_markdown(page_name, language) {
-    const path = `manual/${sanitize_language(language)}/${language_page_name(language, page_name)}.md`;
-    const response = await fetch(documentation_artifact_url(path));
-    if (!response.ok) {
-        throw new Error("page not found");
-    }
-    return await response.text();
-}
-
-export function create_language_target(language, page_name, hash = "") {
-    const target_language = sanitize_language(language);
-    const target_page_name = language_page_name(target_language, page_name);
-    return `${site_root}/${target_language}/${target_page_name}/${hash ? `#${hash}` : ""}`;
-}
-
-function language_guide_is_listed(page_identifier, language) {
-    return !page_identifier.startsWith("getting-started-")
-        || page_identifier === language_page_name(language, page_identifier);
-}
-
-function page_entries_for_language(manifest, language) {
-    return (manifest.pages || [])
-        .filter(page => page.canonical_urls != null && page.canonical_urls[language] != null)
-        .filter(page => language_guide_is_listed(page.page_identifier, language))
-        .map(page => ({
-            title: page.title,
-            page: page.page_identifier,
-            category_identifier: page.category_identifier,
-            href: create_language_target(language, page.page_identifier),
-        }));
-}
-
-function attach_collapse_toggle(toggle, collapsible_list, initially_expanded) {
-    const set_expanded = expanded => {
-        collapsible_list.classList.toggle("hidden", !expanded);
-        toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-    };
-    toggle.addEventListener("click", () => set_expanded(collapsible_list.classList.contains("hidden")));
-    set_expanded(initially_expanded);
-}
-
-function create_navigation_section(entry, expanded_page_name) {
-    const element = load_template_("documentation-navigation-section_");
-    element.querySelector(".symi-documentation-section-label").textContent = entry.title;
-    attach_collapse_toggle(
-        element.querySelector(".symi-documentation-section-toggle"),
-        element.querySelector(".symi-documentation-section-entries"),
-        entry.page === expanded_page_name,
-    );
-    return element;
-}
-
-export function navigation_expanded_page_name(manifest, current_page_name) {
-    const default_page_name = sanitize_page_name((manifest || {}).default_page || "introduction");
-    return current_page_name === default_page_name ? null : current_page_name;
-}
-
-export function category_is_expanded(category, expanded_page_name) {
-    return expanded_page_name != null && category.pages.some(page => page.page === expanded_page_name);
-}
-
-function create_navigation_plain_entry(entry, current_page_name) {
-    const element = load_template_("documentation-navigation-plain_");
-    const link = element.querySelector(".symi-documentation-plain-link");
-    link.textContent = entry.title;
-    link.setAttribute("href", entry.href);
-    if (entry.page === current_page_name) {
-        link.classList.add("symi-documentation-current");
-    }
-    return element;
-}
-
-export function navigation_tree(manifest, placement_entries, language) {
-    const pages = page_entries_for_language(manifest, language);
-    const entries_by_page = new Map();
-    for (const entry of placement_entries) {
-        if (!entries_by_page.has(entry.page_identifier)) {
-            entries_by_page.set(entry.page_identifier, []);
-        }
-        entries_by_page.get(entry.page_identifier).push(entry);
-    }
-    const pages_by_category = new Map();
-    for (const page of pages) {
-        if (!pages_by_category.has(page.category_identifier)) {
-            pages_by_category.set(page.category_identifier, []);
-        }
-        pages_by_category.get(page.category_identifier).push({
-            ...page,
-            entries: (entries_by_page.get(page.page) || [])
-                .filter(entry => entry.result_kind === "function" || entry.result_kind === "method" || entry.result_kind === "constructor" || entry.result_kind === "property")
-                .filter(entry => entry.page_identifier !== "api-reference")
-                .filter(entry => language !== "wasm" || entry.surface === "javascript_facade")
-                .sort((left, right) => (
-                    left.qualified_name.localeCompare(right.qualified_name)
-                    || left.placement_identifier.localeCompare(right.placement_identifier)
-                )),
-        });
-    }
-    return (manifest.categories || []).map(category => ({
-        ...category,
-        pages: pages_by_category.get(category.category_identifier) || [],
-    })).filter(category => category.pages.length > 0);
-}
-
-export function navigation_entry_artifact(manifest, language) {
-    const navigation_artifact = (manifest.navigation_artifacts || []).find(artifact => artifact.language === language);
-    if (navigation_artifact != null) {
-        return navigation_artifact.path;
-    }
-    const search_artifact = (manifest.search_artifacts || []).find(artifact => artifact.language === language);
-    if (search_artifact != null) {
-        return search_artifact.path;
-    }
-    return manifest.search_artifact || null;
-}
-
-export async function load_navigation_entries(manifest, language) {
-    const artifact_path = navigation_entry_artifact(manifest, language);
-    if (artifact_path == null) {
-        return null;
-    }
+function read_storage(key) {
     try {
-        const artifact = await fetch_json(artifact_path);
-        return artifact.entries || [];
-    } catch (error) {
-        console.warn("Documentation navigation artifact is unavailable", error);
-        return null;
-    }
-}
-
-export async function render_navigation(current_page_name, language, manifest) {
-    const navigation = document.getElementById("documentation_navigation");
-    const list = load_template_("documentation-navigation-list_");
-    const entries = await load_navigation_entries(manifest, language);
-    const expanded_page_name = navigation_expanded_page_name(manifest, language_page_name(language, current_page_name));
-    for (const category of navigation_tree(manifest, entries || [], language)) {
-        const category_element = load_template_("documentation-navigation-category_");
-        category_element.querySelector(".symi-documentation-category-label").textContent = category.title;
-        const category_sections = category_element.querySelector(".symi-documentation-category-sections");
-        for (const page of category.pages) {
-            if (page.entries.length === 0) {
-                category_sections.appendChild(create_navigation_plain_entry(page, current_page_name));
-                continue;
-            }
-            const section = create_navigation_section(page, expanded_page_name);
-            const entries_list = section.querySelector(".symi-documentation-section-entries");
-            for (const entry of page.entries) {
-                const entry_element = load_template_("documentation-navigation-entry_");
-                const entry_link = entry_element.querySelector(".symi-documentation-entry-link");
-                entry_link.textContent = entry.qualified_name;
-                entry_link.setAttribute("href", create_language_target(language, entry.page_identifier, entry.anchor));
-                entries_list.appendChild(entry_element);
-            }
-            category_sections.appendChild(section);
-        }
-        attach_collapse_toggle(
-            category_element.querySelector(".symi-documentation-category-toggle"),
-            category_sections,
-            category_is_expanded(category, expanded_page_name),
-        );
-        list.appendChild(category_element);
-    }
-    navigation.textContent = "";
-    navigation.appendChild(list);
-    return entries != null;
-}
-
-function language_target_for_current_page(manifest, language, current_language, current_page_name, hash, cross_language_targets) {
-    const current_target = (cross_language_targets || []).find(target => (
-        target.language === current_language
-        && target.page_identifier === current_page_name
-        && target.anchor === hash
-    ));
-    if (current_target != null) {
-        const target = (cross_language_targets || []).find(candidate => (
-            candidate.language === language
-            && candidate.category_identifier === current_target.category_identifier
-            && candidate.semantic_name === current_target.semantic_name
-        ));
-        if (target != null) {
-            return create_language_target(language, target.page_identifier, target.anchor);
-        }
-        const fallback_page = (manifest.pages || []).find(page => (
-            page.category_identifier === current_target.category_identifier
-        ));
-        if (fallback_page != null) {
-            const fallback_target = create_language_target(language, fallback_page.page_identifier);
-            return `${fallback_target}?unavailable=${encodeURIComponent(hash)}`;
-        }
-    }
-    return create_language_target(language, current_page_name, hash);
-}
-
-let remove_language_selector_dismissal = null;
-
-function render_language_selector(manifest, language, current_page_name, cross_language_targets) {
-    const mount = document.getElementById("documentation_language_selector");
-    mount.textContent = "";
-    if (remove_language_selector_dismissal != null) {
-        remove_language_selector_dismissal();
-        remove_language_selector_dismissal = null;
-    }
-    const selector = load_template_("documentation-language-selector_");
-    const button = selector.querySelector(".symi-documentation-language-button");
-    const label = selector.querySelector(".symi-documentation-language-label");
-    const list = selector.querySelector(".symi-documentation-language-list");
-    const languages = available_documentation_languages();
-    const current = languages.find(item => item.language_identifier === language) || languages[0];
-    label.textContent = current.label;
-    let active_index = languages.findIndex(item => item.language_identifier === language);
-    const set_open = open => {
-        list.classList.toggle("hidden", !open);
-        button.setAttribute("aria-expanded", open ? "true" : "false");
-        button.setAttribute("aria-activedescendant", open ? list.children[active_index]?.querySelector("a")?.id || "" : "");
-    };
-    languages.forEach((item, index) => {
-        const option = load_template_("documentation-language-option_");
-        const link = option.querySelector(".symi-documentation-language-option");
-        const selected_marker = option.querySelector(".symi-documentation-language-selected");
-        const hash = current_documentation_route().anchor;
-        link.textContent = item.label;
-        link.prepend(selected_marker);
-        selected_marker.textContent = item.language_identifier === language ? "✓" : "";
-        link.setAttribute("href", language_target_for_current_page(manifest, item.language_identifier, language, current_page_name, hash, cross_language_targets));
-        link.setAttribute("aria-selected", item.language_identifier === language ? "true" : "false");
-        option.setAttribute("aria-selected", item.language_identifier === language ? "true" : "false");
-        link.addEventListener("focus", () => { active_index = index; });
-        link.addEventListener("click", () => {
-            write_stored_language(item.language_identifier);
-            set_open(false);
-        });
-        list.appendChild(option);
-    });
-    button.addEventListener("click", () => set_open(list.classList.contains("hidden")));
-    button.addEventListener("keydown", event => {
-        if (["ArrowDown", "ArrowRight", "ArrowUp", "ArrowLeft", "Home", "End"].includes(event.key)) {
-            event.preventDefault();
-            if (event.key === "Home") active_index = 0;
-            else if (event.key === "End") active_index = languages.length - 1;
-            else if (["ArrowDown", "ArrowRight"].includes(event.key)) active_index = (active_index + 1) % languages.length;
-            else active_index = (active_index - 1 + languages.length) % languages.length;
-            list.children[active_index]?.querySelector("a")?.focus();
-            set_open(true);
-        } else if (event.key === "Escape") {
-            set_open(false);
-            button.focus();
-        }
-    });
-    const dismiss_selector = event => {
-        if (!selector.contains(event.target)) set_open(false);
-    };
-    document.addEventListener("click", dismiss_selector);
-    remove_language_selector_dismissal = () => document.removeEventListener("click", dismiss_selector);
-    mount.appendChild(selector);
-}
-
-const stored_language_key = "symi-documentation-language";
-
-function read_stored_language() {
-    try {
-        return localStorage.getItem(stored_language_key);
+        return localStorage.getItem(key);
     } catch (error) {
         return null;
     }
 }
 
-function write_stored_language(language) {
+function write_storage(key, value) {
     try {
-        localStorage.setItem(stored_language_key, language);
+        if (value == null) {
+            localStorage.removeItem(key);
+        } else {
+            localStorage.setItem(key, value);
+        }
     } catch (error) {
-        console.warn("The documentation language preference could not be stored", error);
+        console.warn("A documentation preference could not be stored", error);
     }
 }
 
-export function show_degraded_notice(message) {
-    const notice = document.getElementById("documentation-unavailable-notice");
-    if (notice == null) {
+let status_region = null;
+
+function announce(message) {
+    if (status_region == null) {
+        status_region = document.createElement("p");
+        status_region.className = "symi-visually-hidden";
+        status_region.setAttribute("role", "status");
+        status_region.setAttribute("aria-live", "polite");
+        document.body.appendChild(status_region);
+    }
+    status_region.textContent = "";
+    window.setTimeout(() => { status_region.textContent = message; }, 30);
+}
+
+function initialize_theme() {
+    const button = document.querySelector(".symi-theme-button");
+    if (button == null) {
         return;
     }
-    notice.textContent = message;
-    notice.classList.remove("hidden");
-}
-
-function render_layer_notice(language) {
-    const notice = document.getElementById("documentation_layer_text");
-    if (language === "wasm") {
-        notice.textContent = "WASM / JavaScript documentation presents the recommended facade first; raw wasm-bindgen exports are labeled separately in the reference.";
-    } else if (language === "rust") {
-        notice.textContent = "The Rust manual covers the recommended facade. The complete native crate is available in the Rustdoc reference.";
-    } else {
-        notice.textContent = "";
-    }
-    const unavailable_target = new URLSearchParams(window.location.search).get("unavailable");
-    const unavailable_notice = document.getElementById("documentation-unavailable-notice");
-    if (unavailable_target != null) {
-        unavailable_notice.textContent = `The placement ${unavailable_target} is not published in this language; showing its category instead.`;
-        unavailable_notice.classList.remove("hidden");
-    } else {
-        unavailable_notice.textContent = "";
-        unavailable_notice.classList.add("hidden");
-    }
-}
-
-const loaded_search_artifacts = new Map();
-
-export function search_artifact_paths(manifest, language, all_languages) {
-    const artifacts = (manifest.search_artifacts || []).filter(artifact => language_is_available(artifact.language));
-    if (all_languages && artifacts.length > 0) {
-        return artifacts.map(artifact => artifact.path);
-    }
-    const artifact = artifacts.find(item => item.language === language);
-    if (artifact != null) {
-        return [artifact.path];
-    }
-    return manifest.search_artifact != null ? [manifest.search_artifact] : [];
-}
-
-async function load_search_entries(manifest, language, all_languages) {
-    const paths = search_artifact_paths(manifest, language, all_languages);
-    if (paths.length === 0) {
-        throw new Error("documentation search artifact is unavailable");
-    }
-    const artifacts = await Promise.all(paths.map(path => {
-        if (!loaded_search_artifacts.has(path)) {
-            loaded_search_artifacts.set(path, fetch_json(path));
+    const apply = choice => {
+        if (choice === "system") {
+            delete document.documentElement.dataset.theme;
+        } else {
+            document.documentElement.dataset.theme = choice;
         }
-        return loaded_search_artifacts.get(path);
-    }));
-    return artifacts.flatMap(artifact => artifact.entries || []);
+        button.dataset.themeChoice = choice;
+        button.setAttribute("aria-label", `Colour theme: ${theme_labels[choice]}`);
+        button.title = `Colour theme: ${theme_labels[choice]}`;
+    };
+    const stored = read_storage(theme_storage_key);
+    let choice = theme_choices.includes(stored) ? stored : "system";
+    apply(choice);
+    button.hidden = false;
+    button.addEventListener("click", () => {
+        choice = theme_choices[(theme_choices.indexOf(choice) + 1) % theme_choices.length];
+        write_storage(theme_storage_key, choice === "system" ? null : choice);
+        apply(choice);
+        announce(`Colour theme: ${theme_labels[choice]}`);
+    });
 }
 
-function render_search_result(result, language, query) {
-    const element = load_template_("documentation-search-result_");
-    const link = element.querySelector(".symi-documentation-search-result-link");
-    const entry_language = language === "all" ? result.language : language;
-    const target = new URL(documentation_entry_url(result, entry_language), window.location.origin);
-    target.searchParams.set("q", query);
-    link.setAttribute("href", target.pathname + target.search + target.hash);
-    element.querySelector(".symi-documentation-search-result-name").textContent = result.qualified_name;
-    element.querySelector(".symi-documentation-search-result-meta").textContent = `${result.language} · ${result.category_identifier} · ${result.result_kind}`;
-    return element;
+function initialize_navigation_drawer() {
+    const menu_button = document.querySelector(".symi-menu-button");
+    const sidebar = document.getElementById("documentation_sidebar");
+    const backdrop = document.querySelector(".symi-drawer-backdrop");
+    const close_button = document.querySelector(".symi-sidebar-close");
+    if (menu_button == null || sidebar == null || backdrop == null) {
+        return;
+    }
+    const obscured = () => [
+        document.querySelector(".symi-skip-link"),
+        document.querySelector(".symi-header"),
+        document.getElementById("documentation_main"),
+        document.querySelector(".symi-outline"),
+    ].filter(element => element != null);
+    let open = false;
+    const set_open = (next_open, return_focus) => {
+        open = next_open;
+        sidebar.classList.toggle("symi-drawer-open", open);
+        backdrop.hidden = !open;
+        menu_button.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) {
+            sidebar.setAttribute("role", "dialog");
+            sidebar.setAttribute("aria-modal", "true");
+        } else {
+            sidebar.removeAttribute("role");
+            sidebar.removeAttribute("aria-modal");
+        }
+        for (const element of obscured()) {
+            element.inert = open;
+        }
+        document.body.style.overflow = open ? "hidden" : "";
+        if (open) {
+            const current = sidebar.querySelector("[aria-current='page']");
+            (current || close_button || sidebar).focus({ preventScroll: true });
+            if (current != null) {
+                current.scrollIntoView({ block: "center" });
+            }
+        } else if (return_focus) {
+            menu_button.focus();
+        }
+    };
+    menu_button.hidden = false;
+    menu_button.addEventListener("click", () => set_open(true, false));
+    close_button?.addEventListener("click", () => set_open(false, true));
+    backdrop.addEventListener("click", () => set_open(false, true));
+    document.addEventListener("keydown", event => {
+        if (open && event.key === "Escape") {
+            event.preventDefault();
+            set_open(false, true);
+        }
+    });
+    sidebar.addEventListener("click", event => {
+        if (open && event.target.closest("a") != null) {
+            set_open(false, false);
+        }
+    });
+    phone_layout_query.addEventListener("change", () => {
+        if (!phone_layout_query.matches && open) {
+            set_open(false, false);
+        }
+    });
 }
 
-async function render_search(manifest, language) {
-    const mount = document.getElementById("documentation_search");
-    mount.textContent = "";
-    const search = load_template_("documentation-search_");
-    const input = search.querySelector("#symi-documentation-search-input");
-    const scope = search.querySelector(".symi-documentation-search-scope");
-    const status = search.querySelector(".symi-documentation-search-status");
-    const results = search.querySelector(".symi-documentation-search-results");
+async function navigation_entries() {
+    if (state.navigation_entries == null) {
+        const artifact = (state.publication.navigation_artifacts || []).find(item => item.language === state.language);
+        state.navigation_entries = artifact == null
+            ? Promise.reject(new Error("no navigation artifact"))
+            : fetch_json(artifact.path).then(record => record.entries || []);
+    }
+    return await state.navigation_entries;
+}
+
+function initialize_navigation_expansion() {
+    for (const button of document.querySelectorAll(".symi-nav-expand")) {
+        const list = document.getElementById(button.getAttribute("aria-controls"));
+        const label = button.querySelector(".symi-visually-hidden");
+        const page_title = button.parentElement.querySelector(".symi-nav-page-link")?.textContent || "this page";
+        button.addEventListener("click", async () => {
+            const expanded = button.getAttribute("aria-expanded") !== "true";
+            button.setAttribute("aria-expanded", expanded ? "true" : "false");
+            label.textContent = `${expanded ? "Hide" : "Show"} entries in ${page_title}`;
+            list.hidden = !expanded;
+            if (!expanded || list.dataset.loaded === "true") {
+                return;
+            }
+            list.innerHTML = `<li class="symi-nav-loading">Loading entries…</li>`;
+            try {
+                const entries = (await navigation_entries()).filter(entry => entry.page_identifier === button.dataset.page);
+                list.innerHTML = navigation_entries_html(entries, state.routes, state.language);
+                list.dataset.loaded = "true";
+            } catch (error) {
+                list.innerHTML = `<li class="symi-nav-loading">Entries are unavailable; open the page instead.</li>`;
+            }
+        });
+    }
+}
+
+async function cross_language_targets() {
+    if (state.cross_language_targets == null) {
+        state.cross_language_targets = fetch_json(state.publication.cross_language_target_artifact || "cross_language_targets.json")
+            .then(record => record.targets || [])
+            .catch(error => {
+                console.warn("Cross-language documentation targets are unavailable", error);
+                return [];
+            });
+    }
+    return await state.cross_language_targets;
+}
+
+function initialize_language_menu() {
+    const menu = document.querySelector(".symi-language-menu");
+    if (menu == null) {
+        return;
+    }
+    const list = menu.querySelector(".symi-language-list");
+    const summary = menu.querySelector("summary");
+    const refresh = async () => {
+        const anchor = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+        if (anchor === "") {
+            return;
+        }
+        const targets = await cross_language_targets();
+        list.innerHTML = language_menu_items_html({
+            site_manifest: state.site_manifest,
+            routes: state.routes,
+            language: state.language,
+            current_page: state.page,
+            anchor,
+            cross_language_targets: targets,
+        });
+    };
+    menu.addEventListener("toggle", () => {
+        if (menu.open) {
+            refresh();
+        }
+    });
+    list.addEventListener("click", event => {
+        const option = event.target.closest("[data-language]");
+        if (option != null) {
+            write_storage(language_storage_key, option.dataset.language);
+        }
+    });
+    menu.addEventListener("keydown", event => {
+        if (event.key === "Escape" && menu.open) {
+            event.preventDefault();
+            menu.open = false;
+            summary.focus();
+        } else if ((event.key === "ArrowDown" || event.key === "ArrowUp") && menu.open) {
+            const options = [...list.querySelectorAll("a")];
+            const index = options.indexOf(document.activeElement);
+            const next = event.key === "ArrowDown" ? Math.min(index + 1, options.length - 1) : Math.max(index - 1, 0);
+            event.preventDefault();
+            options[index < 0 ? 0 : next]?.focus();
+        }
+    });
+    document.addEventListener("click", event => {
+        if (menu.open && !menu.contains(event.target)) {
+            menu.open = false;
+        }
+    });
+}
+
+function page_title(page_identifier) {
+    return (state.site_manifest.pages.find(page => page.page_identifier === page_identifier) || {}).title || page_identifier;
+}
+
+function language_label(language) {
+    return (state.site_manifest.languages.find(item => item.language_identifier === language) || {}).label || language;
+}
+
+function entry_result_html(result, all_languages) {
+    const primary = result.primary;
+    const alternates = result.alternates.length > 0
+        ? ` · also ${result.alternates.map(entry => entry.owner_label).filter((label, index, labels) => labels.indexOf(label) === index).join(", ")}`
+        : "";
+    const meta = `${primary.owner_label} · ${page_title(primary.page_identifier)}${alternates}`;
+    const summary = first_sentence(primary.summary);
+    const link = `<a class="symi-search-result" href="${escape_html(documentation_entry_url(primary))}">`
+        + `<span class="symi-search-result-heading"><span class="symi-search-result-name">${escape_html(primary.display_name)}</span>`
+        + `<span class="symi-search-result-meta">${escape_html(all_languages ? `${language_label(primary.language)} · ${meta}` : meta)}</span></span>`
+        + (summary ? `<span class="symi-search-result-summary">${escape_html(summary)}</span>` : "")
+        + `</a>`;
+    const languages = all_languages && result.languages.length > 1
+        ? `<ul class="symi-search-result-languages" aria-label="${escape_html(primary.display_name)} in other languages">`
+            + result.languages.map(entry => (
+                `<li><a class="symi-search-language-link" href="${escape_html(documentation_entry_url(entry))}">${escape_html(language_label(entry.language))}</a></li>`
+            )).join("")
+            + `</ul>`
+        : "";
+    return `<li class="symi-search-group">${link}${languages ? `<div class="symi-search-all-item">${languages}</div>` : ""}</li>`;
+}
+
+function concept_result_html(result) {
+    const concept = result.concept;
+    const href = state.routes.create_language_target(state.language, concept.page_identifier, concept.anchor || "");
+    const meta = concept.depth === 1 ? "Page" : `Section of ${concept.page_title}`;
+    return `<li class="symi-search-group"><a class="symi-search-result" href="${escape_html(href)}">`
+        + `<span class="symi-search-result-heading"><span>${escape_html(concept.title)}</span><span class="symi-search-result-meta">${escape_html(meta)}</span></span>`
+        + `</a></li>`;
+}
+
+function initialize_search() {
+    const container = document.querySelector(".symi-search");
+    const toggle = document.querySelector(".symi-search-button");
+    if (container == null) {
+        return;
+    }
+    const input = container.querySelector(".symi-search-input");
+    const panel = container.querySelector(".symi-search-panel");
+    const status = container.querySelector(".symi-search-status");
+    const results = container.querySelector(".symi-search-results");
+    const scopes = [...container.querySelectorAll(".symi-search-scope")];
+    const category_order = new Map((state.site_manifest.categories || []).map((category, index) => [category.category_identifier, index]));
+    const language_order = new Map((state.site_manifest.languages || []).map((language, index) => [language.language_identifier, language.language_identifier === state.language ? -1 : index]));
+    const loaded = new Map();
     let all_languages = false;
-    let entries = null;
-    const category_order = new Map((manifest.categories || []).map(category => [category.category_identifier, category.order]));
+    let generation = 0;
+    const load_entries = path => {
+        if (!loaded.has(path)) {
+            loaded.set(path, fetch_json(path).then(record => (record.entries || []).map(prepare_search_entry)));
+        }
+        return loaded.get(path);
+    };
+    const load_concepts = () => {
+        const path = `concepts/${state.language}.json`;
+        if (!loaded.has(path)) {
+            loaded.set(path, fetch_json(path).then(record => (record.concepts || []).map(prepare_search_concept)).catch(() => []));
+        }
+        return loaded.get(path);
+    };
+    const artifact_paths = () => {
+        const artifacts = (state.publication.presentation_artifacts || []).filter(artifact => state.routes.language_is_available(artifact.language));
+        return (all_languages ? artifacts : artifacts.filter(artifact => artifact.language === state.language)).map(artifact => artifact.path);
+    };
+    const set_panel_open = open => {
+        panel.hidden = !open;
+        input.setAttribute("aria-expanded", open ? "true" : "false");
+    };
     const update = async () => {
         const query = input.value.trim();
-        results.textContent = "";
+        const current_generation = ++generation;
         if (query === "") {
-            results.classList.add("hidden");
-            status.textContent = "Search by name, concept, parameter, option, or result type.";
+            results.innerHTML = "";
+            status.textContent = "Type a name, concept, parameter, or result type.";
+            set_panel_open(false);
             return;
         }
+        set_panel_open(true);
+        status.textContent = "Loading the search index…";
+        let entries;
+        let concepts;
         try {
-            entries = await load_search_entries(manifest, language, all_languages);
+            [entries, concepts] = await Promise.all([
+                Promise.all(artifact_paths().map(load_entries)).then(groups => groups.flat()),
+                load_concepts(),
+            ]);
         } catch (error) {
-            status.textContent = "Search is unavailable. Use the category navigation.";
+            if (current_generation === generation) {
+                results.innerHTML = "";
+                status.textContent = "Search is unavailable right now. Use the topic list instead.";
+            }
             return;
         }
-        const matches = search_documentation_entries(entries, query, { language: all_languages ? "all" : language, category_order });
-        results.classList.toggle("hidden", matches.length === 0);
-        for (const result of matches) results.appendChild(render_search_result(result, language, query));
-        status.textContent = `${matches.length} result${matches.length === 1 ? "" : "s"}`;
+        if (current_generation !== generation) {
+            return;
+        }
+        const matches = search_documentation(entries, concepts, query, { all_languages, category_order, language_order });
+        results.innerHTML = matches.map(result => (result.kind === "entry" ? entry_result_html(result, all_languages) : concept_result_html(result))).join("");
+        status.textContent = matches.length === 0
+            ? `No matches for “${query}”${all_languages ? "" : " in this language — try All languages"}.`
+            : `${matches.length}${matches.length === 40 ? "+" : ""} result${matches.length === 1 ? "" : "s"}${all_languages ? " across languages" : ""}`;
     };
-    scope.addEventListener("click", async () => {
-        all_languages = !all_languages;
-        scope.setAttribute("aria-pressed", all_languages ? "true" : "false");
-        scope.textContent = all_languages ? "Local" : "All";
-        await update();
+    let debounce = null;
+    input.addEventListener("input", () => {
+        window.clearTimeout(debounce);
+        debounce = window.setTimeout(update, 60);
     });
-    input.addEventListener("input", update);
+    input.addEventListener("focus", () => {
+        if (input.value.trim() !== "") {
+            set_panel_open(true);
+        }
+    });
+    for (const scope of scopes) {
+        scope.addEventListener("click", () => {
+            all_languages = scope.dataset.scope === "all";
+            for (const other of scopes) {
+                other.setAttribute("aria-pressed", other === scope ? "true" : "false");
+            }
+            update();
+            input.focus();
+        });
+    }
+    const result_links = () => [...results.querySelectorAll("a")];
     input.addEventListener("keydown", event => {
         if (event.key === "ArrowDown") {
-            const first_result = results.querySelector("a");
-            if (first_result != null) {
+            const first = result_links()[0];
+            if (first != null) {
                 event.preventDefault();
-                first_result.focus();
+                first.focus();
+            }
+        } else if (event.key === "Enter") {
+            const first = result_links()[0];
+            if (first != null) {
+                event.preventDefault();
+                first.click();
+            }
+        } else if (event.key === "Escape") {
+            event.preventDefault();
+            if (!panel.hidden) {
+                set_panel_open(false);
+            } else if (input.value !== "") {
+                input.value = "";
+                update();
+            } else if (container.classList.contains("symi-search-open")) {
+                close_phone_search(true);
             }
         }
-        if (event.key === "Enter") {
-            const first_result = results.querySelector("a");
-            if (first_result != null) {
-                event.preventDefault();
-                first_result.click();
+    });
+    results.addEventListener("click", event => {
+        if (event.target.closest("a") != null) {
+            set_panel_open(false);
+            if (container.classList.contains("symi-search-open")) {
+                close_phone_search(false);
             }
-        }
-        if (event.key === "Escape") {
-            input.value = "";
-            update();
         }
     });
     results.addEventListener("keydown", event => {
-        const links = Array.from(results.querySelectorAll("a"));
-        const current_index = links.indexOf(document.activeElement);
-        if (event.key === "ArrowDown" && current_index < links.length - 1) {
+        const links = result_links();
+        const index = links.indexOf(document.activeElement);
+        if (event.key === "ArrowDown" && index < links.length - 1) {
             event.preventDefault();
-            links[current_index + 1].focus();
+            links[index + 1].focus();
         } else if (event.key === "ArrowUp") {
             event.preventDefault();
-            if (current_index <= 0) input.focus();
-            else links[current_index - 1].focus();
+            (index <= 0 ? input : links[index - 1]).focus();
         } else if (event.key === "Escape") {
             event.preventDefault();
             input.focus();
+            set_panel_open(false);
         }
     });
-    mount.appendChild(search);
-    const query = new URLSearchParams(window.location.search).get("q");
-    if (query != null) {
-        input.value = query;
-        update();
+    document.addEventListener("click", event => {
+        if (!container.contains(event.target) && event.target !== toggle && !toggle?.contains(event.target)) {
+            set_panel_open(false);
+            if (container.classList.contains("symi-search-open")) {
+                close_phone_search(false);
+            }
+        }
+    });
+    const close_phone_search = return_focus => {
+        container.classList.remove("symi-search-open");
+        toggle?.setAttribute("aria-expanded", "false");
+        set_panel_open(false);
+        if (return_focus) {
+            toggle?.focus();
+        }
+    };
+    toggle?.addEventListener("click", () => {
+        const opening = !container.classList.contains("symi-search-open");
+        if (!opening) {
+            close_phone_search(true);
+            return;
+        }
+        container.classList.add("symi-search-open");
+        toggle.setAttribute("aria-expanded", "true");
+        input.focus();
+    });
+    document.addEventListener("keydown", event => {
+        const target = event.target;
+        const typing = target instanceof HTMLElement && (target.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName));
+        if (event.key === "/" && !typing && !event.metaKey && !event.ctrlKey && !event.altKey) {
+            event.preventDefault();
+            if (phone_layout_query.matches) {
+                toggle?.click();
+            } else {
+                input.focus();
+            }
+        }
+    });
+    container.hidden = false;
+    if (toggle != null) {
+        toggle.hidden = false;
+    }
+    status.textContent = "Type a name, concept, parameter, or result type.";
+}
+
+async function write_to_clipboard(text) {
+    if (navigator.clipboard != null && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+    }
+    const scratch = document.createElement("textarea");
+    scratch.value = text;
+    scratch.setAttribute("readonly", "");
+    scratch.style.position = "fixed";
+    scratch.style.opacity = "0";
+    document.body.appendChild(scratch);
+    scratch.select();
+    const copied = document.execCommand("copy");
+    scratch.remove();
+    if (!copied) {
+        throw new Error("copy command was rejected");
     }
 }
 
-export function render_mathematics_markup(source, display_mode) {
-    if (typeof katex === "undefined" || typeof katex.renderToString !== "function") {
-        const delimiters = display_mode ? ["\\[", "\\]"] : ["\\(", "\\)"];
-        return `<code class="symi-documentation-math-source">${delimiters[0]}${source}${delimiters[1]}</code>`;
-    }
-    try {
-        return katex.renderToString(source, {
-            displayMode: display_mode,
-            throwOnError: true,
-            strict: "warn",
-            trust: false,
+const copy_icon = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8.5" y="8.5" width="11" height="11" rx="2" /><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7.5a2 2 0 0 0 2 2h2.5" /></svg>`;
+
+function initialize_copy_buttons() {
+    for (const figure of document.querySelectorAll(".symi-code[data-code-kind='example']")) {
+        const header = figure.querySelector(".symi-code-header");
+        const code = figure.querySelector("pre code");
+        if (header == null || code == null) {
+            continue;
+        }
+        const label = figure.querySelector(".symi-code-label")?.textContent || "code";
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "symi-copy-button";
+        button.setAttribute("aria-label", `Copy ${label} code`);
+        button.innerHTML = `${copy_icon}<span>Copy</span>`;
+        const text = button.querySelector("span");
+        let reset = null;
+        button.addEventListener("click", async () => {
+            window.clearTimeout(reset);
+            try {
+                await write_to_clipboard(copy_text(code.textContent, figure.dataset.codeLanguage));
+                button.dataset.copyState = "copied";
+                text.textContent = "Copied";
+                announce("Code copied to the clipboard");
+            } catch (error) {
+                button.dataset.copyState = "failed";
+                text.textContent = "Copy failed";
+                announce("The code could not be copied; select it and copy it manually");
+            }
+            reset = window.setTimeout(() => {
+                delete button.dataset.copyState;
+                text.textContent = "Copy";
+            }, 2000);
         });
-    } catch (error) {
-        return `<code class="symi-documentation-math-source" data-math-error="true">${source}</code>`;
+        header.appendChild(button);
     }
 }
 
-export function mathematics_extension() {
-    const tokenize = (text, opening, closing, type) => {
-        if (!text.startsWith(opening)) {
-            return undefined;
-        }
-        const closing_index = text.indexOf(closing, opening.length);
-        if (closing_index < 0) {
-            return undefined;
-        }
-        return {
-            type: type,
-            raw: text.slice(0, closing_index + closing.length),
-            text: text.slice(opening.length, closing_index),
-        };
-    };
-    return {
-        extensions: [
-            {
-                name: "inline_mathematics",
-                level: "inline",
-                start(text) { return text.indexOf("\\("); },
-                tokenizer(text) { return tokenize(text, "\\(", "\\)", "inline_mathematics"); },
-                renderer(token) { return render_mathematics_markup(token.text, false); },
-            },
-            {
-                name: "display_mathematics",
-                level: "inline",
-                start(text) { return text.indexOf("\\["); },
-                tokenizer(text) { return tokenize(text, "\\[", "\\]", "display_mathematics"); },
-                renderer(token) { return render_mathematics_markup(token.text, true); },
-            },
-        ],
-    };
-}
-
-let mathematics_extension_registered = false;
-
-export function configure_markdown() {
-    if (mathematics_extension_registered || typeof marked === "undefined") {
+function initialize_outline_tracking() {
+    const links = new Map(
+        [...document.querySelectorAll(".symi-outline [data-outline-target]")].map(link => [link.dataset.outlineTarget, link]),
+    );
+    if (links.size === 0 || !("IntersectionObserver" in window)) {
         return;
     }
-    marked.use(mathematics_extension());
-    mathematics_extension_registered = true;
+    const headings = [...links.keys()].map(identifier => document.getElementById(identifier)).filter(element => element != null);
+    const visible = new Set();
+    const observer = new IntersectionObserver(observed => {
+        for (const item of observed) {
+            if (item.isIntersecting) {
+                visible.add(item.target);
+            } else {
+                visible.delete(item.target);
+            }
+        }
+        const current = headings.find(heading => visible.has(heading))
+            || [...headings].reverse().find(heading => heading.getBoundingClientRect().top < 120);
+        for (const link of links.values()) {
+            link.classList.remove("symi-outline-active");
+            link.removeAttribute("aria-current");
+        }
+        if (current != null) {
+            const link = links.get(current.id);
+            link.classList.add("symi-outline-active");
+            link.setAttribute("aria-current", "location");
+        }
+    }, { rootMargin: "-64px 0px -60% 0px" });
+    for (const heading of headings) {
+        observer.observe(heading);
+    }
 }
 
-export function assign_heading_anchors(container) {
-    for (const heading of container.querySelectorAll("h3")) {
-        const heading_match = heading.textContent.trim().match(/^[A-Za-z0-9_.]+/);
-        if (heading_match != null && document.getElementById(heading_match[0]) == null) {
-            heading.id = heading_match[0];
+// A deep link may name a placement whose calling form sits inside a collapsed section, or a
+// bare anchor before an entry. Open what hides it, bring it into view, and mark the entry
+// briefly so the reader sees which of several same-named entries was meant.
+function reveal_hash_target() {
+    const identifier = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+    if (identifier === "") {
+        return;
+    }
+    const target = document.getElementById(identifier);
+    if (target == null || !document.getElementById("documentation_content")?.contains(target)) {
+        return;
+    }
+    for (let element = target.parentElement; element != null; element = element.parentElement) {
+        if (element instanceof HTMLDetailsElement) {
+            element.open = true;
         }
     }
+    let marked = target;
+    if (target.tagName === "A" && target.textContent.trim() === "") {
+        let sibling = target.parentElement?.tagName === "P" ? target.parentElement.nextElementSibling : target.nextElementSibling;
+        while (sibling != null && sibling.tagName === "A") {
+            sibling = sibling.nextElementSibling;
+        }
+        marked = sibling || target;
+    }
+    target.scrollIntoView({ block: "start" });
+    marked.classList.remove("symi-target-highlight");
+    void marked.offsetWidth;
+    marked.classList.add("symi-target-highlight");
 }
 
-export function render_documentation_math(container) {
-    if (typeof window.renderMathInElement !== "function") {
-        return { rendered: false, errors: ["KaTeX auto-render is unavailable"] };
+function show_unavailable_notice() {
+    const unavailable = new URLSearchParams(window.location.search).get("unavailable");
+    const notice = document.getElementById("symi-unavailable-notice");
+    if (unavailable == null || notice == null) {
+        return;
     }
-    const errors = [];
-    window.renderMathInElement(container, {
-        delimiters: [
-            { left: "\\(", right: "\\)", display: false },
-            { left: "\\[", right: "\\]", display: true },
-        ],
-        ignoredTags: ["pre", "code", "script", "style", "textarea", "option"],
-        throwOnError: false,
-        strict: "warn",
-        errorCallback: (error, source) => {
-            errors.push({ message: String(error), source: String(source) });
-        },
+    notice.textContent = `The entry you followed is not published in the ${language_label(state.language)} documentation, so its topic is shown instead.`;
+    notice.hidden = false;
+}
+
+function print_with_open_sections() {
+    const reopened = [];
+    window.addEventListener("beforeprint", () => {
+        for (const details of document.querySelectorAll(".symi-article details:not([open])")) {
+            details.open = true;
+            reopened.push(details);
+        }
     });
-    if (errors.length > 0) {
-        const notice = document.createElement("p");
-        notice.className = "symi-documentation-math-error";
-        notice.setAttribute("role", "status");
-        notice.textContent = "Some mathematical notation could not be rendered. Source: ";
-        const source = document.createElement("code");
-        source.textContent = errors.map(error => error.source).join("; ");
-        notice.appendChild(source);
-        container.prepend(notice);
-    }
-    return { rendered: true, errors };
+    window.addEventListener("afterprint", () => {
+        while (reopened.length > 0) {
+            reopened.pop().open = false;
+        }
+    });
 }
 
-export function scroll_to_hash() {
-    const name = decodeURIComponent(current_documentation_route().anchor);
-    if (name === "") return;
-    const target = document.getElementById(name);
-    if (target == null) return;
-    const container = document.getElementById("documentation_main");
-    if (container == null || !container.contains(target)) {
-        target.scrollIntoView({ block: "start" });
+async function initialize() {
+    if (document.body.dataset.routeKind === "neutral") {
+        const stored = read_storage(language_storage_key);
+        const link = stored == null ? null : document.querySelector(`.symi-language-option[data-language="${CSS.escape(stored)}"]`);
+        if (link != null) {
+            window.location.replace(link.href + window.location.hash);
+            return;
+        }
+    }
+    initialize_theme();
+    initialize_navigation_drawer();
+    initialize_copy_buttons();
+    initialize_outline_tracking();
+    print_with_open_sections();
+    reveal_hash_target();
+    window.addEventListener("hashchange", reveal_hash_target);
+    try {
+        state.site_manifest = await fetch_json("site-manifest.json");
+        state.publication = await fetch_json(`publication/${state.language}.json`);
+    } catch (error) {
+        console.warn("Documentation metadata is unavailable; search and topic expansion are disabled", error);
         return;
     }
-    container.scrollTop += target.getBoundingClientRect().top - container.getBoundingClientRect().top;
+    state.routes = create_routes(state.site_manifest);
+    show_unavailable_notice();
+    initialize_navigation_expansion();
+    initialize_language_menu();
+    initialize_search();
 }
 
-export async function render_page(page_name, language) {
-    const content = document.getElementById("documentation_content");
-    configure_markdown();
-    try {
-        const page_markdown = await fetch_markdown(page_name, language);
-        content.innerHTML = marked.parse(page_markdown);
-        rewrite_documentation_links(content, language);
-        assign_heading_anchors(content);
-        render_documentation_math(content);
-        scroll_to_hash();
-    } catch (error) {
-        content.innerHTML = marked.parse("# Page not found\n\nThe requested documentation page does not exist. [Back to the introduction](introduction.md).");
-        rewrite_documentation_links(content, language);
-        render_documentation_math(content);
-    }
-}
-
-async function render_documentation() {
-    site_manifest = await fetch_json("site-manifest.json");
-    const route = current_documentation_route();
-    const current_page_name = route.page_name;
-    const current_language = route.language;
-    if (route.neutral_root) {
-        const stored_language = sanitize_language(read_stored_language());
-        window.location.replace(create_language_target(stored_language, current_page_name, route.anchor));
-        return;
-    }
-    let manifest = null;
-    try {
-        manifest = await fetch_json(`publication/${current_language}.json`);
-    } catch (error) {
-        await render_page(current_page_name, current_language);
-        show_degraded_notice("Documentation metadata is unavailable, so navigation and search are disabled. The page content below is current.");
-        return;
-    }
-    render_layer_notice(current_language);
-    const [navigation_outcome, search_outcome] = await Promise.allSettled([
-        render_navigation(current_page_name, current_language, manifest),
-        render_search(manifest, current_language),
-        render_page(current_page_name, current_language),
-    ]);
-    if (navigation_outcome.status !== "fulfilled" || navigation_outcome.value !== true) {
-        show_degraded_notice("The generated navigation index is unavailable, so the sidebar lists pages without their individual entries.");
-    }
-    if (search_outcome.status !== "fulfilled") {
-        console.warn("Documentation search could not be initialised", search_outcome.reason);
-    }
-    let cross_language_targets = [];
-    try {
-        const cross_language = await fetch_json(manifest.cross_language_target_artifact || "cross_language_targets.json");
-        cross_language_targets = cross_language.targets || [];
-    } catch (error) {
-        console.warn("Cross-language documentation targets are unavailable", error);
-    }
-    render_language_selector(manifest, current_language, current_page_name, cross_language_targets);
-}
-
-window.addEventListener("hashchange", () => scroll_to_hash());
-render_documentation().catch(error => {
-    show_degraded_notice(`The documentation could not start: ${error.message}`);
-});
+initialize();

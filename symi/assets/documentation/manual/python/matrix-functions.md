@@ -5,8 +5,13 @@ Matrix exponential, logarithm, trigonometric, hyperbolic, and Jordan operations 
 
 ### exponential
 
+<a id="entry-presentation_python_matrix_functions_capability_algebra_exponential_api_matrix_operations_matrix_exponential"></a>
 <a id="placement-placement.python.python_class.matrix_exponential.7d6e158a0a7b"></a>
-`Matrix.exponential()`
+<p class="symi-entry-owner">Matrix method</p>
+
+```python signature
+exponential() -> Matrix
+```
 
 
 The matrix exponential `exp(M)`, evaluated through the certified Jordan
@@ -15,8 +20,13 @@ exactly.
 
 ### logarithm
 
+<a id="entry-presentation_python_matrix_functions_capability_algebra_logarithm_api_matrix_operations_matrix_logarithm"></a>
 <a id="placement-placement.python.python_class.matrix_logarithm.a05822635c14"></a>
-`Matrix.logarithm()`
+<p class="symi-entry-owner">Matrix method</p>
+
+```python signature
+logarithm() -> Matrix
+```
 
 
 The principal matrix logarithm `log(M)`. Raises on a zero or negative-real
@@ -24,8 +34,13 @@ eigenvalue (principal branch cut).
 
 ### square_root
 
+<a id="entry-presentation_python_matrix_functions_capability_algebra_square_root_api_matrix_operations_matrix_square_root"></a>
 <a id="placement-placement.python.python_class.matrix_square_root.2ee200ff9ec2"></a>
-`Matrix.square_root()`
+<p class="symi-entry-owner">Matrix method</p>
+
+```python signature
+square_root() -> Matrix
+```
 
 
 The principal matrix square root `sqrt(M)`; the result is verified to square
@@ -34,8 +49,13 @@ eigenblock (non-analytic).
 
 ### sine
 
+<a id="entry-presentation_python_matrix_functions_capability_algebra_sine_api_matrix_operations_matrix_sine"></a>
 <a id="placement-placement.python.python_class.matrix_sine.0de13f4135d8"></a>
-`Matrix.sine()`
+<p class="symi-entry-owner">Matrix method</p>
+
+```python signature
+sine() -> Matrix
+```
 
 
 The primary matrix sine `sin(M)`, evaluated exactly through the certified
@@ -44,8 +64,13 @@ by `sin(M)^2 + cos(M)^2 = I`.
 
 ### cosine
 
+<a id="entry-presentation_python_matrix_functions_capability_algebra_cosine_api_matrix_operations_matrix_cosine"></a>
 <a id="placement-placement.python.python_class.matrix_cosine.5dc77fea11d2"></a>
-`Matrix.cosine()`
+<p class="symi-entry-owner">Matrix method</p>
+
+```python signature
+cosine() -> Matrix
+```
 
 
 The primary matrix cosine `cos(M)`, evaluated exactly through the certified
@@ -53,8 +78,13 @@ Jordan decomposition and the trigonometric identity certificate.
 
 ### hyperbolic_sine
 
+<a id="entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_sine_api_matrix_operations_matrix_hyperbolic_sine"></a>
 <a id="placement-placement.python.python_class.matrix_hyperbolic_sine.85e1bc19a042"></a>
-`Matrix.hyperbolic_sine()`
+<p class="symi-entry-owner">Matrix method</p>
+
+```python signature
+hyperbolic_sine() -> Matrix
+```
 
 
 The primary hyperbolic matrix sine `sinh(M)`, evaluated exactly through the
@@ -63,8 +93,13 @@ hyperbolic matrix cosine by `cosh(M)^2 - sinh(M)^2 = I`.
 
 ### hyperbolic_cosine
 
+<a id="entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_cosine_api_matrix_operations_matrix_hyperbolic_cosine"></a>
 <a id="placement-placement.python.python_class.matrix_hyperbolic_cosine.00c37ee8827b"></a>
-`Matrix.hyperbolic_cosine()`
+<p class="symi-entry-owner">Matrix method</p>
+
+```python signature
+hyperbolic_cosine() -> Matrix
+```
 
 
 The primary hyperbolic matrix cosine `cosh(M)`, evaluated exactly through the
@@ -72,8 +107,13 @@ certified Jordan decomposition and the hyperbolic identity certificate.
 
 ### jordan_decomposition
 
+<a id="entry-presentation_python_matrix_functions_capability_algebra_jordan_decomposition_api_matrix_operations_matrix_jordan_decomposition"></a>
 <a id="placement-placement.python.python_class.matrix_jordan_decomposition.53a3aeac78c1"></a>
-`Matrix.jordan_decomposition()`
+<p class="symi-entry-owner">Matrix method</p>
+
+```python signature
+jordan_decomposition() -> tuple[Matrix, Matrix, list[tuple[Expression, int]]]
+```
 
 
 The Jordan decomposition returned as `(similarity, jordan_form, blocks)` with
@@ -85,15 +125,16 @@ result class with `similarity`/`jordan_form`/`blocks` getters, each block a
 
 ### jordan_decomposition (WASM result class)
 
+<a id="entry-presentation_python_matrix_functions_capability_algebra_jordan_decomposition_api_matrix_operations_matrix_jordan_decomposition"></a>
 <a id="placement-placement.python.python_class.matrix_jordan_decomposition.53a3aeac78c1"></a>
-`Matrix.jordan_decomposition()`
+<p class="symi-entry-owner">Matrix method</p>
+
+```python signature
+jordan_decomposition() -> tuple[Matrix, Matrix, list[tuple[Expression, int]]]
+```
 
 
 ### similarity
-
-<a id="placement-placement.python.python_class.rationalcanonicalform_similarity.40c9ac5f68c3"></a>
-`RationalCanonicalForm.similarity`
-
 
 ### jordan_form
 
@@ -130,4 +171,19 @@ print(matrix.eigenvalues())
 print(matrix.characteristic_polynomial("x"))
 print(blocks)
 ```
+
+
+## Additional API
+
+### similarity
+
+<a id="entry-presentation_python_matrix_functions_capability_algebra_similarity_api_results_rationalcanonicalform_similarity"></a>
+<a id="placement-placement.python.python_class.rationalcanonicalform_similarity.40c9ac5f68c3"></a>
+<p class="symi-entry-owner">RationalCanonicalForm property</p>
+
+```python signature
+similarity: Matrix
+```
+
+The certified change of basis `S`, satisfying `matrix * S == S * canonical_form`.
 

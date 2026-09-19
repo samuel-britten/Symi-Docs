@@ -1,101 +1,620 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="wasm">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Linear algebra — Symi WASM / JavaScript documentation</title>
+        <meta name="description" content="Matrix arithmetic and linear algebra operations are exact symbolic operations." />
+        <link rel="canonical" href="/symi/wasm/linear-algebra/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="linear-algebra" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/wasm/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the WASM / JavaScript documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">WASM / JavaScript</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: WASM / JavaScript"><span>WASM / JavaScript</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/linear-algebra/" data-language="python" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/linear-algebra/" data-language="wasm" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/linear-algebra/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/linear-algebra/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/linear-algebra/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/getting-started-javascript/">Getting started: JavaScript / WASM</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/default-context/">The default context and module-level functions</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/context-safety/">Context safety</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/specialized-canonical-forms/">Specialized canonical forms</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/integral-transforms/">Integral transforms</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/linear-algebra/" aria-current="page">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Hide entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_add_api_matrix_add"><code>add</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_adjugate_api_matrix_adjugate"><code>adjugate</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_canonical_form_api_results_rationalcanonicalform_canonical_form"><code>canonicalForm</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_characteristic_polynomial_api_matrix_operations_matrix_characteristic_polynomial"><code>characteristicPolynomial</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_characteristic_polynomial_api_results_rationalcanonicalform_characteristic_polynomial"><code>characteristicPolynomial</code> <span class="symi-nav-entry-owner">RationalCanonicalForm property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_cofactor_matrix_api_matrix_cofactor_matrix"><code>cofactorMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_column_transformation_api_results_smithnormalformdecomposition_column_transformation"><code>columnTransformation</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_determinant_api_matrix_determinant"><code>determinant</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_eigenvalue_api_results_eigenpair_eigenvalue"><code>eigenvalue</code> <span class="symi-nav-entry-owner">Eigenpair property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_eigenvalue_api_results_jordanblock_eigenvalue"><code>eigenvalue</code> <span class="symi-nav-entry-owner">JordanBlock property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_eigenvalues_api_matrix_eigenvalues"><code>eigenvalues</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_eigenvectors_api_matrix_operations_matrix_eigenvectors"><code>eigenvectors</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_free_rank_api_results_integercokerneldata_free_rank"><code>freeRank</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_has_complex_entries_api_matrix_has_complex_entries"><code>hasComplexEntries</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_has_integer_entries_api_matrix_has_integer_entries"><code>hasIntegerEntries</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_has_real_entries_api_matrix_has_real_entries"><code>hasRealEntries</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_hyperbolic_cosine_api_matrix_operations_matrix_hyperbolic_cosine"><code>hyperbolicCosine</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_hyperbolic_sine_api_matrix_operations_matrix_hyperbolic_sine"><code>hyperbolicSine</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_integer_cokernel_structure_api_matrix_operations_matrix_integer_cokernel_structure"><code>integerCokernelStructure</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_integer_image_lattice_basis_api_matrix_operations_matrix_integer_image_lattice_basis"><code>integerImageLatticeBasis</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_integer_kernel_basis_api_matrix_operations_matrix_integer_kernel_basis"><code>integerKernelBasis</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_integer_row_lattice_basis_api_matrix_operations_matrix_integer_row_lattice_basis"><code>integerRowLatticeBasis</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_invariant_factors_api_results_rationalcanonicalform_invariant_factors"><code>invariantFactors</code> <span class="symi-nav-entry-owner">RationalCanonicalForm property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_invariant_factors_api_results_smithnormalformdecomposition_invariant_factors"><code>invariantFactors</code> <span class="symi-nav-entry-owner">SmithNormalFormDecomposition property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_inverse_api_matrix_inverse"><code>inverse</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_diagonal_matrix_api_matrix_is_diagonal_matrix"><code>isDiagonalMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_full_rank_matrix_api_matrix_is_full_rank_matrix"><code>isFullRankMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_hermitian_matrix_api_matrix_is_hermitian_matrix"><code>isHermitianMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_identity_matrix_api_matrix_is_identity_matrix"><code>isIdentityMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_invertible_matrix_api_matrix_is_invertible_matrix"><code>isInvertibleMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_normal_matrix_api_matrix_is_normal_matrix"><code>isNormalMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_orthogonal_matrix_api_matrix_is_orthogonal_matrix"><code>isOrthogonalMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_positive_definite_matrix_api_matrix_is_positive_definite_matrix"><code>isPositiveDefiniteMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_positive_semidefinite_matrix_api_matrix_is_positive_semidefinite_matrix"><code>isPositiveSemidefiniteMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_singular_matrix_api_matrix_is_singular_matrix"><code>isSingularMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_square_api_matrix_is_square"><code>isSquare</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_symmetric_matrix_api_matrix_is_symmetric_matrix"><code>isSymmetricMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_unitary_matrix_api_matrix_is_unitary_matrix"><code>isUnitaryMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_is_zero_matrix_api_matrix_is_zero_matrix"><code>isZeroMatrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_lower_upper_decomposition_api_matrix_operations_matrix_lower_upper_decomposition"><code>lowerUpperDecomposition</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_matrix_api_matrix"><code>Matrix</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_minimal_polynomial_api_matrix_operations_matrix_minimal_polynomial"><code>minimalPolynomial</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_minimal_polynomial_api_results_rationalcanonicalform_minimal_polynomial"><code>minimalPolynomial</code> <span class="symi-nav-entry-owner">RationalCanonicalForm property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_multiply_api_matrix_multiply"><code>multiply</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_nullspace_basis_api_matrix_operations_matrix_nullspace_basis"><code>nullspaceBasis</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_pivot_columns_api_results_hermitenormalformdecomposition_pivot_columns"><code>pivotColumns</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_rank_api_results_hermitenormalformdecomposition_rank"><code>rank</code> <span class="symi-nav-entry-owner">HermiteNormalFormDecomposition property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_rank_api_matrix_rank"><code>rank</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_rank_api_results_smithnormalformdecomposition_rank"><code>rank</code> <span class="symi-nav-entry-owner">SmithNormalFormDecomposition property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_rational_canonical_form_api_matrix_operations_matrix_rational_canonical_form"><code>rationalCanonicalForm</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_row_reduce_api_matrix_row_reduce"><code>rowReduce</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_row_transformation_api_results_smithnormalformdecomposition_row_transformation"><code>rowTransformation</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_scalar_multiply_api_matrix_scalar_multiply"><code>scalarMultiply</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_square_root_api_matrix_operations_matrix_square_root"><code>squareRoot</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_subtract_api_matrix_subtract"><code>subtract</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_torsion_invariant_factors_api_results_integercokerneldata_torsion_invariant_factors"><code>torsionInvariantFactors</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_to_js_string_unresolved"><code>toString</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_trace_api_matrix_trace"><code>trace</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_transpose_api_matrix_transpose"><code>transpose</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/linear-algebra/#entry-presentation_wasm_linear_algebra_capability_algebra_vectors_api_results_eigenpair_vectors"><code>vectors</code></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logical-transforms/">Logical transforms</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/zero-equivalence/">Zero equivalence</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/wasm/introduction/">WASM / JavaScript</a></li><li>Algebra and matrices</li><li><span aria-current="page">Linear algebra</span></li></ol></nav>
+                <p class="symi-notice">Signatures in the WASM / JavaScript view are TypeScript. Where the JavaScript facade wraps an operation its form is listed first; the other calling forms are the raw wasm-bindgen exports.</p>
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-2"><a href="#arithmetic" data-outline-target="arithmetic">Arithmetic</a></li><li class="symi-outline-depth-2"><a href="#matrix_assumptions" data-outline-target="matrix_assumptions">Matrix assumptions</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">Linear algebra</h1>
+<p>Matrix arithmetic and linear algebra operations are exact symbolic operations.</p>
+<h2 id="arithmetic">Arithmetic<a class="symi-heading-permalink" href="#arithmetic" aria-label="Link to this section: Arithmetic">#</a></h2>
+<p>Python additionally overloads <code>+</code>, <code>-</code>, <code>*</code> (matrix product) over these
+named methods.</p>
+<h3 id="add">add<a class="symi-heading-permalink" href="#add" aria-label="Link to this section: add">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_add_api_matrix_add"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_add.99e6a9230b2d"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">add</span><span class="token punctuation">(</span>other<span class="token operator">:</span> Matrix<span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<h3 id="subtract">subtract<a class="symi-heading-permalink" href="#subtract" aria-label="Link to this section: subtract">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_subtract_api_matrix_subtract"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_subtract.ac3ea3a61aeb"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">subtract</span><span class="token punctuation">(</span>other<span class="token operator">:</span> Matrix<span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<h3 id="multiply">multiply<a class="symi-heading-permalink" href="#multiply" aria-label="Link to this section: multiply">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_multiply_api_matrix_multiply"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_multiply.ba14f611498e"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">multiply</span><span class="token punctuation">(</span>other<span class="token operator">:</span> Matrix<span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<p>Matrix product; inner dimensions must agree.</p>
+<h3 id="scalar_multiply">scalar_multiply<a class="symi-heading-permalink" href="#scalar_multiply" aria-label="Link to this section: scalar_multiply">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/linear-algebra/#scalar_multiply"><code>Matrix.scalar_multiply</code></a> in Python, <a href="/symi/kotlin/linear-algebra/#scalar_multiply"><code>UniffiMatrix.scalarMultiply</code></a> in Kotlin, <a href="/symi/swift/linear-algebra/#scalar_multiply"><code>UniffiMatrix.scalarMultiply</code></a> in Swift, <a href="/symi/rust/linear-algebra/#scalar_multiply"><code>api::Matrix::scalar_multiply</code></a> in Rust.</em></p>
+<h2 id="matrix_assumptions">Matrix assumptions<a class="symi-heading-permalink" href="#matrix_assumptions" aria-label="Link to this section: Matrix assumptions">#</a></h2>
+<p>Matrix predicates are available as methods on <code>Matrix</code>, as constructors on an
+explicit <code>Context</code>, and as default-context module functions in Python and WASM.
+Native Rust uses the corresponding <code>Session</code> methods. Query methods return
+<code>True</code>/<code>False</code>/<code>None</code> (or the native <code>TruthValue</code>), preserving unknown when
+the exact symbolic engine cannot decide.</p>
+<h3 id="matrix_shape">matrix_shape<a class="symi-heading-permalink" href="#matrix_shape" aria-label="Link to this section: matrix_shape">#</a></h3>
+<p>Assert or query an exact positive row and column count.</p>
+<h3 id="square_matrix">square_matrix<a class="symi-heading-permalink" href="#square_matrix" aria-label="Link to this section: square_matrix">#</a></h3>
+<p>Assert or query that the matrix has equal row and column counts.</p>
+<h3 id="zero_matrix">zero_matrix<a class="symi-heading-permalink" href="#zero_matrix" aria-label="Link to this section: zero_matrix">#</a></h3>
+<p>Assert or query that all entries are zero.</p>
+<h3 id="identity_matrix">identity_matrix<a class="symi-heading-permalink" href="#identity_matrix" aria-label="Link to this section: identity_matrix">#</a></h3>
+<p>Assert or query the identity-matrix structure.</p>
+<h3 id="diagonal_matrix">diagonal_matrix<a class="symi-heading-permalink" href="#diagonal_matrix" aria-label="Link to this section: diagonal_matrix">#</a></h3>
+<p>Assert or query diagonal structure.</p>
+<h3 id="upper_triangular_matrix">upper_triangular_matrix<a class="symi-heading-permalink" href="#upper_triangular_matrix" aria-label="Link to this section: upper_triangular_matrix">#</a></h3>
+<p>Assert or query upper-triangular structure.</p>
+<h3 id="lower_triangular_matrix">lower_triangular_matrix<a class="symi-heading-permalink" href="#lower_triangular_matrix" aria-label="Link to this section: lower_triangular_matrix">#</a></h3>
+<p>Assert or query lower-triangular structure.</p>
+<h3 id="symmetric_matrix">symmetric_matrix<a class="symi-heading-permalink" href="#symmetric_matrix" aria-label="Link to this section: symmetric_matrix">#</a></h3>
+<p>Assert or query equality with the transpose.</p>
+<h3 id="hermitian_matrix">hermitian_matrix<a class="symi-heading-permalink" href="#hermitian_matrix" aria-label="Link to this section: hermitian_matrix">#</a></h3>
+<p>Assert or query equality with the conjugate transpose.</p>
+<h3 id="orthogonal_matrix">orthogonal_matrix<a class="symi-heading-permalink" href="#orthogonal_matrix" aria-label="Link to this section: orthogonal_matrix">#</a></h3>
+<p>Assert or query the real orthogonality condition.</p>
+<h3 id="unitary_matrix">unitary_matrix<a class="symi-heading-permalink" href="#unitary_matrix" aria-label="Link to this section: unitary_matrix">#</a></h3>
+<p>Assert or query the unitary condition.</p>
+<h3 id="normal_matrix">normal_matrix<a class="symi-heading-permalink" href="#normal_matrix" aria-label="Link to this section: normal_matrix">#</a></h3>
+<p>Assert or query commutation with the conjugate transpose.</p>
+<h3 id="full_rank_matrix">full_rank_matrix<a class="symi-heading-permalink" href="#full_rank_matrix" aria-label="Link to this section: full_rank_matrix">#</a></h3>
+<p>Assert or query full rank.</p>
+<h3 id="invertible_matrix">invertible_matrix<a class="symi-heading-permalink" href="#invertible_matrix" aria-label="Link to this section: invertible_matrix">#</a></h3>
+<p>Assert or query square invertibility.</p>
+<h3 id="singular_matrix">singular_matrix<a class="symi-heading-permalink" href="#singular_matrix" aria-label="Link to this section: singular_matrix">#</a></h3>
+<p>Assert or query square singularity.</p>
+<h3 id="integer_entries">integer_entries<a class="symi-heading-permalink" href="#integer_entries" aria-label="Link to this section: integer_entries">#</a></h3>
+<p>Assert or query integer entries.</p>
+<h3 id="real_entries">real_entries<a class="symi-heading-permalink" href="#real_entries" aria-label="Link to this section: real_entries">#</a></h3>
+<p>Assert or query real entries.</p>
+<h3 id="complex_entries">complex_entries<a class="symi-heading-permalink" href="#complex_entries" aria-label="Link to this section: complex_entries">#</a></h3>
+<p>Assert or query finite complex entries.</p>
+<h3 id="positive_definite_matrix">positive_definite_matrix<a class="symi-heading-permalink" href="#positive_definite_matrix" aria-label="Link to this section: positive_definite_matrix">#</a></h3>
+<p>Assert or query exact positive definiteness.</p>
+<h3 id="positive_semidefinite_matrix">positive_semidefinite_matrix<a class="symi-heading-permalink" href="#positive_semidefinite_matrix" aria-label="Link to this section: positive_semidefinite_matrix">#</a></h3>
+<p>Assert or query exact positive semidefiniteness.</p>
+<h3 id="transpose">transpose<a class="symi-heading-permalink" href="#transpose" aria-label="Link to this section: transpose">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_transpose_api_matrix_transpose"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_transpose.d8c363407dfa"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">transpose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<h3 id="determinant">determinant<a class="symi-heading-permalink" href="#determinant" aria-label="Link to this section: determinant">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_determinant_api_matrix_determinant"></a>
+<a id="placement-placement.wasm.javascript_facade.matrix_determinant.375ed98dc9f9"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">determinant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.matrix_determinant.9cca0ed72b2e"></a></p>
+<p class="symi-entry-owner">Matrix method: <code>Matrix.determinant</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">determinant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+
+<p>Fraction-free (Berkowitz/Bareiss) determinant of a square matrix.</p>
+<h3 id="trace">trace<a class="symi-heading-permalink" href="#trace" aria-label="Link to this section: trace">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_trace_api_matrix_trace"></a>
+<a id="placement-placement.wasm.javascript_facade.matrix_trace.520d7f729d12"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">trace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.matrix_trace.061991085cfa"></a></p>
+<p class="symi-entry-owner">Matrix method: <code>Matrix.trace</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">trace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+
+<h3 id="characteristic_polynomial">characteristic_polynomial<a class="symi-heading-permalink" href="#characteristic_polynomial" aria-label="Link to this section: characteristic_polynomial">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/linear-algebra/#characteristic_polynomial"><code>Matrix.characteristic_polynomial</code></a> in Python, <a href="/symi/kotlin/linear-algebra/#characteristic_polynomial"><code>UniffiMatrix.characteristicPolynomial</code></a> in Kotlin, <a href="/symi/swift/linear-algebra/#characteristic_polynomial"><code>UniffiMatrix.characteristicPolynomial</code></a> in Swift, <a href="/symi/rust/linear-algebra/#characteristic_polynomial"><code>api::matrix_operations::Matrix::characteristic_polynomial</code></a> in Rust.</em></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>det</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>λ</mi><mi>I</mi><mo>−</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\det(\lambda I - M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">det</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span> as a polynomial in the named variable.</p>
+<h3 id="minimal_polynomial">minimal_polynomial<a class="symi-heading-permalink" href="#minimal_polynomial" aria-label="Link to this section: minimal_polynomial">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/linear-algebra/#minimal_polynomial"><code>Matrix.minimal_polynomial</code></a> in Python, <a href="/symi/kotlin/linear-algebra/#minimal_polynomial"><code>UniffiMatrix.minimalPolynomial</code></a> in Kotlin, <a href="/symi/swift/linear-algebra/#minimal_polynomial"><code>UniffiMatrix.minimalPolynomial</code></a> in Swift, <a href="/symi/rust/linear-algebra/#minimal_polynomial"><code>api::matrix_operations::Matrix::minimal_polynomial</code></a> in Rust.</em></p>
+<p>The monic minimal polynomial over the rationals. The matrix must have rational entries.</p>
+<h3 id="eigenvalues">eigenvalues<a class="symi-heading-permalink" href="#eigenvalues" aria-label="Link to this section: eigenvalues">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_eigenvalues_api_matrix_eigenvalues"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_eigenvalues.6b4706f57bbf"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eigenvalues</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>Eigenvalues with multiplicity, via the characteristic polynomial and the
+root finder; eigenvalues the root finder cannot close remain as
+exact first-class <code>polynomial_root</code> values.</p>
+<h3 id="eigenvectors">eigenvectors<a class="symi-heading-permalink" href="#eigenvectors" aria-label="Link to this section: eigenvectors">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_eigenvectors_api_matrix_operations_matrix_eigenvectors"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_eigenvectors.c6bb314d0780"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eigenvectors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Eigenpair<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>For each eigenvalue, a basis of its eigenspace as column matrices.
+<strong>Notes:</strong> WASM returns <code>Eigenpair</code> objects with <code>eigenvalue</code>/<code>vectors</code>
+getters.</p>
+<h3 id="eigenpair_wasm_result_class"><span id="eigenpair" class="symi-legacy-anchor"></span>eigenpair (WASM result class)<a class="symi-heading-permalink" href="#eigenpair_wasm_result_class" aria-label="Link to this section: eigenpair (WASM result class)">#</a></h3>
+<h3 id="eigenvalue">eigenvalue<a class="symi-heading-permalink" href="#eigenvalue" aria-label="Link to this section: eigenvalue">#</a></h3>
+<h3 id="vectors">vectors<a class="symi-heading-permalink" href="#vectors" aria-label="Link to this section: vectors">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_vectors_api_results_eigenpair_vectors"></a>
+<a id="placement-placement.wasm.wasm_class.eigenpair_vectors.cddaa6ad5fe1"></a></p>
+<p class="symi-entry-owner">Eigenpair property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> vectors<span class="token operator">:</span> Matrix<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<h3 id="inverse">inverse<a class="symi-heading-permalink" href="#inverse" aria-label="Link to this section: inverse">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_inverse_api_matrix_inverse"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_inverse.b9c203ead0bb"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">inverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<p>Inverse via the adjugate; raises on singular input.</p>
+<h3 id="rank">rank<a class="symi-heading-permalink" href="#rank" aria-label="Link to this section: rank">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_rank_api_matrix_rank"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_rank.488612d9f940"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rank</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+<p>Rank via Bareiss fraction-free elimination.</p>
+<h3 id="row_reduce">row_reduce<a class="symi-heading-permalink" href="#row_reduce" aria-label="Link to this section: row_reduce">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/linear-algebra/#row_reduce"><code>Matrix.row_reduce</code></a> in Python, <a href="/symi/kotlin/linear-algebra/#row_reduce"><code>UniffiMatrix.rowReduce</code></a> in Kotlin, <a href="/symi/swift/linear-algebra/#row_reduce"><code>UniffiMatrix.rowReduce</code></a> in Swift, <a href="/symi/rust/linear-algebra/#row_reduce"><code>api::Matrix::row_reduce</code></a> in Rust.</em></p>
+<p>Bareiss row-reduced form (fraction-free; pivots remain on the diagonal).</p>
+<h3 id="nullspace_basis">nullspace_basis<a class="symi-heading-permalink" href="#nullspace_basis" aria-label="Link to this section: nullspace_basis">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/linear-algebra/#nullspace_basis"><code>Matrix.nullspace_basis</code></a> in Python, <a href="/symi/kotlin/linear-algebra/#nullspace_basis"><code>UniffiMatrix.nullspaceBasis</code></a> in Kotlin, <a href="/symi/swift/linear-algebra/#nullspace_basis"><code>UniffiMatrix.nullspaceBasis</code></a> in Swift, <a href="/symi/rust/linear-algebra/#nullspace_basis"><code>api::matrix_operations::Matrix::nullspace_basis</code></a> in Rust.</em></p>
+<p>A basis of the kernel, as column matrices; empty list for full column rank.</p>
+<h3 id="adjugate">adjugate<a class="symi-heading-permalink" href="#adjugate" aria-label="Link to this section: adjugate">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_adjugate_api_matrix_adjugate"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_adjugate.3b29f0eaf4e7"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">adjugate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<p>The classical adjoint (transpose of the cofactor matrix); satisfies
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi mathvariant="normal">adj</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo><mo>=</mo><mi>det</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">M\operatorname{adj}(M) = \det(M) I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">adj</span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">det</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span>.</p>
+<h3 id="cofactor_matrix">cofactor_matrix<a class="symi-heading-permalink" href="#cofactor_matrix" aria-label="Link to this section: cofactor_matrix">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/linear-algebra/#cofactor_matrix"><code>Matrix.cofactor_matrix</code></a> in Python, <a href="/symi/kotlin/linear-algebra/#cofactor_matrix"><code>UniffiMatrix.cofactorMatrix</code></a> in Kotlin, <a href="/symi/swift/linear-algebra/#cofactor_matrix"><code>UniffiMatrix.cofactorMatrix</code></a> in Swift, <a href="/symi/rust/linear-algebra/#cofactor_matrix"><code>api::Matrix::cofactor_matrix</code></a> in Rust.</em></p>
+<h3 id="lower_upper_decomposition">lower_upper_decomposition<a class="symi-heading-permalink" href="#lower_upper_decomposition" aria-label="Link to this section: lower_upper_decomposition">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/linear-algebra/#lower_upper_decomposition"><code>Matrix.lower_upper_decomposition</code></a> in Python, <a href="/symi/kotlin/linear-algebra/#lower_upper_decomposition"><code>UniffiMatrix.lowerUpperDecomposition</code></a> in Kotlin, <a href="/symi/swift/linear-algebra/#lower_upper_decomposition"><code>UniffiMatrix.lowerUpperDecomposition</code></a> in Swift, <a href="/symi/rust/linear-algebra/#lower_upper_decomposition"><code>api::matrix_operations::Matrix::lower_upper_decomposition</code></a> in Rust.</em></p>
+<p>Partial-pivoting LU decomposition returned as
+<code>(permutation, lower, upper)</code> with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">permutation</mi><mo>⁡</mo><mi>M</mi><mo>=</mo><mi mathvariant="normal">lower</mi><mo>⁡</mo><mtext> </mtext><mi mathvariant="normal">upper</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{permutation} M = \operatorname{lower}\,\operatorname{upper}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mop"><span class="mord mathrm">permutation</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mop"><span class="mord mathrm">lower</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">upper</span></span></span></span></span>. The
+permutation matrix is reconstructed from the pivoting row-swap record.
+<strong>Notes:</strong> WASM returns a 3-element array <code>[permutation, lower, upper]</code>.</p>
+<h2 id="example">Example<a class="symi-heading-permalink" href="#example" aria-label="Link to this section: Example">#</a></h2>
+<p>Exact matrix arithmetic and spectral data.</p>
+<figure class="symi-code symi-code-example" data-code-language="javascript" data-code-kind="example"><figcaption class="symi-code-header"><span class="symi-code-label">JavaScript</span></figcaption><pre class="symi-code-body language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> matrix <span class="token operator">=</span> symi<span class="token punctuation">.</span><span class="token function">matrix</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>matrix<span class="token punctuation">.</span><span class="token function">determinant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>matrix<span class="token punctuation">.</span><span class="token function">trace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>matrix<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure>
+<h2 id="additional_api">Additional API<a class="symi-heading-permalink" href="#additional_api" aria-label="Link to this section: Additional API">#</a></h2>
+<h3 id="matrix"><span id="Matrix" class="symi-legacy-anchor"></span>Matrix<a class="symi-heading-permalink" href="#matrix" aria-label="Link to this section: Matrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_matrix_api_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix.9d9ffff314ec"></a></p>
+<p class="symi-entry-owner">Matrix constructor</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">new</span> <span class="token class-name">Matrix</span><span class="token punctuation">(</span>rows<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> columns<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> entries<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre></div>
+<p>Construct a matrix of the given shape from <code>entries</code> in row-major order.</p>
+<h3 id="canonicalform"><span id="canonicalForm" class="symi-legacy-anchor"></span>canonicalForm<a class="symi-heading-permalink" href="#canonicalform" aria-label="Link to this section: canonicalForm">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_canonical_form_api_results_rationalcanonicalform_canonical_form"></a>
+<a id="placement-placement.wasm.wasm_class.rationalcanonicalform_canonicalform.fa5f7876399d"></a></p>
+<p class="symi-entry-owner">RationalCanonicalForm property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> canonicalForm<span class="token operator">:</span> Matrix</code></pre></div>
+<p>The Frobenius canonical form of the decomposed matrix.</p>
+<h3 id="characteristicpolynomial"><span id="characteristicPolynomial" class="symi-legacy-anchor"></span>characteristicPolynomial<a class="symi-heading-permalink" href="#characteristicpolynomial" aria-label="Link to this section: characteristicPolynomial">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_characteristic_polynomial_api_matrix_operations_matrix_characteristic_polynomial"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_characteristicpolynomial.b52d432283bf"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">characteristicPolynomial</span><span class="token punctuation">(</span>variable<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>det</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>λ</mi><mi>I</mi><mo>−</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\det(\lambda I - M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">det</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span> as a polynomial in the named variable.</p>
+<h3 id="characteristicpolynomial_2">characteristicPolynomial<a class="symi-heading-permalink" href="#characteristicpolynomial_2" aria-label="Link to this section: characteristicPolynomial">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_characteristic_polynomial_api_results_rationalcanonicalform_characteristic_polynomial"></a>
+<a id="placement-placement.wasm.wasm_class.rationalcanonicalform_characteristicpolynomial.62eae1d83074"></a></p>
+<p class="symi-entry-owner">RationalCanonicalForm property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> characteristicPolynomial<span class="token operator">:</span> Expression</code></pre></div>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>det</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>λ</mi><mi>I</mi><mo>−</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\det(\lambda I - M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">det</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span> as a polynomial in the named variable.</p>
+<h3 id="cofactormatrix"><span id="cofactorMatrix" class="symi-legacy-anchor"></span>cofactorMatrix<a class="symi-heading-permalink" href="#cofactormatrix" aria-label="Link to this section: cofactorMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_cofactor_matrix_api_matrix_cofactor_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_cofactormatrix.f7cc2238f180"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">cofactorMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<p>The matrix of cofactors, whose transpose is the adjugate.</p>
+<h3 id="columntransformation"><span id="columnTransformation" class="symi-legacy-anchor"></span>columnTransformation<a class="symi-heading-permalink" href="#columntransformation" aria-label="Link to this section: columnTransformation">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_column_transformation_api_results_smithnormalformdecomposition_column_transformation"></a>
+<a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_columntransformation.9b91a0b807db"></a></p>
+<p class="symi-entry-owner">SmithNormalFormDecomposition property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> columnTransformation<span class="token operator">:</span> Matrix</code></pre></div>
+<p>The unimodular column transformation <code>V</code> satisfying <code>U * matrix * V == S</code>.</p>
+<h3 id="eigenvalue_2">eigenvalue<a class="symi-heading-permalink" href="#eigenvalue_2" aria-label="Link to this section: eigenvalue">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_eigenvalue_api_results_eigenpair_eigenvalue"></a>
+<a id="placement-placement.wasm.wasm_class.eigenpair_eigenvalue.843c70c4d195"></a></p>
+<p class="symi-entry-owner">Eigenpair property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> eigenvalue<span class="token operator">:</span> Expression</code></pre></div>
+<p>The eigenvalue of the pair.</p>
+<h3 id="eigenvalue_3">eigenvalue<a class="symi-heading-permalink" href="#eigenvalue_3" aria-label="Link to this section: eigenvalue">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_eigenvalue_api_results_jordanblock_eigenvalue"></a>
+<a id="placement-placement.wasm.wasm_class.jordanblock_eigenvalue.709dd40eb76c"></a></p>
+<p class="symi-entry-owner">JordanBlock property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> eigenvalue<span class="token operator">:</span> Expression</code></pre></div>
+<p>The eigenvalue this Jordan block belongs to.</p>
+<h3 id="freerank"><span id="freeRank" class="symi-legacy-anchor"></span>freeRank<a class="symi-heading-permalink" href="#freerank" aria-label="Link to this section: freeRank">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_free_rank_api_results_integercokerneldata_free_rank"></a>
+<a id="placement-placement.wasm.wasm_class.integercokerneldata_freerank.58e60eaffcc6"></a></p>
+<p class="symi-entry-owner">IntegerCokernelData property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> freeRank<span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+<p>Rank of the free part of the cokernel.</p>
+<h3 id="hascomplexentries"><span id="hasComplexEntries" class="symi-legacy-anchor"></span>hasComplexEntries<a class="symi-heading-permalink" href="#hascomplexentries" aria-label="Link to this section: hasComplexEntries">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_has_complex_entries_api_matrix_has_complex_entries"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_hascomplexentries.fc89a0fa64ba"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hasComplexEntries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether every entry is finite complex.</p>
+<h3 id="hasintegerentries"><span id="hasIntegerEntries" class="symi-legacy-anchor"></span>hasIntegerEntries<a class="symi-heading-permalink" href="#hasintegerentries" aria-label="Link to this section: hasIntegerEntries">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_has_integer_entries_api_matrix_has_integer_entries"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_hasintegerentries.c6f9d9a6c203"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hasIntegerEntries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether every entry is an integer.</p>
+<h3 id="hasrealentries"><span id="hasRealEntries" class="symi-legacy-anchor"></span>hasRealEntries<a class="symi-heading-permalink" href="#hasrealentries" aria-label="Link to this section: hasRealEntries">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_has_real_entries_api_matrix_has_real_entries"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_hasrealentries.bfd277113306"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hasRealEntries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether every entry is real.</p>
+<h3 id="hyperboliccosine"><span id="hyperbolicCosine" class="symi-legacy-anchor"></span>hyperbolicCosine<a class="symi-heading-permalink" href="#hyperboliccosine" aria-label="Link to this section: hyperbolicCosine">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_hyperbolic_cosine_api_matrix_operations_matrix_hyperbolic_cosine"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_hyperboliccosine.9883f6ac95ea"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hyperbolicCosine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<p>The primary hyperbolic matrix cosine <code>cosh(M)</code>, evaluated exactly through the certified Jordan decomposition and the hyperbolic identity certificate.</p>
+<h3 id="hyperbolicsine"><span id="hyperbolicSine" class="symi-legacy-anchor"></span>hyperbolicSine<a class="symi-heading-permalink" href="#hyperbolicsine" aria-label="Link to this section: hyperbolicSine">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_hyperbolic_sine_api_matrix_operations_matrix_hyperbolic_sine"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_hyperbolicsine.8c14f73a4915"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hyperbolicSine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<p>The primary hyperbolic matrix sine <code>sinh(M)</code>, evaluated exactly through the certified Jordan decomposition. The result is certified together with the hyperbolic matrix cosine by <code>cosh(M)^2 - sinh(M)^2 = I</code>.</p>
+<h3 id="integercokernelstructure"><span id="integerCokernelStructure" class="symi-legacy-anchor"></span>integerCokernelStructure<a class="symi-heading-permalink" href="#integercokernelstructure" aria-label="Link to this section: integerCokernelStructure">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_integer_cokernel_structure_api_matrix_operations_matrix_integer_cokernel_structure"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_integercokernelstructure.6531796e2d45"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">integerCokernelStructure</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> IntegerCokernelData</code></pre></div>
+<p>Returns the free rank and nontrivial torsion invariant factors of <code>Z^m / M Z^n</code>.</p>
+<h3 id="integerimagelatticebasis"><span id="integerImageLatticeBasis" class="symi-legacy-anchor"></span>integerImageLatticeBasis<a class="symi-heading-permalink" href="#integerimagelatticebasis" aria-label="Link to this section: integerImageLatticeBasis">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_integer_image_lattice_basis_api_matrix_operations_matrix_integer_image_lattice_basis"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_integerimagelatticebasis.5e205115c515"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">integerImageLatticeBasis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>The nonzero columns of the column Hermite form, returned as column matrices; these form the canonical basis of <code>M Z^n</code>.</p>
+<h3 id="integerkernelbasis"><span id="integerKernelBasis" class="symi-legacy-anchor"></span>integerKernelBasis<a class="symi-heading-permalink" href="#integerkernelbasis" aria-label="Link to this section: integerKernelBasis">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_integer_kernel_basis_api_matrix_operations_matrix_integer_kernel_basis"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_integerkernelbasis.01cee525f219"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">integerKernelBasis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>A canonical basis of the integer kernel <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">Z</mi><mi>n</mi></msup><mo>:</mo><mi>M</mi><mi>x</mi><mo>=</mo><mn>0</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{x \in \mathbb{Z}^n : M x = 0\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord"><span class="mord mathbb">Z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">}</span></span></span></span>, returned as column matrices.</p>
+<h3 id="integerrowlatticebasis"><span id="integerRowLatticeBasis" class="symi-legacy-anchor"></span>integerRowLatticeBasis<a class="symi-heading-permalink" href="#integerrowlatticebasis" aria-label="Link to this section: integerRowLatticeBasis">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_integer_row_lattice_basis_api_matrix_operations_matrix_integer_row_lattice_basis"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_integerrowlatticebasis.81f8585c2e8d"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">integerRowLatticeBasis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>The nonzero rows of the row Hermite form, returned as row matrices; these form the canonical basis of the integer row lattice.</p>
+<h3 id="invariantfactors"><span id="invariantFactors" class="symi-legacy-anchor"></span>invariantFactors<a class="symi-heading-permalink" href="#invariantfactors" aria-label="Link to this section: invariantFactors">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_invariant_factors_api_results_rationalcanonicalform_invariant_factors"></a>
+<a id="placement-placement.wasm.wasm_class.rationalcanonicalform_invariantfactors.ab13f6a73bd5"></a></p>
+<p class="symi-entry-owner">RationalCanonicalForm property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> invariantFactors<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>The certified invariant factors, monic and ordered by divisibility.</p>
+<h3 id="invariantfactors_2">invariantFactors<a class="symi-heading-permalink" href="#invariantfactors_2" aria-label="Link to this section: invariantFactors">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_invariant_factors_api_results_smithnormalformdecomposition_invariant_factors"></a>
+<a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_invariantfactors.429da175d3de"></a></p>
+<p class="symi-entry-owner">SmithNormalFormDecomposition property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> invariantFactors<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>The certified invariant factors, monic and ordered by divisibility.</p>
+<h3 id="isdiagonalmatrix"><span id="isDiagonalMatrix" class="symi-legacy-anchor"></span>isDiagonalMatrix<a class="symi-heading-permalink" href="#isdiagonalmatrix" aria-label="Link to this section: isDiagonalMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_diagonal_matrix_api_matrix_is_diagonal_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isdiagonalmatrix.71327370540b"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isDiagonalMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is diagonal.</p>
+<h3 id="isfullrankmatrix"><span id="isFullRankMatrix" class="symi-legacy-anchor"></span>isFullRankMatrix<a class="symi-heading-permalink" href="#isfullrankmatrix" aria-label="Link to this section: isFullRankMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_full_rank_matrix_api_matrix_is_full_rank_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isfullrankmatrix.5bbfcbc6c1e0"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isFullRankMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix has full rank.</p>
+<h3 id="ishermitianmatrix"><span id="isHermitianMatrix" class="symi-legacy-anchor"></span>isHermitianMatrix<a class="symi-heading-permalink" href="#ishermitianmatrix" aria-label="Link to this section: isHermitianMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_hermitian_matrix_api_matrix_is_hermitian_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_ishermitianmatrix.1cb5739b20b5"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isHermitianMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is Hermitian.</p>
+<h3 id="isidentitymatrix"><span id="isIdentityMatrix" class="symi-legacy-anchor"></span>isIdentityMatrix<a class="symi-heading-permalink" href="#isidentitymatrix" aria-label="Link to this section: isIdentityMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_identity_matrix_api_matrix_is_identity_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isidentitymatrix.9ff399f20293"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isIdentityMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is the identity matrix.</p>
+<h3 id="isinvertiblematrix"><span id="isInvertibleMatrix" class="symi-legacy-anchor"></span>isInvertibleMatrix<a class="symi-heading-permalink" href="#isinvertiblematrix" aria-label="Link to this section: isInvertibleMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_invertible_matrix_api_matrix_is_invertible_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isinvertiblematrix.6352f593e5f7"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isInvertibleMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is invertible.</p>
+<h3 id="isnormalmatrix"><span id="isNormalMatrix" class="symi-legacy-anchor"></span>isNormalMatrix<a class="symi-heading-permalink" href="#isnormalmatrix" aria-label="Link to this section: isNormalMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_normal_matrix_api_matrix_is_normal_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isnormalmatrix.3db937ca961a"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isNormalMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is normal.</p>
+<h3 id="isorthogonalmatrix"><span id="isOrthogonalMatrix" class="symi-legacy-anchor"></span>isOrthogonalMatrix<a class="symi-heading-permalink" href="#isorthogonalmatrix" aria-label="Link to this section: isOrthogonalMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_orthogonal_matrix_api_matrix_is_orthogonal_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isorthogonalmatrix.d6a1f86db429"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isOrthogonalMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is orthogonal.</p>
+<h3 id="ispositivedefinitematrix"><span id="isPositiveDefiniteMatrix" class="symi-legacy-anchor"></span>isPositiveDefiniteMatrix<a class="symi-heading-permalink" href="#ispositivedefinitematrix" aria-label="Link to this section: isPositiveDefiniteMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_positive_definite_matrix_api_matrix_is_positive_definite_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_ispositivedefinitematrix.6bcc9f90fd7c"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isPositiveDefiniteMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is positive definite.</p>
+<h3 id="ispositivesemidefinitematrix"><span id="isPositiveSemidefiniteMatrix" class="symi-legacy-anchor"></span>isPositiveSemidefiniteMatrix<a class="symi-heading-permalink" href="#ispositivesemidefinitematrix" aria-label="Link to this section: isPositiveSemidefiniteMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_positive_semidefinite_matrix_api_matrix_is_positive_semidefinite_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_ispositivesemidefinitematrix.3397ae9b1bcd"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isPositiveSemidefiniteMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is positive semidefinite.</p>
+<h3 id="issingularmatrix"><span id="isSingularMatrix" class="symi-legacy-anchor"></span>isSingularMatrix<a class="symi-heading-permalink" href="#issingularmatrix" aria-label="Link to this section: isSingularMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_singular_matrix_api_matrix_is_singular_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_issingularmatrix.06b2135448ac"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isSingularMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is singular.</p>
+<h3 id="issquare"><span id="isSquare" class="symi-legacy-anchor"></span>isSquare<a class="symi-heading-permalink" href="#issquare" aria-label="Link to this section: isSquare">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_square_api_matrix_is_square"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_issquare.24b993354b1d"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isSquare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is square.</p>
+<h3 id="issymmetricmatrix"><span id="isSymmetricMatrix" class="symi-legacy-anchor"></span>isSymmetricMatrix<a class="symi-heading-permalink" href="#issymmetricmatrix" aria-label="Link to this section: isSymmetricMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_symmetric_matrix_api_matrix_is_symmetric_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_issymmetricmatrix.90f4b9ccfa27"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isSymmetricMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is symmetric.</p>
+<h3 id="isunitarymatrix"><span id="isUnitaryMatrix" class="symi-legacy-anchor"></span>isUnitaryMatrix<a class="symi-heading-permalink" href="#isunitarymatrix" aria-label="Link to this section: isUnitaryMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_unitary_matrix_api_matrix_is_unitary_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isunitarymatrix.c6089d647a19"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isUnitaryMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is unitary.</p>
+<h3 id="iszeromatrix"><span id="isZeroMatrix" class="symi-legacy-anchor"></span>isZeroMatrix<a class="symi-heading-permalink" href="#iszeromatrix" aria-label="Link to this section: isZeroMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_is_zero_matrix_api_matrix_is_zero_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_iszeromatrix.5f52a26d7e19"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isZeroMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Query whether this matrix is the zero matrix.</p>
+<h3 id="lowerupperdecomposition"><span id="lowerUpperDecomposition" class="symi-legacy-anchor"></span>lowerUpperDecomposition<a class="symi-heading-permalink" href="#lowerupperdecomposition" aria-label="Link to this section: lowerUpperDecomposition">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_lower_upper_decomposition_api_matrix_operations_matrix_lower_upper_decomposition"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_lowerupperdecomposition.49bcf14289a6"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">lowerUpperDecomposition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>Partial-pivoting LU decomposition returned as <code>(permutation, lower, upper)</code> with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">permutation</mi><mo>⁡</mo><mi>M</mi><mo>=</mo><mi mathvariant="normal">lower</mi><mo>⁡</mo><mtext> </mtext><mi mathvariant="normal">upper</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{permutation} M = \operatorname{lower}\,\operatorname{upper}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mop"><span class="mord mathrm">permutation</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mop"><span class="mord mathrm">lower</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">upper</span></span></span></span></span>.</p>
+<h3 id="minimalpolynomial"><span id="minimalPolynomial" class="symi-legacy-anchor"></span>minimalPolynomial<a class="symi-heading-permalink" href="#minimalpolynomial" aria-label="Link to this section: minimalPolynomial">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_minimal_polynomial_api_matrix_operations_matrix_minimal_polynomial"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_minimalpolynomial.404814deeca3"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">minimalPolynomial</span><span class="token punctuation">(</span>variable<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The monic minimal polynomial over the rationals. The matrix must have rational entries.</p>
+<h3 id="minimalpolynomial_2">minimalPolynomial<a class="symi-heading-permalink" href="#minimalpolynomial_2" aria-label="Link to this section: minimalPolynomial">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_minimal_polynomial_api_results_rationalcanonicalform_minimal_polynomial"></a>
+<a id="placement-placement.wasm.wasm_class.rationalcanonicalform_minimalpolynomial.78ee02aaf497"></a></p>
+<p class="symi-entry-owner">RationalCanonicalForm property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> minimalPolynomial<span class="token operator">:</span> Expression</code></pre></div>
+<p>The monic minimal polynomial over the rationals. The matrix must have rational entries.</p>
+<h3 id="nullspacebasis"><span id="nullspaceBasis" class="symi-legacy-anchor"></span>nullspaceBasis<a class="symi-heading-permalink" href="#nullspacebasis" aria-label="Link to this section: nullspaceBasis">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_nullspace_basis_api_matrix_operations_matrix_nullspace_basis"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_nullspacebasis.3c29893c97be"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">nullspaceBasis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>A basis of the kernel, as column matrices; empty list for full column rank.</p>
+<h3 id="pivotcolumns"><span id="pivotColumns" class="symi-legacy-anchor"></span>pivotColumns<a class="symi-heading-permalink" href="#pivotcolumns" aria-label="Link to this section: pivotColumns">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_pivot_columns_api_results_hermitenormalformdecomposition_pivot_columns"></a>
+<a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_pivotcolumns.310dd3184c24"></a></p>
+<p class="symi-entry-owner">HermiteNormalFormDecomposition property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> pivotColumns<span class="token operator">:</span> Uint32Array</code></pre></div>
+<p>The <code>rank</code> getter reuses the matrix <code>rank</code> heading above.</p>
+<h3 id="rank_2">rank<a class="symi-heading-permalink" href="#rank_2" aria-label="Link to this section: rank">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_rank_api_results_hermitenormalformdecomposition_rank"></a>
+<a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_rank.93db89cc480a"></a></p>
+<p class="symi-entry-owner">HermiteNormalFormDecomposition property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> rank<span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+<p>Rank via Bareiss fraction-free elimination.</p>
+<h3 id="rank_3">rank<a class="symi-heading-permalink" href="#rank_3" aria-label="Link to this section: rank">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_rank_api_results_smithnormalformdecomposition_rank"></a>
+<a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_rank.25c1ef898b6b"></a></p>
+<p class="symi-entry-owner">SmithNormalFormDecomposition property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> rank<span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+<p>Rank via Bareiss fraction-free elimination.</p>
+<h3 id="rationalcanonicalform"><span id="rationalCanonicalForm" class="symi-legacy-anchor"></span>rationalCanonicalForm<a class="symi-heading-permalink" href="#rationalcanonicalform" aria-label="Link to this section: rationalCanonicalForm">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_rational_canonical_form_api_matrix_operations_matrix_rational_canonical_form"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_rationalcanonicalform.4965226d4f23"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rationalCanonicalForm</span><span class="token punctuation">(</span>variable<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> RationalCanonicalForm</code></pre></div>
+<p>Returns the certified Frobenius canonical form over the rationals. Its invariant factors are monic and ordered by divisibility, and <code>similarity</code> satisfies <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">matrix</mi><mo>⁡</mo><mtext> </mtext><mi mathvariant="normal">similarity</mi><mo>⁡</mo><mo>=</mo><mi mathvariant="normal">similarity</mi><mo>⁡</mo><mtext> </mtext><mi mathvariant="normal">canonical_form</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{matrix}\,\operatorname{similarity} = \operatorname{similarity}\,\operatorname{canonical\_form}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mop"><span class="mord mathrm">matrix</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm" style="margin-right:0.01389em;">similarity</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mop"><span class="mord mathrm" style="margin-right:0.01389em;">similarity</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">canonical_form</span></span></span></span></span> exactly.</p>
+<h3 id="rowreduce"><span id="rowReduce" class="symi-legacy-anchor"></span>rowReduce<a class="symi-heading-permalink" href="#rowreduce" aria-label="Link to this section: rowReduce">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_row_reduce_api_matrix_row_reduce"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_rowreduce.f6176e0e6403"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rowReduce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<p>Bareiss row-reduced form (fraction-free; pivots remain on the diagonal).</p>
+<h3 id="rowtransformation"><span id="rowTransformation" class="symi-legacy-anchor"></span>rowTransformation<a class="symi-heading-permalink" href="#rowtransformation" aria-label="Link to this section: rowTransformation">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_row_transformation_api_results_smithnormalformdecomposition_row_transformation"></a>
+<a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_rowtransformation.29118694c1ef"></a></p>
+<p class="symi-entry-owner">SmithNormalFormDecomposition property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> rowTransformation<span class="token operator">:</span> Matrix</code></pre></div>
+<p>The unimodular row transformation <code>U</code> satisfying <code>U * matrix * V == S</code>.</p>
+<h3 id="scalarmultiply"><span id="scalarMultiply" class="symi-legacy-anchor"></span>scalarMultiply<a class="symi-heading-permalink" href="#scalarmultiply" aria-label="Link to this section: scalarMultiply">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_scalar_multiply_api_matrix_scalar_multiply"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_scalarmultiply.ec2353182aff"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">scalarMultiply</span><span class="token punctuation">(</span>scalar<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<p>Scale every entry by <code>scalar</code>.</p>
+<h3 id="squareroot"><span id="squareRoot" class="symi-legacy-anchor"></span>squareRoot<a class="symi-heading-permalink" href="#squareroot" aria-label="Link to this section: squareRoot">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_square_root_api_matrix_operations_matrix_square_root"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_squareroot.1c60c29e8e88"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Matrix</code></pre></div>
+<p>The principal matrix square root <code>sqrt(M)</code>; the result is verified to square back to <code>M</code>.</p>
+<h3 id="tostring"><span id="toString" class="symi-legacy-anchor"></span>toString<a class="symi-heading-permalink" href="#tostring" aria-label="Link to this section: toString">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_to_js_string_unresolved"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_tostring.78e216ff9504"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
+<p>The mathematical text of this object, as a JavaScript string.</p>
+<h3 id="torsioninvariantfactors"><span id="torsionInvariantFactors" class="symi-legacy-anchor"></span>torsionInvariantFactors<a class="symi-heading-permalink" href="#torsioninvariantfactors" aria-label="Link to this section: torsionInvariantFactors">#</a></h3>
+<p><a id="entry-presentation_wasm_linear_algebra_capability_algebra_torsion_invariant_factors_api_results_integercokerneldata_torsion_invariant_factors"></a>
+<a id="placement-placement.wasm.wasm_class.integercokerneldata_torsioninvariantfactors.0963695946a9"></a></p>
+<p class="symi-entry-owner">IntegerCokernelData property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> torsionInvariantFactors<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>The invariant factors of the torsion part of the cokernel.</p>
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Algebra and matrices</h2><ul class="symi-related-list"><li><a href="/symi/wasm/polynomials/">Polynomial queries</a></li><li><a href="/symi/wasm/matrix-construction/">Matrix construction and access</a></li><li><a href="/symi/wasm/matrix-canonical-forms/">Matrix canonical forms</a></li><li><a href="/symi/wasm/matrix-functions/">Matrix functions and Jordan form</a></li><li><a href="/symi/wasm/cad/">Cylindrical algebraic decomposition</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/wasm/matrix-construction/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Matrix construction and access</span></a><a class="symi-pager-link symi-pager-next" href="/symi/wasm/matrix-canonical-forms/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Matrix canonical forms</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · WASM / JavaScript</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-2"><a href="#arithmetic" data-outline-target="arithmetic">Arithmetic</a></li><li class="symi-outline-depth-2"><a href="#matrix_assumptions" data-outline-target="matrix_assumptions">Matrix assumptions</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

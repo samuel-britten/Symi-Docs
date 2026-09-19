@@ -4,14 +4,33 @@ Trigonometric, logarithmic, exponential, and complex rewrites are separated from
 
 ### expand_complex
 
-<a id="placement-placement.python.python_class.context_expand_complex.5cce2f91f5a4"></a>
-`Context.expand_complex(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_expand_complex.9dc96a72c703"></a>
-`Expression.expand_complex()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_algebra_session_expand_complex"></a>
 <a id="placement-placement.python.python_module.module_expand_complex.48934d5e4596"></a>
-`symi.expand_complex(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+expand_complex(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_expand_complex.5cce2f91f5a4"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.expand_complex</code></p>
+
+```python signature
+expand_complex(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_expression_operations_expression_expand_complex"></a>
+<a id="placement-placement.python.python_class.expression_expand_complex.9dc96a72c703"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+expand_complex() -> Expression
+```
 
 
 
@@ -26,14 +45,33 @@ unsupported modulus arguments remain unchanged or wrapper-bearing.
 
 ### real_part
 
-<a id="placement-placement.python.python_class.context_real_part.85087b3f0063"></a>
-`Context.real_part(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_real_part.640391445fee"></a>
-`Expression.real_part()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_real_part_api_session_real_part"></a>
 <a id="placement-placement.python.python_module.module_real_part.fdfe4738148e"></a>
-`symi.real_part(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+real_part(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_real_part.85087b3f0063"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.real_part</code></p>
+
+```python signature
+real_part(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_real_part_api_expression_real_part"></a>
+<a id="placement-placement.python.python_class.expression_real_part.640391445fee"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+real_part() -> Expression
+```
 
 
 
@@ -43,14 +81,33 @@ Return the exact real component of an expression. For example, if `y` is declare
 
 ### imaginary_part
 
-<a id="placement-placement.python.python_class.context_imaginary_part.3e12080db6bd"></a>
-`Context.imaginary_part(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_imaginary_part.3bfb3098c9bd"></a>
-`Expression.imaginary_part()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_imaginary_part_api_session_imaginary_part"></a>
 <a id="placement-placement.python.python_module.module_imaginary_part.87cf9d85d535"></a>
-`symi.imaginary_part(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+imaginary_part(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_imaginary_part.3e12080db6bd"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.imaginary_part</code></p>
+
+```python signature
+imaginary_part(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_imaginary_part_api_expression_imaginary_part"></a>
+<a id="placement-placement.python.python_class.expression_imaginary_part.3bfb3098c9bd"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+imaginary_part() -> Expression
+```
 
 
 
@@ -60,14 +117,33 @@ Return the exact imaginary component of an expression. For example, if `y` is de
 
 ### combine_powers
 
-<a id="placement-placement.python.python_class.context_combine_powers.3d08b0eb70f3"></a>
-`Context.combine_powers(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_combine_powers.6a279c49f326"></a>
-`Expression.combine_powers()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_powers_api_algebra_session_combine_powers"></a>
 <a id="placement-placement.python.python_module.module_combine_powers.83da2ec24bad"></a>
-`symi.combine_powers(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+combine_powers(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_combine_powers.3d08b0eb70f3"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.combine_powers</code></p>
+
+```python signature
+combine_powers(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_powers_api_expression_operations_expression_combine_powers"></a>
+<a id="placement-placement.python.python_class.expression_combine_powers.6a279c49f326"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+combine_powers() -> Expression
+```
 
 
 
@@ -87,14 +163,33 @@ unchanged, and an expression with no provable site is returned as-is.
 
 ### expand_power_base
 
-<a id="placement-placement.python.python_class.context_expand_power_base.10c08191ec05"></a>
-`Context.expand_power_base(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_expand_power_base.897bf3a2aa16"></a>
-`Expression.expand_power_base()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_power_base_api_algebra_session_expand_power_base"></a>
 <a id="placement-placement.python.python_module.module_expand_power_base.5ba9f9674a72"></a>
-`symi.expand_power_base(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+expand_power_base(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_expand_power_base.10c08191ec05"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.expand_power_base</code></p>
+
+```python signature
+expand_power_base(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_power_base_api_expression_operations_expression_expand_power_base"></a>
+<a id="placement-placement.python.python_class.expression_expand_power_base.897bf3a2aa16"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+expand_power_base() -> Expression
+```
 
 
 
@@ -109,14 +204,33 @@ product is never decomposed, so `6^x` is not split into `2^x * 3^x`.
 
 ### denest_powers
 
-<a id="placement-placement.python.python_class.context_denest_powers.ea466f1a68ac"></a>
-`Context.denest_powers(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_denest_powers.74ee941efff8"></a>
-`Expression.denest_powers()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_denest_powers_api_algebra_session_denest_powers"></a>
 <a id="placement-placement.python.python_module.module_denest_powers.0cb7e0cca77f"></a>
-`symi.denest_powers(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+denest_powers(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_denest_powers.ea466f1a68ac"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.denest_powers</code></p>
+
+```python signature
+denest_powers(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_denest_powers_api_expression_operations_expression_denest_powers"></a>
+<a id="placement-placement.python.python_class.expression_denest_powers.74ee941efff8"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+denest_powers() -> Expression
+```
 
 
 
@@ -129,14 +243,33 @@ there is no force mode. A base that is not structurally a power is untouched.
 
 ### simplify_trigonometric
 
-<a id="placement-placement.python.python_class.context_simplify_trigonometric.4b10b216b085"></a>
-`Context.simplify_trigonometric(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_simplify_trigonometric.452d1a9aa6e7"></a>
-`Expression.simplify_trigonometric()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_session_simplify_trigonometric"></a>
 <a id="placement-placement.python.python_module.module_simplify_trigonometric.9708f5a823b7"></a>
-`symi.simplify_trigonometric(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+simplify_trigonometric(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_simplify_trigonometric.4b10b216b085"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.simplify_trigonometric</code></p>
+
+```python signature
+simplify_trigonometric(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_expression_simplify_trigonometric"></a>
+<a id="placement-placement.python.python_class.expression_simplify_trigonometric.452d1a9aa6e7"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+simplify_trigonometric() -> Expression
+```
 
 
 
@@ -144,14 +277,33 @@ Fu-style trigonometric simplification toward fewer/cheaper trig calls.
 
 ### expand_trigonometric
 
-<a id="placement-placement.python.python_class.context_expand_trigonometric.5e3ea8b7e8c2"></a>
-`Context.expand_trigonometric(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_expand_trigonometric.7f2d954796d3"></a>
-`Expression.expand_trigonometric()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_session_expand_trigonometric"></a>
 <a id="placement-placement.python.python_module.module_expand_trigonometric.78c99da95053"></a>
-`symi.expand_trigonometric(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+expand_trigonometric(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_expand_trigonometric.5e3ea8b7e8c2"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.expand_trigonometric</code></p>
+
+```python signature
+expand_trigonometric(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_expression_expand_trigonometric"></a>
+<a id="placement-placement.python.python_class.expression_expand_trigonometric.7f2d954796d3"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+expand_trigonometric() -> Expression
+```
 
 
 
@@ -162,14 +314,33 @@ admitted sums are expanded in the same pass.
 
 ### combine_trigonometric
 
-<a id="placement-placement.python.python_class.context_combine_trigonometric.528c0bb60743"></a>
-`Context.combine_trigonometric(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_combine_trigonometric.009ca5b2de75"></a>
-`Expression.combine_trigonometric()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_session_combine_trigonometric"></a>
 <a id="placement-placement.python.python_module.module_combine_trigonometric.ba50be65caaa"></a>
-`symi.combine_trigonometric(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+combine_trigonometric(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_combine_trigonometric.528c0bb60743"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.combine_trigonometric</code></p>
+
+```python signature
+combine_trigonometric(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_expression_combine_trigonometric"></a>
+<a id="placement-placement.python.python_class.expression_combine_trigonometric.009ca5b2de75"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+combine_trigonometric() -> Expression
+```
 
 
 
@@ -178,14 +349,33 @@ angle-recombination rules.
 
 ### combine_logarithm
 
-<a id="placement-placement.python.python_class.context_combine_logarithm.fce01721c35a"></a>
-`Context.combine_logarithm(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_combine_logarithm.0d0e22017360"></a>
-`Expression.combine_logarithm()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_algebra_session_combine_logarithm"></a>
 <a id="placement-placement.python.python_module.module_combine_logarithm.3159ff3b58d2"></a>
-`symi.combine_logarithm(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+combine_logarithm(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_combine_logarithm.fce01721c35a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.combine_logarithm</code></p>
+
+```python signature
+combine_logarithm(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_expression_operations_expression_combine_logarithm"></a>
+<a id="placement-placement.python.python_class.expression_combine_logarithm.0d0e22017360"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+combine_logarithm() -> Expression
+```
 
 
 
@@ -194,14 +384,33 @@ preserves the expression's domain.
 
 ### expand_logarithm
 
-<a id="placement-placement.python.python_class.context_expand_logarithm.1266a07c68f1"></a>
-`Context.expand_logarithm(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_expand_logarithm.5d63a3ff43d6"></a>
-`Expression.expand_logarithm()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_algebra_session_expand_logarithm"></a>
 <a id="placement-placement.python.python_module.module_expand_logarithm.bb1c9442f963"></a>
-`symi.expand_logarithm(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+expand_logarithm(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_expand_logarithm.1266a07c68f1"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.expand_logarithm</code></p>
+
+```python signature
+expand_logarithm(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_expression_operations_expression_expand_logarithm"></a>
+<a id="placement-placement.python.python_class.expression_expand_logarithm.5d63a3ff43d6"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+expand_logarithm() -> Expression
+```
 
 
 
@@ -211,14 +420,33 @@ unchanged.
 
 ### rewrite_as_exponential
 
-<a id="placement-placement.python.python_class.context_rewrite_as_exponential.ab4bcf0ccd8a"></a>
-`Context.rewrite_as_exponential(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_rewrite_as_exponential.9a80406d27c9"></a>
-`Expression.rewrite_as_exponential()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_exponential_api_algebra_session_rewrite_as_exponential"></a>
 <a id="placement-placement.python.python_module.module_rewrite_as_exponential.8570bd3a9aaf"></a>
-`symi.rewrite_as_exponential(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+rewrite_as_exponential(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_rewrite_as_exponential.ab4bcf0ccd8a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.rewrite_as_exponential</code></p>
+
+```python signature
+rewrite_as_exponential(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_exponential_api_expression_operations_expression_rewrite_as_exponential"></a>
+<a id="placement-placement.python.python_class.expression_rewrite_as_exponential.9a80406d27c9"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+rewrite_as_exponential() -> Expression
+```
 
 
 
@@ -227,14 +455,33 @@ equivalent complex-exponential expression (bottom-up).
 
 ### rewrite_as_trigonometric
 
-<a id="placement-placement.python.python_class.context_rewrite_as_trigonometric.eabe12481c11"></a>
-`Context.rewrite_as_trigonometric(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_rewrite_as_trigonometric.686d620052f0"></a>
-`Expression.rewrite_as_trigonometric()`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_algebra_session_rewrite_as_trigonometric"></a>
 <a id="placement-placement.python.python_module.module_rewrite_as_trigonometric.44edbc7644c2"></a>
-`symi.rewrite_as_trigonometric(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+rewrite_as_trigonometric(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_rewrite_as_trigonometric.eabe12481c11"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.rewrite_as_trigonometric</code></p>
+
+```python signature
+rewrite_as_trigonometric(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_expression_operations_expression_rewrite_as_trigonometric"></a>
+<a id="placement-placement.python.python_class.expression_rewrite_as_trigonometric.686d620052f0"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+rewrite_as_trigonometric() -> Expression
+```
 
 
 
@@ -244,14 +491,39 @@ through unchanged, so the round trip is the identity.
 
 ### rewrite_trigonometric_basis
 
-<a id="placement-placement.python.python_class.context_rewrite_trigonometric_basis.bf0965118280"></a>
-`Context.rewrite_trigonometric_basis(input_expression, basis)`
-
-<a id="placement-placement.python.python_class.expression_rewrite_trigonometric_basis.343f21c131d1"></a>
-`Expression.rewrite_trigonometric_basis(basis)`
-
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_session_rewrite_trigonometric_basis"></a>
 <a id="placement-placement.python.python_module.module_rewrite_trigonometric_basis.db34b852b91c"></a>
-`symi.rewrite_trigonometric_basis(input_expression, basis)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+rewrite_trigonometric_basis(
+    input_expression: ExpressionLike,
+    basis: str,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_rewrite_trigonometric_basis.bf0965118280"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.rewrite_trigonometric_basis</code></p>
+
+```python signature
+rewrite_trigonometric_basis(
+    input_expression: ExpressionLike,
+    basis: str,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_expression_rewrite_trigonometric_basis"></a>
+<a id="placement-placement.python.python_class.expression_rewrite_trigonometric_basis.343f21c131d1"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+rewrite_trigonometric_basis(basis: str) -> Expression
+```
 
 
 

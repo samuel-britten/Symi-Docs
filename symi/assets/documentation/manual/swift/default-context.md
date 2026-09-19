@@ -54,8 +54,13 @@ API. Each call returns a new handle to the same underlying context.
 
 ### clear_assumptions
 
+<a id="entry-presentation_swift_default_context_capability_contexts_clear_assumptions_api_session_clear_assumptions"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_clearassumptions.e21da5386c09"></a>
-`UniffiSession.clearAssumptions(variable: String) -> Void`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func clearAssumptions(variable: String) -> Void
+```
 
 
 Reset one symbol's assumptions to the default (complex domain, every property
@@ -66,8 +71,13 @@ a re-declaration you actually intend.
 
 ### assumptions_of
 
+<a id="entry-presentation_swift_default_context_capability_contexts_assumptions_of_api_session_assumptions_of"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_assumptionsof.22498f424ef9"></a>
-`UniffiSession.assumptionsOf(variable: String) -> [UniffiAssumptionProposition]`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func assumptionsOf(variable: String) -> [UniffiAssumptionProposition]
+```
 
 
 Return the symbol's current assumptions as a native Python mapping or
@@ -78,8 +88,13 @@ is one of `complex`, `real`, `rational`, `integer`, `natural`, or
 
 ### interner_length
 
+<a id="entry-presentation_swift_default_context_capability_contexts_interner_length_api_session_interner_length"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_internerlength.d0d12ba22b0c"></a>
-`UniffiSession.internerLength() -> UInt64`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func internerLength() -> UInt64
+```
 
 
 Number of live expressions currently interned in the context. Dead entries

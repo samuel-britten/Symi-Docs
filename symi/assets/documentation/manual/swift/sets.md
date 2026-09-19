@@ -7,8 +7,18 @@ expressions page.
 
 ### interval
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_interval_api_sets_session_interval"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_interval.3d25cad4506c"></a>
-`UniffiSession.interval(lower: UniffiExpression, upper: UniffiExpression, lowerInclusive: Bool, upperInclusive: Bool) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func interval(
+    lower: UniffiExpression,
+    upper: UniffiExpression,
+    lowerInclusive: Bool,
+    upperInclusive: Bool,
+) -> UniffiExpression
+```
 
 
 Real-line interval. Closed by default; endpoints at infinity are forced
@@ -17,16 +27,26 @@ finite set, \((-\infty, \infty)\to\) real line).
 
 ### real_line
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_real_line_api_session_real_line"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_realline.f2340b577b3b"></a>
-`UniffiSession.realLine() -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func realLine() -> UniffiExpression
+```
 
 
 The set \(\mathbb{R}\).
 
 ### complex_plane
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_complex_plane_api_session_complex_plane"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_complexplane.68f6883a0853"></a>
-`UniffiSession.complexPlane() -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func complexPlane() -> UniffiExpression
+```
 
 
 The set \(\mathbb{C}\) — the ambient universe, and the domain a variable ranges over when it
@@ -34,24 +54,39 @@ carries no realness assumption.
 
 ### integer_set
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_integer_set_api_session_integer_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integerset.3ed935c8e6aa"></a>
-`UniffiSession.integerSet() -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func integerSet() -> UniffiExpression
+```
 
 
 The set \(\mathbb{Z}\).
 
 ### empty_set
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_empty_set_api_session_empty_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_emptyset.b24b44b080ee"></a>
-`UniffiSession.emptySet() -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func emptySet() -> UniffiExpression
+```
 
 
 The empty set \(\varnothing\).
 
 ### finite_set
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_finite_set_api_session_finite_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_finiteset.2f6e260ded78"></a>
-`UniffiSession.finiteSet(elements: [UniffiExpression]) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func finiteSet(elements: [UniffiExpression]) -> UniffiExpression
+```
 
 
 Finite set; elements are deduplicated and canonically ordered. An empty list
@@ -59,8 +94,16 @@ gives the empty set.
 
 ### set_union
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_set_union_api_sets_session_set_union"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_setunion.8e884c96fab8"></a>
-`UniffiSession.setUnion(left: UniffiExpression, right: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func setUnion(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 Union, computed eagerly where the structural rules allow (overlapping or
@@ -69,8 +112,16 @@ otherwise the structural `set_union` node.
 
 ### set_intersection
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_set_intersection_api_sets_session_set_intersection"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_setintersection.f56710deeb53"></a>
-`UniffiSession.setIntersection(left: UniffiExpression, right: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func setIntersection(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 Intersection, computed eagerly where the structural rules allow (interval
@@ -79,16 +130,33 @@ structural `set_intersection` node.
 
 ### set_complement
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_set_complement_api_sets_session_set_complement"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_setcomplement.d96e49c60156"></a>
-`UniffiSession.setComplement(left: UniffiExpression, right: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func setComplement(
+    left: UniffiExpression,
+    right: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The relative complement \(a \setminus b\).
 
 ### image_set
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_image_set_api_sets_session_image_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_imageset.5fea8fa8cf7a"></a>
-`UniffiSession.imageSet(lambdaExpression: UniffiExpression, variable: String, domain: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func imageSet(
+    lambdaExpression: UniffiExpression,
+    variable: String,
+    domain: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The set \(\{\operatorname{lambda\_expression} : \operatorname{variable} \in \operatorname{domain}\}\); `variable` is a binder
@@ -97,8 +165,17 @@ construction.
 
 ### condition_set
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_condition_set_api_sets_session_condition_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_conditionset.1c69d332f022"></a>
-`UniffiSession.conditionSet(variable: String, condition: UniffiExpression, domain: UniffiExpression) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func conditionSet(
+    variable: String,
+    condition: UniffiExpression,
+    domain: UniffiExpression,
+) -> UniffiExpression
+```
 
 
 The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{condition}\}\). This is also `solveset`'s honest
@@ -106,8 +183,16 @@ The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{co
 
 ### is_member
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_is_member_api_sets_session_is_member"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_ismember.17be7781f5f8"></a>
-`UniffiSession.isMember(element: UniffiExpression, set: UniffiExpression) -> UniffiTruthValue`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func isMember(
+    element: UniffiExpression,
+    set: UniffiExpression,
+) -> UniffiTruthValue
+```
 
 
 Three-valued membership: `True` only on structural proof, `False` only on a
@@ -116,8 +201,16 @@ intervals, unions, intersections, complements.
 
 ### is_subset
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_is_subset_api_sets_session_is_subset"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_issubset.059d490835a8"></a>
-`UniffiSession.isSubset(smaller: UniffiExpression, larger: UniffiExpression) -> UniffiTruthValue`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func isSubset(
+    smaller: UniffiExpression,
+    larger: UniffiExpression,
+) -> UniffiTruthValue
+```
 
 
 Three-valued subset query: \(\varnothing \subseteq\) anything, structural equality, finite-set
@@ -125,8 +218,20 @@ element checks, interval-in-interval endpoint tests; `None` otherwise.
 
 ### enumerate_set_in_interval
 
+<a id="entry-presentation_swift_sets_capability_discrete_mathematics_enumerate_set_in_interval_api_sets_session_enumerate_set_in_interval"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_enumeratesetininterval.6d91fa32b30b"></a>
-`UniffiSession.enumerateSetInInterval(set: UniffiExpression, lower: UniffiExpression, upper: UniffiExpression, lowerInclusive: Bool, upperInclusive: Bool, limit: UInt64?) -> UniffiSetEnumeration`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func enumerateSetInInterval(
+    set: UniffiExpression,
+    lower: UniffiExpression,
+    upper: UniffiExpression,
+    lowerInclusive: Bool,
+    upperInclusive: Bool,
+    limit: UInt64?,
+) -> UniffiSetEnumeration
+```
 
 
 Exact elements of a set inside \([\operatorname{lower}, \operatorname{upper}]\), in increasing

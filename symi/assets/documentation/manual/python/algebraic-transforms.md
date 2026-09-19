@@ -8,14 +8,33 @@ the search-based ladder see
 
 ### expand
 
-<a id="placement-placement.python.python_class.context_expand.585710e373a6"></a>
-`Context.expand(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_expand.208ce69fd96e"></a>
-`Expression.expand()`
-
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_expand_api_session_expand"></a>
 <a id="placement-placement.python.python_module.module_expand.bf48fd44714c"></a>
-`symi.expand(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+expand(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_expand.585710e373a6"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.expand</code></p>
+
+```python signature
+expand(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_expand_api_expression_expand"></a>
+<a id="placement-placement.python.python_class.expression_expand.208ce69fd96e"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+expand() -> Expression
+```
 
 
 
@@ -23,14 +42,39 @@ Expand products, integer powers, and supported algebraic forms.
 
 ### partial_fractions
 
-<a id="placement-placement.python.python_class.context_partial_fractions.1771414a71ed"></a>
-`Context.partial_fractions(input_expression, variable)`
-
-<a id="placement-placement.python.python_class.expression_partial_fractions.1ab445c3df44"></a>
-`Expression.partial_fractions(variable)`
-
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions"></a>
 <a id="placement-placement.python.python_module.module_partial_fractions.77aeeee3940d"></a>
-`symi.partial_fractions(input_expression, variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+partial_fractions(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_partial_fractions.1771414a71ed"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.partial_fractions</code></p>
+
+```python signature
+partial_fractions(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_partial_fractions_api_expression_operations_expression_partial_fractions"></a>
+<a id="placement-placement.python.python_class.expression_partial_fractions.1ab445c3df44"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+partial_fractions(variable: VariableLike) -> Expression
+```
 
 
 
@@ -44,14 +88,39 @@ For factorization, cancellation, collection, and radical operations, use
 
 ### factor
 
-<a id="placement-placement.python.python_class.context_factor.46063153da4a"></a>
-`Context.factor(input_expression, gaussian=False)`
-
-<a id="placement-placement.python.python_class.expression_factor.a7b06dfc4e7c"></a>
-`Expression.factor(gaussian=False)`
-
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_api_session_factor"></a>
 <a id="placement-placement.python.python_module.module_factor.8c065906aae5"></a>
-`symi.factor(input_expression, gaussian=False)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+factor(
+    input_expression: ExpressionLike,
+    gaussian: bool = False,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_factor.46063153da4a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.factor</code></p>
+
+```python signature
+factor(
+    input_expression: ExpressionLike,
+    gaussian: bool = False,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_api_expression_factor"></a>
+<a id="placement-placement.python.python_class.expression_factor.a7b06dfc4e7c"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+factor(gaussian: bool = False) -> Expression
+```
 
 
 
@@ -61,14 +130,39 @@ Polynomial factorization over the rationals (full multivariate). With
 
 ### collect
 
-<a id="placement-placement.python.python_class.context_collect.11eea93b82f8"></a>
-`Context.collect(input_expression, generator)`
-
-<a id="placement-placement.python.python_class.expression_collect.fc2b21333cc6"></a>
-`Expression.collect(generator)`
-
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_api_algebra_session_collect"></a>
 <a id="placement-placement.python.python_module.module_collect.e27d1ac4f0a7"></a>
-`symi.collect(input_expression, generator)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+collect(
+    input_expression: ExpressionLike,
+    generator: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_collect.11eea93b82f8"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.collect</code></p>
+
+```python signature
+collect(
+    input_expression: ExpressionLike,
+    generator: ExpressionLike,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_api_expression_operations_expression_collect"></a>
+<a id="placement-placement.python.python_class.expression_collect.fc2b21333cc6"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+collect(generator: ExpressionLike) -> Expression
+```
 
 
 
@@ -82,14 +176,39 @@ generator that appears with only a single power, returns the input unchanged.
 
 ### complete_the_square
 
-<a id="placement-placement.python.python_class.context_complete_the_square.0b69c1ad269a"></a>
-`Context.complete_the_square(input_expression, variable)`
-
-<a id="placement-placement.python.python_class.expression_complete_the_square.db1de38470f1"></a>
-`Expression.complete_the_square(variable)`
-
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square"></a>
 <a id="placement-placement.python.python_module.module_complete_the_square.0af89b745f9f"></a>
-`symi.complete_the_square(input_expression, variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+complete_the_square(
+    input_expression: ExpressionLike,
+    variable: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_complete_the_square.0b69c1ad269a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.complete_the_square</code></p>
+
+```python signature
+complete_the_square(
+    input_expression: ExpressionLike,
+    variable: ExpressionLike,
+) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_complete_the_square_api_expression_operations_expression_complete_the_square"></a>
+<a id="placement-placement.python.python_class.expression_complete_the_square.db1de38470f1"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+complete_the_square(variable: ExpressionLike) -> Expression
+```
 
 
 
@@ -117,14 +236,33 @@ unrestricted `a` and completes when `a` is assumed positive.
 
 ### factor_common_terms
 
-<a id="placement-placement.python.python_class.context_factor_common_terms.0ebab65aba2b"></a>
-`Context.factor_common_terms(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_factor_common_terms.4d5c920b9d2c"></a>
-`Expression.factor_common_terms()`
-
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_algebra_session_factor_common_terms"></a>
 <a id="placement-placement.python.python_module.module_factor_common_terms.7a3852d245ce"></a>
-`symi.factor_common_terms(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+factor_common_terms(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_factor_common_terms.0ebab65aba2b"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.factor_common_terms</code></p>
+
+```python signature
+factor_common_terms(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_expression_operations_expression_factor_common_terms"></a>
+<a id="placement-placement.python.python_class.expression_factor_common_terms.4d5c920b9d2c"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+factor_common_terms() -> Expression
+```
 
 
 
@@ -145,14 +283,33 @@ further — that is `factor`'s job.
 
 ### rationalize_denominator
 
-<a id="placement-placement.python.python_class.context_rationalize_denominator.0bb0cd8bf012"></a>
-`Context.rationalize_denominator(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_rationalize_denominator.5a59210169df"></a>
-`Expression.rationalize_denominator()`
-
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_algebra_session_rationalize_denominator"></a>
 <a id="placement-placement.python.python_module.module_rationalize_denominator.0d2e5bcc5c21"></a>
-`symi.rationalize_denominator(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+rationalize_denominator(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_rationalize_denominator.0bb0cd8bf012"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.rationalize_denominator</code></p>
+
+```python signature
+rationalize_denominator(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_expression_operations_expression_rationalize_denominator"></a>
+<a id="placement-placement.python.python_class.expression_rationalize_denominator.5a59210169df"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+rationalize_denominator() -> Expression
+```
 
 
 
@@ -165,14 +322,33 @@ bounded supported radical class or the exact remultiplication check fails.
 
 ### collect_radicals
 
-<a id="placement-placement.python.python_class.context_collect_radicals.b801115ab1d4"></a>
-`Context.collect_radicals(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_collect_radicals.a98951be6352"></a>
-`Expression.collect_radicals()`
-
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_radicals_api_algebra_session_collect_radicals"></a>
 <a id="placement-placement.python.python_module.module_collect_radicals.2166b63cfde2"></a>
-`symi.collect_radicals(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+collect_radicals(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_collect_radicals.b801115ab1d4"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.collect_radicals</code></p>
+
+```python signature
+collect_radicals(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_radicals_api_expression_operations_expression_collect_radicals"></a>
+<a id="placement-placement.python.python_class.expression_collect_radicals.a98951be6352"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+collect_radicals() -> Expression
+```
 
 
 
@@ -182,14 +358,33 @@ distinct kernels are considered; inputs beyond that bound return unchanged.
 
 ### denest_radicals
 
-<a id="placement-placement.python.python_class.context_denest_radicals.dae89df7c52f"></a>
-`Context.denest_radicals(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_denest_radicals.c120755a651c"></a>
-`Expression.denest_radicals()`
-
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_denest_radicals_api_algebra_session_denest_radicals"></a>
 <a id="placement-placement.python.python_module.module_denest_radicals.44c973e4db68"></a>
-`symi.denest_radicals(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+denest_radicals(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_denest_radicals.dae89df7c52f"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.denest_radicals</code></p>
+
+```python signature
+denest_radicals(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_algebraic_transforms_capability_expression_transformations_denest_radicals_api_expression_operations_expression_denest_radicals"></a>
+<a id="placement-placement.python.python_class.expression_denest_radicals.c120755a651c"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+denest_radicals() -> Expression
+```
 
 
 

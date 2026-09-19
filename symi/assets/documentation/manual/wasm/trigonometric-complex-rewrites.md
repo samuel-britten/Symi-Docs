@@ -185,185 +185,321 @@ console.log(symi.imaginaryPart(value).toString());
 
 ## Additional API
 
+### combineLogarithm
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_algebra_session_combine_logarithm"></a>
+<a id="placement-placement.wasm.wasm_module.module_combinelogarithm.660beda16ea9"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+combineLogarithm(input_expression: Expression): Expression
+```
+
+\(\log a + \log b \rightarrow \log(a b)\) and \(n\log a \rightarrow \log(a^n)\) when the transformation preserves the expression's domain.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.wasm.wasm_class.context_combinelogarithm.d75c6b7bb203"></a>
-### Context.combineLogarithm
+<p class="symi-entry-owner">Explicit context: <code>Context.combineLogarithm</code></p>
 
-`pub fn combine_logarithm(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+combineLogarithm(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### combineLogarithm
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_expression_operations_expression_combine_logarithm"></a>
+<a id="placement-placement.wasm.wasm_class.expression_combinelogarithm.a13ee73e1e1d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+combineLogarithm(): Expression
+```
+
+\(\log a + \log b \rightarrow \log(a b)\) and \(n\log a \rightarrow \log(a^n)\) when the transformation preserves the expression's domain.
+
+### combineTrigonometric
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_session_combine_trigonometric"></a>
+<a id="placement-placement.wasm.wasm_module.module_combinetrigonometric.82565a45a596"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+combineTrigonometric(input_expression: Expression): Expression
+```
+
+Inverse direction of `expand_trigonometric`: product-to-sum and angle-recombination rules.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_combinetrigonometric.741f4fcc74d0"></a>
-### Context.combineTrigonometric
+<p class="symi-entry-owner">Explicit context: <code>Context.combineTrigonometric</code></p>
 
-`pub fn combine_trigonometric(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+combineTrigonometric(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### combineTrigonometric
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_expression_combine_trigonometric"></a>
+<a id="placement-placement.wasm.wasm_class.expression_combinetrigonometric.379f033759d1"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+combineTrigonometric(): Expression
+```
+
+Inverse direction of `expand_trigonometric`: product-to-sum and angle-recombination rules.
+
+### evaluateToComplexInexact
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_evaluate_to_complex_inexact_api_expression_operations_expression_evaluate_to_complex_inexact"></a>
+<a id="placement-placement.wasm.wasm_class.expression_evaluatetocomplexinexact.315e742a4077"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+evaluateToComplexInexact(): Float64Array
+```
+
+Complex evaluation at the default working precision under the documented principal-value branch cuts, as (real, imaginary).
+
+### evaluateToComplexInexactAtPrecision
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_evaluate_to_complex_inexact_at_precision_api_expression_operations_expression_evaluate_to_complex_inexact_at_precision"></a>
+<a id="placement-placement.wasm.wasm_class.expression_evaluatetocomplexinexactatprecision.84d0eabab4f4"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+evaluateToComplexInexactAtPrecision(precision_bits: number): Float64Array
+```
+
+Same with an explicit working precision in bits.
+
+### expandComplex
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_algebra_session_expand_complex"></a>
+<a id="placement-placement.wasm.wasm_module.module_expandcomplex.882987d16cbf"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+expandComplex(input_expression: Expression): Expression
+```
+
+Decompose an expression exactly as `real_part(Expression) + i*imaginary_part(Expression)`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_expandcomplex.ec1c84d2cb66"></a>
-### Context.expandComplex
+<p class="symi-entry-owner">Explicit context: <code>Context.expandComplex</code></p>
 
-`pub fn expand_complex(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+expandComplex(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### expandComplex
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_expression_operations_expression_expand_complex"></a>
+<a id="placement-placement.wasm.wasm_class.expression_expandcomplex.7c66ec5fb625"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+expandComplex(): Expression
+```
+
+Decompose an expression exactly as `real_part(Expression) + i*imaginary_part(Expression)`.
+
+### expandLogarithm
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_algebra_session_expand_logarithm"></a>
+<a id="placement-placement.wasm.wasm_module.module_expandlogarithm.c138343492e9"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+expandLogarithm(input_expression: Expression): Expression
+```
+
+\(\log(a b) \rightarrow \log a + \log b\) and \(\log(a^n) \rightarrow n\log a\), applied only where the operands are provably positive. Operands of unknown sign pass through unchanged.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_expandlogarithm.edb9385b56d9"></a>
-### Context.expandLogarithm
+<p class="symi-entry-owner">Explicit context: <code>Context.expandLogarithm</code></p>
 
-`pub fn expand_logarithm(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+expandLogarithm(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### expandLogarithm
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_expression_operations_expression_expand_logarithm"></a>
+<a id="placement-placement.wasm.wasm_class.expression_expandlogarithm.abcb3401c393"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+expandLogarithm(): Expression
+```
+
+\(\log(a b) \rightarrow \log a + \log b\) and \(\log(a^n) \rightarrow n\log a\), applied only where the operands are provably positive. Operands of unknown sign pass through unchanged.
+
+### expandTrigonometric
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_session_expand_trigonometric"></a>
+<a id="placement-placement.wasm.wasm_module.module_expandtrigonometric.af837d1e113e"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+expandTrigonometric(input_expression: Expression): Expression
+```
+
+Expand trig/hyperbolic functions of sums and multiple angles.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_expandtrigonometric.a896374747a3"></a>
-### Context.expandTrigonometric
+<p class="symi-entry-owner">Explicit context: <code>Context.expandTrigonometric</code></p>
 
-`pub fn expand_trigonometric(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+expandTrigonometric(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### expandTrigonometric
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_expression_expand_trigonometric"></a>
+<a id="placement-placement.wasm.wasm_class.expression_expandtrigonometric.1154bf16d311"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+expandTrigonometric(): Expression
+```
+
+Expand trig/hyperbolic functions of sums and multiple angles.
+
+### rewriteAsTrigonometric
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_algebra_session_rewrite_as_trigonometric"></a>
+<a id="placement-placement.wasm.wasm_module.module_rewriteastrigonometric.144585f41e3f"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+rewriteAsTrigonometric(input_expression: Expression): Expression
+```
+
+Inverse of `rewrite_as_exponential`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_rewriteastrigonometric.90428578b902"></a>
-### Context.rewriteAsTrigonometric
+<p class="symi-entry-owner">Explicit context: <code>Context.rewriteAsTrigonometric</code></p>
 
-`pub fn rewrite_as_trigonometric(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+rewriteAsTrigonometric(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### rewriteAsTrigonometric
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_expression_operations_expression_rewrite_as_trigonometric"></a>
+<a id="placement-placement.wasm.wasm_class.expression_rewriteastrigonometric.825595943505"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+rewriteAsTrigonometric(): Expression
+```
+
+Inverse of `rewrite_as_exponential`.
+
+### rewriteTrigonometricBasis
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_session_rewrite_trigonometric_basis"></a>
+<a id="placement-placement.wasm.wasm_module.module_rewritetrigonometricbasis.5eb3b463d234"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+rewriteTrigonometricBasis(
+    input_expression: Expression,
+    basis: string,
+): Expression
+```
+
+Rewrite trigonometric and hyperbolic calls toward one of five named bases: `sine_cosine`, `tangent`, `exponential`, `trigonometric`, or `hyperbolic`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_rewritetrigonometricbasis.9ea791c98c65"></a>
-### Context.rewriteTrigonometricBasis
+<p class="symi-entry-owner">Explicit context: <code>Context.rewriteTrigonometricBasis</code></p>
 
-`pub fn rewrite_trigonometric_basis(&self, input_expression: &Expression, basis: &str) -> Result<Expression, JsError>`
+```typescript signature
+rewriteTrigonometricBasis(
+    input_expression: Expression,
+    basis: string,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### rewriteTrigonometricBasis
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_expression_rewrite_trigonometric_basis"></a>
+<a id="placement-placement.wasm.wasm_class.expression_rewritetrigonometricbasis.874f98eb58f4"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+rewriteTrigonometricBasis(basis: string): Expression
+```
+
+Rewrite trigonometric and hyperbolic calls toward one of five named bases: `sine_cosine`, `tangent`, `exponential`, `trigonometric`, or `hyperbolic`.
+
+### simplifyTrigonometric
+
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_session_simplify_trigonometric"></a>
+<a id="placement-placement.wasm.wasm_module.module_simplifytrigonometric.ad2187f785f4"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+simplifyTrigonometric(input_expression: Expression): Expression
+```
+
+Fu-style trigonometric simplification toward fewer/cheaper trig calls.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_simplifytrigonometric.7691da56d683"></a>
-### Context.simplifyTrigonometric
+<p class="symi-entry-owner">Explicit context: <code>Context.simplifyTrigonometric</code></p>
 
-`pub fn simplify_trigonometric(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+simplifyTrigonometric(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
 
-<a id="placement-placement.wasm.wasm_class.expression_combinelogarithm.a13ee73e1e1d"></a>
-### Expression.combineLogarithm
+### simplifyTrigonometric
 
-`pub fn combine_logarithm(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_combinetrigonometric.379f033759d1"></a>
-### Expression.combineTrigonometric
-
-`pub fn combine_trigonometric(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_evaluatetocomplexinexact.315e742a4077"></a>
-### Expression.evaluateToComplexInexact
-
-`pub fn evaluate_to_complex_inexact(&self) -> Result<Vec<f64>, JsError>`
-
-Returns `Result<Vec<f64>, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_evaluatetocomplexinexactatprecision.84d0eabab4f4"></a>
-### Expression.evaluateToComplexInexactAtPrecision
-
-`pub fn evaluate_to_complex_inexact_at_precision(&self, precision_bits: u32) -> Result<Vec<f64>, JsError>`
-
-Returns `Result<Vec<f64>, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_expandcomplex.7c66ec5fb625"></a>
-### Expression.expandComplex
-
-`pub fn expand_complex(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_expandlogarithm.abcb3401c393"></a>
-### Expression.expandLogarithm
-
-`pub fn expand_logarithm(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_expandtrigonometric.1154bf16d311"></a>
-### Expression.expandTrigonometric
-
-`pub fn expand_trigonometric(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_rewriteastrigonometric.825595943505"></a>
-### Expression.rewriteAsTrigonometric
-
-`pub fn rewrite_as_trigonometric(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_rewritetrigonometricbasis.874f98eb58f4"></a>
-### Expression.rewriteTrigonometricBasis
-
-`pub fn rewrite_trigonometric_basis(&self, basis: &str) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
+<a id="entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_expression_simplify_trigonometric"></a>
 <a id="placement-placement.wasm.wasm_class.expression_simplifytrigonometric.f20902a32327"></a>
-### Expression.simplifyTrigonometric
+<p class="symi-entry-owner">Expression method</p>
 
-`pub fn simplify_trigonometric(&self) -> Result<Expression, JsError>`
+```typescript signature
+simplifyTrigonometric(): Expression
+```
 
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_combinelogarithm.660beda16ea9"></a>
-### module.combineLogarithm
-
-`fn combine_logarithm(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_combinetrigonometric.82565a45a596"></a>
-### module.combineTrigonometric
-
-`fn combine_trigonometric(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_expandcomplex.882987d16cbf"></a>
-### module.expandComplex
-
-`fn expand_complex(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_expandlogarithm.c138343492e9"></a>
-### module.expandLogarithm
-
-`fn expand_logarithm(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_expandtrigonometric.af837d1e113e"></a>
-### module.expandTrigonometric
-
-`fn expand_trigonometric(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_rewriteastrigonometric.144585f41e3f"></a>
-### module.rewriteAsTrigonometric
-
-`fn rewrite_as_trigonometric(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_rewritetrigonometricbasis.5eb3b463d234"></a>
-### module.rewriteTrigonometricBasis
-
-`fn rewrite_trigonometric_basis(input_expression: &Expression, basis: &str) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_simplifytrigonometric.ad2187f785f4"></a>
-### module.simplifyTrigonometric
-
-`fn simplify_trigonometric(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
+Fu-style trigonometric simplification toward fewer/cheaper trig calls.
 

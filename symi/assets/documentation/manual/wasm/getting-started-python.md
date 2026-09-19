@@ -17,6 +17,15 @@ maturin develop --release
 
 Prefer a qualified import so Symi names do not shadow Python builtins:
 
+<!-- symi-example: identifier=python.getting-started.exact-arithmetic kind=runnable placements=placement.python.python_module.module_symbol.13b49e0351f9,placement.python.python_class.expression_factor.a7b06dfc4e7c,placement.python.python_module.module_integrate.135ca8b1419e,placement.python.python_class.expression_substitute.bb8b8e243847,placement.python.python_module.module_integer.49c85c5856ea expectation=output -->
+
+<!-- symi-example: kind=output example=python.getting-started.exact-arithmetic -->
+```text
+(x + 1)^2
+-cos(x)
+16
+1
+```
 
 Python `int`, excluding `bool`, is accepted anywhere an expression-like value
 is expected and retains arbitrary precision. `fractions.Fraction` is converted

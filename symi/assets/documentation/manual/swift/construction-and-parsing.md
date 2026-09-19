@@ -11,8 +11,13 @@ Create a fresh context with an empty symbol table and expression store.
 
 ### reset_context
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_reset_context_api_session_reset_context"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_resetcontext.cff4e8511c86"></a>
-`UniffiSession.resetContext() -> Void`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func resetContext() -> Void
+```
 
 
 Replace the context's entire symbol table and expression store with fresh
@@ -27,8 +32,13 @@ weak expression store already keeps memory bounded by live objects (see
 
 ### parse
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_parse_api_session_parse"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_parse.020527a7a8e8"></a>
-`UniffiSession.parse(text: String) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func parse(text: String) -> UniffiExpression
+```
 
 
 Parse Symi textual syntax into an expression. Accepts `^` and `**` for
@@ -39,8 +49,13 @@ parameters.
 
 ### parse_latex
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_parse_latex_api_serialization_session_parse_latex"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_parselatex.c6c593fb2b63"></a>
-`UniffiSession.parseLatex(latex: String) -> UniffiMathematicalObject`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func parseLatex(latex: String) -> UniffiMathematicalObject
+```
 
 
 Parse a LaTeX string in Symi's canonical input dialect — the inverse of
@@ -68,8 +83,16 @@ expansion.
 
 ### parse_latex_with_environment
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_parse_latex_with_environment_api_serialization_session_parse_latex_with_environment"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_parselatexwithenvironment.c877ae885b71"></a>
-`UniffiSession.parseLatexWithEnvironment(latex: String, serializedDefinitions: [String]) -> UniffiMathematicalObject`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func parseLatexWithEnvironment(
+    latex: String,
+    serializedDefinitions: [String],
+) -> UniffiMathematicalObject
+```
 
 
 Parse LaTeX after building an ordered definition environment. Each serialized
@@ -84,8 +107,13 @@ as a module-level function.
 
 ### symbol
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_symbol_api_session_symbol"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_symbol.d55684481496"></a>
-`UniffiSession.symbol(name: String) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func symbol(name: String) -> UniffiExpression
+```
 
 
 Intern a symbol and (optionally) attach assumptions used by the assumption
@@ -104,8 +132,13 @@ over.
 
 ### integer
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_integer_api_session_integer"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integer.a403f6f0d9d6"></a>
-`UniffiSession.integer(value: Int64) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func integer(value: Int64) -> UniffiExpression
+```
 
 
 Build an arbitrary-precision exact integer. Python `bool` values are rejected. JavaScript's
@@ -113,8 +146,13 @@ recommended facade accepts `bigint` and safe integral `number` values.
 
 ### rational
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_rational_api_session_rational"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_rational.91a4056839d6"></a>
-`UniffiSession.rational(numerator: Int64, denominator: Int64) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func rational(numerator: Int64, denominator: Int64) -> UniffiExpression
+```
 
 
 
@@ -124,16 +162,29 @@ integers. A zero denominator is an argument error. Python also accepts
 
 ### integer_from_string
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integerfromstring.7bbdff04fb08"></a>
-`UniffiSession.integerFromString(text: String) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func integerFromString(text: String) -> UniffiExpression
+```
 
 
 Build an arbitrary-precision integer literal from its decimal string.
 
 ### rational_from_float
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_rationalfromfloat.f14c84b372ca"></a>
-`UniffiSession.rationalFromFloat(value: Double, maximumDenominator: UInt64) -> UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func rationalFromFloat(
+    value: Double,
+    maximumDenominator: UInt64,
+) -> UniffiExpression
+```
 
 
 Closest rational with denominator \(\leq\) `max_denominator` (the
@@ -141,8 +192,13 @@ Closest rational with denominator \(\leq\) `max_denominator` (the
 
 ### undefined_function
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_undefined_function_api_session_undefined_function"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_undefinedfunction.69ab34c3796f"></a>
-`UniffiSession.undefinedFunction(name: String) -> UniffiUndefinedFunction`
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func undefinedFunction(name: String) -> UniffiUndefinedFunction
+```
 
 
 A callable proxy for a user-named function. Calling it with expression
@@ -151,8 +207,13 @@ the worked ODE example).
 
 ### call
 
+<a id="entry-presentation_swift_construction_and_parsing_capability_construction_call_api_undefinedfunction_call"></a>
 <a id="placement-placement.swift.swift_object.uniffiundefinedfunction_call.feef249df282"></a>
-`UniffiUndefinedFunction.call(arguments: [UniffiExpression]) -> UniffiExpression`
+<p class="symi-entry-owner">UniffiUndefinedFunction method</p>
+
+```swift signature
+func call(arguments: [UniffiExpression]) -> UniffiExpression
+```
 
 
 WASM spelling of the Python `f(x, …)` call syntax on `UndefinedFunction`.

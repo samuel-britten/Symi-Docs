@@ -1,101 +1,1112 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="python">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Assumptions — Symi Python documentation</title>
+        <meta name="description" content="Assumptions are typed, canonical propositions over scalar expressions. They are kept separately from the legacy per-symbol compatibility record, so compound…" />
+        <link rel="canonical" href="/symi/python/assumptions/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="assumptions" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/python/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the Python documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">Python</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: Python"><span>Python</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/assumptions/" data-language="python" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/assumptions/" data-language="wasm" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/assumptions/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/assumptions/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/assumptions/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/getting-started-python/">Getting started: Python</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/default-context/">The default context and module-level functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-default-context" data-page="default-context"><span class="symi-visually-hidden">Show entries in The default context and module-level functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-default-context" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/context-safety/">Context safety</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-context-safety" data-page="context-safety"><span class="symi-visually-hidden">Show entries in Context safety</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-context-safety" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/specialized-canonical-forms/">Specialized canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-specialized-canonical-forms" data-page="specialized-canonical-forms"><span class="symi-visually-hidden">Show entries in Specialized canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-specialized-canonical-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/integral-transforms/">Integral transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-integral-transforms" data-page="integral-transforms"><span class="symi-visually-hidden">Show entries in Integral transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-integral-transforms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logical-transforms/">Logical transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logical-transforms" data-page="logical-transforms"><span class="symi-visually-hidden">Show entries in Logical transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logical-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/structured-results/">Structured results</a></div></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/assumptions/" aria-current="page">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Hide entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_add_assumptions_api_session_add_assumptions"><code>add_assumptions</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_algebraic_assumption_api_session_algebraic_assumption"><code>algebraic_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_and_api_assumptionproposition_and"><code>and</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_ask_api_assumptionscope_ask"><code>ask</code> <span class="symi-nav-entry-owner">AssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_ask_api_session_ask"><code>ask</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_assuming_api_assumptionscope_assuming"><code>assuming</code> <span class="symi-nav-entry-owner">AssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_assuming_api_session_assuming"><code>assuming</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_assumption_proposition_from_logical_expression_api_session_assumption_proposition_from_logical_expression"><code>assumption_proposition_from_logical_expression</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_clear_all_assumptions_api_session_clear_all_assumptions"><code>clear_all_assumptions</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_complex_assumption_api_session_complex_assumption"><code>complex_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_composite_assumption_api_session_composite_assumption"><code>composite_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_congruence_modulus_api_assumptionproposition_congruence_modulus"><code>congruence_modulus</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_congruent_assumption_api_defaults_session_congruent_assumption"><code>congruent_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_could_hold_api_assumptionscope_could_hold"><code>could_hold</code> <span class="symi-nav-entry-owner">AssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_could_hold_api_session_could_hold"><code>could_hold</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_defined_assumption_api_session_defined_assumption"><code>defined_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_deserialize_assumption_proposition_api_session_deserialize_assumption_proposition"><code>deserialize_assumption_proposition</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_equal_assumption_api_defaults_session_equal_assumption"><code>equal_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_even_assumption_api_session_even_assumption"><code>even_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_extended_real_assumption_api_session_extended_real_assumption"><code>extended_real_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_finite_assumption_api_session_finite_assumption"><code>finite_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_greater_assumption_api_defaults_session_greater_assumption"><code>greater_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_greater_or_equal_assumption_api_defaults_session_greater_or_equal_assumption"><code>greater_or_equal_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_infinite_assumption_api_session_infinite_assumption"><code>infinite_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_integer_assumption_api_session_integer_assumption"><code>integer_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_irrational_assumption_api_session_irrational_assumption"><code>irrational_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_left_operand_api_assumptionproposition_left_operand"><code>left_operand</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_less_assumption_api_defaults_session_less_assumption"><code>less_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_less_or_equal_assumption_api_defaults_session_less_or_equal_assumption"><code>less_or_equal_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_member_assumption_api_defaults_session_member_assumption"><code>member_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_membership_element_api_assumptionproposition_membership_element"><code>membership_element</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_membership_set_api_assumptionproposition_membership_set"><code>membership_set</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_natural_assumption_api_session_natural_assumption"><code>natural_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_negative_assumption_api_session_negative_assumption"><code>negative_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_nonzero_assumption_api_session_nonzero_assumption"><code>nonzero_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_not_api_assumptionproposition_not"><code>not</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_not_equal_assumption_api_defaults_session_not_equal_assumption"><code>not_equal_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_odd_assumption_api_session_odd_assumption"><code>odd_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_or_api_assumptionproposition_or"><code>or</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_positive_assumption_api_session_positive_assumption"><code>positive_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_positive_integer_assumption_api_session_positive_integer_assumption"><code>positive_integer_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_prime_assumption_api_session_prime_assumption"><code>prime_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_rational_assumption_api_session_rational_assumption"><code>rational_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_real_assumption_api_session_real_assumption"><code>real_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_refine_api_assumptionscope_refine"><code>refine</code> <span class="symi-nav-entry-owner">AssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_refine_api_session_refine"><code>refine</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_refine_api_expression_refine"><code>refine</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_relation_kind_api_assumptionproposition_relation_kind"><code>relation_kind</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_right_operand_api_assumptionproposition_right_operand"><code>right_operand</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_serialize_api_assumptionproposition_serialize"><code>serialize</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_transcendental_assumption_api_session_transcendental_assumption"><code>transcendental_assumption</code></a></li><li><a class="symi-nav-entry" href="/symi/python/assumptions/#entry-presentation_python_assumptions_capability_contexts_zero_assumption_api_session_zero_assumption"><code>zero_assumption</code></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/zero-equivalence/">Zero equivalence</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-zero-equivalence" data-page="zero-equivalence"><span class="symi-visually-hidden">Show entries in Zero equivalence</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-zero-equivalence" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/python/introduction/">Python</a></li><li>Reference and indexes</li><li><span aria-current="page">Assumptions</span></li></ol></nav>
+                
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-2"><a href="#proposition_builders" data-outline-target="proposition_builders">Proposition builders</a></li><li class="symi-outline-depth-2"><a href="#matrix_proposition_builders" data-outline-target="matrix_proposition_builders">Matrix proposition builders</a></li><li class="symi-outline-depth-2"><a href="#scalar_classification" data-outline-target="scalar_classification">Scalar classification</a></li><li class="symi-outline-depth-2"><a href="#proposition_objects" data-outline-target="proposition_objects">Proposition objects</a></li><li class="symi-outline-depth-2"><a href="#durable_contexts_and_scopes" data-outline-target="durable_contexts_and_scopes">Durable contexts and scopes</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">Assumptions</h1>
+<p>Assumptions are typed, canonical propositions over scalar expressions. They are
+kept separately from the legacy per-symbol compatibility record, so compound
+Boolean formulas and immutable local scopes do not lose information.</p>
+<p>Queries are three-valued: <code>True</code> means entailed, <code>False</code> means refuted, and
+<code>None</code> / <code>undefined</code> means that the bounded symbolic engine cannot decide.
+<code>could_hold</code> is a possibility query and may return true when <code>ask</code> is unknown.</p>
+<h2 id="proposition_builders">Proposition builders<a class="symi-heading-permalink" href="#proposition_builders" aria-label="Link to this section: Proposition builders">#</a></h2>
+<h3 id="real_assumption">real_assumption<a class="symi-heading-permalink" href="#real_assumption" aria-label="Link to this section: real_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is real.</p>
+<h3 id="rational_assumption">rational_assumption<a class="symi-heading-permalink" href="#rational_assumption" aria-label="Link to this section: rational_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is rational.</p>
+<h3 id="integer_assumption">integer_assumption<a class="symi-heading-permalink" href="#integer_assumption" aria-label="Link to this section: integer_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is an integer.</p>
+<h3 id="natural_assumption">natural_assumption<a class="symi-heading-permalink" href="#natural_assumption" aria-label="Link to this section: natural_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is a natural number.</p>
+<h3 id="positive_integer_assumption">positive_integer_assumption<a class="symi-heading-permalink" href="#positive_integer_assumption" aria-label="Link to this section: positive_integer_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is a positive integer.</p>
+<h3 id="positive_assumption">positive_assumption<a class="symi-heading-permalink" href="#positive_assumption" aria-label="Link to this section: positive_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is strictly positive.</p>
+<h3 id="negative_assumption">negative_assumption<a class="symi-heading-permalink" href="#negative_assumption" aria-label="Link to this section: negative_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is strictly negative.</p>
+<h3 id="nonzero_assumption">nonzero_assumption<a class="symi-heading-permalink" href="#nonzero_assumption" aria-label="Link to this section: nonzero_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is nonzero.</p>
+<h3 id="finite_assumption">finite_assumption<a class="symi-heading-permalink" href="#finite_assumption" aria-label="Link to this section: finite_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is finite.</p>
+<h3 id="complex_assumption">complex_assumption<a class="symi-heading-permalink" href="#complex_assumption" aria-label="Link to this section: complex_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is a finite complex number.</p>
+<h3 id="extended_real_assumption">extended_real_assumption<a class="symi-heading-permalink" href="#extended_real_assumption" aria-label="Link to this section: extended_real_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is an extended real, including signed infinity.</p>
+<h3 id="infinite_assumption">infinite_assumption<a class="symi-heading-permalink" href="#infinite_assumption" aria-label="Link to this section: infinite_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is one of the two signed infinities.</p>
+<h3 id="irrational_assumption">irrational_assumption<a class="symi-heading-permalink" href="#irrational_assumption" aria-label="Link to this section: irrational_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is real and not rational.</p>
+<h3 id="zero_assumption">zero_assumption<a class="symi-heading-permalink" href="#zero_assumption" aria-label="Link to this section: zero_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is exactly zero.</p>
+<h3 id="even_assumption">even_assumption<a class="symi-heading-permalink" href="#even_assumption" aria-label="Link to this section: even_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is an even integer.</p>
+<h3 id="odd_assumption">odd_assumption<a class="symi-heading-permalink" href="#odd_assumption" aria-label="Link to this section: odd_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is an odd integer.</p>
+<h3 id="prime_assumption">prime_assumption<a class="symi-heading-permalink" href="#prime_assumption" aria-label="Link to this section: prime_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is a proven ordinary prime integer.</p>
+<h3 id="composite_assumption">composite_assumption<a class="symi-heading-permalink" href="#composite_assumption" aria-label="Link to this section: composite_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is a proven ordinary composite integer.</p>
+<h3 id="algebraic_assumption">algebraic_assumption<a class="symi-heading-permalink" href="#algebraic_assumption" aria-label="Link to this section: algebraic_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is algebraic over the rationals.</p>
+<h3 id="transcendental_assumption">transcendental_assumption<a class="symi-heading-permalink" href="#transcendental_assumption" aria-label="Link to this section: transcendental_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression is transcendental over the rationals.</p>
+<h3 id="defined_assumption">defined_assumption<a class="symi-heading-permalink" href="#defined_assumption" aria-label="Link to this section: defined_assumption">#</a></h3>
+<p>Build a proposition asserting that an expression denotes one scalar value at the active point. Its negation asserts that the expression is undefined there; definedness alone authorizes no value, finiteness, realness, sign, continuity, or analyticity.</p>
+<h3 id="equal_assumption">equal_assumption<a class="symi-heading-permalink" href="#equal_assumption" aria-label="Link to this section: equal_assumption">#</a></h3>
+<p>Build a defined scalar equality proposition.</p>
+<h3 id="not_equal_assumption">not_equal_assumption<a class="symi-heading-permalink" href="#not_equal_assumption" aria-label="Link to this section: not_equal_assumption">#</a></h3>
+<p>Build a defined scalar disequality proposition.</p>
+<h3 id="less_assumption">less_assumption<a class="symi-heading-permalink" href="#less_assumption" aria-label="Link to this section: less_assumption">#</a></h3>
+<p>Build a strict extended-real order proposition.</p>
+<h3 id="less_or_equal_assumption">less_or_equal_assumption<a class="symi-heading-permalink" href="#less_or_equal_assumption" aria-label="Link to this section: less_or_equal_assumption">#</a></h3>
+<p>Build a non-strict extended-real order proposition.</p>
+<h3 id="greater_assumption">greater_assumption<a class="symi-heading-permalink" href="#greater_assumption" aria-label="Link to this section: greater_assumption">#</a></h3>
+<p>Build a strict extended-real order proposition by reversing its operands canonically.</p>
+<h3 id="greater_or_equal_assumption">greater_or_equal_assumption<a class="symi-heading-permalink" href="#greater_or_equal_assumption" aria-label="Link to this section: greater_or_equal_assumption">#</a></h3>
+<p>Build a non-strict extended-real order proposition by reversing its operands canonically.</p>
+<h3 id="member_assumption">member_assumption<a class="symi-heading-permalink" href="#member_assumption" aria-label="Link to this section: member_assumption">#</a></h3>
+<p>Build a scalar-membership proposition.</p>
+<h3 id="congruent_assumption">congruent_assumption<a class="symi-heading-permalink" href="#congruent_assumption" aria-label="Link to this section: congruent_assumption">#</a></h3>
+<p>Build an integer-congruence proposition with a positive integer modulus.</p>
+<h3 id="assumption_equal">assumption_equal<a class="symi-heading-permalink" href="#assumption_equal" aria-label="Link to this section: assumption_equal">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/rust/assumptions/#assumption_equal"><code>api::Session::assumption_equal</code></a> in Rust.</em></p>
+<p>Construct an equality proposition over two scalar expressions.</p>
+<h3 id="assumption_not_equal">assumption_not_equal<a class="symi-heading-permalink" href="#assumption_not_equal" aria-label="Link to this section: assumption_not_equal">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/rust/assumptions/#assumption_not_equal"><code>api::Session::assumption_not_equal</code></a> in Rust.</em></p>
+<p>Construct a disequality proposition over two scalar expressions.</p>
+<h3 id="assumption_less">assumption_less<a class="symi-heading-permalink" href="#assumption_less" aria-label="Link to this section: assumption_less">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/rust/assumptions/#assumption_less"><code>api::Session::assumption_less</code></a> in Rust.</em></p>
+<p>Construct a strict scalar-order proposition.</p>
+<h3 id="assumption_less_or_equal">assumption_less_or_equal<a class="symi-heading-permalink" href="#assumption_less_or_equal" aria-label="Link to this section: assumption_less_or_equal">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/rust/assumptions/#assumption_less_or_equal"><code>api::Session::assumption_less_or_equal</code></a> in Rust.</em></p>
+<p>Construct a non-strict scalar-order proposition.</p>
+<h3 id="assumption_greater">assumption_greater<a class="symi-heading-permalink" href="#assumption_greater" aria-label="Link to this section: assumption_greater">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/rust/assumptions/#assumption_greater"><code>api::Session::assumption_greater</code></a> in Rust.</em></p>
+<p>Construct a strict scalar-order proposition with reversed operands.</p>
+<h3 id="assumption_greater_or_equal">assumption_greater_or_equal<a class="symi-heading-permalink" href="#assumption_greater_or_equal" aria-label="Link to this section: assumption_greater_or_equal">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/rust/assumptions/#assumption_greater_or_equal"><code>api::Session::assumption_greater_or_equal</code></a> in Rust.</em></p>
+<p>Construct a non-strict scalar-order proposition with reversed operands.</p>
+<h3 id="assumption_member">assumption_member<a class="symi-heading-permalink" href="#assumption_member" aria-label="Link to this section: assumption_member">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/rust/assumptions/#assumption_member"><code>api::Session::assumption_member</code></a> in Rust.</em></p>
+<p>Construct a scalar-membership proposition.</p>
+<h3 id="assumption_congruent">assumption_congruent<a class="symi-heading-permalink" href="#assumption_congruent" aria-label="Link to this section: assumption_congruent">#</a></h3>
+<p><em>Not exposed by the Python bindings. Available as <a href="/symi/rust/assumptions/#assumption_congruent"><code>api::Session::assumption_congruent</code></a> in Rust.</em></p>
+<p>Construct an integer congruence proposition.</p>
+<h3 id="assumption_proposition_from_logical_expression">assumption_proposition_from_logical_expression<a class="symi-heading-permalink" href="#assumption_proposition_from_logical_expression" aria-label="Link to this section: assumption_proposition_from_logical_expression">#</a></h3>
+<p>Convert a supported Boolean relation expression into a typed assumption proposition.</p>
+<h2 id="matrix_proposition_builders">Matrix proposition builders<a class="symi-heading-permalink" href="#matrix_proposition_builders" aria-label="Link to this section: Matrix proposition builders">#</a></h2>
+<p>Matrix propositions use an immutable, context-owned snapshot of the matrix. They
+return the same three-valued results as scalar assumptions and reject matrices
+from another context or an earlier context generation. <code>matrix_shape</code> additionally
+records the required dimensions in the canonical formula and serialization.</p>
+<h3 id="matrix_shape">matrix_shape<a class="symi-heading-permalink" href="#matrix_shape" aria-label="Link to this section: matrix_shape">#</a></h3>
+<p>Build a proposition asserting that a matrix has the requested positive row and
+column counts.</p>
+<h3 id="square_matrix">square_matrix<a class="symi-heading-permalink" href="#square_matrix" aria-label="Link to this section: square_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix is square.</p>
+<h3 id="zero_matrix">zero_matrix<a class="symi-heading-permalink" href="#zero_matrix" aria-label="Link to this section: zero_matrix">#</a></h3>
+<p>Build a proposition asserting that every matrix entry is zero.</p>
+<h3 id="identity_matrix">identity_matrix<a class="symi-heading-permalink" href="#identity_matrix" aria-label="Link to this section: identity_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix is an identity matrix.</p>
+<h3 id="diagonal_matrix">diagonal_matrix<a class="symi-heading-permalink" href="#diagonal_matrix" aria-label="Link to this section: diagonal_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix is diagonal.</p>
+<h3 id="upper_triangular_matrix">upper_triangular_matrix<a class="symi-heading-permalink" href="#upper_triangular_matrix" aria-label="Link to this section: upper_triangular_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix is upper triangular.</p>
+<h3 id="lower_triangular_matrix">lower_triangular_matrix<a class="symi-heading-permalink" href="#lower_triangular_matrix" aria-label="Link to this section: lower_triangular_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix is lower triangular.</p>
+<h3 id="symmetric_matrix">symmetric_matrix<a class="symi-heading-permalink" href="#symmetric_matrix" aria-label="Link to this section: symmetric_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix equals its transpose.</p>
+<h3 id="hermitian_matrix">hermitian_matrix<a class="symi-heading-permalink" href="#hermitian_matrix" aria-label="Link to this section: hermitian_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix equals its conjugate transpose.</p>
+<h3 id="orthogonal_matrix">orthogonal_matrix<a class="symi-heading-permalink" href="#orthogonal_matrix" aria-label="Link to this section: orthogonal_matrix">#</a></h3>
+<p>Build a proposition asserting that a real square matrix is orthogonal.</p>
+<h3 id="unitary_matrix">unitary_matrix<a class="symi-heading-permalink" href="#unitary_matrix" aria-label="Link to this section: unitary_matrix">#</a></h3>
+<p>Build a proposition asserting that a square matrix is unitary.</p>
+<h3 id="normal_matrix">normal_matrix<a class="symi-heading-permalink" href="#normal_matrix" aria-label="Link to this section: normal_matrix">#</a></h3>
+<p>Build a proposition asserting that a square matrix commutes with its conjugate transpose.</p>
+<h3 id="full_rank_matrix">full_rank_matrix<a class="symi-heading-permalink" href="#full_rank_matrix" aria-label="Link to this section: full_rank_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix has full rank.</p>
+<h3 id="invertible_matrix">invertible_matrix<a class="symi-heading-permalink" href="#invertible_matrix" aria-label="Link to this section: invertible_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix is square and invertible.</p>
+<h3 id="singular_matrix">singular_matrix<a class="symi-heading-permalink" href="#singular_matrix" aria-label="Link to this section: singular_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix is square and singular.</p>
+<h3 id="integer_entries">integer_entries<a class="symi-heading-permalink" href="#integer_entries" aria-label="Link to this section: integer_entries">#</a></h3>
+<p>Build a proposition asserting that every matrix entry is an integer.</p>
+<h3 id="real_entries">real_entries<a class="symi-heading-permalink" href="#real_entries" aria-label="Link to this section: real_entries">#</a></h3>
+<p>Build a proposition asserting that every matrix entry is real.</p>
+<h3 id="complex_entries">complex_entries<a class="symi-heading-permalink" href="#complex_entries" aria-label="Link to this section: complex_entries">#</a></h3>
+<p>Build a proposition asserting that every matrix entry is a finite complex value.</p>
+<h3 id="positive_definite_matrix">positive_definite_matrix<a class="symi-heading-permalink" href="#positive_definite_matrix" aria-label="Link to this section: positive_definite_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix is positive definite under the
+engine&#39;s exact Hermitian/real-domain convention.</p>
+<h3 id="positive_semidefinite_matrix">positive_semidefinite_matrix<a class="symi-heading-permalink" href="#positive_semidefinite_matrix" aria-label="Link to this section: positive_semidefinite_matrix">#</a></h3>
+<p>Build a proposition asserting that a matrix is positive semidefinite under the
+engine&#39;s exact Hermitian/real-domain convention.</p>
+<h2 id="scalar_classification">Scalar classification<a class="symi-heading-permalink" href="#scalar_classification" aria-label="Link to this section: Scalar classification">#</a></h2>
+<p><code>natural</code> includes zero. <code>positive</code> and <code>negative</code> include the matching signed infinity;
+<code>zero</code> is finite zero, and <code>nonzero</code> includes non-real finite complex values and signed
+infinities. <code>nonnegative</code> and <code>nonpositive</code> are universe-guarded extended-real propositions;
+a bare negated sign does not establish either one. Prime and composite are not complements:
+negative integers, zero, and one are neither.</p>
+<p>Primality is exact and proof-producing. A probable-prime screening result is deliberately
+unknown and is never exposed as a symbolic prime fact.</p>
+<h2 id="proposition_objects">Proposition objects<a class="symi-heading-permalink" href="#proposition_objects" aria-label="Link to this section: Proposition objects">#</a></h2>
+<h3 id="assumption_proposition">assumption_proposition<a class="symi-heading-permalink" href="#assumption_proposition" aria-label="Link to this section: assumption_proposition">#</a></h3>
+<p>An immutable, context-owned Boolean assumption formula.</p>
+<h3 id="and">and<a class="symi-heading-permalink" href="#and" aria-label="Link to this section: and">#</a></h3>
+<p>Conjoin two propositions and return a canonical proposition.</p>
+<h3 id="or">or<a class="symi-heading-permalink" href="#or" aria-label="Link to this section: or">#</a></h3>
+<p>Disjoin two propositions and return a canonical proposition.</p>
+<h3 id="not">not<a class="symi-heading-permalink" href="#not" aria-label="Link to this section: not">#</a></h3>
+<p>Negate a proposition and return a canonical proposition.</p>
+<h3 id="relation_kind">relation_kind<a class="symi-heading-permalink" href="#relation_kind" aria-label="Link to this section: relation_kind">#</a></h3>
+<p>Return the canonical relation kind for a relation atom.</p>
+<h3 id="left_operand">left_operand<a class="symi-heading-permalink" href="#left_operand" aria-label="Link to this section: left_operand">#</a></h3>
+<p>Return the left relation or congruence operand when present.</p>
+<h3 id="right_operand">right_operand<a class="symi-heading-permalink" href="#right_operand" aria-label="Link to this section: right_operand">#</a></h3>
+<p>Return the right relation or congruence operand when present.</p>
+<h3 id="membership_element">membership_element<a class="symi-heading-permalink" href="#membership_element" aria-label="Link to this section: membership_element">#</a></h3>
+<p>Return the membership element when present.</p>
+<h3 id="membership_set">membership_set<a class="symi-heading-permalink" href="#membership_set" aria-label="Link to this section: membership_set">#</a></h3>
+<p>Return the membership set expression when present.</p>
+<h3 id="congruence_modulus">congruence_modulus<a class="symi-heading-permalink" href="#congruence_modulus" aria-label="Link to this section: congruence_modulus">#</a></h3>
+<p>Return the congruence modulus when present.</p>
+<h3 id="serialize">serialize<a class="symi-heading-permalink" href="#serialize" aria-label="Link to this section: serialize">#</a></h3>
+<p>Serialize a proposition in the versioned canonical formula grammar.</p>
+<h3 id="deserialize_assumption_proposition">deserialize_assumption_proposition<a class="symi-heading-permalink" href="#deserialize_assumption_proposition" aria-label="Link to this section: deserialize_assumption_proposition">#</a></h3>
+<p>Parse a versioned canonical assumption proposition in the receiving context.</p>
+<h2 id="durable_contexts_and_scopes">Durable contexts and scopes<a class="symi-heading-permalink" href="#durable_contexts_and_scopes" aria-label="Link to this section: Durable contexts and scopes">#</a></h2>
+<h3 id="add_assumptions">add_assumptions<a class="symi-heading-permalink" href="#add_assumptions" aria-label="Link to this section: add_assumptions">#</a></h3>
+<p>Atomically add a proposition to the durable assumption context. Contradictory
+updates are rejected without changing the prior state.</p>
+<h3 id="clear_all_assumptions">clear_all_assumptions<a class="symi-heading-permalink" href="#clear_all_assumptions" aria-label="Link to this section: clear_all_assumptions">#</a></h3>
+<p>Clear both durable formulas and legacy symbol assumptions.</p>
+<h3 id="ask">ask<a class="symi-heading-permalink" href="#ask" aria-label="Link to this section: ask">#</a></h3>
+<p>Return whether a proposition is entailed by the current durable context.</p>
+<h3 id="could_hold">could_hold<a class="symi-heading-permalink" href="#could_hold" aria-label="Link to this section: could_hold">#</a></h3>
+<p>Return whether the current durable context is compatible with a proposition.</p>
+<h3 id="assuming">assuming<a class="symi-heading-permalink" href="#assuming" aria-label="Link to this section: assuming">#</a></h3>
+<p>Create an immutable local scope by overlaying a proposition. The overlay does
+not change the owning context.</p>
+<h3 id="assumption_scope">assumption_scope<a class="symi-heading-permalink" href="#assumption_scope" aria-label="Link to this section: assumption_scope">#</a></h3>
+<p>An immutable local assumption scope. Its scope-aware operations—<code>simplify</code>,
+<code>refine</code>, <code>integrate</code>, <code>integrate_definite</code>, <code>evaluate_limit</code>,
+<code>taylor_series</code>, <code>laplace_transform</code>, <code>fourier_transform</code>, <code>singularities</code>,
+and <code>continuous_domain</code>—execute through the captured assumptions without
+mutating the owning context. Each one asks the same shared assumption session
+that the durable entry points use, so a compound or relational fact reaches
+them exactly as a per-symbol declaration does. If an assumption cannot be
+checked for the requested operation, the operation keeps its ordinary
+unevaluated or declined result rather than guessing a branch.</p>
+<h3 id="refine">refine<a class="symi-heading-permalink" href="#refine" aria-label="Link to this section: refine">#</a></h3>
+<p>Simplify an expression using durable assumptions or one checked local proposition.</p>
+<h2 id="additional_api">Additional API<a class="symi-heading-permalink" href="#additional_api" aria-label="Link to this section: Additional API">#</a></h2>
+<h3 id="add_assumptions_2">add_assumptions<a class="symi-heading-permalink" href="#add_assumptions_2" aria-label="Link to this section: add_assumptions">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_add_assumptions_api_session_add_assumptions"></a>
+<a id="placement-placement.python.python_module.module_add_assumptions.5534bc9705a0"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">add_assumptions<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span></code></pre></div>
+<p>Add a proposition to the default context&#39;s durable assumption store.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_add_assumptions.3c5c1e06a162"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.add_assumptions</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">add_assumptions<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span></code></pre></div>
+</details>
+
+<h3 id="algebraic_assumption_2">algebraic_assumption<a class="symi-heading-permalink" href="#algebraic_assumption_2" aria-label="Link to this section: algebraic_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_algebraic_assumption_api_session_algebraic_assumption"></a>
+<a id="placement-placement.python.python_module.module_algebraic_assumption.3e42ce87f0c8"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">algebraic_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build an algebraicity assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_algebraic_assumption.6668f28bbcab"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.algebraic_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">algebraic_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="and_2">and<a class="symi-heading-permalink" href="#and_2" aria-label="Link to this section: and">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_and_api_assumptionproposition_and"></a>
+<a id="placement-placement.python.python_class.assumptionproposition_and.6f0fb9535ca0"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python"><span class="token keyword">and</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span></code></pre></div>
+<p>Conjoin two propositions.</p>
+<h3 id="ask_2">ask<a class="symi-heading-permalink" href="#ask_2" aria-label="Link to this section: ask">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_ask_api_assumptionscope_ask"></a>
+<a id="placement-placement.python.python_class.assumptionscope_ask.8b509b1e4374"></a></p>
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">ask<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span><span class="token builtin">bool</span><span class="token punctuation">]</span></code></pre></div>
+<p>Ask a proposition against the immutable scope snapshot.</p>
+<h3 id="ask_3">ask<a class="symi-heading-permalink" href="#ask_3" aria-label="Link to this section: ask">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_ask_api_session_ask"></a>
+<a id="placement-placement.python.python_module.module_ask.46448bddac9d"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">ask<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span><span class="token builtin">bool</span><span class="token punctuation">]</span></code></pre></div>
+<p>Ask whether a proposition is entailed by the default context&#39;s assumptions.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_ask.5e7d1d8a46a1"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.ask</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">ask<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span><span class="token builtin">bool</span><span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="assuming_2">assuming<a class="symi-heading-permalink" href="#assuming_2" aria-label="Link to this section: assuming">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_assuming_api_assumptionscope_assuming"></a>
+<a id="placement-placement.python.python_class.assumptionscope_assuming.8472ace80b00"></a></p>
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">assuming<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionScope</code></pre></div>
+<p>Compose a further immutable overlay.</p>
+<h3 id="assuming_3">assuming<a class="symi-heading-permalink" href="#assuming_3" aria-label="Link to this section: assuming">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_assuming_api_session_assuming"></a>
+<a id="placement-placement.python.python_module.module_assuming.d8dc7c25ca26"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">assuming<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionScope</code></pre></div>
+<p>Create an immutable local assumption scope in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_assuming.428587b6ed47"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.assuming</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">assuming<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionScope</code></pre></div>
+</details>
+
+<h3 id="assumption_proposition_from_logical_expression_2">assumption_proposition_from_logical_expression<a class="symi-heading-permalink" href="#assumption_proposition_from_logical_expression_2" aria-label="Link to this section: assumption_proposition_from_logical_expression">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_assumption_proposition_from_logical_expression_api_session_assumption_proposition_from_logical_expression"></a>
+<a id="placement-placement.python.python_module.module_assumption_proposition_from_logical_expression.75701bde4184"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">assumption_proposition_from_logical_expression<span class="token punctuation">(</span>logical_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Convert a supported logical expression to a typed assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_assumption_proposition_from_logical_expression.6bb099358e64"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.assumption_proposition_from_logical_expression</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">assumption_proposition_from_logical_expression<span class="token punctuation">(</span>logical_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="clear_all_assumptions_2">clear_all_assumptions<a class="symi-heading-permalink" href="#clear_all_assumptions_2" aria-label="Link to this section: clear_all_assumptions">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_clear_all_assumptions_api_session_clear_all_assumptions"></a>
+<a id="placement-placement.python.python_module.module_clear_all_assumptions.118de91197c2"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">clear_all_assumptions<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span></code></pre></div>
+<p>Clear all assumptions in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_clear_all_assumptions.f74c63d49ce3"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.clear_all_assumptions</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">clear_all_assumptions<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span></code></pre></div>
+</details>
+
+<h3 id="complex_assumption_2">complex_assumption<a class="symi-heading-permalink" href="#complex_assumption_2" aria-label="Link to this section: complex_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_complex_assumption_api_session_complex_assumption"></a>
+<a id="placement-placement.python.python_module.module_complex_assumption.5e420f8c1172"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">complex_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a finite-complex assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_complex_assumption.83b9529b0377"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.complex_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">complex_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="composite_assumption_2">composite_assumption<a class="symi-heading-permalink" href="#composite_assumption_2" aria-label="Link to this section: composite_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_composite_assumption_api_session_composite_assumption"></a>
+<a id="placement-placement.python.python_module.module_composite_assumption.30dbacb9ae11"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">composite_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a compositeness assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_composite_assumption.aebcd0430cc3"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.composite_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">composite_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="congruence_modulus_2">congruence_modulus<a class="symi-heading-permalink" href="#congruence_modulus_2" aria-label="Link to this section: congruence_modulus">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_congruence_modulus_api_assumptionproposition_congruence_modulus"></a>
+<a id="placement-placement.python.python_module.module_congruence_modulus.0d5d260ad39c"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">congruence_modulus<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+<p>Return the congruence modulus when present.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.assumptionproposition_congruence_modulus.5c6a48aa27a2"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.congruence_modulus</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">congruence_modulus<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="congruent_assumption_2">congruent_assumption<a class="symi-heading-permalink" href="#congruent_assumption_2" aria-label="Link to this section: congruent_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_congruent_assumption_api_defaults_session_congruent_assumption"></a>
+<a id="placement-placement.python.python_module.module_congruent_assumption.c97dfd2fafe9"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">congruent_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    modulus<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build an integer-congruence assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_congruent_assumption.2b5d2841f8f7"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.congruent_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">congruent_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    modulus<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="could_hold_2">could_hold<a class="symi-heading-permalink" href="#could_hold_2" aria-label="Link to this section: could_hold">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_could_hold_api_assumptionscope_could_hold"></a>
+<a id="placement-placement.python.python_class.assumptionscope_could_hold.79ec09546b09"></a></p>
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">could_hold<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span><span class="token builtin">bool</span><span class="token punctuation">]</span></code></pre></div>
+<p>Ask whether a proposition is compatible with the immutable scope snapshot.</p>
+<h3 id="could_hold_3">could_hold<a class="symi-heading-permalink" href="#could_hold_3" aria-label="Link to this section: could_hold">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_could_hold_api_session_could_hold"></a>
+<a id="placement-placement.python.python_module.module_could_hold.7a7a59f32b15"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">could_hold<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span><span class="token builtin">bool</span><span class="token punctuation">]</span></code></pre></div>
+<p>Ask whether a proposition is compatible with the default context&#39;s assumptions.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_could_hold.e4f6b1a8f31f"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.could_hold</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">could_hold<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span><span class="token builtin">bool</span><span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="defined_assumption_2">defined_assumption<a class="symi-heading-permalink" href="#defined_assumption_2" aria-label="Link to this section: defined_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_defined_assumption_api_session_defined_assumption"></a>
+<a id="placement-placement.python.python_module.module_defined_assumption.c4e03a95c53d"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">defined_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a pointwise definedness assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_defined_assumption.11fa043594f7"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.defined_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">defined_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="deserialize_assumption_proposition_2">deserialize_assumption_proposition<a class="symi-heading-permalink" href="#deserialize_assumption_proposition_2" aria-label="Link to this section: deserialize_assumption_proposition">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_deserialize_assumption_proposition_api_session_deserialize_assumption_proposition"></a>
+<a id="placement-placement.python.python_module.module_deserialize_assumption_proposition.ef24a2ce4ba6"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">deserialize_assumption_proposition<span class="token punctuation">(</span>text<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Parse a versioned canonical assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_deserialize_assumption_proposition.e74c9fe0297b"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.deserialize_assumption_proposition</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">deserialize_assumption_proposition<span class="token punctuation">(</span>text<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="equal_assumption_2">equal_assumption<a class="symi-heading-permalink" href="#equal_assumption_2" aria-label="Link to this section: equal_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_equal_assumption_api_defaults_session_equal_assumption"></a>
+<a id="placement-placement.python.python_module.module_equal_assumption.167e0c4b07ea"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">equal_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build an equality assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_equal_assumption.c01ebdd8014d"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.equal_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">equal_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="even_assumption_2">even_assumption<a class="symi-heading-permalink" href="#even_assumption_2" aria-label="Link to this section: even_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_even_assumption_api_session_even_assumption"></a>
+<a id="placement-placement.python.python_module.module_even_assumption.0344d2eb9537"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">even_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build an evenness assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_even_assumption.12ea745ce233"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.even_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">even_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="extended_real_assumption_2">extended_real_assumption<a class="symi-heading-permalink" href="#extended_real_assumption_2" aria-label="Link to this section: extended_real_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_extended_real_assumption_api_session_extended_real_assumption"></a>
+<a id="placement-placement.python.python_module.module_extended_real_assumption.1e226df989bd"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">extended_real_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build an extended-real assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_extended_real_assumption.07eea67a7a45"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.extended_real_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">extended_real_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="finite_assumption_2">finite_assumption<a class="symi-heading-permalink" href="#finite_assumption_2" aria-label="Link to this section: finite_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_finite_assumption_api_session_finite_assumption"></a>
+<a id="placement-placement.python.python_module.module_finite_assumption.ff3558f6b171"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">finite_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a finiteness assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_finite_assumption.81e9cb0c27c6"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.finite_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">finite_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="greater_assumption_2">greater_assumption<a class="symi-heading-permalink" href="#greater_assumption_2" aria-label="Link to this section: greater_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_greater_assumption_api_defaults_session_greater_assumption"></a>
+<a id="placement-placement.python.python_module.module_greater_assumption.1ba0f7d7ae7d"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">greater_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a strict scalar-order assumption proposition with reversed operands in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_greater_assumption.1cc4159f5617"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.greater_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">greater_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="greater_or_equal_assumption_2">greater_or_equal_assumption<a class="symi-heading-permalink" href="#greater_or_equal_assumption_2" aria-label="Link to this section: greater_or_equal_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_greater_or_equal_assumption_api_defaults_session_greater_or_equal_assumption"></a>
+<a id="placement-placement.python.python_module.module_greater_or_equal_assumption.26650392c272"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">greater_or_equal_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a non-strict scalar-order assumption proposition with reversed operands in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_greater_or_equal_assumption.3917a98caf90"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.greater_or_equal_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">greater_or_equal_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="infinite_assumption_2">infinite_assumption<a class="symi-heading-permalink" href="#infinite_assumption_2" aria-label="Link to this section: infinite_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_infinite_assumption_api_session_infinite_assumption"></a>
+<a id="placement-placement.python.python_module.module_infinite_assumption.cbda15e8b727"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">infinite_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build an infinity assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_infinite_assumption.2d77e250a82b"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.infinite_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">infinite_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="integer_assumption_2">integer_assumption<a class="symi-heading-permalink" href="#integer_assumption_2" aria-label="Link to this section: integer_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_integer_assumption_api_session_integer_assumption"></a>
+<a id="placement-placement.python.python_module.module_integer_assumption.f185036b04c6"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">integer_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build an integer assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_integer_assumption.85a64395b991"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.integer_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">integer_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="irrational_assumption_2">irrational_assumption<a class="symi-heading-permalink" href="#irrational_assumption_2" aria-label="Link to this section: irrational_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_irrational_assumption_api_session_irrational_assumption"></a>
+<a id="placement-placement.python.python_module.module_irrational_assumption.3e0ac49ac535"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">irrational_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build an irrationality assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_irrational_assumption.66f194e38ebe"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.irrational_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">irrational_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="left_operand_2">left_operand<a class="symi-heading-permalink" href="#left_operand_2" aria-label="Link to this section: left_operand">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_left_operand_api_assumptionproposition_left_operand"></a>
+<a id="placement-placement.python.python_module.module_left_operand.4e66dcfbd33f"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">left_operand<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+<p>Return the left relation or congruence operand when present.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.assumptionproposition_left_operand.cee13cef016d"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.left_operand</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">left_operand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="less_assumption_2">less_assumption<a class="symi-heading-permalink" href="#less_assumption_2" aria-label="Link to this section: less_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_less_assumption_api_defaults_session_less_assumption"></a>
+<a id="placement-placement.python.python_module.module_less_assumption.dedb60ca39a9"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">less_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a strict scalar-order assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_less_assumption.119dbf671dc9"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.less_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">less_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="less_or_equal_assumption_2">less_or_equal_assumption<a class="symi-heading-permalink" href="#less_or_equal_assumption_2" aria-label="Link to this section: less_or_equal_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_less_or_equal_assumption_api_defaults_session_less_or_equal_assumption"></a>
+<a id="placement-placement.python.python_module.module_less_or_equal_assumption.e524819ec09a"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">less_or_equal_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a non-strict scalar-order assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_less_or_equal_assumption.ad44558346d3"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.less_or_equal_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">less_or_equal_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="member_assumption_2">member_assumption<a class="symi-heading-permalink" href="#member_assumption_2" aria-label="Link to this section: member_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_member_assumption_api_defaults_session_member_assumption"></a>
+<a id="placement-placement.python.python_module.module_member_assumption.a60e8dee72bc"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">member_assumption<span class="token punctuation">(</span>
+    element<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    set_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a scalar-membership assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_member_assumption.70329535155f"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.member_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">member_assumption<span class="token punctuation">(</span>
+    element<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    set_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="membership_element_2">membership_element<a class="symi-heading-permalink" href="#membership_element_2" aria-label="Link to this section: membership_element">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_membership_element_api_assumptionproposition_membership_element"></a>
+<a id="placement-placement.python.python_module.module_membership_element.eefd24abb000"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">membership_element<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+<p>Return the membership element when present.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.assumptionproposition_membership_element.af61b3a44cd8"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.membership_element</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">membership_element<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="membership_set_2">membership_set<a class="symi-heading-permalink" href="#membership_set_2" aria-label="Link to this section: membership_set">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_membership_set_api_assumptionproposition_membership_set"></a>
+<a id="placement-placement.python.python_module.module_membership_set.a1132ccbd58a"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">membership_set<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+<p>Return the membership set expression when present.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.assumptionproposition_membership_set.86537461a6a8"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.membership_set</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">membership_set<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="natural_assumption_2">natural_assumption<a class="symi-heading-permalink" href="#natural_assumption_2" aria-label="Link to this section: natural_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_natural_assumption_api_session_natural_assumption"></a>
+<a id="placement-placement.python.python_module.module_natural_assumption.c1a9825dc555"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">natural_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a natural-number assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_natural_assumption.8a2217ce89fb"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.natural_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">natural_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="negative_assumption_2">negative_assumption<a class="symi-heading-permalink" href="#negative_assumption_2" aria-label="Link to this section: negative_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_negative_assumption_api_session_negative_assumption"></a>
+<a id="placement-placement.python.python_module.module_negative_assumption.c1ee3fb881dd"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">negative_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a strict-negativity assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_negative_assumption.ee80216da503"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.negative_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">negative_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="nonzero_assumption_2">nonzero_assumption<a class="symi-heading-permalink" href="#nonzero_assumption_2" aria-label="Link to this section: nonzero_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_nonzero_assumption_api_session_nonzero_assumption"></a>
+<a id="placement-placement.python.python_module.module_nonzero_assumption.8b80885792a9"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">nonzero_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a nonzero assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_nonzero_assumption.d99730d01532"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.nonzero_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">nonzero_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="not_2">not<a class="symi-heading-permalink" href="#not_2" aria-label="Link to this section: not">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_not_api_assumptionproposition_not"></a>
+<a id="placement-placement.python.python_class.assumptionproposition_not.045676b20152"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python"><span class="token keyword">not</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p>Negate a proposition.</p>
+<h3 id="not_equal_assumption_2">not_equal_assumption<a class="symi-heading-permalink" href="#not_equal_assumption_2" aria-label="Link to this section: not_equal_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_not_equal_assumption_api_defaults_session_not_equal_assumption"></a>
+<a id="placement-placement.python.python_module.module_not_equal_assumption.78a9f583401a"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">not_equal_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a disequality assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_not_equal_assumption.2f875ce168e2"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.not_equal_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">not_equal_assumption<span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    right<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="odd_assumption_2">odd_assumption<a class="symi-heading-permalink" href="#odd_assumption_2" aria-label="Link to this section: odd_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_odd_assumption_api_session_odd_assumption"></a>
+<a id="placement-placement.python.python_module.module_odd_assumption.7248f3f6e827"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">odd_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build an oddness assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_odd_assumption.d9cf44c4ac2d"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.odd_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">odd_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="or_2">or<a class="symi-heading-permalink" href="#or_2" aria-label="Link to this section: or">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_or_api_assumptionproposition_or"></a>
+<a id="placement-placement.python.python_class.assumptionproposition_or.de6031767101"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python"><span class="token keyword">or</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span></code></pre></div>
+<p>Disjoin two propositions.</p>
+<h3 id="positive_assumption_2">positive_assumption<a class="symi-heading-permalink" href="#positive_assumption_2" aria-label="Link to this section: positive_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_positive_assumption_api_session_positive_assumption"></a>
+<a id="placement-placement.python.python_module.module_positive_assumption.74db6e80f453"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">positive_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a strict-positivity assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_positive_assumption.e0bc55b6fd65"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.positive_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">positive_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="positive_integer_assumption_2">positive_integer_assumption<a class="symi-heading-permalink" href="#positive_integer_assumption_2" aria-label="Link to this section: positive_integer_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_positive_integer_assumption_api_session_positive_integer_assumption"></a>
+<a id="placement-placement.python.python_module.module_positive_integer_assumption.e64875fe5bab"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">positive_integer_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a positive-integer assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_positive_integer_assumption.b4f90bffcfa8"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.positive_integer_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">positive_integer_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="prime_assumption_2">prime_assumption<a class="symi-heading-permalink" href="#prime_assumption_2" aria-label="Link to this section: prime_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_prime_assumption_api_session_prime_assumption"></a>
+<a id="placement-placement.python.python_module.module_prime_assumption.f13a223f22ed"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">prime_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a primality assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_prime_assumption.86c9cf48fa82"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.prime_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">prime_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="rational_assumption_2">rational_assumption<a class="symi-heading-permalink" href="#rational_assumption_2" aria-label="Link to this section: rational_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_rational_assumption_api_session_rational_assumption"></a>
+<a id="placement-placement.python.python_module.module_rational_assumption.260550d8ea71"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">rational_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a rationality assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_rational_assumption.c917db27f8ab"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.rational_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">rational_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="real_assumption_2">real_assumption<a class="symi-heading-permalink" href="#real_assumption_2" aria-label="Link to this section: real_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_real_assumption_api_session_real_assumption"></a>
+<a id="placement-placement.python.python_module.module_real_assumption.fc6de2b878b6"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">real_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a realness assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_real_assumption.5548ec725f23"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.real_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">real_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="refine_2">refine<a class="symi-heading-permalink" href="#refine_2" aria-label="Link to this section: refine">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_refine_api_assumptionscope_refine"></a>
+<a id="placement-placement.python.python_class.assumptionscope_refine.36067d324ccf"></a></p>
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">refine<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Refine an expression against this immutable local assumption scope.</p>
+<h3 id="refine_3">refine<a class="symi-heading-permalink" href="#refine_3" aria-label="Link to this section: refine">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_refine_api_session_refine"></a>
+<a id="placement-placement.python.python_module.module_refine.071351212302"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">refine<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    assumptions<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Any<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Refine an expression using durable assumptions or one checked local proposition.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_refine.76378dcfe8ec"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.refine</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">refine<span class="token punctuation">(</span>
+    input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">,</span>
+    assumptions<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Any<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+</details>
+
+<h3 id="refine_4">refine<a class="symi-heading-permalink" href="#refine_4" aria-label="Link to this section: refine">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_refine_api_expression_refine"></a>
+<a id="placement-placement.python.python_class.expression_refine.ce9953b90828"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">refine<span class="token punctuation">(</span>assumptions<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Any<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Expression</code></pre></div>
+<p>Refine this expression using durable assumptions or one checked local proposition.</p>
+<h3 id="relation_kind_2">relation_kind<a class="symi-heading-permalink" href="#relation_kind_2" aria-label="Link to this section: relation_kind">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_relation_kind_api_assumptionproposition_relation_kind"></a>
+<a id="placement-placement.python.python_module.module_relation_kind.632a4e37f4c7"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">relation_kind<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span></code></pre></div>
+<p>Return the canonical relation kind for an assumption proposition.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.assumptionproposition_relation_kind.f8984b08a241"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.relation_kind</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">relation_kind<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="right_operand_2">right_operand<a class="symi-heading-permalink" href="#right_operand_2" aria-label="Link to this section: right_operand">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_right_operand_api_assumptionproposition_right_operand"></a>
+<a id="placement-placement.python.python_module.module_right_operand.a6ef7e813657"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">right_operand<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+<p>Return the right relation or congruence operand when present.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.assumptionproposition_right_operand.bc39fbcb538e"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.right_operand</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">right_operand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>Expression<span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="serialize_2">serialize<a class="symi-heading-permalink" href="#serialize_2" aria-label="Link to this section: serialize">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_serialize_api_assumptionproposition_serialize"></a>
+<a id="placement-placement.python.python_module.module_serialize.f5b62eedbe49"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">serialize<span class="token punctuation">(</span>proposition<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span></code></pre></div>
+<p>Serialize an assumption proposition in the versioned canonical grammar.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.assumptionproposition_serialize.4c8a55f22281"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.serialize</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">serialize<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span></code></pre></div>
+</details>
+
+<h3 id="transcendental_assumption_2">transcendental_assumption<a class="symi-heading-permalink" href="#transcendental_assumption_2" aria-label="Link to this section: transcendental_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_transcendental_assumption_api_session_transcendental_assumption"></a>
+<a id="placement-placement.python.python_module.module_transcendental_assumption.f93ee0ffe954"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">transcendental_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a transcendence assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_transcendental_assumption.f04ad245af9e"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.transcendental_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">transcendental_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+<h3 id="zero_assumption_2">zero_assumption<a class="symi-heading-permalink" href="#zero_assumption_2" aria-label="Link to this section: zero_assumption">#</a></h3>
+<p><a id="entry-presentation_python_assumptions_capability_contexts_zero_assumption_api_session_zero_assumption"></a>
+<a id="placement-placement.python.python_module.module_zero_assumption.3f481767b689"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">zero_assumption<span class="token punctuation">(</span>input_expression<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+<p>Build a zero assumption proposition in the default context.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.python.python_class.context_zero_assumption.2beb552c0ca5"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.zero_assumption</code></p>
+
+<div class="symi-signature" data-code-language="python"><pre class="language-python" tabindex="0"><code class="language-python">zero_assumption<span class="token punctuation">(</span>subject<span class="token punctuation">:</span> ExpressionLike<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> AssumptionProposition</code></pre></div>
+</details>
+
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Reference and indexes</h2><ul class="symi-related-list"><li><a href="/symi/python/structured-results/">Structured results</a></li><li><a href="/symi/python/zero-equivalence/">Zero equivalence</a></li><li><a href="/symi/python/api-reference/">Complete placement index</a></li><li><a href="/symi/python/category-index/">Category index</a></li><li><a href="/symi/python/alphabetical-index/">Alphabetical index</a></li><li><a href="/symi/python/owner-index/">Owner index</a></li><li><a href="/symi/python/result-type-index/">Result-type index</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/python/structured-results/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Structured results</span></a><a class="symi-pager-link symi-pager-next" href="/symi/python/zero-equivalence/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Zero equivalence</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · Python</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-2"><a href="#proposition_builders" data-outline-target="proposition_builders">Proposition builders</a></li><li class="symi-outline-depth-2"><a href="#matrix_proposition_builders" data-outline-target="matrix_proposition_builders">Matrix proposition builders</a></li><li class="symi-outline-depth-2"><a href="#scalar_classification" data-outline-target="scalar_classification">Scalar classification</a></li><li class="symi-outline-depth-2"><a href="#proposition_objects" data-outline-target="proposition_objects">Proposition objects</a></li><li class="symi-outline-depth-2"><a href="#durable_contexts_and_scopes" data-outline-target="durable_contexts_and_scopes">Durable contexts and scopes</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

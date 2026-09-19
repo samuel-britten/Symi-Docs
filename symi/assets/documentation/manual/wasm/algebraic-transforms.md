@@ -8,14 +8,33 @@ the search-based ladder see
 
 ### expand
 
-<a id="placement-placement.wasm.wasm_class.context_expand.d98009438d4a"></a>
-Raw WebAssembly: `pub fn expand(&self, input_expression: &Expression) -> Result<Expression, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.expression_expand.3ba03dbd7b00"></a>
-Raw WebAssembly: `pub fn expand(&self) -> Result<Expression, JsError>`
-
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_expand_api_session_expand"></a>
 <a id="placement-placement.wasm.wasm_module.module_expand.debe9b25c914"></a>
-Raw WebAssembly: `fn expand(input_expression: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+expand(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_expand.d98009438d4a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.expand</code></p>
+
+```typescript signature
+expand(input_expression: Expression): Expression
+```
+
+</details>
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_expand_api_expression_expand"></a>
+<a id="placement-placement.wasm.wasm_class.expression_expand.3ba03dbd7b00"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+expand(): Expression
+```
 
 
 
@@ -37,14 +56,39 @@ For factorization, cancellation, collection, and radical operations, use
 
 ### factor
 
-<a id="placement-placement.wasm.wasm_class.context_factor.631689a43337"></a>
-Raw WebAssembly: `pub fn factor(&self, input_expression: &Expression, gaussian: Option<bool>) -> Result<Expression, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.expression_factor.86dbcc9c348d"></a>
-Raw WebAssembly: `pub fn factor(&self, gaussian: Option<bool>) -> Result<Expression, JsError>`
-
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_factor_api_session_factor"></a>
 <a id="placement-placement.wasm.wasm_module.module_factor.1a856a4538bd"></a>
-Raw WebAssembly: `fn factor(input_expression: &Expression, gaussian: Option<bool>) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+factor(
+    input_expression: Expression,
+    gaussian?: boolean | null,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_factor.631689a43337"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.factor</code></p>
+
+```typescript signature
+factor(
+    input_expression: Expression,
+    gaussian?: boolean | null,
+): Expression
+```
+
+</details>
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_factor_api_expression_factor"></a>
+<a id="placement-placement.wasm.wasm_class.expression_factor.86dbcc9c348d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+factor(gaussian?: boolean | null): Expression
+```
 
 
 
@@ -54,14 +98,33 @@ Polynomial factorization over the rationals (full multivariate). With
 
 ### collect
 
-<a id="placement-placement.wasm.wasm_class.context_collect.bdcb1b32b44d"></a>
-Raw WebAssembly: `pub fn collect(&self, input_expression: &Expression, generator: &Expression) -> Result<Expression, JsError>`
-
-<a id="placement-placement.wasm.wasm_class.expression_collect.077961f6224f"></a>
-Raw WebAssembly: `pub fn collect(&self, generator: &Expression) -> Result<Expression, JsError>`
-
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_collect_api_algebra_session_collect"></a>
 <a id="placement-placement.wasm.wasm_module.module_collect.891acef02c13"></a>
-Raw WebAssembly: `fn collect(input_expression: &Expression, generator: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+collect(input_expression: Expression, generator: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_collect.bdcb1b32b44d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.collect</code></p>
+
+```typescript signature
+collect(input_expression: Expression, generator: Expression): Expression
+```
+
+</details>
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_collect_api_expression_operations_expression_collect"></a>
+<a id="placement-placement.wasm.wasm_class.expression_collect.077961f6224f"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+collect(generator: Expression): Expression
+```
 
 
 
@@ -165,129 +228,219 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
+### collectRadicals
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_collect_radicals_api_algebra_session_collect_radicals"></a>
+<a id="placement-placement.wasm.wasm_module.module_collectradicals.618f2f1f120b"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+collectRadicals(input_expression: Expression): Expression
+```
+
+Collect like numeric radical kernels in a top-level sum. For example, `a*sqrt(2) + b*sqrt(2) + 3` becomes `(a + b)*sqrt(2) + 3`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.wasm.wasm_class.context_collectradicals.8882f588936f"></a>
-### Context.collectRadicals
+<p class="symi-entry-owner">Explicit context: <code>Context.collectRadicals</code></p>
 
-`pub fn collect_radicals(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+collectRadicals(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### collectRadicals
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_collect_radicals_api_expression_operations_expression_collect_radicals"></a>
+<a id="placement-placement.wasm.wasm_class.expression_collectradicals.c887746fcdff"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+collectRadicals(): Expression
+```
+
+Collect like numeric radical kernels in a top-level sum. For example, `a*sqrt(2) + b*sqrt(2) + 3` becomes `(a + b)*sqrt(2) + 3`.
+
+### denestPowers
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_denest_powers_api_algebra_session_denest_powers"></a>
+<a id="placement-placement.wasm.wasm_module.module_denestpowers.73ac4ed785a7"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+denestPowers(input_expression: Expression): Expression
+```
+
+Flatten a power of a power into a single power (`(x^a)^b -> x^(a*b)`) at every power node whose outer exponent is provably an integer, which is valid on the principal branch because an integer power never routes through `log`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_denestpowers.4c2e62cdb07a"></a>
-### Context.denestPowers
+<p class="symi-entry-owner">Explicit context: <code>Context.denestPowers</code></p>
 
-`pub fn denest_powers(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+denestPowers(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### denestPowers
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_denest_powers_api_expression_operations_expression_denest_powers"></a>
+<a id="placement-placement.wasm.wasm_class.expression_denestpowers.9316950a8123"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+denestPowers(): Expression
+```
+
+Flatten a power of a power into a single power (`(x^a)^b -> x^(a*b)`) at every power node whose outer exponent is provably an integer, which is valid on the principal branch because an integer power never routes through `log`.
+
+### denestRadicals
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_denest_radicals_api_algebra_session_denest_radicals"></a>
+<a id="placement-placement.wasm.wasm_module.module_denestradicals.56dce14cb552"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+denestRadicals(input_expression: Expression): Expression
+```
+
+Denest the bounded depth-two real-radical subset bottom-up: rational quadratic surds, up to three inner quadratic surds, and `cbrt(a + b*sqrt(c))` when its exact resolvent has a rational root. For example, `sqrt(3 + 2*sqrt(2))` becomes `1 + sqrt(2)` and `cbrt(2 + sqrt(5))` becomes `(1 + sqrt(5))/2`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_denestradicals.2a3aa905082a"></a>
-### Context.denestRadicals
+<p class="symi-entry-owner">Explicit context: <code>Context.denestRadicals</code></p>
 
-`pub fn denest_radicals(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+denestRadicals(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### denestRadicals
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_denest_radicals_api_expression_operations_expression_denest_radicals"></a>
+<a id="placement-placement.wasm.wasm_class.expression_denestradicals.d11a0ba4842a"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+denestRadicals(): Expression
+```
+
+Denest the bounded depth-two real-radical subset bottom-up: rational quadratic surds, up to three inner quadratic surds, and `cbrt(a + b*sqrt(c))` when its exact resolvent has a rational root. For example, `sqrt(3 + 2*sqrt(2))` becomes `1 + sqrt(2)` and `cbrt(2 + sqrt(5))` becomes `(1 + sqrt(5))/2`.
+
+### expandPowerBase
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_expand_power_base_api_algebra_session_expand_power_base"></a>
+<a id="placement-placement.wasm.wasm_module.module_expandpowerbase.b3c245130f9d"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+expandPowerBase(input_expression: Expression): Expression
+```
+
+Split a power whose base is structurally a product into a product of powers (`(xy)^a -> x^a y^a`) at every power node whose exponent is provably an integer — the only unconditionally valid gate for this direction, since the split introduces `x^a` and `y^a` individually and each needs its own base off the cut. With `n` declared an integer, `(xy)^n` becomes `x^n y^n`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_expandpowerbase.d498d0612d9b"></a>
-### Context.expandPowerBase
+<p class="symi-entry-owner">Explicit context: <code>Context.expandPowerBase</code></p>
 
-`pub fn expand_power_base(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+expandPowerBase(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### expandPowerBase
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_expand_power_base_api_expression_operations_expression_expand_power_base"></a>
+<a id="placement-placement.wasm.wasm_class.expression_expandpowerbase.6ea9637348b8"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+expandPowerBase(): Expression
+```
+
+Split a power whose base is structurally a product into a product of powers (`(xy)^a -> x^a y^a`) at every power node whose exponent is provably an integer — the only unconditionally valid gate for this direction, since the split introduces `x^a` and `y^a` individually and each needs its own base off the cut. With `n` declared an integer, `(xy)^n` becomes `x^n y^n`.
+
+### factorCommonTerms
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_algebra_session_factor_common_terms"></a>
+<a id="placement-placement.wasm.wasm_module.module_factorcommonterms.83f0674fae02"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+factorCommonTerms(input_expression: Expression): Expression
+```
+
+Pull the greatest common monomial and exact rational content out of the terms of a general — not necessarily polynomial — sum, producing a single product of a common factor and a reduced sum, without invoking full polynomial factorization. For example, `6*x*y + 9*x^2*sin(z)` becomes `3*x*(2*y + 3*x*sin(z))`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_factorcommonterms.1a2013256c21"></a>
-### Context.factorCommonTerms
+<p class="symi-entry-owner">Explicit context: <code>Context.factorCommonTerms</code></p>
 
-`pub fn factor_common_terms(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+factorCommonTerms(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### factorCommonTerms
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_expression_operations_expression_factor_common_terms"></a>
+<a id="placement-placement.wasm.wasm_class.expression_factorcommonterms.b46aa49b5edb"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+factorCommonTerms(): Expression
+```
+
+Pull the greatest common monomial and exact rational content out of the terms of a general — not necessarily polynomial — sum, producing a single product of a common factor and a reduced sum, without invoking full polynomial factorization. For example, `6*x*y + 9*x^2*sin(z)` becomes `3*x*(2*y + 3*x*sin(z))`.
+
+### rationalizeDenominator
+
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_algebra_session_rationalize_denominator"></a>
+<a id="placement-placement.wasm.wasm_module.module_rationalizedenominator.ba11f83ec318"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+rationalizeDenominator(input_expression: Expression): Expression
+```
+
+Rationalize a radical denominator through exact multiquadratic conjugation or extended-Euclidean inversion in one rational n-th-root extension. For example, `1 / (sqrt(3) - sqrt(2))` becomes `sqrt(3) + sqrt(2)`, and `1 / (1 + 2^(1/3))` becomes `(1 - 2^(1/3) + 2^(2/3))/3`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_rationalizedenominator.651ecc69ab9f"></a>
-### Context.rationalizeDenominator
+<p class="symi-entry-owner">Explicit context: <code>Context.rationalizeDenominator</code></p>
 
-`pub fn rationalize_denominator(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+rationalizeDenominator(input_expression: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
 
-<a id="placement-placement.wasm.wasm_class.expression_collectradicals.c887746fcdff"></a>
-### Expression.collectRadicals
+### rationalizeDenominator
 
-`pub fn collect_radicals(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_denestpowers.9316950a8123"></a>
-### Expression.denestPowers
-
-`pub fn denest_powers(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_denestradicals.d11a0ba4842a"></a>
-### Expression.denestRadicals
-
-`pub fn denest_radicals(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_expandpowerbase.6ea9637348b8"></a>
-### Expression.expandPowerBase
-
-`pub fn expand_power_base(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_class.expression_factorcommonterms.b46aa49b5edb"></a>
-### Expression.factorCommonTerms
-
-`pub fn factor_common_terms(&self) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
+<a id="entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_expression_operations_expression_rationalize_denominator"></a>
 <a id="placement-placement.wasm.wasm_class.expression_rationalizedenominator.9a1f6b3cc535"></a>
-### Expression.rationalizeDenominator
+<p class="symi-entry-owner">Expression method</p>
 
-`pub fn rationalize_denominator(&self) -> Result<Expression, JsError>`
+```typescript signature
+rationalizeDenominator(): Expression
+```
 
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_collectradicals.618f2f1f120b"></a>
-### module.collectRadicals
-
-`fn collect_radicals(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_denestpowers.73ac4ed785a7"></a>
-### module.denestPowers
-
-`fn denest_powers(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_denestradicals.56dce14cb552"></a>
-### module.denestRadicals
-
-`fn denest_radicals(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_expandpowerbase.b3c245130f9d"></a>
-### module.expandPowerBase
-
-`fn expand_power_base(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_factorcommonterms.83f0674fae02"></a>
-### module.factorCommonTerms
-
-`fn factor_common_terms(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_rationalizedenominator.ba11f83ec318"></a>
-### module.rationalizeDenominator
-
-`fn rationalize_denominator(input_expression: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
+Rationalize a radical denominator through exact multiquadratic conjugation or extended-Euclidean inversion in one rational n-th-root extension. For example, `1 / (sqrt(3) - sqrt(2))` becomes `sqrt(3) + sqrt(2)`, and `1 / (1 + 2^(1/3))` becomes `(1 - 2^(1/3) + 2^(2/3))/3`.
 

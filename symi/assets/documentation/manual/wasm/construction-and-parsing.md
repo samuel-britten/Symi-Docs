@@ -26,17 +26,39 @@ weak expression store already keeps memory bounded by live objects (see
 
 ### parse
 
-<a id="placement-placement.wasm.javascript_facade.context_parse.9232ed6b93ca"></a>
-`Context.parse(text: string): Expression`
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_parse_api_session_parse"></a>
+<a id="placement-placement.wasm.wasm_module.module_parse.d3722c05cfb1"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.symifacade_parse.b80ff0cf5eec"></a>
-`SymiFacade.parse(text: string): Expression`
+```typescript signature
+parse(text: string): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_parse.9232ed6b93ca"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.parse</code></p>
+
+```typescript signature
+parse(text: string): Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_parse.6a687da40992"></a>
-Raw WebAssembly: `pub fn parse(&self, text: &str) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Explicit context: <code>Context.parse</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_parse.d3722c05cfb1"></a>
-Raw WebAssembly: `fn parse(text: &str) -> Result<Expression, JsError>`
+```typescript signature
+parse(text: string): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_parse.b80ff0cf5eec"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.parse</code></p>
+
+```typescript signature
+parse(text: string): Expression
+```
+
+</details>
 
 
 Parse Symi textual syntax into an expression. Accepts `^` and `**` for
@@ -90,17 +112,59 @@ as a module-level function.
 
 ### symbol
 
-<a id="placement-placement.wasm.javascript_facade.context_symbol.00afc323719f"></a>
-`Context.symbol(name: string): Expression`
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_symbol_api_session_symbol"></a>
+<a id="placement-placement.wasm.wasm_module.module_symbol.acdb4c2a07a3"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.symifacade_symbol.75a86a968259"></a>
-`SymiFacade.symbol(name: string): Expression`
+```typescript signature
+symbol(
+    name: string,
+    real?: boolean | null,
+    positive?: boolean | null,
+    negative?: boolean | null,
+    integer?: boolean | null,
+    finite?: boolean | null,
+    rational?: boolean | null,
+    natural?: boolean | null,
+    nonzero?: boolean | null,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_symbol.00afc323719f"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.symbol</code></p>
+
+```typescript signature
+symbol(name: string): Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_symbol.018ba3ea3259"></a>
-Raw WebAssembly: `pub fn symbol(&self, name: &str, real: Option<bool>, positive: Option<bool>, negative: Option<bool>, integer: Option<bool>, finite: Option<bool>, rational: Option<bool>, natural: Option<bool>, nonzero: Option<bool>) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Explicit context: <code>Context.symbol</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_symbol.acdb4c2a07a3"></a>
-Raw WebAssembly: `fn symbol(name: &str, real: Option<bool>, positive: Option<bool>, negative: Option<bool>, integer: Option<bool>, finite: Option<bool>, rational: Option<bool>, natural: Option<bool>, nonzero: Option<bool>) -> Result<Expression, JsError>`
+```typescript signature
+symbol(
+    name: string,
+    real?: boolean | null,
+    positive?: boolean | null,
+    negative?: boolean | null,
+    integer?: boolean | null,
+    finite?: boolean | null,
+    rational?: boolean | null,
+    natural?: boolean | null,
+    nonzero?: boolean | null,
+): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_symbol.75a86a968259"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.symbol</code></p>
+
+```typescript signature
+symbol(name: string): Expression
+```
+
+</details>
 
 
 Intern a symbol and (optionally) attach assumptions used by the assumption
@@ -119,17 +183,39 @@ over.
 
 ### integer
 
-<a id="placement-placement.wasm.javascript_facade.context_integer.00fd0a177c13"></a>
-`Context.integer(value: bigint | number): Expression`
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_integer_api_session_integer"></a>
+<a id="placement-placement.wasm.wasm_module.module_integer.f6358fe8b988"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.symifacade_integer.d5d69dc27b57"></a>
-`SymiFacade.integer(value: bigint | number): Expression`
+```typescript signature
+integer(value: bigint): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_integer.00fd0a177c13"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integer</code></p>
+
+```typescript signature
+integer(value: bigint | number): Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_integer.adbc02ce5b38"></a>
-Raw WebAssembly: `pub fn integer(&self, value: i64) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Explicit context: <code>Context.integer</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_integer.f6358fe8b988"></a>
-Raw WebAssembly: `fn integer(value: i64) -> Result<Expression, JsError>`
+```typescript signature
+integer(value: bigint): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_integer.d5d69dc27b57"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.integer</code></p>
+
+```typescript signature
+integer(value: bigint | number): Expression
+```
+
+</details>
 
 
 Build an arbitrary-precision exact integer. Python `bool` values are rejected. JavaScript's
@@ -137,17 +223,39 @@ recommended facade accepts `bigint` and safe integral `number` values.
 
 ### rational
 
-<a id="placement-placement.wasm.javascript_facade.context_rational.bba5ba8e5c64"></a>
-`Context.rational(numerator: bigint | number, denominator: bigint | number): Expression`
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_rational_api_session_rational"></a>
+<a id="placement-placement.wasm.wasm_module.module_rational.b3d3524e7701"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.symifacade_rational.fe5d8d04f54b"></a>
-`SymiFacade.rational(numerator: bigint | number, denominator: bigint | number): Expression`
+```typescript signature
+rational(numerator: string, denominator: string): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_rational.bba5ba8e5c64"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.rational</code></p>
+
+```typescript signature
+rational(numerator: bigint | number, denominator: bigint | number): Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_rational.b6817b148a9c"></a>
-Raw WebAssembly: `pub fn rational(&self, numerator: &str, denominator: &str) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Explicit context: <code>Context.rational</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_rational.b3d3524e7701"></a>
-Raw WebAssembly: `fn rational(numerator: &str, denominator: &str) -> Result<Expression, JsError>`
+```typescript signature
+rational(numerator: string, denominator: string): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_rational.fe5d8d04f54b"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.rational</code></p>
+
+```typescript signature
+rational(numerator: bigint | number, denominator: bigint | number): Expression
+```
+
+</details>
 
 
 
@@ -181,8 +289,13 @@ the worked ODE example).
 
 ### call
 
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_call_api_undefinedfunction_call"></a>
 <a id="placement-placement.wasm.wasm_class.undefinedfunction_call.b0d6218d5723"></a>
-Raw WebAssembly: `pub fn call(&self, args: Vec<Expression>) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">UndefinedFunction method</p>
+
+```typescript signature
+call(args: Expression[]): Expression
+```
 
 
 WASM spelling of the Python `f(x, …)` call syntax on `UndefinedFunction`.
@@ -202,66 +315,111 @@ console.log(symi.rational(2n, 3n).add(symi.integer(1n)).toString());
 
 ## Additional API
 
-<a id="placement-placement.wasm.javascript_facade.context_resetcontext.71381bfb9d67"></a>
-### Context.resetContext
+### integerFromString
 
-`Context.resetContext(): void`
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string"></a>
+<a id="placement-placement.wasm.wasm_module.module_integerfromstring.f1a005df6d84"></a>
+<p class="symi-entry-owner">Default context</p>
 
-Returns `unknown`.
+```typescript signature
+integerFromString(text: string): Expression
+```
+
+Build an arbitrary-precision integer literal from its decimal string.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_integerfromstring.dac330233bfa"></a>
-### Context.integerFromString
+<p class="symi-entry-owner">Explicit context: <code>Context.integerFromString</code></p>
 
-`pub fn integer_from_string(&self, text: &str) -> Result<Expression, JsError>`
+```typescript signature
+integerFromString(text: string): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### productIndefinite
+
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_product_indefinite_api_analysis_session_product_indefinite"></a>
+<a id="placement-placement.wasm.wasm_module.module_productindefinite.fd08393adc04"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+productIndefinite(multiplicand: Expression, index: string): Expression
+```
+
+Indefinite (anti-quotient) product: the `P(k)` satisfying `P(k+1)/P(k) = multiplicand(k)`, the multiplicative analogue of `summation_indefinite`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_productindefinite.dac6a64f8b80"></a>
-### Context.productIndefinite
+<p class="symi-entry-owner">Explicit context: <code>Context.productIndefinite</code></p>
 
-`pub fn product_indefinite(&self, multiplicand: &Expression, index: &str) -> Result<Expression, JsError>`
+```typescript signature
+productIndefinite(multiplicand: Expression, index: string): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### rationalFromFloat
+
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float"></a>
+<a id="placement-placement.wasm.wasm_module.module_rationalfromfloat.2868d823dc35"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+rationalFromFloat(value: number, max_denominator: bigint): Expression
+```
+
+Closest rational with denominator \(\leq\) `max_denominator` (the `Fraction.limit_denominator` algorithm).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_rationalfromfloat.1fdc38cc830e"></a>
-### Context.rationalFromFloat
+<p class="symi-entry-owner">Explicit context: <code>Context.rationalFromFloat</code></p>
 
-`pub fn rational_from_float(&self, value: f64, max_denominator: u64) -> Result<Expression, JsError>`
+```typescript signature
+rationalFromFloat(value: number, max_denominator: bigint): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### resetContext
+
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_reset_context_api_session_reset_context"></a>
+<a id="placement-placement.wasm.javascript_facade.context_resetcontext.71381bfb9d67"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```typescript signature
+resetContext(): void
+```
+
+Replace the context's entire symbol table and expression store with fresh empty ones. Warning: existing `expression`/`matrix`/geometry objects from this context become stale and must not be used afterwards — their symbol identifiers no longer resolve. Deliberately not available at module level: resetting the shared default context would strand every live object, and the weak expression store already keeps memory bounded by live objects (see the default Context).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_resetcontext.31f34760faed"></a>
-### Context.resetContext
+<p class="symi-entry-owner">Explicit context: <code>Context.resetContext</code></p>
 
-`pub fn reset_context(&self) -> Result<(), JsError>`
+```typescript signature
+resetContext(): void
+```
 
-Returns `Result<(), JsError>`.
+</details>
 
+### undefinedFunction
+
+<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_undefined_function_api_session_undefined_function"></a>
 <a id="placement-placement.wasm.wasm_class.context_undefinedfunction.57b03936c6a5"></a>
-### Context.undefinedFunction
+<p class="symi-entry-owner">Explicit context</p>
 
-`pub fn undefined_function(&self, name: &str) -> UndefinedFunction`
+```typescript signature
+undefinedFunction(name: string): UndefinedFunction
+```
 
-Returns `undefined_function`.
-
-<a id="placement-placement.wasm.wasm_module.module_integerfromstring.f1a005df6d84"></a>
-### module.integerFromString
-
-`fn integer_from_string(text: &str) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_productindefinite.fd08393adc04"></a>
-### module.productIndefinite
-
-`fn product_indefinite(multiplicand: &Expression, index: &str) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_rationalfromfloat.2868d823dc35"></a>
-### module.rationalFromFloat
-
-`fn rational_from_float(value: f64, max_denominator: u64) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
+A callable proxy for a user-named function. Calling it with expression arguments builds the function-call expression (see the object-model page and the worked ODE example).
 

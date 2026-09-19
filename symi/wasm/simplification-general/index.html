@@ -1,101 +1,981 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="wasm">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>General simplification — Symi WASM / JavaScript documentation</title>
+        <meta name="description" content="The general simplification ladder and the two rational-form operations it is built on. Directed algebraic rewrites are on algebraic transforms, and the…" />
+        <link rel="canonical" href="/symi/wasm/simplification-general/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="simplification-general" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/wasm/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the WASM / JavaScript documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">WASM / JavaScript</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: WASM / JavaScript"><span>WASM / JavaScript</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/simplification-general/" data-language="python" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/simplification-general/" data-language="wasm" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/simplification-general/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/simplification-general/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/simplification-general/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/getting-started-javascript/">Getting started: JavaScript / WASM</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/default-context/">The default context and module-level functions</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/context-safety/">Context safety</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/simplification-general/" aria-current="page">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Hide entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_cancel_api_session_cancel"><code>cancel</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_cancel_api_expression_cancel"><code>cancel</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_combine_powers_api_algebra_session_combine_powers"><code>combinePowers</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_combine_powers_api_expression_operations_expression_combine_powers"><code>combinePowers</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square"><code>completeTheSquare</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_complete_the_square_api_expression_operations_expression_complete_the_square"><code>completeTheSquare</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_evaluate_to_float_api_expression_operations_expression_evaluate_to_float"><code>evaluateToFloat</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_expression_type_api_expression_operations_expression_expression_type"><code>expressionType</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_free_variables_api_expression_free_variables"><code>freeVariables</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_image_set_domain_api_expression_image_set_domain"><code>imageSetDomain</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_image_set_lambda_expression_api_expression_image_set_lambda_expression"><code>imageSetLambdaExpression</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_image_set_variable_api_expression_image_set_variable"><code>imageSetVariable</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_imaginary_part_api_session_imaginary_part"><code>imaginaryPart</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_imaginary_part_api_expression_imaginary_part"><code>imaginaryPart</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_integrand_api_expression_integral_integrand"><code>integralIntegrand</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_lower_bound_api_expression_integral_lower_bound"><code>integralLowerBound</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_upper_bound_api_expression_integral_upper_bound"><code>integralUpperBound</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_variable_api_expression_integral_variable"><code>integralVariable</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_interval_lower_api_expression_interval_lower"><code>intervalLower</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_interval_upper_api_expression_interval_upper"><code>intervalUpper</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_defined_api_expression_is_defined"><code>isDefined</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_equality_api_expression_is_equality"><code>isEquality</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_equality_api_matrix_operations_matrix_is_equality"><code>isEquality</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_finite_api_expression_is_finite"><code>isFinite</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_finite_set_api_expression_is_finite_set"><code>isFiniteSet</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_finite_set_api_matrix_operations_matrix_is_finite_set"><code>isFiniteSet</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_image_set_api_expression_is_image_set"><code>isImageSet</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_image_set_api_matrix_operations_matrix_is_image_set"><code>isImageSet</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_integer_api_expression_is_integer"><code>isInteger</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_integral_api_expression_is_integral"><code>isIntegral</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_integral_api_matrix_operations_matrix_is_integral"><code>isIntegral</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_interval_api_expression_is_interval"><code>isInterval</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_matrix_api_expression_is_matrix"><code>isMatrix</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_matrix_api_matrix_operations_matrix_is_matrix"><code>isMatrix</code> <span class="symi-nav-entry-owner">Matrix property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_negative_api_expression_is_negative"><code>isNegative</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_nonnegative_api_expression_is_nonnegative"><code>isNonnegative</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_nonzero_api_expression_is_nonzero"><code>isNonzero</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_positive_api_expression_is_positive"><code>isPositive</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_positive_api_matrix_operations_matrix_is_positive"><code>isPositive</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_rational_api_expression_is_rational"><code>isRational</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_real_api_expression_is_real"><code>isReal</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_real_api_matrix_operations_matrix_is_real"><code>isReal</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_stale_api_expression_is_stale"><code>isStale</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_union_api_expression_is_union"><code>isUnion</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_union_api_matrix_operations_matrix_is_union"><code>isUnion</code> <span class="symi-nav-entry-owner">Matrix method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_node_count_api_expression_node_count"><code>nodeCount</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_numerator_denominator_api_session_numerator_denominator"><code>numeratorDenominator</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_numerator_denominator_api_expression_numerator_denominator"><code>numeratorDenominator</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_numerator_denominator_api_results_numeratordenominator"><code>NumeratorDenominator</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions"><code>partialFractions</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_partial_fractions_api_expression_operations_expression_partial_fractions"><code>partialFractions</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_piecewise_fold_api_solving_session_piecewise_fold"><code>piecewiseFold</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_piecewise_fold_api_expression_operations_expression_piecewise_fold"><code>piecewiseFold</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_presentation_normal_form_api_algebra_session_presentation_normal_form"><code>presentationNormalForm</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_presentation_normal_form_api_expression_operations_expression_presentation_normal_form"><code>presentationNormalForm</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_real_part_api_session_real_part"><code>realPart</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_real_part_api_expression_real_part"><code>realPart</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_as_exponential_api_algebra_session_rewrite_as_exponential"><code>rewriteAsExponential</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_as_exponential_api_expression_operations_expression_rewrite_as_exponential"><code>rewriteAsExponential</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_in_terms_of_api_algebra_session_rewrite_in_terms_of"><code>rewriteInTermsOf</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_in_terms_of_api_expression_operations_expression_rewrite_in_terms_of"><code>rewriteInTermsOf</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_special_functions_api_session_rewrite_special_functions"><code>rewriteSpecialFunctions</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_special_functions_api_expression_rewrite_special_functions"><code>rewriteSpecialFunctions</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify"><code>simplify</code> <span class="symi-nav-entry-owner">AssumptionScope method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_simplify_api_session_simplify"><code>simplify</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_simplify_api_expression_simplify"><code>simplify</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_symbol_name_api_expression_symbol_name"><code>symbolName</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_together_api_session_together"><code>together</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_together_api_expression_together"><code>together</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_to_list_api_expression_to_list"><code>toList</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_to_string_api_assumptionproposition_to_string"><code>toString</code> <span class="symi-nav-entry-owner">AssumptionProposition method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_to_string_api_expression_to_string"><code>toString</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/simplification-general/#entry-presentation_wasm_simplification_general_capability_expression_transformations_union_components_api_expression_union_components"><code>unionComponents</code></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/specialized-canonical-forms/">Specialized canonical forms</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/integral-transforms/">Integral transforms</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logical-transforms/">Logical transforms</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/zero-equivalence/">Zero equivalence</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/wasm/introduction/">WASM / JavaScript</a></li><li>Simplification and rewriting</li><li><span aria-current="page">General simplification</span></li></ol></nav>
+                <p class="symi-notice">Signatures in the WASM / JavaScript view are TypeScript. Where the JavaScript facade wraps an operation its form is listed first; the other calling forms are the raw wasm-bindgen exports.</p>
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">General simplification</h1>
+<p>The general simplification ladder and the two rational-form operations it is
+built on. Directed algebraic rewrites are on
+<a href="/symi/wasm/algebraic-transforms/">algebraic transforms</a>, and the fixed-contract
+presentation passes are on
+<a href="/symi/wasm/specialized-canonical-forms/">specialized canonical forms</a>.</p>
+<h3 id="simplify">simplify<a class="symi-heading-permalink" href="#simplify" aria-label="Link to this section: simplify">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify"></a>
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_simplify.76d00d707442"></a></p>
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplify</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.assumptionscope_simplify.08324753316d"></a></p>
+<p class="symi-entry-owner">AssumptionScope method: <code>AssumptionScope.simplify</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplify</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_simplify_api_session_simplify"></a>
+<a id="placement-placement.wasm.wasm_module.module_simplify.fc6200454a69"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplify</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_simplify.2c562eb70380"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.simplify</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplify</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_simplify_api_expression_simplify"></a>
+<a id="placement-placement.wasm.wasm_class.expression_simplify.c10646d9d93b"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The full heuristic simplification ladder: weighted-complexity-guided search
+over rational normal form, radical denesting, trigonometric/log rewrites,
+parity and absolute-value rules. The result is never accepted if its weighted
+complexity grows. Principal square roots extract structural square content
+only under a realness proof: <code>sqrt(x^2)</code> becomes <code>abs(x)</code> for real <code>x</code>, while
+<code>sqrt(z^2)</code> remains unchanged for a default-complex <code>z</code>.</p>
+<p>Declared symbol assumptions also enable a small set of branch-aware principal-power reductions.
+For a negative real <code>z</code>, <code>sqrt(1 / z)</code> normalizes to <code>-z ** (-1 / 2)</code>; for a strictly positive
+factor <code>p</code>, <code>(u * p) ** w</code> may extract <code>p ** w</code>; and a declared-integer exponent distributes over
+a product. Each rule declines without its exact guard. <code>abs(a + i*b)</code> can reduce through exact,
+wrapper-free Cartesian components only when its squared norm simplifies to a smaller form, such as
+<code>abs(3 - sqrt(7) + i*sqrt(6*sqrt(7) - 15)) == 1</code>.</p>
+<h4 id="radicals_and_perfect_powers">Radicals and perfect powers<a class="symi-heading-permalink" href="#radicals_and_perfect_powers" aria-label="Link to this section: Radicals and perfect powers">#</a></h4>
+<p>These four rules are applied by ordinary construction, so they hold for every
+expression the library builds, not only for the results of <code>simplify</code>.</p>
+<p>A <strong>positive rational base under a rational exponent</strong> has its perfect-power
+content removed exactly whenever the degree of that content divides the
+exponent&#39;s reduced denominator. So <code>991026973 ** Fraction(1, 6)</code> becomes
+<code>sqrt(997)</code>, because <code>991026973 = 997^3</code> and <code>3</code> divides <code>6</code>; the base is never
+factored, only exact integer roots of the degrees the denominator admits are
+tried. A rational base reduces only when its numerator and denominator are both
+exact roots of the same degree. Content whose degree does not divide the
+denominator is left to the ordinary surd canonicalizer, so <code>sqrt(8)</code> is still
+<code>2*sqrt(2)</code>. Negative and non-real bases are excluded: <code>(-8) ** Fraction(1, 3)</code>
+stays a principal power, because extracting an odd perfect power from a
+negative base does not preserve the principal argument.</p>
+<p>An <strong>expanded binomial square</strong> — a three-term sum such as <code>1 + 4*sqrt(r) + 4*r</code>
+— is recognised only through an exact replayed witness: a candidate binomial is
+built from the square roots of two of the terms and is accepted only when
+expanding its square reproduces the original sum exactly. Nothing is matched by
+pattern, so a middle term that differs by one is refused rather than repaired.</p>
+<p>The witness proves squareness, not a branch. Its two consumers carry separate
+guards:</p>
+<ul>
+<li>under a <strong>square root</strong>, <code>sqrt(u^2)</code> returns <code>abs(u)</code> for a witness proved
+real, and the ordinary exact sign procedure then folds the absolute value
+when the sign is decided; and</li>
+<li>under <strong>any other exponent</strong>, <code>(u^2) ** a</code> becomes <code>u ** (2*a)</code> only for a
+witness proved <em>strictly positive</em>, because the principal-power composition
+law is available only on the positive real axis. A real witness of unknown
+sign reaches the absolute value but not the nested power.</li>
+</ul>
+<h3 id="cancel">cancel<a class="symi-heading-permalink" href="#cancel" aria-label="Link to this section: cancel">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_cancel_api_session_cancel"></a>
+<a id="placement-placement.wasm.wasm_module.module_cancel.a2f399282cbb"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">cancel</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_cancel.932c8c84c37d"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.cancel</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">cancel</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_cancel_api_expression_cancel"></a>
+<a id="placement-placement.wasm.wasm_class.expression_cancel.1ccb3725a645"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rational normal form: write as a single fraction and divide out the
+polynomial GCD of numerator and denominator.</p>
+<h3 id="together">together<a class="symi-heading-permalink" href="#together" aria-label="Link to this section: together">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_together_api_session_together"></a>
+<a id="placement-placement.wasm.wasm_module.module_together.6ebbfd66d49a"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">together</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_together.9e3d503c834f"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.together</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">together</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_together.5c7d3ca8458a"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.together</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">together</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_together.63d6c1df067d"></a></p>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.together</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">together</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_together_api_expression_together"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_together.d11878327d8a"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">together</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_together.25148d8a4726"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.together</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">together</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+
+
+<p>Combine a sum of fractions over a common denominator. On Symi&#39;s
+representation <code>together</code> and <code>cancel</code> coincide; both names exist because
+they are distinct user intents.</p>
+<h2 id="example">Example<a class="symi-heading-permalink" href="#example" aria-label="Link to this section: Example">#</a></h2>
+<p>The general ladder chooses a smaller equivalent form.</p>
+<figure class="symi-code symi-code-example" data-code-language="javascript" data-code-kind="example"><figcaption class="symi-code-header"><span class="symi-code-label">JavaScript</span></figcaption><pre class="symi-code-body language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> x <span class="token operator">=</span> symi<span class="token punctuation">.</span><span class="token function">symbol</span><span class="token punctuation">(</span><span class="token string">"x"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>symi<span class="token punctuation">.</span><span class="token function">together</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">power</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">power</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">power</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">divide</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure>
+<h2 id="additional_api">Additional API<a class="symi-heading-permalink" href="#additional_api" aria-label="Link to this section: Additional API">#</a></h2>
+<h3 id="numeratordenominator"><span id="NumeratorDenominator" class="symi-legacy-anchor"></span>NumeratorDenominator<a class="symi-heading-permalink" href="#numeratordenominator" aria-label="Link to this section: NumeratorDenominator">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_numerator_denominator_api_results_numeratordenominator"></a>
+<a id="placement-placement.wasm.javascript_facade.numeratordenominator.7ceff7e08454"></a></p>
+<p class="symi-entry-owner">Type</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">NumeratorDenominator</span></code></pre></div>
+<p>Public type placement for NumeratorDenominator.</p>
+<h3 id="combinepowers"><span id="combinePowers" class="symi-legacy-anchor"></span>combinePowers<a class="symi-heading-permalink" href="#combinepowers" aria-label="Link to this section: combinePowers">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_combine_powers_api_algebra_session_combine_powers"></a>
+<a id="placement-placement.wasm.wasm_module.module_combinepowers.0e25bed4eaab"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">combinePowers</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Combine same-exponent powers into a single power of the merged base (<code>x^a y^a -&gt; (xy)^a</code>) at every product node where the rewrite is provably valid. This identity is false across the branch cut of the complex logarithm — at <code>x = y = -1</code> and <code>a = 1/2</code> the left side is <code>ii = -1</code> while the right side is <code>sqrt(1) = 1</code> — so it fires only when the exponent is provably an integer or when every combined base is provably positive. Positivity of the merged base is not enough: <code>(-2)^x (-3)^x</code> is left alone, because at <code>x = 1/2</code> combining it to <code>6^x</code> would flip the sign of the result. Positive numeric-literal bases need no assumptions at all, so <code>2^x 3^x</code> becomes <code>6^x</code> and <code>(1/2)^x 3^x</code> becomes <code>(3/2)^x</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_combinepowers.7c10205ea9cd"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.combinePowers</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">combinePowers</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="combinepowers_2">combinePowers<a class="symi-heading-permalink" href="#combinepowers_2" aria-label="Link to this section: combinePowers">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_combine_powers_api_expression_operations_expression_combine_powers"></a>
+<a id="placement-placement.wasm.wasm_class.expression_combinepowers.fbbb9d6d14ef"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">combinePowers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Combine same-exponent powers into a single power of the merged base (<code>x^a y^a -&gt; (xy)^a</code>) at every product node where the rewrite is provably valid. This identity is false across the branch cut of the complex logarithm — at <code>x = y = -1</code> and <code>a = 1/2</code> the left side is <code>ii = -1</code> while the right side is <code>sqrt(1) = 1</code> — so it fires only when the exponent is provably an integer or when every combined base is provably positive. Positivity of the merged base is not enough: <code>(-2)^x (-3)^x</code> is left alone, because at <code>x = 1/2</code> combining it to <code>6^x</code> would flip the sign of the result. Positive numeric-literal bases need no assumptions at all, so <code>2^x 3^x</code> becomes <code>6^x</code> and <code>(1/2)^x 3^x</code> becomes <code>(3/2)^x</code>.</p>
+<h3 id="completethesquare"><span id="completeTheSquare" class="symi-legacy-anchor"></span>completeTheSquare<a class="symi-heading-permalink" href="#completethesquare" aria-label="Link to this section: completeTheSquare">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square"></a>
+<a id="placement-placement.wasm.wasm_module.module_completethesquare.bf40d9a8b764"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">completeTheSquare</span><span class="token punctuation">(</span>
+    input_expression<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite an expression that is quadratic in <code>variable</code> into the exact vertex form <code>a*(variable - h)^2 + k</code>, with <code>h = -b/(2*a)</code> and <code>k = c - b^2/(4*a)</code> built from the degree-2, degree-1 and degree-0 coefficients <code>a</code>, <code>b</code>, <code>c</code> of the expression collected in <code>variable</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_completethesquare.7c0eae8e0253"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.completeTheSquare</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">completeTheSquare</span><span class="token punctuation">(</span>
+    input_expression<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="completethesquare_2">completeTheSquare<a class="symi-heading-permalink" href="#completethesquare_2" aria-label="Link to this section: completeTheSquare">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_complete_the_square_api_expression_operations_expression_complete_the_square"></a>
+<a id="placement-placement.wasm.wasm_class.expression_completethesquare.3d862f31a1ce"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">completeTheSquare</span><span class="token punctuation">(</span>variable<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite an expression that is quadratic in <code>variable</code> into the exact vertex form <code>a*(variable - h)^2 + k</code>, with <code>h = -b/(2*a)</code> and <code>k = c - b^2/(4*a)</code> built from the degree-2, degree-1 and degree-0 coefficients <code>a</code>, <code>b</code>, <code>c</code> of the expression collected in <code>variable</code>.</p>
+<h3 id="evaluatetofloat"><span id="evaluateToFloat" class="symi-legacy-anchor"></span>evaluateToFloat<a class="symi-heading-permalink" href="#evaluatetofloat" aria-label="Link to this section: evaluateToFloat">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_evaluate_to_float_api_expression_operations_expression_evaluate_to_float"></a>
+<a id="placement-placement.wasm.wasm_class.expression_evaluatetofloat.397b7c48c0f3"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">evaluateToFloat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+<p>Real double-precision value; raises when the expression has no real numeric value (free symbols, complex value, pole).</p>
+<h3 id="expressiontype"><span id="expressionType" class="symi-legacy-anchor"></span>expressionType<a class="symi-heading-permalink" href="#expressiontype" aria-label="Link to this section: expressionType">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_expression_type_api_expression_operations_expression_expression_type"></a>
+<a id="placement-placement.wasm.wasm_class.expression_expressiontype.9ef64c5b0bbb"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">expressionType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
+<p>Top-level node kind: one of <code>integer</code>, <code>rational</code>, <code>symbol</code>, <code>constant</code>, <code>sum</code>, <code>product</code>, <code>power</code>, <code>factorial</code>, <code>function_call</code>, <code>derivative</code>, <code>integral</code>, <code>summation</code>, <code>laplace_transform</code>, <code>inverse_laplace_transform</code>, <code>fourier_transform</code>, <code>inverse_fourier_transform</code>, <code>piecewise</code>, <code>ordinary_differential_equation</code>, <code>recurrence_equation</code>, <code>interval</code>, <code>finite_set</code>, <code>set_union</code>, <code>set_intersection</code>, <code>set_complement</code>, <code>image_set</code>, <code>condition_set</code>.</p>
+<h3 id="freevariables"><span id="freeVariables" class="symi-legacy-anchor"></span>freeVariables<a class="symi-heading-permalink" href="#freevariables" aria-label="Link to this section: freeVariables">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_free_variables_api_expression_free_variables"></a>
+<a id="placement-placement.wasm.wasm_class.expression_freevariables.2b831cd5640c"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">freeVariables</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>Sorted names of the free symbols. Bound binders (integration variables, image-set parameters) are excluded; the constants pi/e are not symbols.</p>
+<h3 id="imagesetdomain"><span id="imageSetDomain" class="symi-legacy-anchor"></span>imageSetDomain<a class="symi-heading-permalink" href="#imagesetdomain" aria-label="Link to this section: imageSetDomain">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_image_set_domain_api_expression_image_set_domain"></a>
+<a id="placement-placement.wasm.wasm_class.expression_imagesetdomain.894cf5996d73"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">imageSetDomain</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The domain an <code>image_set</code> expression maps over.</p>
+<h3 id="imagesetlambdaexpression"><span id="imageSetLambdaExpression" class="symi-legacy-anchor"></span>imageSetLambdaExpression<a class="symi-heading-permalink" href="#imagesetlambdaexpression" aria-label="Link to this section: imageSetLambdaExpression">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_image_set_lambda_expression_api_expression_image_set_lambda_expression"></a>
+<a id="placement-placement.wasm.wasm_class.expression_imagesetlambdaexpression.9537a3075b6e"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">imageSetLambdaExpression</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The body an <code>image_set</code> expression applies to its bound variable.</p>
+<h3 id="imagesetvariable"><span id="imageSetVariable" class="symi-legacy-anchor"></span>imageSetVariable<a class="symi-heading-permalink" href="#imagesetvariable" aria-label="Link to this section: imageSetVariable">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_image_set_variable_api_expression_image_set_variable"></a>
+<a id="placement-placement.wasm.wasm_class.expression_imagesetvariable.c23ad4dbf4cb"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">imageSetVariable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
+<p>The name of the variable an <code>image_set</code> expression binds.</p>
+<h3 id="imaginarypart"><span id="imaginaryPart" class="symi-legacy-anchor"></span>imaginaryPart<a class="symi-heading-permalink" href="#imaginarypart" aria-label="Link to this section: imaginaryPart">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_imaginary_part_api_session_imaginary_part"></a>
+<a id="placement-placement.wasm.wasm_module.module_imaginarypart.8a82c066b15a"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">imaginaryPart</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Return the exact imaginary component of an expression. For example, if <code>y</code> is declared real, <code>imaginary_part(exp(i*y))</code> is <code>sin(y)</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_imaginarypart.617f7b6602bb"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.imaginaryPart</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">imaginaryPart</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_imaginarypart.776c5cf4f0e7"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.imaginaryPart</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">imaginaryPart</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_imaginarypart.5d66750ea9bf"></a></p>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.imaginaryPart</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">imaginaryPart</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="imaginarypart_2">imaginaryPart<a class="symi-heading-permalink" href="#imaginarypart_2" aria-label="Link to this section: imaginaryPart">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_imaginary_part_api_expression_imaginary_part"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_imaginarypart.869495f47a9a"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">imaginaryPart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Return the exact imaginary component of an expression. For example, if <code>y</code> is declared real, <code>imaginary_part(exp(i*y))</code> is <code>sin(y)</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_imaginarypart.8aff7315b620"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.imaginaryPart</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">imaginaryPart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="integralintegrand"><span id="integralIntegrand" class="symi-legacy-anchor"></span>integralIntegrand<a class="symi-heading-permalink" href="#integralintegrand" aria-label="Link to this section: integralIntegrand">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_integrand_api_expression_integral_integrand"></a>
+<a id="placement-placement.wasm.wasm_class.expression_integralintegrand.e27ba8e9a388"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">integralIntegrand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The integrand of an unevaluated <code>integral</code> expression.</p>
+<h3 id="integrallowerbound"><span id="integralLowerBound" class="symi-legacy-anchor"></span>integralLowerBound<a class="symi-heading-permalink" href="#integrallowerbound" aria-label="Link to this section: integralLowerBound">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_lower_bound_api_expression_integral_lower_bound"></a>
+<a id="placement-placement.wasm.wasm_class.expression_integrallowerbound.9922f04b09ad"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">integralLowerBound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p><code>None</code> for indefinite integrals.</p>
+<h3 id="integralupperbound"><span id="integralUpperBound" class="symi-legacy-anchor"></span>integralUpperBound<a class="symi-heading-permalink" href="#integralupperbound" aria-label="Link to this section: integralUpperBound">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_upper_bound_api_expression_integral_upper_bound"></a>
+<a id="placement-placement.wasm.wasm_class.expression_integralupperbound.e819ab900c26"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">integralUpperBound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>The upper bound of an unevaluated <code>integral</code>, or <code>None</code> when it is indefinite.</p>
+<h3 id="integralvariable"><span id="integralVariable" class="symi-legacy-anchor"></span>integralVariable<a class="symi-heading-permalink" href="#integralvariable" aria-label="Link to this section: integralVariable">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_variable_api_expression_integral_variable"></a>
+<a id="placement-placement.wasm.wasm_class.expression_integralvariable.5d2186957c4e"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">integralVariable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
+<p>The name of the variable an unevaluated <code>integral</code> integrates over.</p>
+<h3 id="intervallower"><span id="intervalLower" class="symi-legacy-anchor"></span>intervalLower<a class="symi-heading-permalink" href="#intervallower" aria-label="Link to this section: intervalLower">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_interval_lower_api_expression_interval_lower"></a>
+<a id="placement-placement.wasm.wasm_class.expression_intervallower.36837bbd1eec"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">intervalLower</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Lower endpoint of an interval node; raises on other shapes.</p>
+<h3 id="intervalupper"><span id="intervalUpper" class="symi-legacy-anchor"></span>intervalUpper<a class="symi-heading-permalink" href="#intervalupper" aria-label="Link to this section: intervalUpper">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_interval_upper_api_expression_interval_upper"></a>
+<a id="placement-placement.wasm.wasm_class.expression_intervalupper.dfbef6dc04bc"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">intervalUpper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The upper endpoint of an <code>interval</code> expression.</p>
+<h3 id="isdefined"><span id="isDefined" class="symi-legacy-anchor"></span>isDefined<a class="symi-heading-permalink" href="#isdefined" aria-label="Link to this section: isDefined">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_defined_api_expression_is_defined"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isdefined.ba68953821c2"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isDefined</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p>Whether the expression is known to denote one scalar value at the active point.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_isdefined.767be28c2b33"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.isDefined</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isDefined</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="isequality"><span id="isEquality" class="symi-legacy-anchor"></span>isEquality<a class="symi-heading-permalink" href="#isequality" aria-label="Link to this section: isEquality">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_equality_api_expression_is_equality"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isequality.86f4b29381a0"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isEquality</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>True for <code>equal(a, b)</code> relation nodes.</p>
+<h3 id="isequality_2">isEquality<a class="symi-heading-permalink" href="#isequality_2" aria-label="Link to this section: isEquality">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_equality_api_matrix_operations_matrix_is_equality"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isequality.df1325fbf5f8"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isEquality</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Always false: a matrix is never an <code>equal</code> relation node.</p>
+<h3 id="isfinite"><span id="isFinite" class="symi-legacy-anchor"></span>isFinite<a class="symi-heading-permalink" href="#isfinite" aria-label="Link to this section: isFinite">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_finite_api_expression_is_finite"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isfinite.ec4bd13d38ab"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isFinite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p>Whether the expression is known finite, or <code>None</code> when the assumptions cannot decide it.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_isfinite.424570d72876"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.isFinite</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isFinite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="isfiniteset"><span id="isFiniteSet" class="symi-legacy-anchor"></span>isFiniteSet<a class="symi-heading-permalink" href="#isfiniteset" aria-label="Link to this section: isFiniteSet">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_finite_set_api_expression_is_finite_set"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isfiniteset.90bfc2fdaf03"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isFiniteSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Whether this expression is a <code>finite_set</code>.</p>
+<h3 id="isfiniteset_2">isFiniteSet<a class="symi-heading-permalink" href="#isfiniteset_2" aria-label="Link to this section: isFiniteSet">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_finite_set_api_matrix_operations_matrix_is_finite_set"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isfiniteset.bb89df6933ea"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isFiniteSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Always false: a matrix is never a finite set.</p>
+<h3 id="isimageset"><span id="isImageSet" class="symi-legacy-anchor"></span>isImageSet<a class="symi-heading-permalink" href="#isimageset" aria-label="Link to this section: isImageSet">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_image_set_api_expression_is_image_set"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isimageset.5466d3ce260e"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isImageSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Whether this expression is an <code>image_set</code>.</p>
+<h3 id="isimageset_2">isImageSet<a class="symi-heading-permalink" href="#isimageset_2" aria-label="Link to this section: isImageSet">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_image_set_api_matrix_operations_matrix_is_image_set"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isimageset.3fe74cafdfc3"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isImageSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Always false: a matrix is never an image set.</p>
+<h3 id="isinteger"><span id="isInteger" class="symi-legacy-anchor"></span>isInteger<a class="symi-heading-permalink" href="#isinteger" aria-label="Link to this section: isInteger">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_integer_api_expression_is_integer"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isinteger.a645e50fd6f0"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p>Whether the expression is known to be an integer, or <code>None</code> when the assumptions cannot decide it.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_isinteger.97d2a50d8429"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.isInteger</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="isintegral"><span id="isIntegral" class="symi-legacy-anchor"></span>isIntegral<a class="symi-heading-permalink" href="#isintegral" aria-label="Link to this section: isIntegral">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_integral_api_expression_is_integral"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isintegral.aaf3a7607ea0"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isIntegral</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>True for unevaluated integral nodes. (Distinct from the assumption query <code>is_integer</code>.)</p>
+<h3 id="isintegral_2">isIntegral<a class="symi-heading-permalink" href="#isintegral_2" aria-label="Link to this section: isIntegral">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_integral_api_matrix_operations_matrix_is_integral"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isintegral.9e71f8fe0c10"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isIntegral</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Always false: a matrix is never an unevaluated integral node.</p>
+<h3 id="isinterval"><span id="isInterval" class="symi-legacy-anchor"></span>isInterval<a class="symi-heading-permalink" href="#isinterval" aria-label="Link to this section: isInterval">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_interval_api_expression_is_interval"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isinterval.c4ea28ca3bf2"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isInterval</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Whether this expression is an <code>interval</code>.</p>
+<h3 id="ismatrix"><span id="isMatrix" class="symi-legacy-anchor"></span>isMatrix<a class="symi-heading-permalink" href="#ismatrix" aria-label="Link to this section: isMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_matrix_api_expression_is_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.expression_ismatrix.c4b71b990067"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> isMatrix<span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Always <code>False</code> on expressions and <code>True</code> on <code>matrix</code> objects, so mixed result streams can be discriminated.</p>
+<h3 id="ismatrix_2">isMatrix<a class="symi-heading-permalink" href="#ismatrix_2" aria-label="Link to this section: isMatrix">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_matrix_api_matrix_operations_matrix_is_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_ismatrix.49764165c804"></a></p>
+<p class="symi-entry-owner">Matrix property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> isMatrix<span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Always <code>False</code> on expressions and <code>True</code> on <code>matrix</code> objects, so mixed result streams can be discriminated.</p>
+<h3 id="isnegative"><span id="isNegative" class="symi-legacy-anchor"></span>isNegative<a class="symi-heading-permalink" href="#isnegative" aria-label="Link to this section: isNegative">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_negative_api_expression_is_negative"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isnegative.215cc4b539f3"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isNegative</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p>Whether the expression is known to be negative, or <code>None</code> when the assumptions cannot decide it.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_isnegative.575a1576c858"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.isNegative</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isNegative</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="isnonnegative"><span id="isNonnegative" class="symi-legacy-anchor"></span>isNonnegative<a class="symi-heading-permalink" href="#isnonnegative" aria-label="Link to this section: isNonnegative">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_nonnegative_api_expression_is_nonnegative"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isnonnegative.a0bbd36976fc"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isNonnegative</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p>Answers whether the expression is nonnegative in the extended-real universe. Non-real values are refuted; unsupported real expressions remain <code>None</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_isnonnegative.05a865e90f81"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.isNonnegative</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isNonnegative</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="isnonzero"><span id="isNonzero" class="symi-legacy-anchor"></span>isNonzero<a class="symi-heading-permalink" href="#isnonzero" aria-label="Link to this section: isNonzero">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_nonzero_api_expression_is_nonzero"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isnonzero.cee90ac676f3"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isNonzero</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p>Whether the expression is known to be nonzero, or <code>None</code> when the assumptions cannot decide it.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_isnonzero.a92613e21491"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.isNonzero</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isNonzero</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="ispositive"><span id="isPositive" class="symi-legacy-anchor"></span>isPositive<a class="symi-heading-permalink" href="#ispositive" aria-label="Link to this section: isPositive">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_positive_api_expression_is_positive"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_ispositive.5a6cf1d747f2"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isPositive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p>Whether the expression is known to be positive, or <code>None</code> when the assumptions cannot decide it.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_ispositive.f0a589e1849f"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.isPositive</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isPositive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="ispositive_2">isPositive<a class="symi-heading-permalink" href="#ispositive_2" aria-label="Link to this section: isPositive">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_positive_api_matrix_operations_matrix_is_positive"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_ispositive.27aac02052db"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isPositive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Always <code>None</code>: positivity is a property of the entries, not of the matrix.</p>
+<h3 id="isrational"><span id="isRational" class="symi-legacy-anchor"></span>isRational<a class="symi-heading-permalink" href="#isrational" aria-label="Link to this section: isRational">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_rational_api_expression_is_rational"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isrational.c5942929964d"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isRational</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p>Whether the expression is known to be rational, or <code>None</code> when the assumptions cannot decide it.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_isrational.86f2ab150cd1"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.isRational</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isRational</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="isreal"><span id="isReal" class="symi-legacy-anchor"></span>isReal<a class="symi-heading-permalink" href="#isreal" aria-label="Link to this section: isReal">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_real_api_expression_is_real"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isreal.418cb2d56d52"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isReal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">null</span></code></pre></div>
+<p>Whether the expression is known to be real, or <code>None</code> when the assumptions cannot decide it.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_isreal.f26c33fb44d3"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.isReal</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isReal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="isreal_2">isReal<a class="symi-heading-permalink" href="#isreal_2" aria-label="Link to this section: isReal">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_real_api_matrix_operations_matrix_is_real"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isreal.6f1011db22cc"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isReal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Always <code>None</code>: realness is a property of the entries, not of the matrix.</p>
+<h3 id="isstale"><span id="isStale" class="symi-legacy-anchor"></span>isStale<a class="symi-heading-permalink" href="#isstale" aria-label="Link to this section: isStale">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_stale_api_expression_is_stale"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isstale.71f8cf8528d5"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isStale</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Reports whether resetting the owning context invalidated the expression. All other operations reject a stale receiver with an actionable error.</p>
+<h3 id="isunion"><span id="isUnion" class="symi-legacy-anchor"></span>isUnion<a class="symi-heading-permalink" href="#isunion" aria-label="Link to this section: isUnion">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_union_api_expression_is_union"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isunion.b55d87d040a7"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isUnion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Whether this expression is a union of sets.</p>
+<h3 id="isunion_2">isUnion<a class="symi-heading-permalink" href="#isunion_2" aria-label="Link to this section: isUnion">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_is_union_api_matrix_operations_matrix_is_union"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_isunion.7e398215393b"></a></p>
+<p class="symi-entry-owner">Matrix method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isUnion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
+<p>Always false: a matrix is never a union of sets.</p>
+<h3 id="nodecount"><span id="nodeCount" class="symi-legacy-anchor"></span>nodeCount<a class="symi-heading-permalink" href="#nodecount" aria-label="Link to this section: nodeCount">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_node_count_api_expression_node_count"></a>
+<a id="placement-placement.wasm.wasm_class.expression_nodecount.81983e8a3143"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">nodeCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+<p>Number of nodes in the expression tree — the size measure used by the simplifier; useful for comparing alternative forms.</p>
+<h3 id="numeratordenominator_2"><span id="numeratorDenominator" class="symi-legacy-anchor"></span>numeratorDenominator<a class="symi-heading-permalink" href="#numeratordenominator_2" aria-label="Link to this section: numeratorDenominator">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_numerator_denominator_api_session_numerator_denominator"></a>
+<a id="placement-placement.wasm.wasm_module.module_numeratordenominator.ed37930aa207"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">numeratorDenominator</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>Returns the exact structural numerator and denominator without combining sums or cancelling factors. Python returns a two-tuple and the JavaScript facade returns a record.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_numeratordenominator.4d682728a341"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.numeratorDenominator</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">numeratorDenominator</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> NumeratorDenominator</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_numeratordenominator.1958e57cd14a"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.numeratorDenominator</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">numeratorDenominator</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_numeratordenominator.52fe19194901"></a></p>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.numeratorDenominator</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">numeratorDenominator</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> NumeratorDenominator</code></pre></div>
+</details>
+
+<h3 id="numeratordenominator_3">numeratorDenominator<a class="symi-heading-permalink" href="#numeratordenominator_3" aria-label="Link to this section: numeratorDenominator">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_numerator_denominator_api_expression_numerator_denominator"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_numeratordenominator.a6fbcb7d0d59"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">numeratorDenominator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> NumeratorDenominator</code></pre></div>
+<p>Returns the exact structural numerator and denominator without combining sums or cancelling factors. Python returns a two-tuple and the JavaScript facade returns a record.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_numeratordenominator.016a31025e26"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.numeratorDenominator</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">numeratorDenominator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="partialfractions"><span id="partialFractions" class="symi-legacy-anchor"></span>partialFractions<a class="symi-heading-permalink" href="#partialfractions" aria-label="Link to this section: partialFractions">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions"></a>
+<a id="placement-placement.wasm.wasm_module.module_partialfractions.35aaeff54bae"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">partialFractions</span><span class="token punctuation">(</span>
+    input_expression<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Decompose a rational expression into polynomial and proper-fraction terms over the named variable.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_partialfractions.c9e0f734b93a"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.partialFractions</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">partialFractions</span><span class="token punctuation">(</span>
+    input_expression<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    variable<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="partialfractions_2">partialFractions<a class="symi-heading-permalink" href="#partialfractions_2" aria-label="Link to this section: partialFractions">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_partial_fractions_api_expression_operations_expression_partial_fractions"></a>
+<a id="placement-placement.wasm.wasm_class.expression_partialfractions.cd98977fa321"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">partialFractions</span><span class="token punctuation">(</span>variable<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Decompose a rational expression into polynomial and proper-fraction terms over the named variable.</p>
+<h3 id="piecewisefold"><span id="piecewiseFold" class="symi-legacy-anchor"></span>piecewiseFold<a class="symi-heading-permalink" href="#piecewisefold" aria-label="Link to this section: piecewiseFold">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_piecewise_fold_api_solving_session_piecewise_fold"></a>
+<a id="placement-placement.wasm.wasm_module.module_piecewisefold.e933070f4d72"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">piecewiseFold</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Expand <code>abs</code>, <code>signum</code>, and <code>heaviside_step</code> definitions recursively and fold piecewise operands of sums, products, powers, factorials, and ordinary function calls into one top-level piecewise expression. For example, <code>x*abs(x - 1)</code> becomes the exact two-branch definition with values <code>x*(x - 1)</code> and <code>-x*(x - 1)</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_piecewisefold.d8dc6b0c9df5"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.piecewiseFold</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">piecewiseFold</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="piecewisefold_2">piecewiseFold<a class="symi-heading-permalink" href="#piecewisefold_2" aria-label="Link to this section: piecewiseFold">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_piecewise_fold_api_expression_operations_expression_piecewise_fold"></a>
+<a id="placement-placement.wasm.wasm_class.expression_piecewisefold.3d9ec0c834c8"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">piecewiseFold</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Expand <code>abs</code>, <code>signum</code>, and <code>heaviside_step</code> definitions recursively and fold piecewise operands of sums, products, powers, factorials, and ordinary function calls into one top-level piecewise expression. For example, <code>x*abs(x - 1)</code> becomes the exact two-branch definition with values <code>x*(x - 1)</code> and <code>-x*(x - 1)</code>.</p>
+<h3 id="presentationnormalform"><span id="presentationNormalForm" class="symi-legacy-anchor"></span>presentationNormalForm<a class="symi-heading-permalink" href="#presentationnormalform" aria-label="Link to this section: presentationNormalForm">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_presentation_normal_form_api_algebra_session_presentation_normal_form"></a>
+<a id="placement-placement.wasm.wasm_module.module_presentationnormalform.53908ce4871d"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">presentationNormalForm</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The cheap, bounded display-oriented pass run at solver output seams: rational normal form only, kept only when the weighted complexity does not grow. Unlike <code>simplify</code> it never runs the full heuristic ladder, so it is fast and deterministic in shape.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_presentationnormalform.265113e13a9d"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.presentationNormalForm</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">presentationNormalForm</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="presentationnormalform_2">presentationNormalForm<a class="symi-heading-permalink" href="#presentationnormalform_2" aria-label="Link to this section: presentationNormalForm">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_presentation_normal_form_api_expression_operations_expression_presentation_normal_form"></a>
+<a id="placement-placement.wasm.wasm_class.expression_presentationnormalform.af5e499aeb25"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">presentationNormalForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The cheap, bounded display-oriented pass run at solver output seams: rational normal form only, kept only when the weighted complexity does not grow. Unlike <code>simplify</code> it never runs the full heuristic ladder, so it is fast and deterministic in shape.</p>
+<h3 id="realpart"><span id="realPart" class="symi-legacy-anchor"></span>realPart<a class="symi-heading-permalink" href="#realpart" aria-label="Link to this section: realPart">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_real_part_api_session_real_part"></a>
+<a id="placement-placement.wasm.wasm_module.module_realpart.030dff7e14eb"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">realPart</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Return the exact real component of an expression. For example, if <code>y</code> is declared real, <code>real_part(exp(i*y))</code> is <code>cos(y)</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_realpart.dde44e15175b"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.realPart</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">realPart</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_realpart.ef73b6cb1c14"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.realPart</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">realPart</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_realpart.24ce21e1ba1d"></a></p>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.realPart</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">realPart</span><span class="token punctuation">(</span>value<span class="token operator">:</span> ExpressionLike<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="realpart_2">realPart<a class="symi-heading-permalink" href="#realpart_2" aria-label="Link to this section: realPart">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_real_part_api_expression_real_part"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_realpart.96ac58cb8855"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">realPart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Return the exact real component of an expression. For example, if <code>y</code> is declared real, <code>real_part(exp(i*y))</code> is <code>cos(y)</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_realpart.0ae125d73af1"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.realPart</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">realPart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="rewriteasexponential"><span id="rewriteAsExponential" class="symi-legacy-anchor"></span>rewriteAsExponential<a class="symi-heading-permalink" href="#rewriteasexponential" aria-label="Link to this section: rewriteAsExponential">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_as_exponential_api_algebra_session_rewrite_as_exponential"></a>
+<a id="placement-placement.wasm.wasm_module.module_rewriteasexponential.2432173e98c8"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rewriteAsExponential</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Euler-form rewriter: replace every trigonometric/hyperbolic call with the equivalent complex-exponential expression (bottom-up).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_rewriteasexponential.ead7eee76381"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.rewriteAsExponential</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rewriteAsExponential</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="rewriteasexponential_2">rewriteAsExponential<a class="symi-heading-permalink" href="#rewriteasexponential_2" aria-label="Link to this section: rewriteAsExponential">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_as_exponential_api_expression_operations_expression_rewrite_as_exponential"></a>
+<a id="placement-placement.wasm.wasm_class.expression_rewriteasexponential.4b402839fe68"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rewriteAsExponential</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Euler-form rewriter: replace every trigonometric/hyperbolic call with the equivalent complex-exponential expression (bottom-up).</p>
+<h3 id="rewriteintermsof"><span id="rewriteInTermsOf" class="symi-legacy-anchor"></span>rewriteInTermsOf<a class="symi-heading-permalink" href="#rewriteintermsof" aria-label="Link to this section: rewriteInTermsOf">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_in_terms_of_api_algebra_session_rewrite_in_terms_of"></a>
+<a id="placement-placement.wasm.wasm_module.module_rewriteintermsof.6b03bacbc907"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rewriteInTermsOf</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    source<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    replacement<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite the target in terms of <code>replacement</code> under the caller-supplied formal relation <code>replacement = source</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_rewriteintermsof.0eada73db806"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.rewriteInTermsOf</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rewriteInTermsOf</span><span class="token punctuation">(</span>
+    target<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    source<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    replacement<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="rewriteintermsof_2">rewriteInTermsOf<a class="symi-heading-permalink" href="#rewriteintermsof_2" aria-label="Link to this section: rewriteInTermsOf">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_in_terms_of_api_expression_operations_expression_rewrite_in_terms_of"></a>
+<a id="placement-placement.wasm.wasm_class.expression_rewriteintermsof.d205de912a41"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rewriteInTermsOf</span><span class="token punctuation">(</span>
+    source<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    replacement<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite the target in terms of <code>replacement</code> under the caller-supplied formal relation <code>replacement = source</code>.</p>
+<h3 id="rewritespecialfunctions"><span id="rewriteSpecialFunctions" class="symi-legacy-anchor"></span>rewriteSpecialFunctions<a class="symi-heading-permalink" href="#rewritespecialfunctions" aria-label="Link to this section: rewriteSpecialFunctions">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_special_functions_api_session_rewrite_special_functions"></a>
+<a id="placement-placement.wasm.wasm_module.module_rewritespecialfunctions.dc570b354656"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rewriteSpecialFunctions</span><span class="token punctuation">(</span>
+    input_expression<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    basis<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite beta, gamma, binomial, factorial, and rising-factorial representations into the requested <code>&quot;gamma&quot;</code>, <code>&quot;factorial&quot;</code>, <code>&quot;binomial&quot;</code>, or <code>&quot;rising_factorial&quot;</code> basis. The exact identities are applied only when their domain gates are proven: factorial and binomial conversions require the relevant non-negative integers, rising-factorial conversions additionally require a positive base, and beta-to-gamma requires two positive arguments. For example, with <code>n</code> declared a positive integer, <code>n!</code> may be rewritten into the gamma basis and <code>gamma(n)</code> into the factorial basis. A site with unconstrained arguments is returned unchanged. Gamma ratios with a literal non-negative argument offset are minimized to their exact shifted product.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_rewritespecialfunctions.9a756b368915"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.rewriteSpecialFunctions</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rewriteSpecialFunctions</span><span class="token punctuation">(</span>
+    input_expression<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    basis<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="rewritespecialfunctions_2">rewriteSpecialFunctions<a class="symi-heading-permalink" href="#rewritespecialfunctions_2" aria-label="Link to this section: rewriteSpecialFunctions">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_special_functions_api_expression_rewrite_special_functions"></a>
+<a id="placement-placement.wasm.wasm_class.expression_rewritespecialfunctions.590d4aee2a54"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">rewriteSpecialFunctions</span><span class="token punctuation">(</span>basis<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite beta, gamma, binomial, factorial, and rising-factorial representations into the requested <code>&quot;gamma&quot;</code>, <code>&quot;factorial&quot;</code>, <code>&quot;binomial&quot;</code>, or <code>&quot;rising_factorial&quot;</code> basis. The exact identities are applied only when their domain gates are proven: factorial and binomial conversions require the relevant non-negative integers, rising-factorial conversions additionally require a positive base, and beta-to-gamma requires two positive arguments. For example, with <code>n</code> declared a positive integer, <code>n!</code> may be rewritten into the gamma basis and <code>gamma(n)</code> into the factorial basis. A site with unconstrained arguments is returned unchanged. Gamma ratios with a literal non-negative argument offset are minimized to their exact shifted product.</p>
+<h3 id="symbolname"><span id="symbolName" class="symi-legacy-anchor"></span>symbolName<a class="symi-heading-permalink" href="#symbolname" aria-label="Link to this section: symbolName">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_symbol_name_api_expression_symbol_name"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_symbolname.5aadc5ef70f0"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">symbolName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
+<p>Returns the name of a symbol expression and rejects every other expression kind.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.expression_symbolname.4c98a64aafac"></a></p>
+<p class="symi-entry-owner">Expression method: <code>Expression.symbolName</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">symbolName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
+</details>
+
+<h3 id="tolist"><span id="toList" class="symi-legacy-anchor"></span>toList<a class="symi-heading-permalink" href="#tolist" aria-label="Link to this section: toList">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_to_list_api_expression_to_list"></a>
+<a id="placement-placement.wasm.wasm_class.expression_tolist.448f0522ff8b"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>Elements of a finite set; raises on other shapes. Python finite sets also support <code>len()</code> and iteration.</p>
+<h3 id="tostring"><span id="toString" class="symi-legacy-anchor"></span>toString<a class="symi-heading-permalink" href="#tostring" aria-label="Link to this section: toString">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_to_string_api_assumptionproposition_to_string"></a>
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_tostring.ac1a37e09f72"></a></p>
+<p class="symi-entry-owner">AssumptionProposition method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
+<p>Return the canonical formula spelling.</p>
+<h3 id="tostring_2">toString<a class="symi-heading-permalink" href="#tostring_2" aria-label="Link to this section: toString">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_to_string_api_expression_to_string"></a>
+<a id="placement-placement.wasm.wasm_class.expression_tostring.f64870e2f750"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
+<p>The mathematical text of the expression.</p>
+<h3 id="unioncomponents"><span id="unionComponents" class="symi-legacy-anchor"></span>unionComponents<a class="symi-heading-permalink" href="#unioncomponents" aria-label="Link to this section: unionComponents">#</a></h3>
+<p><a id="entry-presentation_wasm_simplification_general_capability_expression_transformations_union_components_api_expression_union_components"></a>
+<a id="placement-placement.wasm.wasm_class.expression_unioncomponents.ba40c4145e3b"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">unionComponents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>The components of a set union, as a list of expressions.</p>
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Simplification and rewriting</h2><ul class="symi-related-list"><li><a href="/symi/wasm/expressions/">Expression methods</a></li><li><a href="/symi/wasm/algebraic-transforms/">Algebraic transforms</a></li><li><a href="/symi/wasm/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a></li><li><a href="/symi/wasm/specialized-canonical-forms/">Specialized canonical forms</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/wasm/expressions/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Expression methods</span></a><a class="symi-pager-link symi-pager-next" href="/symi/wasm/algebraic-transforms/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Algebraic transforms</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · WASM / JavaScript</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

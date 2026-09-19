@@ -8006,10 +8006,10 @@
         "equations",
         "verdict"
       ],
-      "search_text": "UniffiOptimizationOutcome.verdict verdict UniffiOptimizationOutcome UniffiOptimizationOutcome.verdict(): UniffiOptimizationVerdict  UniffiOptimizationVerdict implementation_defined_error Getter on `polynomial_system_solution`: the verdict string, one of `\"finite\"`, `\"empty\"`, `\"positive_dimensional\"`, or `\"declined\"`. equations verdict",
+      "search_text": "UniffiOptimizationOutcome.verdict verdict UniffiOptimizationOutcome UniffiOptimizationOutcome.verdict(): UniffiOptimizationVerdict  UniffiOptimizationVerdict implementation_defined_error The optimization result classification. equations verdict",
       "short_name": "verdict",
       "signature": "UniffiOptimizationOutcome.verdict(): UniffiOptimizationVerdict",
-      "summary": "Getter on `polynomial_system_solution`: the verdict string, one of `\"finite\"`, `\"empty\"`, `\"positive_dimensional\"`, or `\"declined\"`.",
+      "summary": "The optimization result classification.",
       "surface": "kotlin_object"
     },
     {
@@ -27506,5 +27506,5 @@
     }
   ],
   "language": "kotlin",
-  "schema_version": 4
+  "schema_version": 5
 }

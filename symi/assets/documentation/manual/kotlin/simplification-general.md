@@ -8,14 +8,29 @@ presentation passes are on
 
 ### simplify
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_simplify.22a5ee0da4a6"></a>
-`UniffiAssumptionScope.simplify(target: UniffiExpression): UniffiExpression`
-
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_simplify.4ca432c39c20"></a>
-`UniffiExpression.simplify(): UniffiExpression`
-
+<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_session_simplify"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_simplify.e3d0c73b4f6a"></a>
-`UniffiSession.simplify(target: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun simplify(target: UniffiExpression): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_expression_simplify"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_simplify.4ca432c39c20"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun simplify(): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_simplify.22a5ee0da4a6"></a>
+<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+
+```kotlin signature
+fun simplify(target: UniffiExpression): UniffiExpression
+```
 
 
 
@@ -69,11 +84,21 @@ guards:
 
 ### cancel
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_cancel.6e7b38c5b929"></a>
-`UniffiExpression.cancel(): UniffiExpression`
-
+<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_cancel_api_session_cancel"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_cancel.6ee6797ea13e"></a>
-`UniffiSession.cancel(target: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun cancel(target: UniffiExpression): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_cancel_api_expression_cancel"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_cancel.6e7b38c5b929"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun cancel(): UniffiExpression
+```
 
 
 
@@ -82,11 +107,21 @@ polynomial GCD of numerator and denominator.
 
 ### together
 
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_together.3b9e22c0006a"></a>
-`UniffiExpression.together(): UniffiExpression`
-
+<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_together_api_session_together"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_together.acdc6fd9ec58"></a>
-`UniffiSession.together(target: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun together(target: UniffiExpression): UniffiExpression
+```
+
+<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_together_api_expression_together"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_together.3b9e22c0006a"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun together(): UniffiExpression
+```
 
 
 

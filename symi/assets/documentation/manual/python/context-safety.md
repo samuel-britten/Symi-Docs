@@ -42,11 +42,25 @@ passing a value in an array does not unexpectedly free the caller's value.
 
 ### execution_mode
 
-<a id="placement-placement.python.python_class.context_execution_mode.3d2eb694420d"></a>
-`Context.execution_mode()`
-
+<a id="entry-presentation_python_context_safety_capability_contexts_execution_mode_api_session_execution_mode"></a>
 <a id="placement-placement.python.python_module.module_execution_mode.bc3844c8b07c"></a>
-`symi.execution_mode()`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+execution_mode() -> str
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_execution_mode.3d2eb694420d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.execution_mode</code></p>
+
+```python signature
+execution_mode() -> str
+```
+
+</details>
 
 
 Sessions expose `sequential` and `automatic` execution modes and start in
@@ -91,11 +105,25 @@ can oversubscribe the device.
 
 ### simplify_bulk
 
-<a id="placement-placement.python.python_class.context_simplify_bulk.03140b18b094"></a>
-`Context.simplify_bulk(targets)`
-
+<a id="entry-presentation_python_context_safety_capability_contexts_simplify_bulk_api_session_simplify_bulk"></a>
 <a id="placement-placement.python.python_module.module_simplify_bulk.07f45cc975b7"></a>
-`symi.simplify_bulk(targets)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+simplify_bulk(targets: PythonExpressionCollectionInput) -> Any
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_simplify_bulk.03140b18b094"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.simplify_bulk</code></p>
+
+```python signature
+simplify_bulk(targets: PythonExpressionCollectionInput) -> Any
+```
+
+</details>
 
 
 The ordered bulk operations `simplify_bulk`, `expand_bulk`,

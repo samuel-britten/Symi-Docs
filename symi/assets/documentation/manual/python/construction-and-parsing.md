@@ -11,8 +11,13 @@ Create a fresh context with an empty symbol table and expression store.
 
 ### reset_context
 
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_reset_context_api_session_reset_context"></a>
 <a id="placement-placement.python.python_class.context_reset_context.7c05f08677d0"></a>
-`Context.reset_context()`
+<p class="symi-entry-owner">Explicit context</p>
+
+```python signature
+reset_context() -> None
+```
 
 
 Replace the context's entire symbol table and expression store with fresh
@@ -27,11 +32,25 @@ weak expression store already keeps memory bounded by live objects (see
 
 ### parse
 
-<a id="placement-placement.python.python_class.context_parse.8bb4dfb283da"></a>
-`Context.parse(text)`
-
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_parse_api_session_parse"></a>
 <a id="placement-placement.python.python_module.module_parse.5ce2d5b2fa9b"></a>
-`symi.parse(text)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+parse(text: str) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_parse.8bb4dfb283da"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.parse</code></p>
+
+```python signature
+parse(text: str) -> Expression
+```
+
+</details>
 
 
 Parse Symi textual syntax into an expression. Accepts `^` and `**` for
@@ -42,11 +61,25 @@ parameters.
 
 ### parse_latex
 
-<a id="placement-placement.python.python_class.context_parse_latex.3bc82c724992"></a>
-`Context.parse_latex(latex)`
-
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_parse_latex_api_serialization_session_parse_latex"></a>
 <a id="placement-placement.python.python_module.module_parse_latex.aafb58fb41c7"></a>
-`symi.parse_latex(latex)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+parse_latex(latex: str) -> Any
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_parse_latex.3bc82c724992"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.parse_latex</code></p>
+
+```python signature
+parse_latex(latex: str) -> Any
+```
+
+</details>
 
 
 Parse a LaTeX string in Symi's canonical input dialect — the inverse of
@@ -74,11 +107,31 @@ expansion.
 
 ### parse_latex_with_environment
 
-<a id="placement-placement.python.python_class.context_parse_latex_with_environment.e2b51d1a6af8"></a>
-`Context.parse_latex_with_environment(latex, serialized_definitions)`
-
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_parse_latex_with_environment_api_serialization_session_parse_latex_with_environment"></a>
 <a id="placement-placement.python.python_module.module_parse_latex_with_environment.217e1bf2dc8a"></a>
-`symi.parse_latex_with_environment(latex, serialized_definitions)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+parse_latex_with_environment(
+    latex: str,
+    serialized_definitions: list[str],
+) -> Any
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_parse_latex_with_environment.e2b51d1a6af8"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.parse_latex_with_environment</code></p>
+
+```python signature
+parse_latex_with_environment(
+    latex: str,
+    serialized_definitions: list[str],
+) -> Any
+```
+
+</details>
 
 
 Parse LaTeX after building an ordered definition environment. Each serialized
@@ -93,11 +146,45 @@ as a module-level function.
 
 ### symbol
 
-<a id="placement-placement.python.python_class.context_symbol.fdaf791acf11"></a>
-`Context.symbol(name, real=False, positive=False, negative=False, integer=False, finite=False, rational=False, natural=False, nonzero=False)`
-
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_symbol_api_session_symbol"></a>
 <a id="placement-placement.python.python_module.module_symbol.13b49e0351f9"></a>
-`symi.symbol(name, real=False, positive=False, negative=False, integer=False, finite=False, rational=False, natural=False, nonzero=False)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+symbol(
+    name: str,
+    real: bool = False,
+    positive: bool = False,
+    negative: bool = False,
+    integer: bool = False,
+    finite: bool = False,
+    rational: bool = False,
+    natural: bool = False,
+    nonzero: bool = False,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_symbol.fdaf791acf11"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.symbol</code></p>
+
+```python signature
+symbol(
+    name: str,
+    real: bool = False,
+    positive: bool = False,
+    negative: bool = False,
+    integer: bool = False,
+    finite: bool = False,
+    rational: bool = False,
+    natural: bool = False,
+    nonzero: bool = False,
+) -> Expression
+```
+
+</details>
 
 
 Intern a symbol and (optionally) attach assumptions used by the assumption
@@ -116,11 +203,25 @@ over.
 
 ### integer
 
-<a id="placement-placement.python.python_class.context_integer.efdfe76bbc61"></a>
-`Context.integer(value)`
-
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_integer_api_session_integer"></a>
 <a id="placement-placement.python.python_module.module_integer.49c85c5856ea"></a>
-`symi.integer(value)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+integer(value: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_integer.efdfe76bbc61"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integer</code></p>
+
+```python signature
+integer(value: Any) -> Expression
+```
+
+</details>
 
 
 Build an arbitrary-precision exact integer. Python `bool` values are rejected. JavaScript's
@@ -128,11 +229,25 @@ recommended facade accepts `bigint` and safe integral `number` values.
 
 ### rational
 
-<a id="placement-placement.python.python_class.context_rational.8866c3776b8e"></a>
-`Context.rational(numerator, denominator)`
-
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_rational_api_session_rational"></a>
 <a id="placement-placement.python.python_module.module_rational.21ee0367e6e1"></a>
-`symi.rational(numerator, denominator)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+rational(numerator: Any, denominator: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_rational.8866c3776b8e"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.rational</code></p>
+
+```python signature
+rational(numerator: Any, denominator: Any) -> Expression
+```
+
+</details>
 
 
 
@@ -142,22 +257,50 @@ integers. A zero denominator is an argument error. Python also accepts
 
 ### integer_from_string
 
-<a id="placement-placement.python.python_class.context_integer_from_string.f35e45ba7140"></a>
-`Context.integer_from_string(text)`
-
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string"></a>
 <a id="placement-placement.python.python_module.module_integer_from_string.552ac2e82ab4"></a>
-`symi.integer_from_string(text)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+integer_from_string(text: str) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_integer_from_string.f35e45ba7140"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integer_from_string</code></p>
+
+```python signature
+integer_from_string(text: str) -> Expression
+```
+
+</details>
 
 
 Build an arbitrary-precision integer literal from its decimal string.
 
 ### rational_from_float
 
-<a id="placement-placement.python.python_class.context_rational_from_float.08b0f2b8a5dc"></a>
-`Context.rational_from_float(value, max_denominator)`
-
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float"></a>
 <a id="placement-placement.python.python_module.module_rational_from_float.30ffeabe86b0"></a>
-`symi.rational_from_float(value, max_denominator)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+rational_from_float(value: float, max_denominator: int) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_rational_from_float.08b0f2b8a5dc"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.rational_from_float</code></p>
+
+```python signature
+rational_from_float(value: float, max_denominator: int) -> Expression
+```
+
+</details>
 
 
 Closest rational with denominator \(\leq\) `max_denominator` (the
@@ -165,8 +308,13 @@ Closest rational with denominator \(\leq\) `max_denominator` (the
 
 ### undefined_function
 
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_undefined_function_api_session_undefined_function"></a>
 <a id="placement-placement.python.python_class.context_undefined_function.69ef6c5c895b"></a>
-`Context.undefined_function(name)`
+<p class="symi-entry-owner">Explicit context</p>
+
+```python signature
+undefined_function(name: str) -> UndefinedFunction
+```
 
 
 A callable proxy for a user-named function. Calling it with expression
@@ -198,10 +346,15 @@ print(symi.parse_latex(r"\frac{1}{2} + x"))
 
 ## Additional API
 
-<a id="placement-placement.python.python_class.undefinedfunction.28fd52ba99ea"></a>
 ### UndefinedFunction
 
-`class symi.UndefinedFunction`
+<a id="entry-presentation_python_construction_and_parsing_capability_construction_undefined_function_api_undefinedfunction"></a>
+<a id="placement-placement.python.python_class.undefinedfunction.28fd52ba99ea"></a>
+<p class="symi-entry-owner">Type</p>
 
-Returns `undefined_function`.
+```python signature
+class UndefinedFunction
+```
+
+A callable proxy for user-defined named functions. `context.undefined_function("f")` returns one of these; calling it with `expression` arguments builds a `function_call` node in the context's interner.
 

@@ -30,8 +30,18 @@ placeholder are not recognised by the ODE classifier.
 
 ### solve_ordinary_differential_equation
 
+<a id="entry-presentation_kotlin_differential_equations_capability_equations_solve_ordinary_differential_equation_api_solving_session_solve_ordinary_differential_equation"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solveordinarydifferentialequation.ebd9ba41d356"></a>
-`UniffiSession.solveOrdinaryDifferentialEquation(equation: UniffiExpression, dependentFunctionCall: UniffiExpression, independentVariable: kotlin.String, initialConditions: List<UniffiExpressionExpressionTuple>?): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun solveOrdinaryDifferentialEquation(
+    equation: UniffiExpression,
+    dependentFunctionCall: UniffiExpression,
+    independentVariable: kotlin.String,
+    initialConditions: List<UniffiExpressionExpressionTuple>?,
+): UniffiExpression
+```
 
 
 Solve an ODE for the unknown function named by `dependent_function_call`
@@ -53,8 +63,21 @@ passes a flat interleaved array `[point_0, value_0, ...]`.
 
 ### solve_ordinary_differential_equation_request
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_solve_ordinary_differential_equation_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_request"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solveordinarydifferentialequationrequest.ad425ca96466"></a>
-`UniffiSession.solveOrdinaryDifferentialEquationRequest(equation: UniffiExpression, dependentFunctionCall: UniffiExpression, independentVariable: kotlin.String, scope: UniffiDifferentialEquationSolutionScope, conditionResiduals: List<UniffiExpression>, method: UniffiOrdinaryDifferentialEquationMethod, regularity: UniffiOrdinaryDifferentialEquationRegularity): UniffiOrdinaryDifferentialEquationSolveResult`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun solveOrdinaryDifferentialEquationRequest(
+    equation: UniffiExpression,
+    dependentFunctionCall: UniffiExpression,
+    independentVariable: kotlin.String,
+    scope: UniffiDifferentialEquationSolutionScope,
+    conditionResiduals: List<UniffiExpression>,
+    method: UniffiOrdinaryDifferentialEquationMethod,
+    regularity: UniffiOrdinaryDifferentialEquationRegularity,
+): UniffiOrdinaryDifferentialEquationSolveResult
+```
 
 
 Solve one scalar ODE request. Each condition residual is read as equal to zero
@@ -83,8 +106,20 @@ naming the offending parameter.
 
 ### solve_ordinary_differential_equation_with_history
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_solve_ordinary_differential_equation_with_history_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_with_history"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solveordinarydifferentialequationwithhistory.c71dacd6fb8b"></a>
-`UniffiSession.solveOrdinaryDifferentialEquationWithHistory(equation: UniffiExpression, dependentFunctionCall: UniffiExpression, independentVariable: kotlin.String, historyValue: UniffiExpression, historyStart: UniffiExpression, historyEnd: UniffiExpression): UniffiOrdinaryDifferentialEquationSolveResult`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun solveOrdinaryDifferentialEquationWithHistory(
+    equation: UniffiExpression,
+    dependentFunctionCall: UniffiExpression,
+    independentVariable: kotlin.String,
+    historyValue: UniffiExpression,
+    historyStart: UniffiExpression,
+    historyEnd: UniffiExpression,
+): UniffiOrdinaryDifferentialEquationSolveResult
+```
 
 
 Solve a retarded delay ODE from a constant history on the stated interval
@@ -97,8 +132,19 @@ solution, so the request is particular.
 
 ### solve_ordinary_differential_equation_system_request
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_solve_ordinary_differential_equation_system_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_system_request"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solveordinarydifferentialequationsystemrequest.4c579a468b50"></a>
-`UniffiSession.solveOrdinaryDifferentialEquationSystemRequest(equations: List<UniffiExpression>, dependentFunctionCalls: List<UniffiExpression>, independentVariable: kotlin.String, conditionResiduals: List<UniffiExpression>, method: UniffiOrdinaryDifferentialEquationSystemMethod): UniffiOrdinaryDifferentialEquationSystemSolveResult`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun solveOrdinaryDifferentialEquationSystemRequest(
+    equations: List<UniffiExpression>,
+    dependentFunctionCalls: List<UniffiExpression>,
+    independentVariable: kotlin.String,
+    conditionResiduals: List<UniffiExpression>,
+    method: UniffiOrdinaryDifferentialEquationSystemMethod,
+): UniffiOrdinaryDifferentialEquationSystemSolveResult
+```
 
 
 Solve a system of ODEs in one coordinate, one equation per declared unknown.
@@ -111,8 +157,20 @@ verified against every equation and datum.
 
 ### verify_ordinary_differential_equation_system_solution
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_verify_ordinary_differential_equation_system_solution_api_ordinary_differential_equations_session_verify_ordinary_differential_equation_system_solution"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_verifyordinarydifferentialequationsystemsolution.741c7cf518a7"></a>
-`UniffiSession.verifyOrdinaryDifferentialEquationSystemSolution(equations: List<UniffiExpression>, dependentFunctionCalls: List<UniffiExpression>, independentVariable: kotlin.String, components: List<UniffiExpression>, generatedConstants: List<UniffiExpression>, conditionResiduals: List<UniffiExpression>): UniffiOrdinaryDifferentialEquationSystemVerificationReport`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun verifyOrdinaryDifferentialEquationSystemSolution(
+    equations: List<UniffiExpression>,
+    dependentFunctionCalls: List<UniffiExpression>,
+    independentVariable: kotlin.String,
+    components: List<UniffiExpression>,
+    generatedConstants: List<UniffiExpression>,
+    conditionResiduals: List<UniffiExpression>,
+): UniffiOrdinaryDifferentialEquationSystemVerificationReport
+```
 
 
 Check a supplied assignment without solving: no solver runs, so a swapped
@@ -146,8 +204,18 @@ transform solution, `frequency_domain_equation` and `image`.
 
 ### solve_ordinary_differential_equation_with_particular_solution
 
+<a id="entry-presentation_kotlin_differential_equations_capability_equations_solve_ordinary_differential_equation_with_particular_solution_api_solving_session_solve_ordinary_differential_equation_with_particular_solution"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solveordinarydifferentialequationwithparticularsolution.2f9566020e21"></a>
-`UniffiSession.solveOrdinaryDifferentialEquationWithParticularSolution(equation: UniffiExpression, dependentFunctionCall: UniffiExpression, independentVariable: kotlin.String, particularSolution: UniffiExpression): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun solveOrdinaryDifferentialEquationWithParticularSolution(
+    equation: UniffiExpression,
+    dependentFunctionCall: UniffiExpression,
+    independentVariable: kotlin.String,
+    particularSolution: UniffiExpression,
+): UniffiExpression
+```
 
 
 Riccati-specific entry: with a known particular solution \(y_1\), the
@@ -157,8 +225,18 @@ not Riccati.
 
 ### solve_linear_recurrence
 
+<a id="entry-presentation_kotlin_differential_equations_capability_equations_solve_linear_recurrence_api_solving_session_solve_linear_recurrence"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvelinearrecurrence.ead6404656ca"></a>
-`UniffiSession.solveLinearRecurrence(equation: UniffiExpression, sequenceCall: UniffiExpression, indexVariable: kotlin.String, initialConditions: List<UniffiExpressionExpressionTuple>?): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun solveLinearRecurrence(
+    equation: UniffiExpression,
+    sequenceCall: UniffiExpression,
+    indexVariable: kotlin.String,
+    initialConditions: List<UniffiExpressionExpressionTuple>?,
+): UniffiExpression
+```
 
 
 Solve a linear recurrence for the unknown sequence named by `sequence_call`
@@ -194,8 +272,20 @@ the constants leaves the symbolic-constant general solution intact.
 
 ### solve_partial_differential_equation_request
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_solve_partial_differential_equation_request_api_partial_differential_equations_session_solve_partial_differential_equation_request"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvepartialdifferentialequationrequest.ba58a67c8f09"></a>
-`UniffiSession.solvePartialDifferentialEquationRequest(problem: UniffiPartialDifferentialEquationProblem, scope: UniffiDifferentialEquationSolutionScope, geometricDomain: UniffiPartialDifferentialEquationGeometricDomain, regularity: UniffiPartialDifferentialEquationRegularity, solutionClass: UniffiPartialDifferentialEquationSolutionClass, method: UniffiPartialDifferentialEquationMethod): UniffiPartialDifferentialEquationSolveResult`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun solvePartialDifferentialEquationRequest(
+    problem: UniffiPartialDifferentialEquationProblem,
+    scope: UniffiDifferentialEquationSolutionScope,
+    geometricDomain: UniffiPartialDifferentialEquationGeometricDomain,
+    regularity: UniffiPartialDifferentialEquationRegularity,
+    solutionClass: UniffiPartialDifferentialEquationSolutionClass,
+    method: UniffiPartialDifferentialEquationMethod,
+): UniffiPartialDifferentialEquationSolveResult
+```
 
 
 Solve a PDE request in which the geometry, regularity, and solution class are
@@ -216,8 +306,13 @@ implemented method supports declines with `declared_geometry_not_supported` or
 
 ### establishes_completeness
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_establishes_completeness_api_partial_differential_equations_partialdifferentialequationsolutionfamily_establishes_completeness"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationsolutionfamily_establishescompleteness.32bbe527dfb5"></a>
-`UniffiPartialDifferentialEquationSolutionFamily.establishesCompleteness(): kotlin.Boolean`
+<p class="symi-entry-owner">UniffiPartialDifferentialEquationSolutionFamily method</p>
+
+```kotlin signature
+fun establishesCompleteness(): kotlin.Boolean
+```
 
 
 Whether the family carries a completeness theorem whose every identity was
@@ -226,8 +321,13 @@ coverage of it.
 
 ### derive_partial_differential_equation_point_symmetries
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_derive_partial_differential_equation_point_symmetries_api_partial_differential_equations_session_derive_partial_differential_equation_point_symmetries"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_derivepartialdifferentialequationpointsymmetries.e5e40142f9f7"></a>
-`UniffiSession.derivePartialDifferentialEquationPointSymmetries(problem: UniffiPartialDifferentialEquationProblem): UniffiPartialDifferentialEquationPointSymmetryAlgebra`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun derivePartialDifferentialEquationPointSymmetries(problem: UniffiPartialDifferentialEquationProblem): UniffiPartialDifferentialEquationPointSymmetryAlgebra
+```
 
 
 Derive the point-symmetry algebra of a scalar first- or second-order PDE from
@@ -243,8 +343,13 @@ discrete symmetries are never claimed.
 
 ### construct_partial_differential_equation_point_symmetry_action
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_construct_partial_differential_equation_point_symmetry_action_api_partial_differential_equations_session_construct_partial_differential_equation_point_symmetry_action"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_constructpartialdifferentialequationpointsymmetryaction.47abd63bfd16"></a>
-`UniffiSession.constructPartialDifferentialEquationPointSymmetryAction(problem: UniffiPartialDifferentialEquationProblem): UniffiPartialDifferentialEquationPointSymmetryAction`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun constructPartialDifferentialEquationPointSymmetryAction(problem: UniffiPartialDifferentialEquationProblem): UniffiPartialDifferentialEquationPointSymmetryAction
+```
 
 
 Integrate every basis generator into a one-parameter group, verify each group
@@ -258,8 +363,17 @@ connected local action `u = a + A f(X)`. The result carries `parameters`,
 
 ### partial_differential_equation_point_symmetry_generator
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_partial_differential_equation_point_symmetry_generator_api_partial_differential_equations_session_partial_differential_equation_point_symmetry_generator"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_partialdifferentialequationpointsymmetrygenerator.f53ed006eb9f"></a>
-`UniffiSession.partialDifferentialEquationPointSymmetryGenerator(problem: UniffiPartialDifferentialEquationProblem, coordinateInfinitesimals: List<UniffiExpression>, dependentInfinitesimal: UniffiExpression): UniffiPartialDifferentialEquationPointSymmetryGenerator`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun partialDifferentialEquationPointSymmetryGenerator(
+    problem: UniffiPartialDifferentialEquationProblem,
+    coordinateInfinitesimals: List<UniffiExpression>,
+    dependentInfinitesimal: UniffiExpression,
+): UniffiPartialDifferentialEquationPointSymmetryGenerator
+```
 
 
 A candidate generator, one coordinate infinitesimal per independent variable
@@ -268,8 +382,16 @@ candidate, not a certificate: every consumer verifies it is a symmetry.
 
 ### solve_partial_differential_equation_by_similarity_reduction
 
+<a id="entry-presentation_kotlin_differential_equations_capability_contexts_solve_partial_differential_equation_by_similarity_reduction_api_partial_differential_equations_session_solve_partial_differential_equation_by_similarity_reduction"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvepartialdifferentialequationbysimilarityreduction.ecc206ccd0d3"></a>
-`UniffiSession.solvePartialDifferentialEquationBySimilarityReduction(problem: UniffiPartialDifferentialEquationProblem, generator: UniffiPartialDifferentialEquationPointSymmetryGenerator): UniffiPartialDifferentialEquationSimilaritySolution`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun solvePartialDifferentialEquationBySimilarityReduction(
+    problem: UniffiPartialDifferentialEquationProblem,
+    generator: UniffiPartialDifferentialEquationPointSymmetryGenerator,
+): UniffiPartialDifferentialEquationSimilaritySolution
+```
 
 
 Reduce a two-variable PDE by a fiber-linear point symmetry to an ODE in the

@@ -6,11 +6,35 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
-<a id="placement-placement.wasm.wasm_class.context_integral.f6129c72c596"></a>
-Raw WebAssembly: `pub fn integral(&self, integrand: &Expression, variable: &str, lower: Option<Expression>, upper: Option<Expression>) -> Result<Expression, JsError>`
-
+<a id="entry-presentation_wasm_deferred_forms_capability_construction_integral_api_analysis_session_integral"></a>
 <a id="placement-placement.wasm.wasm_module.module_integral.eee25ebf5a0e"></a>
-Raw WebAssembly: `fn integral(integrand: &Expression, variable: &str, lower: Option<Expression>, upper: Option<Expression>) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+integral(
+    integrand: Expression,
+    variable: string,
+    lower?: Expression | null,
+    upper?: Expression | null,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_integral.f6129c72c596"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integral</code></p>
+
+```typescript signature
+integral(
+    integrand: Expression,
+    variable: string,
+    lower?: Expression | null,
+    upper?: Expression | null,
+): Expression
+```
+
+</details>
 
 
 Build an *unevaluated* integral node (indefinite when bounds are omitted).
@@ -25,11 +49,35 @@ be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 ### summation
 
-<a id="placement-placement.wasm.wasm_class.context_summation.008385ac03bb"></a>
-Raw WebAssembly: `pub fn summation(&self, summand: &Expression, index: &str, lower: &Expression, upper: &Expression) -> Result<Expression, JsError>`
-
+<a id="entry-presentation_wasm_deferred_forms_capability_construction_summation_api_analysis_session_summation"></a>
 <a id="placement-placement.wasm.wasm_module.module_summation.49ecda1cfd0a"></a>
-Raw WebAssembly: `fn summation(summand: &Expression, index: &str, lower: &Expression, upper: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+summation(
+    summand: Expression,
+    index: string,
+    lower: Expression,
+    upper: Expression,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_summation.008385ac03bb"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.summation</code></p>
+
+```typescript signature
+summation(
+    summand: Expression,
+    index: string,
+    lower: Expression,
+    upper: Expression,
+): Expression
+```
+
+</details>
 
 
 Build a summation node \(\sum\). `execute` evaluates it when a closed form or
@@ -122,11 +170,35 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
-<a id="placement-placement.wasm.wasm_class.context_product.37cc779e76ed"></a>
-Raw WebAssembly: `pub fn product(&self, multiplicand: &Expression, index: &str, lower: &Expression, upper: &Expression) -> Result<Expression, JsError>`
-
+<a id="entry-presentation_wasm_deferred_forms_capability_construction_product_api_analysis_session_product"></a>
 <a id="placement-placement.wasm.wasm_module.module_product.4b346b85255f"></a>
-Raw WebAssembly: `fn product(multiplicand: &Expression, index: &str, lower: &Expression, upper: &Expression) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+product(
+    multiplicand: Expression,
+    index: string,
+    lower: Expression,
+    upper: Expression,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_product.37cc779e76ed"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.product</code></p>
+
+```typescript signature
+product(
+    multiplicand: Expression,
+    index: string,
+    lower: Expression,
+    upper: Expression,
+): Expression
+```
+
+</details>
 
 
 Definite indexed product \(\prod_{\mathit{index}=\mathit{lower}}^{\mathit{upper}} \mathit{multiplicand}\), a first-class
@@ -201,17 +273,45 @@ form is in scope.
 
 ### piecewise
 
-<a id="placement-placement.wasm.javascript_facade.context_piecewise.2001a04b252e"></a>
-`Context.piecewise(branches: Iterable<PiecewiseBranch>): Expression`
+<a id="entry-presentation_wasm_deferred_forms_capability_construction_piecewise_api_solving_session_piecewise"></a>
+<a id="placement-placement.wasm.wasm_module.module_piecewise.c246b4400df8"></a>
+<p class="symi-entry-owner">Default context</p>
 
-<a id="placement-placement.wasm.javascript_facade.symifacade_piecewise.e54e812abd39"></a>
-`SymiFacade.piecewise(branches: Iterable<PiecewiseBranch>): Expression`
+```typescript signature
+piecewise(
+    branches: Expression[],
+    otherwise?: Expression | null,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_piecewise.2001a04b252e"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.piecewise</code></p>
+
+```typescript signature
+piecewise(branches: Iterable<PiecewiseBranch>): Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_piecewise.9a8f7205a7fd"></a>
-Raw WebAssembly: `pub fn piecewise(&self, branches: Vec<Expression>, otherwise: Option<Expression>) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Explicit context: <code>Context.piecewise</code></p>
 
-<a id="placement-placement.wasm.wasm_module.module_piecewise.c246b4400df8"></a>
-Raw WebAssembly: `fn piecewise(branches: Vec<Expression>, otherwise: Option<Expression>) -> Result<Expression, JsError>`
+```typescript signature
+piecewise(
+    branches: Expression[],
+    otherwise?: Expression | null,
+): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_piecewise.e54e812abd39"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.piecewise</code></p>
+
+```typescript signature
+piecewise(branches: Iterable<PiecewiseBranch>): Expression
+```
+
+</details>
 
 
 Build a piecewise expression from `(value, condition)` pairs with first-match

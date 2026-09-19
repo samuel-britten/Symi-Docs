@@ -10,41 +10,65 @@ arbitrary-precision numeric evaluation (real and complex) all apply.
 
 ### gamma
 
-<a id="placement-placement.rust.native_rust.api_expression_gamma.29eb55104888"></a>
-`symi::api::Expression — pub fn gamma(&self) -> Result<Expression, ApiError>`
-
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_gamma_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_gamma.59dc77ac52f1"></a>
-`symi::api::Session — pub fn gamma(&self, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn gamma(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The gamma function \(\Gamma(x)\), the analytic continuation of `(x-1)!`.
 
 ### log_gamma
 
-<a id="placement-placement.rust.native_rust.api_expression_log_gamma.ab07da665db2"></a>
-`symi::api::Expression — pub fn log_gamma(&self) -> Result<Expression, ApiError>`
-
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_log_gamma_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_log_gamma.574ab2a1c976"></a>
-`symi::api::Session — pub fn log_gamma(&self, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn log_gamma(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The principal-branch log-gamma function (not `log(gamma(x))` off the real axis).
 
 ### digamma
 
-<a id="placement-placement.rust.native_rust.api_expression_digamma.a874b51f95cc"></a>
-`symi::api::Expression — pub fn digamma(&self) -> Result<Expression, ApiError>`
-
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_digamma_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_digamma.931bf2b66a09"></a>
-`symi::api::Session — pub fn digamma(&self, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn digamma(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The digamma function \(\psi(x) = \Gamma'(x)/\Gamma(x)\).
 
 ### polygamma
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_polygamma_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_polygamma.4c2bdd651ecb"></a>
-`symi::api::Session — pub fn polygamma(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn polygamma(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The polygamma function \(\psi^{(n)}(x)\), the order-th derivative of digamma;
@@ -52,16 +76,33 @@ The polygamma function \(\psi^{(n)}(x)\), the order-th derivative of digamma;
 
 ### beta
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_beta_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_beta.b5bd59498226"></a>
-`symi::api::Session — pub fn beta(&self, left: &Expression, right: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn beta(
+    &self,
+    left: &Expression,
+    right: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The beta function \(\operatorname{B}(x, y) = \Gamma(x)\Gamma(y)/\Gamma(x+y)\).
 
 ### zeta
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_zeta_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_zeta.5933429e5c9b"></a>
-`symi::api::Session — pub fn zeta(&self, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn zeta(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Riemann zeta function \(\zeta(s) = \sum_{k\geq 1} k^{-s}\). Even positive integers fold to
@@ -73,8 +114,17 @@ arbitrary precision over \(\mathbb{R}\) and \(\mathbb{C}\).
 
 ### hurwitz_zeta
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hurwitz_zeta_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_hurwitz_zeta.ea751077131a"></a>
-`symi::api::Session — pub fn hurwitz_zeta(&self, s: &Expression, a: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn hurwitz_zeta(
+    &self,
+    s: &Expression,
+    a: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Hurwitz zeta function \(\zeta(s, a) = \sum_{k\geq 0} (k+a)^{-s}\), the numeric primitive of
@@ -85,8 +135,17 @@ polynomial in `a`.
 
 ### polylogarithm
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_polylogarithm_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_polylogarithm.99795f2d020b"></a>
-`symi::api::Session — pub fn polylogarithm(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn polylogarithm(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The principal-branch polylogarithm \(\operatorname{Li}_s(z)\). The defining-series values
@@ -101,8 +160,18 @@ routes decline numerically rather than returning a low-confidence value.
 
 ### lerch_phi
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_lerch_phi_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_lerch_phi.9d9db6667641"></a>
-`symi::api::Session — pub fn lerch_phi(&self, argument: &Expression, order: &Expression, shift: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn lerch_phi(
+    &self,
+    argument: &Expression,
+    order: &Expression,
+    shift: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The principal Lerch transcendent \(\Phi(z, s, a)\), whose canonical argument order is
@@ -160,8 +229,21 @@ genuinely diverges when it fails.
 
 ### hypergeometric_pfq
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hypergeometric_pfq_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_hypergeometric_pfq.9c858dc3a117"></a>
-`symi::api::Session — pub fn hypergeometric_pfq<UpperType, LowerType>(&self, upper_parameters: UpperType, lower_parameters: LowerType, argument: &Expression) -> Result<Expression, ApiError> where UpperType: IntoIterator<Item = Expression>, LowerType: IntoIterator<Item = Expression>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn hypergeometric_pfq<UpperType, LowerType>(
+    &self,
+    upper_parameters: UpperType,
+    lower_parameters: LowerType,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+where
+    UpperType: IntoIterator<Item = Expression>,
+    LowerType: IntoIterator<Item = Expression>,
+```
 
 
 The generalized hypergeometric function \({}_pF_q(\mathbf a; \mathbf b; z)\). The two parameter
@@ -170,24 +252,54 @@ rejected.
 
 ### hypergeometric_0f1
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hypergeometric_0f1_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_hypergeometric_0f1.5bd6276d462c"></a>
-`symi::api::Session — pub fn hypergeometric_0f1(&self, lower_parameter: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn hypergeometric_0f1(
+    &self,
+    lower_parameter: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The confluent limit \({}_0F_1(; b; z)\), lowered to `hypergeometric_pfq`.
 
 ### hypergeometric_1f1
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hypergeometric_1f1_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_hypergeometric_1f1.8cfe5c4e24b4"></a>
-`symi::api::Session — pub fn hypergeometric_1f1(&self, upper_parameter: &Expression, lower_parameter: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn hypergeometric_1f1(
+    &self,
+    upper_parameter: &Expression,
+    lower_parameter: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 Kummer's confluent hypergeometric function \({}_1F_1(a; b; z)\).
 
 ### hypergeometric_2f1
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hypergeometric_2f1_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_hypergeometric_2f1.d16bd353849e"></a>
-`symi::api::Session — pub fn hypergeometric_2f1(&self, first_upper_parameter: &Expression, second_upper_parameter: &Expression, lower_parameter: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn hypergeometric_2f1(
+    &self,
+    first_upper_parameter: &Expression,
+    second_upper_parameter: &Expression,
+    lower_parameter: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Gauss hypergeometric function \({}_2F_1(a, b; c; z)\).
@@ -196,8 +308,25 @@ The Gauss hypergeometric function \({}_2F_1(a, b; c; z)\).
 
 ### meijer_g
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_meijer_g_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_meijer_g.ce43935b3f3c"></a>
-`symi::api::Session — pub fn meijer_g<FirstType, SecondType, ThirdType, FourthType>(&self, upper_numerator_parameters: FirstType, upper_denominator_parameters: SecondType, lower_numerator_parameters: ThirdType, lower_denominator_parameters: FourthType, argument: &Expression) -> Result<Expression, ApiError> where FirstType: IntoIterator<Item = Expression>, SecondType: IntoIterator<Item = Expression>, ThirdType: IntoIterator<Item = Expression>, FourthType: IntoIterator<Item = Expression>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn meijer_g<FirstType, SecondType, ThirdType, FourthType>(
+    &self,
+    upper_numerator_parameters: FirstType,
+    upper_denominator_parameters: SecondType,
+    lower_numerator_parameters: ThirdType,
+    lower_denominator_parameters: FourthType,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+where
+    FirstType: IntoIterator<Item = Expression>,
+    SecondType: IntoIterator<Item = Expression>,
+    ThirdType: IntoIterator<Item = Expression>,
+    FourthType: IntoIterator<Item = Expression>,
+```
 
 
 The Meijer G-function \(G_{p,q}^{m,n}\) from its four ordered parameter groups. The orders `m`,
@@ -237,112 +366,234 @@ spurious cut from their half-integer cylinder representation. Airy functions are
 
 ### bessel_j
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_bessel_j_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_bessel_j.47f75d1984f8"></a>
-`symi::api::Session — pub fn bessel_j(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn bessel_j(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The principal Bessel function \(J_\nu(z)\).
 
 ### bessel_y
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_bessel_y_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_bessel_y.968465448244"></a>
-`symi::api::Session — pub fn bessel_y(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn bessel_y(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The principal Bessel function \(Y_\nu(z)\).
 
 ### bessel_i
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_bessel_i_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_bessel_i.ddbee38041f7"></a>
-`symi::api::Session — pub fn bessel_i(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn bessel_i(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The principal modified Bessel function \(I_\nu(z)\).
 
 ### bessel_k
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_bessel_k_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_bessel_k.f2b6aa38cdf4"></a>
-`symi::api::Session — pub fn bessel_k(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn bessel_k(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The principal modified Bessel function \(K_\nu(z)\).
 
 ### hankel_first_kind
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hankel_first_kind_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_hankel_first_kind.06660d0840d2"></a>
-`symi::api::Session — pub fn hankel_first_kind(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn hankel_first_kind(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The principal Hankel function \(H_\nu^{(1)}(z)\).
 
 ### hankel_second_kind
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hankel_second_kind_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_hankel_second_kind.5fbd0ff066f5"></a>
-`symi::api::Session — pub fn hankel_second_kind(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn hankel_second_kind(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The principal Hankel function \(H_\nu^{(2)}(z)\).
 
 ### spherical_bessel_j
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_spherical_bessel_j_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_spherical_bessel_j.d6675f419838"></a>
-`symi::api::Session — pub fn spherical_bessel_j(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn spherical_bessel_j(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The spherical Bessel function \(\mathsf j_n(z)\), for \(n\in\mathbb N_0\).
 
 ### spherical_bessel_y
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_spherical_bessel_y_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_spherical_bessel_y.5bf1ea40bd24"></a>
-`symi::api::Session — pub fn spherical_bessel_y(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn spherical_bessel_y(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The spherical Bessel function \(\mathsf y_n(z)\), for \(n\in\mathbb N_0\).
 
 ### spherical_hankel_first_kind
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_spherical_hankel_first_kind_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_spherical_hankel_first_kind.e0a1b4b5e616"></a>
-`symi::api::Session — pub fn spherical_hankel_first_kind(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn spherical_hankel_first_kind(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The spherical Hankel function \(\mathsf h_n^{(1)}(z)\), for \(n\in\mathbb N_0\).
 
 ### spherical_hankel_second_kind
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_spherical_hankel_second_kind_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_spherical_hankel_second_kind.c5bffb2aa370"></a>
-`symi::api::Session — pub fn spherical_hankel_second_kind(&self, order: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn spherical_hankel_second_kind(
+    &self,
+    order: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The spherical Hankel function \(\mathsf h_n^{(2)}(z)\), for \(n\in\mathbb N_0\).
 
 ### airy_ai
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_airy_ai_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_airy_ai.a75fdb366456"></a>
-`symi::api::Session — pub fn airy_ai(&self, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn airy_ai(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Airy function \(\operatorname{Ai}(z)\).
 
 ### airy_bi
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_airy_bi_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_airy_bi.f34f9c8539f1"></a>
-`symi::api::Session — pub fn airy_bi(&self, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn airy_bi(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Airy function \(\operatorname{Bi}(z)\).
 
 ### airy_ai_prime
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_airy_ai_prime_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_airy_ai_prime.d3eb69c71709"></a>
-`symi::api::Session — pub fn airy_ai_prime(&self, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn airy_ai_prime(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The derivative \(\operatorname{Ai}'(z)\).
 
 ### airy_bi_prime
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_airy_bi_prime_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_airy_bi_prime.a6ae3e4a474e"></a>
-`symi::api::Session — pub fn airy_bi_prime(&self, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn airy_bi_prime(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The derivative \(\operatorname{Bi}'(z)\).
@@ -359,72 +610,158 @@ is the physicists' \(H_n\).
 
 ### jacobi_polynomial
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_jacobi_polynomial_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_jacobi_polynomial.00d0c408d6fc"></a>
-`symi::api::Session — pub fn jacobi_polynomial(&self, degree: &Expression, first_parameter: &Expression, second_parameter: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn jacobi_polynomial(
+    &self,
+    degree: &Expression,
+    first_parameter: &Expression,
+    second_parameter: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Jacobi polynomial \(P_n^{(\alpha,\beta)}(x)\).
 
 ### gegenbauer_polynomial
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_gegenbauer_polynomial_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_gegenbauer_polynomial.1c7fa9a2584c"></a>
-`symi::api::Session — pub fn gegenbauer_polynomial(&self, degree: &Expression, parameter: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn gegenbauer_polynomial(
+    &self,
+    degree: &Expression,
+    parameter: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Gegenbauer polynomial \(C_n^{(\lambda)}(x)\).
 
 ### chebyshev_polynomial_first_kind
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_chebyshev_polynomial_first_kind_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_chebyshev_polynomial_first_kind.83f338bfe9af"></a>
-`symi::api::Session — pub fn chebyshev_polynomial_first_kind(&self, degree: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn chebyshev_polynomial_first_kind(
+    &self,
+    degree: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Chebyshev polynomial of the first kind \(T_n(x)\).
 
 ### chebyshev_polynomial_second_kind
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_chebyshev_polynomial_second_kind_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_chebyshev_polynomial_second_kind.b240a9102eeb"></a>
-`symi::api::Session — pub fn chebyshev_polynomial_second_kind(&self, degree: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn chebyshev_polynomial_second_kind(
+    &self,
+    degree: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Chebyshev polynomial of the second kind \(U_n(x)\).
 
 ### legendre_polynomial
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_legendre_polynomial_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_legendre_polynomial.e2028898db05"></a>
-`symi::api::Session — pub fn legendre_polynomial(&self, degree: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn legendre_polynomial(
+    &self,
+    degree: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Legendre polynomial \(P_n(x)\).
 
 ### generalized_laguerre_polynomial
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_generalized_laguerre_polynomial_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_generalized_laguerre_polynomial.234d3baaf3fe"></a>
-`symi::api::Session — pub fn generalized_laguerre_polynomial(&self, degree: &Expression, parameter: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn generalized_laguerre_polynomial(
+    &self,
+    degree: &Expression,
+    parameter: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The generalized Laguerre polynomial \(L_n^{(\alpha)}(x)\).
 
 ### hermite_polynomial
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hermite_polynomial_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_hermite_polynomial.11463cebdf3a"></a>
-`symi::api::Session — pub fn hermite_polynomial(&self, degree: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn hermite_polynomial(
+    &self,
+    degree: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The physicists' Hermite polynomial \(H_n(x)\).
 
 ### ultraspherical_polynomial
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_ultraspherical_polynomial_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_ultraspherical_polynomial.fa3dd3fd84eb"></a>
-`symi::api::Session — pub fn ultraspherical_polynomial(&self, degree: &Expression, parameter: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn ultraspherical_polynomial(
+    &self,
+    degree: &Expression,
+    parameter: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The ultraspherical polynomial, lowered to its canonical Gegenbauer head.
 
 ### laguerre_polynomial
 
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_laguerre_polynomial_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_session_laguerre_polynomial.fd40d0978c75"></a>
-`symi::api::Session — pub fn laguerre_polynomial(&self, degree: &Expression, argument: &Expression) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn laguerre_polynomial(
+    &self,
+    degree: &Expression,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
 
 
 The Laguerre polynomial, lowered to its canonical generalized Laguerre head.
@@ -450,31 +787,96 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Additional API
 
-<a id="placement-placement.rust.native_rust.api_session_elliptic_e.96e8718126a7"></a>
-### api::Session::elliptic_e
+### Gamma
 
-`symi::api::Session — pub fn elliptic_e(&self, parameter: &Expression) -> Result<Expression, ApiError>`
-
-Returns `Result<Expression, ApiError>`.
-
-<a id="placement-placement.rust.native_rust.api_session_elliptic_k.f8860285c852"></a>
-### api::Session::elliptic_k
-
-`symi::api::Session — pub fn elliptic_k(&self, parameter: &Expression) -> Result<Expression, ApiError>`
-
-Returns `Result<Expression, ApiError>`.
-
-<a id="placement-placement.rust.native_rust.api_session_lambert_w.39c757c31857"></a>
-### api::Session::lambert_w
-
-`symi::api::Session — pub fn lambert_w(&self, argument: &Expression) -> Result<Expression, ApiError>`
-
-Returns `Result<Expression, ApiError>`.
-
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_options_specialfunctionbasis_gamma_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_options_specialfunctionbasis_gamma.6ba024890f5d"></a>
-### api::options::SpecialFunctionBasis::Gamma
+<p class="symi-entry-owner">api::options::SpecialFunctionBasis variant</p>
 
-`symi::api::options::SpecialFunctionBasis — Gamma`
+```rust signature
+Gamma,
+```
 
-Returns `variant`.
+Public variant placement for Gamma.
+
+### digamma
+
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_expression_digamma_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_expression_digamma.a874b51f95cc"></a>
+<p class="symi-entry-owner">api::Expression method</p>
+
+```rust signature
+pub fn digamma(&self) -> Result<Expression, ApiError>
+```
+
+The digamma function \(\psi(x) = \Gamma'(x)/\Gamma(x)\).
+
+### elliptic_e
+
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_elliptic_e_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_session_elliptic_e.96e8718126a7"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn elliptic_e(
+    &self,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Public method placement for elliptic_e.
+
+### elliptic_k
+
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_elliptic_k_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_session_elliptic_k.f8860285c852"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn elliptic_k(
+    &self,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Public method placement for elliptic_k.
+
+### gamma
+
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_expression_gamma_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_expression_gamma.29eb55104888"></a>
+<p class="symi-entry-owner">api::Expression method</p>
+
+```rust signature
+pub fn gamma(&self) -> Result<Expression, ApiError>
+```
+
+The gamma function \(\Gamma(x)\), the analytic continuation of `(x-1)!`.
+
+### lambert_w
+
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_lambert_w_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_session_lambert_w.39c757c31857"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn lambert_w(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Public method placement for lambert_w.
+
+### log_gamma
+
+<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_expression_log_gamma_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_expression_log_gamma.ab07da665db2"></a>
+<p class="symi-entry-owner">api::Expression method</p>
+
+```rust signature
+pub fn log_gamma(&self) -> Result<Expression, ApiError>
+```
+
+The principal-branch log-gamma function (not `log(gamma(x))` off the real axis).
 

@@ -8,25 +8,78 @@ nodes can also be built directly through `parse`.
 
 ### laplace_transform
 
+<a id="entry-presentation_python_integral_transforms_capability_calculus_laplace_transform_api_assumptionscope_laplace_transform"></a>
 <a id="placement-placement.python.python_class.assumptionscope_laplace_transform.0f605205d58d"></a>
-`AssumptionScope.laplace_transform(input_expression, time_variable, frequency_variable)`
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+```python signature
+laplace_transform(
+    input_expression: ExpressionLike,
+    time_variable: VariableLike,
+    frequency_variable: VariableLike,
+) -> Expression
+```
+
+<a id="entry-presentation_python_integral_transforms_capability_calculus_laplace_transform_api_session_laplace_transform"></a>
+<a id="placement-placement.python.python_module.module_laplace_transform.8e6f0172be4d"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+laplace_transform(
+    input_expression: ExpressionLike,
+    time_variable: VariableLike,
+    frequency_variable: VariableLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_laplace_transform.76780a9c25d4"></a>
-`Context.laplace_transform(input_expression, time_variable, frequency_variable)`
+<p class="symi-entry-owner">Explicit context: <code>Context.laplace_transform</code></p>
 
-<a id="placement-placement.python.python_module.module_laplace_transform.8e6f0172be4d"></a>
-`symi.laplace_transform(input_expression, time_variable, frequency_variable)`
+```python signature
+laplace_transform(
+    input_expression: ExpressionLike,
+    time_variable: VariableLike,
+    frequency_variable: VariableLike,
+) -> Expression
+```
+
+</details>
 
 
 Forward Laplace transform \(F(s) = \int_0^\infty f(t)e^{-st}\,dt\).
 
 ### inverse_laplace_transform
 
-<a id="placement-placement.python.python_class.context_inverse_laplace_transform.521646ce2181"></a>
-`Context.inverse_laplace_transform(input_expression, frequency_variable, time_variable)`
-
+<a id="entry-presentation_python_integral_transforms_capability_calculus_inverse_laplace_transform_api_session_inverse_laplace_transform"></a>
 <a id="placement-placement.python.python_module.module_inverse_laplace_transform.bc68714d6dad"></a>
-`symi.inverse_laplace_transform(input_expression, frequency_variable, time_variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+inverse_laplace_transform(
+    input_expression: ExpressionLike,
+    frequency_variable: VariableLike,
+    time_variable: VariableLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_inverse_laplace_transform.521646ce2181"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.inverse_laplace_transform</code></p>
+
+```python signature
+inverse_laplace_transform(
+    input_expression: ExpressionLike,
+    frequency_variable: VariableLike,
+    time_variable: VariableLike,
+) -> Expression
+```
+
+</details>
 
 
 Inverse Laplace transform; rational inputs route through a partial-fraction
@@ -34,14 +87,45 @@ reverse lookup.
 
 ### fourier_transform
 
+<a id="entry-presentation_python_integral_transforms_capability_calculus_fourier_transform_api_assumptionscope_fourier_transform"></a>
 <a id="placement-placement.python.python_class.assumptionscope_fourier_transform.cc7330dbb6d2"></a>
-`AssumptionScope.fourier_transform(input_expression, time_variable, frequency_variable)`
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+```python signature
+fourier_transform(
+    input_expression: ExpressionLike,
+    time_variable: VariableLike,
+    frequency_variable: VariableLike,
+) -> Expression
+```
+
+<a id="entry-presentation_python_integral_transforms_capability_calculus_fourier_transform_api_session_fourier_transform"></a>
+<a id="placement-placement.python.python_module.module_fourier_transform.375647690920"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+fourier_transform(
+    input_expression: ExpressionLike,
+    time_variable: VariableLike,
+    frequency_variable: VariableLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_fourier_transform.5c9b70ec96fe"></a>
-`Context.fourier_transform(input_expression, time_variable, frequency_variable)`
+<p class="symi-entry-owner">Explicit context: <code>Context.fourier_transform</code></p>
 
-<a id="placement-placement.python.python_module.module_fourier_transform.375647690920"></a>
-`symi.fourier_transform(input_expression, time_variable, frequency_variable)`
+```python signature
+fourier_transform(
+    input_expression: ExpressionLike,
+    time_variable: VariableLike,
+    frequency_variable: VariableLike,
+) -> Expression
+```
+
+</details>
 
 
 Forward Fourier transform in the angular-frequency convention
@@ -49,11 +133,33 @@ Forward Fourier transform in the angular-frequency convention
 
 ### inverse_fourier_transform
 
-<a id="placement-placement.python.python_class.context_inverse_fourier_transform.29d769d0809a"></a>
-`Context.inverse_fourier_transform(input_expression, frequency_variable, time_variable)`
-
+<a id="entry-presentation_python_integral_transforms_capability_calculus_inverse_fourier_transform_api_session_inverse_fourier_transform"></a>
 <a id="placement-placement.python.python_module.module_inverse_fourier_transform.06558807e56e"></a>
-`symi.inverse_fourier_transform(input_expression, frequency_variable, time_variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+inverse_fourier_transform(
+    input_expression: ExpressionLike,
+    frequency_variable: VariableLike,
+    time_variable: VariableLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_inverse_fourier_transform.29d769d0809a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.inverse_fourier_transform</code></p>
+
+```python signature
+inverse_fourier_transform(
+    input_expression: ExpressionLike,
+    frequency_variable: VariableLike,
+    time_variable: VariableLike,
+) -> Expression
+```
+
+</details>
 
 
 Inverse Fourier transform of the same convention.

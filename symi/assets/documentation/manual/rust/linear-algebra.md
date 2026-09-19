@@ -17,8 +17,16 @@ Matrix product; inner dimensions must agree.
 
 ### scalar_multiply
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_scalar_multiply_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_scalar_multiply.9c4ac782d3c5"></a>
-`symi::api::Matrix — pub fn scalar_multiply(&self, scalar: &Expression) -> Result<Matrix, ApiError>`
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn scalar_multiply(
+    &self,
+    scalar: &Expression,
+) -> Result<Matrix, ApiError>
+```
 
 
 ## Matrix assumptions
@@ -91,50 +99,56 @@ Assert or query exact positive semidefiniteness.
 
 ### transpose
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_transpose_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_transpose.d2863d91a949"></a>
-`symi::api::Matrix — pub fn transpose(&self) -> Result<Matrix, ApiError>`
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn transpose(&self) -> Result<Matrix, ApiError>
+```
 
 
 ### determinant
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_determinant_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_determinant.7802378e44d7"></a>
-`symi::api::Matrix — pub fn determinant(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn determinant(&self) -> Result<Expression, ApiError>
+```
 
 
 Fraction-free (Berkowitz/Bareiss) determinant of a square matrix.
 
 ### trace
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_trace_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_trace.17e62343e7e5"></a>
-`symi::api::Matrix — pub fn trace(&self) -> Result<Expression, ApiError>`
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn trace(&self) -> Result<Expression, ApiError>
+```
 
 
 ### characteristic_polynomial
-
-<a id="placement-placement.rust.native_rust.api_matrix_operations_matrix_characteristic_polynomial.f339c5d48e3e"></a>
-`symi::api::matrix_operations::Matrix — pub fn characteristic_polynomial<'a, VariableType>(&self, variable: VariableType) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
-
-<a id="placement-placement.rust.native_rust.api_results_rationalcanonicalform_characteristic_polynomial.9575efa91bf9"></a>
-`symi::api::results::RationalCanonicalForm — pub fn characteristic_polynomial(&self) -> Expression`
-
 
 \(\det(\lambda I - M)\) as a polynomial in the named variable.
 
 ### minimal_polynomial
 
-<a id="placement-placement.rust.native_rust.api_matrix_operations_matrix_minimal_polynomial.00c281d1fe78"></a>
-`symi::api::matrix_operations::Matrix — pub fn minimal_polynomial<'a, VariableType>(&self, variable: VariableType) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
-
-<a id="placement-placement.rust.native_rust.api_results_rationalcanonicalform_minimal_polynomial.7e36f3c17445"></a>
-`symi::api::results::RationalCanonicalForm — pub fn minimal_polynomial(&self) -> Expression`
-
-
 The monic minimal polynomial over the rationals. The matrix must have rational entries.
 
 ### eigenvalues
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_eigenvalues_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_eigenvalues.1b82e17db150"></a>
-`symi::api::Matrix — pub fn eigenvalues(&self) -> Result<Vec<Expression>, ApiError>`
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn eigenvalues(&self) -> Result<Vec<Expression>, ApiError>
+```
 
 
 Eigenvalues with multiplicity, via the characteristic polynomial and the
@@ -143,8 +157,13 @@ exact first-class `polynomial_root` values.
 
 ### eigenvectors
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_operations_matrix_eigenvectors_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_operations_matrix_eigenvectors.4278876de9a0"></a>
-`symi::api::matrix_operations::Matrix — pub fn eigenvectors(&self) -> Result<Vec<Eigenpair>, ApiError>`
+<p class="symi-entry-owner">api::matrix_operations::Matrix method</p>
+
+```rust signature
+pub fn eigenvectors(&self) -> Result<Vec<Eigenpair>, ApiError>
+```
 
 
 For each eigenvalue, a basis of its eigenspace as column matrices.
@@ -155,61 +174,69 @@ getters.
 
 ### eigenvalue
 
-<a id="placement-placement.rust.native_rust.api_results_eigenpair_eigenvalue.61771f6a3057"></a>
-`symi::api::results::Eigenpair — pub fn eigenvalue(&self) -> Expression`
-
-<a id="placement-placement.rust.native_rust.api_results_jordanblock_eigenvalue.cd77f75f5ebd"></a>
-`symi::api::results::JordanBlock — pub fn eigenvalue(&self) -> Expression`
-
-
 ### vectors
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_results_eigenpair_vectors_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_results_eigenpair_vectors.83b1d79a80eb"></a>
-`symi::api::results::Eigenpair — pub fn vectors(&self) -> Vec<Matrix>`
+<p class="symi-entry-owner">api::results::Eigenpair method</p>
+
+```rust signature
+pub fn vectors(&self) -> Vec<Matrix>
+```
 
 
 ### inverse
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_inverse_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_inverse.6323c6ef9b79"></a>
-`symi::api::Matrix — pub fn inverse(&self) -> Result<Matrix, ApiError>`
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn inverse(&self) -> Result<Matrix, ApiError>
+```
 
 
 Inverse via the adjugate; raises on singular input.
 
 ### rank
 
-<a id="placement-placement.rust.native_rust.api_matrix_rank.4026cef032d4"></a>
-`symi::api::Matrix — pub fn rank(&self) -> Result<usize, ApiError>`
-
-<a id="placement-placement.rust.native_rust.api_results_hermitenormalformdecomposition_rank.4611235cf342"></a>
-`symi::api::results::HermiteNormalFormDecomposition — pub fn rank(&self) -> usize`
-
-<a id="placement-placement.rust.native_rust.api_results_smithnormalformdecomposition_rank.d82924340d22"></a>
-`symi::api::results::SmithNormalFormDecomposition — pub fn rank(&self) -> usize`
-
-
 Rank via Bareiss fraction-free elimination.
 
 ### row_reduce
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_row_reduce_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_row_reduce.01c0b7b2b2d3"></a>
-`symi::api::Matrix — pub fn row_reduce(&self) -> Result<Matrix, ApiError>`
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn row_reduce(&self) -> Result<Matrix, ApiError>
+```
 
 
 Bareiss row-reduced form (fraction-free; pivots remain on the diagonal).
 
 ### nullspace_basis
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_operations_matrix_nullspace_basis_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_operations_matrix_nullspace_basis.4f7d082fcdc5"></a>
-`symi::api::matrix_operations::Matrix — pub fn nullspace_basis(&self) -> Result<Vec<Matrix>, ApiError>`
+<p class="symi-entry-owner">api::matrix_operations::Matrix method</p>
+
+```rust signature
+pub fn nullspace_basis(&self) -> Result<Vec<Matrix>, ApiError>
+```
 
 
 A basis of the kernel, as column matrices; empty list for full column rank.
 
 ### adjugate
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_adjugate_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_adjugate.ae05426aaf70"></a>
-`symi::api::Matrix — pub fn adjugate(&self) -> Result<Matrix, ApiError>`
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn adjugate(&self) -> Result<Matrix, ApiError>
+```
 
 
 The classical adjoint (transpose of the cofactor matrix); satisfies
@@ -217,14 +244,26 @@ The classical adjoint (transpose of the cofactor matrix); satisfies
 
 ### cofactor_matrix
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_cofactor_matrix_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_cofactor_matrix.210ffa8ee903"></a>
-`symi::api::Matrix — pub fn cofactor_matrix(&self) -> Result<Matrix, ApiError>`
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn cofactor_matrix(&self) -> Result<Matrix, ApiError>
+```
 
 
 ### lower_upper_decomposition
 
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_operations_matrix_lower_upper_decomposition_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_operations_matrix_lower_upper_decomposition.ddd6ce007949"></a>
-`symi::api::matrix_operations::Matrix — pub fn lower_upper_decomposition(&self) -> Result<(Matrix, Matrix, Matrix), ApiError>`
+<p class="symi-entry-owner">api::matrix_operations::Matrix method</p>
+
+```rust signature
+pub fn lower_upper_decomposition(
+    &self,
+) -> Result<(Matrix, Matrix, Matrix), ApiError>
+```
 
 
 Partial-pivoting LU decomposition returned as
@@ -252,4 +291,125 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+
+## Additional API
+
+### characteristic_polynomial
+
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_operations_matrix_characteristic_polynomial_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_matrix_operations_matrix_characteristic_polynomial.f339c5d48e3e"></a>
+<p class="symi-entry-owner">api::matrix_operations::Matrix method</p>
+
+```rust signature
+pub fn characteristic_polynomial<'a, VariableType>(
+    &self,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+\(\det(\lambda I - M)\) as a polynomial in the named variable.
+
+### characteristic_polynomial
+
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_results_rationalcanonicalform_characteristic_polynomial_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_rationalcanonicalform_characteristic_polynomial.9575efa91bf9"></a>
+<p class="symi-entry-owner">api::results::RationalCanonicalForm method</p>
+
+```rust signature
+pub fn characteristic_polynomial(&self) -> Expression
+```
+
+\(\det(\lambda I - M)\) as a polynomial in the named variable.
+
+### eigenvalue
+
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_results_eigenpair_eigenvalue_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_eigenpair_eigenvalue.61771f6a3057"></a>
+<p class="symi-entry-owner">api::results::Eigenpair method</p>
+
+```rust signature
+pub fn eigenvalue(&self) -> Expression
+```
+
+Public method placement for eigenvalue.
+
+### eigenvalue
+
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_results_jordanblock_eigenvalue_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_jordanblock_eigenvalue.cd77f75f5ebd"></a>
+<p class="symi-entry-owner">api::results::JordanBlock method</p>
+
+```rust signature
+pub fn eigenvalue(&self) -> Expression
+```
+
+Public method placement for eigenvalue.
+
+### minimal_polynomial
+
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_operations_matrix_minimal_polynomial_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_matrix_operations_matrix_minimal_polynomial.00c281d1fe78"></a>
+<p class="symi-entry-owner">api::matrix_operations::Matrix method</p>
+
+```rust signature
+pub fn minimal_polynomial<'a, VariableType>(
+    &self,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+The monic minimal polynomial over the rationals. The matrix must have rational entries.
+
+### minimal_polynomial
+
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_results_rationalcanonicalform_minimal_polynomial_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_rationalcanonicalform_minimal_polynomial.7e36f3c17445"></a>
+<p class="symi-entry-owner">api::results::RationalCanonicalForm method</p>
+
+```rust signature
+pub fn minimal_polynomial(&self) -> Expression
+```
+
+The monic minimal polynomial over the rationals. The matrix must have rational entries.
+
+### rank
+
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_matrix_rank_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_matrix_rank.4026cef032d4"></a>
+<p class="symi-entry-owner">api::Matrix method</p>
+
+```rust signature
+pub fn rank(&self) -> Result<usize, ApiError>
+```
+
+Rank via Bareiss fraction-free elimination.
+
+### rank
+
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_results_hermitenormalformdecomposition_rank_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_hermitenormalformdecomposition_rank.4611235cf342"></a>
+<p class="symi-entry-owner">api::results::HermiteNormalFormDecomposition method</p>
+
+```rust signature
+pub fn rank(&self) -> usize
+```
+
+Rank via Bareiss fraction-free elimination.
+
+### rank
+
+<a id="entry-presentation_rust_linear_algebra_capability_rust_native_rust_api_results_smithnormalformdecomposition_rank_unnamed"></a>
+<a id="placement-placement.rust.native_rust.api_results_smithnormalformdecomposition_rank.d82924340d22"></a>
+<p class="symi-entry-owner">api::results::SmithNormalFormDecomposition method</p>
+
+```rust signature
+pub fn rank(&self) -> usize
+```
+
+Rank via Bareiss fraction-free elimination.
 

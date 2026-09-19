@@ -1,101 +1,622 @@
 <!DOCTYPE html>
-<html id="doc" class="h-full w-full" lang="en">
+<html lang="en" data-language="wasm">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Symi Documentation</title>
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
-        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
-        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
-        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
-        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
-        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
-
-        <template id="documentation-language-selector_">
-            <div class="symi-documentation-language-selector relative">
-                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="symi-documentation-language-label"></span>
-                    <span aria-hidden="true">▾</span>
-                </button>
-                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
-            </div>
-        </template>
-
-        <template id="documentation-language-option_">
-            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
-        </template>
-
-        <template id="documentation-search_">
-            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
-                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
-                <div class="flex gap-1">
-                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
-                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
-                </div>
-                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
-                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
-            </section>
-        </template>
-
-        <template id="documentation-search-result_">
-            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
-                <a class="symi-documentation-search-result-link block">
-                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
-                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
-                </a>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-section_">
-            <li class="symi-documentation-section">
-                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                    <span class="symi-documentation-section-label"></span>
-                </button>
-                <ul class="symi-documentation-section-entries hidden"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-category_">
-            <li class="symi-documentation-category mb-3">
-                <h2 class="mb-1 text-sm font-semibold">
-                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
-                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
-                        <span class="symi-documentation-category-label"></span>
-                    </button>
-                </h2>
-                <ul class="symi-documentation-category-sections space-y-1"></ul>
-            </li>
-        </template>
-
-        <template id="documentation-navigation-entry_">
-            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
-        </template>
-
-        <template id="documentation-navigation-plain_">
-            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
-        </template>
-
-        <template id="documentation-navigation-list_">
-            <ul></ul>
-        </template>
-    </head>
-    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
-        <div id="documentation_layout" class="flex h-full">
-            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
-                <a href="/symi/" class="mb-6 flex items-center gap-3">
-                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
-                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
-                </a>
-                <div id="documentation_language_selector" class="mb-5"></div>
-                <div id="documentation_search"></div>
-                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
-            </nav>
-            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
-                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
-                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
-            </main>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Combinatorics — Symi WASM / JavaScript documentation</title>
+        <meta name="description" content="Same convention as integer number theory: integer-leaf expressions in, integer-leaf expressions out; non-integer input raises, as do arguments outside each…" />
+        <link rel="canonical" href="/symi/wasm/combinatorics/" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
+        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
+        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
+        <script>
+            document.documentElement.classList.add("symi-scripted");
+            try {
+                const stored_theme = localStorage.getItem("symi-documentation-theme");
+                if (stored_theme === "light" || stored_theme === "dark") {
+                    document.documentElement.dataset.theme = stored_theme;
+                }
+            } catch (error) {}
+        </script>
         <script type="module" src="/symi/assets/site/documentation.js"></script>
+    </head>
+    <body data-page="combinatorics" data-default-page="introduction" data-route-kind="page">
+        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
+        <header class="symi-header">
+            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <a class="symi-brand" href="/symi/wasm/introduction/">
+                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
+                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
+            </a>
+            <div class="symi-header-tools">
+                <div class="symi-search" role="search" hidden>
+                    <label class="symi-visually-hidden" for="symi-search-input">Search the WASM / JavaScript documentation</label>
+                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
+                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
+                    <div id="symi-search-panel" class="symi-search-panel" hidden>
+                        <div class="symi-search-toolbar">
+                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
+                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
+                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">WASM / JavaScript</button>
+                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
+                            </div>
+                        </div>
+                        <p class="symi-search-status" role="status" aria-live="polite"></p>
+                        <ul class="symi-search-results"></ul>
+                    </div>
+                </div>
+                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                </button>
+                <details class="symi-language-menu">
+                    <summary class="symi-language-summary" aria-label="Language: WASM / JavaScript"><span>WASM / JavaScript</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
+                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/combinatorics/" data-language="python" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/combinatorics/" data-language="wasm" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/combinatorics/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/combinatorics/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/combinatorics/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
+                </details>
+                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
+                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
+                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
+                </button>
+            </div>
+        </header>
+        <div class="symi-layout">
+            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
+                <div class="symi-sidebar-header">
+                    <span class="symi-sidebar-title">Topics</span>
+                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    </button>
+                </div>
+                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/getting-started-javascript/">Getting started: JavaScript / WASM</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/default-context/">The default context and module-level functions</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/context-safety/">Context safety</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/specialized-canonical-forms/">Specialized canonical forms</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/integral-transforms/">Integral transforms</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/differential-equations/">Differential and recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-differential-equations" data-page="differential-equations"><span class="symi-visually-hidden">Show entries in Differential and recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logical-transforms/">Logical transforms</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/combinatorics/" aria-current="page">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Hide entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" data-loaded="true"><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_bell_number_api_session_bell_number"><code>bellNumber</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_catalan_number_api_session_catalan_number"><code>catalanNumber</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_chinese_remainder_api_number_theory_session_chinese_remainder"><code>chineseRemainder</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_complex_plane_api_session_complex_plane"><code>complexPlane</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_conjunctive_normal_form_api_logic_session_conjunctive_normal_form"><code>conjunctiveNormalForm</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_conjunctive_normal_form_api_expression_operations_expression_conjunctive_normal_form"><code>conjunctiveNormalForm</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_continued_fraction_quadratic_irrational_api_number_theory_session_continued_fraction_quadratic_irrational"><code>continuedFractionQuadraticIrrational</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_continued_fraction_rational_api_number_theory_session_continued_fraction_rational"><code>continuedFractionRational</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_disjunctive_normal_form_api_logic_session_disjunctive_normal_form"><code>disjunctiveNormalForm</code> <span class="symi-nav-entry-owner">Default context</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_disjunctive_normal_form_api_expression_operations_expression_disjunctive_normal_form"><code>disjunctiveNormalForm</code> <span class="symi-nav-entry-owner">Expression method</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_euler_totient_api_number_theory_session_euler_totient"><code>eulerTotient</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_extended_euclidean_api_number_theory_session_extended_euclidean"><code>extendedEuclidean</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_falling_factorial_api_session_falling_factorial"><code>fallingFactorial</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_fibonacci_number_api_session_fibonacci_number"><code>fibonacciNumber</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_initial_terms_api_results_quadraticcontinuedfractionexpansion_initial_terms"><code>initialTerms</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_is_member_api_sets_session_is_member"><code>isMember</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_jacobi_symbol_api_session_jacobi_symbol"><code>jacobiSymbol</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_kronecker_symbol_api_session_kronecker_symbol"><code>kroneckerSymbol</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_legendre_symbol_api_session_legendre_symbol"><code>legendreSymbol</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_modular_inverse_api_number_theory_session_modular_inverse"><code>modularInverse</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_modular_power_api_number_theory_session_modular_power"><code>modularPower</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_multinomial_api_number_theory_session_multinomial"><code>multinomial</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_partition_count_api_session_partition_count"><code>partitionCount</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_periodic_terms_api_results_quadraticcontinuedfractionexpansion_periodic_terms"><code>periodicTerms</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_real_line_api_session_real_line"><code>realLine</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_rising_factorial_api_session_rising_factorial"><code>risingFactorial</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_solve_linear_diophantine_api_number_theory_session_solve_linear_diophantine"><code>solveLinearDiophantine</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_solve_linear_diophantine_system_api_number_theory_session_solve_linear_diophantine_system"><code>solveLinearDiophantineSystem</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_stirling_first_signed_api_session_stirling_first_signed"><code>stirlingFirstSigned</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/combinatorics/#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_stirling_second_api_session_stirling_second"><code>stirlingSecond</code></a></li></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/zero-equivalence/">Zero equivalence</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+            </nav>
+            <div class="symi-drawer-backdrop" hidden></div>
+            <main id="documentation_main" class="symi-main">
+                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/wasm/introduction/">WASM / JavaScript</a></li><li>Discrete mathematics</li><li><span aria-current="page">Combinatorics</span></li></ol></nav>
+                <p class="symi-notice">Signatures in the WASM / JavaScript view are TypeScript. Where the JavaScript facade wraps an operation its form is listed first; the other calling forms are the raw wasm-bindgen exports.</p>
+                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
+                <details class="symi-page-contents">
+                    <summary>On this page</summary>
+                    <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#falling_factorial" data-outline-target="falling_factorial">falling_factorial</a></li><li class="symi-outline-depth-3"><a href="#rising_factorial" data-outline-target="rising_factorial">rising_factorial</a></li><li class="symi-outline-depth-3"><a href="#stirling_first_signed" data-outline-target="stirling_first_signed">stirling_first_signed</a></li><li class="symi-outline-depth-3"><a href="#stirling_second" data-outline-target="stirling_second">stirling_second</a></li><li class="symi-outline-depth-3"><a href="#bell_number" data-outline-target="bell_number">bell_number</a></li><li class="symi-outline-depth-3"><a href="#catalan_number" data-outline-target="catalan_number">catalan_number</a></li><li class="symi-outline-depth-3"><a href="#fibonacci_number" data-outline-target="fibonacci_number">fibonacci_number</a></li><li class="symi-outline-depth-3"><a href="#partition_count" data-outline-target="partition_count">partition_count</a></li><li class="symi-outline-depth-3"><a href="#multinomial" data-outline-target="multinomial">multinomial</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#bellnumber" data-outline-target="bellnumber">bellNumber</a></li><li class="symi-outline-depth-3"><a href="#catalannumber" data-outline-target="catalannumber">catalanNumber</a></li><li class="symi-outline-depth-3"><a href="#chineseremainder" data-outline-target="chineseremainder">chineseRemainder</a></li><li class="symi-outline-depth-3"><a href="#complexplane" data-outline-target="complexplane">complexPlane</a></li><li class="symi-outline-depth-3"><a href="#conjunctivenormalform" data-outline-target="conjunctivenormalform">conjunctiveNormalForm</a></li><li class="symi-outline-depth-3"><a href="#conjunctivenormalform_2" data-outline-target="conjunctivenormalform_2">conjunctiveNormalForm</a></li><li class="symi-outline-depth-3"><a href="#continuedfractionquadraticirrational" data-outline-target="continuedfractionquadraticirrational">continuedFractionQuadraticIrrational</a></li><li class="symi-outline-depth-3"><a href="#continuedfractionrational" data-outline-target="continuedfractionrational">continuedFractionRational</a></li><li class="symi-outline-depth-3"><a href="#disjunctivenormalform" data-outline-target="disjunctivenormalform">disjunctiveNormalForm</a></li><li class="symi-outline-depth-3"><a href="#disjunctivenormalform_2" data-outline-target="disjunctivenormalform_2">disjunctiveNormalForm</a></li><li class="symi-outline-depth-3"><a href="#eulertotient" data-outline-target="eulertotient">eulerTotient</a></li><li class="symi-outline-depth-3"><a href="#extendedeuclidean" data-outline-target="extendedeuclidean">extendedEuclidean</a></li><li class="symi-outline-depth-3"><a href="#fallingfactorial" data-outline-target="fallingfactorial">fallingFactorial</a></li><li class="symi-outline-depth-3"><a href="#fibonaccinumber" data-outline-target="fibonaccinumber">fibonacciNumber</a></li><li class="symi-outline-depth-3"><a href="#initialterms" data-outline-target="initialterms">initialTerms</a></li><li class="symi-outline-depth-3"><a href="#ismember" data-outline-target="ismember">isMember</a></li><li class="symi-outline-depth-3"><a href="#jacobisymbol" data-outline-target="jacobisymbol">jacobiSymbol</a></li><li class="symi-outline-depth-3"><a href="#kroneckersymbol" data-outline-target="kroneckersymbol">kroneckerSymbol</a></li><li class="symi-outline-depth-3"><a href="#legendresymbol" data-outline-target="legendresymbol">legendreSymbol</a></li><li class="symi-outline-depth-3"><a href="#modularinverse" data-outline-target="modularinverse">modularInverse</a></li><li class="symi-outline-depth-3"><a href="#modularpower" data-outline-target="modularpower">modularPower</a></li><li class="symi-outline-depth-3"><a href="#partitioncount" data-outline-target="partitioncount">partitionCount</a></li><li class="symi-outline-depth-3"><a href="#periodicterms" data-outline-target="periodicterms">periodicTerms</a></li><li class="symi-outline-depth-3"><a href="#realline" data-outline-target="realline">realLine</a></li><li class="symi-outline-depth-3"><a href="#risingfactorial" data-outline-target="risingfactorial">risingFactorial</a></li><li class="symi-outline-depth-3"><a href="#solvelineardiophantine" data-outline-target="solvelineardiophantine">solveLinearDiophantine</a></li><li class="symi-outline-depth-3"><a href="#solvelineardiophantinesystem" data-outline-target="solvelineardiophantinesystem">solveLinearDiophantineSystem</a></li><li class="symi-outline-depth-3"><a href="#stirlingfirstsigned" data-outline-target="stirlingfirstsigned">stirlingFirstSigned</a></li><li class="symi-outline-depth-3"><a href="#stirlingsecond" data-outline-target="stirlingsecond">stirlingSecond</a></li></ul>
+                </details>
+                <article id="documentation_content" class="symi-article" tabindex="-1">
+<h1 id="page-title">Combinatorics</h1>
+<p>Same convention as integer number theory: integer-leaf expressions in,
+integer-leaf expressions out; non-integer input raises, as do arguments
+outside each function&#39;s domain (negative counts, …).</p>
+<h3 id="falling_factorial">falling_factorial<a class="symi-heading-permalink" href="#falling_factorial" aria-label="Link to this section: falling_factorial">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/combinatorics/#falling_factorial"><code>Context.falling_factorial</code></a> in Python, <a href="/symi/kotlin/combinatorics/#falling_factorial"><code>UniffiSession.fallingFactorial</code></a> in Kotlin, <a href="/symi/swift/combinatorics/#falling_factorial"><code>UniffiSession.fallingFactorial</code></a> in Swift, <a href="/symi/rust/combinatorics/#falling_factorial"><code>api::Session::falling_factorial</code></a> in Rust.</em></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">base</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">base</mi><mo>⁡</mo><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>⋯</mo><mo stretchy="false">(</mo><mi mathvariant="normal">base</mi><mo>⁡</mo><mo>−</mo><mi mathvariant="normal">length</mi><mo>⁡</mo><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{base}(\operatorname{base}-1)\cdots(\operatorname{base}-\operatorname{length}+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">base</span></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">base</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">base</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">length</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>; <code>length</code> must be a non-negative integer,
+<code>base</code> may be any integer.</p>
+<h3 id="rising_factorial">rising_factorial<a class="symi-heading-permalink" href="#rising_factorial" aria-label="Link to this section: rising_factorial">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/combinatorics/#rising_factorial"><code>Context.rising_factorial</code></a> in Python, <a href="/symi/kotlin/combinatorics/#rising_factorial"><code>UniffiSession.risingFactorial</code></a> in Kotlin, <a href="/symi/swift/combinatorics/#rising_factorial"><code>UniffiSession.risingFactorial</code></a> in Swift, <a href="/symi/rust/combinatorics/#rising_factorial"><code>api::Session::rising_factorial</code></a> in Rust.</em></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">base</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">base</mi><mo>⁡</mo><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>⋯</mo><mo stretchy="false">(</mo><mi mathvariant="normal">base</mi><mo>⁡</mo><mo>+</mo><mi mathvariant="normal">length</mi><mo>⁡</mo><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{base}(\operatorname{base}+1)\cdots(\operatorname{base}+\operatorname{length}-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">base</span></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">base</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">base</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">length</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> (the Pochhammer symbol on integers).</p>
+<h3 id="stirling_first_signed">stirling_first_signed<a class="symi-heading-permalink" href="#stirling_first_signed" aria-label="Link to this section: stirling_first_signed">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/combinatorics/#stirling_first_signed"><code>Context.stirling_first_signed</code></a> in Python, <a href="/symi/kotlin/combinatorics/#stirling_first_signed"><code>UniffiSession.stirlingFirstSigned</code></a> in Kotlin, <a href="/symi/swift/combinatorics/#stirling_first_signed"><code>UniffiSession.stirlingFirstSigned</code></a> in Swift, <a href="/symi/rust/combinatorics/#stirling_first_signed"><code>api::Session::stirling_first_signed</code></a> in Rust.</em></p>
+<p>Signed Stirling number of the first kind s(n, k).</p>
+<h3 id="stirling_second">stirling_second<a class="symi-heading-permalink" href="#stirling_second" aria-label="Link to this section: stirling_second">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/combinatorics/#stirling_second"><code>Context.stirling_second</code></a> in Python, <a href="/symi/kotlin/combinatorics/#stirling_second"><code>UniffiSession.stirlingSecond</code></a> in Kotlin, <a href="/symi/swift/combinatorics/#stirling_second"><code>UniffiSession.stirlingSecond</code></a> in Swift, <a href="/symi/rust/combinatorics/#stirling_second"><code>api::Session::stirling_second</code></a> in Rust.</em></p>
+<p>Stirling number of the second kind S(n, k).</p>
+<h3 id="bell_number">bell_number<a class="symi-heading-permalink" href="#bell_number" aria-label="Link to this section: bell_number">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/combinatorics/#bell_number"><code>Context.bell_number</code></a> in Python, <a href="/symi/kotlin/combinatorics/#bell_number"><code>UniffiSession.bellNumber</code></a> in Kotlin, <a href="/symi/swift/combinatorics/#bell_number"><code>UniffiSession.bellNumber</code></a> in Swift, <a href="/symi/rust/combinatorics/#bell_number"><code>api::Session::bell_number</code></a> in Rust.</em></p>
+<p>The n-th Bell number.</p>
+<h3 id="catalan_number">catalan_number<a class="symi-heading-permalink" href="#catalan_number" aria-label="Link to this section: catalan_number">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/combinatorics/#catalan_number"><code>Context.catalan_number</code></a> in Python, <a href="/symi/kotlin/combinatorics/#catalan_number"><code>UniffiSession.catalanNumber</code></a> in Kotlin, <a href="/symi/swift/combinatorics/#catalan_number"><code>UniffiSession.catalanNumber</code></a> in Swift, <a href="/symi/rust/combinatorics/#catalan_number"><code>api::Session::catalan_number</code></a> in Rust.</em></p>
+<p>The n-th Catalan number.</p>
+<h3 id="fibonacci_number">fibonacci_number<a class="symi-heading-permalink" href="#fibonacci_number" aria-label="Link to this section: fibonacci_number">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/combinatorics/#fibonacci_number"><code>Context.fibonacci_number</code></a> in Python, <a href="/symi/kotlin/combinatorics/#fibonacci_number"><code>UniffiSession.fibonacciNumber</code></a> in Kotlin, <a href="/symi/swift/combinatorics/#fibonacci_number"><code>UniffiSession.fibonacciNumber</code></a> in Swift, <a href="/symi/rust/combinatorics/#fibonacci_number"><code>api::Session::fibonacci_number</code></a> in Rust.</em></p>
+<p>The n-th Fibonacci number (F(0) = 0, F(1) = 1).</p>
+<h3 id="partition_count">partition_count<a class="symi-heading-permalink" href="#partition_count" aria-label="Link to this section: partition_count">#</a></h3>
+<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/combinatorics/#partition_count"><code>Context.partition_count</code></a> in Python, <a href="/symi/kotlin/combinatorics/#partition_count"><code>UniffiSession.partitionCount</code></a> in Kotlin, <a href="/symi/swift/combinatorics/#partition_count"><code>UniffiSession.partitionCount</code></a> in Swift, <a href="/symi/rust/combinatorics/#partition_count"><code>api::Session::partition_count</code></a> in Rust.</em></p>
+<p>Number of integer partitions p(n).</p>
+<h3 id="multinomial">multinomial<a class="symi-heading-permalink" href="#multinomial" aria-label="Link to this section: multinomial">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_multinomial_api_number_theory_session_multinomial"></a>
+<a id="placement-placement.wasm.wasm_module.module_multinomial.9170c8108eb5"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">multinomial</span><span class="token punctuation">(</span>parts<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_multinomial.2a15ecdfee92"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.multinomial</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">multinomial</span><span class="token punctuation">(</span>parts<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+
+<p>Multinomial coefficient <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo>∑</mo><mi mathvariant="normal">parts</mi><mo>⁡</mo><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mi mathvariant="normal">/</mi><mo>∏</mo><mo stretchy="false">(</mo><msub><mrow><mi mathvariant="normal">part</mi><mo>⁡</mo></mrow><mi>i</mi></msub><mo stretchy="false">!</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\sum \operatorname{parts})! / \prod (\operatorname{part}_i!)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">parts</span></span><span class="mclose">)!</span><span class="mord">/</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∏</span><span class="mopen">(</span><span class="mop"><span class="mop"><span class="mord mathrm">part</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2175em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mclose">!)</span></span></span></span>; parts must be non-negative
+integers.</p>
+<h2 id="example">Example<a class="symi-heading-permalink" href="#example" aria-label="Link to this section: Example">#</a></h2>
+<p>This family is not part of the recommended JavaScript facade in this release. Call it through the generated <code>symi.raw</code> layer, whose entries are listed with their wasm-bindgen signatures above, and read <a href="/symi/wasm/migration/">Migration</a> for the ownership rules that apply there.</p>
+<h2 id="additional_api">Additional API<a class="symi-heading-permalink" href="#additional_api" aria-label="Link to this section: Additional API">#</a></h2>
+<h3 id="bellnumber"><span id="bellNumber" class="symi-legacy-anchor"></span>bellNumber<a class="symi-heading-permalink" href="#bellnumber" aria-label="Link to this section: bellNumber">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_bell_number_api_session_bell_number"></a>
+<a id="placement-placement.wasm.wasm_module.module_bellnumber.e556ba988a19"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">bellNumber</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The n-th Bell number.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_bellnumber.b9d2d8d24cb1"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.bellNumber</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">bellNumber</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="catalannumber"><span id="catalanNumber" class="symi-legacy-anchor"></span>catalanNumber<a class="symi-heading-permalink" href="#catalannumber" aria-label="Link to this section: catalanNumber">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_catalan_number_api_session_catalan_number"></a>
+<a id="placement-placement.wasm.wasm_module.module_catalannumber.9e04d6cc190d"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">catalanNumber</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The n-th Catalan number.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_catalannumber.97437d3ebb0e"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.catalanNumber</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">catalanNumber</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="chineseremainder"><span id="chineseRemainder" class="symi-legacy-anchor"></span>chineseRemainder<a class="symi-heading-permalink" href="#chineseremainder" aria-label="Link to this section: chineseRemainder">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_chinese_remainder_api_number_theory_session_chinese_remainder"></a>
+<a id="placement-placement.wasm.wasm_module.module_chineseremainder.f3bf8937649c"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">chineseRemainder</span><span class="token punctuation">(</span>residues_and_moduli<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The smallest non-negative solution of the simultaneous congruences <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≡</mo><msub><mi>r</mi><mi>i</mi></msub><mspace></mspace><mspace width="0.4444em"/><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mspace width="0.3333em"/><msub><mi>m</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">x \equiv r_i \pmod{m_i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4637em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.4444em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathrm">mod</span></span></span><span class="mspace" style="margin-right:0.3333em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_chineseremainder.4aebe1e8fe59"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.chineseRemainder</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">chineseRemainder</span><span class="token punctuation">(</span>residues_and_moduli<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="complexplane"><span id="complexPlane" class="symi-legacy-anchor"></span>complexPlane<a class="symi-heading-permalink" href="#complexplane" aria-label="Link to this section: complexPlane">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_complex_plane_api_session_complex_plane"></a>
+<a id="placement-placement.wasm.wasm_module.module_complexplane.a46c1c83bcc0"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">complexPlane</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The set <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">C</mi></mrow><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord mathbb">C</span></span></span></span> — the ambient universe, and the domain a variable ranges over when it carries no realness assumption.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_complexplane.336fcef1c7a5"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.complexPlane</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> complexPlane<span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_complexplane.586e5589826d"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.complexPlane</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">complexPlane</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_complexplane.64775d0049e5"></a></p>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.complexPlane</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> complexPlane<span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="conjunctivenormalform"><span id="conjunctiveNormalForm" class="symi-legacy-anchor"></span>conjunctiveNormalForm<a class="symi-heading-permalink" href="#conjunctivenormalform" aria-label="Link to this section: conjunctiveNormalForm">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_conjunctive_normal_form_api_logic_session_conjunctive_normal_form"></a>
+<a id="placement-placement.wasm.wasm_module.module_conjunctivenormalform.18125e7d91b4"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">conjunctiveNormalForm</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The dual of <code>disjunctive_normal_form</code>: a reduced conjunctive normal form (an AND of OR-clauses over literals).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_conjunctivenormalform.fd02ee7d14f1"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.conjunctiveNormalForm</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">conjunctiveNormalForm</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="conjunctivenormalform_2">conjunctiveNormalForm<a class="symi-heading-permalink" href="#conjunctivenormalform_2" aria-label="Link to this section: conjunctiveNormalForm">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_conjunctive_normal_form_api_expression_operations_expression_conjunctive_normal_form"></a>
+<a id="placement-placement.wasm.wasm_class.expression_conjunctivenormalform.eef84cedcdfd"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">conjunctiveNormalForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The dual of <code>disjunctive_normal_form</code>: a reduced conjunctive normal form (an AND of OR-clauses over literals).</p>
+<h3 id="continuedfractionquadraticirrational"><span id="continuedFractionQuadraticIrrational" class="symi-legacy-anchor"></span>continuedFractionQuadraticIrrational<a class="symi-heading-permalink" href="#continuedfractionquadraticirrational" aria-label="Link to this section: continuedFractionQuadraticIrrational">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_continued_fraction_quadratic_irrational_api_number_theory_session_continued_fraction_quadratic_irrational"></a>
+<a id="placement-placement.wasm.wasm_module.module_continuedfractionquadraticirrational.dcf0d429e737"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">continuedFractionQuadraticIrrational</span><span class="token punctuation">(</span>value<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> QuadraticContinuedFractionExpansion</code></pre></div>
+<p>Eventually-periodic expansion of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mi>d</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{d}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1078em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal">d</span></span></span><span style="top:-2.8922em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1078em;"><span></span></span></span></span></span></span></span></span> for a non-negative integer d, returned as <code>(initial_terms, periodic_part)</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_continuedfractionquadraticirrational.4dd188c6160b"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.continuedFractionQuadraticIrrational</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">continuedFractionQuadraticIrrational</span><span class="token punctuation">(</span>value<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> QuadraticContinuedFractionExpansion</code></pre></div>
+</details>
+
+<h3 id="continuedfractionrational"><span id="continuedFractionRational" class="symi-legacy-anchor"></span>continuedFractionRational<a class="symi-heading-permalink" href="#continuedfractionrational" aria-label="Link to this section: continuedFractionRational">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_continued_fraction_rational_api_number_theory_session_continued_fraction_rational"></a>
+<a id="placement-placement.wasm.wasm_module.module_continuedfractionrational.c51caff08918"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">continuedFractionRational</span><span class="token punctuation">(</span>value<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>Terminating continued-fraction expansion <code>[a0; a1, a2, ...]</code> of an integer or rational expression leaf.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_continuedfractionrational.cf59a95f002b"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.continuedFractionRational</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">continuedFractionRational</span><span class="token punctuation">(</span>value<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="disjunctivenormalform"><span id="disjunctiveNormalForm" class="symi-legacy-anchor"></span>disjunctiveNormalForm<a class="symi-heading-permalink" href="#disjunctivenormalform" aria-label="Link to this section: disjunctiveNormalForm">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_disjunctive_normal_form_api_logic_session_disjunctive_normal_form"></a>
+<a id="placement-placement.wasm.wasm_module.module_disjunctivenormalform.5d44449a582f"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">disjunctiveNormalForm</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite a propositional formula into a reduced disjunctive normal form (an OR of AND-terms over literals): derived connectives are eliminated, negations are pushed to the atoms, the formula is distributed, and contradictory, duplicate, and subsumed terms are dropped.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_disjunctivenormalform.08f586ff9227"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.disjunctiveNormalForm</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">disjunctiveNormalForm</span><span class="token punctuation">(</span>input_expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="disjunctivenormalform_2">disjunctiveNormalForm<a class="symi-heading-permalink" href="#disjunctivenormalform_2" aria-label="Link to this section: disjunctiveNormalForm">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_disjunctive_normal_form_api_expression_operations_expression_disjunctive_normal_form"></a>
+<a id="placement-placement.wasm.wasm_class.expression_disjunctivenormalform.9a756d79b061"></a></p>
+<p class="symi-entry-owner">Expression method</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">disjunctiveNormalForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Rewrite a propositional formula into a reduced disjunctive normal form (an OR of AND-terms over literals): derived connectives are eliminated, negations are pushed to the atoms, the formula is distributed, and contradictory, duplicate, and subsumed terms are dropped.</p>
+<h3 id="eulertotient"><span id="eulerTotient" class="symi-legacy-anchor"></span>eulerTotient<a class="symi-heading-permalink" href="#eulertotient" aria-label="Link to this section: eulerTotient">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_euler_totient_api_number_theory_session_euler_totient"></a>
+<a id="placement-placement.wasm.wasm_module.module_eulertotient.4cd7de9cfaf0"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eulerTotient</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Euler&#39;s <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\varphi(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">φ</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>; requires a positive integer.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_eulertotient.0e9516a9c2bb"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.eulerTotient</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">eulerTotient</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="extendedeuclidean"><span id="extendedEuclidean" class="symi-legacy-anchor"></span>extendedEuclidean<a class="symi-heading-permalink" href="#extendedeuclidean" aria-label="Link to this section: extendedEuclidean">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_extended_euclidean_api_number_theory_session_extended_euclidean"></a>
+<a id="placement-placement.wasm.wasm_module.module_extendedeuclidean.83f8fd6d7934"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">extendedEuclidean</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Expression<span class="token punctuation">,</span> b<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p><code>(gcd, x, y)</code> with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi><mo>=</mo><mi mathvariant="normal">gcd</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">a x + b y = \operatorname{gcd}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mop"><span class="mord mathrm">gcd</span></span></span></span></span>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_extendedeuclidean.2caeb9577112"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.extendedEuclidean</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">extendedEuclidean</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Expression<span class="token punctuation">,</span> b<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="fallingfactorial"><span id="fallingFactorial" class="symi-legacy-anchor"></span>fallingFactorial<a class="symi-heading-permalink" href="#fallingfactorial" aria-label="Link to this section: fallingFactorial">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_falling_factorial_api_session_falling_factorial"></a>
+<a id="placement-placement.wasm.wasm_module.module_fallingfactorial.cf3717768829"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">fallingFactorial</span><span class="token punctuation">(</span>base<span class="token operator">:</span> Expression<span class="token punctuation">,</span> length<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">base</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">base</mi><mo>⁡</mo><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>⋯</mo><mo stretchy="false">(</mo><mi mathvariant="normal">base</mi><mo>⁡</mo><mo>−</mo><mi mathvariant="normal">length</mi><mo>⁡</mo><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{base}(\operatorname{base}-1)\cdots(\operatorname{base}-\operatorname{length}+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">base</span></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">base</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">base</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">length</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>; <code>length</code> must be a non-negative integer, <code>base</code> may be any integer.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_fallingfactorial.c7ebe77cd326"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.fallingFactorial</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">fallingFactorial</span><span class="token punctuation">(</span>base<span class="token operator">:</span> Expression<span class="token punctuation">,</span> length<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="fibonaccinumber"><span id="fibonacciNumber" class="symi-legacy-anchor"></span>fibonacciNumber<a class="symi-heading-permalink" href="#fibonaccinumber" aria-label="Link to this section: fibonacciNumber">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_fibonacci_number_api_session_fibonacci_number"></a>
+<a id="placement-placement.wasm.wasm_module.module_fibonaccinumber.b645e018b9c3"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">fibonacciNumber</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The n-th Fibonacci number (F(0) = 0, F(1) = 1).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_fibonaccinumber.bfba4fbe0c16"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.fibonacciNumber</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">fibonacciNumber</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="initialterms"><span id="initialTerms" class="symi-legacy-anchor"></span>initialTerms<a class="symi-heading-permalink" href="#initialterms" aria-label="Link to this section: initialTerms">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_initial_terms_api_results_quadraticcontinuedfractionexpansion_initial_terms"></a>
+<a id="placement-placement.wasm.wasm_class.quadraticcontinuedfractionexpansion_initialterms.c0053bbd2c9d"></a></p>
+<p class="symi-entry-owner">QuadraticContinuedFractionExpansion property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> initialTerms<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>The terms preceding the periodic part of the expansion.</p>
+<h3 id="ismember"><span id="isMember" class="symi-legacy-anchor"></span>isMember<a class="symi-heading-permalink" href="#ismember" aria-label="Link to this section: isMember">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_is_member_api_sets_session_is_member"></a>
+<a id="placement-placement.wasm.wasm_module.module_ismember.1e1e670a4cc3"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isMember</span><span class="token punctuation">(</span>element<span class="token operator">:</span> Expression<span class="token punctuation">,</span> set<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+<p>Three-valued membership: <code>True</code> only on structural proof, <code>False</code> only on a structural counterexample, <code>None</code> otherwise. Covers <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∅</mi></mrow><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6633em;vertical-align:-0.0817em;"></span><span class="mord amsrm">∅</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord mathbb">R</span></span></span></span>, finite sets, intervals, unions, intersections, complements.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_ismember.c95641df7e1f"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.isMember</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">isMember</span><span class="token punctuation">(</span>element<span class="token operator">:</span> Expression<span class="token punctuation">,</span> set<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
+</details>
+
+<h3 id="jacobisymbol"><span id="jacobiSymbol" class="symi-legacy-anchor"></span>jacobiSymbol<a class="symi-heading-permalink" href="#jacobisymbol" aria-label="Link to this section: jacobiSymbol">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_jacobi_symbol_api_session_jacobi_symbol"></a>
+<a id="placement-placement.wasm.wasm_module.module_jacobisymbol.c3f360d8c1d2"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">jacobiSymbol</span><span class="token punctuation">(</span>numerator<span class="token operator">:</span> Expression<span class="token punctuation">,</span> denominator<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+<p>The Jacobi symbol <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">/</mi><mi>d</mi><mo stretchy="false">)</mo><mo>∈</mo><mo stretchy="false">{</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">(n/d) \in \{-1, 0, 1\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord">/</span><span class="mord mathnormal">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">}</span></span></span></span>; the denominator must be a positive odd integer.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_jacobisymbol.7c5f47880345"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobiSymbol</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">jacobiSymbol</span><span class="token punctuation">(</span>numerator<span class="token operator">:</span> Expression<span class="token punctuation">,</span> denominator<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+</details>
+
+<h3 id="kroneckersymbol"><span id="kroneckerSymbol" class="symi-legacy-anchor"></span>kroneckerSymbol<a class="symi-heading-permalink" href="#kroneckersymbol" aria-label="Link to this section: kroneckerSymbol">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_kronecker_symbol_api_session_kronecker_symbol"></a>
+<a id="placement-placement.wasm.wasm_module.module_kroneckersymbol.fe2e8066bdaf"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">kroneckerSymbol</span><span class="token punctuation">(</span>numerator<span class="token operator">:</span> Expression<span class="token punctuation">,</span> denominator<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+<p>The Kronecker extension of the Jacobi symbol to all integer denominators.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_kroneckersymbol.5fb205f9197f"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.kroneckerSymbol</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">kroneckerSymbol</span><span class="token punctuation">(</span>numerator<span class="token operator">:</span> Expression<span class="token punctuation">,</span> denominator<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+</details>
+
+<h3 id="legendresymbol"><span id="legendreSymbol" class="symi-legacy-anchor"></span>legendreSymbol<a class="symi-heading-permalink" href="#legendresymbol" aria-label="Link to this section: legendreSymbol">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_legendre_symbol_api_session_legendre_symbol"></a>
+<a id="placement-placement.wasm.wasm_module.module_legendresymbol.d3d4b7dcbf1d"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">legendreSymbol</span><span class="token punctuation">(</span>numerator<span class="token operator">:</span> Expression<span class="token punctuation">,</span> prime<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+<p>The Legendre symbol; the second argument must be an odd prime.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_legendresymbol.573f83890b5c"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.legendreSymbol</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">legendreSymbol</span><span class="token punctuation">(</span>numerator<span class="token operator">:</span> Expression<span class="token punctuation">,</span> prime<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
+</details>
+
+<h3 id="modularinverse"><span id="modularInverse" class="symi-legacy-anchor"></span>modularInverse<a class="symi-heading-permalink" href="#modularinverse" aria-label="Link to this section: modularInverse">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_modular_inverse_api_number_theory_session_modular_inverse"></a>
+<a id="placement-placement.wasm.wasm_module.module_modularinverse.89b1fb456696"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">modularInverse</span><span class="token punctuation">(</span>value<span class="token operator">:</span> Expression<span class="token punctuation">,</span> modulus<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Multiplicative inverse of <code>value</code> modulo <code>modulus</code>; errors when <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">gcd</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">value</mi><mo>⁡</mo><mo separator="true">,</mo><mi mathvariant="normal">modulus</mi><mo>⁡</mo><mo stretchy="false">)</mo><mo mathvariant="normal">≠</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\operatorname{gcd}(\operatorname{value}, \operatorname{modulus}) \ne 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">gcd</span></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">value</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">modulus</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_modularinverse.58167e0fe801"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.modularInverse</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">modularInverse</span><span class="token punctuation">(</span>value<span class="token operator">:</span> Expression<span class="token punctuation">,</span> modulus<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="modularpower"><span id="modularPower" class="symi-legacy-anchor"></span>modularPower<a class="symi-heading-permalink" href="#modularpower" aria-label="Link to this section: modularPower">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_modular_power_api_number_theory_session_modular_power"></a>
+<a id="placement-placement.wasm.wasm_module.module_modularpower.c5fc06c4c577"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">modularPower</span><span class="token punctuation">(</span>
+    base<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    exponent<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    modulus<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><code>base^exponent mod modulus</code> by square-and-multiply; requires positive modulus and non-negative exponent.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_modularpower.f0c98dd7bb85"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.modularPower</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">modularPower</span><span class="token punctuation">(</span>
+    base<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    exponent<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+    modulus<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="partitioncount"><span id="partitionCount" class="symi-legacy-anchor"></span>partitionCount<a class="symi-heading-permalink" href="#partitioncount" aria-label="Link to this section: partitionCount">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_partition_count_api_session_partition_count"></a>
+<a id="placement-placement.wasm.wasm_module.module_partitioncount.626fcc1e58d6"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">partitionCount</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Number of integer partitions p(n).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_partitioncount.adf34104cda8"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.partitionCount</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">partitionCount</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="periodicterms"><span id="periodicTerms" class="symi-legacy-anchor"></span>periodicTerms<a class="symi-heading-permalink" href="#periodicterms" aria-label="Link to this section: periodicTerms">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_periodic_terms_api_results_quadraticcontinuedfractionexpansion_periodic_terms"></a>
+<a id="placement-placement.wasm.wasm_class.quadraticcontinuedfractionexpansion_periodicterms.c7ae5216de14"></a></p>
+<p class="symi-entry-owner">QuadraticContinuedFractionExpansion property</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> periodicTerms<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>The repeating terms of the expansion.</p>
+<h3 id="realline"><span id="realLine" class="symi-legacy-anchor"></span>realLine<a class="symi-heading-permalink" href="#realline" aria-label="Link to this section: realLine">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_real_line_api_session_real_line"></a>
+<a id="placement-placement.wasm.wasm_module.module_realline.d150784a3d9d"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">realLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>The set <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord mathbb">R</span></span></span></span>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.javascript_facade.context_realline.04c11e555295"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.realLine</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> realLine<span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.wasm_class.context_realline.f9ddcef2c243"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.realLine</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">realLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><a id="placement-placement.wasm.javascript_facade.symifacade_realline.84c2087be448"></a></p>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.realLine</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> realLine<span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="risingfactorial"><span id="risingFactorial" class="symi-legacy-anchor"></span>risingFactorial<a class="symi-heading-permalink" href="#risingfactorial" aria-label="Link to this section: risingFactorial">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_rising_factorial_api_session_rising_factorial"></a>
+<a id="placement-placement.wasm.wasm_module.module_risingfactorial.5558264a15ca"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">risingFactorial</span><span class="token punctuation">(</span>base<span class="token operator">:</span> Expression<span class="token punctuation">,</span> length<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">base</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">base</mi><mo>⁡</mo><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>⋯</mo><mo stretchy="false">(</mo><mi mathvariant="normal">base</mi><mo>⁡</mo><mo>+</mo><mi mathvariant="normal">length</mi><mo>⁡</mo><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{base}(\operatorname{base}+1)\cdots(\operatorname{base}+\operatorname{length}-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">base</span></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">base</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">base</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord mathrm">length</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> (the Pochhammer symbol on integers).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_risingfactorial.4d89d9f355ee"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.risingFactorial</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">risingFactorial</span><span class="token punctuation">(</span>base<span class="token operator">:</span> Expression<span class="token punctuation">,</span> length<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="solvelineardiophantine"><span id="solveLinearDiophantine" class="symi-legacy-anchor"></span>solveLinearDiophantine<a class="symi-heading-permalink" href="#solvelineardiophantine" aria-label="Link to this section: solveLinearDiophantine">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_solve_linear_diophantine_api_number_theory_session_solve_linear_diophantine"></a>
+<a id="placement-placement.wasm.wasm_module.module_solvelineardiophantine.c44d14859433"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">solveLinearDiophantine</span><span class="token punctuation">(</span>
+    coefficients<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    constant<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>General integer solution of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mo>…</mo><mo>+</mo><msub><mi>a</mi><mi>n</mi></msub><msub><mi>x</mi><mi>n</mi></msub><mo>=</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a_1 x_1 + \ldots + a_n x_n = c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span>, returned as the parametric coordinates — one expression per unknown, affine in fresh integer parameter symbols (<code>diophantine_parameter_k</code>) shared across the coordinates so that choosing any integers for the parameters yields a solution tuple. The list is empty when the equation has no integer solution (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>gcd</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>∤</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">\gcd(a_i) \nmid c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0014em;vertical-align:-0.2514em;"></span><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel amsrm">∤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span>).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_solvelineardiophantine.a71e6e2e49cd"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.solveLinearDiophantine</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">solveLinearDiophantine</span><span class="token punctuation">(</span>
+    coefficients<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    constant<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="solvelineardiophantinesystem"><span id="solveLinearDiophantineSystem" class="symi-legacy-anchor"></span>solveLinearDiophantineSystem<a class="symi-heading-permalink" href="#solvelineardiophantinesystem" aria-label="Link to this section: solveLinearDiophantineSystem">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_solve_linear_diophantine_system_api_number_theory_session_solve_linear_diophantine_system"></a>
+<a id="placement-placement.wasm.wasm_module.module_solvelineardiophantinesystem.f6937abefeef"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">solveLinearDiophantineSystem</span><span class="token punctuation">(</span>
+    coefficient_matrix<span class="token operator">:</span> Matrix<span class="token punctuation">,</span>
+    constants<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+<p>General integer solution of the rectangular system <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">A x = b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span>, returned as one parametric coordinate expression per column of <code>A</code>.</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_solvelineardiophantinesystem.8fa55d464929"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.solveLinearDiophantineSystem</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">solveLinearDiophantineSystem</span><span class="token punctuation">(</span>
+    coefficient_matrix<span class="token operator">:</span> Matrix<span class="token punctuation">,</span>
+    constants<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
+</details>
+
+<h3 id="stirlingfirstsigned"><span id="stirlingFirstSigned" class="symi-legacy-anchor"></span>stirlingFirstSigned<a class="symi-heading-permalink" href="#stirlingfirstsigned" aria-label="Link to this section: stirlingFirstSigned">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_stirling_first_signed_api_session_stirling_first_signed"></a>
+<a id="placement-placement.wasm.wasm_module.module_stirlingfirstsigned.5f73261d260b"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">stirlingFirstSigned</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">,</span> k<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Signed Stirling number of the first kind s(n, k).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_stirlingfirstsigned.08afbe99e971"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.stirlingFirstSigned</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">stirlingFirstSigned</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">,</span> k<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+<h3 id="stirlingsecond"><span id="stirlingSecond" class="symi-legacy-anchor"></span>stirlingSecond<a class="symi-heading-permalink" href="#stirlingsecond" aria-label="Link to this section: stirlingSecond">#</a></h3>
+<p><a id="entry-presentation_wasm_combinatorics_capability_discrete_mathematics_stirling_second_api_session_stirling_second"></a>
+<a id="placement-placement.wasm.wasm_module.module_stirlingsecond.854182aab42c"></a></p>
+<p class="symi-entry-owner">Default context</p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">stirlingSecond</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">,</span> k<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+<p>Stirling number of the second kind S(n, k).</p>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<p><a id="placement-placement.wasm.wasm_class.context_stirlingsecond.3c96654ef70b"></a></p>
+<p class="symi-entry-owner">Explicit context: <code>Context.stirlingSecond</code></p>
+
+<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">stirlingSecond</span><span class="token punctuation">(</span>n<span class="token operator">:</span> Expression<span class="token punctuation">,</span> k<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression</code></pre></div>
+</details>
+
+
+                </article>
+                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Discrete mathematics</h2><ul class="symi-related-list"><li><a href="/symi/wasm/sets/">Sets</a></li><li><a href="/symi/wasm/logic/">Boolean algebra and logic</a></li><li><a href="/symi/wasm/logical-transforms/">Logical transforms</a></li><li><a href="/symi/wasm/number-theory/">Integer number theory</a></li></ul></aside>
+                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/wasm/number-theory/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Integer number theory</span></a><a class="symi-pager-link symi-pager-next" href="/symi/wasm/statistics/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Statistics</span></a></nav>
+                <footer class="symi-footer"><p>Symi documentation · WASM / JavaScript</p></footer>
+            </main>
+            <aside class="symi-outline" aria-labelledby="symi-outline-title">
+                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
+                <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#falling_factorial" data-outline-target="falling_factorial">falling_factorial</a></li><li class="symi-outline-depth-3"><a href="#rising_factorial" data-outline-target="rising_factorial">rising_factorial</a></li><li class="symi-outline-depth-3"><a href="#stirling_first_signed" data-outline-target="stirling_first_signed">stirling_first_signed</a></li><li class="symi-outline-depth-3"><a href="#stirling_second" data-outline-target="stirling_second">stirling_second</a></li><li class="symi-outline-depth-3"><a href="#bell_number" data-outline-target="bell_number">bell_number</a></li><li class="symi-outline-depth-3"><a href="#catalan_number" data-outline-target="catalan_number">catalan_number</a></li><li class="symi-outline-depth-3"><a href="#fibonacci_number" data-outline-target="fibonacci_number">fibonacci_number</a></li><li class="symi-outline-depth-3"><a href="#partition_count" data-outline-target="partition_count">partition_count</a></li><li class="symi-outline-depth-3"><a href="#multinomial" data-outline-target="multinomial">multinomial</a></li><li class="symi-outline-depth-2"><a href="#example" data-outline-target="example">Example</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#bellnumber" data-outline-target="bellnumber">bellNumber</a></li><li class="symi-outline-depth-3"><a href="#catalannumber" data-outline-target="catalannumber">catalanNumber</a></li><li class="symi-outline-depth-3"><a href="#chineseremainder" data-outline-target="chineseremainder">chineseRemainder</a></li><li class="symi-outline-depth-3"><a href="#complexplane" data-outline-target="complexplane">complexPlane</a></li><li class="symi-outline-depth-3"><a href="#conjunctivenormalform" data-outline-target="conjunctivenormalform">conjunctiveNormalForm</a></li><li class="symi-outline-depth-3"><a href="#conjunctivenormalform_2" data-outline-target="conjunctivenormalform_2">conjunctiveNormalForm</a></li><li class="symi-outline-depth-3"><a href="#continuedfractionquadraticirrational" data-outline-target="continuedfractionquadraticirrational">continuedFractionQuadraticIrrational</a></li><li class="symi-outline-depth-3"><a href="#continuedfractionrational" data-outline-target="continuedfractionrational">continuedFractionRational</a></li><li class="symi-outline-depth-3"><a href="#disjunctivenormalform" data-outline-target="disjunctivenormalform">disjunctiveNormalForm</a></li><li class="symi-outline-depth-3"><a href="#disjunctivenormalform_2" data-outline-target="disjunctivenormalform_2">disjunctiveNormalForm</a></li><li class="symi-outline-depth-3"><a href="#eulertotient" data-outline-target="eulertotient">eulerTotient</a></li><li class="symi-outline-depth-3"><a href="#extendedeuclidean" data-outline-target="extendedeuclidean">extendedEuclidean</a></li><li class="symi-outline-depth-3"><a href="#fallingfactorial" data-outline-target="fallingfactorial">fallingFactorial</a></li><li class="symi-outline-depth-3"><a href="#fibonaccinumber" data-outline-target="fibonaccinumber">fibonacciNumber</a></li><li class="symi-outline-depth-3"><a href="#initialterms" data-outline-target="initialterms">initialTerms</a></li><li class="symi-outline-depth-3"><a href="#ismember" data-outline-target="ismember">isMember</a></li><li class="symi-outline-depth-3"><a href="#jacobisymbol" data-outline-target="jacobisymbol">jacobiSymbol</a></li><li class="symi-outline-depth-3"><a href="#kroneckersymbol" data-outline-target="kroneckersymbol">kroneckerSymbol</a></li><li class="symi-outline-depth-3"><a href="#legendresymbol" data-outline-target="legendresymbol">legendreSymbol</a></li><li class="symi-outline-depth-3"><a href="#modularinverse" data-outline-target="modularinverse">modularInverse</a></li><li class="symi-outline-depth-3"><a href="#modularpower" data-outline-target="modularpower">modularPower</a></li><li class="symi-outline-depth-3"><a href="#partitioncount" data-outline-target="partitioncount">partitionCount</a></li><li class="symi-outline-depth-3"><a href="#periodicterms" data-outline-target="periodicterms">periodicTerms</a></li><li class="symi-outline-depth-3"><a href="#realline" data-outline-target="realline">realLine</a></li><li class="symi-outline-depth-3"><a href="#risingfactorial" data-outline-target="risingfactorial">risingFactorial</a></li><li class="symi-outline-depth-3"><a href="#solvelineardiophantine" data-outline-target="solvelineardiophantine">solveLinearDiophantine</a></li><li class="symi-outline-depth-3"><a href="#solvelineardiophantinesystem" data-outline-target="solvelineardiophantinesystem">solveLinearDiophantineSystem</a></li><li class="symi-outline-depth-3"><a href="#stirlingfirstsigned" data-outline-target="stirlingfirstsigned">stirlingFirstSigned</a></li><li class="symi-outline-depth-3"><a href="#stirlingsecond" data-outline-target="stirlingsecond">stirlingSecond</a></li></ul>
+            </aside>
+        </div>
     </body>
 </html>

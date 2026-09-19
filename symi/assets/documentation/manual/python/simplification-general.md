@@ -8,17 +8,41 @@ presentation passes are on
 
 ### simplify
 
+<a id="entry-presentation_python_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify"></a>
 <a id="placement-placement.python.python_class.assumptionscope_simplify.623d7017e342"></a>
-`AssumptionScope.simplify(input_expression)`
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+```python signature
+simplify(input_expression: ExpressionLike) -> Expression
+```
+
+<a id="entry-presentation_python_simplification_general_capability_expression_transformations_simplify_api_session_simplify"></a>
+<a id="placement-placement.python.python_module.module_simplify.62fac3beaaac"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+simplify(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.python.python_class.context_simplify.f7e121b1c5bc"></a>
-`Context.simplify(input_expression)`
+<p class="symi-entry-owner">Explicit context: <code>Context.simplify</code></p>
 
+```python signature
+simplify(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_simplification_general_capability_expression_transformations_simplify_api_expression_simplify"></a>
 <a id="placement-placement.python.python_class.expression_simplify.38b2371c5a4e"></a>
-`Expression.simplify()`
+<p class="symi-entry-owner">Expression method</p>
 
-<a id="placement-placement.python.python_module.module_simplify.62fac3beaaac"></a>
-`symi.simplify(input_expression)`
+```python signature
+simplify() -> Expression
+```
 
 
 
@@ -72,14 +96,33 @@ guards:
 
 ### cancel
 
-<a id="placement-placement.python.python_class.context_cancel.3f7f3f6e0396"></a>
-`Context.cancel(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_cancel.2f5d9901ac77"></a>
-`Expression.cancel()`
-
+<a id="entry-presentation_python_simplification_general_capability_expression_transformations_cancel_api_session_cancel"></a>
 <a id="placement-placement.python.python_module.module_cancel.0b37541fa3f5"></a>
-`symi.cancel(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+cancel(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_cancel.3f7f3f6e0396"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.cancel</code></p>
+
+```python signature
+cancel(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_simplification_general_capability_expression_transformations_cancel_api_expression_cancel"></a>
+<a id="placement-placement.python.python_class.expression_cancel.2f5d9901ac77"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+cancel() -> Expression
+```
 
 
 
@@ -88,14 +131,33 @@ polynomial GCD of numerator and denominator.
 
 ### together
 
-<a id="placement-placement.python.python_class.context_together.1765f4684f37"></a>
-`Context.together(input_expression)`
-
-<a id="placement-placement.python.python_class.expression_together.94692be30b5a"></a>
-`Expression.together()`
-
+<a id="entry-presentation_python_simplification_general_capability_expression_transformations_together_api_session_together"></a>
 <a id="placement-placement.python.python_module.module_together.dff63b559f8f"></a>
-`symi.together(input_expression)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+together(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_together.1765f4684f37"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.together</code></p>
+
+```python signature
+together(input_expression: ExpressionLike) -> Expression
+```
+
+</details>
+
+<a id="entry-presentation_python_simplification_general_capability_expression_transformations_together_api_expression_together"></a>
+<a id="placement-placement.python.python_class.expression_together.94692be30b5a"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+together() -> Expression
+```
 
 
 

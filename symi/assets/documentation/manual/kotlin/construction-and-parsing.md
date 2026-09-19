@@ -11,8 +11,13 @@ Create a fresh context with an empty symbol table and expression store.
 
 ### reset_context
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_reset_context_api_session_reset_context"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_resetcontext.392250ac404c"></a>
-`UniffiSession.resetContext(): Unit`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun resetContext(): Unit
+```
 
 
 Replace the context's entire symbol table and expression store with fresh
@@ -27,8 +32,13 @@ weak expression store already keeps memory bounded by live objects (see
 
 ### parse
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_parse_api_session_parse"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_parse.ebc4967062dd"></a>
-`UniffiSession.parse(text: kotlin.String): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun parse(text: kotlin.String): UniffiExpression
+```
 
 
 Parse Symi textual syntax into an expression. Accepts `^` and `**` for
@@ -39,8 +49,13 @@ parameters.
 
 ### parse_latex
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_parse_latex_api_serialization_session_parse_latex"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_parselatex.ca2875824277"></a>
-`UniffiSession.parseLatex(latex: kotlin.String): UniffiMathematicalObject`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun parseLatex(latex: kotlin.String): UniffiMathematicalObject
+```
 
 
 Parse a LaTeX string in Symi's canonical input dialect — the inverse of
@@ -68,8 +83,16 @@ expansion.
 
 ### parse_latex_with_environment
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_parse_latex_with_environment_api_serialization_session_parse_latex_with_environment"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_parselatexwithenvironment.990e26b1639f"></a>
-`UniffiSession.parseLatexWithEnvironment(latex: kotlin.String, serializedDefinitions: List<kotlin.String>): UniffiMathematicalObject`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun parseLatexWithEnvironment(
+    latex: kotlin.String,
+    serializedDefinitions: List<kotlin.String>,
+): UniffiMathematicalObject
+```
 
 
 Parse LaTeX after building an ordered definition environment. Each serialized
@@ -84,8 +107,13 @@ as a module-level function.
 
 ### symbol
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_symbol_api_session_symbol"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_symbol.657cd2aba89b"></a>
-`UniffiSession.symbol(name: kotlin.String): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun symbol(name: kotlin.String): UniffiExpression
+```
 
 
 Intern a symbol and (optionally) attach assumptions used by the assumption
@@ -104,8 +132,13 @@ over.
 
 ### integer
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_integer_api_session_integer"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integer.0055610fa2fe"></a>
-`UniffiSession.integer(value: kotlin.Long): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun integer(value: kotlin.Long): UniffiExpression
+```
 
 
 Build an arbitrary-precision exact integer. Python `bool` values are rejected. JavaScript's
@@ -113,8 +146,16 @@ recommended facade accepts `bigint` and safe integral `number` values.
 
 ### rational
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_rational_api_session_rational"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_rational.fa743ab2a27f"></a>
-`UniffiSession.rational(numerator: kotlin.Long, denominator: kotlin.Long): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun rational(
+    numerator: kotlin.Long,
+    denominator: kotlin.Long,
+): UniffiExpression
+```
 
 
 
@@ -124,16 +165,29 @@ integers. A zero denominator is an argument error. Python also accepts
 
 ### integer_from_string
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integerfromstring.ed506639aab3"></a>
-`UniffiSession.integerFromString(text: kotlin.String): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun integerFromString(text: kotlin.String): UniffiExpression
+```
 
 
 Build an arbitrary-precision integer literal from its decimal string.
 
 ### rational_from_float
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_rationalfromfloat.8175ed80093c"></a>
-`UniffiSession.rationalFromFloat(value: kotlin.Double, maximumDenominator: kotlin.ULong): UniffiExpression`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun rationalFromFloat(
+    value: kotlin.Double,
+    maximumDenominator: kotlin.ULong,
+): UniffiExpression
+```
 
 
 Closest rational with denominator \(\leq\) `max_denominator` (the
@@ -141,8 +195,13 @@ Closest rational with denominator \(\leq\) `max_denominator` (the
 
 ### undefined_function
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_undefined_function_api_session_undefined_function"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_undefinedfunction.7b53ce3ac220"></a>
-`UniffiSession.undefinedFunction(name: kotlin.String): UniffiUndefinedFunction`
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun undefinedFunction(name: kotlin.String): UniffiUndefinedFunction
+```
 
 
 A callable proxy for a user-named function. Calling it with expression
@@ -151,8 +210,13 @@ the worked ODE example).
 
 ### call
 
+<a id="entry-presentation_kotlin_construction_and_parsing_capability_construction_call_api_undefinedfunction_call"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiundefinedfunction_call.aee753731bfb"></a>
-`UniffiUndefinedFunction.call(arguments: List<UniffiExpression>): UniffiExpression`
+<p class="symi-entry-owner">UniffiUndefinedFunction method</p>
+
+```kotlin signature
+fun call(arguments: List<UniffiExpression>): UniffiExpression
+```
 
 
 WASM spelling of the Python `f(x, …)` call syntax on `UndefinedFunction`.

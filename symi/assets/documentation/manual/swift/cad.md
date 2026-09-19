@@ -39,16 +39,26 @@ variables: string[], equational_constraints?: number[])`.
 
 ### cell_count
 
+<a id="entry-presentation_swift_cad_capability_algebra_cell_count_api_cylindricalalgebraicdecomposition_cell_count"></a>
 <a id="placement-placement.swift.swift_object.unifficylindricalalgebraicdecomposition_cellcount.a9de1a02311a"></a>
-`UniffiCylindricalAlgebraicDecomposition.cellCount() -> UInt64`
+<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
+
+```swift signature
+func cellCount() -> UInt64
+```
 
 
 The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
 
 ### cell_sample_point
 
+<a id="entry-presentation_swift_cad_capability_algebra_cell_sample_point_api_cylindricalalgebraicdecomposition_cell_sample_point"></a>
 <a id="placement-placement.swift.swift_object.unifficylindricalalgebraicdecomposition_cellsamplepoint.424e7d4d53a3"></a>
-`UniffiCylindricalAlgebraicDecomposition.cellSamplePoint(index: UInt64) -> [Double]`
+<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
+
+```swift signature
+func cellSamplePoint(index: UInt64) -> [Double]
+```
 
 
 The coordinates of the full cell's sample point as floats — a numeric view via
@@ -56,8 +66,13 @@ the multi-precision evaluator, not a decision.
 
 ### cell_sign_vector
 
+<a id="entry-presentation_swift_cad_capability_algebra_cell_sign_vector_api_cylindricalalgebraicdecomposition_cell_sign_vector"></a>
 <a id="placement-placement.swift.swift_object.unifficylindricalalgebraicdecomposition_cellsignvector.885efaa61bef"></a>
-`UniffiCylindricalAlgebraicDecomposition.cellSignVector(index: UInt64) -> [Int64]`
+<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
+
+```swift signature
+func cellSignVector(index: UInt64) -> [Int64]
+```
 
 
 The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in
@@ -65,8 +80,13 @@ input order.
 
 ### cell_kind
 
+<a id="entry-presentation_swift_cad_capability_algebra_cell_kind_api_cylindricalalgebraicdecomposition_cell_kind"></a>
 <a id="placement-placement.swift.swift_object.unifficylindricalalgebraicdecomposition_cellkind.1c34be926a47"></a>
-`UniffiCylindricalAlgebraicDecomposition.cellKind(index: UInt64) -> UniffiCadCellKind`
+<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
+
+```swift signature
+func cellKind(index: UInt64) -> UniffiCadCellKind
+```
 
 
 `"section"` or `"sector"` — whether the cell is a root section or an open
@@ -74,8 +94,13 @@ interval in its top variable.
 
 ### cell_dimension
 
+<a id="entry-presentation_swift_cad_capability_algebra_cell_dimension_api_cylindricalalgebraicdecomposition_cell_dimension"></a>
 <a id="placement-placement.swift.swift_object.unifficylindricalalgebraicdecomposition_celldimension.9a37261324c3"></a>
-`UniffiCylindricalAlgebraicDecomposition.cellDimension(index: UInt64) -> UInt64`
+<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
+
+```swift signature
+func cellDimension(index: UInt64) -> UInt64
+```
 
 
 The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of
@@ -83,8 +108,13 @@ sector coordinates along its cylindrical stack).
 
 ### projection_operator_used
 
+<a id="entry-presentation_swift_cad_capability_algebra_projection_operator_used_api_cylindricalalgebraicdecomposition_projection_operator_used"></a>
 <a id="placement-placement.swift.swift_object.unifficylindricalalgebraicdecomposition_projectionoperatorused.cfc90e8c3fd9"></a>
-`UniffiCylindricalAlgebraicDecomposition.projectionOperatorUsed() -> String`
+<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
+
+```swift signature
+func projectionOperatorUsed() -> String
+```
 
 
 The projection operator the decomposition was built with:

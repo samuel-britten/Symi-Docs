@@ -7,11 +7,35 @@ expressions page.
 
 ### interval
 
-<a id="placement-placement.wasm.wasm_class.context_interval.abdb397ea405"></a>
-Raw WebAssembly: `pub fn interval(&self, lower: &Expression, upper: &Expression, lower_open: Option<bool>, upper_open: Option<bool>) -> Result<Expression, JsError>`
-
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_interval_api_sets_session_interval"></a>
 <a id="placement-placement.wasm.wasm_module.module_interval.9788b55cf0be"></a>
-Raw WebAssembly: `fn interval(lower: &Expression, upper: &Expression, lower_open: Option<bool>, upper_open: Option<bool>) -> Result<Expression, JsError>`
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+interval(
+    lower: Expression,
+    upper: Expression,
+    lower_open?: boolean | null,
+    upper_open?: boolean | null,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_interval.abdb397ea405"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.interval</code></p>
+
+```typescript signature
+interval(
+    lower: Expression,
+    upper: Expression,
+    lower_open?: boolean | null,
+    upper_open?: boolean | null,
+): Expression
+```
+
+</details>
 
 
 Real-line interval. Closed by default; endpoints at infinity are forced
@@ -144,185 +168,315 @@ console.log(symi.emptySet.toString());
 
 ## Additional API
 
-<a id="placement-placement.wasm.javascript_facade.context_emptyset.4bb6a4877195"></a>
-### Context.emptySet
+### conditionSet
 
-`Context.readonly emptySet: Expression`
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_condition_set_api_sets_session_condition_set"></a>
+<a id="placement-placement.wasm.wasm_module.module_conditionset.ea293f0d117b"></a>
+<p class="symi-entry-owner">Default context</p>
 
-Returns `expression`.
+```typescript signature
+conditionSet(
+    variable: string,
+    condition: Expression,
+    domain: Expression,
+): Expression
+```
 
-<a id="placement-placement.wasm.javascript_facade.context_finiteset.e1e1955cbc02"></a>
-### Context.finiteSet
+The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{condition}\}\).
 
-`Context.finiteSet(values: Iterable<ExpressionLike>): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.context_integerset.d4dc80555db9"></a>
-### Context.integerSet
-
-`Context.readonly integerSet: Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_emptyset.9c24ad3939de"></a>
-### SymiFacade.emptySet
-
-`SymiFacade.readonly emptySet: Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_finiteset.1387548559b6"></a>
-### SymiFacade.finiteSet
-
-`SymiFacade.finiteSet(values: Iterable<ExpressionLike>): Expression`
-
-Returns `unknown`.
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_integerset.f9cb1be0989f"></a>
-### SymiFacade.integerSet
-
-`SymiFacade.readonly integerSet: Expression`
-
-Returns `expression`.
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_conditionset.ca3ed9f0ad48"></a>
-### Context.conditionSet
+<p class="symi-entry-owner">Explicit context: <code>Context.conditionSet</code></p>
 
-`pub fn condition_set(&self, variable: &str, condition: &Expression, domain: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+conditionSet(
+    variable: string,
+    condition: Expression,
+    domain: Expression,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### emptySet
+
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_empty_set_api_session_empty_set"></a>
+<a id="placement-placement.wasm.wasm_module.module_emptyset.bc3dac94e421"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+emptySet(): Expression
+```
+
+The empty set \(\varnothing\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_emptyset.4bb6a4877195"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.emptySet</code></p>
+
+```typescript signature
+readonly emptySet: Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_emptyset.a28d7059ab50"></a>
-### Context.emptySet
+<p class="symi-entry-owner">Explicit context: <code>Context.emptySet</code></p>
 
-`pub fn empty_set(&self) -> Expression`
+```typescript signature
+emptySet(): Expression
+```
 
-Returns `expression`.
+<a id="placement-placement.wasm.javascript_facade.symifacade_emptyset.9c24ad3939de"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.emptySet</code></p>
+
+```typescript signature
+readonly emptySet: Expression
+```
+
+</details>
+
+### enumerateSetInInterval
+
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_enumerate_set_in_interval_api_sets_session_enumerate_set_in_interval"></a>
+<a id="placement-placement.wasm.wasm_module.module_enumeratesetininterval.389b8414264e"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+enumerateSetInInterval(
+    set: Expression,
+    lower: Expression,
+    upper: Expression,
+    lower_inclusive?: boolean | null,
+    upper_inclusive?: boolean | null,
+    limit?: number | null,
+): SetEnumeration
+```
+
+Exact elements of a set inside \([\operatorname{lower}, \operatorname{upper}]\), in increasing order, as a `set_enumeration`. Its `outcome` is `"complete"` when those are exactly the elements in the interval, `"truncated"` when `limit` cut the list short (the family is still solved), and `"declined"` when the set's shape is not enumerable — never a licence to approximate.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_enumeratesetininterval.b6c6fc34da8d"></a>
-### Context.enumerateSetInInterval
+<p class="symi-entry-owner">Explicit context: <code>Context.enumerateSetInInterval</code></p>
 
-`pub fn enumerate_set_in_interval(&self, set: &Expression, lower: &Expression, upper: &Expression, lower_inclusive: Option<bool>, upper_inclusive: Option<bool>, limit: Option<usize>) -> Result<SetEnumeration, JsError>`
+```typescript signature
+enumerateSetInInterval(
+    set: Expression,
+    lower: Expression,
+    upper: Expression,
+    lower_inclusive?: boolean | null,
+    upper_inclusive?: boolean | null,
+    limit?: number | null,
+): SetEnumeration
+```
 
-Returns `Result<set_enumeration, JsError>`.
+</details>
+
+### finiteSet
+
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_finite_set_api_session_finite_set"></a>
+<a id="placement-placement.wasm.wasm_module.module_finiteset.149f36c22cd9"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+finiteSet(elements: Expression[]): Expression
+```
+
+Finite set; elements are deduplicated and canonically ordered. An empty list gives the empty set.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_finiteset.e1e1955cbc02"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.finiteSet</code></p>
+
+```typescript signature
+finiteSet(values: Iterable<ExpressionLike>): Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_finiteset.3a45883a0e93"></a>
-### Context.finiteSet
+<p class="symi-entry-owner">Explicit context: <code>Context.finiteSet</code></p>
 
-`pub fn finite_set(&self, elements: Vec<Expression>) -> Result<Expression, JsError>`
+```typescript signature
+finiteSet(elements: Expression[]): Expression
+```
 
-Returns `Result<expression, JsError>`.
+<a id="placement-placement.wasm.javascript_facade.symifacade_finiteset.1387548559b6"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.finiteSet</code></p>
+
+```typescript signature
+finiteSet(values: Iterable<ExpressionLike>): Expression
+```
+
+</details>
+
+### imageSet
+
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_image_set_api_sets_session_image_set"></a>
+<a id="placement-placement.wasm.wasm_module.module_imageset.d648714b36fe"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+imageSet(
+    lambda_expression: Expression,
+    variable: string,
+    domain: Expression,
+): Expression
+```
+
+The set \(\{\operatorname{lambda\_expression} : \operatorname{variable} \in \operatorname{domain}\}\); `variable` is a binder over `lambda_expression`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_imageset.5630fa218da7"></a>
-### Context.imageSet
+<p class="symi-entry-owner">Explicit context: <code>Context.imageSet</code></p>
 
-`pub fn image_set(&self, lambda_expression: &Expression, variable: &str, domain: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+imageSet(
+    lambda_expression: Expression,
+    variable: string,
+    domain: Expression,
+): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### integerSet
+
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_integer_set_api_session_integer_set"></a>
+<a id="placement-placement.wasm.wasm_module.module_integerset.5179601c652e"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+integerSet(): Expression
+```
+
+The set \(\mathbb{Z}\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_integerset.d4dc80555db9"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integerSet</code></p>
+
+```typescript signature
+readonly integerSet: Expression
+```
 
 <a id="placement-placement.wasm.wasm_class.context_integerset.85a66913c2aa"></a>
-### Context.integerSet
+<p class="symi-entry-owner">Explicit context: <code>Context.integerSet</code></p>
 
-`pub fn integer_set(&self) -> Expression`
+```typescript signature
+integerSet(): Expression
+```
 
-Returns `expression`.
+<a id="placement-placement.wasm.javascript_facade.symifacade_integerset.f9cb1be0989f"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.integerSet</code></p>
+
+```typescript signature
+readonly integerSet: Expression
+```
+
+</details>
+
+### isSubset
+
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_is_subset_api_sets_session_is_subset"></a>
+<a id="placement-placement.wasm.wasm_module.module_issubset.895b73859022"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+isSubset(set_a: Expression, set_b: Expression): boolean | undefined
+```
+
+Three-valued subset query: \(\varnothing \subseteq\) anything, structural equality, finite-set element checks, interval-in-interval endpoint tests; `None` otherwise.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_issubset.f566fef15352"></a>
-### Context.isSubset
+<p class="symi-entry-owner">Explicit context: <code>Context.isSubset</code></p>
 
-`pub fn is_subset(&self, set_a: &Expression, set_b: &Expression) -> Result<Option<bool>, JsError>`
+```typescript signature
+isSubset(set_a: Expression, set_b: Expression): boolean | undefined
+```
 
-Returns `Result<Option<bool>, JsError>`.
+</details>
+
+### setComplement
+
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_set_complement_api_sets_session_set_complement"></a>
+<a id="placement-placement.wasm.wasm_module.module_setcomplement.2a16985668e3"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+setComplement(set_a: Expression, set_b: Expression): Expression
+```
+
+The relative complement \(a \setminus b\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_setcomplement.0e0d00ff962c"></a>
-### Context.setComplement
+<p class="symi-entry-owner">Explicit context: <code>Context.setComplement</code></p>
 
-`pub fn set_complement(&self, set_a: &Expression, set_b: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+setComplement(set_a: Expression, set_b: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### setIntersection
+
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_set_intersection_api_sets_session_set_intersection"></a>
+<a id="placement-placement.wasm.wasm_module.module_setintersection.2a72a9ce82c8"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+setIntersection(set_a: Expression, set_b: Expression): Expression
+```
+
+Intersection, computed eagerly where the structural rules allow (interval pairs, finite-set membership filtering; \(\mathbb{R}\) drops, \(\varnothing\) absorbs); otherwise the structural `set_intersection` node.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_setintersection.007766d08e05"></a>
-### Context.setIntersection
+<p class="symi-entry-owner">Explicit context: <code>Context.setIntersection</code></p>
 
-`pub fn set_intersection(&self, set_a: &Expression, set_b: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+setIntersection(set_a: Expression, set_b: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
+</details>
+
+### setUnion
+
+<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_set_union_api_sets_session_set_union"></a>
+<a id="placement-placement.wasm.wasm_module.module_setunion.5d97c0bd64f6"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```typescript signature
+setUnion(set_a: Expression, set_b: Expression): Expression
+```
+
+Union, computed eagerly where the structural rules allow (overlapping or touching interval pairs merge; nested unions splice, \(\varnothing\) drops, \(\mathbb{R}\) absorbs); otherwise the structural `set_union` node.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_setunion.107649293a43"></a>
-### Context.setUnion
+<p class="symi-entry-owner">Explicit context: <code>Context.setUnion</code></p>
 
-`pub fn set_union(&self, set_a: &Expression, set_b: &Expression) -> Result<Expression, JsError>`
+```typescript signature
+setUnion(set_a: Expression, set_b: Expression): Expression
+```
 
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_conditionset.ea293f0d117b"></a>
-### module.conditionSet
-
-`fn condition_set(variable: &str, condition: &Expression, domain: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_emptyset.bc3dac94e421"></a>
-### module.emptySet
-
-`fn empty_set() -> Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.wasm_module.module_enumeratesetininterval.389b8414264e"></a>
-### module.enumerateSetInInterval
-
-`fn enumerate_set_in_interval(set: &Expression, lower: &Expression, upper: &Expression, lower_inclusive: Option<bool>, upper_inclusive: Option<bool>, limit: Option<usize>) -> Result<SetEnumeration, JsError>`
-
-Returns `Result<set_enumeration, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_finiteset.149f36c22cd9"></a>
-### module.finiteSet
-
-`fn finite_set(elements: Vec<Expression>) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_imageset.d648714b36fe"></a>
-### module.imageSet
-
-`fn image_set(lambda_expression: &Expression, variable: &str, domain: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_integerset.5179601c652e"></a>
-### module.integerSet
-
-`fn integer_set() -> Expression`
-
-Returns `expression`.
-
-<a id="placement-placement.wasm.wasm_module.module_issubset.895b73859022"></a>
-### module.isSubset
-
-`fn is_subset(set_a: &Expression, set_b: &Expression) -> Result<Option<bool>, JsError>`
-
-Returns `Result<Option<bool>, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_setcomplement.2a16985668e3"></a>
-### module.setComplement
-
-`fn set_complement(set_a: &Expression, set_b: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_setintersection.2a72a9ce82c8"></a>
-### module.setIntersection
-
-`fn set_intersection(set_a: &Expression, set_b: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
-
-<a id="placement-placement.wasm.wasm_module.module_setunion.5d97c0bd64f6"></a>
-### module.setUnion
-
-`fn set_union(set_a: &Expression, set_b: &Expression) -> Result<Expression, JsError>`
-
-Returns `Result<expression, JsError>`.
+</details>
 

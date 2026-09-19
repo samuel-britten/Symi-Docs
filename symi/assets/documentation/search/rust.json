@@ -6566,10 +6566,10 @@
         "area",
         "geometry"
       ],
-      "search_text": "api::Circle2d::area area api::Circle2d pub fn area(&self) -> Result<Expression, ApiError>  Result<Expression, ApiError>  Shoelace area (also on `Circle2d`). area geometry",
+      "search_text": "api::Circle2d::area area api::Circle2d pub fn area(&self) -> Result<Expression, ApiError>  Result<Expression, ApiError>  For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\). area geometry",
       "short_name": "area",
       "signature": "pub fn area(&self) -> Result<Expression, ApiError>",
-      "summary": "Shoelace area (also on `Circle2d`).",
+      "summary": "For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\).",
       "surface": "native_rust"
     },
     {
@@ -15356,10 +15356,10 @@
         "area",
         "geometry"
       ],
-      "search_text": "api::Polygon2d::area area api::Polygon2d pub fn area(&self) -> Result<Expression, ApiError>  Result<Expression, ApiError>  Shoelace area (also on `Circle2d`). area geometry",
+      "search_text": "api::Polygon2d::area area api::Polygon2d pub fn area(&self) -> Result<Expression, ApiError>  Result<Expression, ApiError>  For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\). area geometry",
       "short_name": "area",
       "signature": "pub fn area(&self) -> Result<Expression, ApiError>",
-      "summary": "Shoelace area (also on `Circle2d`).",
+      "summary": "For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\).",
       "surface": "native_rust"
     },
     {
@@ -27697,10 +27697,10 @@
         "area",
         "geometry"
       ],
-      "search_text": "api::Triangle2d::area area api::Triangle2d pub fn area(&self) -> Result<Expression, ApiError>  Result<Expression, ApiError>  Shoelace area (also on `Circle2d`). area geometry",
+      "search_text": "api::Triangle2d::area area api::Triangle2d pub fn area(&self) -> Result<Expression, ApiError>  Result<Expression, ApiError>  For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\). area geometry",
       "short_name": "area",
       "signature": "pub fn area(&self) -> Result<Expression, ApiError>",
-      "summary": "Shoelace area (also on `Circle2d`).",
+      "summary": "For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\).",
       "surface": "native_rust"
     },
     {
@@ -129923,10 +129923,10 @@
         "area",
         "geometry"
       ],
-      "search_text": "geometry::Circle2d::area area geometry::Circle2d pub fn area(&self, context: &Context) -> ExpressionReference context &Context  ExpressionReference  Shoelace area (also on `Circle2d`). area geometry",
+      "search_text": "geometry::Circle2d::area area geometry::Circle2d pub fn area(&self, context: &Context) -> ExpressionReference context &Context  ExpressionReference  For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\). area geometry",
       "short_name": "area",
       "signature": "pub fn area(&self, context: &Context) -> ExpressionReference",
-      "summary": "Shoelace area (also on `Circle2d`).",
+      "summary": "For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\).",
       "surface": "native_rust"
     },
     {
@@ -130394,10 +130394,10 @@
         "area",
         "geometry"
       ],
-      "search_text": "geometry::Polygon2d::area area geometry::Polygon2d pub fn area(&self, context: &Context) -> ExpressionReference context &Context  ExpressionReference  Shoelace area (also on `Circle2d`). area geometry",
+      "search_text": "geometry::Polygon2d::area area geometry::Polygon2d pub fn area(&self, context: &Context) -> ExpressionReference context &Context  ExpressionReference  For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\). area geometry",
       "short_name": "area",
       "signature": "pub fn area(&self, context: &Context) -> ExpressionReference",
-      "summary": "Shoelace area (also on `Circle2d`).",
+      "summary": "For a `Polygon2d` or `Triangle2d`, this is the unsigned shoelace area of the ordered boundary. It is separate from `Circle2d.area()`, which returns \\(\\pi r^2\\).",
       "surface": "native_rust"
     },
     {
@@ -227309,5 +227309,5 @@
     }
   ],
   "language": "rust",
-  "schema_version": 4
+  "schema_version": 5
 }

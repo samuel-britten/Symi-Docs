@@ -39,16 +39,29 @@ variables: string[], equational_constraints?: number[])`.
 
 ### cell_count
 
+<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_count_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_count.fc916286f288"></a>
-`symi::api::CylindricalAlgebraicDecomposition — pub fn cell_count(&self) -> Result<usize, ApiError>`
+<p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
+
+```rust signature
+pub fn cell_count(&self) -> Result<usize, ApiError>
+```
 
 
 The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
 
 ### cell_sample_point
 
+<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_sample_point_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_sample_point.1e6a248ad82d"></a>
-`symi::api::CylindricalAlgebraicDecomposition — pub fn cell_sample_point(&self, index: usize) -> Result<Vec<f64>, ApiError>`
+<p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
+
+```rust signature
+pub fn cell_sample_point(
+    &self,
+    index: usize,
+) -> Result<Vec<f64>, ApiError>
+```
 
 
 The coordinates of the full cell's sample point as floats — a numeric view via
@@ -56,8 +69,16 @@ the multi-precision evaluator, not a decision.
 
 ### cell_sign_vector
 
+<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_sign_vector_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_sign_vector.aa269a747174"></a>
-`symi::api::CylindricalAlgebraicDecomposition — pub fn cell_sign_vector(&self, index: usize) -> Result<Vec<i32>, ApiError>`
+<p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
+
+```rust signature
+pub fn cell_sign_vector(
+    &self,
+    index: usize,
+) -> Result<Vec<i32>, ApiError>
+```
 
 
 The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in
@@ -65,8 +86,13 @@ input order.
 
 ### cell_kind
 
+<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_kind_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_kind.e3cde7428203"></a>
-`symi::api::CylindricalAlgebraicDecomposition — pub fn cell_kind(&self, index: usize) -> Result<CadCellKind, ApiError>`
+<p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
+
+```rust signature
+pub fn cell_kind(&self, index: usize) -> Result<CadCellKind, ApiError>
+```
 
 
 `"section"` or `"sector"` — whether the cell is a root section or an open
@@ -74,8 +100,13 @@ interval in its top variable.
 
 ### cell_dimension
 
+<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_dimension_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_dimension.e800a2b5e7b0"></a>
-`symi::api::CylindricalAlgebraicDecomposition — pub fn cell_dimension(&self, index: usize) -> Result<usize, ApiError>`
+<p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
+
+```rust signature
+pub fn cell_dimension(&self, index: usize) -> Result<usize, ApiError>
+```
 
 
 The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of
@@ -83,8 +114,13 @@ sector coordinates along its cylindrical stack).
 
 ### projection_operator_used
 
+<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_projection_operator_used_unnamed"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_projection_operator_used.641e4df2cc8f"></a>
-`symi::api::CylindricalAlgebraicDecomposition — pub fn projection_operator_used(&self) -> Result<&str, ApiError>`
+<p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
+
+```rust signature
+pub fn projection_operator_used(&self) -> Result<&str, ApiError>
+```
 
 
 The projection operator the decomposition was built with:

@@ -6,11 +6,35 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
-<a id="placement-placement.python.python_class.context_integral.9e5fb95348ec"></a>
-`Context.integral(integrand, variable, lower = None, upper = None)`
-
+<a id="entry-presentation_python_deferred_forms_capability_construction_integral_api_analysis_session_integral"></a>
 <a id="placement-placement.python.python_module.module_integral.4a92f50512c2"></a>
-`symi.integral(integrand, variable, lower = None, upper = None)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+integral(
+    integrand: ExpressionLike,
+    variable: Any,
+    lower: Optional[ExpressionLike] = None,
+    upper: Optional[ExpressionLike] = None,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_integral.9e5fb95348ec"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integral</code></p>
+
+```python signature
+integral(
+    integrand: ExpressionLike,
+    variable: Any,
+    lower: Optional[ExpressionLike] = None,
+    upper: Optional[ExpressionLike] = None,
+) -> Expression
+```
+
+</details>
 
 
 Build an *unevaluated* integral node (indefinite when bounds are omitted).
@@ -25,11 +49,35 @@ be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 ### summation
 
-<a id="placement-placement.python.python_class.context_summation.7f35de11ba7a"></a>
-`Context.summation(summand, index, lower, upper)`
-
+<a id="entry-presentation_python_deferred_forms_capability_construction_summation_api_analysis_session_summation"></a>
 <a id="placement-placement.python.python_module.module_summation.d765c39f40a8"></a>
-`symi.summation(summand, index, lower, upper)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+summation(
+    summand: ExpressionLike,
+    index: VariableLike,
+    lower: ExpressionLike,
+    upper: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_summation.7f35de11ba7a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.summation</code></p>
+
+```python signature
+summation(
+    summand: ExpressionLike,
+    index: VariableLike,
+    lower: ExpressionLike,
+    upper: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 Build a summation node \(\sum\). `execute` evaluates it when a closed form or
@@ -122,11 +170,35 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
-<a id="placement-placement.python.python_class.context_product.116ff8b1c0bd"></a>
-`Context.product(multiplicand, index, lower, upper)`
-
+<a id="entry-presentation_python_deferred_forms_capability_construction_product_api_analysis_session_product"></a>
 <a id="placement-placement.python.python_module.module_product.c378ecc8918b"></a>
-`symi.product(multiplicand, index, lower, upper)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+product(
+    multiplicand: ExpressionLike,
+    index: VariableLike,
+    lower: ExpressionLike,
+    upper: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_product.116ff8b1c0bd"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.product</code></p>
+
+```python signature
+product(
+    multiplicand: ExpressionLike,
+    index: VariableLike,
+    lower: ExpressionLike,
+    upper: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 Definite indexed product \(\prod_{\mathit{index}=\mathit{lower}}^{\mathit{upper}} \mathit{multiplicand}\), a first-class
@@ -185,11 +257,31 @@ placeholder rather than a guess.
 
 ### product_indefinite
 
-<a id="placement-placement.python.python_class.context_product_indefinite.55b696a1a6cf"></a>
-`Context.product_indefinite(multiplicand, index)`
-
+<a id="entry-presentation_python_deferred_forms_capability_construction_product_indefinite_api_analysis_session_product_indefinite"></a>
 <a id="placement-placement.python.python_module.module_product_indefinite.36ca96c3eab2"></a>
-`symi.product_indefinite(multiplicand, index)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+product_indefinite(
+    multiplicand: ExpressionLike,
+    index: VariableLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_product_indefinite.55b696a1a6cf"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.product_indefinite</code></p>
+
+```python signature
+product_indefinite(
+    multiplicand: ExpressionLike,
+    index: VariableLike,
+) -> Expression
+```
+
+</details>
 
 
 Indefinite (anti-quotient) product: the `P(k)` satisfying
@@ -205,11 +297,31 @@ form is in scope.
 
 ### piecewise
 
-<a id="placement-placement.python.python_class.context_piecewise.b462ccfbb1b0"></a>
-`Context.piecewise(branches, otherwise = None)`
-
+<a id="entry-presentation_python_deferred_forms_capability_construction_piecewise_api_solving_session_piecewise"></a>
 <a id="placement-placement.python.python_module.module_piecewise.719dafd5ae7f"></a>
-`symi.piecewise(branches, otherwise = None)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+piecewise(
+    branches: Iterable[tuple[ExpressionLike, ExpressionLike]],
+    otherwise: Optional[ExpressionLike] = None,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_piecewise.b462ccfbb1b0"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.piecewise</code></p>
+
+```python signature
+piecewise(
+    branches: Iterable[tuple[ExpressionLike, ExpressionLike]],
+    otherwise: Optional[ExpressionLike] = None,
+) -> Expression
+```
+
+</details>
 
 
 Build a piecewise expression from `(value, condition)` pairs with first-match

@@ -8,14 +8,33 @@ machine integers.)
 
 ### is_prime
 
-<a id="placement-placement.python.python_class.context_is_prime.2e068135d74b"></a>
-`Context.is_prime(n)`
-
-<a id="placement-placement.python.python_class.expression_is_prime.67e50f5358ce"></a>
-`Expression.is_prime()`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_is_prime_api_session_is_prime"></a>
 <a id="placement-placement.python.python_module.module_is_prime.267824491e40"></a>
-`symi.is_prime(n)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+is_prime(n: ExpressionLike) -> Optional[bool]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_is_prime.2e068135d74b"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.is_prime</code></p>
+
+```python signature
+is_prime(n: ExpressionLike) -> Optional[bool]
+```
+
+</details>
+
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_is_prime_api_expression_is_prime"></a>
+<a id="placement-placement.python.python_class.expression_is_prime.67e50f5358ce"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_prime() -> Optional[bool]
+```
 
 
 Deterministic primality verdict; `None` when the input is outside the
@@ -24,11 +43,25 @@ handles).
 
 ### factor_integer
 
-<a id="placement-placement.python.python_class.context_factor_integer.085954d7463a"></a>
-`Context.factor_integer(n)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_factor_integer_api_session_factor_integer"></a>
 <a id="placement-placement.python.python_module.module_factor_integer.cb82c971d037"></a>
-`symi.factor_integer(n)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+factor_integer(n: ExpressionLike) -> list[tuple[Expression, int]]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_factor_integer.085954d7463a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.factor_integer</code></p>
+
+```python signature
+factor_integer(n: ExpressionLike) -> list[tuple[Expression, int]]
+```
+
+</details>
 
 
 Prime factorization as `(prime, multiplicity)` pairs, ascending. Errors on
@@ -50,33 +83,81 @@ as a leading `(-1, 1)` factor exactly as the core reports it.
 
 ### integer_gcd
 
-<a id="placement-placement.python.python_class.context_integer_gcd.f3d856dce62b"></a>
-`Context.integer_gcd(a, b)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_integer_gcd_api_session_integer_gcd"></a>
 <a id="placement-placement.python.python_module.module_integer_gcd.231de115dd56"></a>
-`symi.integer_gcd(a, b)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+integer_gcd(a: ExpressionLike, b: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_integer_gcd.f3d856dce62b"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integer_gcd</code></p>
+
+```python signature
+integer_gcd(a: ExpressionLike, b: ExpressionLike) -> Expression
+```
+
+</details>
 
 
 Greatest common divisor (non-negative).
 
 ### integer_lcm
 
-<a id="placement-placement.python.python_class.context_integer_lcm.c26747e79a2c"></a>
-`Context.integer_lcm(a, b)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_integer_lcm_api_session_integer_lcm"></a>
 <a id="placement-placement.python.python_module.module_integer_lcm.4761d486032c"></a>
-`symi.integer_lcm(a, b)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+integer_lcm(a: ExpressionLike, b: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_integer_lcm.c26747e79a2c"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integer_lcm</code></p>
+
+```python signature
+integer_lcm(a: ExpressionLike, b: ExpressionLike) -> Expression
+```
+
+</details>
 
 
 Least common multiple.
 
 ### extended_euclidean
 
-<a id="placement-placement.python.python_class.context_extended_euclidean.1f012fd73085"></a>
-`Context.extended_euclidean(a, b)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_extended_euclidean_api_number_theory_session_extended_euclidean"></a>
 <a id="placement-placement.python.python_module.module_extended_euclidean.3ff42fc31d43"></a>
-`symi.extended_euclidean(a, b)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+extended_euclidean(
+    a: ExpressionLike,
+    b: ExpressionLike,
+) -> tuple[Expression, Expression, Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_extended_euclidean.1f012fd73085"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.extended_euclidean</code></p>
+
+```python signature
+extended_euclidean(
+    a: ExpressionLike,
+    b: ExpressionLike,
+) -> tuple[Expression, Expression, Expression]
+```
+
+</details>
 
 
 `(gcd, x, y)` with \(a x + b y = \operatorname{gcd}\). **Notes:** WASM returns a 3-element
@@ -84,11 +165,33 @@ array `[gcd, x, y]`.
 
 ### modular_power
 
-<a id="placement-placement.python.python_class.context_modular_power.12c8754b0333"></a>
-`Context.modular_power(base, exponent, modulus)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_modular_power_api_number_theory_session_modular_power"></a>
 <a id="placement-placement.python.python_module.module_modular_power.1505cbbc3865"></a>
-`symi.modular_power(base, exponent, modulus)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+modular_power(
+    base: ExpressionLike,
+    exponent: ExpressionLike,
+    modulus: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_modular_power.12c8754b0333"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.modular_power</code></p>
+
+```python signature
+modular_power(
+    base: ExpressionLike,
+    exponent: ExpressionLike,
+    modulus: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 `base^exponent mod modulus` by square-and-multiply; requires positive
@@ -96,11 +199,31 @@ modulus and non-negative exponent.
 
 ### modular_inverse
 
-<a id="placement-placement.python.python_class.context_modular_inverse.eb9b0277dc09"></a>
-`Context.modular_inverse(value, modulus)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_modular_inverse_api_number_theory_session_modular_inverse"></a>
 <a id="placement-placement.python.python_module.module_modular_inverse.2972f88b7411"></a>
-`symi.modular_inverse(value, modulus)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+modular_inverse(
+    value: ExpressionLike,
+    modulus: ExpressionLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_modular_inverse.eb9b0277dc09"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.modular_inverse</code></p>
+
+```python signature
+modular_inverse(
+    value: ExpressionLike,
+    modulus: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 Multiplicative inverse of `value` modulo `modulus`; errors when
@@ -108,11 +231,25 @@ Multiplicative inverse of `value` modulo `modulus`; errors when
 
 ### chinese_remainder
 
-<a id="placement-placement.python.python_class.context_chinese_remainder.7ec8d6a4e123"></a>
-`Context.chinese_remainder(residues_and_moduli)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_chinese_remainder_api_number_theory_session_chinese_remainder"></a>
 <a id="placement-placement.python.python_module.module_chinese_remainder.c5672ded2bce"></a>
-`symi.chinese_remainder(residues_and_moduli)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+chinese_remainder(residues_and_moduli: Iterable[tuple[ExpressionLike, ExpressionLike]]) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_chinese_remainder.7ec8d6a4e123"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.chinese_remainder</code></p>
+
+```python signature
+chinese_remainder(residues_and_moduli: Iterable[tuple[ExpressionLike, ExpressionLike]]) -> Expression
+```
+
+</details>
 
 
 The smallest non-negative solution of the simultaneous congruences
@@ -122,44 +259,100 @@ raise. **Notes:** WASM passes a flat interleaved array
 
 ### euler_totient
 
-<a id="placement-placement.python.python_class.context_euler_totient.392cc7c29a3f"></a>
-`Context.euler_totient(n)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_euler_totient_api_number_theory_session_euler_totient"></a>
 <a id="placement-placement.python.python_module.module_euler_totient.3a7b17b90a02"></a>
-`symi.euler_totient(n)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+euler_totient(n: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_euler_totient.392cc7c29a3f"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.euler_totient</code></p>
+
+```python signature
+euler_totient(n: ExpressionLike) -> Expression
+```
+
+</details>
 
 
 Euler's \(\varphi(n)\); requires a positive integer.
 
 ### mobius
 
-<a id="placement-placement.python.python_class.context_mobius.11e20bdee77b"></a>
-`Context.mobius(n)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_mobius_api_session_mobius"></a>
 <a id="placement-placement.python.python_module.module_mobius.daacb524f5df"></a>
-`symi.mobius(n)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+mobius(n: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_mobius.11e20bdee77b"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.mobius</code></p>
+
+```python signature
+mobius(n: ExpressionLike) -> Expression
+```
+
+</details>
 
 
 Möbius \(\mu(n) \in \{-1, 0, 1\}\); requires a positive integer.
 
 ### divisor_count
 
-<a id="placement-placement.python.python_class.context_divisor_count.0c22d3ae80f2"></a>
-`Context.divisor_count(n)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_divisor_count_api_session_divisor_count"></a>
 <a id="placement-placement.python.python_module.module_divisor_count.2864c9c4aff9"></a>
-`symi.divisor_count(n)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+divisor_count(n: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_divisor_count.0c22d3ae80f2"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.divisor_count</code></p>
+
+```python signature
+divisor_count(n: ExpressionLike) -> Expression
+```
+
+</details>
 
 
 Number of positive divisors \(\tau(n)\).
 
 ### divisor_sigma
 
-<a id="placement-placement.python.python_class.context_divisor_sigma.b6600fa851fa"></a>
-`Context.divisor_sigma(n, power)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_divisor_sigma_api_session_divisor_sigma"></a>
 <a id="placement-placement.python.python_module.module_divisor_sigma.3d6e1bf67cc5"></a>
-`symi.divisor_sigma(n, power)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+divisor_sigma(n: ExpressionLike, power: int) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_divisor_sigma.b6600fa851fa"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.divisor_sigma</code></p>
+
+```python signature
+divisor_sigma(n: ExpressionLike, power: int) -> Expression
+```
+
+</details>
 
 
 Sum of the `power`-th powers of the positive divisors \(\sigma_{\mathit{power}}(n)\);
@@ -167,11 +360,31 @@ Sum of the `power`-th powers of the positive divisors \(\sigma_{\mathit{power}}(
 
 ### jacobi_symbol
 
-<a id="placement-placement.python.python_class.context_jacobi_symbol.e5766f96841a"></a>
-`Context.jacobi_symbol(numerator, denominator)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_jacobi_symbol_api_session_jacobi_symbol"></a>
 <a id="placement-placement.python.python_module.module_jacobi_symbol.6dbcccc83c42"></a>
-`symi.jacobi_symbol(numerator, denominator)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobi_symbol(
+    numerator: ExpressionLike,
+    denominator: ExpressionLike,
+) -> int
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_jacobi_symbol.e5766f96841a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobi_symbol</code></p>
+
+```python signature
+jacobi_symbol(
+    numerator: ExpressionLike,
+    denominator: ExpressionLike,
+) -> int
+```
+
+</details>
 
 
 The Jacobi symbol \((n/d) \in \{-1, 0, 1\}\); the denominator must be a positive odd
@@ -179,44 +392,106 @@ integer.
 
 ### legendre_symbol
 
-<a id="placement-placement.python.python_class.context_legendre_symbol.b57e83aa7af5"></a>
-`Context.legendre_symbol(numerator, prime)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_legendre_symbol_api_session_legendre_symbol"></a>
 <a id="placement-placement.python.python_module.module_legendre_symbol.2b0685ef4d51"></a>
-`symi.legendre_symbol(numerator, prime)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+legendre_symbol(numerator: ExpressionLike, prime: ExpressionLike) -> int
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_legendre_symbol.b57e83aa7af5"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.legendre_symbol</code></p>
+
+```python signature
+legendre_symbol(numerator: ExpressionLike, prime: ExpressionLike) -> int
+```
+
+</details>
 
 
 The Legendre symbol; the second argument must be an odd prime.
 
 ### kronecker_symbol
 
-<a id="placement-placement.python.python_class.context_kronecker_symbol.002f7796fee6"></a>
-`Context.kronecker_symbol(numerator, denominator)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_kronecker_symbol_api_session_kronecker_symbol"></a>
 <a id="placement-placement.python.python_module.module_kronecker_symbol.2a7455ff34c3"></a>
-`symi.kronecker_symbol(numerator, denominator)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+kronecker_symbol(
+    numerator: ExpressionLike,
+    denominator: ExpressionLike,
+) -> int
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_kronecker_symbol.002f7796fee6"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.kronecker_symbol</code></p>
+
+```python signature
+kronecker_symbol(
+    numerator: ExpressionLike,
+    denominator: ExpressionLike,
+) -> int
+```
+
+</details>
 
 
 The Kronecker extension of the Jacobi symbol to all integer denominators.
 
 ### integer_square_root
 
-<a id="placement-placement.python.python_class.context_integer_square_root.24e8406f4423"></a>
-`Context.integer_square_root(n)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_integer_square_root_api_session_integer_square_root"></a>
 <a id="placement-placement.python.python_module.module_integer_square_root.dd9d0f1b24e5"></a>
-`symi.integer_square_root(n)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+integer_square_root(n: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_integer_square_root.24e8406f4423"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integer_square_root</code></p>
+
+```python signature
+integer_square_root(n: ExpressionLike) -> Expression
+```
+
+</details>
 
 
 \(\lfloor\sqrt{n}\rfloor\) for non-negative n.
 
 ### integer_nth_root
 
-<a id="placement-placement.python.python_class.context_integer_nth_root.40c2ad06325a"></a>
-`Context.integer_nth_root(n, root_index)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_integer_nth_root_api_session_integer_nth_root"></a>
 <a id="placement-placement.python.python_module.module_integer_nth_root.98fb5209c8f6"></a>
-`symi.integer_nth_root(n, root_index)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+integer_nth_root(n: ExpressionLike, root_index: int) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_integer_nth_root.40c2ad06325a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integer_nth_root</code></p>
+
+```python signature
+integer_nth_root(n: ExpressionLike, root_index: int) -> Expression
+```
+
+</details>
 
 
 \(\lfloor n^{1/\mathit{root\_index}}\rfloor\); odd indices accept negative n. Errors when no real root
@@ -224,11 +499,25 @@ exists (even index, negative n).
 
 ### continued_fraction_rational
 
-<a id="placement-placement.python.python_class.context_continued_fraction_rational.99942e7d43f5"></a>
-`Context.continued_fraction_rational(value)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_continued_fraction_rational_api_number_theory_session_continued_fraction_rational"></a>
 <a id="placement-placement.python.python_module.module_continued_fraction_rational.b0f12992fa4e"></a>
-`symi.continued_fraction_rational(value)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+continued_fraction_rational(value: ExpressionLike) -> list[Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_continued_fraction_rational.99942e7d43f5"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.continued_fraction_rational</code></p>
+
+```python signature
+continued_fraction_rational(value: ExpressionLike) -> list[Expression]
+```
+
+</details>
 
 
 Terminating continued-fraction expansion `[a0; a1, a2, ...]` of an integer
@@ -236,11 +525,25 @@ or rational expression leaf.
 
 ### continued_fraction_quadratic_irrational
 
-<a id="placement-placement.python.python_class.context_continued_fraction_quadratic_irrational.d8d8e3b800fc"></a>
-`Context.continued_fraction_quadratic_irrational(value)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_continued_fraction_quadratic_irrational_api_number_theory_session_continued_fraction_quadratic_irrational"></a>
 <a id="placement-placement.python.python_module.module_continued_fraction_quadratic_irrational.2c040008a65d"></a>
-`symi.continued_fraction_quadratic_irrational(value)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+continued_fraction_quadratic_irrational(value: ExpressionLike) -> tuple[list[Expression], list[Expression]]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_continued_fraction_quadratic_irrational.d8d8e3b800fc"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.continued_fraction_quadratic_irrational</code></p>
+
+```python signature
+continued_fraction_quadratic_irrational(value: ExpressionLike) -> tuple[list[Expression], list[Expression]]
+```
+
+</details>
 
 
 Eventually-periodic expansion of \(\sqrt{d}\) for a non-negative integer d, returned
@@ -271,11 +574,31 @@ exact integers and never guess.
 
 ### solve_linear_diophantine
 
-<a id="placement-placement.python.python_class.context_solve_linear_diophantine.dd63ac50f29d"></a>
-`Context.solve_linear_diophantine(coefficients, constant)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_solve_linear_diophantine_api_number_theory_session_solve_linear_diophantine"></a>
 <a id="placement-placement.python.python_module.module_solve_linear_diophantine.e608e787a9af"></a>
-`symi.solve_linear_diophantine(coefficients, constant)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_linear_diophantine(
+    coefficients: Iterable[ExpressionLike],
+    constant: ExpressionLike,
+) -> list[Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_linear_diophantine.dd63ac50f29d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_linear_diophantine</code></p>
+
+```python signature
+solve_linear_diophantine(
+    coefficients: Iterable[ExpressionLike],
+    constant: ExpressionLike,
+) -> list[Expression]
+```
+
+</details>
 
 
 General integer solution of \(a_1 x_1 + \ldots + a_n x_n = c\), returned as the parametric
@@ -287,11 +610,31 @@ coefficients and the constant must be integer expression leaves.
 
 ### solve_linear_diophantine_system
 
-<a id="placement-placement.python.python_class.context_solve_linear_diophantine_system.d9bf4fb883c1"></a>
-`Context.solve_linear_diophantine_system(coefficient_matrix, constants)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_solve_linear_diophantine_system_api_number_theory_session_solve_linear_diophantine_system"></a>
 <a id="placement-placement.python.python_module.module_solve_linear_diophantine_system.c23ef0041f98"></a>
-`symi.solve_linear_diophantine_system(coefficient_matrix, constants)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_linear_diophantine_system(
+    coefficient_matrix: Matrix,
+    constants: Iterable[ExpressionLike],
+) -> list[Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_linear_diophantine_system.d9bf4fb883c1"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_linear_diophantine_system</code></p>
+
+```python signature
+solve_linear_diophantine_system(
+    coefficient_matrix: Matrix,
+    constants: Iterable[ExpressionLike],
+) -> list[Expression]
+```
+
+</details>
 
 
 General integer solution of the rectangular system \(A x = b\), returned as one
@@ -302,11 +645,25 @@ not an integer expression leaf, or the dimensions do not agree.
 
 ### solve_pell
 
-<a id="placement-placement.python.python_class.context_solve_pell.aed0c23393b3"></a>
-`Context.solve_pell(radicand)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_solve_pell_api_number_theory_session_solve_pell"></a>
 <a id="placement-placement.python.python_module.module_solve_pell.1ed2c97e92c4"></a>
-`symi.solve_pell(radicand)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_pell(radicand: ExpressionLike) -> list[Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_pell.aed0c23393b3"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_pell</code></p>
+
+```python signature
+solve_pell(radicand: ExpressionLike) -> list[Expression]
+```
+
+</details>
 
 
 Fundamental solution `[x, y]` of \(x^2 - D y^2 = 1\) for a positive non-square
@@ -317,11 +674,25 @@ solution).
 
 ### solve_negative_pell
 
-<a id="placement-placement.python.python_class.context_solve_negative_pell.c5c6d7b87834"></a>
-`Context.solve_negative_pell(radicand)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_solve_negative_pell_api_number_theory_session_solve_negative_pell"></a>
 <a id="placement-placement.python.python_module.module_solve_negative_pell.8a2a60487fe4"></a>
-`symi.solve_negative_pell(radicand)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+solve_negative_pell(radicand: ExpressionLike) -> list[Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_solve_negative_pell.c5c6d7b87834"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.solve_negative_pell</code></p>
+
+```python signature
+solve_negative_pell(radicand: ExpressionLike) -> list[Expression]
+```
+
+</details>
 
 
 Fundamental solution `[x, y]` of the negative-Pell equation \(x^2 - D y^2 = -1\)
@@ -330,11 +701,25 @@ and an empty list otherwise.
 
 ### pell_solutions
 
-<a id="placement-placement.python.python_class.context_pell_solutions.0fb4da361212"></a>
-`Context.pell_solutions(radicand, count)`
-
+<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_pell_solutions_api_number_theory_session_pell_solutions"></a>
 <a id="placement-placement.python.python_module.module_pell_solutions.2e80efa05d03"></a>
-`symi.pell_solutions(radicand, count)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+pell_solutions(radicand: ExpressionLike, count: int) -> list[Expression]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_pell_solutions.0fb4da361212"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.pell_solutions</code></p>
+
+```python signature
+pell_solutions(radicand: ExpressionLike, count: int) -> list[Expression]
+```
+
+</details>
 
 
 The first `count` positive solutions of \(x^2 - D y^2 = 1\), materialised from the

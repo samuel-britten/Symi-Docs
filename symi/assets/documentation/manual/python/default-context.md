@@ -52,8 +52,13 @@ Rules of the model:
 
 ### default_context
 
+<a id="entry-presentation_python_default_context_capability_contexts_default_context_api_defaults_session_default_context"></a>
 <a id="placement-placement.python.python_module.module_default_context.4c78b13e3560"></a>
-`symi.default_context()`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+default_context() -> Context
+```
 
 
 Return a handle to the thread's default context — the same context every
@@ -63,11 +68,25 @@ API. Each call returns a new handle to the same underlying context.
 
 ### clear_assumptions
 
-<a id="placement-placement.python.python_class.context_clear_assumptions.771138d405c3"></a>
-`Context.clear_assumptions(variable)`
-
+<a id="entry-presentation_python_default_context_capability_contexts_clear_assumptions_api_session_clear_assumptions"></a>
 <a id="placement-placement.python.python_module.module_clear_assumptions.398dca35137b"></a>
-`symi.clear_assumptions(variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+clear_assumptions(variable: VariableLike) -> None
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_clear_assumptions.771138d405c3"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.clear_assumptions</code></p>
+
+```python signature
+clear_assumptions(variable: VariableLike) -> None
+```
+
+</details>
 
 
 Reset one symbol's assumptions to the default (complex domain, every property
@@ -78,11 +97,25 @@ a re-declaration you actually intend.
 
 ### assumptions_of
 
-<a id="placement-placement.python.python_class.context_assumptions_of.e7cbe7b56f50"></a>
-`Context.assumptions_of(variable)`
-
+<a id="entry-presentation_python_default_context_capability_contexts_assumptions_of_api_session_assumptions_of"></a>
 <a id="placement-placement.python.python_module.module_assumptions_of.424be849193d"></a>
-`symi.assumptions_of(variable)`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+assumptions_of(variable: Any) -> list[str]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_assumptions_of.e7cbe7b56f50"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.assumptions_of</code></p>
+
+```python signature
+assumptions_of(variable: Any) -> list[str]
+```
+
+</details>
 
 
 Return the symbol's current assumptions as a native Python mapping or
@@ -93,11 +126,25 @@ is one of `complex`, `real`, `rational`, `integer`, `natural`, or
 
 ### interner_length
 
-<a id="placement-placement.python.python_class.context_interner_length.39934db2a23f"></a>
-`Context.interner_length()`
-
+<a id="entry-presentation_python_default_context_capability_contexts_interner_length_api_session_interner_length"></a>
 <a id="placement-placement.python.python_module.module_interner_length.6d201fc0bf07"></a>
-`symi.interner_length()`
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+interner_length() -> int
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_interner_length.39934db2a23f"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.interner_length</code></p>
+
+```python signature
+interner_length() -> int
+```
+
+</details>
 
 
 Number of live expressions currently interned in the context. Dead entries
