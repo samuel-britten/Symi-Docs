@@ -8,14 +8,77 @@ nodes can also be built directly through `parse`.
 
 ### laplace_transform
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`AssumptionScope.laplace_transform`](/symi/python/integral-transforms#laplace_transform) in Python, [`UniffiAssumptionScope.laplaceTransform`](/symi/kotlin/integral-transforms#laplace_transform) in Kotlin, [`UniffiAssumptionScope.laplaceTransform`](/symi/swift/integral-transforms#laplace_transform) in Swift, [`api::AssumptionScope::laplace_transform`](/symi/rust/integral-transforms#laplace_transform) in Rust.*
+<a id="entry-presentation_wasm_api_session_laplace_transform"></a>
+<a id="placement-placement.wasm.wasm_module.module_laplacetransform.e8b317b65c63"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+laplaceTransform(
+    input_expression: Expression,
+    time_variable: string,
+    frequency_variable: string,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_laplacetransform.eaa99d3405c1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.laplaceTransform</code></p>
+
+```typescript signature
+laplaceTransform(
+    input_expression: Expression,
+    time_variable: string,
+    frequency_variable: string,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_laplacetransform.ec1051a0196b"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.laplaceTransform</code></p>
+
+```typescript signature
+laplaceTransform(
+    input_expression: Expression,
+    time_variable: string,
+    frequency_variable: string,
+): Expression
+```
+
+</details>
 
 
 Forward Laplace transform \(F(s) = \int_0^\infty f(t)e^{-st}\,dt\).
 
 ### inverse_laplace_transform
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.inverse_laplace_transform`](/symi/python/integral-transforms#inverse_laplace_transform) in Python, [`UniffiSession.inverseLaplaceTransform`](/symi/kotlin/integral-transforms#inverse_laplace_transform) in Kotlin, [`UniffiSession.inverseLaplaceTransform`](/symi/swift/integral-transforms#inverse_laplace_transform) in Swift, [`api::Expression::inverse_laplace_transform`](/symi/rust/integral-transforms#inverse_laplace_transform) in Rust.*
+<a id="entry-presentation_wasm_api_session_inverse_laplace_transform"></a>
+<a id="placement-placement.wasm.wasm_module.module_inverselaplacetransform.b9494a36f07b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+inverseLaplaceTransform(
+    input_expression: Expression,
+    frequency_variable: string,
+    time_variable: string,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_inverselaplacetransform.12be5bd7a8d7"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.inverseLaplaceTransform</code></p>
+
+```typescript signature
+inverseLaplaceTransform(
+    input_expression: Expression,
+    frequency_variable: string,
+    time_variable: string,
+): Expression
+```
+
+</details>
 
 
 Inverse Laplace transform; rational inputs route through a partial-fraction
@@ -23,7 +86,44 @@ reverse lookup.
 
 ### fourier_transform
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`AssumptionScope.fourier_transform`](/symi/python/integral-transforms#fourier_transform) in Python, [`UniffiAssumptionScope.fourierTransform`](/symi/kotlin/integral-transforms#fourier_transform) in Kotlin, [`UniffiAssumptionScope.fourierTransform`](/symi/swift/integral-transforms#fourier_transform) in Swift, [`api::AssumptionScope::fourier_transform`](/symi/rust/integral-transforms#fourier_transform) in Rust.*
+<a id="entry-presentation_wasm_api_session_fourier_transform"></a>
+<a id="placement-placement.wasm.wasm_module.module_fouriertransform.7a1b272e817d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+fourierTransform(
+    input_expression: Expression,
+    time_variable: string,
+    frequency_variable: string,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_fouriertransform.6e6cbfb61d2f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.fourierTransform</code></p>
+
+```typescript signature
+fourierTransform(
+    input_expression: Expression,
+    time_variable: string,
+    frequency_variable: string,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_fouriertransform.5a22c0081730"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.fourierTransform</code></p>
+
+```typescript signature
+fourierTransform(
+    input_expression: Expression,
+    time_variable: string,
+    frequency_variable: string,
+): Expression
+```
+
+</details>
 
 
 Forward Fourier transform in the angular-frequency convention
@@ -31,7 +131,33 @@ Forward Fourier transform in the angular-frequency convention
 
 ### inverse_fourier_transform
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.inverse_fourier_transform`](/symi/python/integral-transforms#inverse_fourier_transform) in Python, [`UniffiSession.inverseFourierTransform`](/symi/kotlin/integral-transforms#inverse_fourier_transform) in Kotlin, [`UniffiSession.inverseFourierTransform`](/symi/swift/integral-transforms#inverse_fourier_transform) in Swift, [`api::Expression::inverse_fourier_transform`](/symi/rust/integral-transforms#inverse_fourier_transform) in Rust.*
+<a id="entry-presentation_wasm_api_session_inverse_fourier_transform"></a>
+<a id="placement-placement.wasm.wasm_module.module_inversefouriertransform.c756e25c95bb"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+inverseFourierTransform(
+    input_expression: Expression,
+    frequency_variable: string,
+    time_variable: string,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_inversefouriertransform.1256b676d4cd"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.inverseFourierTransform</code></p>
+
+```typescript signature
+inverseFourierTransform(
+    input_expression: Expression,
+    frequency_variable: string,
+    time_variable: string,
+): Expression
+```
+
+</details>
 
 
 Inverse Fourier transform of the same convention.

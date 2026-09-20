@@ -6,7 +6,7 @@ component/variable count mismatches raise.
 
 ### gradient
 
-<a id="entry-presentation_rust_vector_calculus_capability_rust_native_rust_api_analysis_session_gradient_unnamed"></a>
+<a id="entry-presentation_rust_api_session_gradient"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_gradient.2b492e8d72c8"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -26,7 +26,7 @@ where
 
 ### divergence
 
-<a id="entry-presentation_rust_vector_calculus_capability_rust_native_rust_api_analysis_session_divergence_unnamed"></a>
+<a id="entry-presentation_rust_api_session_divergence"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_divergence.d07e56c40a20"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -46,7 +46,7 @@ where
 
 ### curl
 
-<a id="entry-presentation_rust_vector_calculus_capability_rust_native_rust_api_analysis_session_curl_unnamed"></a>
+<a id="entry-presentation_rust_api_session_curl"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_curl.335005623aae"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -67,7 +67,7 @@ dimensions raise.
 
 ### laplacian
 
-<a id="entry-presentation_rust_vector_calculus_capability_rust_native_rust_api_analysis_session_laplacian_unnamed"></a>
+<a id="entry-presentation_rust_api_session_laplacian"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_laplacian.1a2ffe01f956"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -87,13 +87,29 @@ where
 
 ### jacobian
 
+<a id="entry-presentation_rust_api_session_jacobian"></a>
+<a id="placement-placement.rust.native_rust.api_analysis_session_jacobian.140daad0c881"></a>
+<p class="symi-entry-owner">api::analysis::Session method</p>
+
+```rust signature
+pub fn jacobian<'a, IteratorType, VariableType>(
+    &self,
+    vector_components: &[Expression],
+    variables: IteratorType,
+) -> Result<Matrix, ApiError>
+where
+    IteratorType: IntoIterator<Item = VariableType>,
+    VariableType: Into<VariableLike<'a>>,
+```
+
+
 The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index
 variables). Returned as a `Matrix` so the result composes with the matrix
 methods.
 
 ### hessian
 
-<a id="entry-presentation_rust_vector_calculus_capability_rust_native_rust_api_analysis_session_hessian_unnamed"></a>
+<a id="entry-presentation_rust_api_session_hessian"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_hessian.b5fe28e30b6f"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -134,50 +150,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
-
-
-## Additional API
-
-### jacobian
-
-<a id="entry-presentation_rust_vector_calculus_capability_rust_native_rust_api_analysis_session_jacobian_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_analysis_session_jacobian.140daad0c881"></a>
-<p class="symi-entry-owner">api::analysis::Session method</p>
-
-```rust signature
-pub fn jacobian<'a, IteratorType, VariableType>(
-    &self,
-    vector_components: &[Expression],
-    variables: IteratorType,
-) -> Result<Matrix, ApiError>
-where
-    IteratorType: IntoIterator<Item = VariableType>,
-    VariableType: Into<VariableLike<'a>>,
-```
-
-The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index variables).
-
-### jacobian
-
-<a id="entry-presentation_rust_vector_calculus_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationcoordinatechange_jacobian_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationcoordinatechange_jacobian.dfba822c539c"></a>
-<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationCoordinateChange method</p>
-
-```rust signature
-pub fn jacobian(&self) -> Result<Expression, ApiError>
-```
-
-The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index variables).
-
-### jacobian
-
-<a id="entry-presentation_rust_vector_calculus_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_jacobian_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_jacobian.571f823f8494"></a>
-<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationTransformationVerificationReport method</p>
-
-```rust signature
-pub fn jacobian(&self) -> Expression
-```
-
-The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index variables).
 

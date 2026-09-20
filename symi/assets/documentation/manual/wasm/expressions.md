@@ -11,7 +11,13 @@ specified in [Conversions and collections](conversion-rules.md) and
 
 ### is_stale
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Circle2d.is_stale`](/symi/python/expressions#is_stale) in Python, [`UniffiCircle2d.isStale`](/symi/kotlin/expressions#is_stale) in Kotlin, [`UniffiCircle2d.isStale`](/symi/swift/expressions#is_stale) in Swift, [`api::AssumptionProposition::is_stale`](/symi/rust/expressions#is_stale) in Rust.*
+<a id="entry-presentation_wasm_api_expression_is_stale"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isstale.71f8cf8528d5"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+isStale(): boolean
+```
 
 
 
@@ -27,13 +33,76 @@ route through the auto-simplifying builders.
 
 ### add
 
+<a id="entry-presentation_wasm_api_session_add"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_add.d9aaa9c8c688"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+add(other: ExpressionLike): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_add.96a43fe08167"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.add</code></p>
+
+```typescript signature
+add(other: Expression): Expression
+```
+
+</details>
+
+
 ### subtract
+
+<a id="entry-presentation_wasm_api_session_subtract"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_subtract.01fa19892c94"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+subtract(other: ExpressionLike): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_subtract.792ca56d060e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.subtract</code></p>
+
+```typescript signature
+subtract(other: Expression): Expression
+```
+
+</details>
+
 
 ### multiply
 
+<a id="entry-presentation_wasm_api_session_multiply"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_multiply.6129ea2e7a04"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+multiply(other: ExpressionLike): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_multiply.f2a3f2cee0c1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.multiply</code></p>
+
+```typescript signature
+multiply(other: Expression): Expression
+```
+
+</details>
+
+
 ### divide
 
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_divide_api_expression_divide"></a>
+<a id="entry-presentation_wasm_api_session_divide"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_divide.0b155bc736f4"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -45,7 +114,7 @@ divide(other: ExpressionLike): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_divide.5255284e4cf1"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.divide</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.divide</code></p>
 
 ```typescript signature
 divide(other: Expression): Expression
@@ -56,7 +125,7 @@ divide(other: Expression): Expression
 
 ### power
 
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_power_api_expression_power"></a>
+<a id="entry-presentation_wasm_api_session_power"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_power.87eb729715d1"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -68,7 +137,7 @@ power(exponent: ExpressionLike): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_power.61c34f700b84"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.power</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.power</code></p>
 
 ```typescript signature
 power(exponent: Expression): Expression
@@ -79,7 +148,7 @@ power(exponent: Expression): Expression
 
 ### negate
 
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_negate_api_expression_negate"></a>
+<a id="entry-presentation_wasm_api_expression_negate"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_negate.1e2d3469633f"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -91,7 +160,7 @@ negate(): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_negate.2e41e0b07df3"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.negate</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.negate</code></p>
 
 ```typescript signature
 negate(): Expression
@@ -104,9 +173,9 @@ negate(): Expression
 
 ### substitute
 
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_substitute_api_expression_substitute"></a>
+<a id="entry-presentation_wasm_api_session_substitute"></a>
 <a id="placement-placement.wasm.wasm_class.expression_substitute.617d58709370"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
 
 ```typescript signature
 substitute(variable: string, value: Expression): Expression
@@ -118,7 +187,43 @@ auto-simplification.
 
 ### rewrite_in_terms_of
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.rewrite_in_terms_of`](/symi/python/expressions#rewrite_in_terms_of) in Python, [`UniffiExpression.rewriteInTermsOf`](/symi/kotlin/expressions#rewrite_in_terms_of) in Kotlin, [`UniffiExpression.rewriteInTermsOf`](/symi/swift/expressions#rewrite_in_terms_of) in Swift, [`api::algebra::Session::rewrite_in_terms_of`](/symi/rust/expressions#rewrite_in_terms_of) in Rust.*
+<a id="entry-presentation_wasm_api_session_rewrite_in_terms_of"></a>
+<a id="placement-placement.wasm.wasm_module.module_rewriteintermsof.6b03bacbc907"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+rewriteInTermsOf(
+    target: Expression,
+    source: Expression,
+    replacement: Expression,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_rewriteintermsof.0eada73db806"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.rewriteInTermsOf</code></p>
+
+```typescript signature
+rewriteInTermsOf(
+    target: Expression,
+    source: Expression,
+    replacement: Expression,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_rewriteintermsof.d205de912a41"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.rewriteInTermsOf</code></p>
+
+```typescript signature
+rewriteInTermsOf(
+    source: Expression,
+    replacement: Expression,
+): Expression
+```
+
+</details>
 
 
 Rewrite the target in terms of `replacement` under the caller-supplied formal
@@ -154,7 +259,13 @@ Top-level node kind: one of `integer`, `rational`, `symbol`, `constant`,
 
 ### node_count
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Expression.node_count`](/symi/python/expressions#node_count) in Python, [`UniffiExpression.nodeCount`](/symi/kotlin/expressions#node_count) in Kotlin, [`UniffiExpression.nodeCount`](/symi/swift/expressions#node_count) in Swift, [`api::Expression::node_count`](/symi/rust/expressions#node_count) in Rust.*
+<a id="entry-presentation_wasm_api_expression_node_count"></a>
+<a id="placement-placement.wasm.wasm_class.expression_nodecount.81983e8a3143"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+nodeCount(): number
+```
 
 
 Number of nodes in the expression tree — the size measure used by the
@@ -162,7 +273,7 @@ simplifier; useful for comparing alternative forms.
 
 ### duplicate
 
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_duplicate_api_expression_duplicate"></a>
+<a id="entry-presentation_wasm_api_expression_duplicate"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_duplicate.d4be0ef54df8"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -174,7 +285,7 @@ duplicate(): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.expression_duplicate.97b5cc29d8db"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.duplicate</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.duplicate</code></p>
 
 ```typescript signature
 duplicate(): Expression
@@ -193,7 +304,13 @@ handle they intend to retain. Python arguments are borrowed.
 
 ### evaluate_to_float
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Expression.evaluate_to_float`](/symi/python/expressions#evaluate_to_float) in Python, [`UniffiExpression.evaluateToFloat`](/symi/kotlin/expressions#evaluate_to_float) in Kotlin, [`UniffiExpression.evaluateToFloat`](/symi/swift/expressions#evaluate_to_float) in Swift, [`api::analysis::Session::evaluate_to_float`](/symi/rust/expressions#evaluate_to_float) in Rust.*
+<a id="entry-presentation_wasm_api_session_evaluate_to_float"></a>
+<a id="placement-placement.wasm.wasm_class.expression_evaluatetofloat.397b7c48c0f3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+evaluateToFloat(): number
+```
 
 
 Real double-precision value; raises when the expression has no real numeric
@@ -201,7 +318,13 @@ value (free symbols, complex value, pole).
 
 ### evaluate_to_complex_inexact
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Expression.evaluate_to_complex_inexact`](/symi/python/expressions#evaluate_to_complex_inexact) in Python, [`UniffiExpression.evaluateToComplexInexact`](/symi/kotlin/expressions#evaluate_to_complex_inexact) in Kotlin, [`UniffiExpression.evaluateToComplexInexact`](/symi/swift/expressions#evaluate_to_complex_inexact) in Swift, [`api::analysis::Session::evaluate_to_complex_inexact`](/symi/rust/expressions#evaluate_to_complex_inexact) in Rust.*
+<a id="entry-presentation_wasm_api_session_evaluate_to_complex_inexact"></a>
+<a id="placement-placement.wasm.wasm_class.expression_evaluatetocomplexinexact.315e742a4077"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+evaluateToComplexInexact(): Float64Array
+```
 
 
 Complex evaluation at the default working precision under the documented
@@ -211,7 +334,13 @@ bit-identical.
 
 ### evaluate_to_complex_inexact_at_precision
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Expression.evaluate_to_complex_inexact_at_precision`](/symi/python/expressions#evaluate_to_complex_inexact_at_precision) in Python, [`UniffiExpression.evaluateToComplexInexactAtPrecision`](/symi/kotlin/expressions#evaluate_to_complex_inexact_at_precision) in Kotlin, [`UniffiExpression.evaluateToComplexInexactAtPrecision`](/symi/swift/expressions#evaluate_to_complex_inexact_at_precision) in Swift, [`api::analysis::Session::evaluate_to_complex_inexact_at_precision`](/symi/rust/expressions#evaluate_to_complex_inexact_at_precision) in Rust.*
+<a id="entry-presentation_wasm_api_session_evaluate_to_complex_inexact_at_precision"></a>
+<a id="placement-placement.wasm.wasm_class.expression_evaluatetocomplexinexactatprecision.84d0eabab4f4"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+evaluateToComplexInexactAtPrecision(precision_bits: number): Float64Array
+```
 
 
 Same with an explicit working precision in bits.
@@ -242,9 +371,9 @@ identity `W_k(z)*exp(W_k(z)) = z` are preserved by the branch-aware result.
 
 ### equals
 
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_equals_api_expression_operations_expression_equals"></a>
+<a id="entry-presentation_wasm_api_expression_equals"></a>
 <a id="placement-placement.wasm.wasm_class.expression_equals.48b56c74b7ad"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
 
 ```typescript signature
 equals(other: Expression): boolean
@@ -336,7 +465,25 @@ only on proof from the structure and the symbol assumptions.
 
 ### is_nonnegative
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Expression.is_nonnegative`](/symi/python/expressions#is_nonnegative) in Python, [`UniffiExpression.isNonnegative`](/symi/kotlin/expressions#is_nonnegative) in Kotlin, [`UniffiExpression.isNonnegative`](/symi/swift/expressions#is_nonnegative) in Swift, [`api::Expression::is_nonnegative`](/symi/rust/expressions#is_nonnegative) in Rust.*
+<a id="entry-presentation_wasm_api_session_is_nonnegative"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isnonnegative.a0bbd36976fc"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isNonnegative(): boolean | null
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isnonnegative.05a865e90f81"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isNonnegative</code></p>
+
+```typescript signature
+isNonnegative(): boolean | undefined
+```
+
+</details>
 
 
 Answers `True` only on proof that the expression is greater than or equal to
@@ -435,9 +582,6 @@ Element count of a finite set (Python: `len(expression)`).
 
 ### to_string
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`api::partial_differential_equations::PartialDifferentialEquationProblem::to_string`](/symi/rust/expressions#to_string) in Rust.*
-
-
 Human-readable form; Python uses `str(expression)` / `repr(expression)`.
 ### symbol_name
 
@@ -448,7 +592,53 @@ Returns the name of a symbol expression and rejects every other expression kind.
 
 ### numerator_denominator
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.numerator_denominator`](/symi/python/expressions#numerator_denominator) in Python, [`UniffiExpression.numeratorDenominator`](/symi/kotlin/expressions#numerator_denominator) in Kotlin, [`UniffiExpression.numeratorDenominator`](/symi/swift/expressions#numerator_denominator) in Swift, [`api::Expression::numerator_denominator`](/symi/rust/expressions#numerator_denominator) in Rust.*
+<a id="entry-presentation_wasm_api_session_numerator_denominator"></a>
+<a id="placement-placement.wasm.wasm_module.module_numeratordenominator.ed37930aa207"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+numeratorDenominator(input_expression: Expression): Expression[]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_numeratordenominator.4d682728a341"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.numeratorDenominator</code></p>
+
+```typescript signature
+numeratorDenominator(value: ExpressionLike): NumeratorDenominator
+```
+
+<a id="placement-placement.wasm.wasm_class.context_numeratordenominator.1958e57cd14a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.numeratorDenominator</code></p>
+
+```typescript signature
+numeratorDenominator(input_expression: Expression): Expression[]
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_numeratordenominator.52fe19194901"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.numeratorDenominator</code></p>
+
+```typescript signature
+numeratorDenominator(value: ExpressionLike): NumeratorDenominator
+```
+
+<a id="placement-placement.wasm.javascript_facade.expression_numeratordenominator.a6fbcb7d0d59"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.numeratorDenominator</code></p>
+
+```typescript signature
+numeratorDenominator(): NumeratorDenominator
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_numeratordenominator.016a31025e26"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.numeratorDenominator</code></p>
+
+```typescript signature
+numeratorDenominator(): Expression[]
+```
+
+</details>
 
 
 Returns the exact structural numerator and denominator without combining sums or cancelling
@@ -456,9 +646,9 @@ factors. Python returns a two-tuple and the JavaScript facade returns a record.
 
 ### numerator
 
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_numerator_api_session_numerator"></a>
+<a id="entry-presentation_wasm_api_session_numerator"></a>
 <a id="placement-placement.wasm.wasm_module.module_numerator.86af5abc3af7"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 numerator(input_expression: Expression): Expression
@@ -468,50 +658,36 @@ numerator(input_expression: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_numerator.9937af07591e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.numerator</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.numerator</code></p>
 
 ```typescript signature
 numerator(input_expression: Expression): Expression
 ```
 
-</details>
-
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_numerator_api_expression_numerator"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_numerator.3d9f01a0881d"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-numerator(): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.expression_numerator.093c06d610d6"></a>
 <p class="symi-entry-owner">Expression method: <code>Expression.numerator</code></p>
 
 ```typescript signature
 numerator(): Expression
 ```
 
-</details>
-
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_numerator_api_results_numeratordenominator_numerator"></a>
-<a id="placement-placement.wasm.javascript_facade.numeratordenominator_numerator.875fb10bce86"></a>
-<p class="symi-entry-owner">NumeratorDenominator property</p>
+<a id="placement-placement.wasm.wasm_class.expression_numerator.093c06d610d6"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.numerator</code></p>
 
 ```typescript signature
-numerator: Expression
+numerator(): Expression
 ```
+
+</details>
 
 
 Returns the structural numerator from `numerator_denominator`.
 
 ### denominator
 
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_denominator_api_session_denominator"></a>
+<a id="entry-presentation_wasm_api_session_denominator"></a>
 <a id="placement-placement.wasm.wasm_module.module_denominator.b4393447d319"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 denominator(input_expression: Expression): Expression
@@ -521,41 +697,27 @@ denominator(input_expression: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_denominator.fed5cc8af821"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.denominator</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.denominator</code></p>
 
 ```typescript signature
 denominator(input_expression: Expression): Expression
 ```
 
-</details>
-
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_denominator_api_expression_denominator"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_denominator.9d6d160c4432"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-denominator(): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.expression_denominator.4666a5313067"></a>
 <p class="symi-entry-owner">Expression method: <code>Expression.denominator</code></p>
 
 ```typescript signature
 denominator(): Expression
 ```
 
-</details>
-
-<a id="entry-presentation_wasm_expressions_capability_expression_transformations_denominator_api_results_numeratordenominator_denominator"></a>
-<a id="placement-placement.wasm.javascript_facade.numeratordenominator_denominator.9141100064f1"></a>
-<p class="symi-entry-owner">NumeratorDenominator property</p>
+<a id="placement-placement.wasm.wasm_class.expression_denominator.4666a5313067"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.denominator</code></p>
 
 ```typescript signature
-denominator: Expression
+denominator(): Expression
 ```
+
+</details>
 
 
 Returns the structural denominator from `numerator_denominator`.
@@ -572,4 +734,827 @@ console.log(target.numerator().toString());
 console.log(target.denominator().toString());
 console.log(target.execute().toString());
 ```
+
+
+### is_nonpositive
+
+<a id="entry-presentation_wasm_api_session_is_nonpositive"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isnonpositive.15bf64f03f4c"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isNonpositive(): boolean | null
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isnonpositive.43f76142cb65"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isNonpositive</code></p>
+
+```typescript signature
+isNonpositive(): boolean | undefined
+```
+
+</details>
+
+
+Whether the expression is known to be nonpositive. Three-valued, like the other
+sign predicates on this page: `None` means the sign was not decided from the
+assumptions in force, not that the expression is positive. Compare
+[`is_nonnegative`](#is_nonnegative).
+
+## Additional API
+
+### Expression
+
+<a id="entry-presentation_wasm_api_expression"></a>
+<a id="placement-placement.wasm.javascript_facade.expression.41c8e859d914"></a>
+<p class="symi-entry-owner">Type</p>
+
+```typescript signature
+interface Expression
+```
+
+Public type placement for Expression.
+
+### expressionType
+
+<a id="entry-presentation_wasm_api_expression_expression_type"></a>
+<a id="placement-placement.wasm.wasm_class.expression_expressiontype.9ef64c5b0bbb"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+expressionType(): string
+```
+
+Top-level node kind: one of `integer`, `rational`, `symbol`, `constant`, `sum`, `product`, `power`, `factorial`, `function_call`, `derivative`, `integral`, `summation`, `laplace_transform`, `inverse_laplace_transform`, `fourier_transform`, `inverse_fourier_transform`, `piecewise`, `ordinary_differential_equation`, `recurrence_equation`, `interval`, `finite_set`, `set_union`, `set_intersection`, `set_complement`, `image_set`, `condition_set`.
+
+### freeVariables
+
+<a id="entry-presentation_wasm_api_expression_free_variables"></a>
+<a id="placement-placement.wasm.wasm_class.expression_freevariables.2b831cd5640c"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+freeVariables(): string[]
+```
+
+Sorted names of the free symbols. Bound binders (integration variables, image-set parameters) are excluded; the constants pi/e are not symbols.
+
+### imageSetDomain
+
+<a id="entry-presentation_wasm_api_expression_image_set_domain"></a>
+<a id="placement-placement.wasm.wasm_class.expression_imagesetdomain.894cf5996d73"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+imageSetDomain(): Expression
+```
+
+The domain an `image_set` expression maps over.
+
+### imageSetLambdaExpression
+
+<a id="entry-presentation_wasm_api_expression_image_set_lambda_expression"></a>
+<a id="placement-placement.wasm.wasm_class.expression_imagesetlambdaexpression.9537a3075b6e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+imageSetLambdaExpression(): Expression
+```
+
+The body an `image_set` expression applies to its bound variable.
+
+### imageSetVariable
+
+<a id="entry-presentation_wasm_api_expression_image_set_variable"></a>
+<a id="placement-placement.wasm.wasm_class.expression_imagesetvariable.c23ad4dbf4cb"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+imageSetVariable(): string
+```
+
+The name of the variable an `image_set` expression binds.
+
+### integralIntegrand
+
+<a id="entry-presentation_wasm_api_expression_integral_integrand"></a>
+<a id="placement-placement.wasm.wasm_class.expression_integralintegrand.e27ba8e9a388"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+integralIntegrand(): Expression
+```
+
+The integrand of an unevaluated `integral` expression.
+
+### integralLowerBound
+
+<a id="entry-presentation_wasm_api_expression_integral_lower_bound"></a>
+<a id="placement-placement.wasm.wasm_class.expression_integrallowerbound.9922f04b09ad"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+integralLowerBound(): Expression | undefined
+```
+
+`None` for indefinite integrals.
+
+### integralUpperBound
+
+<a id="entry-presentation_wasm_api_expression_integral_upper_bound"></a>
+<a id="placement-placement.wasm.wasm_class.expression_integralupperbound.e819ab900c26"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+integralUpperBound(): Expression | undefined
+```
+
+The upper bound of an unevaluated `integral`, or `None` when it is indefinite.
+
+### integralVariable
+
+<a id="entry-presentation_wasm_api_expression_integral_variable"></a>
+<a id="placement-placement.wasm.wasm_class.expression_integralvariable.5d2186957c4e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+integralVariable(): string
+```
+
+The name of the variable an unevaluated `integral` integrates over.
+
+### intervalLower
+
+<a id="entry-presentation_wasm_api_expression_interval_lower"></a>
+<a id="placement-placement.wasm.wasm_class.expression_intervallower.36837bbd1eec"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+intervalLower(): Expression
+```
+
+Lower endpoint of an interval node; raises on other shapes.
+
+### intervalUpper
+
+<a id="entry-presentation_wasm_api_expression_interval_upper"></a>
+<a id="placement-placement.wasm.wasm_class.expression_intervalupper.dfbef6dc04bc"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+intervalUpper(): Expression
+```
+
+The upper endpoint of an `interval` expression.
+
+### isAlgebraic
+
+<a id="entry-presentation_wasm_api_expression_is_algebraic"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isalgebraic.166881d40821"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isAlgebraic(): boolean | null
+```
+
+Whether the expression is known to be algebraic.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isalgebraic.7f69c43994c4"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isAlgebraic</code></p>
+
+```typescript signature
+isAlgebraic(): boolean | undefined
+```
+
+</details>
+
+### isComplex
+
+<a id="entry-presentation_wasm_api_expression_is_complex"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_iscomplex.cf239ae130b6"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isComplex(): boolean | null
+```
+
+Whether the expression is known to be finite complex.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_iscomplex.cb55f33afdac"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isComplex</code></p>
+
+```typescript signature
+isComplex(): boolean | undefined
+```
+
+</details>
+
+### isComposite
+
+<a id="entry-presentation_wasm_api_expression_is_composite"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_iscomposite.acede8711f42"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isComposite(): boolean | null
+```
+
+Whether the expression is known to be composite.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_iscomposite.9305add4812c"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isComposite</code></p>
+
+```typescript signature
+isComposite(): boolean | undefined
+```
+
+</details>
+
+### isDefined
+
+<a id="entry-presentation_wasm_api_expression_is_defined"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isdefined.ba68953821c2"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isDefined(): boolean | null
+```
+
+Whether the expression is known to denote one scalar value at the active point.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isdefined.767be28c2b33"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isDefined</code></p>
+
+```typescript signature
+isDefined(): boolean | undefined
+```
+
+</details>
+
+### isEquality
+
+<a id="entry-presentation_wasm_api_expression_is_equality"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isequality.86f4b29381a0"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+isEquality(): boolean
+```
+
+True for `equal(a, b)` relation nodes.
+
+### isEven
+
+<a id="entry-presentation_wasm_api_expression_is_even"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_iseven.c8395efaf78a"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isEven(): boolean | null
+```
+
+Whether the expression is known to be even.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_iseven.79ec01947e1b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isEven</code></p>
+
+```typescript signature
+isEven(): boolean | undefined
+```
+
+</details>
+
+### isExtendedReal
+
+<a id="entry-presentation_wasm_api_expression_is_extended_real"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isextendedreal.8b90e63c733a"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isExtendedReal(): boolean | null
+```
+
+Whether the expression is known to be extended-real.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isextendedreal.172c09a6da36"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isExtendedReal</code></p>
+
+```typescript signature
+isExtendedReal(): boolean | undefined
+```
+
+</details>
+
+### isFinite
+
+<a id="entry-presentation_wasm_api_expression_is_finite"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isfinite.ec4bd13d38ab"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isFinite(): boolean | null
+```
+
+Whether the expression is known finite, or `None` when the assumptions cannot decide it.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isfinite.424570d72876"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isFinite</code></p>
+
+```typescript signature
+isFinite(): boolean | undefined
+```
+
+</details>
+
+### isFiniteSet
+
+<a id="entry-presentation_wasm_api_expression_is_finite_set"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isfiniteset.90bfc2fdaf03"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+isFiniteSet(): boolean
+```
+
+Whether this expression is a `finite_set`.
+
+### isImageSet
+
+<a id="entry-presentation_wasm_api_expression_is_image_set"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isimageset.5466d3ce260e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+isImageSet(): boolean
+```
+
+Whether this expression is an `image_set`.
+
+### isInfinite
+
+<a id="entry-presentation_wasm_api_expression_is_infinite"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isinfinite.baee2508c4d8"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isInfinite(): boolean | null
+```
+
+Whether the expression is known to be infinite.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isinfinite.859baf12b120"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isInfinite</code></p>
+
+```typescript signature
+isInfinite(): boolean | undefined
+```
+
+</details>
+
+### isInteger
+
+<a id="entry-presentation_wasm_api_expression_is_integer"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isinteger.a645e50fd6f0"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isInteger(): boolean | null
+```
+
+Whether the expression is known to be an integer, or `None` when the assumptions cannot decide it.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isinteger.97d2a50d8429"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isInteger</code></p>
+
+```typescript signature
+isInteger(): boolean | undefined
+```
+
+</details>
+
+### isIntegral
+
+<a id="entry-presentation_wasm_api_expression_is_integral"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isintegral.aaf3a7607ea0"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+isIntegral(): boolean
+```
+
+True for unevaluated integral nodes. (Distinct from the assumption query `is_integer`.)
+
+### isInterval
+
+<a id="entry-presentation_wasm_api_expression_is_interval"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isinterval.c4ea28ca3bf2"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+isInterval(): boolean
+```
+
+Whether this expression is an `interval`.
+
+### isIrrational
+
+<a id="entry-presentation_wasm_api_expression_is_irrational"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isirrational.f90590ac06dc"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isIrrational(): boolean | null
+```
+
+Whether the expression is known to be irrational.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isirrational.6d6714833660"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isIrrational</code></p>
+
+```typescript signature
+isIrrational(): boolean | undefined
+```
+
+</details>
+
+### isMatrix
+
+<a id="entry-presentation_wasm_api_expression_is_matrix"></a>
+<a id="placement-placement.wasm.wasm_class.expression_ismatrix.c4b71b990067"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+readonly isMatrix: boolean
+```
+
+Always `False` on expressions and `True` on `matrix` objects, so mixed result streams can be discriminated.
+
+### isNatural
+
+<a id="entry-presentation_wasm_api_expression_is_natural"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isnatural.c7d8ac466cd4"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isNatural(): boolean | null
+```
+
+Whether the expression is known to be natural.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isnatural.08b113b0d6b1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isNatural</code></p>
+
+```typescript signature
+isNatural(): boolean | undefined
+```
+
+</details>
+
+### isNegative
+
+<a id="entry-presentation_wasm_api_expression_is_negative"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isnegative.215cc4b539f3"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isNegative(): boolean | null
+```
+
+Whether the expression is known to be negative, or `None` when the assumptions cannot decide it.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isnegative.575a1576c858"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isNegative</code></p>
+
+```typescript signature
+isNegative(): boolean | undefined
+```
+
+</details>
+
+### isNonzero
+
+<a id="entry-presentation_wasm_api_expression_is_nonzero"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isnonzero.cee90ac676f3"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isNonzero(): boolean | null
+```
+
+Whether the expression is known to be nonzero, or `None` when the assumptions cannot decide it.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isnonzero.a92613e21491"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isNonzero</code></p>
+
+```typescript signature
+isNonzero(): boolean | undefined
+```
+
+</details>
+
+### isOdd
+
+<a id="entry-presentation_wasm_api_expression_is_odd"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isodd.9cef0c32b06d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isOdd(): boolean | null
+```
+
+Whether the expression is known to be odd.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isodd.1296c406043e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isOdd</code></p>
+
+```typescript signature
+isOdd(): boolean | undefined
+```
+
+</details>
+
+### isPositive
+
+<a id="entry-presentation_wasm_api_expression_is_positive"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_ispositive.5a6cf1d747f2"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isPositive(): boolean | null
+```
+
+Whether the expression is known to be positive, or `None` when the assumptions cannot decide it.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_ispositive.f0a589e1849f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isPositive</code></p>
+
+```typescript signature
+isPositive(): boolean | undefined
+```
+
+</details>
+
+### isPositiveInteger
+
+<a id="entry-presentation_wasm_api_expression_is_positive_integer"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_ispositiveinteger.d958deb107ee"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isPositiveInteger(): boolean | null
+```
+
+Whether the expression is known to be a positive integer.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_ispositiveinteger.de9efbe8d022"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isPositiveInteger</code></p>
+
+```typescript signature
+isPositiveInteger(): boolean | undefined
+```
+
+</details>
+
+### isRational
+
+<a id="entry-presentation_wasm_api_expression_is_rational"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isrational.c5942929964d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isRational(): boolean | null
+```
+
+Whether the expression is known to be rational, or `None` when the assumptions cannot decide it.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isrational.86f2ab150cd1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isRational</code></p>
+
+```typescript signature
+isRational(): boolean | undefined
+```
+
+</details>
+
+### isReal
+
+<a id="entry-presentation_wasm_api_expression_is_real"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_isreal.418cb2d56d52"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isReal(): boolean | null
+```
+
+Whether the expression is known to be real, or `None` when the assumptions cannot decide it.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_isreal.f26c33fb44d3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isReal</code></p>
+
+```typescript signature
+isReal(): boolean | undefined
+```
+
+</details>
+
+### isTranscendental
+
+<a id="entry-presentation_wasm_api_expression_is_transcendental"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_istranscendental.54d40bab7088"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isTranscendental(): boolean | null
+```
+
+Whether the expression is known to be transcendental.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_istranscendental.7bafdf46504b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isTranscendental</code></p>
+
+```typescript signature
+isTranscendental(): boolean | undefined
+```
+
+</details>
+
+### isUnion
+
+<a id="entry-presentation_wasm_api_expression_is_union"></a>
+<a id="placement-placement.wasm.wasm_class.expression_isunion.b55d87d040a7"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+isUnion(): boolean
+```
+
+Whether this expression is a union of sets.
+
+### isZero
+
+<a id="entry-presentation_wasm_api_expression_is_zero"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_iszero.4743ee8492f4"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+isZero(): boolean | null
+```
+
+Whether the expression is known to be zero.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_iszero.39d9a4da2056"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isZero</code></p>
+
+```typescript signature
+isZero(): boolean | undefined
+```
+
+</details>
+
+### symbolName
+
+<a id="entry-presentation_wasm_api_expression_symbol_name"></a>
+<a id="placement-placement.wasm.javascript_facade.expression_symbolname.5aadc5ef70f0"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```typescript signature
+symbolName(): string
+```
+
+Returns the name of a symbol expression and rejects every other expression kind.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.expression_symbolname.4c98a64aafac"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.symbolName</code></p>
+
+```typescript signature
+symbolName(): string
+```
+
+</details>
+
+### toList
+
+<a id="entry-presentation_wasm_api_expression_to_list"></a>
+<a id="placement-placement.wasm.wasm_class.expression_tolist.448f0522ff8b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+toList(): Expression[]
+```
+
+Elements of a finite set; raises on other shapes. Python finite sets also support `len()` and iteration.
+
+### unionComponents
+
+<a id="entry-presentation_wasm_api_expression_union_components"></a>
+<a id="placement-placement.wasm.wasm_class.expression_unioncomponents.ba40c4145e3b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+unionComponents(): Expression[]
+```
+
+The components of a set union, as a list of expressions.
+
+### NumeratorDenominator
+
+<a id="entry-presentation_wasm_api_numeratordenominator"></a>
+<a id="placement-placement.wasm.javascript_facade.numeratordenominator.7ceff7e08454"></a>
+<p class="symi-entry-owner">Type</p>
+
+```typescript signature
+interface NumeratorDenominator
+```
+
+Public type placement for NumeratorDenominator.
+
+#### NumeratorDenominator.denominator
+
+<a id="entry-presentation_wasm_api_numeratordenominator_denominator"></a>
+<a id="placement-placement.wasm.javascript_facade.numeratordenominator_denominator.9141100064f1"></a>
+<p class="symi-entry-owner">NumeratorDenominator property</p>
+
+```typescript signature
+denominator: Expression
+```
+
+Returns the structural denominator from `numerator_denominator`.
+
+#### NumeratorDenominator.numerator
+
+<a id="entry-presentation_wasm_api_numeratordenominator_numerator"></a>
+<a id="placement-placement.wasm.javascript_facade.numeratordenominator_numerator.875fb10bce86"></a>
+<p class="symi-entry-owner">NumeratorDenominator property</p>
+
+```typescript signature
+numerator: Expression
+```
+
+Returns the structural numerator from `numerator_denominator`.
 

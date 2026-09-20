@@ -6,7 +6,7 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
-<a id="entry-presentation_kotlin_deferred_forms_capability_construction_integral_api_analysis_session_integral"></a>
+<a id="entry-presentation_kotlin_api_session_integral"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integral.67144f955bf9"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -26,13 +26,48 @@ the node.
 
 ### derivative
 
+<a id="entry-presentation_kotlin_api_session_derivative"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_derivative.0bd3a90fb4d5"></a>
+<p class="symi-entry-owner">Explicit context</p>
 
-Constructs a deferred derivative. The variable may
-be a name or a same-context symbol expression. Use `execute` to evaluate it.
+```kotlin signature
+fun derivative(
+    target: UniffiExpression,
+    variable: kotlin.String,
+    order: kotlin.ULong,
+): UniffiExpression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_derivative.daaa1d9a5854"></a>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.derivative</code></p>
+
+```kotlin signature
+fun derivative(
+    variable: kotlin.String,
+    order: kotlin.ULong,
+): UniffiExpression
+```
+
+</details>
+
+
+
+Constructs an *unevaluated* derivative node of an arbitrary expression. The
+variable may be a name or a same-context symbol expression. Nothing is
+differentiated here: use [`execute`](evaluation-and-constants.md) on the node,
+or [`differentiate`](calculus.md#differentiate) to differentiate now.
+
+This is not the derivative of a named unknown function. An equation built from
+this placeholder is not recognised by the differential-equation classifiers,
+which read the structural derivative built by
+[`UndefinedFunction.derivative`](undefined-functions.md#derivative).
 
 ### summation
 
-<a id="entry-presentation_kotlin_deferred_forms_capability_construction_summation_api_analysis_session_summation"></a>
+<a id="entry-presentation_kotlin_api_session_summation"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_summation.d4c85cdddba3"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -136,7 +171,7 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
-<a id="entry-presentation_kotlin_deferred_forms_capability_construction_product_api_analysis_session_product"></a>
+<a id="entry-presentation_kotlin_api_session_product"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_product.be5af850a478"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -206,7 +241,7 @@ placeholder rather than a guess.
 
 ### product_indefinite
 
-<a id="entry-presentation_kotlin_deferred_forms_capability_construction_product_indefinite_api_analysis_session_product_indefinite"></a>
+<a id="entry-presentation_kotlin_api_session_product_indefinite"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_productindefinite.1d631ed31126"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -244,3 +279,35 @@ fails the result is the undefined sentinel.
 
 ## Example
 
+
+### summation_indefinite
+
+<a id="entry-presentation_kotlin_api_session_summation_indefinite"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_summationindefinite.b98122313c4f"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun summationIndefinite(
+    summand: UniffiExpression,
+    index: kotlin.String,
+): UniffiExpression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_summationindefinite.8a902513c551"></a>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.summationIndefinite</code></p>
+
+```kotlin signature
+fun summationIndefinite(index: kotlin.String): UniffiExpression
+```
+
+</details>
+
+
+The anti-difference of `summand`: a closed form \(F\) with
+\(F(\mathrm{index}+1) - F(\mathrm{index}) = \mathrm{summand}\). It is the
+discrete counterpart of an indefinite integral, and it sits here beside
+[`product_indefinite`](#product_indefinite) for the same reason — when no closed
+form is found, the unevaluated summation is what is returned.

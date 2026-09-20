@@ -18,7 +18,7 @@ Normal forms and Boolean simplification are documented in
 
 ### logical_true
 
-<a id="entry-presentation_python_logic_capability_discrete_mathematics_logical_true_api_session_logical_true"></a>
+<a id="entry-presentation_python_api_session_logical_true"></a>
 <a id="placement-placement.python.python_module.module_logical_true.ef761df9ca2e"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -43,7 +43,7 @@ The Boolean constant true (\(\top\)).
 
 ### logical_false
 
-<a id="entry-presentation_python_logic_capability_discrete_mathematics_logical_false_api_session_logical_false"></a>
+<a id="entry-presentation_python_api_session_logical_false"></a>
 <a id="placement-placement.python.python_module.module_logical_false.35969dae5f4e"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -68,7 +68,7 @@ The Boolean constant false (\(\bot\)).
 
 ### evaluate_truth
 
-<a id="entry-presentation_python_logic_capability_discrete_mathematics_evaluate_truth_api_session_evaluate_truth"></a>
+<a id="entry-presentation_python_api_session_evaluate_truth"></a>
 <a id="placement-placement.python.python_module.module_evaluate_truth.973391b33da4"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -86,15 +86,14 @@ evaluate_truth(input_expression: ExpressionLike) -> Optional[bool]
 evaluate_truth(input_expression: ExpressionLike) -> Optional[bool]
 ```
 
-</details>
-
-<a id="entry-presentation_python_logic_capability_discrete_mathematics_evaluate_truth_api_expression_evaluate_truth"></a>
 <a id="placement-placement.python.python_class.expression_evaluate_truth.2acfc1c52e62"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.evaluate_truth</code></p>
 
 ```python signature
 evaluate_truth() -> Optional[bool]
 ```
+
+</details>
 
 
 `evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or

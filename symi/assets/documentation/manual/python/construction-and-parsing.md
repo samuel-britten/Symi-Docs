@@ -11,7 +11,7 @@ Create a fresh context with an empty symbol table and expression store.
 
 ### reset_context
 
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_reset_context_api_session_reset_context"></a>
+<a id="entry-presentation_python_api_session_reset_context"></a>
 <a id="placement-placement.python.python_class.context_reset_context.7c05f08677d0"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -32,7 +32,7 @@ weak expression store already keeps memory bounded by live objects (see
 
 ### parse
 
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_parse_api_session_parse"></a>
+<a id="entry-presentation_python_api_session_parse"></a>
 <a id="placement-placement.python.python_module.module_parse.5ce2d5b2fa9b"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -61,7 +61,7 @@ parameters.
 
 ### parse_latex
 
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_parse_latex_api_serialization_session_parse_latex"></a>
+<a id="entry-presentation_python_api_session_parse_latex"></a>
 <a id="placement-placement.python.python_module.module_parse_latex.aafb58fb41c7"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -107,7 +107,7 @@ expansion.
 
 ### parse_latex_with_environment
 
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_parse_latex_with_environment_api_serialization_session_parse_latex_with_environment"></a>
+<a id="entry-presentation_python_api_session_parse_latex_with_environment"></a>
 <a id="placement-placement.python.python_module.module_parse_latex_with_environment.217e1bf2dc8a"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -146,7 +146,7 @@ as a module-level function.
 
 ### symbol
 
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_symbol_api_session_symbol"></a>
+<a id="entry-presentation_python_api_session_symbol"></a>
 <a id="placement-placement.python.python_module.module_symbol.13b49e0351f9"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -203,7 +203,7 @@ over.
 
 ### integer
 
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_integer_api_session_integer"></a>
+<a id="entry-presentation_python_api_session_integer"></a>
 <a id="placement-placement.python.python_module.module_integer.49c85c5856ea"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -229,7 +229,7 @@ recommended facade accepts `bigint` and safe integral `number` values.
 
 ### rational
 
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_rational_api_session_rational"></a>
+<a id="entry-presentation_python_api_session_rational"></a>
 <a id="placement-placement.python.python_module.module_rational.21ee0367e6e1"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -257,7 +257,7 @@ integers. A zero denominator is an argument error. Python also accepts
 
 ### integer_from_string
 
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string"></a>
+<a id="entry-presentation_python_api_session_integer_from_string"></a>
 <a id="placement-placement.python.python_module.module_integer_from_string.552ac2e82ab4"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -282,7 +282,7 @@ Build an arbitrary-precision integer literal from its decimal string.
 
 ### rational_from_float
 
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float"></a>
+<a id="entry-presentation_python_api_session_rational_from_float"></a>
 <a id="placement-placement.python.python_module.module_rational_from_float.30ffeabe86b0"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -306,27 +306,9 @@ rational_from_float(value: float, max_denominator: int) -> Expression
 Closest rational with denominator \(\leq\) `max_denominator` (the
 `Fraction.limit_denominator` algorithm). Raises on non-finite input.
 
-### undefined_function
-
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_undefined_function_api_session_undefined_function"></a>
-<a id="placement-placement.python.python_class.context_undefined_function.69ef6c5c895b"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```python signature
-undefined_function(name: str) -> UndefinedFunction
-```
-
-
-A callable proxy for a user-named function. Calling it with expression
-arguments builds the function-call expression (see the object-model page and
-the worked ODE example).
-
-### call
-
-*Not exposed by the Python bindings. Available as [`UniffiUndefinedFunction.call`](/symi/kotlin/construction-and-parsing#call) in Kotlin, [`UniffiUndefinedFunction.call`](/symi/swift/construction-and-parsing#call) in Swift, [`api::UndefinedFunction::call`](/symi/rust/construction-and-parsing#call) in Rust.*
-
-
-WASM spelling of the Python `f(x, …)` call syntax on `UndefinedFunction`.
+Named unknown functions are built with `undefined_function`, whose handle,
+calls, and structural derivatives are documented together in
+[Undefined functions](undefined-functions.md).
 
 ## Example
 
@@ -342,19 +324,4 @@ print(x**2 + 2 * x + 1)
 print(symi.rational(2, 3) + symi.integer(1))
 print(symi.parse_latex(r"\frac{1}{2} + x"))
 ```
-
-
-## Additional API
-
-### UndefinedFunction
-
-<a id="entry-presentation_python_construction_and_parsing_capability_construction_undefined_function_api_undefinedfunction"></a>
-<a id="placement-placement.python.python_class.undefinedfunction.28fd52ba99ea"></a>
-<p class="symi-entry-owner">Type</p>
-
-```python signature
-class UndefinedFunction
-```
-
-A callable proxy for user-defined named functions. `context.undefined_function("f")` returns one of these; calling it with `expression` arguments builds a `function_call` node in the context's interner.
 

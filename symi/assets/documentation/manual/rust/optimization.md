@@ -24,7 +24,7 @@ object whose getters expose the same data.
 
 ### unconstrained_critical_points
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_solving_session_unconstrained_critical_points_unnamed"></a>
+<a id="entry-presentation_rust_api_session_unconstrained_critical_points"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_unconstrained_critical_points.3591302088a9"></a>
 <p class="symi-entry-owner">api::solving::Session method</p>
 
@@ -47,7 +47,7 @@ minors). A quadratic objective yields a complete outcome; a degenerate Hessian
 
 ### classify_unconstrained
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_solving_session_classify_unconstrained_unnamed"></a>
+<a id="entry-presentation_rust_api_session_classify_unconstrained"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_classify_unconstrained.0663660a9873"></a>
 <p class="symi-entry-owner">api::solving::Session method</p>
 
@@ -72,7 +72,7 @@ Classify one given interior point — supplied as the parallel `point_variables`
 
 ### lagrange_critical_points
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_solving_session_lagrange_critical_points_unnamed"></a>
+<a id="entry-presentation_rust_api_session_lagrange_critical_points"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_lagrange_critical_points.541a354eab55"></a>
 <p class="symi-entry-owner">api::solving::Session method</p>
 
@@ -95,7 +95,7 @@ Hessian. The solved multiplier values appear in each point's multipliers.
 
 ### karush_kuhn_tucker_points
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_solving_session_karush_kuhn_tucker_points_unnamed"></a>
+<a id="entry-presentation_rust_api_session_karush_kuhn_tucker_points"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_karush_kuhn_tucker_points.fdd2fd881de6"></a>
 <p class="symi-entry-owner">api::solving::Session method</p>
 
@@ -125,8 +125,9 @@ On WASM the outcome and its points are objects with the following getters; on
 Python the same data is returned as plain dicts.
 
 ### points
+The list of `CriticalPoint` objects in an `OptimizationOutcome` (WASM).
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_results_optimizationoutcome_points_unnamed"></a>
+<a id="entry-presentation_rust_api_optimizationoutcome_points"></a>
 <a id="placement-placement.rust.native_rust.api_results_optimizationoutcome_points.3a4e9451181e"></a>
 <p class="symi-entry-owner">api::results::OptimizationOutcome method</p>
 
@@ -134,15 +135,26 @@ Python the same data is returned as plain dicts.
 pub fn points(&self) -> Vec<CriticalPoint>
 ```
 
-The list of `CriticalPoint` objects in an `OptimizationOutcome` (WASM).
+The classified critical points, empty on a decline.
 
 ### classification
+
+<a id="entry-presentation_rust_api_criticalpoint_classification"></a>
+<a id="placement-placement.rust.native_rust.api_results_criticalpoint_classification.819e5b768648"></a>
+<p class="symi-entry-owner">api::results::CriticalPoint method</p>
+
+```rust signature
+pub fn classification(&self) -> ExtremumClassification
+```
+
 The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`,
 `"saddle_point"`, or `"inconclusive"`.
 
 ### multiplier_variables
+The names of the introduced Lagrange / KKT multipliers at a constrained critical
+point (empty for the unconstrained case).
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_results_criticalpoint_multiplier_variables_unnamed"></a>
+<a id="entry-presentation_rust_api_criticalpoint_multiplier_variables"></a>
 <a id="placement-placement.rust.native_rust.api_results_criticalpoint_multiplier_variables.e90952a61ebe"></a>
 <p class="symi-entry-owner">api::results::CriticalPoint method</p>
 
@@ -150,12 +162,12 @@ The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`,
 pub fn multiplier_variables(&self) -> Vec<String>
 ```
 
-The names of the introduced Lagrange / KKT multipliers at a constrained critical
-point (empty for the unconstrained case).
+The names of the introduced Lagrange or Karush-Kuhn-Tucker multipliers.
 
 ### multiplier_values
+The solved values of those multipliers, in the same order as `multiplier_variables`.
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_results_criticalpoint_multiplier_values_unnamed"></a>
+<a id="entry-presentation_rust_api_criticalpoint_multiplier_values"></a>
 <a id="placement-placement.rust.native_rust.api_results_criticalpoint_multiplier_values.4d79bc81f20d"></a>
 <p class="symi-entry-owner">api::results::CriticalPoint method</p>
 
@@ -163,13 +175,13 @@ point (empty for the unconstrained case).
 pub fn multiplier_values(&self) -> Vec<Expression>
 ```
 
-The solved values of those multipliers, in the same order as `multiplier_variables`.
+The value taken by each multiplier, parallel to `multiplier_variables`.
 
 ## Global optimization on semialgebraic sets
 
 ### global_optimum_on_semialgebraic
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_solving_session_global_optimum_on_semialgebraic_unnamed"></a>
+<a id="entry-presentation_rust_api_session_global_optimum_on_semialgebraic"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_global_optimum_on_semialgebraic.9610835a8618"></a>
 <p class="symi-entry-owner">api::solving::Session method</p>
 
@@ -207,29 +219,303 @@ This family is not part of the recommended `symi::api` facade in this release. C
 
 ## Additional API
 
-### classification
+### CriticalPoint
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationsolveresult_classification_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationsolveresult_classification.bc39d72ce99c"></a>
-<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationSolveResult method</p>
+<a id="entry-presentation_rust_api_criticalpoint"></a>
+<a id="placement-placement.rust.native_rust.api_criticalpoint.fb6ea799d622"></a>
+<p class="symi-entry-owner">api re_export</p>
 
 ```rust signature
-pub fn classification(
-    &self,
-) -> Option<PartialDifferentialEquationClassification>
+pub use results::CriticalPoint;
 ```
 
-The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`, `"saddle_point"`, or `"inconclusive"`.
+One classified critical point of an optimization problem.
 
-### classification
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
-<a id="entry-presentation_rust_optimization_capability_rust_native_rust_api_results_criticalpoint_classification_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_results_criticalpoint_classification.819e5b768648"></a>
+<a id="placement-placement.rust.native_rust.api_results_criticalpoint.cedba0c1731d"></a>
+<p class="symi-entry-owner">Type: <code>api::results::CriticalPoint</code></p>
+
+```rust signature
+pub struct CriticalPoint
+```
+
+</details>
+
+#### CriticalPoint.values
+
+<a id="entry-presentation_rust_api_criticalpoint_values"></a>
+<a id="placement-placement.rust.native_rust.api_results_criticalpoint_values.bcdf7f87b478"></a>
 <p class="symi-entry-owner">api::results::CriticalPoint method</p>
 
 ```rust signature
-pub fn classification(&self) -> ExtremumClassification
+pub fn values(&self) -> Vec<Expression>
 ```
 
-The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`, `"saddle_point"`, or `"inconclusive"`.
+The coordinate attained by each unknown, parallel to `variables`.
+
+#### CriticalPoint.variables
+
+<a id="entry-presentation_rust_api_criticalpoint_variables"></a>
+<a id="placement-placement.rust.native_rust.api_results_criticalpoint_variables.6d6886ffaaef"></a>
+<p class="symi-entry-owner">api::results::CriticalPoint method</p>
+
+```rust signature
+pub fn variables(&self) -> Vec<String>
+```
+
+The unknown names of this point's assignment, in order.
+
+### ExtremumClassification
+
+<a id="entry-presentation_rust_api_extremumclassification"></a>
+<a id="placement-placement.rust.native_rust.api_extremumclassification.8383fe1c9605"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use results::ExtremumClassification;
+```
+
+The classification a critical point received from the second-order test.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_results_extremumclassification.dc4ea1831049"></a>
+<p class="symi-entry-owner">Type: <code>api::results::ExtremumClassification</code></p>
+
+```rust signature
+pub enum ExtremumClassification
+```
+
+</details>
+
+#### ExtremumClassification.Inconclusive
+
+<a id="entry-presentation_rust_api_extremumclassification_inconclusive"></a>
+<a id="placement-placement.rust.native_rust.api_results_extremumclassification_inconclusive.fe5432e31620"></a>
+<p class="symi-entry-owner">api::results::ExtremumClassification variant</p>
+
+```rust signature
+Inconclusive,
+```
+
+The second-order test did not settle the point.
+
+#### ExtremumClassification.LocalMaximum
+
+<a id="entry-presentation_rust_api_extremumclassification_localmaximum"></a>
+<a id="placement-placement.rust.native_rust.api_results_extremumclassification_localmaximum.87cd035cd73f"></a>
+<p class="symi-entry-owner">api::results::ExtremumClassification variant</p>
+
+```rust signature
+LocalMaximum,
+```
+
+The point is a local maximum.
+
+#### ExtremumClassification.LocalMinimum
+
+<a id="entry-presentation_rust_api_extremumclassification_localminimum"></a>
+<a id="placement-placement.rust.native_rust.api_results_extremumclassification_localminimum.9d19c7248e90"></a>
+<p class="symi-entry-owner">api::results::ExtremumClassification variant</p>
+
+```rust signature
+LocalMinimum,
+```
+
+The point is a local minimum.
+
+#### ExtremumClassification.SaddlePoint
+
+<a id="entry-presentation_rust_api_extremumclassification_saddlepoint"></a>
+<a id="placement-placement.rust.native_rust.api_results_extremumclassification_saddlepoint.363b4873c973"></a>
+<p class="symi-entry-owner">api::results::ExtremumClassification variant</p>
+
+```rust signature
+SaddlePoint,
+```
+
+The point is a saddle point.
+
+#### ExtremumClassification.name
+
+<a id="entry-presentation_rust_api_extremumclassification_name"></a>
+<a id="placement-placement.rust.native_rust.api_results_extremumclassification_name.43c94fa83e7c"></a>
+<p class="symi-entry-owner">api::results::ExtremumClassification method</p>
+
+```rust signature
+pub fn name(&self) -> &'static str
+```
+
+The stable lowercase spelling shared by every binding.
+
+### OptimizationDirection
+
+<a id="entry-presentation_rust_api_optimizationdirection"></a>
+<a id="placement-placement.rust.native_rust.api_solving_optimizationdirection.126e02b5cefb"></a>
+<p class="symi-entry-owner">Type</p>
+
+```rust signature
+pub enum OptimizationDirection
+```
+
+Whether a global optimum is sought at the minimum or the maximum.
+
+#### OptimizationDirection.Maximize
+
+<a id="entry-presentation_rust_api_optimizationdirection_maximize"></a>
+<a id="placement-placement.rust.native_rust.api_solving_optimizationdirection_maximize.c226a76d3ee4"></a>
+<p class="symi-entry-owner">api::solving::OptimizationDirection variant</p>
+
+```rust signature
+Maximize,
+```
+
+Seek the global maximum.
+
+#### OptimizationDirection.Minimize
+
+<a id="entry-presentation_rust_api_optimizationdirection_minimize"></a>
+<a id="placement-placement.rust.native_rust.api_solving_optimizationdirection_minimize.b5bb0bf386da"></a>
+<p class="symi-entry-owner">api::solving::OptimizationDirection variant</p>
+
+```rust signature
+Minimize,
+```
+
+Seek the global minimum.
+
+#### OptimizationDirection.from_name
+
+<a id="entry-presentation_rust_api_optimizationdirection_from_name"></a>
+<a id="placement-placement.rust.native_rust.api_solving_optimizationdirection_from_name.e0dce74498f2"></a>
+<p class="symi-entry-owner">api::solving::OptimizationDirection method</p>
+
+```rust signature
+pub fn from_name(name: &str) -> Result<Self, ApiError>
+```
+
+Resolve the stable spelling a binding passes across the boundary.
+
+#### OptimizationDirection.name
+
+<a id="entry-presentation_rust_api_optimizationdirection_name"></a>
+<a id="placement-placement.rust.native_rust.api_solving_optimizationdirection_name.b4e0208816f5"></a>
+<p class="symi-entry-owner">api::solving::OptimizationDirection method</p>
+
+```rust signature
+pub fn name(&self) -> &'static str
+```
+
+The stable spelling of this direction.
+
+### OptimizationOutcome
+
+<a id="entry-presentation_rust_api_optimizationoutcome"></a>
+<a id="placement-placement.rust.native_rust.api_optimizationoutcome.8f0c2b119170"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use results::OptimizationOutcome;
+```
+
+The outcome of a critical-point or optimum enumeration.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_results_optimizationoutcome.b8d619afb7e1"></a>
+<p class="symi-entry-owner">Type: <code>api::results::OptimizationOutcome</code></p>
+
+```rust signature
+pub struct OptimizationOutcome
+```
+
+</details>
+
+#### OptimizationOutcome.complete
+
+<a id="entry-presentation_rust_api_optimizationoutcome_complete"></a>
+<a id="placement-placement.rust.native_rust.api_results_optimizationoutcome_complete.59d38f151b43"></a>
+<p class="symi-entry-owner">api::results::OptimizationOutcome method</p>
+
+```rust signature
+pub fn complete(&self) -> bool
+```
+
+True only when the enumeration was certified exhaustive.
+
+#### OptimizationOutcome.verdict
+
+<a id="entry-presentation_rust_api_optimizationoutcome_verdict"></a>
+<a id="placement-placement.rust.native_rust.api_results_optimizationoutcome_verdict.dca4ffa727c7"></a>
+<p class="symi-entry-owner">api::results::OptimizationOutcome method</p>
+
+```rust signature
+pub fn verdict(&self) -> OptimizationVerdict
+```
+
+Whether the enumeration produced points or declined.
+
+### OptimizationVerdict
+
+<a id="entry-presentation_rust_api_optimizationverdict"></a>
+<a id="placement-placement.rust.native_rust.api_optimizationverdict.02c319d61a22"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use results::OptimizationVerdict;
+```
+
+The verdict an optimization enumeration reached.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_results_optimizationverdict.490ecc8b5b8a"></a>
+<p class="symi-entry-owner">Type: <code>api::results::OptimizationVerdict</code></p>
+
+```rust signature
+pub enum OptimizationVerdict
+```
+
+</details>
+
+#### OptimizationVerdict.Declined
+
+<a id="entry-presentation_rust_api_optimizationverdict_declined"></a>
+<a id="placement-placement.rust.native_rust.api_results_optimizationverdict_declined.f8b866d0e695"></a>
+<p class="symi-entry-owner">api::results::OptimizationVerdict variant</p>
+
+```rust signature
+Declined,
+```
+
+The enumeration declined.
+
+#### OptimizationVerdict.Points
+
+<a id="entry-presentation_rust_api_optimizationverdict_points"></a>
+<a id="placement-placement.rust.native_rust.api_results_optimizationverdict_points.8a31b18bf235"></a>
+<p class="symi-entry-owner">api::results::OptimizationVerdict variant</p>
+
+```rust signature
+Points,
+```
+
+The enumeration produced critical points.
+
+#### OptimizationVerdict.name
+
+<a id="entry-presentation_rust_api_optimizationverdict_name"></a>
+<a id="placement-placement.rust.native_rust.api_results_optimizationverdict_name.ec82dab48a03"></a>
+<p class="symi-entry-owner">api::results::OptimizationVerdict method</p>
+
+```rust signature
+pub fn name(&self) -> &'static str
+```
+
+The stable lowercase spelling shared by every binding.
 

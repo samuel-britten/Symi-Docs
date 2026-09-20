@@ -8,7 +8,7 @@ nodes can also be built directly through `parse`.
 
 ### laplace_transform
 
-<a id="entry-presentation_swift_integral_transforms_capability_calculus_laplace_transform_api_session_laplace_transform"></a>
+<a id="entry-presentation_swift_api_session_laplace_transform"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_laplacetransform.4e3ba76aaeeb"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -20,9 +20,11 @@ func laplaceTransform(
 ) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_integral_transforms_capability_calculus_laplace_transform_api_assumptionscope_laplace_transform"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiassumptionscope_laplacetransform.15f1bc3978b9"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.laplaceTransform</code></p>
 
 ```swift signature
 func laplaceTransform(
@@ -32,12 +34,14 @@ func laplaceTransform(
 ) -> UniffiExpression
 ```
 
+</details>
+
 
 Forward Laplace transform \(F(s) = \int_0^\infty f(t)e^{-st}\,dt\).
 
 ### inverse_laplace_transform
 
-<a id="entry-presentation_swift_integral_transforms_capability_calculus_inverse_laplace_transform_api_session_inverse_laplace_transform"></a>
+<a id="entry-presentation_swift_api_session_inverse_laplace_transform"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_inverselaplacetransform.f2a6d78c0eb6"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -55,7 +59,7 @@ reverse lookup.
 
 ### fourier_transform
 
-<a id="entry-presentation_swift_integral_transforms_capability_calculus_fourier_transform_api_session_fourier_transform"></a>
+<a id="entry-presentation_swift_api_session_fourier_transform"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_fouriertransform.1e10abe971af"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -67,9 +71,11 @@ func fourierTransform(
 ) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_integral_transforms_capability_calculus_fourier_transform_api_assumptionscope_fourier_transform"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiassumptionscope_fouriertransform.aea4f0c4d33f"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.fourierTransform</code></p>
 
 ```swift signature
 func fourierTransform(
@@ -79,13 +85,15 @@ func fourierTransform(
 ) -> UniffiExpression
 ```
 
+</details>
+
 
 Forward Fourier transform in the angular-frequency convention
 \(F(\omega) = \int f(t)e^{-i\omega t}\,dt\).
 
 ### inverse_fourier_transform
 
-<a id="entry-presentation_swift_integral_transforms_capability_calculus_inverse_fourier_transform_api_session_inverse_fourier_transform"></a>
+<a id="entry-presentation_swift_api_session_inverse_fourier_transform"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_inversefouriertransform.d4b7c77719cf"></a>
 <p class="symi-entry-owner">Explicit context</p>
 

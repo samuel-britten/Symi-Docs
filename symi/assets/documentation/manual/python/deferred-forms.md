@@ -6,7 +6,7 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
-<a id="entry-presentation_python_deferred_forms_capability_construction_integral_api_analysis_session_integral"></a>
+<a id="entry-presentation_python_api_session_integral"></a>
 <a id="placement-placement.python.python_module.module_integral.4a92f50512c2"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -43,13 +43,56 @@ the node.
 
 ### derivative
 
+<a id="entry-presentation_python_api_session_derivative"></a>
+<a id="placement-placement.python.python_module.module_derivative.08baabd8e4c8"></a>
+<p class="symi-entry-owner">Default context</p>
 
-Constructs a deferred derivative. The variable may
-be a name or a same-context symbol expression. Use `execute` to evaluate it.
+```python signature
+derivative(
+    input_expression: ExpressionLike,
+    variable: Any,
+    order: int = 1,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_derivative.633b339a3392"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.derivative</code></p>
+
+```python signature
+derivative(
+    input_expression: ExpressionLike,
+    variable: Any,
+    order: int = 1,
+) -> Expression
+```
+
+<a id="placement-placement.python.python_class.expression_derivative.951691ecb4fa"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.derivative</code></p>
+
+```python signature
+derivative(variable: Any, order: int = 1) -> Expression
+```
+
+</details>
+
+
+
+Constructs an *unevaluated* derivative node of an arbitrary expression. The
+variable may be a name or a same-context symbol expression. Nothing is
+differentiated here: use [`execute`](evaluation-and-constants.md) on the node,
+or [`differentiate`](calculus.md#differentiate) to differentiate now.
+
+This is not the derivative of a named unknown function. An equation built from
+this placeholder is not recognised by the differential-equation classifiers,
+which read the structural derivative built by
+[`UndefinedFunction.derivative`](undefined-functions.md#derivative).
 
 ### summation
 
-<a id="entry-presentation_python_deferred_forms_capability_construction_summation_api_analysis_session_summation"></a>
+<a id="entry-presentation_python_api_session_summation"></a>
 <a id="placement-placement.python.python_module.module_summation.d765c39f40a8"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -170,7 +213,7 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
-<a id="entry-presentation_python_deferred_forms_capability_construction_product_api_analysis_session_product"></a>
+<a id="entry-presentation_python_api_session_product"></a>
 <a id="placement-placement.python.python_module.module_product.c378ecc8918b"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -257,7 +300,7 @@ placeholder rather than a guess.
 
 ### product_indefinite
 
-<a id="entry-presentation_python_deferred_forms_capability_construction_product_indefinite_api_analysis_session_product_indefinite"></a>
+<a id="entry-presentation_python_api_session_product_indefinite"></a>
 <a id="placement-placement.python.python_module.module_product_indefinite.36ca96c3eab2"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -297,7 +340,7 @@ form is in scope.
 
 ### piecewise
 
-<a id="entry-presentation_python_deferred_forms_capability_construction_piecewise_api_solving_session_piecewise"></a>
+<a id="entry-presentation_python_api_session_piecewise"></a>
 <a id="placement-placement.python.python_module.module_piecewise.719dafd5ae7f"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -349,3 +392,45 @@ print(symi.execute(deferred_integral))
 print(symi.execute(symi.summation(k, "k", 0, n)))
 ```
 
+
+### summation_indefinite
+
+<a id="entry-presentation_python_api_session_summation_indefinite"></a>
+<a id="placement-placement.python.python_module.module_summation_indefinite.e10335856b70"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+summation_indefinite(
+    summand: ExpressionLike,
+    index: VariableLike,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_summation_indefinite.decc1b81d5c2"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.summation_indefinite</code></p>
+
+```python signature
+summation_indefinite(
+    summand: ExpressionLike,
+    index: VariableLike,
+) -> Expression
+```
+
+<a id="placement-placement.python.python_class.expression_summation_indefinite.36082f1ae900"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.summation_indefinite</code></p>
+
+```python signature
+summation_indefinite(index: VariableLike) -> Expression
+```
+
+</details>
+
+
+The anti-difference of `summand`: a closed form \(F\) with
+\(F(\mathrm{index}+1) - F(\mathrm{index}) = \mathrm{summand}\). It is the
+discrete counterpart of an indefinite integral, and it sits here beside
+[`product_indefinite`](#product_indefinite) for the same reason — when no closed
+form is found, the unevaluated summation is what is returned.

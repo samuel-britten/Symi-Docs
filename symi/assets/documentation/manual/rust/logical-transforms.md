@@ -13,15 +13,7 @@ are described in [Boolean algebra and logic](logic.md).
 
 ### disjunctive_normal_form
 
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_expression_operations_expression_disjunctive_normal_form_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_operations_expression_disjunctive_normal_form.73d8da33afe5"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
-
-```rust signature
-pub fn disjunctive_normal_form(&self) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_logic_session_disjunctive_normal_form_unnamed"></a>
+<a id="entry-presentation_rust_api_session_disjunctive_normal_form"></a>
 <a id="placement-placement.rust.native_rust.api_logic_session_disjunctive_normal_form.a20de626aacb"></a>
 <p class="symi-entry-owner">api::logic::Session method</p>
 
@@ -32,6 +24,18 @@ pub fn disjunctive_normal_form(
 ) -> Result<Expression, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_operations_expression_disjunctive_normal_form.73d8da33afe5"></a>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::disjunctive_normal_form</code></p>
+
+```rust signature
+pub fn disjunctive_normal_form(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
 
 Rewrite a propositional formula into a reduced disjunctive normal form (an
 OR of AND-terms over literals): derived connectives are eliminated,
@@ -40,15 +44,7 @@ contradictory, duplicate, and subsumed terms are dropped.
 
 ### conjunctive_normal_form
 
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_expression_operations_expression_conjunctive_normal_form_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_operations_expression_conjunctive_normal_form.a2e63ac3e3a6"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
-
-```rust signature
-pub fn conjunctive_normal_form(&self) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_logic_session_conjunctive_normal_form_unnamed"></a>
+<a id="entry-presentation_rust_api_session_conjunctive_normal_form"></a>
 <a id="placement-placement.rust.native_rust.api_logic_session_conjunctive_normal_form.1f3c462b37dd"></a>
 <p class="symi-entry-owner">api::logic::Session method</p>
 
@@ -59,21 +55,25 @@ pub fn conjunctive_normal_form(
 ) -> Result<Expression, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_operations_expression_conjunctive_normal_form.a2e63ac3e3a6"></a>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::conjunctive_normal_form</code></p>
+
+```rust signature
+pub fn conjunctive_normal_form(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
 
 The dual of `disjunctive_normal_form`: a reduced conjunctive normal form (an
 AND of OR-clauses over literals).
 
 ### minimize_logical
 
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_expression_operations_expression_minimize_logical_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_operations_expression_minimize_logical.017a97c5ddba"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
-
-```rust signature
-pub fn minimize_logical(&self) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_logic_session_minimize_logical_unnamed"></a>
+<a id="entry-presentation_rust_api_session_minimize_logical"></a>
 <a id="placement-placement.rust.native_rust.api_logic_session_minimize_logical.6a3d1faafa38"></a>
 <p class="symi-entry-owner">api::logic::Session method</p>
 
@@ -84,6 +84,18 @@ pub fn minimize_logical(
 ) -> Result<Expression, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_operations_expression_minimize_logical.017a97c5ddba"></a>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::minimize_logical</code></p>
+
+```rust signature
+pub fn minimize_logical(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
 
 The smaller of the minimum sum-of-products and product-of-sums two-level
 forms. Within a practical atom bound this is the exact Quine–McCluskey
@@ -93,15 +105,7 @@ provably minimal — cover.
 
 ### simplify_logical
 
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_expression_operations_expression_simplify_logical_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_operations_expression_simplify_logical.4c84dfa6aa61"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
-
-```rust signature
-pub fn simplify_logical(&self) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_logic_session_simplify_logical_unnamed"></a>
+<a id="entry-presentation_rust_api_session_simplify_logical"></a>
 <a id="placement-placement.rust.native_rust.api_logic_session_simplify_logical.759c204eba69"></a>
 <p class="symi-entry-owner">api::logic::Session method</p>
 
@@ -111,6 +115,18 @@ pub fn simplify_logical(
     input_expression: &Expression,
 ) -> Result<Expression, ApiError>
 ```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_operations_expression_simplify_logical.4c84dfa6aa61"></a>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::simplify_logical</code></p>
+
+```rust signature
+pub fn simplify_logical(&self) -> Result<Expression, ApiError>
+```
+
+</details>
 
 
 Return whichever of the original form, the disjunctive and conjunctive
@@ -128,17 +144,7 @@ either of them, and neither performs hidden normal-form work.
 
 ### eliminate_derived_logical_connectives
 
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_expression_operations_expression_eliminate_derived_logical_connectives_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_operations_expression_eliminate_derived_logical_connectives.70ca8f0e9c96"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
-
-```rust signature
-pub fn eliminate_derived_logical_connectives(
-    &self,
-) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_logic_session_eliminate_derived_logical_connectives_unnamed"></a>
+<a id="entry-presentation_rust_api_session_eliminate_derived_logical_connectives"></a>
 <a id="placement-placement.rust.native_rust.api_logic_session_eliminate_derived_logical_connectives.71c6c44e291b"></a>
 <p class="symi-entry-owner">api::logic::Session method</p>
 
@@ -148,6 +154,20 @@ pub fn eliminate_derived_logical_connectives(
     input_expression: &Expression,
 ) -> Result<Expression, ApiError>
 ```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_operations_expression_eliminate_derived_logical_connectives.70ca8f0e9c96"></a>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::eliminate_derived_logical_connectives</code></p>
+
+```rust signature
+pub fn eliminate_derived_logical_connectives(
+    &self,
+) -> Result<Expression, ApiError>
+```
+
+</details>
 
 
 Rewrite every `implies`, `equivalent`, and `exclusive_or` occurrence in a
@@ -198,17 +218,7 @@ let converted = symi::logic::eliminate_derived_logical_connectives(&mut context,
 
 ### introduce_derived_logical_connectives
 
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_expression_operations_expression_introduce_derived_logical_connectives_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_operations_expression_introduce_derived_logical_connectives.6aec2c4215d3"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
-
-```rust signature
-pub fn introduce_derived_logical_connectives(
-    &self,
-) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_logical_transforms_capability_rust_native_rust_api_logic_session_introduce_derived_logical_connectives_unnamed"></a>
+<a id="entry-presentation_rust_api_session_introduce_derived_logical_connectives"></a>
 <a id="placement-placement.rust.native_rust.api_logic_session_introduce_derived_logical_connectives.c8d0573db116"></a>
 <p class="symi-entry-owner">api::logic::Session method</p>
 
@@ -218,6 +228,20 @@ pub fn introduce_derived_logical_connectives(
     input_expression: &Expression,
 ) -> Result<Expression, ApiError>
 ```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_operations_expression_introduce_derived_logical_connectives.6aec2c4215d3"></a>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::introduce_derived_logical_connectives</code></p>
+
+```rust signature
+pub fn introduce_derived_logical_connectives(
+    &self,
+) -> Result<Expression, ApiError>
+```
+
+</details>
 
 
 The inverse presentation direction. Recognise the exact canonical definitions

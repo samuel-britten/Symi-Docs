@@ -11,6 +11,15 @@ specified in [Conversions and collections](conversion-rules.md) and
 
 ### is_stale
 
+<a id="entry-presentation_python_api_expression_is_stale"></a>
+<a id="placement-placement.python.python_class.expression_is_stale.6ece7ad947d1"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_stale: bool
+```
+
+
 
 Reports whether resetting the owning context invalidated the expression. All other operations
 reject a stale receiver with an actionable error.
@@ -24,9 +33,18 @@ route through the auto-simplifying builders.
 
 ### add
 
+*Not exposed by the Python bindings. Available as [`Expression.add`](/symi/wasm/expressions#add) in WASM / JavaScript, [`UniffiExpression.add`](/symi/kotlin/expressions#add) in Kotlin, [`UniffiExpression.add`](/symi/swift/expressions#add) in Swift, [`api::Expression::add`](/symi/rust/expressions#add) in Rust.*
+
+
 ### subtract
 
+*Not exposed by the Python bindings. Available as [`Expression.subtract`](/symi/wasm/expressions#subtract) in WASM / JavaScript, [`UniffiExpression.subtract`](/symi/kotlin/expressions#subtract) in Kotlin, [`UniffiExpression.subtract`](/symi/swift/expressions#subtract) in Swift, [`api::Expression::subtract`](/symi/rust/expressions#subtract) in Rust.*
+
+
 ### multiply
+
+*Not exposed by the Python bindings. Available as [`Expression.multiply`](/symi/wasm/expressions#multiply) in WASM / JavaScript, [`UniffiExpression.multiply`](/symi/kotlin/expressions#multiply) in Kotlin, [`UniffiExpression.multiply`](/symi/swift/expressions#multiply) in Swift, [`api::Expression::multiply`](/symi/rust/expressions#multiply) in Rust.*
+
 
 ### divide
 
@@ -47,7 +65,7 @@ route through the auto-simplifying builders.
 
 ### substitute
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_substitute_api_expression_substitute"></a>
+<a id="entry-presentation_python_api_session_substitute"></a>
 <a id="placement-placement.python.python_class.expression_substitute.bb8b8e243847"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -61,7 +79,7 @@ auto-simplification.
 
 ### rewrite_in_terms_of
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_rewrite_in_terms_of_api_algebra_session_rewrite_in_terms_of"></a>
+<a id="entry-presentation_python_api_session_rewrite_in_terms_of"></a>
 <a id="placement-placement.python.python_module.module_rewrite_in_terms_of.00ba7f5f5ee7"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -87,11 +105,8 @@ rewrite_in_terms_of(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_rewrite_in_terms_of_api_expression_operations_expression_rewrite_in_terms_of"></a>
 <a id="placement-placement.python.python_class.expression_rewrite_in_terms_of.e75adcb7ae07"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.rewrite_in_terms_of</code></p>
 
 ```python signature
 rewrite_in_terms_of(
@@ -99,6 +114,8 @@ rewrite_in_terms_of(
     replacement: ExpressionLike,
 ) -> Expression
 ```
+
+</details>
 
 
 Rewrite the target in terms of `replacement` under the caller-supplied formal
@@ -113,7 +130,7 @@ host-language variable named `z` does not create a symbolic name.
 
 ### free_variables
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_free_variables_api_expression_free_variables"></a>
+<a id="entry-presentation_python_api_expression_free_variables"></a>
 <a id="placement-placement.python.python_class.expression_free_variables.3120c4c59801"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -127,7 +144,7 @@ image-set parameters) are excluded; the constants pi/e are not symbols.
 
 ### expression_type
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_expression_type_api_expression_operations_expression_expression_type"></a>
+<a id="entry-presentation_python_api_expression_expression_type"></a>
 <a id="placement-placement.python.python_class.expression_expression_type.4b37960ff6b7"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -146,12 +163,21 @@ Top-level node kind: one of `integer`, `rational`, `symbol`, `constant`,
 
 ### node_count
 
+<a id="entry-presentation_python_api_expression_node_count"></a>
+<a id="placement-placement.python.python_class.expression_node_count.f64ab1a8a1d5"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+node_count() -> int
+```
+
+
 Number of nodes in the expression tree — the size measure used by the
 simplifier; useful for comparing alternative forms.
 
 ### duplicate
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_duplicate_api_expression_duplicate"></a>
+<a id="entry-presentation_python_api_expression_duplicate"></a>
 <a id="placement-placement.python.python_class.expression_duplicate.cce507a6c8ba"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -170,7 +196,7 @@ handle they intend to retain. Python arguments are borrowed.
 
 ### evaluate_to_float
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_evaluate_to_float_api_expression_operations_expression_evaluate_to_float"></a>
+<a id="entry-presentation_python_api_session_evaluate_to_float"></a>
 <a id="placement-placement.python.python_class.expression_evaluate_to_float.418b3101a583"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -184,7 +210,7 @@ value (free symbols, complex value, pole).
 
 ### evaluate_to_complex_inexact
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_evaluate_to_complex_inexact_api_expression_operations_expression_evaluate_to_complex_inexact"></a>
+<a id="entry-presentation_python_api_session_evaluate_to_complex_inexact"></a>
 <a id="placement-placement.python.python_class.expression_evaluate_to_complex_inexact.b1200e883600"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -200,7 +226,7 @@ bit-identical.
 
 ### evaluate_to_complex_inexact_at_precision
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_evaluate_to_complex_inexact_at_precision_api_expression_operations_expression_evaluate_to_complex_inexact_at_precision"></a>
+<a id="entry-presentation_python_api_session_evaluate_to_complex_inexact_at_precision"></a>
 <a id="placement-placement.python.python_class.expression_evaluate_to_complex_inexact_at_precision.8080ec68eb86"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -237,7 +263,7 @@ identity `W_k(z)*exp(W_k(z)) = z` are preserved by the branch-aware result.
 
 ### equals
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_equals_api_expression_operations_expression_equals"></a>
+<a id="entry-presentation_python_api_expression_equals"></a>
 <a id="placement-placement.python.python_class.expression_equals.533a8641b35b"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -253,17 +279,9 @@ means "could not prove equal", not a disproof.
 
 ### is_matrix
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_matrix_api_expression_is_matrix"></a>
+<a id="entry-presentation_python_api_expression_is_matrix"></a>
 <a id="placement-placement.python.python_class.expression_is_matrix.e2b72bb17444"></a>
 <p class="symi-entry-owner">Expression method</p>
-
-```python signature
-is_matrix: bool
-```
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_matrix_api_matrix_operations_matrix_is_matrix"></a>
-<a id="placement-placement.python.python_class.matrix_is_matrix.0636baf5cb88"></a>
-<p class="symi-entry-owner">Matrix property</p>
 
 ```python signature
 is_matrix: bool
@@ -275,17 +293,9 @@ result streams can be discriminated.
 
 ### is_equality
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_equality_api_expression_is_equality"></a>
+<a id="entry-presentation_python_api_expression_is_equality"></a>
 <a id="placement-placement.python.python_class.expression_is_equality.e989bcf4fd97"></a>
 <p class="symi-entry-owner">Expression method</p>
-
-```python signature
-is_equality() -> bool
-```
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_equality_api_matrix_operations_matrix_is_equality"></a>
-<a id="placement-placement.python.python_class.matrix_is_equality.fef51ea43875"></a>
-<p class="symi-entry-owner">Matrix method</p>
 
 ```python signature
 is_equality() -> bool
@@ -296,17 +306,9 @@ True for `equal(a, b)` relation nodes.
 
 ### is_integral
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_integral_api_expression_is_integral"></a>
+<a id="entry-presentation_python_api_expression_is_integral"></a>
 <a id="placement-placement.python.python_class.expression_is_integral.d403fe18e20d"></a>
 <p class="symi-entry-owner">Expression method</p>
-
-```python signature
-is_integral() -> bool
-```
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_integral_api_matrix_operations_matrix_is_integral"></a>
-<a id="placement-placement.python.python_class.matrix_is_integral.2aa435a6ae20"></a>
-<p class="symi-entry-owner">Matrix method</p>
 
 ```python signature
 is_integral() -> bool
@@ -318,17 +320,9 @@ True for unevaluated integral nodes. (Distinct from the assumption query
 
 ### is_union
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_union_api_expression_is_union"></a>
+<a id="entry-presentation_python_api_expression_is_union"></a>
 <a id="placement-placement.python.python_class.expression_is_union.d192a68a8238"></a>
 <p class="symi-entry-owner">Expression method</p>
-
-```python signature
-is_union() -> bool
-```
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_union_api_matrix_operations_matrix_is_union"></a>
-<a id="placement-placement.python.python_class.matrix_is_union.1e6b493d466b"></a>
-<p class="symi-entry-owner">Matrix method</p>
 
 ```python signature
 is_union() -> bool
@@ -337,17 +331,9 @@ is_union() -> bool
 
 ### is_image_set
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_image_set_api_expression_is_image_set"></a>
+<a id="entry-presentation_python_api_expression_is_image_set"></a>
 <a id="placement-placement.python.python_class.expression_is_image_set.628821d951a2"></a>
 <p class="symi-entry-owner">Expression method</p>
-
-```python signature
-is_image_set() -> bool
-```
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_image_set_api_matrix_operations_matrix_is_image_set"></a>
-<a id="placement-placement.python.python_class.matrix_is_image_set.32d92ebd96fa"></a>
-<p class="symi-entry-owner">Matrix method</p>
 
 ```python signature
 is_image_set() -> bool
@@ -356,17 +342,9 @@ is_image_set() -> bool
 
 ### is_finite_set
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_finite_set_api_expression_is_finite_set"></a>
+<a id="entry-presentation_python_api_expression_is_finite_set"></a>
 <a id="placement-placement.python.python_class.expression_is_finite_set.f011174eecec"></a>
 <p class="symi-entry-owner">Expression method</p>
-
-```python signature
-is_finite_set() -> bool
-```
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_finite_set_api_matrix_operations_matrix_is_finite_set"></a>
-<a id="placement-placement.python.python_class.matrix_is_finite_set.7dc9734ea9f1"></a>
-<p class="symi-entry-owner">Matrix method</p>
 
 ```python signature
 is_finite_set() -> bool
@@ -375,7 +353,7 @@ is_finite_set() -> bool
 
 ### is_interval
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_interval_api_expression_is_interval"></a>
+<a id="entry-presentation_python_api_expression_is_interval"></a>
 <a id="placement-placement.python.python_class.expression_is_interval.16264a9ea34f"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -391,17 +369,9 @@ only on proof from the structure and the symbol assumptions.
 
 ### is_real
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_real_api_expression_is_real"></a>
+<a id="entry-presentation_python_api_expression_is_real"></a>
 <a id="placement-placement.python.python_class.expression_is_real.223807c3891d"></a>
 <p class="symi-entry-owner">Expression method</p>
-
-```python signature
-is_real() -> Optional[bool]
-```
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_real_api_matrix_operations_matrix_is_real"></a>
-<a id="placement-placement.python.python_class.matrix_is_real.dc7c5bc1210e"></a>
-<p class="symi-entry-owner">Matrix method</p>
 
 ```python signature
 is_real() -> Optional[bool]
@@ -410,17 +380,9 @@ is_real() -> Optional[bool]
 
 ### is_positive
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_positive_api_expression_is_positive"></a>
+<a id="entry-presentation_python_api_expression_is_positive"></a>
 <a id="placement-placement.python.python_class.expression_is_positive.fd253073651b"></a>
 <p class="symi-entry-owner">Expression method</p>
-
-```python signature
-is_positive() -> Optional[bool]
-```
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_positive_api_matrix_operations_matrix_is_positive"></a>
-<a id="placement-placement.python.python_class.matrix_is_positive.cb6bef131b19"></a>
-<p class="symi-entry-owner">Matrix method</p>
 
 ```python signature
 is_positive() -> Optional[bool]
@@ -429,7 +391,7 @@ is_positive() -> Optional[bool]
 
 ### is_negative
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_negative_api_expression_is_negative"></a>
+<a id="entry-presentation_python_api_expression_is_negative"></a>
 <a id="placement-placement.python.python_class.expression_is_negative.66463cf8c5bf"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -440,7 +402,7 @@ is_negative() -> Optional[bool]
 
 ### is_integer
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_integer_api_expression_is_integer"></a>
+<a id="entry-presentation_python_api_expression_is_integer"></a>
 <a id="placement-placement.python.python_class.expression_is_integer.265875f28f3d"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -451,7 +413,7 @@ is_integer() -> Optional[bool]
 
 ### is_rational
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_rational_api_expression_is_rational"></a>
+<a id="entry-presentation_python_api_expression_is_rational"></a>
 <a id="placement-placement.python.python_class.expression_is_rational.ebebd5f8b150"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -462,7 +424,7 @@ is_rational() -> Optional[bool]
 
 ### is_nonzero
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_nonzero_api_expression_is_nonzero"></a>
+<a id="entry-presentation_python_api_expression_is_nonzero"></a>
 <a id="placement-placement.python.python_class.expression_is_nonzero.5023122e6b9d"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -473,7 +435,7 @@ is_nonzero() -> Optional[bool]
 
 ### is_nonnegative
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_nonnegative_api_expression_is_nonnegative"></a>
+<a id="entry-presentation_python_api_session_is_nonnegative"></a>
 <a id="placement-placement.python.python_class.expression_is_nonnegative.b1caa420f328"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -490,7 +452,7 @@ prove non-negativity is not a proof of negativity, so the undecided verdict is
 
 ### is_finite
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_finite_api_expression_is_finite"></a>
+<a id="entry-presentation_python_api_expression_is_finite"></a>
 <a id="placement-placement.python.python_class.expression_is_finite.afd2d2c8868f"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -501,7 +463,7 @@ is_finite() -> Optional[bool]
 
 ### is_defined
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_defined_api_expression_is_defined"></a>
+<a id="entry-presentation_python_api_expression_is_defined"></a>
 <a id="placement-placement.python.python_class.expression_is_defined.7f503b8898c6"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -522,7 +484,7 @@ The signed infinities are defined extended-real values but are not finite.
 
 ### interval_lower
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_interval_lower_api_expression_interval_lower"></a>
+<a id="entry-presentation_python_api_expression_interval_lower"></a>
 <a id="placement-placement.python.python_class.expression_interval_lower.2a8531122802"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -535,7 +497,7 @@ Lower endpoint of an interval node; raises on other shapes.
 
 ### interval_upper
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_interval_upper_api_expression_interval_upper"></a>
+<a id="entry-presentation_python_api_expression_interval_upper"></a>
 <a id="placement-placement.python.python_class.expression_interval_upper.f9ce0cc9c300"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -546,7 +508,7 @@ interval_upper() -> Expression
 
 ### integral_integrand
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_integral_integrand_api_expression_integral_integrand"></a>
+<a id="entry-presentation_python_api_expression_integral_integrand"></a>
 <a id="placement-placement.python.python_class.expression_integral_integrand.6f4db735f08b"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -557,7 +519,7 @@ integral_integrand() -> Expression
 
 ### integral_variable
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_integral_variable_api_expression_integral_variable"></a>
+<a id="entry-presentation_python_api_expression_integral_variable"></a>
 <a id="placement-placement.python.python_class.expression_integral_variable.4900f1a20525"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -568,7 +530,7 @@ integral_variable() -> str
 
 ### integral_lower_bound
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_integral_lower_bound_api_expression_integral_lower_bound"></a>
+<a id="entry-presentation_python_api_expression_integral_lower_bound"></a>
 <a id="placement-placement.python.python_class.expression_integral_lower_bound.e12ad46f3453"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -581,7 +543,7 @@ integral_lower_bound() -> Optional[Expression]
 
 ### integral_upper_bound
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_integral_upper_bound_api_expression_integral_upper_bound"></a>
+<a id="entry-presentation_python_api_expression_integral_upper_bound"></a>
 <a id="placement-placement.python.python_class.expression_integral_upper_bound.f2d897362ebe"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -592,7 +554,7 @@ integral_upper_bound() -> Optional[Expression]
 
 ### union_components
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_union_components_api_expression_union_components"></a>
+<a id="entry-presentation_python_api_expression_union_components"></a>
 <a id="placement-placement.python.python_class.expression_union_components.d7ba76739d4b"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -603,7 +565,7 @@ union_components() -> list[Any]
 
 ### image_set_lambda_expression
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_image_set_lambda_expression_api_expression_image_set_lambda_expression"></a>
+<a id="entry-presentation_python_api_expression_image_set_lambda_expression"></a>
 <a id="placement-placement.python.python_class.expression_image_set_lambda_expression.210d2d46c870"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -614,7 +576,7 @@ image_set_lambda_expression() -> Expression
 
 ### image_set_variable
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_image_set_variable_api_expression_image_set_variable"></a>
+<a id="entry-presentation_python_api_expression_image_set_variable"></a>
 <a id="placement-placement.python.python_class.expression_image_set_variable.a2bc136da797"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -625,7 +587,7 @@ image_set_variable() -> str
 
 ### image_set_domain
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_image_set_domain_api_expression_image_set_domain"></a>
+<a id="entry-presentation_python_api_expression_image_set_domain"></a>
 <a id="placement-placement.python.python_class.expression_image_set_domain.f5bf94922f92"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -636,7 +598,7 @@ image_set_domain() -> Expression
 
 ### to_list
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_to_list_api_expression_to_list"></a>
+<a id="entry-presentation_python_api_expression_to_list"></a>
 <a id="placement-placement.python.python_class.expression_to_list.f4ac813ef225"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -656,13 +618,10 @@ Element count of a finite set (Python: `len(expression)`).
 
 ### to_string
 
-*Not exposed by the Python bindings. Available as [`api::partial_differential_equations::PartialDifferentialEquationProblem::to_string`](/symi/rust/expressions#to_string) in Rust.*
-
-
 Human-readable form; Python uses `str(expression)` / `repr(expression)`.
 ### symbol_name
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_symbol_name_api_expression_symbol_name"></a>
+<a id="entry-presentation_python_api_expression_symbol_name"></a>
 <a id="placement-placement.python.python_class.expression_symbol_name.984257e5d5ea"></a>
 <p class="symi-entry-owner">Expression method</p>
 
@@ -675,7 +634,7 @@ Returns the name of a symbol expression and rejects every other expression kind.
 
 ### numerator_denominator
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_numerator_denominator_api_session_numerator_denominator"></a>
+<a id="entry-presentation_python_api_session_numerator_denominator"></a>
 <a id="placement-placement.python.python_module.module_numerator_denominator.b5d4f5877417"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -693,15 +652,14 @@ numerator_denominator(input_expression: ExpressionLike) -> tuple[Expression, Exp
 numerator_denominator(input_expression: ExpressionLike) -> tuple[Expression, Expression]
 ```
 
-</details>
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_numerator_denominator_api_expression_numerator_denominator"></a>
 <a id="placement-placement.python.python_class.expression_numerator_denominator.46a81fe90444"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.numerator_denominator</code></p>
 
 ```python signature
 numerator_denominator() -> tuple[Expression, Expression]
 ```
+
+</details>
 
 
 Returns the exact structural numerator and denominator without combining sums or cancelling
@@ -709,7 +667,7 @@ factors. Python returns a two-tuple and the JavaScript facade returns a record.
 
 ### numerator
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_numerator_api_session_numerator"></a>
+<a id="entry-presentation_python_api_session_numerator"></a>
 <a id="placement-placement.python.python_module.module_numerator.7b439c7018e9"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -727,22 +685,21 @@ numerator(input_expression: ExpressionLike) -> Expression
 numerator(input_expression: ExpressionLike) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_numerator_api_expression_numerator"></a>
 <a id="placement-placement.python.python_class.expression_numerator.814cd8437587"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.numerator</code></p>
 
 ```python signature
 numerator() -> Expression
 ```
+
+</details>
 
 
 Returns the structural numerator from `numerator_denominator`.
 
 ### denominator
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_denominator_api_session_denominator"></a>
+<a id="entry-presentation_python_api_session_denominator"></a>
 <a id="placement-placement.python.python_module.module_denominator.71e7ade8eb22"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -760,15 +717,14 @@ denominator(input_expression: ExpressionLike) -> Expression
 denominator(input_expression: ExpressionLike) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_denominator_api_expression_denominator"></a>
 <a id="placement-placement.python.python_class.expression_denominator.a0ef83627ae0"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.denominator</code></p>
 
 ```python signature
 denominator() -> Expression
 ```
+
+</details>
 
 
 Returns the structural denominator from `numerator_denominator`.
@@ -790,113 +746,393 @@ print((x**2 - 1).factor())
 ```
 
 
+### is_nonpositive
+
+<a id="entry-presentation_python_api_session_is_nonpositive"></a>
+<a id="placement-placement.python.python_class.expression_is_nonpositive.69a4edec7757"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_nonpositive() -> Optional[bool]
+```
+
+
+Whether the expression is known to be nonpositive. Three-valued, like the other
+sign predicates on this page: `None` means the sign was not decided from the
+assumptions in force, not that the expression is positive. Compare
+[`is_nonnegative`](#is_nonnegative).
+
 ## Additional API
 
-### is_stale
+### Expression
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_geometry_operations_circle2d_is_stale"></a>
-<a id="placement-placement.python.python_class.circle2d_is_stale.514afb52527f"></a>
-<p class="symi-entry-owner">Circle2d property</p>
+<a id="entry-presentation_python_api_expression"></a>
+<a id="placement-placement.python.python_class.expression.f1defafa2138"></a>
+<p class="symi-entry-owner">Type</p>
 
 ```python signature
-is_stale: bool
+class Expression
 ```
 
-Reports whether resetting the owning context invalidated the expression. All other operations reject a stale receiver with an actionable error.
+A symbolic expression owned by the context that built it.
 
-### is_stale
+### __add__
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_expression_is_stale"></a>
-<a id="placement-placement.python.python_class.expression_is_stale.6ece7ad947d1"></a>
+<a id="entry-presentation_python_host_python_expression_add"></a>
+<a id="placement-placement.python.python_class.expression_add.58a4bd4dd71b"></a>
 <p class="symi-entry-owner">Expression method</p>
 
 ```python signature
-is_stale: bool
+__add__(other: Any) -> Expression
 ```
 
-Reports whether resetting the owning context invalidated the expression. All other operations reject a stale receiver with an actionable error.
+Sum `self + other`, returning a new expression.
 
-### is_stale
+### __bool__
 
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_matrix_is_stale"></a>
-<a id="placement-placement.python.python_class.matrix_is_stale.35f51b1ba5a7"></a>
-<p class="symi-entry-owner">Matrix property</p>
-
-```python signature
-is_stale: bool
-```
-
-Reports whether resetting the owning context invalidated the expression. All other operations reject a stale receiver with an actionable error.
-
-### is_stale
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_point2d_is_stale"></a>
-<a id="placement-placement.python.python_class.point2d_is_stale.f4483d6e8c73"></a>
-<p class="symi-entry-owner">Point2d property</p>
-
-```python signature
-is_stale: bool
-```
-
-Reports whether resetting the owning context invalidated the expression. All other operations reject a stale receiver with an actionable error.
-
-### is_stale
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_geometry_operations_polygon2d_is_stale"></a>
-<a id="placement-placement.python.python_class.polygon2d_is_stale.8876b4907ddb"></a>
-<p class="symi-entry-owner">Polygon2d property</p>
-
-```python signature
-is_stale: bool
-```
-
-Reports whether resetting the owning context invalidated the expression. All other operations reject a stale receiver with an actionable error.
-
-### is_stale
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_geometry_operations_segment2d_is_stale"></a>
-<a id="placement-placement.python.python_class.segment2d_is_stale.5e1e8d6f44eb"></a>
-<p class="symi-entry-owner">Segment2d property</p>
-
-```python signature
-is_stale: bool
-```
-
-Reports whether resetting the owning context invalidated the expression. All other operations reject a stale receiver with an actionable error.
-
-### is_stale
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_geometry_operations_triangle2d_is_stale"></a>
-<a id="placement-placement.python.python_class.triangle2d_is_stale.7e5281830311"></a>
-<p class="symi-entry-owner">Triangle2d property</p>
-
-```python signature
-is_stale: bool
-```
-
-Reports whether resetting the owning context invalidated the expression. All other operations reject a stale receiver with an actionable error.
-
-### node_count
-
-<a id="entry-presentation_python_expressions_capability_expression_transformations_node_count_api_expression_node_count"></a>
-<a id="placement-placement.python.python_class.expression_node_count.f64ab1a8a1d5"></a>
+<a id="entry-presentation_python_host_python_expression_bool"></a>
+<a id="placement-placement.python.python_class.expression_bool.69418ace2aed"></a>
 <p class="symi-entry-owner">Expression method</p>
 
 ```python signature
-node_count() -> int
+__bool__() -> bool
 ```
 
-Number of nodes in the expression tree — the size measure used by the simplifier; useful for comparing alternative forms.
+Always raises: symbolic truth is three-valued, so use `evaluate_truth` instead.
 
-### node_count
+### __eq__
 
-<a id="entry-presentation_python_expressions_capability_numeric_definite_integration_node_count_api_results_numericdefiniteintegrationresult_node_count"></a>
-<a id="placement-placement.python.python_class.numericdefiniteintegrationresult_node_count.50ccc5af81cc"></a>
-<p class="symi-entry-owner">NumericDefiniteIntegrationResult property</p>
+<a id="entry-presentation_python_host_python_expression_eq"></a>
+<a id="placement-placement.python.python_class.expression_eq.5a2d56342b69"></a>
+<p class="symi-entry-owner">Expression method</p>
 
 ```python signature
-node_count: Optional[int]
+__eq__(other: Any) -> bool
 ```
 
-The node count of the accepted Gauss--Legendre rule.
+Structural equality of two expressions from the same live context; use `equal` to build a relation.
+
+### __getattribute__
+
+<a id="entry-presentation_python_host_python_expression_getattribute"></a>
+<a id="placement-placement.python.python_class.expression_getattribute.76962b06f74d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__getattribute__(name: str) -> Any
+```
+
+Reject attribute access on a stale object before delegating to the default lookup.
+
+### __hash__
+
+<a id="entry-presentation_python_host_python_expression_hash"></a>
+<a id="placement-placement.python.python_class.expression_hash.fcf6ce555e16"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__hash__() -> int
+```
+
+Hash consistent with structural equality, so expressions can key a dict or set.
+
+### __mul__
+
+<a id="entry-presentation_python_host_python_expression_mul"></a>
+<a id="placement-placement.python.python_class.expression_mul.605ba0478e43"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__mul__(other: Any) -> Expression
+```
+
+Product `self * other`, returning a new expression.
+
+### __ne__
+
+<a id="entry-presentation_python_host_python_expression_ne"></a>
+<a id="placement-placement.python.python_class.expression_ne.8cbf473dc2ff"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__ne__(other: Any) -> bool
+```
+
+Structural inequality, the negation of `__eq__`.
+
+### __neg__
+
+<a id="entry-presentation_python_host_python_expression_neg"></a>
+<a id="placement-placement.python.python_class.expression_neg.ef8096e95741"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__neg__() -> Expression
+```
+
+Negation `-self`, returning a new expression.
+
+### __pow__
+
+<a id="entry-presentation_python_host_python_expression_pow"></a>
+<a id="placement-placement.python.python_class.expression_pow.ac2cb53ba3dc"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__pow__(exponent: Any, modulo: Optional[Any] = ...) -> Expression
+```
+
+Power `self ** exponent`; the three-argument form is rejected.
+
+### __radd__
+
+<a id="entry-presentation_python_host_python_expression_radd"></a>
+<a id="placement-placement.python.python_class.expression_radd.b3f9590b78f9"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__radd__(other: Any) -> Expression
+```
+
+Sum `other + self`, returning a new expression.
+
+### __repr__
+
+<a id="entry-presentation_python_host_python_expression_repr"></a>
+<a id="placement-placement.python.python_class.expression_repr.51e3a215dd82"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__repr__() -> str
+```
+
+The `repr()` text, which reports staleness instead of failing.
+
+### __rmul__
+
+<a id="entry-presentation_python_host_python_expression_rmul"></a>
+<a id="placement-placement.python.python_class.expression_rmul.fd487c5f63ce"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__rmul__(other: Any) -> Expression
+```
+
+Product `other * self`, returning a new expression.
+
+### __rpow__
+
+<a id="entry-presentation_python_host_python_expression_rpow"></a>
+<a id="placement-placement.python.python_class.expression_rpow.ea98d5ba5b89"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__rpow__(base: Any, modulo: Optional[Any] = ...) -> Expression
+```
+
+Power `base ** self`; the three-argument form is rejected.
+
+### __rsub__
+
+<a id="entry-presentation_python_host_python_expression_rsub"></a>
+<a id="placement-placement.python.python_class.expression_rsub.2815deb80733"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__rsub__(other: Any) -> Expression
+```
+
+Difference `other - self`, returning a new expression.
+
+### __rtruediv__
+
+<a id="entry-presentation_python_host_python_expression_rtruediv"></a>
+<a id="placement-placement.python.python_class.expression_rtruediv.f1cdc35ec1fa"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__rtruediv__(other: Any) -> Expression
+```
+
+Quotient `other / self`, returning a new expression.
+
+### __str__
+
+<a id="entry-presentation_python_host_python_expression_str"></a>
+<a id="placement-placement.python.python_class.expression_str.329819f4a97c"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__str__() -> str
+```
+
+The mathematical text of the expression.
+
+### __sub__
+
+<a id="entry-presentation_python_host_python_expression_sub"></a>
+<a id="placement-placement.python.python_class.expression_sub.f0d35560c2a2"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__sub__(other: Any) -> Expression
+```
+
+Difference `self - other`, returning a new expression.
+
+### __truediv__
+
+<a id="entry-presentation_python_host_python_expression_truediv"></a>
+<a id="placement-placement.python.python_class.expression_truediv.14a00eccae14"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+__truediv__(other: Any) -> Expression
+```
+
+Quotient `self / other`, returning a new expression.
+
+### is_algebraic
+
+<a id="entry-presentation_python_api_expression_is_algebraic"></a>
+<a id="placement-placement.python.python_class.expression_is_algebraic.68ea1091eca2"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_algebraic() -> Optional[bool]
+```
+
+Whether the expression is known to be algebraic.
+
+### is_complex
+
+<a id="entry-presentation_python_api_expression_is_complex"></a>
+<a id="placement-placement.python.python_class.expression_is_complex.c64638be3cc5"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_complex() -> Optional[bool]
+```
+
+Whether the expression is known to be finite complex.
+
+### is_composite
+
+<a id="entry-presentation_python_api_expression_is_composite"></a>
+<a id="placement-placement.python.python_class.expression_is_composite.5048052ad74b"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_composite() -> Optional[bool]
+```
+
+Whether the expression is known to be composite.
+
+### is_even
+
+<a id="entry-presentation_python_api_expression_is_even"></a>
+<a id="placement-placement.python.python_class.expression_is_even.b24e23216d5b"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_even() -> Optional[bool]
+```
+
+Whether the expression is known to be even.
+
+### is_extended_real
+
+<a id="entry-presentation_python_api_expression_is_extended_real"></a>
+<a id="placement-placement.python.python_class.expression_is_extended_real.80f714a04d07"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_extended_real() -> Optional[bool]
+```
+
+Whether the expression is known to be extended-real.
+
+### is_infinite
+
+<a id="entry-presentation_python_api_expression_is_infinite"></a>
+<a id="placement-placement.python.python_class.expression_is_infinite.db44c70207f2"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_infinite() -> Optional[bool]
+```
+
+Whether the expression is known to be infinite.
+
+### is_irrational
+
+<a id="entry-presentation_python_api_expression_is_irrational"></a>
+<a id="placement-placement.python.python_class.expression_is_irrational.97edaad6ba30"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_irrational() -> Optional[bool]
+```
+
+Whether the expression is known to be irrational.
+
+### is_natural
+
+<a id="entry-presentation_python_api_expression_is_natural"></a>
+<a id="placement-placement.python.python_class.expression_is_natural.8c704553368c"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_natural() -> Optional[bool]
+```
+
+Whether the expression is known to be natural.
+
+### is_odd
+
+<a id="entry-presentation_python_api_expression_is_odd"></a>
+<a id="placement-placement.python.python_class.expression_is_odd.279898eb431e"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_odd() -> Optional[bool]
+```
+
+Whether the expression is known to be odd.
+
+### is_positive_integer
+
+<a id="entry-presentation_python_api_expression_is_positive_integer"></a>
+<a id="placement-placement.python.python_class.expression_is_positive_integer.d43ced293292"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_positive_integer() -> Optional[bool]
+```
+
+Whether the expression is known to be a positive integer.
+
+### is_transcendental
+
+<a id="entry-presentation_python_api_expression_is_transcendental"></a>
+<a id="placement-placement.python.python_class.expression_is_transcendental.51397fc05a1d"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_transcendental() -> Optional[bool]
+```
+
+Whether the expression is known to be transcendental.
+
+### is_zero
+
+<a id="entry-presentation_python_api_expression_is_zero"></a>
+<a id="placement-placement.python.python_class.expression_is_zero.e8cc82d31054"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```python signature
+is_zero() -> Optional[bool]
+```
+
+Whether the expression is known to be zero.
 

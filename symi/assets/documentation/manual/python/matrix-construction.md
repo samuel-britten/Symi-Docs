@@ -6,6 +6,15 @@ Construct matrices from ordered rows or from identity, zero, and diagonal famili
 
 ### matrix
 
+<a id="entry-presentation_python_api_session_matrix"></a>
+<a id="placement-placement.python.python_class.context_matrix.2fa42d359b64"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```python signature
+matrix(rows: Any) -> Matrix
+```
+
+
 
 
 Build a matrix from ordered rows. Direct Python construction and the facade
@@ -15,7 +24,7 @@ code should use the nested facade form.
 
 ### matrix_identity
 
-<a id="entry-presentation_python_matrix_construction_capability_algebra_matrix_identity_api_session_matrix_identity"></a>
+<a id="entry-presentation_python_api_session_matrix_identity"></a>
 <a id="placement-placement.python.python_module.module_matrix_identity.98fcb671a0ca"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -40,7 +49,7 @@ The \(\mathit{size}\times\mathit{size}\) identity; size 0 raises.
 
 ### matrix_zero
 
-<a id="entry-presentation_python_matrix_construction_capability_algebra_matrix_zero_api_session_matrix_zero"></a>
+<a id="entry-presentation_python_api_session_matrix_zero"></a>
 <a id="placement-placement.python.python_module.module_matrix_zero.898b7b05a3f0"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -65,7 +74,7 @@ The \(\mathit{rows}\times\mathit{columns}\) zero matrix.
 
 ### matrix_diagonal
 
-<a id="entry-presentation_python_matrix_construction_capability_algebra_matrix_diagonal_api_session_matrix_diagonal"></a>
+<a id="entry-presentation_python_api_session_matrix_diagonal"></a>
 <a id="placement-placement.python.python_module.module_matrix_diagonal.2c66b85938ea"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -93,7 +102,7 @@ list raises.
 
 ### rows
 
-<a id="entry-presentation_python_matrix_construction_capability_algebra_rows_api_matrix_rows"></a>
+<a id="entry-presentation_python_api_matrix_rows"></a>
 <a id="placement-placement.python.python_class.matrix_rows.61f364edfdc5"></a>
 <p class="symi-entry-owner">Matrix property</p>
 
@@ -104,7 +113,7 @@ rows: int
 
 ### columns
 
-<a id="entry-presentation_python_matrix_construction_capability_algebra_columns_api_matrix_columns"></a>
+<a id="entry-presentation_python_api_matrix_columns"></a>
 <a id="placement-placement.python.python_class.matrix_columns.195d51432dc4"></a>
 <p class="symi-entry-owner">Matrix property</p>
 
@@ -138,27 +147,75 @@ print(symi.matrix_diagonal([1, 2, 3]))
 
 ## Additional API
 
-### matrix
+### diagonal_matrix
 
-<a id="entry-presentation_python_matrix_construction_capability_algebra_matrix_api_session_matrix"></a>
-<a id="placement-placement.python.python_class.context_matrix.2fa42d359b64"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```python signature
-matrix(rows: Any) -> Matrix
-```
-
-Build a matrix from ordered rows. Direct Python construction and the facade module function use the shared default context. The raw wasm-bindgen compatibility layer retains `(rows, columns, flat_entries)`; new JavaScript code should use the nested facade form.
-
-### matrix
-
-<a id="entry-presentation_python_matrix_construction_capability_algebra_matrix_api_partial_differential_equations_partialdifferentialequationprincipalpart_matrix"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationprincipalpart_matrix.b3778ce1892c"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationPrincipalPart property</p>
+<a id="entry-presentation_python_api_session_diagonal_matrix"></a>
+<a id="placement-placement.python.python_module.module_diagonal_matrix.cb2bd3eae1d2"></a>
+<p class="symi-entry-owner">Default context</p>
 
 ```python signature
-matrix: Matrix
+diagonal_matrix(subject: Matrix) -> AssumptionProposition
 ```
 
-The symmetric principal matrix whose quadratic form is the exact principal symbol.
+Build a diagonal-matrix proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_diagonal_matrix.d5c6b8521631"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.diagonal_matrix</code></p>
+
+```python signature
+diagonal_matrix(subject: Matrix) -> AssumptionProposition
+```
+
+</details>
+
+### identity_matrix
+
+<a id="entry-presentation_python_api_session_identity_matrix"></a>
+<a id="placement-placement.python.python_module.module_identity_matrix.4d6c93f48f1e"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+identity_matrix(subject: Matrix) -> AssumptionProposition
+```
+
+Build an identity-matrix proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_identity_matrix.0ebf4e138e96"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.identity_matrix</code></p>
+
+```python signature
+identity_matrix(subject: Matrix) -> AssumptionProposition
+```
+
+</details>
+
+### zero_matrix
+
+<a id="entry-presentation_python_api_session_zero_matrix"></a>
+<a id="placement-placement.python.python_module.module_zero_matrix.c698818abd16"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+zero_matrix(subject: Matrix) -> AssumptionProposition
+```
+
+Build a zero-matrix proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_zero_matrix.7b8066c05383"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.zero_matrix</code></p>
+
+```python signature
+zero_matrix(subject: Matrix) -> AssumptionProposition
+```
+
+</details>
 

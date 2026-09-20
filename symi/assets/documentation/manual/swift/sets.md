@@ -7,7 +7,7 @@ expressions page.
 
 ### interval
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_interval_api_sets_session_interval"></a>
+<a id="entry-presentation_swift_api_session_interval"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_interval.3d25cad4506c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -27,7 +27,7 @@ finite set, \((-\infty, \infty)\to\) real line).
 
 ### real_line
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_real_line_api_session_real_line"></a>
+<a id="entry-presentation_swift_api_session_real_line"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_realline.f2340b577b3b"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -40,7 +40,7 @@ The set \(\mathbb{R}\).
 
 ### complex_plane
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_complex_plane_api_session_complex_plane"></a>
+<a id="entry-presentation_swift_api_session_complex_plane"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_complexplane.68f6883a0853"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -54,7 +54,7 @@ carries no realness assumption.
 
 ### integer_set
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_integer_set_api_session_integer_set"></a>
+<a id="entry-presentation_swift_api_session_integer_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integerset.3ed935c8e6aa"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -67,7 +67,7 @@ The set \(\mathbb{Z}\).
 
 ### empty_set
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_empty_set_api_session_empty_set"></a>
+<a id="entry-presentation_swift_api_session_empty_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_emptyset.b24b44b080ee"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -80,7 +80,7 @@ The empty set \(\varnothing\).
 
 ### finite_set
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_finite_set_api_session_finite_set"></a>
+<a id="entry-presentation_swift_api_session_finite_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_finiteset.2f6e260ded78"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -94,7 +94,7 @@ gives the empty set.
 
 ### set_union
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_set_union_api_sets_session_set_union"></a>
+<a id="entry-presentation_swift_api_session_set_union"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_setunion.8e884c96fab8"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -112,7 +112,7 @@ otherwise the structural `set_union` node.
 
 ### set_intersection
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_set_intersection_api_sets_session_set_intersection"></a>
+<a id="entry-presentation_swift_api_session_set_intersection"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_setintersection.f56710deeb53"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -130,7 +130,7 @@ structural `set_intersection` node.
 
 ### set_complement
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_set_complement_api_sets_session_set_complement"></a>
+<a id="entry-presentation_swift_api_session_set_complement"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_setcomplement.d96e49c60156"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -146,7 +146,7 @@ The relative complement \(a \setminus b\).
 
 ### image_set
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_image_set_api_sets_session_image_set"></a>
+<a id="entry-presentation_swift_api_session_image_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_imageset.5fea8fa8cf7a"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -165,7 +165,7 @@ construction.
 
 ### condition_set
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_condition_set_api_sets_session_condition_set"></a>
+<a id="entry-presentation_swift_api_session_condition_set"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_conditionset.1c69d332f022"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -183,7 +183,7 @@ The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{co
 
 ### is_member
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_is_member_api_sets_session_is_member"></a>
+<a id="entry-presentation_swift_api_session_is_member"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_ismember.17be7781f5f8"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -201,7 +201,7 @@ intervals, unions, intersections, complements.
 
 ### is_subset
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_is_subset_api_sets_session_is_subset"></a>
+<a id="entry-presentation_swift_api_session_is_subset"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_issubset.059d490835a8"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -218,7 +218,7 @@ element checks, interval-in-interval endpoint tests; `None` otherwise.
 
 ### enumerate_set_in_interval
 
-<a id="entry-presentation_swift_sets_capability_discrete_mathematics_enumerate_set_in_interval_api_sets_session_enumerate_set_in_interval"></a>
+<a id="entry-presentation_swift_api_session_enumerate_set_in_interval"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_enumeratesetininterval.6d91fa32b30b"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -244,4 +244,45 @@ returns for a lattice too wide to materialize. `limit` defaults to 64. WASM retu
 `SetEnumeration` object with `outcome` and `elements` getters.
 
 ## Example
+
+
+## Additional API
+
+### length
+
+<a id="entry-presentation_swift_api_expression_length"></a>
+<a id="placement-placement.swift.swift_object.uniffiexpression_length.5fd4ad9833c8"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```swift signature
+func length() -> UInt64
+```
+
+Number of elements of a finite-set expression.
+
+### SetEnumeration
+
+#### SetEnumeration.elements
+
+<a id="entry-presentation_swift_api_setenumeration_elements"></a>
+<a id="placement-placement.swift.swift_object.uniffisetenumeration_elements.475cb4a9700e"></a>
+<p class="symi-entry-owner">UniffiSetEnumeration method</p>
+
+```swift signature
+func elements() -> [UniffiExpression]
+```
+
+The exact elements produced, in increasing order.
+
+#### SetEnumeration.outcome
+
+<a id="entry-presentation_swift_api_setenumeration_outcome"></a>
+<a id="placement-placement.swift.swift_object.uniffisetenumeration_outcome.feca7c08f98c"></a>
+<p class="symi-entry-owner">UniffiSetEnumeration method</p>
+
+```swift signature
+func outcome() -> UniffiEnumerationVerdict
+```
+
+`"complete"`, `"truncated"`, or `"declined"`.
 

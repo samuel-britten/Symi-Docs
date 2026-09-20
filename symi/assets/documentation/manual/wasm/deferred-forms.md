@@ -6,9 +6,9 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
-<a id="entry-presentation_wasm_deferred_forms_capability_construction_integral_api_analysis_session_integral"></a>
+<a id="entry-presentation_wasm_api_session_integral"></a>
 <a id="placement-placement.wasm.wasm_module.module_integral.eee25ebf5a0e"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 integral(
@@ -23,7 +23,7 @@ integral(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_integral.f6129c72c596"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integral</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integral</code></p>
 
 ```typescript signature
 integral(
@@ -43,15 +43,65 @@ the node.
 
 ### derivative
 
+<a id="entry-presentation_wasm_api_session_derivative"></a>
+<a id="placement-placement.wasm.wasm_module.module_derivative.6c2f52be0c02"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
-Constructs a deferred derivative. The variable may
-be a name or a same-context symbol expression. Use `execute` to evaluate it.
+```typescript signature
+derivative(
+    input_expression: Expression,
+    variable: string,
+    order?: number | null,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_derivative.50bdfc4c863b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.derivative</code></p>
+
+```typescript signature
+derivative(
+    input_expression: Expression,
+    variable: string,
+    order?: number | null,
+): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.expression_derivative.71488970b451"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.derivative</code></p>
+
+```typescript signature
+derivative(variable: VariableLike, order?: number): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_derivative.5e5f3f1fdacd"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.derivative</code></p>
+
+```typescript signature
+derivative(variable: string, order?: number | null): Expression
+```
+
+</details>
+
+
+
+Constructs an *unevaluated* derivative node of an arbitrary expression. The
+variable may be a name or a same-context symbol expression. Nothing is
+differentiated here: use [`execute`](evaluation-and-constants.md) on the node,
+or [`differentiate`](calculus.md#differentiate) to differentiate now.
+
+This is not the derivative of a named unknown function. An equation built from
+this placeholder is not recognised by the differential-equation classifiers,
+which read the structural derivative built by
+[`UndefinedFunction.derivative`](undefined-functions.md#derivative).
 
 ### summation
 
-<a id="entry-presentation_wasm_deferred_forms_capability_construction_summation_api_analysis_session_summation"></a>
+<a id="entry-presentation_wasm_api_session_summation"></a>
 <a id="placement-placement.wasm.wasm_module.module_summation.49ecda1cfd0a"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 summation(
@@ -66,7 +116,7 @@ summation(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_summation.008385ac03bb"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.summation</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.summation</code></p>
 
 ```typescript signature
 summation(
@@ -170,9 +220,9 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
-<a id="entry-presentation_wasm_deferred_forms_capability_construction_product_api_analysis_session_product"></a>
+<a id="entry-presentation_wasm_api_session_product"></a>
 <a id="placement-placement.wasm.wasm_module.module_product.4b346b85255f"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 product(
@@ -187,7 +237,7 @@ product(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_product.37cc779e76ed"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.product</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.product</code></p>
 
 ```typescript signature
 product(
@@ -273,9 +323,9 @@ form is in scope.
 
 ### piecewise
 
-<a id="entry-presentation_wasm_deferred_forms_capability_construction_piecewise_api_solving_session_piecewise"></a>
+<a id="entry-presentation_wasm_api_session_piecewise"></a>
 <a id="placement-placement.wasm.wasm_module.module_piecewise.c246b4400df8"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 piecewise(
@@ -295,7 +345,7 @@ piecewise(branches: Iterable<PiecewiseBranch>): Expression
 ```
 
 <a id="placement-placement.wasm.wasm_class.context_piecewise.9a8f7205a7fd"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.piecewise</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.piecewise</code></p>
 
 ```typescript signature
 piecewise(
@@ -325,4 +375,67 @@ fails the result is the undefined sentinel.
 ## Example
 
 This family is not part of the recommended JavaScript facade in this release. Call it through the generated `symi.raw` layer, whose entries are listed with their wasm-bindgen signatures above, and read [Migration](migration.md) for the ownership rules that apply there.
+
+
+### summation_indefinite
+
+<a id="entry-presentation_wasm_api_session_summation_indefinite"></a>
+<a id="placement-placement.wasm.wasm_module.module_summationindefinite.45acee68c513"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+summationIndefinite(summand: Expression, index: string): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_summationindefinite.1d9f974c7467"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.summationIndefinite</code></p>
+
+```typescript signature
+summationIndefinite(summand: Expression, index: string): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_summationindefinite.98722b7aa268"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.summationIndefinite</code></p>
+
+```typescript signature
+summationIndefinite(index: string): Expression
+```
+
+</details>
+
+
+The anti-difference of `summand`: a closed form \(F\) with
+\(F(\mathrm{index}+1) - F(\mathrm{index}) = \mathrm{summand}\). It is the
+discrete counterpart of an indefinite integral, and it sits here beside
+[`product_indefinite`](#product_indefinite) for the same reason — when no closed
+form is found, the unevaluated summation is what is returned.
+
+## Additional API
+
+### productIndefinite
+
+<a id="entry-presentation_wasm_api_session_product_indefinite"></a>
+<a id="placement-placement.wasm.wasm_module.module_productindefinite.fd08393adc04"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+productIndefinite(multiplicand: Expression, index: string): Expression
+```
+
+Indefinite (anti-quotient) product: the `P(k)` satisfying `P(k+1)/P(k) = multiplicand(k)`, the multiplicative analogue of `summation_indefinite`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_productindefinite.dac6a64f8b80"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.productIndefinite</code></p>
+
+```typescript signature
+productIndefinite(multiplicand: Expression, index: string): Expression
+```
+
+</details>
 

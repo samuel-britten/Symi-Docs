@@ -4,11 +4,27 @@ Calculus follows a uniform construct-versus-evaluate model; the summary table
 is in [Evaluation and constants](evaluation-and-constants.md). Every variable
 parameter accepts a name or a same-context symbol expression.
 
+Each operation below is one entry with its receivers listed together: the
+default context, an explicit context, and — where the operation takes an
+expression — the expression itself all reach the same operation, and an
+assumption scope reaches it under the assumptions that scope adds. The
+collapsed *calling forms* block on each entry gives the exact signature of
+each.
+
+**Three tasks are spelled `differentiate` or `derivative`**, and they are not
+interchangeable:
+
+| Task | Entry | Page |
+|---|---|---|
+| Differentiate an expression now | `differentiate` | Below |
+| Wrap an expression in an unevaluated derivative | `derivative` | [Deferred forms](deferred-forms.md#derivative) |
+| Build a derivative of a named unknown from argument orders | `derivative` | [Undefined functions](undefined-functions.md#derivative) |
+
 ### differentiate
 
-<a id="entry-presentation_wasm_calculus_capability_calculus_differentiate_api_session_differentiate"></a>
+<a id="entry-presentation_wasm_api_session_differentiate"></a>
 <a id="placement-placement.wasm.wasm_module.module_differentiate.4f7ff0e7c9f8"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 differentiate(
@@ -28,7 +44,7 @@ differentiate(value: ExpressionLike, variable: VariableLike): Expression
 ```
 
 <a id="placement-placement.wasm.wasm_class.context_differentiate.df81a03aa1ac"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.differentiate</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.differentiate</code></p>
 
 ```typescript signature
 differentiate(
@@ -44,21 +60,15 @@ differentiate(
 differentiate(value: ExpressionLike, variable: VariableLike): Expression
 ```
 
-</details>
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_differentiate_api_expression_differentiate"></a>
 <a id="placement-placement.wasm.javascript_facade.expression_differentiate.85cf43e1ce4c"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.differentiate</code></p>
 
 ```typescript signature
 differentiate(variable: VariableLike): Expression
 ```
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.expression_differentiate.aadc0cf2928a"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.differentiate</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.differentiate</code></p>
 
 ```typescript signature
 differentiate(variable: string): Expression
@@ -67,12 +77,79 @@ differentiate(variable: string): Expression
 </details>
 
 
-Symbolic derivative with respect to `variable`. The derivative is total: unknown
-function calls produce derivative nodes.
+Symbolic derivative with respect to `variable`, evaluated now. The derivative is
+total: unknown function calls produce derivative nodes.
 
 ### integrate
 
-Indefinite integration (no constant of integration). When every symbolic
+<a id="entry-presentation_wasm_api_session_integrate"></a>
+<a id="placement-placement.wasm.wasm_module.module_integrate.ba7c5019b6c5"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+integrate(input_expression: Expression, variable: string): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_integrate.c7366cddca9f"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integrate</code></p>
+
+```typescript signature
+integrate(value: ExpressionLike, variable: VariableLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_integrate.7ea7e1c842ce"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integrate</code></p>
+
+```typescript signature
+integrate(input_expression: Expression, variable: string): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_integrate.23b97ff9965a"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.integrate</code></p>
+
+```typescript signature
+integrate(value: ExpressionLike, variable: VariableLike): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.expression_integrate.d67955658e24"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.integrate</code></p>
+
+```typescript signature
+integrate(variable: VariableLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_integrate.d04377e90f5e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.integrate</code></p>
+
+```typescript signature
+integrate(variable: string): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_integrate.2a66e4d0ee6f"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.integrate</code></p>
+
+```typescript signature
+integrate(value: ExpressionLike, variable: VariableLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_integrate.2fdd7c0dfbd7"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.integrate</code></p>
+
+```typescript signature
+integrate(input_expression: Expression, variable: string): Expression
+```
+
+</details>
+
+
+Indefinite integration (no constant of integration). The variant on an
+[assumption scope](assumptions.md#assumption_scope) runs the same integration
+under that scope's captured assumptions, which can close a branch the durable
+context leaves open; the scope is immutable and the owning context is
+unchanged. When every symbolic
 strategy fails, the result is an *unevaluated* `integral` node, never a
 guess. Real symbolic parameters can produce a `piecewise` antiderivative
 whose conditions describe the supported parameter strata. A parameter value
@@ -80,7 +157,58 @@ outside every branch is undefined rather than a hidden declined branch.
 
 ### integrate_definite
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`AssumptionScope.integrate_definite`](/symi/python/calculus#integrate_definite) in Python, [`UniffiAssumptionScope.integrateDefinite`](/symi/kotlin/calculus#integrate_definite) in Kotlin, [`UniffiAssumptionScope.integrateDefinite`](/symi/swift/calculus#integrate_definite) in Swift, [`api::AssumptionScope::integrate_definite`](/symi/rust/calculus#integrate_definite) in Rust.*
+<a id="entry-presentation_wasm_api_session_integrate_definite"></a>
+<a id="placement-placement.wasm.wasm_module.module_integratedefinite.580dccd9f9e3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+integrateDefinite(
+    input_expression: Expression,
+    variable: string,
+    lower: Expression,
+    upper: Expression,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_integratedefinite.c23e8611ea36"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integrateDefinite</code></p>
+
+```typescript signature
+integrateDefinite(
+    input_expression: Expression,
+    variable: string,
+    lower: Expression,
+    upper: Expression,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_integratedefinite.4e404c54ad75"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.integrateDefinite</code></p>
+
+```typescript signature
+integrateDefinite(
+    variable: string,
+    lower: Expression,
+    upper: Expression,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_integratedefinite.f892481fe20c"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.integrateDefinite</code></p>
+
+```typescript signature
+integrateDefinite(
+    input_expression: Expression,
+    variable: string,
+    lower_bound: Expression,
+    upper_bound: Expression,
+): Expression
+```
+
+</details>
 
 
 Definite integration over `[lower, upper]` (bounds may be infinite). Falls
@@ -122,14 +250,69 @@ as a typed enumeration.
 
 ### DefiniteIntegrationResult
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`DefiniteIntegrationResult`](/symi/python/calculus#DefiniteIntegrationResult) in Python, [`api::DefiniteIntegrationResult`](/symi/rust/calculus#DefiniteIntegrationResult) in Rust.*
+What `integrate_definite_detailed` returns. It keeps the verdict separate from
+the value, so a proved divergence is never read as a declined request, and a
+declined request never as a proved answer. Its members are:
 
-`interpretation`, `verdict` (`evaluated`, `divergent` or `declined`), `value`
-(present exactly when evaluated), `divergence_direction` (`positive_infinity`
-or `negative_infinity`, present only when a single signed infinity was
-established), and `decline_reason` (`unsupported_family`,
-`incomplete_singularity_analysis`, `unknown_endpoint_behavior`,
-`unknown_bound_order` or `unsupported_region`, present exactly when declined).
+| Member | Meaning | Present |
+|---|---|---|
+| `verdict` | `evaluated`, `divergent`, or `declined` | Always |
+| `interpretation` | The interpretation the request was answered under, `ordinary` or `cauchy_principal_value` | Always |
+| `value` | The exact value of the integral | Exactly when the verdict is `evaluated` |
+| `divergence_direction` | `positive_infinity` or `negative_infinity` | Only when the verdict is `divergent` **and** a single signed infinity was established; a divergence without a proved sign leaves it absent |
+| `decline_reason` | `unsupported_family`, `incomplete_singularity_analysis`, `unknown_endpoint_behavior`, `unknown_bound_order`, or `unsupported_region` | Exactly when the verdict is `declined` |
+
+Each member's exact host type and spelling follows below.
+
+<a id="entry-presentation_wasm_api_definiteintegrationresult_decline_reason"></a>
+<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_declinereason.2ab13fa31859"></a>
+<p class="symi-entry-owner">Raw WebAssembly: DefiniteIntegrationResult property</p>
+
+```typescript signature
+readonly declineReason: string | undefined
+```
+
+The reason, present exactly when the verdict is `declined`.
+
+<a id="entry-presentation_wasm_api_definiteintegrationresult_divergence_direction"></a>
+<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_divergencedirection.23c571e1dfe7"></a>
+<p class="symi-entry-owner">Raw WebAssembly: DefiniteIntegrationResult property</p>
+
+```typescript signature
+readonly divergenceDirection: string | undefined
+```
+
+The signed infinity of a divergent request, when a single direction was established.
+
+<a id="entry-presentation_wasm_api_definiteintegrationresult_interpretation"></a>
+<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_interpretation.e916f910c54f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: DefiniteIntegrationResult property</p>
+
+```typescript signature
+readonly interpretation: string
+```
+
+The interpretation under which the request was answered.
+
+<a id="entry-presentation_wasm_api_definiteintegrationresult_value"></a>
+<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_value.a1ac38a1d17c"></a>
+<p class="symi-entry-owner">Raw WebAssembly: DefiniteIntegrationResult property</p>
+
+```typescript signature
+readonly value: Expression | undefined
+```
+
+The exact value, present exactly when the verdict is `evaluated`.
+
+<a id="entry-presentation_wasm_api_definiteintegrationresult_verdict"></a>
+<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_verdict.ef5d425f12c2"></a>
+<p class="symi-entry-owner">Raw WebAssembly: DefiniteIntegrationResult property</p>
+
+```typescript signature
+readonly verdict: string
+```
+
+Whether the request was evaluated, proved divergent, or declined.
 
 ### integrate_definite_numeric
 
@@ -142,15 +325,93 @@ substitutes an unevaluated symbolic integral. The requested precision is in bits
 
 ### NumericDefiniteIntegrationResult
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`NumericDefiniteIntegrationResult`](/symi/python/calculus#NumericDefiniteIntegrationResult) in Python, [`api::NumericDefiniteIntegrationResult`](/symi/rust/calculus#NumericDefiniteIntegrationResult) in Rust.*
+What `integrate_definite_numeric` returns. An absent `value` is the honest
+outcome of quadrature that did not converge; no symbolic integral is ever
+substituted for it. Its members are:
 
-`value` is an optional `(real, imaginary)` pair. When present,
-`estimated_absolute_error` is the final difference between successive quadrature
-rules; `precision_bits` and `node_count` identify the accepted rule.
+| Member | Meaning | Present |
+|---|---|---|
+| `value` | The accepted quadrature value, as a `(real, imaginary)` pair | Only when convergence was established |
+| `estimated_absolute_error` | The final difference between successive quadrature rules | With an accepted `value` |
+| `precision_bits` | The precision of the accepted rule, in bits | With an accepted `value` |
+| `node_count` | The number of nodes of the accepted rule | With an accepted `value` |
+
+Each member's exact host type and spelling follows below.
+
+<a id="entry-presentation_wasm_api_numericdefiniteintegrationresult_estimated_absolute_error"></a>
+<a id="placement-placement.wasm.wasm_class.numericdefiniteintegrationresult_estimatedabsoluteerror.3ab4c6a54ed4"></a>
+<p class="symi-entry-owner">Raw WebAssembly: NumericDefiniteIntegrationResult property</p>
+
+```typescript signature
+readonly estimatedAbsoluteError: number | undefined
+```
+
+The final difference between successive quadrature rules.
+
+<a id="entry-presentation_wasm_api_numericdefiniteintegrationresult_node_count"></a>
+<a id="placement-placement.wasm.wasm_class.numericdefiniteintegrationresult_nodecount.d6365edd307f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: NumericDefiniteIntegrationResult property</p>
+
+```typescript signature
+readonly nodeCount: number | undefined
+```
+
+The node count of the accepted Gauss--Legendre rule.
+
+<a id="entry-presentation_wasm_api_numericdefiniteintegrationresult_precision_bits"></a>
+<a id="placement-placement.wasm.wasm_class.numericdefiniteintegrationresult_precisionbits.38eaaf674f8b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: NumericDefiniteIntegrationResult property</p>
+
+```typescript signature
+readonly precisionBits: number | undefined
+```
+
+The arithmetic precision used for the result.
+
+<a id="entry-presentation_wasm_api_numericdefiniteintegrationresult_value"></a>
+<a id="placement-placement.wasm.wasm_class.numericdefiniteintegrationresult_value.5d248a24cc0f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: NumericDefiniteIntegrationResult property</p>
+
+```typescript signature
+readonly value: Float64Array | undefined
+```
+
+The complex value as real and imaginary components, when convergence was established.
 
 ### integrate_iterated
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.integrate_iterated`](/symi/python/calculus#integrate_iterated) in Python, [`UniffiExpression.integrateIterated`](/symi/kotlin/calculus#integrate_iterated) in Kotlin, [`UniffiExpression.integrateIterated`](/symi/swift/calculus#integrate_iterated) in Swift, [`api::analysis::Session::integrate_iterated`](/symi/rust/calculus#integrate_iterated) in Rust.*
+<a id="entry-presentation_wasm_api_session_integrate_iterated"></a>
+<a id="placement-placement.wasm.wasm_module.module_integrateiterated.a2a1f9fb1ef7"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+integrateIterated(
+    input_expression: Expression,
+    variables: string[],
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_integrateiterated.d5ecdfc91bda"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integrateIterated</code></p>
+
+```typescript signature
+integrateIterated(
+    input_expression: Expression,
+    variables: string[],
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_integrateiterated.f095d7ba5219"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.integrateIterated</code></p>
+
+```typescript signature
+integrateIterated(variables: string[]): Expression
+```
+
+</details>
 
 
 Iterated indefinite integration, applying the single-variable pipeline once
@@ -161,9 +422,9 @@ nodes — no partial evaluation through an unclosed inner integral.
 
 ### limit
 
-<a id="entry-presentation_wasm_calculus_capability_calculus_limit_api_session_limit"></a>
+<a id="entry-presentation_wasm_api_session_limit"></a>
 <a id="placement-placement.wasm.wasm_module.module_limit.09bfaf02cffb"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 limit(
@@ -178,7 +439,7 @@ limit(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_limit.6bf8a3ae36bb"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.limit</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.limit</code></p>
 
 ```typescript signature
 limit(
@@ -189,11 +450,8 @@ limit(
 ): Expression
 ```
 
-</details>
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_limit_api_expression_limit"></a>
 <a id="placement-placement.wasm.wasm_class.expression_limit.ef276e5bcd5f"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.limit</code></p>
 
 ```typescript signature
 limit(
@@ -203,12 +461,65 @@ limit(
 ): Expression
 ```
 
+</details>
+
 
 `limit(expression, variable, point, direction="two_sided")` constructs a deferred limit.
 
 ### evaluate_limit
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`AssumptionScope.evaluate_limit`](/symi/python/calculus#evaluate_limit) in Python, [`UniffiAssumptionScope.evaluateLimit`](/symi/kotlin/calculus#evaluate_limit) in Kotlin, [`UniffiAssumptionScope.evaluateLimit`](/symi/swift/calculus#evaluate_limit) in Swift, [`api::AssumptionScope::evaluate_limit`](/symi/rust/calculus#evaluate_limit) in Rust.*
+<a id="entry-presentation_wasm_api_session_evaluate_limit"></a>
+<a id="placement-placement.wasm.wasm_module.module_evaluatelimit.0f1c024103e7"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+evaluateLimit(
+    input_expression: Expression,
+    variable: string,
+    point: Expression,
+    direction?: string | null,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_evaluatelimit.198af56c4c62"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.evaluateLimit</code></p>
+
+```typescript signature
+evaluateLimit(
+    input_expression: Expression,
+    variable: string,
+    point: Expression,
+    direction?: string | null,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_evaluatelimit.ad4f2188ca80"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.evaluateLimit</code></p>
+
+```typescript signature
+evaluateLimit(
+    variable: string,
+    point: Expression,
+    direction?: string | null,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_evaluatelimit.8126d7e3bcbd"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.evaluateLimit</code></p>
+
+```typescript signature
+evaluateLimit(
+    input_expression: Expression,
+    variable: string,
+    point: Expression,
+    direction?: string | null,
+): Expression
+```
+
+</details>
 
 
 `evaluate_limit(expression, variable, point, direction="two_sided")` runs the eager limit engine.
@@ -297,19 +608,46 @@ exhaustion returns the unevaluated form rather than a guess.
 
 ### singularities
 
-<a id="entry-presentation_wasm_calculus_capability_calculus_singularities_api_assumptionscope_singularities"></a>
+<a id="entry-presentation_wasm_api_session_singularities"></a>
+<a id="placement-placement.wasm.wasm_module.module_singularities.5894dcc61a6b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+singularities(
+    input_expression: Expression,
+    variable: string,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_singularities.6066a1b62d30"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.singularities</code></p>
+
+```typescript signature
+singularities(
+    input_expression: Expression,
+    variable: string,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_singularities.3f1ebf570aaf"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.singularities</code></p>
+
+```typescript signature
+singularities(variable: string): Expression
+```
+
 <a id="placement-placement.wasm.javascript_facade.assumptionscope_singularities.227597e63d8e"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.singularities</code></p>
 
 ```typescript signature
 singularities(value: ExpressionLike, variable: VariableLike): Expression
 ```
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.assumptionscope_singularities.f24ea8f03f44"></a>
-<p class="symi-entry-owner">AssumptionScope method: <code>AssumptionScope.singularities</code></p>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.singularities</code></p>
 
 ```typescript signature
 singularities(
@@ -319,40 +657,6 @@ singularities(
 ```
 
 </details>
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_singularities_api_session_singularities"></a>
-<a id="placement-placement.wasm.wasm_module.module_singularities.5894dcc61a6b"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-singularities(
-    input_expression: Expression,
-    variable: string,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_singularities.6066a1b62d30"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.singularities</code></p>
-
-```typescript signature
-singularities(
-    input_expression: Expression,
-    variable: string,
-): Expression
-```
-
-</details>
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_singularities_api_expression_singularities"></a>
-<a id="placement-placement.wasm.wasm_class.expression_singularities.3f1ebf570aaf"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-singularities(variable: string): Expression
-```
 
 
 The singular points of the expression in the complex plane, as a set
@@ -364,7 +668,55 @@ point on it were singular.
 
 ### continuous_domain
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`AssumptionScope.continuous_domain`](/symi/python/calculus#continuous_domain) in Python, [`UniffiAssumptionScope.continuousDomain`](/symi/kotlin/calculus#continuous_domain) in Kotlin, [`UniffiAssumptionScope.continuousDomain`](/symi/swift/calculus#continuous_domain) in Swift, [`api::AssumptionScope::continuous_domain`](/symi/rust/calculus#continuous_domain) in Rust.*
+<a id="entry-presentation_wasm_api_session_continuous_domain"></a>
+<a id="placement-placement.wasm.wasm_module.module_continuousdomain.d9adfbfd1afb"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+continuousDomain(
+    input_expression: Expression,
+    variable: string,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_continuousdomain.b3456b9e12a2"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.continuousDomain</code></p>
+
+```typescript signature
+continuousDomain(
+    input_expression: Expression,
+    variable: string,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_continuousdomain.29a27663a8c8"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.continuousDomain</code></p>
+
+```typescript signature
+continuousDomain(variable: string): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_continuousdomain.6d9849f22085"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.continuousDomain</code></p>
+
+```typescript signature
+continuousDomain(value: ExpressionLike, variable: VariableLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_continuousdomain.24bf52c8474b"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.continuousDomain</code></p>
+
+```typescript signature
+continuousDomain(
+    input_expression: Expression,
+    variable: string,
+): Expression
+```
+
+</details>
 
 
 The subset of the real line on which the expression is continuous in
@@ -373,9 +725,6 @@ lowered to an exact univariate semialgebraic condition when supported, so,
 for example, `sqrt(x + 1/x - 2)` has continuous real domain `(0, infinity)`.
 
 ### summation_indefinite
-
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.summation_indefinite`](/symi/python/calculus#summation_indefinite) in Python, [`UniffiExpression.summationIndefinite`](/symi/kotlin/calculus#summation_indefinite) in Kotlin, [`UniffiExpression.summationIndefinite`](/symi/swift/calculus#summation_indefinite) in Swift, [`api::analysis::Session::summation_indefinite`](/symi/rust/calculus#summation_indefinite) in Rust.*
-
 
 Anti-difference: a closed form \(F\) with \(F(\operatorname{index}+1) - F(\operatorname{index}) = \operatorname{summand}\).
 Strategy stack: constant summands, linearity, polynomial power sums, rational
@@ -407,7 +756,32 @@ unrestricted Gamma-analytic identities.
 
 ### evaluate_numeric
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.evaluate_numeric`](/symi/python/calculus#evaluate_numeric) in Python, [`UniffiExpression.evaluateNumeric`](/symi/kotlin/calculus#evaluate_numeric) in Kotlin, [`UniffiExpression.evaluateNumeric`](/symi/swift/calculus#evaluate_numeric) in Swift, [`api::analysis::Session::evaluate_numeric`](/symi/rust/calculus#evaluate_numeric) in Rust.*
+<a id="entry-presentation_wasm_api_session_evaluate_numeric"></a>
+<a id="placement-placement.wasm.wasm_module.module_evaluatenumeric.b3592a20461b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+evaluateNumeric(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_evaluatenumeric.cf32bb7a03b5"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.evaluateNumeric</code></p>
+
+```typescript signature
+evaluateNumeric(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_evaluatenumeric.b483cb974774"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.evaluateNumeric</code></p>
+
+```typescript signature
+evaluateNumeric(): Expression
+```
+
+</details>
 
 
 Numerically evaluate to a float and re-encode as an exact rational literal;
@@ -437,6 +811,55 @@ curves.
 
 ### execute
 
+<a id="entry-presentation_wasm_api_session_execute"></a>
+<a id="placement-placement.wasm.wasm_module.module_execute.046976fb1643"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+execute(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_execute.f750d4ad1a52"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.execute</code></p>
+
+```typescript signature
+execute(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_execute.8f16d95e4225"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.execute</code></p>
+
+```typescript signature
+execute(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_execute.899a0953de4b"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.execute</code></p>
+
+```typescript signature
+execute(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.expression_execute.8b9ac9285061"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.execute</code></p>
+
+```typescript signature
+execute(): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_execute.863a3e670c60"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.execute</code></p>
+
+```typescript signature
+execute(): Expression
+```
+
+</details>
+
+
 Re-dispatch every unevaluated node (integral, derivative, summation,
 transform, ODE/recurrence placeholder) in the expression; useful after
 substitution has changed the inputs.
@@ -455,277 +878,70 @@ console.log(target.limit("x", 0).toString());
 ```
 
 
+### integrate_definite_under_constraint
+
+<a id="entry-presentation_wasm_api_session_integrate_definite_under_constraint"></a>
+<a id="placement-placement.wasm.wasm_module.module_integratedefiniteunderconstraint.b38208ce9b58"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+integrateDefiniteUnderConstraint(
+    input_expression: Expression,
+    variable: string,
+    lower: Expression,
+    upper: Expression,
+    constraint: Expression,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_integratedefiniteunderconstraint.162de4dfe5ac"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integrateDefiniteUnderConstraint</code></p>
+
+```typescript signature
+integrateDefiniteUnderConstraint(
+    input_expression: Expression,
+    variable: string,
+    lower: Expression,
+    upper: Expression,
+    constraint: Expression,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_integratedefiniteunderconstraint.ae1d271eaed2"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.integrateDefiniteUnderConstraint</code></p>
+
+```typescript signature
+integrateDefiniteUnderConstraint(
+    variable: string,
+    lower: Expression,
+    upper: Expression,
+    constraint: Expression,
+): Expression
+```
+
+</details>
+
+
+Definite integration under a local bounded logical constraint. The constraint
+holds for this call only: it is not recorded on any symbol, so it cannot leak
+into a later operation on the same context. Use it when the integral is
+determined only on part of a parameter range — a sign condition on a parameter,
+say — without committing the context to that condition.
+
+See [Assumptions](assumptions.md) for durable symbol assumptions and for
+`AssumptionScope`, which applies a set of assumptions to a whole block of
+operations rather than to one call.
+
 ## Additional API
-
-### continuousDomain
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_continuous_domain_api_assumptionscope_continuous_domain"></a>
-<a id="placement-placement.wasm.javascript_facade.assumptionscope_continuousdomain.6d9849f22085"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-continuousDomain(value: ExpressionLike, variable: VariableLike): Expression
-```
-
-Return the real continuous domain using the scope's immutable assumptions.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.assumptionscope_continuousdomain.24bf52c8474b"></a>
-<p class="symi-entry-owner">AssumptionScope method: <code>AssumptionScope.continuousDomain</code></p>
-
-```typescript signature
-continuousDomain(
-    input_expression: Expression,
-    variable: string,
-): Expression
-```
-
-</details>
-
-### continuousDomain
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_continuous_domain_api_session_continuous_domain"></a>
-<a id="placement-placement.wasm.wasm_module.module_continuousdomain.d9adfbfd1afb"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-continuousDomain(
-    input_expression: Expression,
-    variable: string,
-): Expression
-```
-
-The subset of the real line on which the expression is continuous in `variable`, as a set expression. Compound rational square-root radicands are lowered to an exact univariate semialgebraic condition when supported, so, for example, `sqrt(x + 1/x - 2)` has continuous real domain `(0, infinity)`.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_continuousdomain.b3456b9e12a2"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.continuousDomain</code></p>
-
-```typescript signature
-continuousDomain(
-    input_expression: Expression,
-    variable: string,
-): Expression
-```
-
-</details>
-
-### continuousDomain
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_continuous_domain_api_expression_continuous_domain"></a>
-<a id="placement-placement.wasm.wasm_class.expression_continuousdomain.29a27663a8c8"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-continuousDomain(variable: string): Expression
-```
-
-The subset of the real line on which the expression is continuous in `variable`, as a set expression. Compound rational square-root radicands are lowered to an exact univariate semialgebraic condition when supported, so, for example, `sqrt(x + 1/x - 2)` has continuous real domain `(0, infinity)`.
-
-### declineReason
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_decline_reason_api_results_definiteintegrationresult_decline_reason"></a>
-<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_declinereason.2ab13fa31859"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
-
-```typescript signature
-readonly declineReason: string | undefined
-```
-
-The reason, present exactly when the verdict is `declined`.
-
-### derivative
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_derivative_api_session_derivative"></a>
-<a id="placement-placement.wasm.wasm_module.module_derivative.6c2f52be0c02"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-derivative(
-    input_expression: Expression,
-    variable: string,
-    order?: number | null,
-): Expression
-```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_derivative.50bdfc4c863b"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.derivative</code></p>
-
-```typescript signature
-derivative(
-    input_expression: Expression,
-    variable: string,
-    order?: number | null,
-): Expression
-```
-
-</details>
-
-### derivative
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_derivative_api_expression_derivative"></a>
-<a id="placement-placement.wasm.javascript_facade.expression_derivative.71488970b451"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-derivative(variable: VariableLike, order?: number): Expression
-```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.expression_derivative.5e5f3f1fdacd"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.derivative</code></p>
-
-```typescript signature
-derivative(variable: string, order?: number | null): Expression
-```
-
-</details>
-
-### derivative
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_derivative_api_undefinedfunction_derivative"></a>
-<a id="placement-placement.wasm.wasm_class.undefinedfunction_derivative.19e919814456"></a>
-<p class="symi-entry-owner">UndefinedFunction method</p>
-
-```typescript signature
-derivative(orders: Uint32Array, arguments: Expression[]): Expression
-```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
-
-### divergenceDirection
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_divergence_direction_api_results_definiteintegrationresult_divergence_direction"></a>
-<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_divergencedirection.23c571e1dfe7"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
-
-```typescript signature
-readonly divergenceDirection: string | undefined
-```
-
-The signed infinity of a divergent request, when a single direction was established.
-
-### evaluateLimit
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_evaluate_limit_api_assumptionscope_evaluate_limit"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionscope_evaluatelimit.8126d7e3bcbd"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-evaluateLimit(
-    input_expression: Expression,
-    variable: string,
-    point: Expression,
-    direction?: string | null,
-): Expression
-```
-
-Evaluate a limit using the scope's immutable assumptions.
-
-### evaluateLimit
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_evaluate_limit_api_session_evaluate_limit"></a>
-<a id="placement-placement.wasm.wasm_module.module_evaluatelimit.0f1c024103e7"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-evaluateLimit(
-    input_expression: Expression,
-    variable: string,
-    point: Expression,
-    direction?: string | null,
-): Expression
-```
-
-`evaluate_limit(Expression, variable, point, direction="two_sided")` runs the eager limit engine. It returns an unevaluated limit when the engine cannot close the result.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_evaluatelimit.198af56c4c62"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.evaluateLimit</code></p>
-
-```typescript signature
-evaluateLimit(
-    input_expression: Expression,
-    variable: string,
-    point: Expression,
-    direction?: string | null,
-): Expression
-```
-
-</details>
-
-### evaluateLimit
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_evaluate_limit_api_expression_evaluate_limit"></a>
-<a id="placement-placement.wasm.wasm_class.expression_evaluatelimit.ad4f2188ca80"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-evaluateLimit(
-    variable: string,
-    point: Expression,
-    direction?: string | null,
-): Expression
-```
-
-`evaluate_limit(Expression, variable, point, direction="two_sided")` runs the eager limit engine. It returns an unevaluated limit when the engine cannot close the result.
-
-### evaluateNumeric
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_evaluate_numeric_api_analysis_session_evaluate_numeric"></a>
-<a id="placement-placement.wasm.wasm_module.module_evaluatenumeric.b3592a20461b"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-evaluateNumeric(input_expression: Expression): Expression
-```
-
-Numerically evaluate to a float and re-encode as an exact rational literal; returns the input unchanged when the expression has no numeric value. For direct float output use `expression.evaluate_to_float`.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_evaluatenumeric.cf32bb7a03b5"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.evaluateNumeric</code></p>
-
-```typescript signature
-evaluateNumeric(input_expression: Expression): Expression
-```
-
-</details>
-
-### evaluateNumeric
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_evaluate_numeric_api_expression_operations_expression_evaluate_numeric"></a>
-<a id="placement-placement.wasm.wasm_class.expression_evaluatenumeric.b483cb974774"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-evaluateNumeric(): Expression
-```
-
-Numerically evaluate to a float and re-encode as an exact rational literal; returns the input unchanged when the expression has no numeric value. For direct float output use `expression.evaluate_to_float`.
 
 ### evaluateOnGrid
 
-<a id="entry-presentation_wasm_calculus_capability_calculus_evaluate_on_grid_api_analysis_session_evaluate_on_grid"></a>
+<a id="entry-presentation_wasm_api_session_evaluate_on_grid"></a>
 <a id="placement-placement.wasm.wasm_module.module_evaluateongrid.68b32c74ae82"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 evaluateOnGrid(
@@ -741,7 +957,7 @@ Evaluate at each grid point, substituting `variable`.
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_evaluateongrid.58241f8651c5"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.evaluateOnGrid</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.evaluateOnGrid</code></p>
 
 ```typescript signature
 evaluateOnGrid(
@@ -755,9 +971,9 @@ evaluateOnGrid(
 
 ### evaluateOnGridPoints
 
-<a id="entry-presentation_wasm_calculus_capability_calculus_evaluate_on_grid_points_api_analysis_session_evaluate_on_grid_points"></a>
+<a id="entry-presentation_wasm_api_session_evaluate_on_grid_points"></a>
 <a id="placement-placement.wasm.wasm_module.module_evaluateongridpoints.dee0c2c92540"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 evaluateOnGridPoints(
@@ -773,7 +989,7 @@ Multi-variable companion to `evaluate_on_grid`: evaluate at each point of a flat
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_evaluateongridpoints.883efda52e22"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.evaluateOnGridPoints</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.evaluateOnGridPoints</code></p>
 
 ```typescript signature
 evaluateOnGridPoints(
@@ -785,298 +1001,11 @@ evaluateOnGridPoints(
 
 </details>
 
-### execute
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_execute_api_session_execute"></a>
-<a id="placement-placement.wasm.wasm_module.module_execute.046976fb1643"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-execute(input_expression: Expression): Expression
-```
-
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.javascript_facade.context_execute.f750d4ad1a52"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.execute</code></p>
-
-```typescript signature
-execute(value: ExpressionLike): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.context_execute.8f16d95e4225"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.execute</code></p>
-
-```typescript signature
-execute(input_expression: Expression): Expression
-```
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_execute.899a0953de4b"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.execute</code></p>
-
-```typescript signature
-execute(value: ExpressionLike): Expression
-```
-
-</details>
-
-### execute
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_execute_api_expression_execute"></a>
-<a id="placement-placement.wasm.javascript_facade.expression_execute.8b9ac9285061"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-execute(): Expression
-```
-
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.expression_execute.863a3e670c60"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.execute</code></p>
-
-```typescript signature
-execute(): Expression
-```
-
-</details>
-
-### execute
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_execute_api_matrix_execute"></a>
-<a id="placement-placement.wasm.javascript_facade.matrix_execute.28422f05de37"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```typescript signature
-execute(): Matrix
-```
-
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.matrix_execute.cd3080e5f4bd"></a>
-<p class="symi-entry-owner">Matrix method: <code>Matrix.execute</code></p>
-
-```typescript signature
-execute(): Matrix
-```
-
-</details>
-
-### fourierTransform
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_fourier_transform_api_assumptionscope_fourier_transform"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionscope_fouriertransform.5a22c0081730"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-fourierTransform(
-    input_expression: Expression,
-    time_variable: string,
-    frequency_variable: string,
-): Expression
-```
-
-Compute a forward Fourier transform using the scope's immutable assumptions.
-
-### fourierTransform
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_fourier_transform_api_session_fourier_transform"></a>
-<a id="placement-placement.wasm.wasm_module.module_fouriertransform.7a1b272e817d"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-fourierTransform(
-    input_expression: Expression,
-    time_variable: string,
-    frequency_variable: string,
-): Expression
-```
-
-Forward Fourier transform in the angular-frequency convention \(F(\omega) = \int f(t)e^{-i\omega t}\,dt\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_fouriertransform.6e6cbfb61d2f"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.fourierTransform</code></p>
-
-```typescript signature
-fourierTransform(
-    input_expression: Expression,
-    time_variable: string,
-    frequency_variable: string,
-): Expression
-```
-
-</details>
-
-### integrate
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_api_assumptionscope_integrate"></a>
-<a id="placement-placement.wasm.javascript_facade.assumptionscope_integrate.2a66e4d0ee6f"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-integrate(value: ExpressionLike, variable: VariableLike): Expression
-```
-
-Integrate an expression using the scope's immutable assumptions.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.assumptionscope_integrate.2fdd7c0dfbd7"></a>
-<p class="symi-entry-owner">AssumptionScope method: <code>AssumptionScope.integrate</code></p>
-
-```typescript signature
-integrate(input_expression: Expression, variable: string): Expression
-```
-
-</details>
-
-### integrate
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_api_session_integrate"></a>
-<a id="placement-placement.wasm.wasm_module.module_integrate.ba7c5019b6c5"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-integrate(input_expression: Expression, variable: string): Expression
-```
-
-Indefinite integration (no constant of integration).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.javascript_facade.context_integrate.c7366cddca9f"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integrate</code></p>
-
-```typescript signature
-integrate(value: ExpressionLike, variable: VariableLike): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.context_integrate.7ea7e1c842ce"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integrate</code></p>
-
-```typescript signature
-integrate(input_expression: Expression, variable: string): Expression
-```
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_integrate.23b97ff9965a"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.integrate</code></p>
-
-```typescript signature
-integrate(value: ExpressionLike, variable: VariableLike): Expression
-```
-
-</details>
-
-### integrate
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_api_expression_integrate"></a>
-<a id="placement-placement.wasm.javascript_facade.expression_integrate.d67955658e24"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-integrate(variable: VariableLike): Expression
-```
-
-Indefinite integration (no constant of integration).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.expression_integrate.d04377e90f5e"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.integrate</code></p>
-
-```typescript signature
-integrate(variable: string): Expression
-```
-
-</details>
-
-### integrateDefinite
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_definite_api_assumptionscope_integrate_definite"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionscope_integratedefinite.f892481fe20c"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-integrateDefinite(
-    input_expression: Expression,
-    variable: string,
-    lower_bound: Expression,
-    upper_bound: Expression,
-): Expression
-```
-
-Integrate a definite expression using the scope's immutable assumptions.
-
-### integrateDefinite
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_definite_api_analysis_session_integrate_definite"></a>
-<a id="placement-placement.wasm.wasm_module.module_integratedefinite.580dccd9f9e3"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-integrateDefinite(
-    input_expression: Expression,
-    variable: string,
-    lower: Expression,
-    upper: Expression,
-): Expression
-```
-
-Definite integration over `[lower, upper]` (bounds may be infinite).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_integratedefinite.c23e8611ea36"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integrateDefinite</code></p>
-
-```typescript signature
-integrateDefinite(
-    input_expression: Expression,
-    variable: string,
-    lower: Expression,
-    upper: Expression,
-): Expression
-```
-
-</details>
-
-### integrateDefinite
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_definite_api_expression_operations_expression_integrate_definite"></a>
-<a id="placement-placement.wasm.wasm_class.expression_integratedefinite.4e404c54ad75"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-integrateDefinite(
-    variable: string,
-    lower: Expression,
-    upper: Expression,
-): Expression
-```
-
-Definite integration over `[lower, upper]` (bounds may be infinite).
-
 ### integrateDefiniteDetailed
 
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_definite_detailed_api_session_integrate_definite_detailed"></a>
+<a id="entry-presentation_wasm_api_session_integrate_definite_detailed"></a>
 <a id="placement-placement.wasm.wasm_module.module_integratedefinitedetailed.249aed840c82"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 integrateDefiniteDetailed(
@@ -1095,7 +1024,7 @@ Evaluate a definite integral under an interpretation and an optional declared re
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_integratedefinitedetailed.d4e91bc937ad"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integrateDefiniteDetailed</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integrateDefiniteDetailed</code></p>
 
 ```typescript signature
 integrateDefiniteDetailed(
@@ -1112,9 +1041,9 @@ integrateDefiniteDetailed(
 
 ### integrateDefiniteNumeric
 
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_definite_numeric_api_analysis_session_integrate_definite_numeric"></a>
+<a id="entry-presentation_wasm_api_session_integrate_definite_numeric"></a>
 <a id="placement-placement.wasm.wasm_module.module_integratedefinitenumeric.57c38757b75e"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 integrateDefiniteNumeric(
@@ -1132,7 +1061,7 @@ Numerically integrate a finite interval without invoking symbolic integration.
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_integratedefinitenumeric.b394f4572330"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integrateDefiniteNumeric</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integrateDefiniteNumeric</code></p>
 
 ```typescript signature
 integrateDefiniteNumeric(
@@ -1145,262 +1074,4 @@ integrateDefiniteNumeric(
 ```
 
 </details>
-
-### integrateIterated
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_iterated_api_analysis_session_integrate_iterated"></a>
-<a id="placement-placement.wasm.wasm_module.module_integrateiterated.a2a1f9fb1ef7"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-integrateIterated(
-    input_expression: Expression,
-    variables: string[],
-): Expression
-```
-
-Iterated indefinite integration, applying the single-variable pipeline once per entry of `variables` in left-to-right order (innermost binder first).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_integrateiterated.d5ecdfc91bda"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integrateIterated</code></p>
-
-```typescript signature
-integrateIterated(
-    input_expression: Expression,
-    variables: string[],
-): Expression
-```
-
-</details>
-
-### integrateIterated
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_integrate_iterated_api_expression_operations_expression_integrate_iterated"></a>
-<a id="placement-placement.wasm.wasm_class.expression_integrateiterated.f095d7ba5219"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-integrateIterated(variables: string[]): Expression
-```
-
-Iterated indefinite integration, applying the single-variable pipeline once per entry of `variables` in left-to-right order (innermost binder first).
-
-### interpretation
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_interpretation_api_results_definiteintegrationresult_interpretation"></a>
-<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_interpretation.e916f910c54f"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
-
-```typescript signature
-readonly interpretation: string
-```
-
-The interpretation under which the request was answered.
-
-### inverseFourierTransform
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_inverse_fourier_transform_api_session_inverse_fourier_transform"></a>
-<a id="placement-placement.wasm.wasm_module.module_inversefouriertransform.c756e25c95bb"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-inverseFourierTransform(
-    input_expression: Expression,
-    frequency_variable: string,
-    time_variable: string,
-): Expression
-```
-
-Inverse Fourier transform of the same convention.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_inversefouriertransform.1256b676d4cd"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.inverseFourierTransform</code></p>
-
-```typescript signature
-inverseFourierTransform(
-    input_expression: Expression,
-    frequency_variable: string,
-    time_variable: string,
-): Expression
-```
-
-</details>
-
-### inverseLaplaceTransform
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_inverse_laplace_transform_api_session_inverse_laplace_transform"></a>
-<a id="placement-placement.wasm.wasm_module.module_inverselaplacetransform.b9494a36f07b"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-inverseLaplaceTransform(
-    input_expression: Expression,
-    frequency_variable: string,
-    time_variable: string,
-): Expression
-```
-
-Inverse Laplace transform; rational inputs route through a partial-fraction reverse lookup.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_inverselaplacetransform.12be5bd7a8d7"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.inverseLaplaceTransform</code></p>
-
-```typescript signature
-inverseLaplaceTransform(
-    input_expression: Expression,
-    frequency_variable: string,
-    time_variable: string,
-): Expression
-```
-
-</details>
-
-### laplaceTransform
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_laplace_transform_api_assumptionscope_laplace_transform"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionscope_laplacetransform.ec1051a0196b"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-laplaceTransform(
-    input_expression: Expression,
-    time_variable: string,
-    frequency_variable: string,
-): Expression
-```
-
-Compute a forward Laplace transform using the scope's immutable assumptions.
-
-### laplaceTransform
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_laplace_transform_api_session_laplace_transform"></a>
-<a id="placement-placement.wasm.wasm_module.module_laplacetransform.e8b317b65c63"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-laplaceTransform(
-    input_expression: Expression,
-    time_variable: string,
-    frequency_variable: string,
-): Expression
-```
-
-Forward Laplace transform \(F(s) = \int_0^\infty f(t)e^{-st}\,dt\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_laplacetransform.eaa99d3405c1"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.laplaceTransform</code></p>
-
-```typescript signature
-laplaceTransform(
-    input_expression: Expression,
-    time_variable: string,
-    frequency_variable: string,
-): Expression
-```
-
-</details>
-
-### poleOrder
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_pole_order_api_analysis_session_pole_order"></a>
-<a id="placement-placement.wasm.wasm_module.module_poleorder.13e4b7d7d589"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-poleOrder(
-    input_expression: Expression,
-    variable: string,
-    center: Expression,
-): bigint | undefined
-```
-
-Order of the singularity at `center`: `0` for analytic/removable points, \(m \ge 1\) for a pole of order \(m\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_poleorder.588f17fd3f20"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.poleOrder</code></p>
-
-```typescript signature
-poleOrder(
-    input_expression: Expression,
-    variable: string,
-    center: Expression,
-): bigint | undefined
-```
-
-</details>
-
-### poleOrder
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_pole_order_api_expression_operations_expression_pole_order"></a>
-<a id="placement-placement.wasm.wasm_class.expression_poleorder.b10295b45362"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-poleOrder(variable: string, center: Expression): bigint | undefined
-```
-
-Order of the singularity at `center`: `0` for analytic/removable points, \(m \ge 1\) for a pole of order \(m\).
-
-### summationIndefinite
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_summation_indefinite_api_analysis_session_summation_indefinite"></a>
-<a id="placement-placement.wasm.wasm_module.module_summationindefinite.45acee68c513"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-summationIndefinite(summand: Expression, index: string): Expression
-```
-
-Anti-difference: a closed form \(F\) with \(F(\operatorname{index}+1) - F(\operatorname{index}) = \operatorname{summand}\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_summationindefinite.1d9f974c7467"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.summationIndefinite</code></p>
-
-```typescript signature
-summationIndefinite(summand: Expression, index: string): Expression
-```
-
-</details>
-
-### summationIndefinite
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_summation_indefinite_api_expression_operations_expression_summation_indefinite"></a>
-<a id="placement-placement.wasm.wasm_class.expression_summationindefinite.98722b7aa268"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-summationIndefinite(index: string): Expression
-```
-
-Anti-difference: a closed form \(F\) with \(F(\operatorname{index}+1) - F(\operatorname{index}) = \operatorname{summand}\).
-
-### value
-
-<a id="entry-presentation_wasm_calculus_capability_calculus_value_api_results_definiteintegrationresult_value"></a>
-<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_value.a1ac38a1d17c"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
-
-```typescript signature
-readonly value: Expression | undefined
-```
-
-The exact value, present exactly when the verdict is `evaluated`.
 

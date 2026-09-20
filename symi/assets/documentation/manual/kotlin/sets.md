@@ -7,7 +7,7 @@ expressions page.
 
 ### interval
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_interval_api_sets_session_interval"></a>
+<a id="entry-presentation_kotlin_api_session_interval"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_interval.f091d18a794c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -27,7 +27,7 @@ finite set, \((-\infty, \infty)\to\) real line).
 
 ### real_line
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_real_line_api_session_real_line"></a>
+<a id="entry-presentation_kotlin_api_session_real_line"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_realline.9e872af171c9"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -40,7 +40,7 @@ The set \(\mathbb{R}\).
 
 ### complex_plane
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_complex_plane_api_session_complex_plane"></a>
+<a id="entry-presentation_kotlin_api_session_complex_plane"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_complexplane.ab266cb0b1e6"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -54,7 +54,7 @@ carries no realness assumption.
 
 ### integer_set
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_integer_set_api_session_integer_set"></a>
+<a id="entry-presentation_kotlin_api_session_integer_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integerset.530e3b41baed"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -67,7 +67,7 @@ The set \(\mathbb{Z}\).
 
 ### empty_set
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_empty_set_api_session_empty_set"></a>
+<a id="entry-presentation_kotlin_api_session_empty_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_emptyset.eab879e43a43"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -80,7 +80,7 @@ The empty set \(\varnothing\).
 
 ### finite_set
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_finite_set_api_session_finite_set"></a>
+<a id="entry-presentation_kotlin_api_session_finite_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_finiteset.f199387d8dba"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -94,7 +94,7 @@ gives the empty set.
 
 ### set_union
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_set_union_api_sets_session_set_union"></a>
+<a id="entry-presentation_kotlin_api_session_set_union"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_setunion.abb99420dce4"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -112,7 +112,7 @@ otherwise the structural `set_union` node.
 
 ### set_intersection
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_set_intersection_api_sets_session_set_intersection"></a>
+<a id="entry-presentation_kotlin_api_session_set_intersection"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_setintersection.2b93d390c913"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -130,7 +130,7 @@ structural `set_intersection` node.
 
 ### set_complement
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_set_complement_api_sets_session_set_complement"></a>
+<a id="entry-presentation_kotlin_api_session_set_complement"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_setcomplement.f08454831514"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -146,7 +146,7 @@ The relative complement \(a \setminus b\).
 
 ### image_set
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_image_set_api_sets_session_image_set"></a>
+<a id="entry-presentation_kotlin_api_session_image_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_imageset.961ae79216f2"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -165,7 +165,7 @@ construction.
 
 ### condition_set
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_condition_set_api_sets_session_condition_set"></a>
+<a id="entry-presentation_kotlin_api_session_condition_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_conditionset.08dd194d5410"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -183,7 +183,7 @@ The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{co
 
 ### is_member
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_is_member_api_sets_session_is_member"></a>
+<a id="entry-presentation_kotlin_api_session_is_member"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_ismember.59e399086565"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -201,7 +201,7 @@ intervals, unions, intersections, complements.
 
 ### is_subset
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_is_subset_api_sets_session_is_subset"></a>
+<a id="entry-presentation_kotlin_api_session_is_subset"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_issubset.a67c3cdae226"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -218,7 +218,7 @@ element checks, interval-in-interval endpoint tests; `None` otherwise.
 
 ### enumerate_set_in_interval
 
-<a id="entry-presentation_kotlin_sets_capability_discrete_mathematics_enumerate_set_in_interval_api_sets_session_enumerate_set_in_interval"></a>
+<a id="entry-presentation_kotlin_api_session_enumerate_set_in_interval"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_enumeratesetininterval.0e608a7a6528"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -244,4 +244,45 @@ returns for a lattice too wide to materialize. `limit` defaults to 64. WASM retu
 `SetEnumeration` object with `outcome` and `elements` getters.
 
 ## Example
+
+
+## Additional API
+
+### length
+
+<a id="entry-presentation_kotlin_api_expression_length"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_length.76de3f6676f6"></a>
+<p class="symi-entry-owner">Expression method</p>
+
+```kotlin signature
+fun length(): kotlin.ULong
+```
+
+Number of elements of a finite-set expression.
+
+### SetEnumeration
+
+#### SetEnumeration.elements
+
+<a id="entry-presentation_kotlin_api_setenumeration_elements"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisetenumeration_elements.7c49be7882fe"></a>
+<p class="symi-entry-owner">UniffiSetEnumeration method</p>
+
+```kotlin signature
+fun elements(): List<UniffiExpression>
+```
+
+The exact elements produced, in increasing order.
+
+#### SetEnumeration.outcome
+
+<a id="entry-presentation_kotlin_api_setenumeration_outcome"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisetenumeration_outcome.b2e7831363ed"></a>
+<p class="symi-entry-owner">UniffiSetEnumeration method</p>
+
+```kotlin signature
+fun outcome(): UniffiEnumerationVerdict
+```
+
+`"complete"`, `"truncated"`, or `"declined"`.
 

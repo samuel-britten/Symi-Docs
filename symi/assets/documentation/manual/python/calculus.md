@@ -4,9 +4,25 @@ Calculus follows a uniform construct-versus-evaluate model; the summary table
 is in [Evaluation and constants](evaluation-and-constants.md). Every variable
 parameter accepts a name or a same-context symbol expression.
 
+Each operation below is one entry with its receivers listed together: the
+default context, an explicit context, and — where the operation takes an
+expression — the expression itself all reach the same operation, and an
+assumption scope reaches it under the assumptions that scope adds. The
+collapsed *calling forms* block on each entry gives the exact signature of
+each.
+
+**Three tasks are spelled `differentiate` or `derivative`**, and they are not
+interchangeable:
+
+| Task | Entry | Page |
+|---|---|---|
+| Differentiate an expression now | `differentiate` | Below |
+| Wrap an expression in an unevaluated derivative | `derivative` | [Deferred forms](deferred-forms.md#derivative) |
+| Build a derivative of a named unknown from argument orders | `derivative` | [Undefined functions](undefined-functions.md#derivative) |
+
 ### differentiate
 
-<a id="entry-presentation_python_calculus_capability_calculus_differentiate_api_session_differentiate"></a>
+<a id="entry-presentation_python_api_session_differentiate"></a>
 <a id="placement-placement.python.python_module.module_differentiate.b10bec594052"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -30,23 +46,64 @@ differentiate(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_calculus_capability_calculus_differentiate_api_expression_differentiate"></a>
 <a id="placement-placement.python.python_class.expression_differentiate.2973c32a3cc7"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.differentiate</code></p>
 
 ```python signature
 differentiate(variable: Any) -> Expression
 ```
 
+</details>
 
-Symbolic derivative with respect to `variable`. The derivative is total: unknown
-function calls produce derivative nodes.
+
+Symbolic derivative with respect to `variable`, evaluated now. The derivative is
+total: unknown function calls produce derivative nodes.
 
 ### integrate
 
-Indefinite integration (no constant of integration). When every symbolic
+<a id="entry-presentation_python_api_session_integrate"></a>
+<a id="placement-placement.python.python_module.module_integrate.135ca8b1419e"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+integrate(input_expression: ExpressionLike, variable: Any) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.python.python_class.context_integrate.93acac9d5819"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integrate</code></p>
+
+```python signature
+integrate(input_expression: ExpressionLike, variable: Any) -> Expression
+```
+
+<a id="placement-placement.python.python_class.expression_integrate.09e1fca46e0a"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.integrate</code></p>
+
+```python signature
+integrate(variable: Any) -> Expression
+```
+
+<a id="placement-placement.python.python_class.assumptionscope_integrate.493edf4a76f0"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.integrate</code></p>
+
+```python signature
+integrate(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Expression
+```
+
+</details>
+
+
+Indefinite integration (no constant of integration). The variant on an
+[assumption scope](assumptions.md#assumption_scope) runs the same integration
+under that scope's captured assumptions, which can close a branch the durable
+context leaves open; the scope is immutable and the owning context is
+unchanged. When every symbolic
 strategy fails, the result is an *unevaluated* `integral` node, never a
 guess. Real symbolic parameters can produce a `piecewise` antiderivative
 whose conditions describe the supported parameter strata. A parameter value
@@ -54,20 +111,7 @@ outside every branch is undefined rather than a hidden declined branch.
 
 ### integrate_definite
 
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_definite_api_assumptionscope_integrate_definite"></a>
-<a id="placement-placement.python.python_class.assumptionscope_integrate_definite.a1301e99f793"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```python signature
-integrate_definite(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    lower_bound: ExpressionLike,
-    upper_bound: ExpressionLike,
-) -> Expression
-```
-
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_definite_api_analysis_session_integrate_definite"></a>
+<a id="entry-presentation_python_api_session_integrate_definite"></a>
 <a id="placement-placement.python.python_module.module_integrate_definite.7bfa8a1356f9"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -81,7 +125,7 @@ integrate_definite(
 ```
 
 <details class="symi-calling-forms">
-<summary>Calling forms</summary>
+<summary>Calling forms and variants</summary>
 
 <a id="placement-placement.python.python_class.context_integrate_definite.24cd89a9489d"></a>
 <p class="symi-entry-owner">Explicit context: <code>Context.integrate_definite</code></p>
@@ -95,11 +139,8 @@ integrate_definite(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_definite_api_expression_operations_expression_integrate_definite"></a>
 <a id="placement-placement.python.python_class.expression_integrate_definite.ac5c1e93f09c"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.integrate_definite</code></p>
 
 ```python signature
 integrate_definite(
@@ -108,6 +149,20 @@ integrate_definite(
     upper: ExpressionLike,
 ) -> Expression
 ```
+
+<a id="placement-placement.python.python_class.assumptionscope_integrate_definite.a1301e99f793"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.integrate_definite</code></p>
+
+```python signature
+integrate_definite(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    lower_bound: ExpressionLike,
+    upper_bound: ExpressionLike,
+) -> Expression
+```
+
+</details>
 
 
 Definite integration over `[lower, upper]` (bounds may be infinite). Falls
@@ -125,7 +180,7 @@ divergence, a principal value, or a declared parameter region matters.
 
 ### integrate_definite_detailed
 
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_definite_detailed_api_session_integrate_definite_detailed"></a>
+<a id="entry-presentation_python_api_session_integrate_definite_detailed"></a>
 <a id="placement-placement.python.python_module.module_integrate_definite_detailed.66cf65c5d3a6"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -181,7 +236,21 @@ as a typed enumeration.
 
 ### DefiniteIntegrationResult
 
-<a id="entry-presentation_python_calculus_capability_calculus_definiteintegrationresult_api_results_definiteintegrationresult"></a>
+What `integrate_definite_detailed` returns. It keeps the verdict separate from
+the value, so a proved divergence is never read as a declined request, and a
+declined request never as a proved answer. Its members are:
+
+| Member | Meaning | Present |
+|---|---|---|
+| `verdict` | `evaluated`, `divergent`, or `declined` | Always |
+| `interpretation` | The interpretation the request was answered under, `ordinary` or `cauchy_principal_value` | Always |
+| `value` | The exact value of the integral | Exactly when the verdict is `evaluated` |
+| `divergence_direction` | `positive_infinity` or `negative_infinity` | Only when the verdict is `divergent` **and** a single signed infinity was established; a divergence without a proved sign leaves it absent |
+| `decline_reason` | `unsupported_family`, `incomplete_singularity_analysis`, `unknown_endpoint_behavior`, `unknown_bound_order`, or `unsupported_region` | Exactly when the verdict is `declined` |
+
+Each member's exact host type and spelling follows below.
+
+<a id="entry-presentation_python_api_definiteintegrationresult"></a>
 <a id="placement-placement.python.python_class.definiteintegrationresult.6d8d92994a74"></a>
 <p class="symi-entry-owner">Type</p>
 
@@ -189,16 +258,61 @@ as a typed enumeration.
 class DefiniteIntegrationResult
 ```
 
-`interpretation`, `verdict` (`evaluated`, `divergent` or `declined`), `value`
-(present exactly when evaluated), `divergence_direction` (`positive_infinity`
-or `negative_infinity`, present only when a single signed infinity was
-established), and `decline_reason` (`unsupported_family`,
-`incomplete_singularity_analysis`, `unknown_endpoint_behavior`,
-`unknown_bound_order` or `unsupported_region`, present exactly when declined).
+A definite-integration outcome that keeps its verdict distinct from its value.
+
+<a id="entry-presentation_python_api_definiteintegrationresult_decline_reason"></a>
+<a id="placement-placement.python.python_class.definiteintegrationresult_decline_reason.82b173fec92c"></a>
+<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
+
+```python signature
+decline_reason: Optional[str]
+```
+
+The reason, present exactly when the verdict is `declined`.
+
+<a id="entry-presentation_python_api_definiteintegrationresult_divergence_direction"></a>
+<a id="placement-placement.python.python_class.definiteintegrationresult_divergence_direction.8fe2f7cb6aaa"></a>
+<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
+
+```python signature
+divergence_direction: Optional[str]
+```
+
+The signed infinity of a divergent request, when a single direction was established.
+
+<a id="entry-presentation_python_api_definiteintegrationresult_interpretation"></a>
+<a id="placement-placement.python.python_class.definiteintegrationresult_interpretation.b68b8d35b6f5"></a>
+<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
+
+```python signature
+interpretation: str
+```
+
+The interpretation under which the request was answered.
+
+<a id="entry-presentation_python_api_definiteintegrationresult_value"></a>
+<a id="placement-placement.python.python_class.definiteintegrationresult_value.c9323ba3f053"></a>
+<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
+
+```python signature
+value: Optional[Expression]
+```
+
+The exact value, present exactly when the verdict is `evaluated`.
+
+<a id="entry-presentation_python_api_definiteintegrationresult_verdict"></a>
+<a id="placement-placement.python.python_class.definiteintegrationresult_verdict.be0b21cf7d5e"></a>
+<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
+
+```python signature
+verdict: str
+```
+
+Whether the request was evaluated, proved divergent, or declined.
 
 ### integrate_definite_numeric
 
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_definite_numeric_api_analysis_session_integrate_definite_numeric"></a>
+<a id="entry-presentation_python_api_session_integrate_definite_numeric"></a>
 <a id="placement-placement.python.python_module.module_integrate_definite_numeric.83640c560763"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -237,7 +351,20 @@ substitutes an unevaluated symbolic integral. The requested precision is in bits
 
 ### NumericDefiniteIntegrationResult
 
-<a id="entry-presentation_python_calculus_capability_numeric_definite_integration_numericdefiniteintegrationresult_api_results_numericdefiniteintegrationresult"></a>
+What `integrate_definite_numeric` returns. An absent `value` is the honest
+outcome of quadrature that did not converge; no symbolic integral is ever
+substituted for it. Its members are:
+
+| Member | Meaning | Present |
+|---|---|---|
+| `value` | The accepted quadrature value, as a `(real, imaginary)` pair | Only when convergence was established |
+| `estimated_absolute_error` | The final difference between successive quadrature rules | With an accepted `value` |
+| `precision_bits` | The precision of the accepted rule, in bits | With an accepted `value` |
+| `node_count` | The number of nodes of the accepted rule | With an accepted `value` |
+
+Each member's exact host type and spelling follows below.
+
+<a id="entry-presentation_python_api_numericdefiniteintegrationresult"></a>
 <a id="placement-placement.python.python_class.numericdefiniteintegrationresult.da707d04f6dd"></a>
 <p class="symi-entry-owner">Type</p>
 
@@ -245,13 +372,51 @@ substitutes an unevaluated symbolic integral. The requested precision is in bits
 class NumericDefiniteIntegrationResult
 ```
 
-`value` is an optional `(real, imaginary)` pair. When present,
-`estimated_absolute_error` is the final difference between successive quadrature
-rules; `precision_bits` and `node_count` identify the accepted rule.
+The convergence report from an explicitly requested numerical definite integral.
+
+<a id="entry-presentation_python_api_numericdefiniteintegrationresult_estimated_absolute_error"></a>
+<a id="placement-placement.python.python_class.numericdefiniteintegrationresult_estimated_absolute_error.b333c7c02e31"></a>
+<p class="symi-entry-owner">NumericDefiniteIntegrationResult property</p>
+
+```python signature
+estimated_absolute_error: Optional[float]
+```
+
+The final difference between successive quadrature rules.
+
+<a id="entry-presentation_python_api_numericdefiniteintegrationresult_node_count"></a>
+<a id="placement-placement.python.python_class.numericdefiniteintegrationresult_node_count.50ccc5af81cc"></a>
+<p class="symi-entry-owner">NumericDefiniteIntegrationResult property</p>
+
+```python signature
+node_count: Optional[int]
+```
+
+The node count of the accepted Gauss--Legendre rule.
+
+<a id="entry-presentation_python_api_numericdefiniteintegrationresult_precision_bits"></a>
+<a id="placement-placement.python.python_class.numericdefiniteintegrationresult_precision_bits.4b58d8fe9120"></a>
+<p class="symi-entry-owner">NumericDefiniteIntegrationResult property</p>
+
+```python signature
+precision_bits: Optional[int]
+```
+
+The arithmetic precision used for the result.
+
+<a id="entry-presentation_python_api_numericdefiniteintegrationresult_value"></a>
+<a id="placement-placement.python.python_class.numericdefiniteintegrationresult_value.47635fdec488"></a>
+<p class="symi-entry-owner">NumericDefiniteIntegrationResult property</p>
+
+```python signature
+value: Optional[tuple[float, float]]
+```
+
+The complex value as real and imaginary components, when convergence was established.
 
 ### integrate_iterated
 
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_iterated_api_analysis_session_integrate_iterated"></a>
+<a id="entry-presentation_python_api_session_integrate_iterated"></a>
 <a id="placement-placement.python.python_module.module_integrate_iterated.d1e73fdf5d7f"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -275,15 +440,14 @@ integrate_iterated(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_iterated_api_expression_operations_expression_integrate_iterated"></a>
 <a id="placement-placement.python.python_class.expression_integrate_iterated.5aad0907df72"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.integrate_iterated</code></p>
 
 ```python signature
 integrate_iterated(variables: Iterable[VariableLike]) -> Expression
 ```
+
+</details>
 
 
 Iterated indefinite integration, applying the single-variable pipeline once
@@ -294,7 +458,7 @@ nodes — no partial evaluation through an unclosed inner integral.
 
 ### limit
 
-<a id="entry-presentation_python_calculus_capability_calculus_limit_api_session_limit"></a>
+<a id="entry-presentation_python_api_session_limit"></a>
 <a id="placement-placement.python.python_module.module_limit.a84a0de5bb4d"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -322,11 +486,8 @@ limit(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_calculus_capability_calculus_limit_api_expression_limit"></a>
 <a id="placement-placement.python.python_class.expression_limit.327c6d9dfd86"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.limit</code></p>
 
 ```python signature
 limit(
@@ -336,25 +497,14 @@ limit(
 ) -> Expression
 ```
 
+</details>
+
 
 `limit(expression, variable, point, direction="two_sided")` constructs a deferred limit.
 
 ### evaluate_limit
 
-<a id="entry-presentation_python_calculus_capability_calculus_evaluate_limit_api_assumptionscope_evaluate_limit"></a>
-<a id="placement-placement.python.python_class.assumptionscope_evaluate_limit.48f291b296b5"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```python signature
-evaluate_limit(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    point: ExpressionLike,
-    direction: str = "two_sided",
-) -> Expression
-```
-
-<a id="entry-presentation_python_calculus_capability_calculus_evaluate_limit_api_session_evaluate_limit"></a>
+<a id="entry-presentation_python_api_session_evaluate_limit"></a>
 <a id="placement-placement.python.python_module.module_evaluate_limit.9cd17950469f"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -368,7 +518,7 @@ evaluate_limit(
 ```
 
 <details class="symi-calling-forms">
-<summary>Calling forms</summary>
+<summary>Calling forms and variants</summary>
 
 <a id="placement-placement.python.python_class.context_evaluate_limit.e24b1d0b64f7"></a>
 <p class="symi-entry-owner">Explicit context: <code>Context.evaluate_limit</code></p>
@@ -382,11 +532,8 @@ evaluate_limit(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_calculus_capability_calculus_evaluate_limit_api_expression_evaluate_limit"></a>
 <a id="placement-placement.python.python_class.expression_evaluate_limit.5925b8ab1ea7"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.evaluate_limit</code></p>
 
 ```python signature
 evaluate_limit(
@@ -395,6 +542,20 @@ evaluate_limit(
     direction: str = "two_sided",
 ) -> Expression
 ```
+
+<a id="placement-placement.python.python_class.assumptionscope_evaluate_limit.48f291b296b5"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.evaluate_limit</code></p>
+
+```python signature
+evaluate_limit(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    point: ExpressionLike,
+    direction: str = "two_sided",
+) -> Expression
+```
+
+</details>
 
 
 `evaluate_limit(expression, variable, point, direction="two_sided")` runs the eager limit engine.
@@ -483,18 +644,7 @@ exhaustion returns the unevaluated form rather than a guess.
 
 ### singularities
 
-<a id="entry-presentation_python_calculus_capability_calculus_singularities_api_assumptionscope_singularities"></a>
-<a id="placement-placement.python.python_class.assumptionscope_singularities.0a11eb0cae36"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```python signature
-singularities(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Expression
-```
-
-<a id="entry-presentation_python_calculus_capability_calculus_singularities_api_session_singularities"></a>
+<a id="entry-presentation_python_api_session_singularities"></a>
 <a id="placement-placement.python.python_module.module_singularities.4395acf809c5"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -506,7 +656,7 @@ singularities(
 ```
 
 <details class="symi-calling-forms">
-<summary>Calling forms</summary>
+<summary>Calling forms and variants</summary>
 
 <a id="placement-placement.python.python_class.context_singularities.69a45d708ca7"></a>
 <p class="symi-entry-owner">Explicit context: <code>Context.singularities</code></p>
@@ -518,15 +668,24 @@ singularities(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_calculus_capability_calculus_singularities_api_expression_singularities"></a>
 <a id="placement-placement.python.python_class.expression_singularities.088b99d67385"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.singularities</code></p>
 
 ```python signature
 singularities(variable: Any) -> Expression
 ```
+
+<a id="placement-placement.python.python_class.assumptionscope_singularities.0a11eb0cae36"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.singularities</code></p>
+
+```python signature
+singularities(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Expression
+```
+
+</details>
 
 
 The singular points of the expression in the complex plane, as a set
@@ -538,18 +697,7 @@ point on it were singular.
 
 ### continuous_domain
 
-<a id="entry-presentation_python_calculus_capability_calculus_continuous_domain_api_assumptionscope_continuous_domain"></a>
-<a id="placement-placement.python.python_class.assumptionscope_continuous_domain.ec2ba8638f35"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```python signature
-continuous_domain(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Expression
-```
-
-<a id="entry-presentation_python_calculus_capability_calculus_continuous_domain_api_session_continuous_domain"></a>
+<a id="entry-presentation_python_api_session_continuous_domain"></a>
 <a id="placement-placement.python.python_module.module_continuous_domain.c1003e4cd9b5"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -561,7 +709,7 @@ continuous_domain(
 ```
 
 <details class="symi-calling-forms">
-<summary>Calling forms</summary>
+<summary>Calling forms and variants</summary>
 
 <a id="placement-placement.python.python_class.context_continuous_domain.ea8bd346dd36"></a>
 <p class="symi-entry-owner">Explicit context: <code>Context.continuous_domain</code></p>
@@ -573,15 +721,24 @@ continuous_domain(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_calculus_capability_calculus_continuous_domain_api_expression_continuous_domain"></a>
 <a id="placement-placement.python.python_class.expression_continuous_domain.54925718dbca"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.continuous_domain</code></p>
 
 ```python signature
 continuous_domain(variable: VariableLike) -> Expression
 ```
+
+<a id="placement-placement.python.python_class.assumptionscope_continuous_domain.ec2ba8638f35"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.continuous_domain</code></p>
+
+```python signature
+continuous_domain(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+) -> Expression
+```
+
+</details>
 
 
 The subset of the real line on which the expression is continuous in
@@ -590,41 +747,6 @@ lowered to an exact univariate semialgebraic condition when supported, so,
 for example, `sqrt(x + 1/x - 2)` has continuous real domain `(0, infinity)`.
 
 ### summation_indefinite
-
-<a id="entry-presentation_python_calculus_capability_calculus_summation_indefinite_api_analysis_session_summation_indefinite"></a>
-<a id="placement-placement.python.python_module.module_summation_indefinite.e10335856b70"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-summation_indefinite(
-    summand: ExpressionLike,
-    index: VariableLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.python.python_class.context_summation_indefinite.decc1b81d5c2"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.summation_indefinite</code></p>
-
-```python signature
-summation_indefinite(
-    summand: ExpressionLike,
-    index: VariableLike,
-) -> Expression
-```
-
-</details>
-
-<a id="entry-presentation_python_calculus_capability_calculus_summation_indefinite_api_expression_operations_expression_summation_indefinite"></a>
-<a id="placement-placement.python.python_class.expression_summation_indefinite.36082f1ae900"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```python signature
-summation_indefinite(index: VariableLike) -> Expression
-```
-
 
 Anti-difference: a closed form \(F\) with \(F(\operatorname{index}+1) - F(\operatorname{index}) = \operatorname{summand}\).
 Strategy stack: constant summands, linearity, polynomial power sums, rational
@@ -656,7 +778,7 @@ unrestricted Gamma-analytic identities.
 
 ### evaluate_numeric
 
-<a id="entry-presentation_python_calculus_capability_calculus_evaluate_numeric_api_analysis_session_evaluate_numeric"></a>
+<a id="entry-presentation_python_api_session_evaluate_numeric"></a>
 <a id="placement-placement.python.python_module.module_evaluate_numeric.3eb61a875464"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -674,15 +796,14 @@ evaluate_numeric(input_expression: ExpressionLike) -> Expression
 evaluate_numeric(input_expression: ExpressionLike) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_calculus_capability_calculus_evaluate_numeric_api_expression_operations_expression_evaluate_numeric"></a>
 <a id="placement-placement.python.python_class.expression_evaluate_numeric.21c9e88d0379"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.evaluate_numeric</code></p>
 
 ```python signature
 evaluate_numeric() -> Expression
 ```
+
+</details>
 
 
 Numerically evaluate to a float and re-encode as an exact rational literal;
@@ -691,7 +812,7 @@ For direct float output use `expression.evaluate_to_float`.
 
 ### evaluate_on_grid
 
-<a id="entry-presentation_python_calculus_capability_calculus_evaluate_on_grid_api_analysis_session_evaluate_on_grid"></a>
+<a id="entry-presentation_python_api_session_evaluate_on_grid"></a>
 <a id="placement-placement.python.python_module.module_evaluate_on_grid.4864558e3681"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -726,7 +847,7 @@ plotting.
 
 ### evaluate_on_grid_points
 
-<a id="entry-presentation_python_calculus_capability_calculus_evaluate_on_grid_points_api_analysis_session_evaluate_on_grid_points"></a>
+<a id="entry-presentation_python_api_session_evaluate_on_grid_points"></a>
 <a id="placement-placement.python.python_module.module_evaluate_on_grid_points.acd59204b0a8"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -764,6 +885,34 @@ curves.
 
 ### execute
 
+<a id="entry-presentation_python_api_session_execute"></a>
+<a id="placement-placement.python.python_module.module_execute.c73e94e486fa"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+execute(input_expression: ExpressionLike) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_execute.462735a27ec8"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.execute</code></p>
+
+```python signature
+execute(input_expression: ExpressionLike) -> Expression
+```
+
+<a id="placement-placement.python.python_class.expression_execute.90c4ad741f6a"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.execute</code></p>
+
+```python signature
+execute() -> Expression
+```
+
+</details>
+
+
 Re-dispatch every unevaluated node (integral, derivative, summation,
 transform, ODE/recurrence placeholder) in the expression; useful after
 substitution has changed the inputs.
@@ -785,211 +934,59 @@ print(symi.integrate_definite(symi.sin(x), "x", 0, symi.pi))
 ```
 
 
-## Additional API
+### integrate_definite_under_constraint
 
-### decline_reason
-
-<a id="entry-presentation_python_calculus_capability_calculus_decline_reason_api_results_definiteintegrationresult_decline_reason"></a>
-<a id="placement-placement.python.python_class.definiteintegrationresult_decline_reason.82b173fec92c"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
-
-```python signature
-decline_reason: Optional[str]
-```
-
-The reason, present exactly when the verdict is `declined`.
-
-### derivative
-
-<a id="entry-presentation_python_calculus_capability_calculus_derivative_api_session_derivative"></a>
-<a id="placement-placement.python.python_module.module_derivative.08baabd8e4c8"></a>
+<a id="entry-presentation_python_api_session_integrate_definite_under_constraint"></a>
+<a id="placement-placement.python.python_module.module_integrate_definite_under_constraint.8f9a35858e9d"></a>
 <p class="symi-entry-owner">Default context</p>
 
 ```python signature
-derivative(
+integrate_definite_under_constraint(
     input_expression: ExpressionLike,
     variable: Any,
-    order: int = 1,
+    lower: ExpressionLike,
+    upper: ExpressionLike,
+    constraint: ExpressionLike,
 ) -> Expression
 ```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 <details class="symi-calling-forms">
 <summary>Calling forms</summary>
 
-<a id="placement-placement.python.python_class.context_derivative.633b339a3392"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.derivative</code></p>
+<a id="placement-placement.python.python_class.context_integrate_definite_under_constraint.69fda3541ccd"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integrate_definite_under_constraint</code></p>
 
 ```python signature
-derivative(
+integrate_definite_under_constraint(
     input_expression: ExpressionLike,
     variable: Any,
-    order: int = 1,
+    lower: ExpressionLike,
+    upper: ExpressionLike,
+    constraint: ExpressionLike,
+) -> Expression
+```
+
+<a id="placement-placement.python.python_class.expression_integrate_definite_under_constraint.360d68b2ae2c"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.integrate_definite_under_constraint</code></p>
+
+```python signature
+integrate_definite_under_constraint(
+    variable: Any,
+    lower: ExpressionLike,
+    upper: ExpressionLike,
+    constraint: ExpressionLike,
 ) -> Expression
 ```
 
 </details>
 
-### derivative
 
-<a id="entry-presentation_python_calculus_capability_calculus_derivative_api_expression_derivative"></a>
-<a id="placement-placement.python.python_class.expression_derivative.951691ecb4fa"></a>
-<p class="symi-entry-owner">Expression method</p>
+Definite integration under a local bounded logical constraint. The constraint
+holds for this call only: it is not recorded on any symbol, so it cannot leak
+into a later operation on the same context. Use it when the integral is
+determined only on part of a parameter range — a sign condition on a parameter,
+say — without committing the context to that condition.
 
-```python signature
-derivative(variable: Any, order: int = 1) -> Expression
-```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
-
-### derivative
-
-<a id="entry-presentation_python_calculus_capability_calculus_derivative_api_undefinedfunction_derivative"></a>
-<a id="placement-placement.python.python_class.undefinedfunction_derivative.580eee1c1ebe"></a>
-<p class="symi-entry-owner">UndefinedFunction method</p>
-
-```python signature
-derivative(
-    orders: list[int],
-    arguments: Iterable[ExpressionLike],
-) -> Expression
-```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
-
-### divergence_direction
-
-<a id="entry-presentation_python_calculus_capability_calculus_divergence_direction_api_results_definiteintegrationresult_divergence_direction"></a>
-<a id="placement-placement.python.python_class.definiteintegrationresult_divergence_direction.8fe2f7cb6aaa"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
-
-```python signature
-divergence_direction: Optional[str]
-```
-
-The signed infinity of a divergent request, when a single direction was established.
-
-### execute
-
-<a id="entry-presentation_python_calculus_capability_calculus_execute_api_session_execute"></a>
-<a id="placement-placement.python.python_module.module_execute.c73e94e486fa"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-execute(input_expression: ExpressionLike) -> Expression
-```
-
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.python.python_class.context_execute.462735a27ec8"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.execute</code></p>
-
-```python signature
-execute(input_expression: ExpressionLike) -> Expression
-```
-
-</details>
-
-### execute
-
-<a id="entry-presentation_python_calculus_capability_calculus_execute_api_expression_execute"></a>
-<a id="placement-placement.python.python_class.expression_execute.90c4ad741f6a"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```python signature
-execute() -> Expression
-```
-
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
-
-### execute
-
-<a id="entry-presentation_python_calculus_capability_calculus_execute_api_matrix_execute"></a>
-<a id="placement-placement.python.python_class.matrix_execute.5773d9583bc1"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-execute() -> Matrix
-```
-
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
-
-### integrate
-
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_api_assumptionscope_integrate"></a>
-<a id="placement-placement.python.python_class.assumptionscope_integrate.493edf4a76f0"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```python signature
-integrate(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Expression
-```
-
-Integrate an expression using the scope's immutable assumptions.
-
-### integrate
-
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_api_session_integrate"></a>
-<a id="placement-placement.python.python_module.module_integrate.135ca8b1419e"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-integrate(input_expression: ExpressionLike, variable: Any) -> Expression
-```
-
-Indefinite integration (no constant of integration).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.python.python_class.context_integrate.93acac9d5819"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integrate</code></p>
-
-```python signature
-integrate(input_expression: ExpressionLike, variable: Any) -> Expression
-```
-
-</details>
-
-### integrate
-
-<a id="entry-presentation_python_calculus_capability_calculus_integrate_api_expression_integrate"></a>
-<a id="placement-placement.python.python_class.expression_integrate.09e1fca46e0a"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```python signature
-integrate(variable: Any) -> Expression
-```
-
-Indefinite integration (no constant of integration).
-
-### interpretation
-
-<a id="entry-presentation_python_calculus_capability_calculus_interpretation_api_results_definiteintegrationresult_interpretation"></a>
-<a id="placement-placement.python.python_class.definiteintegrationresult_interpretation.b68b8d35b6f5"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
-
-```python signature
-interpretation: str
-```
-
-The interpretation under which the request was answered.
-
-### value
-
-<a id="entry-presentation_python_calculus_capability_calculus_value_api_results_definiteintegrationresult_value"></a>
-<a id="placement-placement.python.python_class.definiteintegrationresult_value.c9323ba3f053"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
-
-```python signature
-value: Optional[Expression]
-```
-
-The exact value, present exactly when the verdict is `evaluated`.
-
+See [Assumptions](assumptions.md) for durable symbol assumptions and for
+`AssumptionScope`, which applies a set of assumptions to a whole block of
+operations rather than to one call.

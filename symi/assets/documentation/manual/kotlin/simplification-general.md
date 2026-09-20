@@ -8,7 +8,7 @@ presentation passes are on
 
 ### simplify
 
-<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_session_simplify"></a>
+<a id="entry-presentation_kotlin_api_session_simplify"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_simplify.e3d0c73b4f6a"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -16,21 +16,24 @@ presentation passes are on
 fun simplify(target: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_expression_simplify"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_simplify.4ca432c39c20"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.simplify</code></p>
 
 ```kotlin signature
 fun simplify(): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_simplify.22a5ee0da4a6"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.simplify</code></p>
 
 ```kotlin signature
 fun simplify(target: UniffiExpression): UniffiExpression
 ```
+
+</details>
 
 
 
@@ -84,7 +87,7 @@ guards:
 
 ### cancel
 
-<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_cancel_api_session_cancel"></a>
+<a id="entry-presentation_kotlin_api_session_cancel"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_cancel.6ee6797ea13e"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -92,13 +95,17 @@ guards:
 fun cancel(target: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_cancel_api_expression_cancel"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_cancel.6e7b38c5b929"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.cancel</code></p>
 
 ```kotlin signature
 fun cancel(): UniffiExpression
 ```
+
+</details>
 
 
 
@@ -107,7 +114,7 @@ polynomial GCD of numerator and denominator.
 
 ### together
 
-<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_together_api_session_together"></a>
+<a id="entry-presentation_kotlin_api_session_together"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_together.acdc6fd9ec58"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -115,13 +122,17 @@ polynomial GCD of numerator and denominator.
 fun together(target: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_simplification_general_capability_expression_transformations_together_api_expression_together"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_together.3b9e22c0006a"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.together</code></p>
 
 ```kotlin signature
 fun together(): UniffiExpression
 ```
+
+</details>
 
 
 
@@ -131,3 +142,34 @@ they are distinct user intents.
 
 ## Example
 
+
+### simplify_under_constraint
+
+<a id="entry-presentation_kotlin_api_session_simplify_under_constraint"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_simplifyunderconstraint.9a83406c6d43"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun simplifyUnderConstraint(
+    target: UniffiExpression,
+    constraint: UniffiExpression,
+): UniffiExpression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_simplifyunderconstraint.8953e00a65af"></a>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.simplifyUnderConstraint</code></p>
+
+```kotlin signature
+fun simplifyUnderConstraint(constraint: UniffiExpression): UniffiExpression
+```
+
+</details>
+
+
+Simplify under a local bounded logical constraint without changing symbol
+assumptions. The constraint is in force for this call alone; nothing about it
+survives into the context, so simplifying `sqrt(x**2)` under `x > 0` does not
+make `x` positive for any later operation.

@@ -86,29 +86,311 @@
   "default_page": "introduction",
   "label": "Swift",
   "language": "swift",
+  "legacy_alias_pages": [
+    {
+      "alias_count": 18,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "algebraic-transforms",
+      "path": "legacy/swift/algebraic-transforms.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "api-reference",
+      "path": "legacy/swift/api-reference.json"
+    },
+    {
+      "alias_count": 52,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "assumptions",
+      "path": "legacy/swift/assumptions.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "cad",
+      "path": "legacy/swift/cad.json"
+    },
+    {
+      "alias_count": 45,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "calculus",
+      "path": "legacy/swift/calculus.json"
+    },
+    {
+      "alias_count": 9,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "combinatorics",
+      "path": "legacy/swift/combinatorics.json"
+    },
+    {
+      "alias_count": 15,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "construction-and-parsing",
+      "path": "legacy/swift/construction-and-parsing.json"
+    },
+    {
+      "alias_count": 8,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "construction",
+      "path": "legacy/swift/construction.json"
+    },
+    {
+      "alias_count": 3,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "default-context",
+      "path": "legacy/swift/default-context.json"
+    },
+    {
+      "alias_count": 4,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "deferred-forms",
+      "path": "legacy/swift/deferred-forms.json"
+    },
+    {
+      "alias_count": 42,
+      "disambiguation_count": 2,
+      "language": "swift",
+      "page_identifier": "differential-equations",
+      "path": "legacy/swift/differential-equations.json"
+    },
+    {
+      "alias_count": 42,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "elementary-functions",
+      "path": "legacy/swift/elementary-functions.json"
+    },
+    {
+      "alias_count": 5,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "evaluation-and-constants",
+      "path": "legacy/swift/evaluation-and-constants.json"
+    },
+    {
+      "alias_count": 79,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "expressions",
+      "path": "legacy/swift/expressions.json"
+    },
+    {
+      "alias_count": 33,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "geometry",
+      "path": "legacy/swift/geometry.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "integral-transforms",
+      "path": "legacy/swift/integral-transforms.json"
+    },
+    {
+      "alias_count": 27,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "linear-algebra",
+      "path": "legacy/swift/linear-algebra.json"
+    },
+    {
+      "alias_count": 4,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "logic",
+      "path": "legacy/swift/logic.json"
+    },
+    {
+      "alias_count": 12,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "logical-transforms",
+      "path": "legacy/swift/logical-transforms.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "matrices",
+      "path": "legacy/swift/matrices.json"
+    },
+    {
+      "alias_count": 23,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "matrix-canonical-forms",
+      "path": "legacy/swift/matrix-canonical-forms.json"
+    },
+    {
+      "alias_count": 9,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "matrix-construction",
+      "path": "legacy/swift/matrix-construction.json"
+    },
+    {
+      "alias_count": 14,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "matrix-functions",
+      "path": "legacy/swift/matrix-functions.json"
+    },
+    {
+      "alias_count": 28,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "number-theory",
+      "path": "legacy/swift/number-theory.json"
+    },
+    {
+      "alias_count": 282,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "object-model",
+      "path": "legacy/swift/object-model.json"
+    },
+    {
+      "alias_count": 11,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "optimization",
+      "path": "legacy/swift/optimization.json"
+    },
+    {
+      "alias_count": 144,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "polynomials",
+      "path": "legacy/swift/polynomials.json"
+    },
+    {
+      "alias_count": 7,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "relations",
+      "path": "legacy/swift/relations.json"
+    },
+    {
+      "alias_count": 25,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "serialization-and-output",
+      "path": "legacy/swift/serialization-and-output.json"
+    },
+    {
+      "alias_count": 11,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "series",
+      "path": "legacy/swift/series.json"
+    },
+    {
+      "alias_count": 14,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "sets",
+      "path": "legacy/swift/sets.json"
+    },
+    {
+      "alias_count": 7,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "simplification-general",
+      "path": "legacy/swift/simplification-general.json"
+    },
+    {
+      "alias_count": 1,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "simplification",
+      "path": "legacy/swift/simplification.json"
+    },
+    {
+      "alias_count": 47,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "solving",
+      "path": "legacy/swift/solving.json"
+    },
+    {
+      "alias_count": 41,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "special-functions",
+      "path": "legacy/swift/special-functions.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "specialized-canonical-forms",
+      "path": "legacy/swift/specialized-canonical-forms.json"
+    },
+    {
+      "alias_count": 12,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "statistics",
+      "path": "legacy/swift/statistics.json"
+    },
+    {
+      "alias_count": 28,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "trigonometric-complex-rewrites",
+      "path": "legacy/swift/trigonometric-complex-rewrites.json"
+    },
+    {
+      "alias_count": 10,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "vector-calculus",
+      "path": "legacy/swift/vector-calculus.json"
+    },
+    {
+      "alias_count": 2,
+      "disambiguation_count": 0,
+      "language": "swift",
+      "page_identifier": "zero-equivalence",
+      "path": "legacy/swift/zero-equivalence.json"
+    }
+  ],
   "navigation_artifacts": [
     {
-      "entry_count": 850,
+      "entry_count": 769,
       "language": "python",
       "path": "navigation/python.json"
     },
     {
-      "entry_count": 1026,
+      "entry_count": 812,
       "language": "wasm",
       "path": "navigation/wasm.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "kotlin",
       "path": "navigation/kotlin.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "swift",
       "path": "navigation/swift.json"
     },
     {
-      "entry_count": 7717,
+      "entry_count": 7476,
       "language": "rust",
       "path": "navigation/rust.json"
     }
@@ -776,6 +1058,66 @@
     },
     {
       "canonical_urls": {
+        "kotlin": "/symi/kotlin/ordinary-differential-equations",
+        "python": "/symi/python/ordinary-differential-equations",
+        "rust": "/symi/rust/ordinary-differential-equations",
+        "swift": "/symi/swift/ordinary-differential-equations",
+        "wasm": "/symi/wasm/ordinary-differential-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/ordinary-differential-equations.md",
+        "python": "manual/python/ordinary-differential-equations.md",
+        "rust": "manual/rust/ordinary-differential-equations.md",
+        "swift": "manual/swift/ordinary-differential-equations.md",
+        "wasm": "manual/wasm/ordinary-differential-equations.md"
+      },
+      "page_identifier": "ordinary-differential-equations",
+      "path": "ordinary-differential-equations.md",
+      "title": "Ordinary differential equations"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/partial-differential-equation-results",
+        "python": "/symi/python/partial-differential-equation-results",
+        "rust": "/symi/rust/partial-differential-equation-results",
+        "swift": "/symi/swift/partial-differential-equation-results",
+        "wasm": "/symi/wasm/partial-differential-equation-results"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/partial-differential-equation-results.md",
+        "python": "manual/python/partial-differential-equation-results.md",
+        "rust": "manual/rust/partial-differential-equation-results.md",
+        "swift": "manual/swift/partial-differential-equation-results.md",
+        "wasm": "manual/wasm/partial-differential-equation-results.md"
+      },
+      "page_identifier": "partial-differential-equation-results",
+      "path": "partial-differential-equation-results.md",
+      "title": "Partial differential equation results"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/partial-differential-equations",
+        "python": "/symi/python/partial-differential-equations",
+        "rust": "/symi/rust/partial-differential-equations",
+        "swift": "/symi/swift/partial-differential-equations",
+        "wasm": "/symi/wasm/partial-differential-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/partial-differential-equations.md",
+        "python": "manual/python/partial-differential-equations.md",
+        "rust": "manual/rust/partial-differential-equations.md",
+        "swift": "manual/swift/partial-differential-equations.md",
+        "wasm": "manual/wasm/partial-differential-equations.md"
+      },
+      "page_identifier": "partial-differential-equations",
+      "path": "partial-differential-equations.md",
+      "title": "Partial differential equations"
+    },
+    {
+      "canonical_urls": {
         "kotlin": "/symi/kotlin/polynomials",
         "python": "/symi/python/polynomials",
         "rust": "/symi/rust/polynomials",
@@ -793,6 +1135,26 @@
       "page_identifier": "polynomials",
       "path": "polynomials.md",
       "title": "Polynomial queries"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/recurrence-equations",
+        "python": "/symi/python/recurrence-equations",
+        "rust": "/symi/rust/recurrence-equations",
+        "swift": "/symi/swift/recurrence-equations",
+        "wasm": "/symi/wasm/recurrence-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/recurrence-equations.md",
+        "python": "manual/python/recurrence-equations.md",
+        "rust": "manual/rust/recurrence-equations.md",
+        "swift": "manual/swift/recurrence-equations.md",
+        "wasm": "manual/wasm/recurrence-equations.md"
+      },
+      "page_identifier": "recurrence-equations",
+      "path": "recurrence-equations.md",
+      "title": "Recurrence equations"
     },
     {
       "canonical_urls": {
@@ -1013,6 +1375,26 @@
       "page_identifier": "trigonometric-complex-rewrites",
       "path": "trigonometric-complex-rewrites.md",
       "title": "Trigonometric and complex rewrites"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/undefined-functions",
+        "python": "/symi/python/undefined-functions",
+        "rust": "/symi/rust/undefined-functions",
+        "swift": "/symi/swift/undefined-functions",
+        "wasm": "/symi/wasm/undefined-functions"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/undefined-functions.md",
+        "python": "manual/python/undefined-functions.md",
+        "rust": "manual/rust/undefined-functions.md",
+        "swift": "manual/swift/undefined-functions.md",
+        "wasm": "manual/wasm/undefined-functions.md"
+      },
+      "page_identifier": "undefined-functions",
+      "path": "undefined-functions.md",
+      "title": "Undefined functions"
     },
     {
       "canonical_urls": {
@@ -2016,27 +2398,27 @@
   ],
   "presentation_artifacts": [
     {
-      "entry_count": 850,
+      "entry_count": 769,
       "language": "python",
       "path": "presentation/python.json"
     },
     {
-      "entry_count": 1026,
+      "entry_count": 812,
       "language": "wasm",
       "path": "presentation/wasm.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "kotlin",
       "path": "presentation/kotlin.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "swift",
       "path": "presentation/swift.json"
     },
     {
-      "entry_count": 7717,
+      "entry_count": 7476,
       "language": "rust",
       "path": "presentation/rust.json"
     }

@@ -327,11 +327,77 @@ An immutable, context-owned Boolean assumption formula.
 ### and
 Conjoin two propositions and return a canonical proposition.
 
+<a id="entry-presentation_wasm_api_assumptionproposition_and"></a>
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_and.dd2edebafd49"></a>
+<p class="symi-entry-owner">AssumptionProposition method</p>
+
+```typescript signature
+and(other: AssumptionProposition): AssumptionProposition
+```
+
+Conjoin two propositions.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_and.52d50e36a4e0"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.and</code></p>
+
+```typescript signature
+and(other: AssumptionProposition): AssumptionProposition
+```
+
+</details>
+
 ### or
 Disjoin two propositions and return a canonical proposition.
 
+<a id="entry-presentation_wasm_api_assumptionproposition_or"></a>
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_or.68746ec790ae"></a>
+<p class="symi-entry-owner">AssumptionProposition method</p>
+
+```typescript signature
+or(other: AssumptionProposition): AssumptionProposition
+```
+
+Disjoin two propositions.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_or.5d7229fdfdb9"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.or</code></p>
+
+```typescript signature
+or(other: AssumptionProposition): AssumptionProposition
+```
+
+</details>
+
 ### not
 Negate a proposition and return a canonical proposition.
+
+<a id="entry-presentation_wasm_api_assumptionproposition_not"></a>
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_not.5d5485850aaf"></a>
+<p class="symi-entry-owner">AssumptionProposition method</p>
+
+```typescript signature
+not(): AssumptionProposition
+```
+
+Negate a proposition in canonical negation-normal form.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_not.b60f9be810dc"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.not</code></p>
+
+```typescript signature
+not(): AssumptionProposition
+```
+
+</details>
 
 ### relation_kind
 
@@ -372,6 +438,42 @@ Return the congruence modulus when present.
 ### serialize
 Serialize a proposition in the versioned canonical formula grammar.
 
+<a id="entry-presentation_wasm_api_assumptionproposition_serialize"></a>
+<a id="placement-placement.wasm.wasm_module.module_serialize.7eefdbffab95"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+serialize(proposition: AssumptionProposition): string
+```
+
+Serialize an assumption proposition in the versioned canonical grammar.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_serialize.185b0e9cccac"></a>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.serialize</code></p>
+
+```typescript signature
+serialize(): string
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_serialize.7f47221634d0"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.serialize</code></p>
+
+```typescript signature
+serialize(proposition: AssumptionProposition): string
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_serialize.765c7dd6b46b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.serialize</code></p>
+
+```typescript signature
+serialize(): string
+```
+
+</details>
+
 ### deserialize_assumption_proposition
 
 *Not exposed by the WASM / JavaScript bindings. Available as [`Context.deserialize_assumption_proposition`](/symi/python/assumptions#deserialize_assumption_proposition) in Python, [`UniffiSession.deserializeAssumptionProposition`](/symi/kotlin/assumptions#deserialize_assumption_proposition) in Kotlin, [`UniffiSession.deserializeAssumptionProposition`](/symi/swift/assumptions#deserialize_assumption_proposition) in Swift, [`api::Session::deserialize_assumption_proposition`](/symi/rust/assumptions#deserialize_assumption_proposition) in Rust.*
@@ -394,15 +496,159 @@ updates are rejected without changing the prior state.
 Clear both durable formulas and legacy symbol assumptions.
 
 ### ask
+
+<a id="entry-presentation_wasm_api_session_ask"></a>
+<a id="placement-placement.wasm.wasm_module.module_ask.610563575f46"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+ask(proposition: AssumptionProposition): boolean | undefined
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_ask.dd678b45582e"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.ask</code></p>
+
+```typescript signature
+ask(proposition: AssumptionProposition): boolean | null
+```
+
+<a id="placement-placement.wasm.wasm_class.context_ask.d8318137f075"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.ask</code></p>
+
+```typescript signature
+ask(proposition: AssumptionProposition): boolean | undefined
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_ask.3efd93c29c40"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.ask</code></p>
+
+```typescript signature
+ask(proposition: AssumptionProposition): boolean | null
+```
+
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_ask.39f17daa4a26"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.ask</code></p>
+
+```typescript signature
+ask(proposition: AssumptionProposition): boolean | null
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_ask.49091dce105c"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.ask</code></p>
+
+```typescript signature
+ask(proposition: AssumptionProposition): boolean | undefined
+```
+
+</details>
+
 Return whether a proposition is entailed by the current durable context.
 
 ### could_hold
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`AssumptionScope.could_hold`](/symi/python/assumptions#could_hold) in Python, [`UniffiAssumptionScope.couldHold`](/symi/kotlin/assumptions#could_hold) in Kotlin, [`UniffiAssumptionScope.couldHold`](/symi/swift/assumptions#could_hold) in Swift, [`api::AssumptionScope::could_hold`](/symi/rust/assumptions#could_hold) in Rust.*
+<a id="entry-presentation_wasm_api_session_could_hold"></a>
+<a id="placement-placement.wasm.wasm_module.module_couldhold.4201d9b1b3bb"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+couldHold(proposition: AssumptionProposition): boolean | undefined
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_couldhold.07dbc6c95fcb"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.couldHold</code></p>
+
+```typescript signature
+couldHold(proposition: AssumptionProposition): boolean | null
+```
+
+<a id="placement-placement.wasm.wasm_class.context_couldhold.66586843bd55"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.couldHold</code></p>
+
+```typescript signature
+couldHold(proposition: AssumptionProposition): boolean | undefined
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_couldhold.c5541088e29c"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.couldHold</code></p>
+
+```typescript signature
+couldHold(proposition: AssumptionProposition): boolean | null
+```
+
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_couldhold.cd0ffcddc4c7"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.couldHold</code></p>
+
+```typescript signature
+couldHold(proposition: AssumptionProposition): boolean | null
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_couldhold.2d2a6b64246b"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.couldHold</code></p>
+
+```typescript signature
+couldHold(proposition: AssumptionProposition): boolean | undefined
+```
+
+</details>
 
 Return whether the current durable context is compatible with a proposition.
 
 ### assuming
+
+<a id="entry-presentation_wasm_api_session_assuming"></a>
+<a id="placement-placement.wasm.wasm_module.module_assuming.57d83b3bc98a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+assuming(proposition: AssumptionProposition): AssumptionScope
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_assuming.b1b313002885"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.assuming</code></p>
+
+```typescript signature
+assuming(proposition: AssumptionProposition): AssumptionScope
+```
+
+<a id="placement-placement.wasm.wasm_class.context_assuming.d69718f8316b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.assuming</code></p>
+
+```typescript signature
+assuming(proposition: AssumptionProposition): AssumptionScope
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_assuming.40c4ee1c859b"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.assuming</code></p>
+
+```typescript signature
+assuming(proposition: AssumptionProposition): AssumptionScope
+```
+
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_assuming.448cb5db38c4"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.assuming</code></p>
+
+```typescript signature
+assuming(proposition: AssumptionProposition): AssumptionScope
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_assuming.bc3feb0b14d3"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.assuming</code></p>
+
+```typescript signature
+assuming(proposition: AssumptionProposition): AssumptionScope
+```
+
+</details>
+
 Create an immutable local scope by overlaying a proposition. The overlay does
 not change the owning context.
 
@@ -415,258 +661,16 @@ mutating the owning context. Each one asks the same shared assumption session
 that the durable entry points use, so a compound or relational fact reaches
 them exactly as a per-symbol declaration does. If an assumption cannot be
 checked for the requested operation, the operation keeps its ordinary
-unevaluated or declined result rather than guessing a branch.
+unevaluated or declined result rather than guessing a branch. Each of those
+operations is documented with its subject — `integrate` on
+[Calculus](calculus.md#integrate), for instance — as an explicitly labelled
+variant that runs under local assumptions, not as an alias of the durable form.
 
 ### refine
-Simplify an expression using durable assumptions or one checked local proposition.
 
-## Additional API
-
-### and
-
-<a id="entry-presentation_wasm_assumptions_capability_algebra_and_api_assumptionproposition_and"></a>
-<a id="placement-placement.wasm.javascript_facade.assumptionproposition_and.dd2edebafd49"></a>
-<p class="symi-entry-owner">AssumptionProposition method</p>
-
-```typescript signature
-and(other: AssumptionProposition): AssumptionProposition
-```
-
-Conjoin two propositions.
-
-### and
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_and_api_assumptionproposition_and"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionproposition_and.52d50e36a4e0"></a>
-<p class="symi-entry-owner">AssumptionProposition method</p>
-
-```typescript signature
-and(other: AssumptionProposition): AssumptionProposition
-```
-
-Conjoin two propositions.
-
-### ask
-
-<a id="entry-presentation_wasm_assumptions_capability_algebra_ask_api_assumptionscope_ask"></a>
-<a id="placement-placement.wasm.javascript_facade.assumptionscope_ask.39f17daa4a26"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-ask(proposition: AssumptionProposition): boolean | null
-```
-
-Ask a proposition against the immutable scope snapshot.
-
-### ask
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_ask_api_assumptionscope_ask"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionscope_ask.49091dce105c"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-ask(proposition: AssumptionProposition): boolean | undefined
-```
-
-Ask a proposition against the immutable scope snapshot.
-
-### ask
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_ask_api_session_ask"></a>
-<a id="placement-placement.wasm.wasm_module.module_ask.610563575f46"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-ask(proposition: AssumptionProposition): boolean | undefined
-```
-
-Ask whether a proposition is entailed by the default context's assumptions.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_ask.d8318137f075"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ask</code></p>
-
-```typescript signature
-ask(proposition: AssumptionProposition): boolean | undefined
-```
-
-</details>
-
-### ask
-
-<a id="entry-presentation_wasm_assumptions_capability_algebra_ask_api_session_ask"></a>
-<a id="placement-placement.wasm.javascript_facade.context_ask.dd678b45582e"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```typescript signature
-ask(proposition: AssumptionProposition): boolean | null
-```
-
-Ask whether a proposition is entailed by durable assumptions.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_ask.3efd93c29c40"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.ask</code></p>
-
-```typescript signature
-ask(proposition: AssumptionProposition): boolean | null
-```
-
-</details>
-
-### assuming
-
-<a id="entry-presentation_wasm_assumptions_capability_algebra_assuming_api_assumptionscope_assuming"></a>
-<a id="placement-placement.wasm.javascript_facade.assumptionscope_assuming.448cb5db38c4"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-assuming(proposition: AssumptionProposition): AssumptionScope
-```
-
-Compose a further immutable overlay.
-
-### assuming
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_assuming_api_assumptionscope_assuming"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionscope_assuming.bc3feb0b14d3"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-assuming(proposition: AssumptionProposition): AssumptionScope
-```
-
-Compose a further immutable overlay.
-
-### assuming
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_assuming_api_session_assuming"></a>
-<a id="placement-placement.wasm.wasm_module.module_assuming.57d83b3bc98a"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-assuming(proposition: AssumptionProposition): AssumptionScope
-```
-
-Create an immutable local assumption scope in the default context.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_assuming.d69718f8316b"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.assuming</code></p>
-
-```typescript signature
-assuming(proposition: AssumptionProposition): AssumptionScope
-```
-
-</details>
-
-### assuming
-
-<a id="entry-presentation_wasm_assumptions_capability_algebra_assuming_api_session_assuming"></a>
-<a id="placement-placement.wasm.javascript_facade.context_assuming.b1b313002885"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```typescript signature
-assuming(proposition: AssumptionProposition): AssumptionScope
-```
-
-Create an immutable local assumption scope.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_assuming.40c4ee1c859b"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.assuming</code></p>
-
-```typescript signature
-assuming(proposition: AssumptionProposition): AssumptionScope
-```
-
-</details>
-
-### not
-
-<a id="entry-presentation_wasm_assumptions_capability_algebra_not_api_assumptionproposition_not"></a>
-<a id="placement-placement.wasm.javascript_facade.assumptionproposition_not.5d5485850aaf"></a>
-<p class="symi-entry-owner">AssumptionProposition method</p>
-
-```typescript signature
-not(): AssumptionProposition
-```
-
-Negate a proposition in canonical negation-normal form.
-
-### not
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_not_api_assumptionproposition_not"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionproposition_not.b60f9be810dc"></a>
-<p class="symi-entry-owner">AssumptionProposition method</p>
-
-```typescript signature
-not(): AssumptionProposition
-```
-
-Negate a proposition in canonical negation-normal form.
-
-### or
-
-<a id="entry-presentation_wasm_assumptions_capability_algebra_or_api_assumptionproposition_or"></a>
-<a id="placement-placement.wasm.javascript_facade.assumptionproposition_or.68746ec790ae"></a>
-<p class="symi-entry-owner">AssumptionProposition method</p>
-
-```typescript signature
-or(other: AssumptionProposition): AssumptionProposition
-```
-
-Disjoin two propositions.
-
-### or
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_or_api_assumptionproposition_or"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionproposition_or.5d7229fdfdb9"></a>
-<p class="symi-entry-owner">AssumptionProposition method</p>
-
-```typescript signature
-or(other: AssumptionProposition): AssumptionProposition
-```
-
-Disjoin two propositions.
-
-### refine
-
-<a id="entry-presentation_wasm_assumptions_capability_algebra_refine_api_assumptionscope_refine"></a>
-<a id="placement-placement.wasm.javascript_facade.assumptionscope_refine.eb9700297138"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-refine(value: ExpressionLike): Expression
-```
-
-Refine an expression against this immutable local assumption scope.
-
-### refine
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_refine_api_assumptionscope_refine"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionscope_refine.a34fe51a40a7"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-refine(input_expression: Expression): Expression
-```
-
-Refine an expression against this immutable local assumption scope.
-
-### refine
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_refine_api_session_refine"></a>
+<a id="entry-presentation_wasm_api_session_refine"></a>
 <a id="placement-placement.wasm.wasm_module.module_refine.5ab1dc89ad54"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 refine(
@@ -674,38 +678,26 @@ refine(
     assumptions?: AssumptionProposition | null,
 ): Expression
 ```
-
-Refine an expression using durable assumptions or one checked local proposition.
 
 <details class="symi-calling-forms">
-<summary>Calling forms</summary>
+<summary>Calling forms and variants</summary>
 
-<a id="placement-placement.wasm.wasm_class.context_refine.823a6652f5ca"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.refine</code></p>
-
-```typescript signature
-refine(
-    input_expression: Expression,
-    assumptions?: AssumptionProposition | null,
-): Expression
-```
-
-</details>
-
-### refine
-
-<a id="entry-presentation_wasm_assumptions_capability_algebra_refine_api_session_refine"></a>
 <a id="placement-placement.wasm.javascript_facade.context_refine.d5f9062ecb2d"></a>
-<p class="symi-entry-owner">Explicit context</p>
+<p class="symi-entry-owner">Explicit context: <code>Context.refine</code></p>
 
 ```typescript signature
 refine(value: ExpressionLike, assumptions?: AssumptionProposition | null): Expression
 ```
 
-Refine an expression using durable assumptions or one checked local proposition.
+<a id="placement-placement.wasm.wasm_class.context_refine.823a6652f5ca"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.refine</code></p>
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+```typescript signature
+refine(
+    input_expression: Expression,
+    assumptions?: AssumptionProposition | null,
+): Expression
+```
 
 <a id="placement-placement.wasm.javascript_facade.symifacade_refine.07d92cdc7343"></a>
 <p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.refine</code></p>
@@ -714,77 +706,1717 @@ Refine an expression using durable assumptions or one checked local proposition.
 refine(value: ExpressionLike, assumptions?: AssumptionProposition | null): Expression
 ```
 
+<a id="placement-placement.wasm.javascript_facade.expression_refine.70673247d439"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.refine</code></p>
+
+```typescript signature
+refine(assumptions?: AssumptionProposition | null): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_refine.851cb332f433"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.refine</code></p>
+
+```typescript signature
+refine(assumptions?: AssumptionProposition | null): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_refine.eb9700297138"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.refine</code></p>
+
+```typescript signature
+refine(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_refine.a34fe51a40a7"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.refine</code></p>
+
+```typescript signature
+refine(input_expression: Expression): Expression
+```
+
 </details>
 
-### refine
+Simplify an expression using durable assumptions or one checked local proposition.
 
-<a id="entry-presentation_wasm_assumptions_capability_algebra_refine_api_expression_refine"></a>
-<a id="placement-placement.wasm.javascript_facade.expression_refine.70673247d439"></a>
-<p class="symi-entry-owner">Expression method</p>
+## Additional API
 
-```typescript signature
-refine(assumptions?: AssumptionProposition | null): Expression
-```
+### addAssumptions
 
-Refine this expression using durable assumptions or one checked local proposition.
-
-### refine
-
-<a id="entry-presentation_wasm_assumptions_capability_contexts_refine_api_expression_refine"></a>
-<a id="placement-placement.wasm.wasm_class.expression_refine.851cb332f433"></a>
-<p class="symi-entry-owner">Expression method</p>
+<a id="entry-presentation_wasm_api_session_add_assumptions"></a>
+<a id="placement-placement.wasm.wasm_module.module_addassumptions.4a919b81fb21"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
-refine(assumptions?: AssumptionProposition | null): Expression
+addAssumptions(proposition: AssumptionProposition): void
 ```
 
-Refine this expression using durable assumptions or one checked local proposition.
+Add a proposition to the default context's durable assumption store.
 
-### serialize
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
-<a id="entry-presentation_wasm_assumptions_capability_algebra_serialize_api_assumptionproposition_serialize"></a>
-<a id="placement-placement.wasm.javascript_facade.assumptionproposition_serialize.185b0e9cccac"></a>
+<a id="placement-placement.wasm.javascript_facade.context_addassumptions.bd466d03ca25"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.addAssumptions</code></p>
+
+```typescript signature
+addAssumptions(proposition: AssumptionProposition): void
+```
+
+<a id="placement-placement.wasm.wasm_class.context_addassumptions.b31f141c59eb"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.addAssumptions</code></p>
+
+```typescript signature
+addAssumptions(proposition: AssumptionProposition): void
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_addassumptions.73e3352ec9e9"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.addAssumptions</code></p>
+
+```typescript signature
+addAssumptions(proposition: AssumptionProposition): void
+```
+
+</details>
+
+### algebraicAssumption
+
+<a id="entry-presentation_wasm_api_session_algebraic_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_algebraicassumption.cadab791299a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+algebraicAssumption(subject: Expression): AssumptionProposition
+```
+
+Build an algebraicity assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_algebraicassumption.13f584dcd297"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.algebraicAssumption</code></p>
+
+```typescript signature
+algebraicAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_algebraicassumption.2224c5ffdadb"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.algebraicAssumption</code></p>
+
+```typescript signature
+algebraicAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_algebraicassumption.f4ce6f6c9968"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.algebraicAssumption</code></p>
+
+```typescript signature
+algebraicAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### assumptionPropositionFromLogicalExpression
+
+<a id="entry-presentation_wasm_api_session_assumption_proposition_from_logical_expression"></a>
+<a id="placement-placement.wasm.wasm_module.module_assumptionpropositionfromlogicalexpression.135c42fd1172"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+assumptionPropositionFromLogicalExpression(logical_expression: Expression): AssumptionProposition
+```
+
+Convert a supported logical expression to a typed assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_assumptionpropositionfromlogicalexpression.2634b9a120ce"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.assumptionPropositionFromLogicalExpression</code></p>
+
+```typescript signature
+assumptionPropositionFromLogicalExpression(logicalExpression: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_assumptionpropositionfromlogicalexpression.5ea25bd33b20"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.assumptionPropositionFromLogicalExpression</code></p>
+
+```typescript signature
+assumptionPropositionFromLogicalExpression(logical_expression: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_assumptionpropositionfromlogicalexpression.296cef2c3834"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.assumptionPropositionFromLogicalExpression</code></p>
+
+```typescript signature
+assumptionPropositionFromLogicalExpression(logicalExpression: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### clearAllAssumptions
+
+<a id="entry-presentation_wasm_api_session_clear_all_assumptions"></a>
+<a id="placement-placement.wasm.wasm_module.module_clearallassumptions.0db5db87e18d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+clearAllAssumptions(): void
+```
+
+Clear all assumptions in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_clearallassumptions.a0d7b8978517"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.clearAllAssumptions</code></p>
+
+```typescript signature
+clearAllAssumptions(): void
+```
+
+<a id="placement-placement.wasm.wasm_class.context_clearallassumptions.bd79ad9a9a16"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.clearAllAssumptions</code></p>
+
+```typescript signature
+clearAllAssumptions(): void
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_clearallassumptions.759cb89d46d9"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.clearAllAssumptions</code></p>
+
+```typescript signature
+clearAllAssumptions(): void
+```
+
+</details>
+
+### complexAssumption
+
+<a id="entry-presentation_wasm_api_session_complex_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_complexassumption.1304cbe2e12a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+complexAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a finite-complex assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_complexassumption.de9b2d0d5a6b"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.complexAssumption</code></p>
+
+```typescript signature
+complexAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_complexassumption.da3971bb10ac"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.complexAssumption</code></p>
+
+```typescript signature
+complexAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_complexassumption.6e9580247a40"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.complexAssumption</code></p>
+
+```typescript signature
+complexAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### compositeAssumption
+
+<a id="entry-presentation_wasm_api_session_composite_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_compositeassumption.3b1dc4123512"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+compositeAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a compositeness assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_compositeassumption.7fafa23ed771"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.compositeAssumption</code></p>
+
+```typescript signature
+compositeAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_compositeassumption.fa27370d4eed"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.compositeAssumption</code></p>
+
+```typescript signature
+compositeAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_compositeassumption.c21be76bc301"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.compositeAssumption</code></p>
+
+```typescript signature
+compositeAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### congruentAssumption
+
+<a id="entry-presentation_wasm_api_session_congruent_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_congruentassumption.906a88486d5e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+congruentAssumption(
+    left: Expression,
+    right: Expression,
+    modulus: Expression,
+): AssumptionProposition
+```
+
+Build an integer-congruence assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_congruentassumption.ba23c40226c0"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.congruentAssumption</code></p>
+
+```typescript signature
+congruentAssumption(left: ExpressionLike, right: ExpressionLike, modulus: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_congruentassumption.f6180c227f00"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.congruentAssumption</code></p>
+
+```typescript signature
+congruentAssumption(
+    left: Expression,
+    right: Expression,
+    modulus: Expression,
+): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_congruentassumption.cc5d155981f1"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.congruentAssumption</code></p>
+
+```typescript signature
+congruentAssumption(left: ExpressionLike, right: ExpressionLike, modulus: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### definedAssumption
+
+<a id="entry-presentation_wasm_api_session_defined_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_definedassumption.5219edfb0174"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+definedAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a pointwise definedness assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_definedassumption.a6b8cd5e249d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.definedAssumption</code></p>
+
+```typescript signature
+definedAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_definedassumption.8c5bd258ba52"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.definedAssumption</code></p>
+
+```typescript signature
+definedAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_definedassumption.d16c9ffedf97"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.definedAssumption</code></p>
+
+```typescript signature
+definedAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### deserializeAssumptionProposition
+
+<a id="entry-presentation_wasm_api_session_deserialize_assumption_proposition"></a>
+<a id="placement-placement.wasm.wasm_module.module_deserializeassumptionproposition.4165a4b54429"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+deserializeAssumptionProposition(text: string): AssumptionProposition
+```
+
+Parse a versioned canonical assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_deserializeassumptionproposition.a3cd68aa2883"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.deserializeAssumptionProposition</code></p>
+
+```typescript signature
+deserializeAssumptionProposition(text: string): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_deserializeassumptionproposition.aff4c5500d99"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.deserializeAssumptionProposition</code></p>
+
+```typescript signature
+deserializeAssumptionProposition(text: string): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_deserializeassumptionproposition.baf0e5199161"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.deserializeAssumptionProposition</code></p>
+
+```typescript signature
+deserializeAssumptionProposition(text: string): AssumptionProposition
+```
+
+</details>
+
+### equalAssumption
+
+<a id="entry-presentation_wasm_api_session_equal_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_equalassumption.24d5230bded4"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+equalAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+Build an equality assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_equalassumption.e2385c0eb338"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.equalAssumption</code></p>
+
+```typescript signature
+equalAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_equalassumption.8c5d0d48bbee"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.equalAssumption</code></p>
+
+```typescript signature
+equalAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_equalassumption.24f0c321944b"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.equalAssumption</code></p>
+
+```typescript signature
+equalAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### evenAssumption
+
+<a id="entry-presentation_wasm_api_session_even_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_evenassumption.edd68ccb590f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+evenAssumption(subject: Expression): AssumptionProposition
+```
+
+Build an evenness assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_evenassumption.e7be2f22f2fa"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.evenAssumption</code></p>
+
+```typescript signature
+evenAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_evenassumption.bb78156582ab"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.evenAssumption</code></p>
+
+```typescript signature
+evenAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_evenassumption.d98feb706c03"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.evenAssumption</code></p>
+
+```typescript signature
+evenAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### extendedRealAssumption
+
+<a id="entry-presentation_wasm_api_session_extended_real_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_extendedrealassumption.b6b7622d86b1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+extendedRealAssumption(subject: Expression): AssumptionProposition
+```
+
+Build an extended-real assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_extendedrealassumption.24a10286e28a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.extendedRealAssumption</code></p>
+
+```typescript signature
+extendedRealAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_extendedrealassumption.ae5e7bb5a3e9"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.extendedRealAssumption</code></p>
+
+```typescript signature
+extendedRealAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_extendedrealassumption.13b9ce694b78"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.extendedRealAssumption</code></p>
+
+```typescript signature
+extendedRealAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### finiteAssumption
+
+<a id="entry-presentation_wasm_api_session_finite_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_finiteassumption.6ae53821afcc"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+finiteAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a finiteness assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_finiteassumption.53a61f54e11a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.finiteAssumption</code></p>
+
+```typescript signature
+finiteAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_finiteassumption.f2b7a40022a4"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.finiteAssumption</code></p>
+
+```typescript signature
+finiteAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_finiteassumption.d74e89873ec3"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.finiteAssumption</code></p>
+
+```typescript signature
+finiteAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### greaterAssumption
+
+<a id="entry-presentation_wasm_api_session_greater_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_greaterassumption.a5eb42bf8f9c"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+greaterAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+Build a strict scalar-order assumption proposition with reversed operands in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_greaterassumption.b5c7e745dc87"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.greaterAssumption</code></p>
+
+```typescript signature
+greaterAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_greaterassumption.7d33f6430cf1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.greaterAssumption</code></p>
+
+```typescript signature
+greaterAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_greaterassumption.5d34c5df780d"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.greaterAssumption</code></p>
+
+```typescript signature
+greaterAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### greaterOrEqualAssumption
+
+<a id="entry-presentation_wasm_api_session_greater_or_equal_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_greaterorequalassumption.775238806940"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+greaterOrEqualAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+Build a non-strict scalar-order assumption proposition with reversed operands in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_greaterorequalassumption.533a8f9c54be"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.greaterOrEqualAssumption</code></p>
+
+```typescript signature
+greaterOrEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_greaterorequalassumption.45d6551d24b9"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.greaterOrEqualAssumption</code></p>
+
+```typescript signature
+greaterOrEqualAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_greaterorequalassumption.71bfbd4b9653"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.greaterOrEqualAssumption</code></p>
+
+```typescript signature
+greaterOrEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### infiniteAssumption
+
+<a id="entry-presentation_wasm_api_session_infinite_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_infiniteassumption.30902fe0a9f6"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+infiniteAssumption(subject: Expression): AssumptionProposition
+```
+
+Build an infinity assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_infiniteassumption.1f8d8206b5d4"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.infiniteAssumption</code></p>
+
+```typescript signature
+infiniteAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_infiniteassumption.930992139804"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.infiniteAssumption</code></p>
+
+```typescript signature
+infiniteAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_infiniteassumption.c08c0dd8e0f7"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.infiniteAssumption</code></p>
+
+```typescript signature
+infiniteAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### integerAssumption
+
+<a id="entry-presentation_wasm_api_session_integer_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_integerassumption.bf2080c26dc3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+integerAssumption(subject: Expression): AssumptionProposition
+```
+
+Build an integer assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_integerassumption.cf3033b261f3"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.integerAssumption</code></p>
+
+```typescript signature
+integerAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_integerassumption.cd89ea0aeab3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integerAssumption</code></p>
+
+```typescript signature
+integerAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_integerassumption.8d164e5dcee5"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.integerAssumption</code></p>
+
+```typescript signature
+integerAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### irrationalAssumption
+
+<a id="entry-presentation_wasm_api_session_irrational_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_irrationalassumption.a422ee432156"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+irrationalAssumption(subject: Expression): AssumptionProposition
+```
+
+Build an irrationality assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_irrationalassumption.55887270e7fd"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.irrationalAssumption</code></p>
+
+```typescript signature
+irrationalAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_irrationalassumption.563f0ff3e367"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.irrationalAssumption</code></p>
+
+```typescript signature
+irrationalAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_irrationalassumption.cb191b491b47"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.irrationalAssumption</code></p>
+
+```typescript signature
+irrationalAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### lessAssumption
+
+<a id="entry-presentation_wasm_api_session_less_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_lessassumption.8fc95f457c3b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+lessAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+Build a strict scalar-order assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_lessassumption.c8f4215c1aeb"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.lessAssumption</code></p>
+
+```typescript signature
+lessAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_lessassumption.ca0ff78010a6"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.lessAssumption</code></p>
+
+```typescript signature
+lessAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_lessassumption.208b6241d635"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.lessAssumption</code></p>
+
+```typescript signature
+lessAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### lessOrEqualAssumption
+
+<a id="entry-presentation_wasm_api_session_less_or_equal_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_lessorequalassumption.9485a709d841"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+lessOrEqualAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+Build a non-strict scalar-order assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_lessorequalassumption.54b87c34ad81"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.lessOrEqualAssumption</code></p>
+
+```typescript signature
+lessOrEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_lessorequalassumption.11ee484d439d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.lessOrEqualAssumption</code></p>
+
+```typescript signature
+lessOrEqualAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_lessorequalassumption.9a7358375559"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.lessOrEqualAssumption</code></p>
+
+```typescript signature
+lessOrEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### memberAssumption
+
+<a id="entry-presentation_wasm_api_session_member_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_memberassumption.d3aa17ab5d8c"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+memberAssumption(
+    element: Expression,
+    set_expression: Expression,
+): AssumptionProposition
+```
+
+Build a scalar-membership assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_memberassumption.4bb9ab611722"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.memberAssumption</code></p>
+
+```typescript signature
+memberAssumption(element: ExpressionLike, setExpression: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_memberassumption.1ba404fedc2d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.memberAssumption</code></p>
+
+```typescript signature
+memberAssumption(
+    element: Expression,
+    set_expression: Expression,
+): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_memberassumption.faafe5efd4c4"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.memberAssumption</code></p>
+
+```typescript signature
+memberAssumption(element: ExpressionLike, setExpression: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### naturalAssumption
+
+<a id="entry-presentation_wasm_api_session_natural_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_naturalassumption.3ab80dcb8d03"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+naturalAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a natural-number assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_naturalassumption.19c46f121eb7"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.naturalAssumption</code></p>
+
+```typescript signature
+naturalAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_naturalassumption.38e1c8e1981a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.naturalAssumption</code></p>
+
+```typescript signature
+naturalAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_naturalassumption.545c396a1a8a"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.naturalAssumption</code></p>
+
+```typescript signature
+naturalAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### negativeAssumption
+
+<a id="entry-presentation_wasm_api_session_negative_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_negativeassumption.a7d23b923406"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+negativeAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a strict-negativity assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_negativeassumption.4f548122612d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.negativeAssumption</code></p>
+
+```typescript signature
+negativeAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_negativeassumption.2f61c8b3c7a1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.negativeAssumption</code></p>
+
+```typescript signature
+negativeAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_negativeassumption.a1faca33e449"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.negativeAssumption</code></p>
+
+```typescript signature
+negativeAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### nonnegativeAssumption
+
+<a id="entry-presentation_wasm_api_session_nonnegative_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_nonnegativeassumption.cd1162dab735"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+nonnegativeAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a universe-guarded nonnegative assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_nonnegativeassumption.d5fe84f63a4f"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.nonnegativeAssumption</code></p>
+
+```typescript signature
+nonnegativeAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_nonnegativeassumption.64680640bb6a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.nonnegativeAssumption</code></p>
+
+```typescript signature
+nonnegativeAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_nonnegativeassumption.fc8db15a6f1a"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.nonnegativeAssumption</code></p>
+
+```typescript signature
+nonnegativeAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### nonpositiveAssumption
+
+<a id="entry-presentation_wasm_api_session_nonpositive_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_nonpositiveassumption.d8eddd870b43"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+nonpositiveAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a universe-guarded nonpositive assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_nonpositiveassumption.bbd2f123adaa"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.nonpositiveAssumption</code></p>
+
+```typescript signature
+nonpositiveAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_nonpositiveassumption.a68756b4e98f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.nonpositiveAssumption</code></p>
+
+```typescript signature
+nonpositiveAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_nonpositiveassumption.48fdc398654b"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.nonpositiveAssumption</code></p>
+
+```typescript signature
+nonpositiveAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### nonzeroAssumption
+
+<a id="entry-presentation_wasm_api_session_nonzero_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_nonzeroassumption.76b8b5800ccd"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+nonzeroAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a nonzero assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_nonzeroassumption.13c24e7f7a6e"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.nonzeroAssumption</code></p>
+
+```typescript signature
+nonzeroAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_nonzeroassumption.3c73be02c09e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.nonzeroAssumption</code></p>
+
+```typescript signature
+nonzeroAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_nonzeroassumption.dab21ea932d8"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.nonzeroAssumption</code></p>
+
+```typescript signature
+nonzeroAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### notEqualAssumption
+
+<a id="entry-presentation_wasm_api_session_not_equal_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_notequalassumption.c25dc8a01655"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+notEqualAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+Build a disequality assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_notequalassumption.67d2e7f5e08e"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.notEqualAssumption</code></p>
+
+```typescript signature
+notEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_notequalassumption.9cf43d15c370"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.notEqualAssumption</code></p>
+
+```typescript signature
+notEqualAssumption(
+    left: Expression,
+    right: Expression,
+): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_notequalassumption.7f22dc0529bc"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.notEqualAssumption</code></p>
+
+```typescript signature
+notEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### oddAssumption
+
+<a id="entry-presentation_wasm_api_session_odd_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_oddassumption.6299ce7886a7"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+oddAssumption(subject: Expression): AssumptionProposition
+```
+
+Build an oddness assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_oddassumption.4c7823e1efdb"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.oddAssumption</code></p>
+
+```typescript signature
+oddAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_oddassumption.5565fb3aa853"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.oddAssumption</code></p>
+
+```typescript signature
+oddAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_oddassumption.31a0bcf1ea66"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.oddAssumption</code></p>
+
+```typescript signature
+oddAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### positiveAssumption
+
+<a id="entry-presentation_wasm_api_session_positive_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_positiveassumption.c2f3eab58e85"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+positiveAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a strict-positivity assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_positiveassumption.78c5b78a1489"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.positiveAssumption</code></p>
+
+```typescript signature
+positiveAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_positiveassumption.f031f0dc6351"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.positiveAssumption</code></p>
+
+```typescript signature
+positiveAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_positiveassumption.88eeb1edfead"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.positiveAssumption</code></p>
+
+```typescript signature
+positiveAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### positiveIntegerAssumption
+
+<a id="entry-presentation_wasm_api_session_positive_integer_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_positiveintegerassumption.25753e25c658"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+positiveIntegerAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a positive-integer assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_positiveintegerassumption.18b9666cbeb9"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.positiveIntegerAssumption</code></p>
+
+```typescript signature
+positiveIntegerAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_positiveintegerassumption.213d99d5dc51"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.positiveIntegerAssumption</code></p>
+
+```typescript signature
+positiveIntegerAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_positiveintegerassumption.fa356b4ace52"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.positiveIntegerAssumption</code></p>
+
+```typescript signature
+positiveIntegerAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### primeAssumption
+
+<a id="entry-presentation_wasm_api_session_prime_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_primeassumption.048f5e3f9f7a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+primeAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a primality assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_primeassumption.c38a13dbad3a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.primeAssumption</code></p>
+
+```typescript signature
+primeAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_primeassumption.dea59522d9b3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.primeAssumption</code></p>
+
+```typescript signature
+primeAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_primeassumption.20ac88ea9ecd"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.primeAssumption</code></p>
+
+```typescript signature
+primeAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### rationalAssumption
+
+<a id="entry-presentation_wasm_api_session_rational_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_rationalassumption.12ebaab24804"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+rationalAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a rationality assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_rationalassumption.bd30ce74bea3"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.rationalAssumption</code></p>
+
+```typescript signature
+rationalAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_rationalassumption.66ad2d17a4bd"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.rationalAssumption</code></p>
+
+```typescript signature
+rationalAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_rationalassumption.50a8e1879939"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.rationalAssumption</code></p>
+
+```typescript signature
+rationalAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### realAssumption
+
+<a id="entry-presentation_wasm_api_session_real_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_realassumption.926ab7bf4766"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+realAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a realness assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_realassumption.9a2fc4517edb"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.realAssumption</code></p>
+
+```typescript signature
+realAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_realassumption.973d612c8247"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.realAssumption</code></p>
+
+```typescript signature
+realAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_realassumption.a407a99bc207"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.realAssumption</code></p>
+
+```typescript signature
+realAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### transcendentalAssumption
+
+<a id="entry-presentation_wasm_api_session_transcendental_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_transcendentalassumption.685160fbab59"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+transcendentalAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a transcendence assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_transcendentalassumption.0a4b799a5b1c"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.transcendentalAssumption</code></p>
+
+```typescript signature
+transcendentalAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_transcendentalassumption.6d339804210b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.transcendentalAssumption</code></p>
+
+```typescript signature
+transcendentalAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_transcendentalassumption.59b1bbba7112"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.transcendentalAssumption</code></p>
+
+```typescript signature
+transcendentalAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### zeroAssumption
+
+<a id="entry-presentation_wasm_api_session_zero_assumption"></a>
+<a id="placement-placement.wasm.wasm_module.module_zeroassumption.999da512137e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+zeroAssumption(subject: Expression): AssumptionProposition
+```
+
+Build a zero assumption proposition in the default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_zeroassumption.e6f179fd3a86"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.zeroAssumption</code></p>
+
+```typescript signature
+zeroAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.wasm_class.context_zeroassumption.e80b6e21b307"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.zeroAssumption</code></p>
+
+```typescript signature
+zeroAssumption(subject: Expression): AssumptionProposition
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_zeroassumption.750741382236"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.zeroAssumption</code></p>
+
+```typescript signature
+zeroAssumption(value: ExpressionLike): AssumptionProposition
+```
+
+</details>
+
+### AssumptionProposition
+
+<a id="entry-presentation_wasm_api_assumptionproposition"></a>
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition.b30925c7b0d9"></a>
+<p class="symi-entry-owner">Type</p>
+
+```typescript signature
+class AssumptionProposition
+```
+
+Public type placement for AssumptionProposition.
+
+#### AssumptionProposition.congruenceModulus
+
+<a id="entry-presentation_wasm_api_assumptionproposition_congruence_modulus"></a>
+<a id="placement-placement.wasm.wasm_module.module_congruencemodulus.17e549d7616a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+congruenceModulus(proposition: AssumptionProposition): Expression | undefined
+```
+
+Return the congruence modulus when present.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_congruencemodulus.958e75bacc16"></a>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.congruenceModulus</code></p>
+
+```typescript signature
+congruenceModulus(): Expression | null
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_congruencemodulus.5433d54422f2"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.congruenceModulus</code></p>
+
+```typescript signature
+congruenceModulus(proposition: AssumptionProposition): Expression | null
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_congruencemodulus.ec7759ccca4c"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.congruenceModulus</code></p>
+
+```typescript signature
+congruenceModulus(): Expression | undefined
+```
+
+</details>
+
+#### AssumptionProposition.free
+
+<a id="entry-presentation_wasm_host_wasm_assumptionproposition_free"></a>
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_free.3aac53fe6166"></a>
 <p class="symi-entry-owner">AssumptionProposition method</p>
 
 ```typescript signature
-serialize(): string
+free(): void
 ```
 
-Serialize this proposition in the versioned canonical formula grammar.
+Public method placement for free.
+
+#### AssumptionProposition.leftOperand
+
+<a id="entry-presentation_wasm_api_assumptionproposition_left_operand"></a>
+<a id="placement-placement.wasm.wasm_module.module_leftoperand.76fb7332aadf"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+leftOperand(proposition: AssumptionProposition): Expression | undefined
+```
+
+Return the left relation or congruence operand when present.
 
 <details class="symi-calling-forms">
 <summary>Calling forms</summary>
 
-<a id="placement-placement.wasm.javascript_facade.symifacade_serialize.7f47221634d0"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.serialize</code></p>
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_leftoperand.1cd6f2d84196"></a>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.leftOperand</code></p>
 
 ```typescript signature
-serialize(proposition: AssumptionProposition): string
+leftOperand(): Expression | null
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_leftoperand.7b6a1f8eac18"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.leftOperand</code></p>
+
+```typescript signature
+leftOperand(proposition: AssumptionProposition): Expression | null
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_leftoperand.746fdb26e50b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.leftOperand</code></p>
+
+```typescript signature
+leftOperand(): Expression | undefined
 ```
 
 </details>
 
-### serialize
+#### AssumptionProposition.membershipElement
 
-<a id="entry-presentation_wasm_assumptions_capability_contexts_serialize_api_assumptionproposition_serialize"></a>
-<a id="placement-placement.wasm.wasm_module.module_serialize.7eefdbffab95"></a>
-<p class="symi-entry-owner">Default context</p>
+<a id="entry-presentation_wasm_api_assumptionproposition_membership_element"></a>
+<a id="placement-placement.wasm.wasm_module.module_membershipelement.8ef3bf1bc659"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
-serialize(proposition: AssumptionProposition): string
+membershipElement(proposition: AssumptionProposition): Expression | undefined
 ```
 
-Serialize an assumption proposition in the versioned canonical grammar.
+Return the membership element when present.
 
 <details class="symi-calling-forms">
 <summary>Calling forms</summary>
 
-<a id="placement-placement.wasm.wasm_class.assumptionproposition_serialize.765c7dd6b46b"></a>
-<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.serialize</code></p>
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_membershipelement.e669e2bb3843"></a>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.membershipElement</code></p>
 
 ```typescript signature
-serialize(): string
+membershipElement(): Expression | null
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_membershipelement.0fc6fd43e584"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.membershipElement</code></p>
+
+```typescript signature
+membershipElement(proposition: AssumptionProposition): Expression | null
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_membershipelement.aae55444ab1f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.membershipElement</code></p>
+
+```typescript signature
+membershipElement(): Expression | undefined
 ```
 
 </details>
+
+#### AssumptionProposition.membershipSet
+
+<a id="entry-presentation_wasm_api_assumptionproposition_membership_set"></a>
+<a id="placement-placement.wasm.wasm_module.module_membershipset.b2235c74f247"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+membershipSet(proposition: AssumptionProposition): Expression | undefined
+```
+
+Return the membership set expression when present.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_membershipset.56fd05efb36b"></a>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.membershipSet</code></p>
+
+```typescript signature
+membershipSet(): Expression | null
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_membershipset.4cc3c059c77b"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.membershipSet</code></p>
+
+```typescript signature
+membershipSet(proposition: AssumptionProposition): Expression | null
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_membershipset.7ce41b1bc776"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.membershipSet</code></p>
+
+```typescript signature
+membershipSet(): Expression | undefined
+```
+
+</details>
+
+#### AssumptionProposition.relationKind
+
+<a id="entry-presentation_wasm_api_assumptionproposition_relation_kind"></a>
+<a id="placement-placement.wasm.wasm_module.module_relationkind.7ff1b1cd4c30"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+relationKind(proposition: AssumptionProposition): string | undefined
+```
+
+Return the canonical relation kind for an assumption proposition.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_relationkind.077f50cc3ca4"></a>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.relationKind</code></p>
+
+```typescript signature
+relationKind(): "equal" | "not_equal" | "less" | "less_or_equal" | null
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_relationkind.bb3ed2b1488e"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.relationKind</code></p>
+
+```typescript signature
+relationKind(proposition: AssumptionProposition): "equal" | "not_equal" | "less" | "less_or_equal" | null
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_relationkind.e790b4e9fc3f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.relationKind</code></p>
+
+```typescript signature
+relationKind(): string | undefined
+```
+
+</details>
+
+#### AssumptionProposition.rightOperand
+
+<a id="entry-presentation_wasm_api_assumptionproposition_right_operand"></a>
+<a id="placement-placement.wasm.wasm_module.module_rightoperand.e696bf40887d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+rightOperand(proposition: AssumptionProposition): Expression | undefined
+```
+
+Return the right relation or congruence operand when present.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_rightoperand.cd1d8db9f940"></a>
+<p class="symi-entry-owner">AssumptionProposition method: <code>AssumptionProposition.rightOperand</code></p>
+
+```typescript signature
+rightOperand(): Expression | null
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_rightoperand.48bc4bcc6b14"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.rightOperand</code></p>
+
+```typescript signature
+rightOperand(proposition: AssumptionProposition): Expression | null
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_rightoperand.c7d9f00cb532"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.rightOperand</code></p>
+
+```typescript signature
+rightOperand(): Expression | undefined
+```
+
+</details>
+
+#### AssumptionProposition.toString
+
+<a id="entry-presentation_wasm_api_assumptionproposition_to_string"></a>
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_tostring.1bef2e8fdf8b"></a>
+<p class="symi-entry-owner">AssumptionProposition method</p>
+
+```typescript signature
+toString(): string
+```
+
+Return the canonical formula spelling.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.assumptionproposition_tostring.ac1a37e09f72"></a>
+<p class="symi-entry-owner">Raw WebAssembly: AssumptionProposition method: <code>AssumptionProposition.toString</code></p>
+
+```typescript signature
+toString(): string
+```
+
+</details>
+
+### AssumptionScope
+
+<a id="entry-presentation_wasm_api_assumptionscope"></a>
+<a id="placement-placement.wasm.javascript_facade.assumptionscope.6062700f9779"></a>
+<p class="symi-entry-owner">Type</p>
+
+```typescript signature
+class AssumptionScope
+```
+
+Public type placement for AssumptionScope.
+
+#### AssumptionScope.free
+
+<a id="entry-presentation_wasm_host_wasm_assumptionscope_free"></a>
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_free.0065977a775c"></a>
+<p class="symi-entry-owner">AssumptionScope method</p>
+
+```typescript signature
+free(): void
+```
+
+Public method placement for free.
 

@@ -6,7 +6,7 @@ component/variable count mismatches raise.
 
 ### gradient
 
-<a id="entry-presentation_python_vector_calculus_capability_vector_calculus_gradient_api_analysis_session_gradient"></a>
+<a id="entry-presentation_python_api_session_gradient"></a>
 <a id="placement-placement.python.python_module.module_gradient.985a8845f0b7"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -37,7 +37,7 @@ gradient(
 
 ### divergence
 
-<a id="entry-presentation_python_vector_calculus_capability_vector_calculus_divergence_api_analysis_session_divergence"></a>
+<a id="entry-presentation_python_api_session_divergence"></a>
 <a id="placement-placement.python.python_module.module_divergence.125245034036"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -68,7 +68,7 @@ divergence(
 
 ### curl
 
-<a id="entry-presentation_python_vector_calculus_capability_vector_calculus_curl_api_analysis_session_curl"></a>
+<a id="entry-presentation_python_api_session_curl"></a>
 <a id="placement-placement.python.python_module.module_curl.e9aa60545c09"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -100,7 +100,7 @@ dimensions raise.
 
 ### laplacian
 
-<a id="entry-presentation_python_vector_calculus_capability_vector_calculus_laplacian_api_analysis_session_laplacian"></a>
+<a id="entry-presentation_python_api_session_laplacian"></a>
 <a id="placement-placement.python.python_module.module_laplacian.09b06509e9d5"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -131,13 +131,40 @@ laplacian(
 
 ### jacobian
 
+<a id="entry-presentation_python_api_session_jacobian"></a>
+<a id="placement-placement.python.python_module.module_jacobian.6c0a8d9d3157"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+jacobian(
+    vector_components: Iterable[ExpressionLike],
+    variables: Iterable[VariableLike],
+) -> Matrix
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_jacobian.87e30f06c196"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.jacobian</code></p>
+
+```python signature
+jacobian(
+    vector_components: Iterable[ExpressionLike],
+    variables: Iterable[VariableLike],
+) -> Matrix
+```
+
+</details>
+
+
 The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index
 variables). Returned as a `Matrix` so the result composes with the matrix
 methods.
 
 ### hessian
 
-<a id="entry-presentation_python_vector_calculus_capability_vector_calculus_hessian_api_analysis_session_hessian"></a>
+<a id="entry-presentation_python_api_session_hessian"></a>
 <a id="placement-placement.python.python_module.module_hessian.811dac19f650"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -183,61 +210,4 @@ print(symi.divergence([x, y, z], ["x", "y", "z"]))
 print(symi.curl([y, -x, 0], ["x", "y", "z"]))
 print(symi.laplacian(x**2 + y**2, ["x", "y"]))
 ```
-
-
-## Additional API
-
-### jacobian
-
-<a id="entry-presentation_python_vector_calculus_capability_vector_calculus_jacobian_api_analysis_session_jacobian"></a>
-<a id="placement-placement.python.python_module.module_jacobian.6c0a8d9d3157"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-jacobian(
-    vector_components: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> Matrix
-```
-
-The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index variables).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.python.python_class.context_jacobian.87e30f06c196"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobian</code></p>
-
-```python signature
-jacobian(
-    vector_components: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> Matrix
-```
-
-</details>
-
-### jacobian
-
-<a id="entry-presentation_python_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationcoordinatechange_jacobian"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationcoordinatechange_jacobian.bdb804adb3d1"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationCoordinateChange property</p>
-
-```python signature
-jacobian: Expression
-```
-
-The exact forward-map Jacobian determinant.
-
-### jacobian
-
-<a id="entry-presentation_python_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_jacobian"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationtransformationverificationreport_jacobian.c4f07bc2066c"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationTransformationVerificationReport property</p>
-
-```python signature
-jacobian: Expression
-```
-
-The independently recomputed forward-map Jacobian.
 

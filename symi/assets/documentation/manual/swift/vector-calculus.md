@@ -6,7 +6,7 @@ component/variable count mismatches raise.
 
 ### gradient
 
-<a id="entry-presentation_swift_vector_calculus_capability_vector_calculus_gradient_api_analysis_session_gradient"></a>
+<a id="entry-presentation_swift_api_session_gradient"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_gradient.9f407a66624d"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -22,7 +22,7 @@ func gradient(
 
 ### divergence
 
-<a id="entry-presentation_swift_vector_calculus_capability_vector_calculus_divergence_api_analysis_session_divergence"></a>
+<a id="entry-presentation_swift_api_session_divergence"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_divergence.73d0a21cd21f"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -38,7 +38,7 @@ func divergence(
 
 ### curl
 
-<a id="entry-presentation_swift_vector_calculus_capability_vector_calculus_curl_api_analysis_session_curl"></a>
+<a id="entry-presentation_swift_api_session_curl"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_curl.1e42c2e78f8c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -55,7 +55,7 @@ dimensions raise.
 
 ### laplacian
 
-<a id="entry-presentation_swift_vector_calculus_capability_vector_calculus_laplacian_api_analysis_session_laplacian"></a>
+<a id="entry-presentation_swift_api_session_laplacian"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_laplacian.3392c7843249"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -71,13 +71,25 @@ func laplacian(
 
 ### jacobian
 
+<a id="entry-presentation_swift_api_session_jacobian"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_jacobian.b537465903e8"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func jacobian(
+    vectorComponents: [UniffiExpression],
+    variables: [String],
+) -> UniffiMatrix
+```
+
+
 The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index
 variables). Returned as a `Matrix` so the result composes with the matrix
 methods.
 
 ### hessian
 
-<a id="entry-presentation_swift_vector_calculus_capability_vector_calculus_hessian_api_analysis_session_hessian"></a>
+<a id="entry-presentation_swift_api_session_hessian"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_hessian.b6f8866fe421"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -93,46 +105,4 @@ The \(n\times n\) matrix of second partials, computed as the Jacobian of the gra
 structurally symmetric on smooth input.
 
 ## Example
-
-
-## Additional API
-
-### jacobian
-
-<a id="entry-presentation_swift_vector_calculus_capability_vector_calculus_jacobian_api_analysis_session_jacobian"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_jacobian.b537465903e8"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func jacobian(
-    vectorComponents: [UniffiExpression],
-    variables: [String],
-) -> UniffiMatrix
-```
-
-The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index variables).
-
-### jacobian
-
-<a id="entry-presentation_swift_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationcoordinatechange_jacobian"></a>
-<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationcoordinatechange_jacobian.b76dac810eaf"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationCoordinateChange method</p>
-
-```swift signature
-func jacobian() -> UniffiExpression
-```
-
-The exact forward-map Jacobian determinant.
-
-### jacobian
-
-<a id="entry-presentation_swift_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_jacobian"></a>
-<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationtransformationverificationreport_jacobian.a3eb7f7e1993"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationTransformationVerificationReport method</p>
-
-```swift signature
-func jacobian() -> UniffiExpression
-```
-
-The independently recomputed forward-map Jacobian.
 

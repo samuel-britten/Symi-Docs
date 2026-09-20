@@ -246,8 +246,9 @@
       "entry_counts": {
         "kotlin": 3,
         "python": 4,
-        "rust": 4,
-        "swift": 3
+        "rust": 6,
+        "swift": 3,
+        "wasm": 4
       },
       "language_paths": {
         "kotlin": "manual/kotlin/default-context.md",
@@ -269,11 +270,9 @@
       },
       "category_identifier": "contexts",
       "entry_counts": {
-        "kotlin": 141,
-        "python": 247,
-        "rust": 1066,
-        "swift": 141,
-        "wasm": 272
+        "python": 1,
+        "rust": 1,
+        "wasm": 1
       },
       "language_paths": {
         "kotlin": "manual/kotlin/object-model.md",
@@ -294,7 +293,9 @@
         "wasm": "/symi/wasm/conversion-rules"
       },
       "category_identifier": "contexts",
-      "entry_counts": {},
+      "entry_counts": {
+        "rust": 10
+      },
       "language_paths": {
         "kotlin": "manual/kotlin/conversion-rules.md",
         "python": "manual/python/conversion-rules.md",
@@ -315,8 +316,9 @@
       },
       "category_identifier": "contexts",
       "entry_counts": {
-        "python": 2,
-        "rust": 2
+        "python": 10,
+        "rust": 106,
+        "wasm": 32
       },
       "language_paths": {
         "kotlin": "manual/kotlin/context-safety.md",
@@ -337,7 +339,10 @@
         "wasm": "/symi/wasm/diagnostics"
       },
       "category_identifier": "contexts",
-      "entry_counts": {},
+      "entry_counts": {
+        "rust": 35,
+        "wasm": 7
+      },
       "language_paths": {
         "kotlin": "manual/kotlin/diagnostics.md",
         "python": "manual/python/diagnostics.md",
@@ -378,11 +383,11 @@
       },
       "category_identifier": "construction",
       "entry_counts": {
-        "kotlin": 11,
-        "python": 11,
-        "rust": 12,
-        "swift": 11,
-        "wasm": 10
+        "kotlin": 9,
+        "python": 9,
+        "rust": 23,
+        "swift": 9,
+        "wasm": 9
       },
       "language_paths": {
         "kotlin": "manual/kotlin/construction-and-parsing.md",
@@ -404,11 +409,11 @@
       },
       "category_identifier": "construction",
       "entry_counts": {
-        "kotlin": 22,
-        "python": 15,
-        "rust": 22,
-        "swift": 22,
-        "wasm": 23
+        "kotlin": 4,
+        "python": 4,
+        "rust": 26,
+        "swift": 4,
+        "wasm": 4
       },
       "language_paths": {
         "kotlin": "manual/kotlin/serialization-and-output.md",
@@ -430,11 +435,11 @@
       },
       "category_identifier": "construction",
       "entry_counts": {
-        "kotlin": 4,
-        "python": 5,
-        "rust": 5,
-        "swift": 4,
-        "wasm": 4
+        "kotlin": 6,
+        "python": 7,
+        "rust": 7,
+        "swift": 6,
+        "wasm": 7
       },
       "language_paths": {
         "kotlin": "manual/kotlin/deferred-forms.md",
@@ -458,9 +463,9 @@
       "entry_counts": {
         "kotlin": 5,
         "python": 5,
-        "rust": 5,
+        "rust": 6,
         "swift": 5,
-        "wasm": 3
+        "wasm": 5
       },
       "language_paths": {
         "kotlin": "manual/kotlin/evaluation-and-constants.md",
@@ -482,11 +487,11 @@
       },
       "category_identifier": "elementary-functions",
       "entry_counts": {
-        "kotlin": 41,
+        "kotlin": 37,
         "python": 36,
-        "rust": 70,
-        "swift": 41,
-        "wasm": 41
+        "rust": 41,
+        "swift": 37,
+        "wasm": 37
       },
       "language_paths": {
         "kotlin": "manual/kotlin/elementary-functions.md",
@@ -508,11 +513,11 @@
       },
       "category_identifier": "elementary-functions",
       "entry_counts": {
-        "kotlin": 7,
+        "kotlin": 6,
         "python": 6,
-        "rust": 7,
-        "swift": 7,
-        "wasm": 7
+        "rust": 6,
+        "swift": 6,
+        "wasm": 6
       },
       "language_paths": {
         "kotlin": "manual/kotlin/relations.md",
@@ -536,7 +541,7 @@
       "entry_counts": {
         "kotlin": 41,
         "python": 41,
-        "rust": 44,
+        "rust": 84,
         "swift": 41,
         "wasm": 41
       },
@@ -560,11 +565,11 @@
       },
       "category_identifier": "expression-transformations",
       "entry_counts": {
-        "kotlin": 64,
-        "python": 61,
-        "rust": 77,
-        "swift": 64,
-        "wasm": 12
+        "kotlin": 61,
+        "python": 74,
+        "rust": 70,
+        "swift": 61,
+        "wasm": 65
       },
       "language_paths": {
         "kotlin": "manual/kotlin/expressions.md",
@@ -586,11 +591,11 @@
       },
       "category_identifier": "expression-transformations",
       "entry_counts": {
-        "kotlin": 7,
-        "python": 7,
-        "rust": 7,
-        "swift": 7,
-        "wasm": 73
+        "kotlin": 4,
+        "python": 4,
+        "rust": 4,
+        "swift": 4,
+        "wasm": 4
       },
       "language_paths": {
         "kotlin": "manual/kotlin/simplification-general.md",
@@ -612,11 +617,11 @@
       },
       "category_identifier": "expression-transformations",
       "entry_counts": {
-        "kotlin": 18,
-        "python": 18,
-        "rust": 18,
-        "swift": 18,
-        "wasm": 18
+        "kotlin": 9,
+        "python": 9,
+        "rust": 9,
+        "swift": 9,
+        "wasm": 9
       },
       "language_paths": {
         "kotlin": "manual/kotlin/algebraic-transforms.md",
@@ -638,11 +643,11 @@
       },
       "category_identifier": "expression-transformations",
       "entry_counts": {
-        "kotlin": 28,
-        "python": 28,
-        "rust": 26,
-        "swift": 28,
-        "wasm": 18
+        "kotlin": 14,
+        "python": 14,
+        "rust": 23,
+        "swift": 14,
+        "wasm": 14
       },
       "language_paths": {
         "kotlin": "manual/kotlin/trigonometric-complex-rewrites.md",
@@ -664,10 +669,11 @@
       },
       "category_identifier": "expression-transformations",
       "entry_counts": {
-        "kotlin": 6,
-        "python": 6,
-        "rust": 6,
-        "swift": 6
+        "kotlin": 3,
+        "python": 3,
+        "rust": 11,
+        "swift": 3,
+        "wasm": 3
       },
       "language_paths": {
         "kotlin": "manual/kotlin/specialized-canonical-forms.md",
@@ -689,11 +695,11 @@
       },
       "category_identifier": "calculus",
       "entry_counts": {
-        "kotlin": 39,
-        "python": 41,
-        "rust": 33,
-        "swift": 39,
-        "wasm": 47
+        "kotlin": 24,
+        "python": 26,
+        "rust": 36,
+        "swift": 24,
+        "wasm": 24
       },
       "language_paths": {
         "kotlin": "manual/kotlin/calculus.md",
@@ -715,11 +721,11 @@
       },
       "category_identifier": "calculus",
       "entry_counts": {
-        "kotlin": 11,
-        "python": 11,
-        "rust": 11,
-        "swift": 11,
-        "wasm": 9
+        "kotlin": 5,
+        "python": 5,
+        "rust": 5,
+        "swift": 5,
+        "wasm": 5
       },
       "language_paths": {
         "kotlin": "manual/kotlin/series.md",
@@ -741,10 +747,11 @@
       },
       "category_identifier": "calculus",
       "entry_counts": {
-        "kotlin": 6,
-        "python": 6,
-        "rust": 10,
-        "swift": 6
+        "kotlin": 4,
+        "python": 4,
+        "rust": 4,
+        "swift": 4,
+        "wasm": 4
       },
       "language_paths": {
         "kotlin": "manual/kotlin/integral-transforms.md",
@@ -766,11 +773,11 @@
       },
       "category_identifier": "equations",
       "entry_counts": {
-        "kotlin": 34,
-        "python": 25,
-        "rust": 35,
-        "swift": 34,
-        "wasm": 37
+        "kotlin": 18,
+        "python": 13,
+        "rust": 28,
+        "swift": 18,
+        "wasm": 18
       },
       "language_paths": {
         "kotlin": "manual/kotlin/solving.md",
@@ -784,6 +791,32 @@
     },
     {
       "canonical_urls": {
+        "kotlin": "/symi/kotlin/undefined-functions",
+        "python": "/symi/python/undefined-functions",
+        "rust": "/symi/rust/undefined-functions",
+        "swift": "/symi/swift/undefined-functions",
+        "wasm": "/symi/wasm/undefined-functions"
+      },
+      "category_identifier": "equations",
+      "entry_counts": {
+        "kotlin": 3,
+        "python": 5,
+        "rust": 8,
+        "swift": 3,
+        "wasm": 4
+      },
+      "language_paths": {
+        "kotlin": "manual/kotlin/undefined-functions.md",
+        "python": "manual/python/undefined-functions.md",
+        "rust": "manual/rust/undefined-functions.md",
+        "swift": "manual/swift/undefined-functions.md",
+        "wasm": "manual/wasm/undefined-functions.md"
+      },
+      "page_identifier": "undefined-functions",
+      "title": "Undefined functions"
+    },
+    {
+      "canonical_urls": {
         "kotlin": "/symi/kotlin/differential-equations",
         "python": "/symi/python/differential-equations",
         "rust": "/symi/rust/differential-equations",
@@ -792,11 +825,7 @@
       },
       "category_identifier": "equations",
       "entry_counts": {
-        "kotlin": 13,
-        "python": 16,
-        "rust": 19,
-        "swift": 13,
-        "wasm": 3
+        "rust": 5
       },
       "language_paths": {
         "kotlin": "manual/kotlin/differential-equations.md",
@@ -810,6 +839,110 @@
     },
     {
       "canonical_urls": {
+        "kotlin": "/symi/kotlin/ordinary-differential-equations",
+        "python": "/symi/python/ordinary-differential-equations",
+        "rust": "/symi/rust/ordinary-differential-equations",
+        "swift": "/symi/swift/ordinary-differential-equations",
+        "wasm": "/symi/wasm/ordinary-differential-equations"
+      },
+      "category_identifier": "equations",
+      "entry_counts": {
+        "kotlin": 27,
+        "python": 30,
+        "rust": 102,
+        "swift": 27,
+        "wasm": 27
+      },
+      "language_paths": {
+        "kotlin": "manual/kotlin/ordinary-differential-equations.md",
+        "python": "manual/python/ordinary-differential-equations.md",
+        "rust": "manual/rust/ordinary-differential-equations.md",
+        "swift": "manual/swift/ordinary-differential-equations.md",
+        "wasm": "manual/wasm/ordinary-differential-equations.md"
+      },
+      "page_identifier": "ordinary-differential-equations",
+      "title": "Ordinary differential equations"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/partial-differential-equations",
+        "python": "/symi/python/partial-differential-equations",
+        "rust": "/symi/rust/partial-differential-equations",
+        "swift": "/symi/swift/partial-differential-equations",
+        "wasm": "/symi/wasm/partial-differential-equations"
+      },
+      "category_identifier": "equations",
+      "entry_counts": {
+        "kotlin": 19,
+        "python": 19,
+        "rust": 24,
+        "swift": 19,
+        "wasm": 19
+      },
+      "language_paths": {
+        "kotlin": "manual/kotlin/partial-differential-equations.md",
+        "python": "manual/python/partial-differential-equations.md",
+        "rust": "manual/rust/partial-differential-equations.md",
+        "swift": "manual/swift/partial-differential-equations.md",
+        "wasm": "manual/wasm/partial-differential-equations.md"
+      },
+      "page_identifier": "partial-differential-equations",
+      "title": "Partial differential equations"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/partial-differential-equation-results",
+        "python": "/symi/python/partial-differential-equation-results",
+        "rust": "/symi/rust/partial-differential-equation-results",
+        "swift": "/symi/swift/partial-differential-equation-results",
+        "wasm": "/symi/wasm/partial-differential-equation-results"
+      },
+      "category_identifier": "equations",
+      "entry_counts": {
+        "kotlin": 118,
+        "python": 142,
+        "rust": 369,
+        "swift": 118,
+        "wasm": 124
+      },
+      "language_paths": {
+        "kotlin": "manual/kotlin/partial-differential-equation-results.md",
+        "python": "manual/python/partial-differential-equation-results.md",
+        "rust": "manual/rust/partial-differential-equation-results.md",
+        "swift": "manual/swift/partial-differential-equation-results.md",
+        "wasm": "manual/wasm/partial-differential-equation-results.md"
+      },
+      "page_identifier": "partial-differential-equation-results",
+      "title": "Partial differential equation results"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/recurrence-equations",
+        "python": "/symi/python/recurrence-equations",
+        "rust": "/symi/rust/recurrence-equations",
+        "swift": "/symi/swift/recurrence-equations",
+        "wasm": "/symi/wasm/recurrence-equations"
+      },
+      "category_identifier": "equations",
+      "entry_counts": {
+        "kotlin": 1,
+        "python": 1,
+        "rust": 1,
+        "swift": 1,
+        "wasm": 1
+      },
+      "language_paths": {
+        "kotlin": "manual/kotlin/recurrence-equations.md",
+        "python": "manual/python/recurrence-equations.md",
+        "rust": "manual/rust/recurrence-equations.md",
+        "swift": "manual/swift/recurrence-equations.md",
+        "wasm": "manual/wasm/recurrence-equations.md"
+      },
+      "page_identifier": "recurrence-equations",
+      "title": "Recurrence equations"
+    },
+    {
+      "canonical_urls": {
         "kotlin": "/symi/kotlin/optimization",
         "python": "/symi/python/optimization",
         "rust": "/symi/rust/optimization",
@@ -818,11 +951,11 @@
       },
       "category_identifier": "equations",
       "entry_counts": {
-        "kotlin": 10,
-        "python": 6,
-        "rust": 10,
-        "swift": 10,
-        "wasm": 7
+        "kotlin": 13,
+        "python": 5,
+        "rust": 30,
+        "swift": 13,
+        "wasm": 13
       },
       "language_paths": {
         "kotlin": "manual/kotlin/optimization.md",
@@ -844,11 +977,11 @@
       },
       "category_identifier": "algebra",
       "entry_counts": {
-        "kotlin": 81,
-        "python": 17,
-        "rust": 21,
-        "swift": 81,
-        "wasm": 161
+        "kotlin": 18,
+        "python": 14,
+        "rust": 31,
+        "swift": 18,
+        "wasm": 31
       },
       "language_paths": {
         "kotlin": "manual/kotlin/polynomials.md",
@@ -870,11 +1003,11 @@
       },
       "category_identifier": "algebra",
       "entry_counts": {
-        "kotlin": 8,
-        "python": 7,
-        "rust": 8,
-        "swift": 8,
-        "wasm": 5
+        "kotlin": 10,
+        "python": 9,
+        "rust": 10,
+        "swift": 10,
+        "wasm": 10
       },
       "language_paths": {
         "kotlin": "manual/kotlin/matrix-construction.md",
@@ -896,11 +1029,11 @@
       },
       "category_identifier": "algebra",
       "entry_counts": {
-        "kotlin": 22,
-        "python": 25,
-        "rust": 22,
-        "swift": 22,
-        "wasm": 60
+        "kotlin": 66,
+        "python": 69,
+        "rust": 73,
+        "swift": 66,
+        "wasm": 68
       },
       "language_paths": {
         "kotlin": "manual/kotlin/linear-algebra.md",
@@ -922,11 +1055,11 @@
       },
       "category_identifier": "algebra",
       "entry_counts": {
-        "kotlin": 20,
-        "python": 11,
-        "rust": 20,
-        "swift": 20,
-        "wasm": 7
+        "kotlin": 22,
+        "python": 14,
+        "rust": 25,
+        "swift": 22,
+        "wasm": 22
       },
       "language_paths": {
         "kotlin": "manual/kotlin/matrix-canonical-forms.md",
@@ -949,10 +1082,10 @@
       "category_identifier": "algebra",
       "entry_counts": {
         "kotlin": 13,
-        "python": 9,
-        "rust": 13,
+        "python": 8,
+        "rust": 16,
         "swift": 13,
-        "wasm": 10
+        "wasm": 13
       },
       "language_paths": {
         "kotlin": "manual/kotlin/matrix-functions.md",
@@ -975,10 +1108,10 @@
       "category_identifier": "algebra",
       "entry_counts": {
         "kotlin": 6,
-        "python": 6,
-        "rust": 6,
+        "python": 7,
+        "rust": 14,
         "swift": 6,
-        "wasm": 2
+        "wasm": 10
       },
       "language_paths": {
         "kotlin": "manual/kotlin/cad.md",
@@ -1000,11 +1133,11 @@
       },
       "category_identifier": "discrete-mathematics",
       "entry_counts": {
-        "kotlin": 14,
-        "python": 14,
-        "rust": 15,
-        "swift": 14,
-        "wasm": 11
+        "kotlin": 17,
+        "python": 16,
+        "rust": 25,
+        "swift": 17,
+        "wasm": 17
       },
       "language_paths": {
         "kotlin": "manual/kotlin/sets.md",
@@ -1026,11 +1159,11 @@
       },
       "category_identifier": "discrete-mathematics",
       "entry_counts": {
-        "kotlin": 4,
-        "python": 4,
-        "rust": 3,
-        "swift": 4,
-        "wasm": 12
+        "kotlin": 3,
+        "python": 3,
+        "rust": 4,
+        "swift": 3,
+        "wasm": 3
       },
       "language_paths": {
         "kotlin": "manual/kotlin/logic.md",
@@ -1052,10 +1185,11 @@
       },
       "category_identifier": "discrete-mathematics",
       "entry_counts": {
-        "kotlin": 12,
-        "python": 12,
-        "rust": 12,
-        "swift": 12
+        "kotlin": 6,
+        "python": 6,
+        "rust": 6,
+        "swift": 6,
+        "wasm": 6
       },
       "language_paths": {
         "kotlin": "manual/kotlin/logical-transforms.md",
@@ -1078,10 +1212,10 @@
       "category_identifier": "discrete-mathematics",
       "entry_counts": {
         "kotlin": 28,
-        "python": 25,
-        "rust": 31,
+        "python": 24,
+        "rust": 35,
         "swift": 28,
-        "wasm": 16
+        "wasm": 29
       },
       "language_paths": {
         "kotlin": "manual/kotlin/number-theory.md",
@@ -1105,9 +1239,9 @@
       "entry_counts": {
         "kotlin": 9,
         "python": 9,
-        "rust": 11,
+        "rust": 9,
         "swift": 9,
-        "wasm": 30
+        "wasm": 9
       },
       "language_paths": {
         "kotlin": "manual/kotlin/combinatorics.md",
@@ -1175,11 +1309,11 @@
       },
       "category_identifier": "geometry",
       "entry_counts": {
-        "kotlin": 32,
-        "python": 37,
-        "rust": 33,
-        "swift": 32,
-        "wasm": 39
+        "kotlin": 29,
+        "python": 42,
+        "rust": 57,
+        "swift": 29,
+        "wasm": 34
       },
       "language_paths": {
         "kotlin": "manual/kotlin/geometry.md",
@@ -1201,11 +1335,11 @@
       },
       "category_identifier": "vector-calculus",
       "entry_counts": {
-        "kotlin": 8,
-        "python": 8,
-        "rust": 8,
-        "swift": 8,
-        "wasm": 8
+        "kotlin": 6,
+        "python": 6,
+        "rust": 6,
+        "swift": 6,
+        "wasm": 6
       },
       "language_paths": {
         "kotlin": "manual/kotlin/vector-calculus.md",
@@ -1226,7 +1360,9 @@
         "wasm": "/symi/wasm/structured-results"
       },
       "category_identifier": "reference",
-      "entry_counts": {},
+      "entry_counts": {
+        "rust": 3
+      },
       "language_paths": {
         "kotlin": "manual/kotlin/structured-results.md",
         "python": "manual/python/structured-results.md",
@@ -1247,11 +1383,11 @@
       },
       "category_identifier": "reference",
       "entry_counts": {
-        "kotlin": 52,
+        "kotlin": 50,
         "python": 52,
-        "rust": 60,
-        "swift": 52,
-        "wasm": 22
+        "rust": 98,
+        "swift": 50,
+        "wasm": 54
       },
       "language_paths": {
         "kotlin": "manual/kotlin/assumptions.md",
@@ -1273,10 +1409,11 @@
       },
       "category_identifier": "reference",
       "entry_counts": {
-        "kotlin": 2,
-        "python": 2,
+        "kotlin": 1,
+        "python": 1,
         "rust": 2,
-        "swift": 2
+        "swift": 1,
+        "wasm": 1
       },
       "language_paths": {
         "kotlin": "manual/kotlin/zero-equivalence.md",
@@ -1391,27 +1528,27 @@
   ],
   "presentation_artifacts": [
     {
-      "entry_count": 850,
+      "entry_count": 769,
       "language": "python",
       "path": "presentation/python.json"
     },
     {
-      "entry_count": 1026,
+      "entry_count": 812,
       "language": "wasm",
       "path": "presentation/wasm.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "kotlin",
       "path": "presentation/kotlin.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "swift",
       "path": "presentation/swift.json"
     },
     {
-      "entry_count": 7717,
+      "entry_count": 7476,
       "language": "rust",
       "path": "presentation/rust.json"
     }

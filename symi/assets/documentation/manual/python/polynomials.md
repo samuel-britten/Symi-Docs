@@ -8,7 +8,7 @@ makes the query decline — `None` for `degree`, an error for the others.
 
 ### degree
 
-<a id="entry-presentation_python_polynomials_capability_algebra_degree_api_algebra_session_degree"></a>
+<a id="entry-presentation_python_api_session_degree"></a>
 <a id="placement-placement.python.python_module.module_degree.255ff853162b"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -41,7 +41,7 @@ under the core convention).
 
 ### leading_coefficient
 
-<a id="entry-presentation_python_polynomials_capability_algebra_leading_coefficient_api_algebra_session_leading_coefficient"></a>
+<a id="entry-presentation_python_api_session_leading_coefficient"></a>
 <a id="placement-placement.python.python_module.module_leading_coefficient.30ccbe4ce993"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -73,12 +73,41 @@ variables. Errors on non-polynomial or zero input.
 
 ### coefficient
 
+<a id="entry-presentation_python_api_session_coefficient"></a>
+<a id="placement-placement.python.python_module.module_coefficient.c4dd39a9eb50"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+coefficient(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    power: int,
+) -> Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_coefficient.40e75eb53350"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.coefficient</code></p>
+
+```python signature
+coefficient(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    power: int,
+) -> Expression
+```
+
+</details>
+
+
 Coefficient of `variable^power`; integer 0 when the term is absent. Errors
 on non-polynomial input.
 
 ### polynomial_gcd
 
-<a id="entry-presentation_python_polynomials_capability_algebra_polynomial_gcd_api_algebra_session_polynomial_gcd"></a>
+<a id="entry-presentation_python_api_session_polynomial_gcd"></a>
 <a id="placement-placement.python.python_module.module_polynomial_gcd.39fa5994e834"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -113,7 +142,7 @@ not polynomial in `variable`.
 
 ### resultant
 
-<a id="entry-presentation_python_polynomials_capability_algebra_resultant_api_algebra_session_resultant"></a>
+<a id="entry-presentation_python_api_session_resultant"></a>
 <a id="placement-placement.python.python_module.module_resultant.e405fc22394a"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -147,7 +176,7 @@ share a root (over the algebraic closure). Errors on non-polynomial input.
 
 ### isolate_real_roots
 
-<a id="entry-presentation_python_polynomials_capability_algebra_isolate_real_roots_api_solving_session_isolate_real_roots"></a>
+<a id="entry-presentation_python_api_session_isolate_real_roots"></a>
 <a id="placement-placement.python.python_module.module_isolate_real_roots.685131c37adf"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -217,7 +246,7 @@ no new method to call.
 
 ### groebner_basis
 
-<a id="entry-presentation_python_polynomials_capability_algebra_groebner_basis_api_algebra_session_groebner_basis"></a>
+<a id="entry-presentation_python_api_session_groebner_basis"></a>
 <a id="placement-placement.python.python_module.module_groebner_basis.4a0b56aabfeb"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -252,7 +281,7 @@ monomial order — monic, autoreduced, and sorted, so it is unique for the
 
 ### ideal_membership
 
-<a id="entry-presentation_python_polynomials_capability_algebra_ideal_membership_api_algebra_session_ideal_membership"></a>
+<a id="entry-presentation_python_api_session_ideal_membership"></a>
 <a id="placement-placement.python.python_module.module_ideal_membership.69c4c3618634"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -290,7 +319,7 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### ideal_sum
 
-<a id="entry-presentation_python_polynomials_capability_algebra_ideal_sum_api_algebra_session_ideal_sum"></a>
+<a id="entry-presentation_python_api_session_ideal_sum"></a>
 <a id="placement-placement.python.python_module.module_ideal_sum.c9e7495dc415"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -326,7 +355,7 @@ generator lists together. `None` on a non-\(\mathbb{Q}[\text{variables}]\) gener
 
 ### ideal_product
 
-<a id="entry-presentation_python_polynomials_capability_algebra_ideal_product_api_algebra_session_ideal_product"></a>
+<a id="entry-presentation_python_api_session_ideal_product"></a>
 <a id="placement-placement.python.python_module.module_ideal_product.975bfdbced05"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -362,7 +391,7 @@ products of the two generator lists. `None` on a non-\(\mathbb{Q}[\text{variable
 
 ### ideal_intersection
 
-<a id="entry-presentation_python_polynomials_capability_algebra_ideal_intersection_api_algebra_session_ideal_intersection"></a>
+<a id="entry-presentation_python_api_session_ideal_intersection"></a>
 <a id="placement-placement.python.python_module.module_ideal_intersection.2d3eef499cec"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -399,7 +428,7 @@ non-\(\mathbb{Q}[\text{variables}]\) generator.
 
 ### elimination_ideal
 
-<a id="entry-presentation_python_polynomials_capability_algebra_elimination_ideal_api_algebra_session_elimination_ideal"></a>
+<a id="entry-presentation_python_api_session_elimination_ideal"></a>
 <a id="placement-placement.python.python_module.module_elimination_ideal.2e1c0485c830"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -443,7 +472,7 @@ elimination with the rational-parametrisation saturation wired in.
 
 ### change_monomial_order
 
-<a id="entry-presentation_python_polynomials_capability_algebra_change_monomial_order_api_algebra_session_change_monomial_order"></a>
+<a id="entry-presentation_python_api_session_change_monomial_order"></a>
 <a id="placement-placement.python.python_module.module_change_monomial_order.25caa642bc5b"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -486,7 +515,7 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### implicitize
 
-<a id="entry-presentation_python_polynomials_capability_algebra_implicitize_api_algebra_session_implicitize"></a>
+<a id="entry-presentation_python_api_session_implicitize"></a>
 <a id="placement-placement.python.python_module.module_implicitize.5dc8d52f5239"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -542,79 +571,4 @@ print(symi.coefficient(polynomial, "x", 1))
 print(symi.polynomial_gcd(x**2 - 1, x - 1, "x"))
 print(symi.resultant(x**2 - 1, x - 1, "x"))
 ```
-
-
-## Additional API
-
-### CylindricalAlgebraicDecomposition
-
-<a id="entry-presentation_python_polynomials_capability_algebra_cylindrical_algebraic_decomposition_api_cylindricalalgebraicdecomposition"></a>
-<a id="placement-placement.python.python_class.cylindricalalgebraicdecomposition.6f69ff9d363f"></a>
-<p class="symi-entry-owner">CylindricalAlgebraicDecomposition constructor</p>
-
-```python signature
-CylindricalAlgebraicDecomposition(
-    expressions: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    equational_constraints: list[int] = [],
-)
-```
-
-Decompose real space into sign-invariant cells for the given polynomials, in the given variable order.
-
-### coefficient
-
-<a id="entry-presentation_python_polynomials_capability_algebra_coefficient_api_algebra_session_coefficient"></a>
-<a id="placement-placement.python.python_module.module_coefficient.c4dd39a9eb50"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-coefficient(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    power: int,
-) -> Expression
-```
-
-Coefficient of `variable^power`; integer 0 when the term is absent. Errors on non-polynomial input.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.python.python_class.context_coefficient.40e75eb53350"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.coefficient</code></p>
-
-```python signature
-coefficient(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    power: int,
-) -> Expression
-```
-
-</details>
-
-### coefficient
-
-<a id="entry-presentation_python_polynomials_capability_algebra_coefficient_api_partial_differential_equations_partialdifferentialequationjetcoefficient_coefficient"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationjetcoefficient_coefficient.8e9e167c35d1"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationJetCoefficient property</p>
-
-```python signature
-coefficient: Expression
-```
-
-The exact coefficient expression.
-
-### coefficient
-
-<a id="entry-presentation_python_polynomials_capability_algebra_coefficient_api_partial_differential_equations_partialdifferentialequationprincipalcoefficient_coefficient"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationprincipalcoefficient_coefficient.2b29c8576cbc"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationPrincipalCoefficient property</p>
-
-```python signature
-coefficient: Expression
-```
-
-The raw coefficient expression, before mixed terms are halved.
 

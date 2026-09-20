@@ -4,9 +4,25 @@ Calculus follows a uniform construct-versus-evaluate model; the summary table
 is in [Evaluation and constants](evaluation-and-constants.md). Every variable
 parameter accepts a name or a same-context symbol expression.
 
+Each operation below is one entry with its receivers listed together: the
+default context, an explicit context, and — where the operation takes an
+expression — the expression itself all reach the same operation, and an
+assumption scope reaches it under the assumptions that scope adds. The
+collapsed *calling forms* block on each entry gives the exact signature of
+each.
+
+**Three tasks are spelled `differentiate` or `derivative`**, and they are not
+interchangeable:
+
+| Task | Entry | Page |
+|---|---|---|
+| Differentiate an expression now | `differentiate` | Below |
+| Wrap an expression in an unevaluated derivative | `derivative` | [Deferred forms](deferred-forms.md#derivative) |
+| Build a derivative of a named unknown from argument orders | `derivative` | [Undefined functions](undefined-functions.md#derivative) |
+
 ### differentiate
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_differentiate_api_session_differentiate"></a>
+<a id="entry-presentation_kotlin_api_session_differentiate"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_differentiate.4163170fe501"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -17,21 +33,63 @@ fun differentiate(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_differentiate_api_expression_differentiate"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_differentiate.a3a3dc48ebb3"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.differentiate</code></p>
 
 ```kotlin signature
 fun differentiate(variable: kotlin.String): UniffiExpression
 ```
 
+</details>
 
-Symbolic derivative with respect to `variable`. The derivative is total: unknown
-function calls produce derivative nodes.
+
+Symbolic derivative with respect to `variable`, evaluated now. The derivative is
+total: unknown function calls produce derivative nodes.
 
 ### integrate
 
-Indefinite integration (no constant of integration). When every symbolic
+<a id="entry-presentation_kotlin_api_session_integrate"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_integrate.69552df7dd0f"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun integrate(
+    target: UniffiExpression,
+    variable: kotlin.String,
+): UniffiExpression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_integrate.a24e2ba753a1"></a>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.integrate</code></p>
+
+```kotlin signature
+fun integrate(variable: kotlin.String): UniffiExpression
+```
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_integrate.b7023011912f"></a>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.integrate</code></p>
+
+```kotlin signature
+fun integrate(
+    target: UniffiExpression,
+    variable: kotlin.String,
+): UniffiExpression
+```
+
+</details>
+
+
+Indefinite integration (no constant of integration). The variant on an
+[assumption scope](assumptions.md#assumption_scope) runs the same integration
+under that scope's captured assumptions, which can close a branch the durable
+context leaves open; the scope is immutable and the owning context is
+unchanged. When every symbolic
 strategy fails, the result is an *unevaluated* `integral` node, never a
 guess. Real symbolic parameters can produce a `piecewise` antiderivative
 whose conditions describe the supported parameter strata. A parameter value
@@ -39,7 +97,7 @@ outside every branch is undefined rather than a hidden declined branch.
 
 ### integrate_definite
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_api_analysis_session_integrate_definite"></a>
+<a id="entry-presentation_kotlin_api_session_integrate_definite"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integratedefinite.9ad17c7b4af7"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -52,9 +110,11 @@ fun integrateDefinite(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_api_expression_operations_expression_integrate_definite"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_integratedefinite.439ea06365b9"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.integrateDefinite</code></p>
 
 ```kotlin signature
 fun integrateDefinite(
@@ -64,9 +124,8 @@ fun integrateDefinite(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_api_assumptionscope_integrate_definite"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_integratedefinite.6ff304696b21"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.integrateDefinite</code></p>
 
 ```kotlin signature
 fun integrateDefinite(
@@ -76,6 +135,8 @@ fun integrateDefinite(
     upperBound: UniffiExpression,
 ): UniffiExpression
 ```
+
+</details>
 
 
 Definite integration over `[lower, upper]` (bounds may be infinite). Falls
@@ -93,7 +154,7 @@ divergence, a principal value, or a declared parameter region matters.
 
 ### integrate_definite_detailed
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_detailed_api_session_integrate_definite_detailed"></a>
+<a id="entry-presentation_kotlin_api_session_integrate_definite_detailed"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integratedefinitedetailed.7bd8dd3ea9d1"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -130,18 +191,73 @@ as a typed enumeration.
 
 ### DefiniteIntegrationResult
 
-*Not exposed by the Kotlin bindings. Available as [`DefiniteIntegrationResult`](/symi/python/calculus#DefiniteIntegrationResult) in Python, [`api::DefiniteIntegrationResult`](/symi/rust/calculus#DefiniteIntegrationResult) in Rust.*
+What `integrate_definite_detailed` returns. It keeps the verdict separate from
+the value, so a proved divergence is never read as a declined request, and a
+declined request never as a proved answer. Its members are:
 
-`interpretation`, `verdict` (`evaluated`, `divergent` or `declined`), `value`
-(present exactly when evaluated), `divergence_direction` (`positive_infinity`
-or `negative_infinity`, present only when a single signed infinity was
-established), and `decline_reason` (`unsupported_family`,
-`incomplete_singularity_analysis`, `unknown_endpoint_behavior`,
-`unknown_bound_order` or `unsupported_region`, present exactly when declined).
+| Member | Meaning | Present |
+|---|---|---|
+| `verdict` | `evaluated`, `divergent`, or `declined` | Always |
+| `interpretation` | The interpretation the request was answered under, `ordinary` or `cauchy_principal_value` | Always |
+| `value` | The exact value of the integral | Exactly when the verdict is `evaluated` |
+| `divergence_direction` | `positive_infinity` or `negative_infinity` | Only when the verdict is `divergent` **and** a single signed infinity was established; a divergence without a proved sign leaves it absent |
+| `decline_reason` | `unsupported_family`, `incomplete_singularity_analysis`, `unknown_endpoint_behavior`, `unknown_bound_order`, or `unsupported_region` | Exactly when the verdict is `declined` |
+
+Each member's exact host type and spelling follows below.
+
+<a id="entry-presentation_kotlin_api_definiteintegrationresult_decline_reason"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_declinereason.f8d4f9b20509"></a>
+<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+
+```kotlin signature
+fun declineReason(): UniffiDefiniteIntegrationDeclineReason?
+```
+
+The reason, present exactly when the verdict is `declined`.
+
+<a id="entry-presentation_kotlin_api_definiteintegrationresult_divergence_direction"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_divergencedirection.90ae735944bd"></a>
+<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+
+```kotlin signature
+fun divergenceDirection(): UniffiDefiniteIntegrationDivergenceDirection?
+```
+
+The signed infinity of a divergent request, when a single direction was established.
+
+<a id="entry-presentation_kotlin_api_definiteintegrationresult_interpretation"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_interpretation.f9f52508874d"></a>
+<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+
+```kotlin signature
+fun interpretation(): UniffiDefiniteIntegrationInterpretation
+```
+
+The interpretation under which the request was answered.
+
+<a id="entry-presentation_kotlin_api_definiteintegrationresult_value"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_value.28d800f5f090"></a>
+<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+
+```kotlin signature
+fun value(): UniffiExpression?
+```
+
+The exact value, present exactly when the verdict is `evaluated`.
+
+<a id="entry-presentation_kotlin_api_definiteintegrationresult_verdict"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_verdict.bc7ac20ebf03"></a>
+<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+
+```kotlin signature
+fun verdict(): UniffiDefiniteIntegrationVerdict
+```
+
+Whether the request was evaluated, proved divergent, or declined.
 
 ### integrate_definite_numeric
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_definite_numeric_api_analysis_session_integrate_definite_numeric"></a>
+<a id="entry-presentation_kotlin_api_session_integrate_definite_numeric"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integratedefinitenumeric.5847bf838fcb"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -162,15 +278,62 @@ substitutes an unevaluated symbolic integral. The requested precision is in bits
 
 ### NumericDefiniteIntegrationResult
 
-*Not exposed by the Kotlin bindings. Available as [`NumericDefiniteIntegrationResult`](/symi/python/calculus#NumericDefiniteIntegrationResult) in Python, [`api::NumericDefiniteIntegrationResult`](/symi/rust/calculus#NumericDefiniteIntegrationResult) in Rust.*
+What `integrate_definite_numeric` returns. An absent `value` is the honest
+outcome of quadrature that did not converge; no symbolic integral is ever
+substituted for it. Its members are:
 
-`value` is an optional `(real, imaginary)` pair. When present,
-`estimated_absolute_error` is the final difference between successive quadrature
-rules; `precision_bits` and `node_count` identify the accepted rule.
+| Member | Meaning | Present |
+|---|---|---|
+| `value` | The accepted quadrature value, as a `(real, imaginary)` pair | Only when convergence was established |
+| `estimated_absolute_error` | The final difference between successive quadrature rules | With an accepted `value` |
+| `precision_bits` | The precision of the accepted rule, in bits | With an accepted `value` |
+| `node_count` | The number of nodes of the accepted rule | With an accepted `value` |
+
+Each member's exact host type and spelling follows below.
+
+<a id="entry-presentation_kotlin_api_numericdefiniteintegrationresult_estimated_absolute_error"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffinumericdefiniteintegrationresult_estimatedabsoluteerror.de8a0b5b9fe2"></a>
+<p class="symi-entry-owner">UniffiNumericDefiniteIntegrationResult method</p>
+
+```kotlin signature
+fun estimatedAbsoluteError(): kotlin.Double?
+```
+
+The final difference between successive quadrature rules.
+
+<a id="entry-presentation_kotlin_api_numericdefiniteintegrationresult_node_count"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffinumericdefiniteintegrationresult_nodecount.d2df67c2eda2"></a>
+<p class="symi-entry-owner">UniffiNumericDefiniteIntegrationResult method</p>
+
+```kotlin signature
+fun nodeCount(): kotlin.ULong?
+```
+
+The node count of the accepted Gauss--Legendre rule.
+
+<a id="entry-presentation_kotlin_api_numericdefiniteintegrationresult_precision_bits"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffinumericdefiniteintegrationresult_precisionbits.208e2200f3ad"></a>
+<p class="symi-entry-owner">UniffiNumericDefiniteIntegrationResult method</p>
+
+```kotlin signature
+fun precisionBits(): kotlin.ULong?
+```
+
+The arithmetic precision used for the result.
+
+<a id="entry-presentation_kotlin_api_numericdefiniteintegrationresult_value"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffinumericdefiniteintegrationresult_value.044c586b47b8"></a>
+<p class="symi-entry-owner">UniffiNumericDefiniteIntegrationResult method</p>
+
+```kotlin signature
+fun value(): UniffiFloatingPointFloatingPointTuple?
+```
+
+The complex value as real and imaginary components, when convergence was established.
 
 ### integrate_iterated
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_iterated_api_analysis_session_integrate_iterated"></a>
+<a id="entry-presentation_kotlin_api_session_integrate_iterated"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integrateiterated.70c767c11b0b"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -181,13 +344,17 @@ fun integrateIterated(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_iterated_api_expression_operations_expression_integrate_iterated"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_integrateiterated.567bd8dabd92"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.integrateIterated</code></p>
 
 ```kotlin signature
 fun integrateIterated(variables: List<kotlin.String>): UniffiExpression
 ```
+
+</details>
 
 
 Iterated indefinite integration, applying the single-variable pipeline once
@@ -198,7 +365,7 @@ nodes — no partial evaluation through an unclosed inner integral.
 
 ### limit
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_limit_api_session_limit"></a>
+<a id="entry-presentation_kotlin_api_session_limit"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_limit.243c11b2abe8"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -211,9 +378,11 @@ fun limit(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_limit_api_expression_limit"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_limit.a7e2725115bb"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.limit</code></p>
 
 ```kotlin signature
 fun limit(
@@ -223,12 +392,14 @@ fun limit(
 ): UniffiExpression
 ```
 
+</details>
+
 
 `limit(expression, variable, point, direction="two_sided")` constructs a deferred limit.
 
 ### evaluate_limit
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_limit_api_session_evaluate_limit"></a>
+<a id="entry-presentation_kotlin_api_session_evaluate_limit"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_evaluatelimit.e3e85e7882bc"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -241,9 +412,11 @@ fun evaluateLimit(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_limit_api_expression_evaluate_limit"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_evaluatelimit.e2a022a26bea"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.evaluateLimit</code></p>
 
 ```kotlin signature
 fun evaluateLimit(
@@ -253,9 +426,8 @@ fun evaluateLimit(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_limit_api_assumptionscope_evaluate_limit"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_evaluatelimit.6b6c342e3856"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.evaluateLimit</code></p>
 
 ```kotlin signature
 fun evaluateLimit(
@@ -265,6 +437,8 @@ fun evaluateLimit(
     direction: UniffiLimitDirection,
 ): UniffiExpression
 ```
+
+</details>
 
 
 `evaluate_limit(expression, variable, point, direction="two_sided")` runs the eager limit engine.
@@ -353,7 +527,7 @@ exhaustion returns the unevaluated form rather than a guess.
 
 ### singularities
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_singularities_api_session_singularities"></a>
+<a id="entry-presentation_kotlin_api_session_singularities"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_singularities.bb2128925af6"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -364,17 +538,18 @@ fun singularities(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_singularities_api_expression_singularities"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_singularities.4cc6adbdf928"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.singularities</code></p>
 
 ```kotlin signature
 fun singularities(variable: kotlin.String): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_singularities_api_assumptionscope_singularities"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_singularities.462c53d0d91e"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.singularities</code></p>
 
 ```kotlin signature
 fun singularities(
@@ -382,6 +557,8 @@ fun singularities(
     variable: kotlin.String,
 ): UniffiExpression
 ```
+
+</details>
 
 
 The singular points of the expression in the complex plane, as a set
@@ -393,7 +570,7 @@ point on it were singular.
 
 ### continuous_domain
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_continuous_domain_api_session_continuous_domain"></a>
+<a id="entry-presentation_kotlin_api_session_continuous_domain"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_continuousdomain.c8b5b4c7a7af"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -404,17 +581,18 @@ fun continuousDomain(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_continuous_domain_api_expression_continuous_domain"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_continuousdomain.6f7439e44ba0"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.continuousDomain</code></p>
 
 ```kotlin signature
 fun continuousDomain(variable: kotlin.String): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_continuous_domain_api_assumptionscope_continuous_domain"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_continuousdomain.adb23b58015a"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.continuousDomain</code></p>
 
 ```kotlin signature
 fun continuousDomain(
@@ -423,6 +601,8 @@ fun continuousDomain(
 ): UniffiExpression
 ```
 
+</details>
+
 
 The subset of the real line on which the expression is continuous in
 `variable`, as a set expression. Compound rational square-root radicands are
@@ -430,26 +610,6 @@ lowered to an exact univariate semialgebraic condition when supported, so,
 for example, `sqrt(x + 1/x - 2)` has continuous real domain `(0, infinity)`.
 
 ### summation_indefinite
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_summation_indefinite_api_analysis_session_summation_indefinite"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_summationindefinite.b98122313c4f"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun summationIndefinite(
-    summand: UniffiExpression,
-    index: kotlin.String,
-): UniffiExpression
-```
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_summation_indefinite_api_expression_operations_expression_summation_indefinite"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_summationindefinite.8a902513c551"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```kotlin signature
-fun summationIndefinite(index: kotlin.String): UniffiExpression
-```
-
 
 Anti-difference: a closed form \(F\) with \(F(\operatorname{index}+1) - F(\operatorname{index}) = \operatorname{summand}\).
 Strategy stack: constant summands, linearity, polynomial power sums, rational
@@ -481,7 +641,7 @@ unrestricted Gamma-analytic identities.
 
 ### evaluate_numeric
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_numeric_api_analysis_session_evaluate_numeric"></a>
+<a id="entry-presentation_kotlin_api_session_evaluate_numeric"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_evaluatenumeric.3c3fee56026c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -489,13 +649,17 @@ unrestricted Gamma-analytic identities.
 fun evaluateNumeric(inputExpression: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_numeric_api_expression_operations_expression_evaluate_numeric"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_evaluatenumeric.1c4a2fc2ec10"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.evaluateNumeric</code></p>
 
 ```kotlin signature
 fun evaluateNumeric(): UniffiExpression
 ```
+
+</details>
 
 
 Numerically evaluate to a float and re-encode as an exact rational literal;
@@ -504,7 +668,7 @@ For direct float output use `expression.evaluate_to_float`.
 
 ### evaluate_on_grid
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_on_grid_api_analysis_session_evaluate_on_grid"></a>
+<a id="entry-presentation_kotlin_api_session_evaluate_on_grid"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_evaluateongrid.7ca12540a366"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -523,7 +687,7 @@ plotting.
 
 ### evaluate_on_grid_points
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_evaluate_on_grid_points_api_analysis_session_evaluate_on_grid_points"></a>
+<a id="entry-presentation_kotlin_api_session_evaluate_on_grid_points"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_evaluateongridpoints.a02ed099a181"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -545,88 +709,7 @@ curves.
 
 ### execute
 
-Re-dispatch every unevaluated node (integral, derivative, summation,
-transform, ODE/recurrence placeholder) in the expression; useful after
-substitution has changed the inputs.
-
-## Example
-
-
-## Additional API
-
-### decline_reason
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_decline_reason_api_results_definiteintegrationresult_decline_reason"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_declinereason.f8d4f9b20509"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
-
-```kotlin signature
-fun declineReason(): UniffiDefiniteIntegrationDeclineReason?
-```
-
-The reason, present exactly when the verdict is `declined`.
-
-### derivative
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_derivative_api_session_derivative"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_derivative.0bd3a90fb4d5"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun derivative(
-    target: UniffiExpression,
-    variable: kotlin.String,
-    order: kotlin.ULong,
-): UniffiExpression
-```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
-
-### derivative
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_derivative_api_expression_derivative"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_derivative.daaa1d9a5854"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```kotlin signature
-fun derivative(
-    variable: kotlin.String,
-    order: kotlin.ULong,
-): UniffiExpression
-```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
-
-### derivative
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_derivative_api_undefinedfunction_derivative"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffiundefinedfunction_derivative.a0cbaac666e1"></a>
-<p class="symi-entry-owner">UniffiUndefinedFunction method</p>
-
-```kotlin signature
-fun derivative(
-    orders: List<kotlin.ULong>,
-    arguments: List<UniffiExpression>,
-): UniffiExpression
-```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
-
-### divergence_direction
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_divergence_direction_api_results_definiteintegrationresult_divergence_direction"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_divergencedirection.90ae735944bd"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
-
-```kotlin signature
-fun divergenceDirection(): UniffiDefiniteIntegrationDivergenceDirection?
-```
-
-The signed infinity of a divergent request, when a single direction was established.
-
-### execute
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_execute_api_session_execute"></a>
+<a id="entry-presentation_kotlin_api_session_execute"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_execute.ea743bf51e81"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -634,95 +717,66 @@ The signed infinity of a divergent request, when a single direction was establis
 fun execute(target: UniffiExpression): UniffiExpression
 ```
 
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
-### execute
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_execute_api_expression_execute"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_execute.24b5e1861d9a"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.execute</code></p>
 
 ```kotlin signature
 fun execute(): UniffiExpression
 ```
 
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
+</details>
 
-### execute
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_execute_api_matrix_execute"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_execute.c928aef513f8"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
+Re-dispatch every unevaluated node (integral, derivative, summation,
+transform, ODE/recurrence placeholder) in the expression; useful after
+substitution has changed the inputs.
 
-```kotlin signature
-fun execute(): UniffiMatrix
-```
+## Example
 
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
 
-### integrate
+### integrate_definite_under_constraint
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_api_session_integrate"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_integrate.69552df7dd0f"></a>
+<a id="entry-presentation_kotlin_api_session_integrate_definite_under_constraint"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_integratedefiniteunderconstraint.42a0d92742c6"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
 ```kotlin signature
-fun integrate(
+fun integrateDefiniteUnderConstraint(
     target: UniffiExpression,
     variable: kotlin.String,
+    lowerBound: UniffiExpression,
+    upperBound: UniffiExpression,
+    constraint: UniffiExpression,
 ): UniffiExpression
 ```
 
-Indefinite integration (no constant of integration).
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
 
-### integrate
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_api_expression_integrate"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_integrate.a24e2ba753a1"></a>
-<p class="symi-entry-owner">Expression method</p>
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_integratedefiniteunderconstraint.562146e4116b"></a>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.integrateDefiniteUnderConstraint</code></p>
 
 ```kotlin signature
-fun integrate(variable: kotlin.String): UniffiExpression
-```
-
-Indefinite integration (no constant of integration).
-
-### integrate
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_integrate_api_assumptionscope_integrate"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_integrate.b7023011912f"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
-
-```kotlin signature
-fun integrate(
-    target: UniffiExpression,
+fun integrateDefiniteUnderConstraint(
     variable: kotlin.String,
+    lowerBound: UniffiExpression,
+    upperBound: UniffiExpression,
+    constraint: UniffiExpression,
 ): UniffiExpression
 ```
 
-Integrate an expression using the scope's immutable assumptions.
+</details>
 
-### interpretation
 
-<a id="entry-presentation_kotlin_calculus_capability_calculus_interpretation_api_results_definiteintegrationresult_interpretation"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_interpretation.f9f52508874d"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
+Definite integration under a local bounded logical constraint. The constraint
+holds for this call only: it is not recorded on any symbol, so it cannot leak
+into a later operation on the same context. Use it when the integral is
+determined only on part of a parameter range — a sign condition on a parameter,
+say — without committing the context to that condition.
 
-```kotlin signature
-fun interpretation(): UniffiDefiniteIntegrationInterpretation
-```
-
-The interpretation under which the request was answered.
-
-### value
-
-<a id="entry-presentation_kotlin_calculus_capability_calculus_value_api_results_definiteintegrationresult_value"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_value.28d800f5f090"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
-
-```kotlin signature
-fun value(): UniffiExpression?
-```
-
-The exact value, present exactly when the verdict is `evaluated`.
-
+See [Assumptions](assumptions.md) for durable symbol assumptions and for
+`AssumptionScope`, which applies a set of assumptions to a whole block of
+operations rather than to one call.

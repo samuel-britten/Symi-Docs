@@ -2,7 +2,59 @@
 
 ### zero_equivalent
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.zero_equivalent`](/symi/python/zero-equivalence#zero_equivalent) in Python, [`UniffiExpression.zeroEquivalent`](/symi/kotlin/zero-equivalence#zero_equivalent) in Kotlin, [`UniffiExpression.zeroEquivalent`](/symi/swift/zero-equivalence#zero_equivalent) in Swift, [`api::Expression::zero_equivalent`](/symi/rust/zero-equivalence#zero_equivalent) in Rust.*
+<a id="entry-presentation_wasm_api_session_zero_equivalent"></a>
+<a id="placement-placement.wasm.wasm_module.module_zeroequivalent.cab9fc362970"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+zeroEquivalent(
+    input_expression: Expression,
+    constraint?: Expression | null,
+): string
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_zeroequivalent.4c2cfbd43500"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.zeroEquivalent</code></p>
+
+```typescript signature
+zeroEquivalent(value: ExpressionLike, constraint?: ExpressionLike | null): "true" | "false" | "unknown"
+```
+
+<a id="placement-placement.wasm.wasm_class.context_zeroequivalent.9d78dbb91e75"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.zeroEquivalent</code></p>
+
+```typescript signature
+zeroEquivalent(
+    input_expression: Expression,
+    constraint?: Expression | null,
+): string
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_zeroequivalent.5b941b0c7ab2"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.zeroEquivalent</code></p>
+
+```typescript signature
+zeroEquivalent(value: ExpressionLike, constraint?: ExpressionLike | null): "true" | "false" | "unknown"
+```
+
+<a id="placement-placement.wasm.javascript_facade.expression_zeroequivalent.03483f9201c5"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.zeroEquivalent</code></p>
+
+```typescript signature
+zeroEquivalent(constraint?: ExpressionLike | null): "true" | "false" | "unknown"
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_zeroequivalent.d55b1b33dd0a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.zeroEquivalent</code></p>
+
+```typescript signature
+zeroEquivalent(constraint?: Expression | null): string
+```
+
+</details>
 
 
 

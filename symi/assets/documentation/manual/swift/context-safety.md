@@ -87,3 +87,24 @@ work begins. Results retain input order and use one captured operation
 configuration. A reset during the call rejects publication rather than
 returning a partially completed collection. An item-level decline or
 diagnostic does not reorder or cancel unrelated items.
+
+### generation
+
+*Not exposed by the Swift bindings. Available as [`api::AssumptionScope::generation`](/symi/rust/context-safety#generation) in Rust.*
+
+
+The generation objects currently produced by this context belong to. Resetting
+a context advances its generation, which is what makes every object made before
+the reset stale. The same accessor exists on the objects themselves, reporting
+the generation the object was created in; comparing the two is exactly what
+`is_stale` does.
+
+### session
+
+*Not exposed by the Swift bindings. Available as [`api::AssumptionScope::session`](/symi/rust/context-safety#session) in Rust.*
+
+
+The context that owns this object. Every mathematical object belongs to one
+context for its whole life, and this accessor is how a host adapter carries the
+owner alongside the object. Objects from two different contexts cannot be
+combined; doing so is a context-mismatch error.

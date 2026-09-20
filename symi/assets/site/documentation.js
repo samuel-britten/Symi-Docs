@@ -263,15 +263,29 @@ function language_label(language) {
     return (state.site_manifest.languages.find(item => item.language_identifier === language) || {}).label || language;
 }
 
+function other_receiver_labels(result) {
+    const primary = result.primary;
+    const labels = [
+        ...result.alternates.map(entry => entry.owner_label),
+        ...(primary.calling_forms || []).map(calling_form => calling_form.owner_label),
+    ];
+    return labels.filter((label, index) =>
+        label && label !== primary.owner_label && labels.indexOf(label) === index);
+}
+
 function entry_result_html(result, all_languages) {
     const primary = result.primary;
-    const alternates = result.alternates.length > 0
-        ? ` · also ${result.alternates.map(entry => entry.owner_label).filter((label, index, labels) => labels.indexOf(label) === index).join(", ")}`
-        : "";
+    // One operation is one result, so every other receiver that reaches it — a merged
+    // entry or one of this entry's own calling forms — is offered inside that result.
+    const other_receivers = other_receiver_labels(result);
+    const alternates = other_receivers.length > 0 ? ` · also ${other_receivers.join(", ")}` : "";
     const meta = `${primary.owner_label} · ${page_title(primary.page_identifier)}${alternates}`;
     const summary = first_sentence(primary.summary);
+    // A member of an object is shown with its owner, so that two same-named members are told
+    // apart in the result list itself rather than only after following one of them.
+    const result_name = primary.qualified_display_name || primary.display_name;
     const link = `<a class="symi-search-result" href="${escape_html(documentation_entry_url(primary))}">`
-        + `<span class="symi-search-result-heading"><span class="symi-search-result-name">${escape_html(primary.display_name)}</span>`
+        + `<span class="symi-search-result-heading"><span class="symi-search-result-name">${escape_html(result_name)}</span>`
         + `<span class="symi-search-result-meta">${escape_html(all_languages ? `${language_label(primary.language)} · ${meta}` : meta)}</span></span>`
         + (summary ? `<span class="symi-search-result-summary">${escape_html(summary)}</span>` : "")
         + `</a>`;
@@ -580,6 +594,7 @@ function reveal_hash_target() {
     }
     const target = document.getElementById(identifier);
     if (target == null || !document.getElementById("documentation_content")?.contains(target)) {
+        resolve_retired_anchor(identifier);
         return;
     }
     for (let element = target.parentElement; element != null; element = element.parentElement) {
@@ -599,6 +614,47 @@ function reveal_hash_target() {
     marked.classList.remove("symi-target-highlight");
     void marked.offsetWidth;
     marked.classList.add("symi-target-highlight");
+}
+
+// An address published before the reference was reorganised names an anchor this page no
+// longer has. The page that used to hold it resolves it: one surviving destination is
+// followed, and an address whose old entry covered several members that are now separate
+// entries offers those meanings instead of guessing between them.
+async function resolve_retired_anchor(identifier) {
+    const notice = document.getElementById("symi-retired-anchor-notice");
+    const artifact = (state.publication?.legacy_alias_pages || []).find(page => page.page_identifier === state.page);
+    if (artifact == null) {
+        return;
+    }
+    let table;
+    try {
+        table = await fetch_json(artifact.path);
+    } catch (error) {
+        console.warn("The retired addresses of this page are unavailable", error);
+        return;
+    }
+    if (decodeURIComponent(window.location.hash.replace(/^#/, "")) !== identifier) {
+        return;
+    }
+    const moved = (table.aliases || {})[identifier];
+    if (typeof moved === "string") {
+        const [page_identifier, anchor = ""] = moved.split("#", 2);
+        window.location.replace(state.routes.create_language_target(state.language, page_identifier, anchor));
+        return;
+    }
+    const meanings = (table.disambiguations || {})[identifier];
+    if (meanings == null || notice == null) {
+        return;
+    }
+    notice.innerHTML = `<p>“${escape_html(identifier)}” named more than one entry before this reference was reorganised. `
+        + `Each of its meanings now has its own entry:</p><ul>`
+        + meanings.map(meaning => (
+            `<li><a href="${escape_html(state.routes.create_language_target(state.language, meaning.page, meaning.anchor))}">`
+            + `${escape_html(meaning.label)}</a></li>`
+        )).join("")
+        + `</ul>`;
+    notice.hidden = false;
+    announce(`That address names ${meanings.length} entries; choose the one you meant.`);
 }
 
 function show_unavailable_notice() {
@@ -651,6 +707,9 @@ async function initialize() {
     }
     state.routes = create_routes(state.site_manifest);
     show_unavailable_notice();
+    // The first reveal ran before the manifests were available, so an anchor this page no
+    // longer has could not be resolved against the addresses it retired; try again now.
+    reveal_hash_target();
     initialize_navigation_expansion();
     initialize_language_menu();
     initialize_search();

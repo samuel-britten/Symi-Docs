@@ -6,7 +6,7 @@ outside each function's domain (negative counts, …).
 
 ### falling_factorial
 
-<a id="entry-presentation_python_combinatorics_capability_discrete_mathematics_falling_factorial_api_session_falling_factorial"></a>
+<a id="entry-presentation_python_api_session_falling_factorial"></a>
 <a id="placement-placement.python.python_module.module_falling_factorial.e2846cb97c6c"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -38,7 +38,7 @@ falling_factorial(
 
 ### rising_factorial
 
-<a id="entry-presentation_python_combinatorics_capability_discrete_mathematics_rising_factorial_api_session_rising_factorial"></a>
+<a id="entry-presentation_python_api_session_rising_factorial"></a>
 <a id="placement-placement.python.python_module.module_rising_factorial.7e0957e016de"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -69,7 +69,7 @@ rising_factorial(
 
 ### stirling_first_signed
 
-<a id="entry-presentation_python_combinatorics_capability_discrete_mathematics_stirling_first_signed_api_session_stirling_first_signed"></a>
+<a id="entry-presentation_python_api_session_stirling_first_signed"></a>
 <a id="placement-placement.python.python_module.module_stirling_first_signed.d5d42ca8d378"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -100,7 +100,7 @@ Signed Stirling number of the first kind s(n, k).
 
 ### stirling_second
 
-<a id="entry-presentation_python_combinatorics_capability_discrete_mathematics_stirling_second_api_session_stirling_second"></a>
+<a id="entry-presentation_python_api_session_stirling_second"></a>
 <a id="placement-placement.python.python_module.module_stirling_second.23f7af4a94cb"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -125,7 +125,7 @@ Stirling number of the second kind S(n, k).
 
 ### bell_number
 
-<a id="entry-presentation_python_combinatorics_capability_discrete_mathematics_bell_number_api_session_bell_number"></a>
+<a id="entry-presentation_python_api_session_bell_number"></a>
 <a id="placement-placement.python.python_module.module_bell_number.f7d58f32ca00"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -150,7 +150,7 @@ The n-th Bell number.
 
 ### catalan_number
 
-<a id="entry-presentation_python_combinatorics_capability_discrete_mathematics_catalan_number_api_session_catalan_number"></a>
+<a id="entry-presentation_python_api_session_catalan_number"></a>
 <a id="placement-placement.python.python_module.module_catalan_number.7e0b0b19f4db"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -175,7 +175,7 @@ The n-th Catalan number.
 
 ### fibonacci_number
 
-<a id="entry-presentation_python_combinatorics_capability_discrete_mathematics_fibonacci_number_api_session_fibonacci_number"></a>
+<a id="entry-presentation_python_api_session_fibonacci_number"></a>
 <a id="placement-placement.python.python_module.module_fibonacci_number.dc4758ad1625"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -200,7 +200,7 @@ The n-th Fibonacci number (F(0) = 0, F(1) = 1).
 
 ### partition_count
 
-<a id="entry-presentation_python_combinatorics_capability_discrete_mathematics_partition_count_api_session_partition_count"></a>
+<a id="entry-presentation_python_api_session_partition_count"></a>
 <a id="placement-placement.python.python_module.module_partition_count.54165d480956"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -225,7 +225,7 @@ Number of integer partitions p(n).
 
 ### multinomial
 
-<a id="entry-presentation_python_combinatorics_capability_discrete_mathematics_multinomial_api_number_theory_session_multinomial"></a>
+<a id="entry-presentation_python_api_session_multinomial"></a>
 <a id="placement-placement.python.python_module.module_multinomial.b098da2587e9"></a>
 <p class="symi-entry-owner">Default context</p>
 

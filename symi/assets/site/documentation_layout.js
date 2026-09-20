@@ -41,22 +41,64 @@ function owner_hint(entry, duplicated_names) {
         : "";
 }
 
+function navigation_entry_link_html(entry, routes, language, duplicated_names) {
+    return `<a class="symi-nav-entry" href="${escape_html(routes.create_language_target(language, entry.page_identifier, entry.anchor))}">`
+        + `<code>${escape_html(entry.display_name)}</code>${owner_hint(entry, duplicated_names)}</a>`;
+}
+
+function navigation_entry_order(left, right) {
+    return left.display_name.localeCompare(right.display_name)
+        || left.owner_label.localeCompare(right.owner_label)
+        || left.presentation_entry_identifier.localeCompare(right.presentation_entry_identifier);
+}
+
+// One page's entries: topic operations at the top level, and the members of an object nested
+// under that object, led by the object's own entry. Nesting is what keeps two members that
+// share a name — a principal part's `matrix` and a context's — apart in the list.
 export function navigation_entries_html(entries, routes, language) {
     const counts = new Map();
     for (const entry of entries) {
         counts.set(entry.display_name, (counts.get(entry.display_name) || 0) + 1);
     }
     const duplicated_names = new Set([...counts].filter(([, count]) => count > 1).map(([name]) => name));
-    return [...entries]
-        .sort((left, right) => (
-            left.display_name.localeCompare(right.display_name)
-            || left.owner_label.localeCompare(right.owner_label)
-            || left.presentation_entry_identifier.localeCompare(right.presentation_entry_identifier)
-        ))
-        .map(entry => (
-            `<li><a class="symi-nav-entry" href="${escape_html(routes.create_language_target(language, entry.page_identifier, entry.anchor))}">`
-            + `<code>${escape_html(entry.display_name)}</code>${owner_hint(entry, duplicated_names)}</a></li>`
-        ))
+    const owners = new Map();
+    const items = [];
+    for (const entry of [...entries].sort(navigation_entry_order)) {
+        const owner = entry.navigation_owner || null;
+        if (owner == null) {
+            items.push({ sort_name: entry.display_name, entry });
+            continue;
+        }
+        if (!owners.has(owner)) {
+            const group = { sort_name: owner, owner, members: [], type_entry: null };
+            owners.set(owner, group);
+            items.push(group);
+        }
+        const group = owners.get(owner);
+        if (entry.display_name === owner && group.type_entry == null) {
+            group.type_entry = entry;
+        } else {
+            group.members.push(entry);
+        }
+    }
+    return items
+        .sort((left, right) => left.sort_name.localeCompare(right.sort_name))
+        .map(item => {
+            if (item.entry != null) {
+                return `<li>${navigation_entry_link_html(item.entry, routes, language, duplicated_names)}</li>`;
+            }
+            const heading = item.type_entry != null
+                ? navigation_entry_link_html(item.type_entry, routes, language, duplicated_names)
+                : `<span class="symi-nav-entry-type"><code>${escape_html(item.owner)}</code></span>`;
+            if (item.members.length === 0) {
+                return `<li>${heading}</li>`;
+            }
+            return `<li class="symi-nav-entry-group">${heading}<ul class="symi-nav-entry-members">`
+                + item.members.map(member => (
+                    `<li>${navigation_entry_link_html(member, routes, language, duplicated_names)}</li>`
+                )).join("")
+                + `</ul></li>`;
+        })
         .join("");
 }
 
@@ -161,29 +203,38 @@ export function related_pages_html(site_manifest, pages, current_page) {
         + `</ul>`;
 }
 
-// The page a language switch leads to: the same semantic entry in the other language when the
-// current anchor names one, that entry's category when the other language lacks it, and
-// otherwise the same page.
+// The page a language switch leads to. The current anchor is resolved to the documentation
+// identity it names, and that identity is looked up in the other language: identity is what
+// makes two host spellings the same operation, so a switch can never land on an unrelated
+// member that happens to share a name. A member falls back to the entry that owns it, and an
+// identity the other language does not publish reports itself unavailable on the same topic
+// page rather than substituting another API.
 export function language_switch_target({ site_manifest, routes, target_language, current_language, current_page, anchor, cross_language_targets }) {
-    const current_target = (cross_language_targets || []).find(target => (
+    const targets = cross_language_targets || [];
+    const current_target = targets.find(target => (
         target.language === current_language
         && target.page_identifier === current_page
         && target.anchor === anchor
     ));
     if (current_target != null) {
-        const target = (cross_language_targets || []).find(candidate => (
-            candidate.language === target_language
-            && candidate.category_identifier === current_target.category_identifier
-            && candidate.semantic_name === current_target.semantic_name
-        ));
-        if (target != null) {
-            return routes.create_language_target(target_language, target.page_identifier, target.anchor);
+        const identities = [current_target.documentation_identity, current_target.destination_identifier]
+            .filter(identity => identity != null);
+        for (const identity of identities) {
+            const target = targets.find(candidate => (
+                candidate.language === target_language
+                && (candidate.documentation_identity === identity || candidate.destination_identifier === identity)
+            ));
+            if (target != null) {
+                return routes.create_language_target(target_language, target.page_identifier, target.anchor);
+            }
         }
-        const fallback_page = (site_manifest.pages || []).find(page => (
-            page.category_identifier === current_target.category_identifier && page.canonical_urls[target_language] != null
-        ));
-        if (fallback_page != null) {
-            const fallback_target = routes.create_language_target(target_language, fallback_page.page_identifier);
+        const topic_page = routes.page_is_published(target_language, routes.language_page_name(target_language, current_page))
+            ? current_page
+            : (site_manifest.pages || []).find(page => (
+                page.category_identifier === current_target.category_identifier && page.canonical_urls[target_language] != null
+            ))?.page_identifier;
+        if (topic_page != null) {
+            const fallback_target = routes.create_language_target(target_language, topic_page);
             return `${fallback_target}?unavailable=${encodeURIComponent(anchor)}`;
         }
     }

@@ -8,26 +8,7 @@ presentation passes are on
 
 ### simplify
 
-<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_assumptionscope_simplify_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_assumptionscope_simplify.763214b33bd0"></a>
-<p class="symi-entry-owner">api::AssumptionScope method</p>
-
-```rust signature
-pub fn simplify(
-    &self,
-    target: &Expression,
-) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_expression_simplify_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_simplify.fc65f20d22e1"></a>
-<p class="symi-entry-owner">api::Expression method</p>
-
-```rust signature
-pub fn simplify(&self) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_session_simplify_unnamed"></a>
+<a id="entry-presentation_rust_api_session_simplify"></a>
 <a id="placement-placement.rust.native_rust.api_session_simplify.64a0e68b22a8"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -37,6 +18,28 @@ pub fn simplify(
     target: &Expression,
 ) -> Result<Expression, ApiError>
 ```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_simplify.fc65f20d22e1"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::simplify</code></p>
+
+```rust signature
+pub fn simplify(&self) -> Result<Expression, ApiError>
+```
+
+<a id="placement-placement.rust.native_rust.api_assumptionscope_simplify.763214b33bd0"></a>
+<p class="symi-entry-owner">Variant using local assumptions — api::AssumptionScope method: <code>api::AssumptionScope::simplify</code></p>
+
+```rust signature
+pub fn simplify(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+</details>
 
 
 
@@ -90,15 +93,7 @@ guards:
 
 ### cancel
 
-<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_expression_cancel_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_cancel.14cbf888f35c"></a>
-<p class="symi-entry-owner">api::Expression method</p>
-
-```rust signature
-pub fn cancel(&self) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_session_cancel_unnamed"></a>
+<a id="entry-presentation_rust_api_session_cancel"></a>
 <a id="placement-placement.rust.native_rust.api_session_cancel.aaaaae2b335c"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -109,6 +104,18 @@ pub fn cancel(
 ) -> Result<Expression, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_cancel.14cbf888f35c"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::cancel</code></p>
+
+```rust signature
+pub fn cancel(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
 
 
 Rational normal form: write as a single fraction and divide out the
@@ -116,15 +123,7 @@ polynomial GCD of numerator and denominator.
 
 ### together
 
-<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_expression_together_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_together.d506a1bfefb0"></a>
-<p class="symi-entry-owner">api::Expression method</p>
-
-```rust signature
-pub fn together(&self) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_simplification_general_capability_rust_native_rust_api_session_together_unnamed"></a>
+<a id="entry-presentation_rust_api_session_together"></a>
 <a id="placement-placement.rust.native_rust.api_session_together.de0b5add18e1"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -134,6 +133,18 @@ pub fn together(
     target: &Expression,
 ) -> Result<Expression, ApiError>
 ```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_together.d506a1bfefb0"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::together</code></p>
+
+```rust signature
+pub fn together(&self) -> Result<Expression, ApiError>
+```
+
+</details>
 
 
 
@@ -158,3 +169,38 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
+
+### simplify_under_constraint
+
+<a id="entry-presentation_rust_api_session_simplify_under_constraint"></a>
+<a id="placement-placement.rust.native_rust.api_session_simplify_under_constraint.8c1e9af8cb29"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn simplify_under_constraint(
+    &self,
+    target: &Expression,
+    constraint: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_simplify_under_constraint.c98d839b3add"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::simplify_under_constraint</code></p>
+
+```rust signature
+pub fn simplify_under_constraint(
+    &self,
+    constraint: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+</details>
+
+
+Simplify under a local bounded logical constraint without changing symbol
+assumptions. The constraint is in force for this call alone; nothing about it
+survives into the context, so simplifying `sqrt(x**2)` under `x > 0` does not
+make `x` positive for any later operation.

@@ -11,7 +11,7 @@ Create a fresh context with an empty symbol table and expression store.
 
 ### reset_context
 
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_reset_context_api_session_reset_context"></a>
+<a id="entry-presentation_swift_api_session_reset_context"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_resetcontext.cff4e8511c86"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -32,7 +32,7 @@ weak expression store already keeps memory bounded by live objects (see
 
 ### parse
 
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_parse_api_session_parse"></a>
+<a id="entry-presentation_swift_api_session_parse"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_parse.020527a7a8e8"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -49,7 +49,7 @@ parameters.
 
 ### parse_latex
 
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_parse_latex_api_serialization_session_parse_latex"></a>
+<a id="entry-presentation_swift_api_session_parse_latex"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_parselatex.c6c593fb2b63"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -83,7 +83,7 @@ expansion.
 
 ### parse_latex_with_environment
 
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_parse_latex_with_environment_api_serialization_session_parse_latex_with_environment"></a>
+<a id="entry-presentation_swift_api_session_parse_latex_with_environment"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_parselatexwithenvironment.c877ae885b71"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -107,7 +107,7 @@ as a module-level function.
 
 ### symbol
 
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_symbol_api_session_symbol"></a>
+<a id="entry-presentation_swift_api_session_symbol"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_symbol.d55684481496"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -132,7 +132,7 @@ over.
 
 ### integer
 
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_integer_api_session_integer"></a>
+<a id="entry-presentation_swift_api_session_integer"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integer.a403f6f0d9d6"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -146,7 +146,7 @@ recommended facade accepts `bigint` and safe integral `number` values.
 
 ### rational
 
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_rational_api_session_rational"></a>
+<a id="entry-presentation_swift_api_session_rational"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_rational.91a4056839d6"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -162,7 +162,7 @@ integers. A zero denominator is an argument error. Python also accepts
 
 ### integer_from_string
 
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string"></a>
+<a id="entry-presentation_swift_api_session_integer_from_string"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integerfromstring.7bbdff04fb08"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -175,7 +175,7 @@ Build an arbitrary-precision integer literal from its decimal string.
 
 ### rational_from_float
 
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float"></a>
+<a id="entry-presentation_swift_api_session_rational_from_float"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_rationalfromfloat.f14c84b372ca"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -190,33 +190,9 @@ func rationalFromFloat(
 Closest rational with denominator \(\leq\) `max_denominator` (the
 `Fraction.limit_denominator` algorithm). Raises on non-finite input.
 
-### undefined_function
-
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_undefined_function_api_session_undefined_function"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_undefinedfunction.69ab34c3796f"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func undefinedFunction(name: String) -> UniffiUndefinedFunction
-```
-
-
-A callable proxy for a user-named function. Calling it with expression
-arguments builds the function-call expression (see the object-model page and
-the worked ODE example).
-
-### call
-
-<a id="entry-presentation_swift_construction_and_parsing_capability_construction_call_api_undefinedfunction_call"></a>
-<a id="placement-placement.swift.swift_object.uniffiundefinedfunction_call.feef249df282"></a>
-<p class="symi-entry-owner">UniffiUndefinedFunction method</p>
-
-```swift signature
-func call(arguments: [UniffiExpression]) -> UniffiExpression
-```
-
-
-WASM spelling of the Python `f(x, …)` call syntax on `UndefinedFunction`.
+Named unknown functions are built with `undefined_function`, whose handle,
+calls, and structural derivatives are documented together in
+[Undefined functions](undefined-functions.md).
 
 ## Example
 

@@ -6,6 +6,15 @@ Construct matrices from ordered rows or from identity, zero, and diagonal famili
 
 ### matrix
 
+<a id="entry-presentation_kotlin_api_session_matrix"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_matrix.b51a2061d1a0"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun matrix(rows: List<List<UniffiExpression>>): UniffiMatrix
+```
+
+
 
 
 Build a matrix from ordered rows. Direct Python construction and the facade
@@ -15,7 +24,7 @@ code should use the nested facade form.
 
 ### matrix_identity
 
-<a id="entry-presentation_kotlin_matrix_construction_capability_algebra_matrix_identity_api_session_matrix_identity"></a>
+<a id="entry-presentation_kotlin_api_session_matrix_identity"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_matrixidentity.dc397d030507"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -28,7 +37,7 @@ The \(\mathit{size}\times\mathit{size}\) identity; size 0 raises.
 
 ### matrix_zero
 
-<a id="entry-presentation_kotlin_matrix_construction_capability_algebra_matrix_zero_api_session_matrix_zero"></a>
+<a id="entry-presentation_kotlin_api_session_matrix_zero"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_matrixzero.472641fbc456"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -41,7 +50,7 @@ The \(\mathit{rows}\times\mathit{columns}\) zero matrix.
 
 ### matrix_diagonal
 
-<a id="entry-presentation_kotlin_matrix_construction_capability_algebra_matrix_diagonal_api_session_matrix_diagonal"></a>
+<a id="entry-presentation_kotlin_api_session_matrix_diagonal"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_matrixdiagonal.26b15bd32d7c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -57,7 +66,7 @@ list raises.
 
 ### rows
 
-<a id="entry-presentation_kotlin_matrix_construction_capability_algebra_rows_api_matrix_rows"></a>
+<a id="entry-presentation_kotlin_api_matrix_rows"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffimatrix_rows.215533547a81"></a>
 <p class="symi-entry-owner">UniffiMatrix method</p>
 
@@ -68,7 +77,7 @@ fun rows(): kotlin.ULong
 
 ### columns
 
-<a id="entry-presentation_kotlin_matrix_construction_capability_algebra_columns_api_matrix_columns"></a>
+<a id="entry-presentation_kotlin_api_matrix_columns"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffimatrix_columns.ca342880106f"></a>
 <p class="symi-entry-owner">UniffiMatrix method</p>
 
@@ -79,7 +88,7 @@ fun columns(): kotlin.ULong
 
 ### entry
 
-<a id="entry-presentation_kotlin_matrix_construction_capability_algebra_entry_api_matrix_entry"></a>
+<a id="entry-presentation_kotlin_api_matrix_entry"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffimatrix_entry.db724b9f7f2b"></a>
 <p class="symi-entry-owner">UniffiMatrix method</p>
 
@@ -95,27 +104,39 @@ Element access. **Notes:** Python uses indexing `m[row, column]` instead.
 
 ## Additional API
 
-### matrix
+### diagonal_matrix
 
-<a id="entry-presentation_kotlin_matrix_construction_capability_algebra_matrix_api_session_matrix"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_matrix.b51a2061d1a0"></a>
+<a id="entry-presentation_kotlin_api_session_diagonal_matrix"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_diagonalmatrix.9bff826f0672"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
 ```kotlin signature
-fun matrix(rows: List<List<UniffiExpression>>): UniffiMatrix
+fun diagonalMatrix(subject: UniffiMatrix): UniffiAssumptionProposition
 ```
 
-Build a matrix from ordered rows. Direct Python construction and the facade module function use the shared default context. The raw wasm-bindgen compatibility layer retains `(rows, columns, flat_entries)`; new JavaScript code should use the nested facade form.
+Provides the `diagonal_matrix` operation on this mobile object.
 
-### matrix
+### identity_matrix
 
-<a id="entry-presentation_kotlin_matrix_construction_capability_algebra_matrix_api_partial_differential_equations_partialdifferentialequationprincipalpart_matrix"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationprincipalpart_matrix.5df8c1d237ca"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationPrincipalPart method</p>
+<a id="entry-presentation_kotlin_api_session_identity_matrix"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_identitymatrix.20d506bce27b"></a>
+<p class="symi-entry-owner">Explicit context</p>
 
 ```kotlin signature
-fun matrix(): UniffiMatrix
+fun identityMatrix(subject: UniffiMatrix): UniffiAssumptionProposition
 ```
 
-The symmetric principal matrix whose quadratic form is the exact principal symbol.
+Provides the `identity_matrix` operation on this mobile object.
+
+### zero_matrix
+
+<a id="entry-presentation_kotlin_api_session_zero_matrix"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_zeromatrix.724b4ed94261"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```kotlin signature
+fun zeroMatrix(subject: UniffiMatrix): UniffiAssumptionProposition
+```
+
+Provides the `zero_matrix` operation on this mobile object.
 

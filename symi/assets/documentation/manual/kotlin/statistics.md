@@ -10,7 +10,7 @@ operations. The canonical names for the gamma and beta families are
 
 ### distribution
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_distribution_api_probability_session_distribution"></a>
+<a id="entry-presentation_kotlin_api_session_distribution"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_distribution.50e720f7e2c8"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -30,7 +30,7 @@ family's arity raises a collection-shape error; it does not create an
 
 ### random_variable
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_random_variable_api_probability_session_random_variable"></a>
+<a id="entry-presentation_kotlin_api_session_random_variable"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_randomvariable.fd2baaf6aae8"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -48,7 +48,7 @@ independent under hash-consing.
 
 ### density
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_density_api_probability_session_density"></a>
+<a id="entry-presentation_kotlin_api_session_density"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_density.8474843b0a00"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -66,7 +66,7 @@ unevaluated structural form when no closed form exists.
 
 ### cumulative_distribution
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_cumulative_distribution_api_probability_session_cumulative_distribution"></a>
+<a id="entry-presentation_kotlin_api_session_cumulative_distribution"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_cumulativedistribution.a21cdead2158"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -82,7 +82,7 @@ Cumulative distribution function of `random_variable` evaluated at `point`.
 
 ### expectation
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_expectation_api_probability_session_expectation"></a>
+<a id="entry-presentation_kotlin_api_session_expectation"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_expectation.449a52b2a304"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -100,7 +100,7 @@ leaves consume the distribution's mean and raw moments.
 
 ### variance
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_variance_api_probability_session_variance"></a>
+<a id="entry-presentation_kotlin_api_session_variance"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_variance.d87240a7a239"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -116,7 +116,7 @@ Variance of `target` over the listed independent random variables.
 
 ### covariance
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_covariance_api_probability_session_covariance"></a>
+<a id="entry-presentation_kotlin_api_session_covariance"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_covariance.e804b8cfcb4d"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -134,7 +134,7 @@ zero for independent operands.
 
 ### probability
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_probability_api_probability_session_probability"></a>
+<a id="entry-presentation_kotlin_api_session_probability"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_probability.1c1ba6b2c786"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -151,7 +151,7 @@ listed independent random variables.
 
 ### moment
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_moment_api_probability_session_moment"></a>
+<a id="entry-presentation_kotlin_api_session_moment"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_moment.49f68e6872e8"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -167,7 +167,7 @@ The `order`-th raw moment `E[X^order]` of `random_variable`.
 
 ### cumulant
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_cumulant_api_probability_session_cumulant"></a>
+<a id="entry-presentation_kotlin_api_session_cumulant"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_cumulant.a21aa9e30293"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -183,7 +183,7 @@ The `order`-th cumulant of `random_variable`.
 
 ### moment_generating_function
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_moment_generating_function_api_probability_session_moment_generating_function"></a>
+<a id="entry-presentation_kotlin_api_session_moment_generating_function"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_momentgeneratingfunction.89e42436813d"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -201,7 +201,7 @@ form.
 
 ### characteristic_function
 
-<a id="entry-presentation_kotlin_statistics_capability_probability_characteristic_function_api_probability_session_characteristic_function"></a>
+<a id="entry-presentation_kotlin_api_session_characteristic_function"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_characteristicfunction.dc6471efa34f"></a>
 <p class="symi-entry-owner">Explicit context</p>
 

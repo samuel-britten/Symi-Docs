@@ -10,7 +10,7 @@ operations. The canonical names for the gamma and beta families are
 
 ### distribution
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_distribution_unnamed"></a>
+<a id="entry-presentation_rust_api_session_distribution"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_distribution.a063aaf8504e"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -31,7 +31,7 @@ family's arity raises a collection-shape error; it does not create an
 
 ### random_variable
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_random_variable_unnamed"></a>
+<a id="entry-presentation_rust_api_session_random_variable"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_random_variable.385009302bb0"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -50,7 +50,7 @@ independent under hash-consing.
 
 ### density
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_density_unnamed"></a>
+<a id="entry-presentation_rust_api_session_density"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_density.a337a5a3551c"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -69,7 +69,7 @@ unevaluated structural form when no closed form exists.
 
 ### cumulative_distribution
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_cumulative_distribution_unnamed"></a>
+<a id="entry-presentation_rust_api_session_cumulative_distribution"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_cumulative_distribution.42afedf72cb3"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -86,7 +86,7 @@ Cumulative distribution function of `random_variable` evaluated at `point`.
 
 ### expectation
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_expectation_unnamed"></a>
+<a id="entry-presentation_rust_api_session_expectation"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_expectation.d2c31696cf14"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -105,7 +105,7 @@ leaves consume the distribution's mean and raw moments.
 
 ### variance
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_variance_unnamed"></a>
+<a id="entry-presentation_rust_api_session_variance"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_variance.f34f6a88337d"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -122,7 +122,7 @@ Variance of `target` over the listed independent random variables.
 
 ### covariance
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_covariance_unnamed"></a>
+<a id="entry-presentation_rust_api_session_covariance"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_covariance.4bba8e418669"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -141,7 +141,7 @@ zero for independent operands.
 
 ### probability
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_probability_unnamed"></a>
+<a id="entry-presentation_rust_api_session_probability"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_probability.8494139fd742"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -159,7 +159,7 @@ listed independent random variables.
 
 ### moment
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_moment_unnamed"></a>
+<a id="entry-presentation_rust_api_session_moment"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_moment.2fecf95c9099"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -176,7 +176,7 @@ The `order`-th raw moment `E[X^order]` of `random_variable`.
 
 ### cumulant
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_cumulant_unnamed"></a>
+<a id="entry-presentation_rust_api_session_cumulant"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_cumulant.8346ff72ad22"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -193,7 +193,7 @@ The `order`-th cumulant of `random_variable`.
 
 ### moment_generating_function
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_moment_generating_function_unnamed"></a>
+<a id="entry-presentation_rust_api_session_moment_generating_function"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_moment_generating_function.9c540c7e7174"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -214,7 +214,7 @@ form.
 
 ### characteristic_function
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_session_characteristic_function_unnamed"></a>
+<a id="entry-presentation_rust_api_session_characteristic_function"></a>
 <a id="placement-placement.rust.native_rust.api_probability_session_characteristic_function.60b81ada7307"></a>
 <p class="symi-entry-owner">api::probability::Session method</p>
 
@@ -255,9 +255,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Additional API
 
-### probability
+### api::probability
 
-<a id="entry-presentation_rust_statistics_capability_rust_native_rust_api_probability_unnamed"></a>
+<a id="entry-presentation_rust_native_module_api_probability"></a>
 <a id="placement-placement.rust.native_rust.api_probability.1cffdfa3f5c4"></a>
 <p class="symi-entry-owner">api module</p>
 
@@ -265,5 +265,5 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 pub mod probability;
 ```
 
-Probability that `predicate` (a tail comparison such as `X > t`) holds over the listed independent random variables.
+Distribution and statistics operations of the native API.
 

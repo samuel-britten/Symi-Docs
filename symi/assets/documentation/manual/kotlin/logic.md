@@ -18,7 +18,7 @@ Normal forms and Boolean simplification are documented in
 
 ### logical_true
 
-<a id="entry-presentation_kotlin_logic_capability_discrete_mathematics_logical_true_api_session_logical_true"></a>
+<a id="entry-presentation_kotlin_api_session_logical_true"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_logicaltrue.8d91164063ad"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -31,7 +31,7 @@ The Boolean constant true (\(\top\)).
 
 ### logical_false
 
-<a id="entry-presentation_kotlin_logic_capability_discrete_mathematics_logical_false_api_session_logical_false"></a>
+<a id="entry-presentation_kotlin_api_session_logical_false"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_logicalfalse.ff670e147b33"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -44,7 +44,7 @@ The Boolean constant false (\(\bot\)).
 
 ### evaluate_truth
 
-<a id="entry-presentation_kotlin_logic_capability_discrete_mathematics_evaluate_truth_api_session_evaluate_truth"></a>
+<a id="entry-presentation_kotlin_api_session_evaluate_truth"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_evaluatetruth.53435f05f805"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -52,13 +52,17 @@ The Boolean constant false (\(\bot\)).
 fun evaluateTruth(target: UniffiExpression): UniffiTruthValue
 ```
 
-<a id="entry-presentation_kotlin_logic_capability_discrete_mathematics_evaluate_truth_api_expression_evaluate_truth"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_evaluatetruth.62d849aade87"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.evaluateTruth</code></p>
 
 ```kotlin signature
 fun evaluateTruth(): UniffiTruthValue
 ```
+
+</details>
 
 
 `evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or

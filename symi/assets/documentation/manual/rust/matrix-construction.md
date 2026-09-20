@@ -6,6 +6,21 @@ Construct matrices from ordered rows or from identity, zero, and diagonal famili
 
 ### matrix
 
+<a id="entry-presentation_rust_api_session_matrix"></a>
+<a id="placement-placement.rust.native_rust.api_session_matrix.d13bbbee86c8"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn matrix<RowsIterator, RowIterator>(
+    &self,
+    rows: RowsIterator,
+) -> Result<Matrix, ApiError>
+where
+    RowsIterator: IntoIterator<Item = RowIterator>,
+    RowIterator: IntoIterator<Item = Expression>,
+```
+
+
 
 
 Build a matrix from ordered rows. Direct Python construction and the facade
@@ -15,7 +30,7 @@ code should use the nested facade form.
 
 ### matrix_identity
 
-<a id="entry-presentation_rust_matrix_construction_capability_rust_native_rust_api_session_matrix_identity_unnamed"></a>
+<a id="entry-presentation_rust_api_session_matrix_identity"></a>
 <a id="placement-placement.rust.native_rust.api_session_matrix_identity.65c23949077d"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -28,7 +43,7 @@ The \(\mathit{size}\times\mathit{size}\) identity; size 0 raises.
 
 ### matrix_zero
 
-<a id="entry-presentation_rust_matrix_construction_capability_rust_native_rust_api_session_matrix_zero_unnamed"></a>
+<a id="entry-presentation_rust_api_session_matrix_zero"></a>
 <a id="placement-placement.rust.native_rust.api_session_matrix_zero.bd99a851ae3d"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -45,7 +60,7 @@ The \(\mathit{rows}\times\mathit{columns}\) zero matrix.
 
 ### matrix_diagonal
 
-<a id="entry-presentation_rust_matrix_construction_capability_rust_native_rust_api_session_matrix_diagonal_unnamed"></a>
+<a id="entry-presentation_rust_api_session_matrix_diagonal"></a>
 <a id="placement-placement.rust.native_rust.api_session_matrix_diagonal.3bc09915f562"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -66,7 +81,7 @@ list raises.
 
 ### rows
 
-<a id="entry-presentation_rust_matrix_construction_capability_rust_native_rust_api_matrix_rows_unnamed"></a>
+<a id="entry-presentation_rust_api_matrix_rows"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_rows.15283dbbfdb7"></a>
 <p class="symi-entry-owner">api::Matrix method</p>
 
@@ -77,7 +92,7 @@ pub fn rows(&self) -> usize
 
 ### columns
 
-<a id="entry-presentation_rust_matrix_construction_capability_rust_native_rust_api_matrix_columns_unnamed"></a>
+<a id="entry-presentation_rust_api_matrix_columns"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_columns.8b0f61863dc2"></a>
 <p class="symi-entry-owner">api::Matrix method</p>
 
@@ -88,7 +103,7 @@ pub fn columns(&self) -> usize
 
 ### entry
 
-<a id="entry-presentation_rust_matrix_construction_capability_rust_native_rust_api_matrix_entry_unnamed"></a>
+<a id="entry-presentation_rust_api_matrix_entry"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_entry.3ffd9f4d1e96"></a>
 <p class="symi-entry-owner">api::Matrix method</p>
 
@@ -127,33 +142,48 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Additional API
 
-### matrix
+### diagonal_matrix
 
-<a id="entry-presentation_rust_matrix_construction_capability_rust_native_rust_api_session_matrix_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_session_matrix.d13bbbee86c8"></a>
+<a id="entry-presentation_rust_api_session_diagonal_matrix"></a>
+<a id="placement-placement.rust.native_rust.api_session_diagonal_matrix.b17dbb2a54b5"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
 ```rust signature
-pub fn matrix<RowsIterator, RowIterator>(
+pub fn diagonal_matrix(
     &self,
-    rows: RowsIterator,
-) -> Result<Matrix, ApiError>
-where
-    RowsIterator: IntoIterator<Item = RowIterator>,
-    RowIterator: IntoIterator<Item = Expression>,
+    subject: &Matrix,
+) -> Result<AssumptionProposition, ApiError>
 ```
 
-Build a matrix from ordered rows. Direct Python construction and the facade module function use the shared default context. The raw wasm-bindgen compatibility layer retains `(rows, columns, flat_entries)`; new JavaScript code should use the nested facade form.
+Construct a diagonal-matrix proposition.
 
-### matrix
+### identity_matrix
 
-<a id="entry-presentation_rust_matrix_construction_capability_rust_native_rust_api_partial_differential_equations_partialdifferentialequationprincipalpart_matrix_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationprincipalpart_matrix.89a26f5a0c0b"></a>
-<p class="symi-entry-owner">api::partial_differential_equations::PartialDifferentialEquationPrincipalPart method</p>
+<a id="entry-presentation_rust_api_session_identity_matrix"></a>
+<a id="placement-placement.rust.native_rust.api_session_identity_matrix.933d2213969f"></a>
+<p class="symi-entry-owner">api::Session method</p>
 
 ```rust signature
-pub fn matrix(&self) -> Matrix
+pub fn identity_matrix(
+    &self,
+    subject: &Matrix,
+) -> Result<AssumptionProposition, ApiError>
 ```
 
-Build a matrix from ordered rows. Direct Python construction and the facade module function use the shared default context. The raw wasm-bindgen compatibility layer retains `(rows, columns, flat_entries)`; new JavaScript code should use the nested facade form.
+Construct an identity-matrix proposition.
+
+### zero_matrix
+
+<a id="entry-presentation_rust_api_session_zero_matrix"></a>
+<a id="placement-placement.rust.native_rust.api_session_zero_matrix.a2c72f8dc46d"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn zero_matrix(
+    &self,
+    subject: &Matrix,
+) -> Result<AssumptionProposition, ApiError>
+```
+
+Construct a zero-matrix proposition.
 

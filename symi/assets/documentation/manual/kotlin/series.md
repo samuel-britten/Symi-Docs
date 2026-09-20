@@ -2,7 +2,7 @@
 
 ### taylor_series
 
-<a id="entry-presentation_kotlin_series_capability_calculus_taylor_series_api_session_taylor_series"></a>
+<a id="entry-presentation_kotlin_api_session_taylor_series"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_taylorseries.f835609b1b61"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -15,9 +15,11 @@ fun taylorSeries(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_series_capability_calculus_taylor_series_api_expression_taylor_series"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_taylorseries.72e783cf8686"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.taylorSeries</code></p>
 
 ```kotlin signature
 fun taylorSeries(
@@ -27,9 +29,8 @@ fun taylorSeries(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_series_capability_calculus_taylor_series_api_assumptionscope_taylor_series"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_taylorseries.65181fdaeff1"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.taylorSeries</code></p>
 
 ```kotlin signature
 fun taylorSeries(
@@ -40,6 +41,8 @@ fun taylorSeries(
 ): UniffiExpression
 ```
 
+</details>
+
 
 Truncated Taylor expansion about `expansion_point`, keeping terms of degree
 **strictly less than** `order` (the remainder is
@@ -49,7 +52,7 @@ symbolic differentiation.
 
 ### maclaurin_series
 
-<a id="entry-presentation_kotlin_series_capability_calculus_maclaurin_series_api_analysis_session_maclaurin_series"></a>
+<a id="entry-presentation_kotlin_api_session_maclaurin_series"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_maclaurinseries.c9fc0d37af7d"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -61,9 +64,11 @@ fun maclaurinSeries(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_series_capability_calculus_maclaurin_series_api_expression_operations_expression_maclaurin_series"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_maclaurinseries.fc5bf7108e4f"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.maclaurinSeries</code></p>
 
 ```kotlin signature
 fun maclaurinSeries(
@@ -72,12 +77,14 @@ fun maclaurinSeries(
 ): UniffiExpression
 ```
 
+</details>
+
 
 `taylor_series` specialised to expansion point 0.
 
 ### laurent_series
 
-<a id="entry-presentation_kotlin_series_capability_calculus_laurent_series_api_session_laurent_series"></a>
+<a id="entry-presentation_kotlin_api_session_laurent_series"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_laurentseries.1693796918d8"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -90,9 +97,11 @@ fun laurentSeries(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_series_capability_calculus_laurent_series_api_expression_laurent_series"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_laurentseries.a8ed35729442"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.laurentSeries</code></p>
 
 ```kotlin signature
 fun laurentSeries(
@@ -101,6 +110,8 @@ fun laurentSeries(
     order: kotlin.ULong,
 ): UniffiExpression
 ```
+
+</details>
 
 
 Truncated Laurent expansion at `center`: every \((\operatorname{variable} - \operatorname{center})^k\) term
@@ -111,7 +122,7 @@ because no finite truncation of the principal part is correct.
 
 ### residue
 
-<a id="entry-presentation_kotlin_series_capability_calculus_residue_api_analysis_session_residue"></a>
+<a id="entry-presentation_kotlin_api_session_residue"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_residue.674253add0e1"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -123,9 +134,11 @@ fun residue(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_series_capability_calculus_residue_api_expression_operations_expression_residue"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_residue.b8182a841444"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.residue</code></p>
 
 ```kotlin signature
 fun residue(
@@ -133,6 +146,8 @@ fun residue(
     center: UniffiExpression,
 ): UniffiExpression
 ```
+
+</details>
 
 
 Coefficient of \((\operatorname{variable} - \operatorname{center})^{-1}\) in the Laurent expansion at
@@ -144,7 +159,7 @@ explicit algebraic centers do not need to occur as structural factors.
 
 ### pole_order
 
-<a id="entry-presentation_kotlin_series_capability_calculus_pole_order_api_analysis_session_pole_order"></a>
+<a id="entry-presentation_kotlin_api_session_pole_order"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_poleorder.5bc5c7db6166"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -156,9 +171,11 @@ fun poleOrder(
 ): kotlin.Long?
 ```
 
-<a id="entry-presentation_kotlin_series_capability_calculus_pole_order_api_expression_operations_expression_pole_order"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_poleorder.9bcda1debf7f"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.poleOrder</code></p>
 
 ```kotlin signature
 fun poleOrder(
@@ -166,6 +183,8 @@ fun poleOrder(
     center: UniffiExpression,
 ): kotlin.Long?
 ```
+
+</details>
 
 
 Order of the singularity at `center`: `0` for analytic/removable points,

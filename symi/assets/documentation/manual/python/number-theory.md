@@ -8,7 +8,7 @@ machine integers.)
 
 ### is_prime
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_is_prime_api_session_is_prime"></a>
+<a id="entry-presentation_python_api_session_is_prime"></a>
 <a id="placement-placement.python.python_module.module_is_prime.267824491e40"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -26,15 +26,14 @@ is_prime(n: ExpressionLike) -> Optional[bool]
 is_prime(n: ExpressionLike) -> Optional[bool]
 ```
 
-</details>
-
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_is_prime_api_expression_is_prime"></a>
 <a id="placement-placement.python.python_class.expression_is_prime.67e50f5358ce"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.is_prime</code></p>
 
 ```python signature
 is_prime() -> Optional[bool]
 ```
+
+</details>
 
 
 Deterministic primality verdict; `None` when the input is outside the
@@ -43,7 +42,7 @@ handles).
 
 ### factor_integer
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_factor_integer_api_session_factor_integer"></a>
+<a id="entry-presentation_python_api_session_factor_integer"></a>
 <a id="placement-placement.python.python_module.module_factor_integer.cb82c971d037"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -83,7 +82,7 @@ as a leading `(-1, 1)` factor exactly as the core reports it.
 
 ### integer_gcd
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_integer_gcd_api_session_integer_gcd"></a>
+<a id="entry-presentation_python_api_session_integer_gcd"></a>
 <a id="placement-placement.python.python_module.module_integer_gcd.231de115dd56"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -108,7 +107,7 @@ Greatest common divisor (non-negative).
 
 ### integer_lcm
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_integer_lcm_api_session_integer_lcm"></a>
+<a id="entry-presentation_python_api_session_integer_lcm"></a>
 <a id="placement-placement.python.python_module.module_integer_lcm.4761d486032c"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -133,7 +132,7 @@ Least common multiple.
 
 ### extended_euclidean
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_extended_euclidean_api_number_theory_session_extended_euclidean"></a>
+<a id="entry-presentation_python_api_session_extended_euclidean"></a>
 <a id="placement-placement.python.python_module.module_extended_euclidean.3ff42fc31d43"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -165,7 +164,7 @@ array `[gcd, x, y]`.
 
 ### modular_power
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_modular_power_api_number_theory_session_modular_power"></a>
+<a id="entry-presentation_python_api_session_modular_power"></a>
 <a id="placement-placement.python.python_module.module_modular_power.1505cbbc3865"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -199,7 +198,7 @@ modulus and non-negative exponent.
 
 ### modular_inverse
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_modular_inverse_api_number_theory_session_modular_inverse"></a>
+<a id="entry-presentation_python_api_session_modular_inverse"></a>
 <a id="placement-placement.python.python_module.module_modular_inverse.2972f88b7411"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -231,7 +230,7 @@ Multiplicative inverse of `value` modulo `modulus`; errors when
 
 ### chinese_remainder
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_chinese_remainder_api_number_theory_session_chinese_remainder"></a>
+<a id="entry-presentation_python_api_session_chinese_remainder"></a>
 <a id="placement-placement.python.python_module.module_chinese_remainder.c5672ded2bce"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -259,7 +258,7 @@ raise. **Notes:** WASM passes a flat interleaved array
 
 ### euler_totient
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_euler_totient_api_number_theory_session_euler_totient"></a>
+<a id="entry-presentation_python_api_session_euler_totient"></a>
 <a id="placement-placement.python.python_module.module_euler_totient.3a7b17b90a02"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -284,7 +283,7 @@ Euler's \(\varphi(n)\); requires a positive integer.
 
 ### mobius
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_mobius_api_session_mobius"></a>
+<a id="entry-presentation_python_api_session_mobius"></a>
 <a id="placement-placement.python.python_module.module_mobius.daacb524f5df"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -309,7 +308,7 @@ Möbius \(\mu(n) \in \{-1, 0, 1\}\); requires a positive integer.
 
 ### divisor_count
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_divisor_count_api_session_divisor_count"></a>
+<a id="entry-presentation_python_api_session_divisor_count"></a>
 <a id="placement-placement.python.python_module.module_divisor_count.2864c9c4aff9"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -334,7 +333,7 @@ Number of positive divisors \(\tau(n)\).
 
 ### divisor_sigma
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_divisor_sigma_api_session_divisor_sigma"></a>
+<a id="entry-presentation_python_api_session_divisor_sigma"></a>
 <a id="placement-placement.python.python_module.module_divisor_sigma.3d6e1bf67cc5"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -360,7 +359,7 @@ Sum of the `power`-th powers of the positive divisors \(\sigma_{\mathit{power}}(
 
 ### jacobi_symbol
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_jacobi_symbol_api_session_jacobi_symbol"></a>
+<a id="entry-presentation_python_api_session_jacobi_symbol"></a>
 <a id="placement-placement.python.python_module.module_jacobi_symbol.6dbcccc83c42"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -392,7 +391,7 @@ integer.
 
 ### legendre_symbol
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_legendre_symbol_api_session_legendre_symbol"></a>
+<a id="entry-presentation_python_api_session_legendre_symbol"></a>
 <a id="placement-placement.python.python_module.module_legendre_symbol.2b0685ef4d51"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -417,7 +416,7 @@ The Legendre symbol; the second argument must be an odd prime.
 
 ### kronecker_symbol
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_kronecker_symbol_api_session_kronecker_symbol"></a>
+<a id="entry-presentation_python_api_session_kronecker_symbol"></a>
 <a id="placement-placement.python.python_module.module_kronecker_symbol.2a7455ff34c3"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -448,7 +447,7 @@ The Kronecker extension of the Jacobi symbol to all integer denominators.
 
 ### integer_square_root
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_integer_square_root_api_session_integer_square_root"></a>
+<a id="entry-presentation_python_api_session_integer_square_root"></a>
 <a id="placement-placement.python.python_module.module_integer_square_root.dd9d0f1b24e5"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -473,7 +472,7 @@ integer_square_root(n: ExpressionLike) -> Expression
 
 ### integer_nth_root
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_integer_nth_root_api_session_integer_nth_root"></a>
+<a id="entry-presentation_python_api_session_integer_nth_root"></a>
 <a id="placement-placement.python.python_module.module_integer_nth_root.98fb5209c8f6"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -499,7 +498,7 @@ exists (even index, negative n).
 
 ### continued_fraction_rational
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_continued_fraction_rational_api_number_theory_session_continued_fraction_rational"></a>
+<a id="entry-presentation_python_api_session_continued_fraction_rational"></a>
 <a id="placement-placement.python.python_module.module_continued_fraction_rational.b0f12992fa4e"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -525,7 +524,7 @@ or rational expression leaf.
 
 ### continued_fraction_quadratic_irrational
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_continued_fraction_quadratic_irrational_api_number_theory_session_continued_fraction_quadratic_irrational"></a>
+<a id="entry-presentation_python_api_session_continued_fraction_quadratic_irrational"></a>
 <a id="placement-placement.python.python_module.module_continued_fraction_quadratic_irrational.2c040008a65d"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -574,7 +573,7 @@ exact integers and never guess.
 
 ### solve_linear_diophantine
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_solve_linear_diophantine_api_number_theory_session_solve_linear_diophantine"></a>
+<a id="entry-presentation_python_api_session_solve_linear_diophantine"></a>
 <a id="placement-placement.python.python_module.module_solve_linear_diophantine.e608e787a9af"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -610,7 +609,7 @@ coefficients and the constant must be integer expression leaves.
 
 ### solve_linear_diophantine_system
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_solve_linear_diophantine_system_api_number_theory_session_solve_linear_diophantine_system"></a>
+<a id="entry-presentation_python_api_session_solve_linear_diophantine_system"></a>
 <a id="placement-placement.python.python_module.module_solve_linear_diophantine_system.c23ef0041f98"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -645,7 +644,7 @@ not an integer expression leaf, or the dimensions do not agree.
 
 ### solve_pell
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_solve_pell_api_number_theory_session_solve_pell"></a>
+<a id="entry-presentation_python_api_session_solve_pell"></a>
 <a id="placement-placement.python.python_module.module_solve_pell.1ed2c97e92c4"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -674,7 +673,7 @@ solution).
 
 ### solve_negative_pell
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_solve_negative_pell_api_number_theory_session_solve_negative_pell"></a>
+<a id="entry-presentation_python_api_session_solve_negative_pell"></a>
 <a id="placement-placement.python.python_module.module_solve_negative_pell.8a2a60487fe4"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -701,7 +700,7 @@ and an empty list otherwise.
 
 ### pell_solutions
 
-<a id="entry-presentation_python_number_theory_capability_discrete_mathematics_pell_solutions_api_number_theory_session_pell_solutions"></a>
+<a id="entry-presentation_python_api_session_pell_solutions"></a>
 <a id="placement-placement.python.python_module.module_pell_solutions.2e80efa05d03"></a>
 <p class="symi-entry-owner">Default context</p>
 

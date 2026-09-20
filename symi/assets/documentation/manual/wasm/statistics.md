@@ -10,9 +10,9 @@ operations. The canonical names for the gamma and beta families are
 
 ### distribution
 
-<a id="entry-presentation_wasm_statistics_capability_probability_distribution_api_probability_session_distribution"></a>
+<a id="entry-presentation_wasm_api_session_distribution"></a>
 <a id="placement-placement.wasm.wasm_module.module_distribution.a8ab95ab5293"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 distribution(name: string, parameters: Expression[]): Expression
@@ -22,7 +22,7 @@ distribution(name: string, parameters: Expression[]): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_distribution.8db68bce15d8"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.distribution</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.distribution</code></p>
 
 ```typescript signature
 distribution(name: string, parameters: Expression[]): Expression
@@ -48,9 +48,9 @@ independent under hash-consing.
 
 ### density
 
-<a id="entry-presentation_wasm_statistics_capability_probability_density_api_probability_session_density"></a>
+<a id="entry-presentation_wasm_api_session_density"></a>
 <a id="placement-placement.wasm.wasm_module.module_density.cd2642291cfe"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 density(random_variable: Expression, point: Expression): Expression
@@ -60,7 +60,7 @@ density(random_variable: Expression, point: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_density.4a13b738d461"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.density</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.density</code></p>
 
 ```typescript signature
 density(random_variable: Expression, point: Expression): Expression
@@ -82,9 +82,9 @@ Cumulative distribution function of `random_variable` evaluated at `point`.
 
 ### expectation
 
-<a id="entry-presentation_wasm_statistics_capability_probability_expectation_api_probability_session_expectation"></a>
+<a id="entry-presentation_wasm_api_session_expectation"></a>
 <a id="placement-placement.wasm.wasm_module.module_expectation.4574bc9e8615"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 expectation(
@@ -97,7 +97,7 @@ expectation(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_expectation.67e8bae93912"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.expectation</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.expectation</code></p>
 
 ```typescript signature
 expectation(
@@ -115,9 +115,9 @@ leaves consume the distribution's mean and raw moments.
 
 ### variance
 
-<a id="entry-presentation_wasm_statistics_capability_probability_variance_api_probability_session_variance"></a>
+<a id="entry-presentation_wasm_api_session_variance"></a>
 <a id="placement-placement.wasm.wasm_module.module_variance.1e88b3e35c6d"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 variance(target: Expression, random_variables: Expression[]): Expression
@@ -127,7 +127,7 @@ variance(target: Expression, random_variables: Expression[]): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_variance.f8ef1aa2b2f3"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.variance</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.variance</code></p>
 
 ```typescript signature
 variance(target: Expression, random_variables: Expression[]): Expression
@@ -140,9 +140,9 @@ Variance of `target` over the listed independent random variables.
 
 ### covariance
 
-<a id="entry-presentation_wasm_statistics_capability_probability_covariance_api_probability_session_covariance"></a>
+<a id="entry-presentation_wasm_api_session_covariance"></a>
 <a id="placement-placement.wasm.wasm_module.module_covariance.7f07c38ba9fc"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 covariance(
@@ -156,7 +156,7 @@ covariance(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_covariance.cf6b9f0ac1bf"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.covariance</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.covariance</code></p>
 
 ```typescript signature
 covariance(
@@ -174,9 +174,9 @@ zero for independent operands.
 
 ### probability
 
-<a id="entry-presentation_wasm_statistics_capability_probability_probability_api_probability_session_probability"></a>
+<a id="entry-presentation_wasm_api_session_probability"></a>
 <a id="placement-placement.wasm.wasm_module.module_probability.048a1136670a"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 probability(
@@ -189,7 +189,7 @@ probability(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_probability.7ba12c2caf78"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.probability</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.probability</code></p>
 
 ```typescript signature
 probability(
@@ -206,9 +206,9 @@ listed independent random variables.
 
 ### moment
 
-<a id="entry-presentation_wasm_statistics_capability_probability_moment_api_probability_session_moment"></a>
+<a id="entry-presentation_wasm_api_session_moment"></a>
 <a id="placement-placement.wasm.wasm_module.module_moment.2520aabf6538"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 moment(random_variable: Expression, order: Expression): Expression
@@ -218,7 +218,7 @@ moment(random_variable: Expression, order: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_moment.39df9a0ae11b"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.moment</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.moment</code></p>
 
 ```typescript signature
 moment(random_variable: Expression, order: Expression): Expression
@@ -231,9 +231,9 @@ The `order`-th raw moment `E[X^order]` of `random_variable`.
 
 ### cumulant
 
-<a id="entry-presentation_wasm_statistics_capability_probability_cumulant_api_probability_session_cumulant"></a>
+<a id="entry-presentation_wasm_api_session_cumulant"></a>
 <a id="placement-placement.wasm.wasm_module.module_cumulant.81f780dfe410"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 cumulant(random_variable: Expression, order: Expression): Expression
@@ -243,7 +243,7 @@ cumulant(random_variable: Expression, order: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_cumulant.842dc00f3798"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.cumulant</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.cumulant</code></p>
 
 ```typescript signature
 cumulant(random_variable: Expression, order: Expression): Expression
@@ -280,9 +280,9 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ### characteristicFunction
 
-<a id="entry-presentation_wasm_statistics_capability_probability_characteristic_function_api_probability_session_characteristic_function"></a>
+<a id="entry-presentation_wasm_api_session_characteristic_function"></a>
 <a id="placement-placement.wasm.wasm_module.module_characteristicfunction.6bcf8578c6fc"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 characteristicFunction(
@@ -297,7 +297,7 @@ Closed-form characteristic function \(\varphi_X(t)\) of `random_variable` in the
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_characteristicfunction.67fa97a031f0"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.characteristicFunction</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.characteristicFunction</code></p>
 
 ```typescript signature
 characteristicFunction(
@@ -310,9 +310,9 @@ characteristicFunction(
 
 ### cumulativeDistribution
 
-<a id="entry-presentation_wasm_statistics_capability_probability_cumulative_distribution_api_probability_session_cumulative_distribution"></a>
+<a id="entry-presentation_wasm_api_session_cumulative_distribution"></a>
 <a id="placement-placement.wasm.wasm_module.module_cumulativedistribution.6fed2a150b33"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 cumulativeDistribution(
@@ -327,7 +327,7 @@ Cumulative distribution function of `random_variable` evaluated at `point`.
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_cumulativedistribution.437149c7bc0e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.cumulativeDistribution</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.cumulativeDistribution</code></p>
 
 ```typescript signature
 cumulativeDistribution(
@@ -340,9 +340,9 @@ cumulativeDistribution(
 
 ### momentGeneratingFunction
 
-<a id="entry-presentation_wasm_statistics_capability_probability_moment_generating_function_api_probability_session_moment_generating_function"></a>
+<a id="entry-presentation_wasm_api_session_moment_generating_function"></a>
 <a id="placement-placement.wasm.wasm_module.module_momentgeneratingfunction.7320c47b4aec"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 momentGeneratingFunction(
@@ -357,7 +357,7 @@ Closed-form moment generating function `M_X(t)` of `random_variable` in the name
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_momentgeneratingfunction.5c1a2bc41ac9"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.momentGeneratingFunction</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.momentGeneratingFunction</code></p>
 
 ```typescript signature
 momentGeneratingFunction(
@@ -370,9 +370,9 @@ momentGeneratingFunction(
 
 ### randomVariable
 
-<a id="entry-presentation_wasm_statistics_capability_probability_random_variable_api_probability_session_random_variable"></a>
+<a id="entry-presentation_wasm_api_session_random_variable"></a>
 <a id="placement-placement.wasm.wasm_module.module_randomvariable.88bac8365ef0"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 randomVariable(name: string, distribution: Expression): Expression
@@ -384,7 +384,7 @@ Build a random variable named `name` drawn from `distribution`.
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_randomvariable.2116c1217247"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.randomVariable</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.randomVariable</code></p>
 
 ```typescript signature
 randomVariable(name: string, distribution: Expression): Expression

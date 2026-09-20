@@ -10,7 +10,7 @@ operations. The canonical names for the gamma and beta families are
 
 ### distribution
 
-<a id="entry-presentation_python_statistics_capability_probability_distribution_api_probability_session_distribution"></a>
+<a id="entry-presentation_python_api_session_distribution"></a>
 <a id="placement-placement.python.python_module.module_distribution.99e19fa872d0"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -45,7 +45,7 @@ family's arity raises a collection-shape error; it does not create an
 
 ### random_variable
 
-<a id="entry-presentation_python_statistics_capability_probability_random_variable_api_probability_session_random_variable"></a>
+<a id="entry-presentation_python_api_session_random_variable"></a>
 <a id="placement-placement.python.python_module.module_random_variable.e8379bd928e7"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -72,7 +72,7 @@ independent under hash-consing.
 
 ### density
 
-<a id="entry-presentation_python_statistics_capability_probability_density_api_probability_session_density"></a>
+<a id="entry-presentation_python_api_session_density"></a>
 <a id="placement-placement.python.python_module.module_density.44b9d8513f98"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -105,7 +105,7 @@ unevaluated structural form when no closed form exists.
 
 ### cumulative_distribution
 
-<a id="entry-presentation_python_statistics_capability_probability_cumulative_distribution_api_probability_session_cumulative_distribution"></a>
+<a id="entry-presentation_python_api_session_cumulative_distribution"></a>
 <a id="placement-placement.python.python_module.module_cumulative_distribution.fed9e9b364fa"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -136,7 +136,7 @@ Cumulative distribution function of `random_variable` evaluated at `point`.
 
 ### expectation
 
-<a id="entry-presentation_python_statistics_capability_probability_expectation_api_probability_session_expectation"></a>
+<a id="entry-presentation_python_api_session_expectation"></a>
 <a id="placement-placement.python.python_module.module_expectation.18ccccad83ac"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -169,7 +169,7 @@ leaves consume the distribution's mean and raw moments.
 
 ### variance
 
-<a id="entry-presentation_python_statistics_capability_probability_variance_api_probability_session_variance"></a>
+<a id="entry-presentation_python_api_session_variance"></a>
 <a id="placement-placement.python.python_module.module_variance.c842ecc5717d"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -200,7 +200,7 @@ Variance of `target` over the listed independent random variables.
 
 ### covariance
 
-<a id="entry-presentation_python_statistics_capability_probability_covariance_api_probability_session_covariance"></a>
+<a id="entry-presentation_python_api_session_covariance"></a>
 <a id="placement-placement.python.python_module.module_covariance.1d9bb3cec96e"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -234,7 +234,7 @@ zero for independent operands.
 
 ### probability
 
-<a id="entry-presentation_python_statistics_capability_probability_probability_api_probability_session_probability"></a>
+<a id="entry-presentation_python_api_session_probability"></a>
 <a id="placement-placement.python.python_module.module_probability.1fd29c23b842"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -266,7 +266,7 @@ listed independent random variables.
 
 ### moment
 
-<a id="entry-presentation_python_statistics_capability_probability_moment_api_probability_session_moment"></a>
+<a id="entry-presentation_python_api_session_moment"></a>
 <a id="placement-placement.python.python_module.module_moment.fa9725983b7b"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -297,7 +297,7 @@ The `order`-th raw moment `E[X^order]` of `random_variable`.
 
 ### cumulant
 
-<a id="entry-presentation_python_statistics_capability_probability_cumulant_api_probability_session_cumulant"></a>
+<a id="entry-presentation_python_api_session_cumulant"></a>
 <a id="placement-placement.python.python_module.module_cumulant.03a574ea9dbd"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -328,7 +328,7 @@ The `order`-th cumulant of `random_variable`.
 
 ### moment_generating_function
 
-<a id="entry-presentation_python_statistics_capability_probability_moment_generating_function_api_probability_session_moment_generating_function"></a>
+<a id="entry-presentation_python_api_session_moment_generating_function"></a>
 <a id="placement-placement.python.python_module.module_moment_generating_function.9346d977ea00"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -361,7 +361,7 @@ form.
 
 ### characteristic_function
 
-<a id="entry-presentation_python_statistics_capability_probability_characteristic_function_api_probability_session_characteristic_function"></a>
+<a id="entry-presentation_python_api_session_characteristic_function"></a>
 <a id="placement-placement.python.python_module.module_characteristic_function.1b31581d27c3"></a>
 <p class="symi-entry-owner">Default context</p>
 

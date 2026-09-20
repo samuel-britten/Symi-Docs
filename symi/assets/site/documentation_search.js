@@ -36,23 +36,31 @@ export function first_sentence(text, limit = 160) {
 }
 
 // Precompute the normalised fields one entry is matched against, once per artifact load.
+// Every spelling an entry actually has is matched: the display name, the owner-qualified name
+// an index shows, each host qualified name, and each bare member name. A qualified query such
+// as `PrincipalPart.matrix` therefore reaches the exact member rather than its namesakes.
 export function prepare_search_entry(entry) {
     const calling_forms = entry.calling_forms || [];
     const qualified_names = calling_forms.map(form => form.qualified_name).filter(Boolean);
     const parameter_names = calling_forms.flatMap(form => (form.parameters || []).map(parameter => parameter.name));
+    const names = [...new Set([
+        entry.display_name,
+        entry.qualified_display_name || entry.display_name,
+        ...(entry.spellings || []),
+        ...qualified_names,
+    ].filter(Boolean))];
     return {
         kind: "entry",
         entry,
         name: normalize_search_text(entry.display_name),
         compact_name: compact(entry.display_name),
-        qualified: qualified_names.map(normalize_search_text),
-        compact_qualified: qualified_names.map(compact),
+        qualified: names.map(normalize_search_text),
+        compact_qualified: names.map(compact),
         parameters: parameter_names.map(normalize_search_text),
         owner: normalize_search_text(entry.owner_label),
-        compact_text: compact([entry.display_name, ...qualified_names].join(" ")),
+        compact_text: compact(names.join(" ")),
         text: normalize_search_text([
-            entry.display_name,
-            ...qualified_names,
+            ...names,
             ...parameter_names,
             entry.owner_label,
             entry.category_identifier,
@@ -146,6 +154,22 @@ export function owner_group(owner_label) {
     return operation_owner_labels.has(label) ? "operation" : label;
 }
 
+// What makes two results the same result. Within one language a reader entry already is one
+// documentation destination, so its identity is the key and nothing further is merged. Across
+// languages the shared destination identity is what joins two host spellings; an identity
+// only one host has (a Python dunder, a native Rust item) belongs to that host alone and is
+// never merged into a namesake elsewhere.
+export function entry_group_key(entry, all_languages) {
+    const identity = entry.destination_identifier || entry.documentation_identity;
+    if (!all_languages) {
+        return `${entry.language}|${identity || `${entry.display_name}|${owner_group(entry.owner_label)}`}`;
+    }
+    if (identity != null && identity.startsWith("api:")) {
+        return identity;
+    }
+    return `${entry.language}|${identity || `${entry.display_name}|${owner_group(entry.owner_label)}`}`;
+}
+
 function entry_order(left, right, category_order) {
     return (owner_rank[left.owner_label] ?? 3) - (owner_rank[right.owner_label] ?? 3)
         || (category_order.get(left.category_identifier) ?? 1e9) - (category_order.get(right.category_identifier) ?? 1e9)
@@ -153,18 +177,14 @@ function entry_order(left, right, category_order) {
         || left.presentation_entry_identifier.localeCompare(right.presentation_entry_identifier);
 }
 
-// One result per semantic entry: within a language, the calling forms of one capability that
-// the reference lists under separate owners (module function and expression method, say)
-// collapse into one result led by the default form. Across languages, the same operation
-// collapses only when every language is searched, and the result lists each language.
+// One result per documentation destination. Within a language that is already one reader
+// entry, with its calling forms inside it. Across languages, the same operation collapses
+// only when every language is searched, and the result lists each language it is published in.
 export function group_entry_results(scored, all_languages, category_order) {
     const groups = new Map();
     for (const { prepared, score } of scored) {
         const entry = prepared.entry;
-        const owner = owner_group(entry.owner_label);
-        const key = all_languages
-            ? `${compact(entry.display_name)}|${owner}`
-            : `${entry.language}|${entry.capability_identifier}|${entry.display_name}|${owner}`;
+        const key = entry_group_key(entry, all_languages);
         if (!groups.has(key)) {
             groups.set(key, { kind: "entry", score, entries: [] });
         }

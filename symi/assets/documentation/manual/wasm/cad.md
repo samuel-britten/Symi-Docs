@@ -35,6 +35,16 @@ where those polynomials vanish. Raises when any polynomial is outside
 signature is `new cylindrical_algebraic_decomposition(polynomials: ExpressionLike[],
 variables: string[], equational_constraints?: number[])`.
 
+<a id="entry-presentation_wasm_host_wasm_contextconstructor_new"></a>
+<a id="placement-placement.wasm.javascript_facade.contextconstructor_new.0f9094d96686"></a>
+<p class="symi-entry-owner">new constructor</p>
+
+```typescript signature
+new Context(): Context
+```
+
+Construct the CAD of the polynomials in the given variable order \(x_1,\ldots,x_n\); projection eliminates \(x_n\) first).
+
 ## Accessors
 
 ### cell_count
@@ -95,7 +105,7 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ### SymiFacade
 
-<a id="entry-presentation_wasm_cad_capability_algebra_symi_facade_unresolved"></a>
+<a id="entry-presentation_wasm_host_wasm_module_symifacade"></a>
 <a id="placement-placement.wasm.javascript_facade.symifacade.ff8eea78fa52"></a>
 <p class="symi-entry-owner">Type</p>
 
@@ -107,7 +117,7 @@ Public type placement for SymiFacade.
 
 ### createFacade
 
-<a id="entry-presentation_wasm_cad_capability_algebra_create_facade_unresolved"></a>
+<a id="entry-presentation_wasm_host_wasm_module_createfacade"></a>
 <a id="placement-placement.wasm.javascript_facade.module_createfacade.ec941be21075"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -116,4 +126,92 @@ function createFacade(rawModule: unknown): SymiFacade
 ```
 
 Public function placement for createFacade.
+
+### CylindricalAlgebraicDecomposition
+
+<a id="entry-presentation_wasm_api_cylindricalalgebraicdecomposition"></a>
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition.8d211ca9a1c3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CylindricalAlgebraicDecomposition constructor</p>
+
+```typescript signature
+new CylindricalAlgebraicDecomposition(
+    expressions: Expression[],
+    variables: string[],
+    equational_constraints?: Uint32Array | null,
+)
+```
+
+Construct the CAD of the polynomials in the given variable order \(x_1,\ldots,x_n\); projection eliminates \(x_n\) first).
+
+#### CylindricalAlgebraicDecomposition.cellCount
+
+<a id="entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_count"></a>
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_cellcount.2a3856c631ae"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CylindricalAlgebraicDecomposition method</p>
+
+```typescript signature
+cellCount(): number
+```
+
+The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
+
+#### CylindricalAlgebraicDecomposition.cellDimension
+
+<a id="entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_dimension"></a>
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_celldimension.58941abd698b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CylindricalAlgebraicDecomposition method</p>
+
+```typescript signature
+cellDimension(index: number): number
+```
+
+The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of sector coordinates along its cylindrical stack).
+
+#### CylindricalAlgebraicDecomposition.cellKind
+
+<a id="entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_kind"></a>
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_cellkind.b0d16f9fc18f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CylindricalAlgebraicDecomposition method</p>
+
+```typescript signature
+cellKind(index: number): string
+```
+
+`"section"` or `"sector"` — whether the cell is a root section or an open interval in its top variable.
+
+#### CylindricalAlgebraicDecomposition.cellSamplePoint
+
+<a id="entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_sample_point"></a>
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_cellsamplepoint.fb99fcd53a5b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CylindricalAlgebraicDecomposition method</p>
+
+```typescript signature
+cellSamplePoint(index: number): Float64Array
+```
+
+The coordinates of the full cell's sample point as floats — a numeric view via the multi-precision evaluator, not a decision.
+
+#### CylindricalAlgebraicDecomposition.cellSignVector
+
+<a id="entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_sign_vector"></a>
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_cellsignvector.1dd5b1c2f6cd"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CylindricalAlgebraicDecomposition method</p>
+
+```typescript signature
+cellSignVector(index: number): Int32Array
+```
+
+The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in input order.
+
+#### CylindricalAlgebraicDecomposition.projectionOperatorUsed
+
+<a id="entry-presentation_wasm_api_cylindricalalgebraicdecomposition_projection_operator_used"></a>
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_projectionoperatorused.34f87e17828d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CylindricalAlgebraicDecomposition method</p>
+
+```typescript signature
+projectionOperatorUsed(): string
+```
+
+The projection operator the decomposition was built with: `"brown"` for the well-oriented fast path, `"lazard"` when the well-orientedness guard forced the complete fallback, `"equational_constraint"` for an equational-constraint CAD.
 

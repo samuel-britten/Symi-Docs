@@ -10,9 +10,9 @@ arbitrary-precision numeric evaluation (real and complex) all apply.
 
 ### gamma
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_gamma_api_session_gamma"></a>
+<a id="entry-presentation_wasm_api_session_gamma"></a>
 <a id="placement-placement.wasm.wasm_module.module_gamma.c6aee0f501e6"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 gamma(x: Expression): Expression
@@ -22,7 +22,7 @@ gamma(x: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_gamma.15bd4b87da3c"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.gamma</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.gamma</code></p>
 
 ```typescript signature
 gamma(x: Expression): Expression
@@ -35,16 +35,34 @@ The gamma function \(\Gamma(x)\), the analytic continuation of `(x-1)!`.
 
 ### log_gamma
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.log_gamma`](/symi/python/special-functions#log_gamma) in Python, [`UniffiSession.logGamma`](/symi/kotlin/special-functions#log_gamma) in Kotlin, [`UniffiSession.logGamma`](/symi/swift/special-functions#log_gamma) in Swift, [`api::Expression::log_gamma`](/symi/rust/special-functions#log_gamma) in Rust.*
+<a id="entry-presentation_wasm_api_session_log_gamma"></a>
+<a id="placement-placement.wasm.wasm_module.module_loggamma.9e2c3da58bd0"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+logGamma(x: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_loggamma.5ec5f03b6584"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.logGamma</code></p>
+
+```typescript signature
+logGamma(x: Expression): Expression
+```
+
+</details>
 
 
 The principal-branch log-gamma function (not `log(gamma(x))` off the real axis).
 
 ### digamma
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_digamma_api_session_digamma"></a>
+<a id="entry-presentation_wasm_api_session_digamma"></a>
 <a id="placement-placement.wasm.wasm_module.module_digamma.0d3732417250"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 digamma(x: Expression): Expression
@@ -54,7 +72,7 @@ digamma(x: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_digamma.8058ef2c8766"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.digamma</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.digamma</code></p>
 
 ```typescript signature
 digamma(x: Expression): Expression
@@ -67,9 +85,9 @@ The digamma function \(\psi(x) = \Gamma'(x)/\Gamma(x)\).
 
 ### polygamma
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_polygamma_api_session_polygamma"></a>
+<a id="entry-presentation_wasm_api_session_polygamma"></a>
 <a id="placement-placement.wasm.wasm_module.module_polygamma.79d3cb4f4460"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 polygamma(order: Expression, x: Expression): Expression
@@ -79,7 +97,7 @@ polygamma(order: Expression, x: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_polygamma.21297ea61e06"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.polygamma</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.polygamma</code></p>
 
 ```typescript signature
 polygamma(order: Expression, x: Expression): Expression
@@ -93,9 +111,9 @@ The polygamma function \(\psi^{(n)}(x)\), the order-th derivative of digamma;
 
 ### beta
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_beta_api_session_beta"></a>
+<a id="entry-presentation_wasm_api_session_beta"></a>
 <a id="placement-placement.wasm.wasm_module.module_beta.f91b83241a08"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 beta(x: Expression, y: Expression): Expression
@@ -105,7 +123,7 @@ beta(x: Expression, y: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_beta.10022cde03c3"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.beta</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.beta</code></p>
 
 ```typescript signature
 beta(x: Expression, y: Expression): Expression
@@ -118,9 +136,9 @@ The beta function \(\operatorname{B}(x, y) = \Gamma(x)\Gamma(y)/\Gamma(x+y)\).
 
 ### zeta
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_zeta_api_session_zeta"></a>
+<a id="entry-presentation_wasm_api_session_zeta"></a>
 <a id="placement-placement.wasm.wasm_module.module_zeta.25f1de1c8802"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 zeta(s: Expression): Expression
@@ -130,7 +148,7 @@ zeta(s: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_zeta.e838a7754a4e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.zeta</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.zeta</code></p>
 
 ```typescript signature
 zeta(s: Expression): Expression
@@ -159,9 +177,9 @@ polynomial in `a`.
 
 ### polylogarithm
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_polylogarithm_api_session_polylogarithm"></a>
+<a id="entry-presentation_wasm_api_session_polylogarithm"></a>
 <a id="placement-placement.wasm.wasm_module.module_polylogarithm.8ff9e7750a6e"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 polylogarithm(order: Expression, argument: Expression): Expression
@@ -171,7 +189,7 @@ polylogarithm(order: Expression, argument: Expression): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_polylogarithm.dc47bff1e1fe"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.polylogarithm</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.polylogarithm</code></p>
 
 ```typescript signature
 polylogarithm(order: Expression, argument: Expression): Expression
@@ -496,13 +514,39 @@ The Laguerre polynomial, lowered to its canonical generalized Laguerre head.
 This family is not part of the recommended JavaScript facade in this release. Call it through the generated `symi.raw` layer, whose entries are listed with their wasm-bindgen signatures above, and read [Migration](migration.md) for the ownership rules that apply there.
 
 
+### convert_polynomial_basis
+
+*Not exposed by the WASM / JavaScript bindings. Available as [`api::Expression::convert_polynomial_basis`](/symi/rust/special-functions#convert_polynomial_basis) in Rust.*
+
+
+Express a finite univariate polynomial in a classical orthogonal basis — as a
+combination of Chebyshev, Legendre, Hermite, Laguerre, Gegenbauer, or Jacobi
+polynomials rather than powers of the variable. The conversion is exact; a
+target that is not a finite univariate polynomial in `variable` declines.
+
+### orthogonal_polynomial_coefficient
+
+*Not exposed by the WASM / JavaScript bindings. Available as [`api::Expression::orthogonal_polynomial_coefficient`](/symi/rust/special-functions#orthogonal_polynomial_coefficient) in Rust.*
+
+
+One exact coefficient of that expansion, without forming the whole of it: the
+coefficient of the basis polynomial of the given degree.
+
+### expand_orthogonal_polynomial
+
+*Not exposed by the WASM / JavaScript bindings. Available as [`api::Expression::expand_orthogonal_polynomial`](/symi/rust/special-functions#expand_orthogonal_polynomial) in Rust.*
+
+
+The inverse direction: expand every classical orthogonal polynomial call in the
+expression into an ordinary polynomial in its variable.
+
 ## Additional API
 
 ### carlsonRc
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_carlson_rc_api_session_carlson_rc"></a>
+<a id="entry-presentation_wasm_api_session_carlson_rc"></a>
 <a id="placement-placement.wasm.wasm_module.module_carlsonrc.dd3341aeb043"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 carlsonRc(
@@ -517,7 +561,7 @@ Carlson's degenerate symmetric elliptic integral \(R_C(x,y)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_carlsonrc.903b0b7b6b2b"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.carlsonRc</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.carlsonRc</code></p>
 
 ```typescript signature
 carlsonRc(
@@ -530,9 +574,9 @@ carlsonRc(
 
 ### carlsonRd
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_carlson_rd_api_session_carlson_rd"></a>
+<a id="entry-presentation_wasm_api_session_carlson_rd"></a>
 <a id="placement-placement.wasm.wasm_module.module_carlsonrd.26b89bd7eade"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 carlsonRd(
@@ -548,7 +592,7 @@ Carlson's symmetric elliptic integral \(R_D(x,y,z)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_carlsonrd.11aac1f3979a"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.carlsonRd</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.carlsonRd</code></p>
 
 ```typescript signature
 carlsonRd(
@@ -562,9 +606,9 @@ carlsonRd(
 
 ### carlsonRf
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_carlson_rf_api_session_carlson_rf"></a>
+<a id="entry-presentation_wasm_api_session_carlson_rf"></a>
 <a id="placement-placement.wasm.wasm_module.module_carlsonrf.8415cba14475"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 carlsonRf(
@@ -580,7 +624,7 @@ Carlson's symmetric elliptic integral \(R_F(x,y,z)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_carlsonrf.6d094605d199"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.carlsonRf</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.carlsonRf</code></p>
 
 ```typescript signature
 carlsonRf(
@@ -594,9 +638,9 @@ carlsonRf(
 
 ### carlsonRj
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_carlson_rj_api_session_carlson_rj"></a>
+<a id="entry-presentation_wasm_api_session_carlson_rj"></a>
 <a id="placement-placement.wasm.wasm_module.module_carlsonrj.6686de7356a8"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 carlsonRj(
@@ -613,7 +657,7 @@ Carlson's symmetric elliptic integral \(R_J(x,y,z,p)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_carlsonrj.a4fb7ba28bd8"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.carlsonRj</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.carlsonRj</code></p>
 
 ```typescript signature
 carlsonRj(
@@ -628,9 +672,9 @@ carlsonRj(
 
 ### chebyshevPolynomialFirstKind
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_chebyshev_polynomial_first_kind_api_session_chebyshev_polynomial_first_kind"></a>
+<a id="entry-presentation_wasm_api_session_chebyshev_polynomial_first_kind"></a>
 <a id="placement-placement.wasm.wasm_module.module_chebyshevpolynomialfirstkind.ebde5c207b56"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 chebyshevPolynomialFirstKind(
@@ -645,7 +689,7 @@ The Chebyshev polynomial \(T_n(x)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_chebyshevpolynomialfirstkind.0a328846aedc"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.chebyshevPolynomialFirstKind</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.chebyshevPolynomialFirstKind</code></p>
 
 ```typescript signature
 chebyshevPolynomialFirstKind(
@@ -658,9 +702,9 @@ chebyshevPolynomialFirstKind(
 
 ### chebyshevPolynomialSecondKind
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_chebyshev_polynomial_second_kind_api_session_chebyshev_polynomial_second_kind"></a>
+<a id="entry-presentation_wasm_api_session_chebyshev_polynomial_second_kind"></a>
 <a id="placement-placement.wasm.wasm_module.module_chebyshevpolynomialsecondkind.c943050fbb05"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 chebyshevPolynomialSecondKind(
@@ -675,7 +719,7 @@ The Chebyshev polynomial \(U_n(x)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_chebyshevpolynomialsecondkind.e583655d7674"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.chebyshevPolynomialSecondKind</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.chebyshevPolynomialSecondKind</code></p>
 
 ```typescript signature
 chebyshevPolynomialSecondKind(
@@ -688,9 +732,9 @@ chebyshevPolynomialSecondKind(
 
 ### ellipticE
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_elliptic_e_api_session_elliptic_e"></a>
+<a id="entry-presentation_wasm_api_session_elliptic_e"></a>
 <a id="placement-placement.wasm.wasm_module.module_elliptice.77784ec06567"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 ellipticE(parameter: Expression): Expression
@@ -702,7 +746,7 @@ The complete second-kind elliptic integral \(E(m)\), with parameter \(m=k^2\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_elliptice.5532b3804b95"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ellipticE</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.ellipticE</code></p>
 
 ```typescript signature
 ellipticE(parameter: Expression): Expression
@@ -712,9 +756,9 @@ ellipticE(parameter: Expression): Expression
 
 ### ellipticEIncomplete
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_elliptic_e_incomplete_api_session_elliptic_e_incomplete"></a>
+<a id="entry-presentation_wasm_api_session_elliptic_e_incomplete"></a>
 <a id="placement-placement.wasm.wasm_module.module_ellipticeincomplete.07191f89a2c0"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 ellipticEIncomplete(
@@ -729,7 +773,7 @@ The incomplete second-kind elliptic integral \(E(\phi\mid m)\), with parameter \
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_ellipticeincomplete.25cb5b0479c7"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ellipticEIncomplete</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.ellipticEIncomplete</code></p>
 
 ```typescript signature
 ellipticEIncomplete(
@@ -742,9 +786,9 @@ ellipticEIncomplete(
 
 ### ellipticF
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_elliptic_f_api_session_elliptic_f"></a>
+<a id="entry-presentation_wasm_api_session_elliptic_f"></a>
 <a id="placement-placement.wasm.wasm_module.module_ellipticf.7cc3c6a31f32"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 ellipticF(amplitude: Expression, parameter: Expression): Expression
@@ -756,7 +800,7 @@ The incomplete first-kind elliptic integral \(F(\phi\mid m)\), with parameter \(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_ellipticf.33bd7036e7c9"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ellipticF</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.ellipticF</code></p>
 
 ```typescript signature
 ellipticF(amplitude: Expression, parameter: Expression): Expression
@@ -766,9 +810,9 @@ ellipticF(amplitude: Expression, parameter: Expression): Expression
 
 ### ellipticK
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_elliptic_k_api_session_elliptic_k"></a>
+<a id="entry-presentation_wasm_api_session_elliptic_k"></a>
 <a id="placement-placement.wasm.wasm_module.module_elliptick.89c8ca5ccda5"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 ellipticK(parameter: Expression): Expression
@@ -780,7 +824,7 @@ The complete first-kind elliptic integral \(K(m)\), with parameter \(m=k^2\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_elliptick.629bbeb8e11c"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ellipticK</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.ellipticK</code></p>
 
 ```typescript signature
 ellipticK(parameter: Expression): Expression
@@ -790,9 +834,9 @@ ellipticK(parameter: Expression): Expression
 
 ### ellipticPi
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_elliptic_pi_api_session_elliptic_pi"></a>
+<a id="entry-presentation_wasm_api_session_elliptic_pi"></a>
 <a id="placement-placement.wasm.wasm_module.module_ellipticpi.eb8d10ebaaa5"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 ellipticPi(
@@ -807,7 +851,7 @@ The complete third-kind elliptic integral \(\Pi(n\mid m)\), with parameter \(m=k
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_ellipticpi.c988463102bc"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ellipticPi</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.ellipticPi</code></p>
 
 ```typescript signature
 ellipticPi(
@@ -820,9 +864,9 @@ ellipticPi(
 
 ### ellipticPiIncomplete
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_elliptic_pi_incomplete_api_session_elliptic_pi_incomplete"></a>
+<a id="entry-presentation_wasm_api_session_elliptic_pi_incomplete"></a>
 <a id="placement-placement.wasm.wasm_module.module_ellipticpiincomplete.9b0df8832d4d"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 ellipticPiIncomplete(
@@ -838,7 +882,7 @@ The incomplete third-kind elliptic integral \(\Pi(n;\phi\mid m)\), with paramete
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_ellipticpiincomplete.719e94d7de55"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ellipticPiIncomplete</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.ellipticPiIncomplete</code></p>
 
 ```typescript signature
 ellipticPiIncomplete(
@@ -852,9 +896,9 @@ ellipticPiIncomplete(
 
 ### gegenbauerPolynomial
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_gegenbauer_polynomial_api_session_gegenbauer_polynomial"></a>
+<a id="entry-presentation_wasm_api_session_gegenbauer_polynomial"></a>
 <a id="placement-placement.wasm.wasm_module.module_gegenbauerpolynomial.2785173f26a1"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 gegenbauerPolynomial(
@@ -870,7 +914,7 @@ The Gegenbauer polynomial \(C_n^{(\lambda)}(x)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_gegenbauerpolynomial.9c0b54be20d8"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.gegenbauerPolynomial</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.gegenbauerPolynomial</code></p>
 
 ```typescript signature
 gegenbauerPolynomial(
@@ -884,9 +928,9 @@ gegenbauerPolynomial(
 
 ### generalizedLaguerrePolynomial
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_generalized_laguerre_polynomial_api_session_generalized_laguerre_polynomial"></a>
+<a id="entry-presentation_wasm_api_session_generalized_laguerre_polynomial"></a>
 <a id="placement-placement.wasm.wasm_module.module_generalizedlaguerrepolynomial.4f16cbeb161f"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 generalizedLaguerrePolynomial(
@@ -902,7 +946,7 @@ The generalized Laguerre polynomial \(L_n^{(\alpha)}(x)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_generalizedlaguerrepolynomial.2aafcd528a5f"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.generalizedLaguerrePolynomial</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.generalizedLaguerrePolynomial</code></p>
 
 ```typescript signature
 generalizedLaguerrePolynomial(
@@ -916,9 +960,9 @@ generalizedLaguerrePolynomial(
 
 ### hermitePolynomial
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_hermite_polynomial_api_session_hermite_polynomial"></a>
+<a id="entry-presentation_wasm_api_session_hermite_polynomial"></a>
 <a id="placement-placement.wasm.wasm_module.module_hermitepolynomial.748805216715"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 hermitePolynomial(degree: Expression, argument: Expression): Expression
@@ -930,7 +974,7 @@ The physicists' Hermite polynomial \(H_n(x)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_hermitepolynomial.68f367f719e9"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.hermitePolynomial</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.hermitePolynomial</code></p>
 
 ```typescript signature
 hermitePolynomial(degree: Expression, argument: Expression): Expression
@@ -940,9 +984,9 @@ hermitePolynomial(degree: Expression, argument: Expression): Expression
 
 ### hurwitzZeta
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_hurwitz_zeta_api_session_hurwitz_zeta"></a>
+<a id="entry-presentation_wasm_api_session_hurwitz_zeta"></a>
 <a id="placement-placement.wasm.wasm_module.module_hurwitzzeta.729040f89142"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 hurwitzZeta(s: Expression, a: Expression): Expression
@@ -954,7 +998,7 @@ The Hurwitz zeta function \(\zeta(s, a) = \sum_{k\geq 0} (k+a)^{-s}\), the numer
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_hurwitzzeta.faec90c9388d"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.hurwitzZeta</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.hurwitzZeta</code></p>
 
 ```typescript signature
 hurwitzZeta(s: Expression, a: Expression): Expression
@@ -964,9 +1008,9 @@ hurwitzZeta(s: Expression, a: Expression): Expression
 
 ### hypergeometric0f1
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_hypergeometric_0f1_api_session_hypergeometric_0f1"></a>
+<a id="entry-presentation_wasm_api_session_hypergeometric_0f1"></a>
 <a id="placement-placement.wasm.wasm_module.module_hypergeometric0f1.cef7a55e5327"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 hypergeometric0f1(
@@ -981,7 +1025,7 @@ The confluent limit \({}_0F_1(; b; z)\), lowered to `hypergeometric_pfq`.
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_hypergeometric0f1.eb8ad3cf9c53"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.hypergeometric0f1</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.hypergeometric0f1</code></p>
 
 ```typescript signature
 hypergeometric0f1(
@@ -994,9 +1038,9 @@ hypergeometric0f1(
 
 ### hypergeometric1f1
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_hypergeometric_1f1_api_session_hypergeometric_1f1"></a>
+<a id="entry-presentation_wasm_api_session_hypergeometric_1f1"></a>
 <a id="placement-placement.wasm.wasm_module.module_hypergeometric1f1.f872b9c5d868"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 hypergeometric1f1(
@@ -1012,7 +1056,7 @@ Kummer's confluent hypergeometric function \({}_1F_1(a; b; z)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_hypergeometric1f1.658e3f7743d5"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.hypergeometric1f1</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.hypergeometric1f1</code></p>
 
 ```typescript signature
 hypergeometric1f1(
@@ -1026,9 +1070,9 @@ hypergeometric1f1(
 
 ### hypergeometric2f1
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_hypergeometric_2f1_api_session_hypergeometric_2f1"></a>
+<a id="entry-presentation_wasm_api_session_hypergeometric_2f1"></a>
 <a id="placement-placement.wasm.wasm_module.module_hypergeometric2f1.b66e8a62c1b1"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 hypergeometric2f1(
@@ -1045,7 +1089,7 @@ The Gauss hypergeometric function \({}_2F_1(a, b; c; z)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_hypergeometric2f1.941040609faf"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.hypergeometric2f1</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.hypergeometric2f1</code></p>
 
 ```typescript signature
 hypergeometric2f1(
@@ -1060,9 +1104,9 @@ hypergeometric2f1(
 
 ### hypergeometricPfq
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_hypergeometric_pfq_api_session_hypergeometric_pfq"></a>
+<a id="entry-presentation_wasm_api_session_hypergeometric_pfq"></a>
 <a id="placement-placement.wasm.wasm_module.module_hypergeometricpfq.10c7ad6981f0"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 hypergeometricPfq(
@@ -1078,7 +1122,7 @@ The generalized hypergeometric function \({}_pF_q(\mathbf a; \mathbf b; z)\). Th
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_hypergeometricpfq.2b937c3c8db4"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.hypergeometricPfq</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.hypergeometricPfq</code></p>
 
 ```typescript signature
 hypergeometricPfq(
@@ -1092,9 +1136,9 @@ hypergeometricPfq(
 
 ### jacobiAmplitude
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_jacobi_amplitude_api_session_jacobi_amplitude"></a>
+<a id="entry-presentation_wasm_api_session_jacobi_amplitude"></a>
 <a id="placement-placement.wasm.wasm_module.module_jacobiamplitude.d177051aba22"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 jacobiAmplitude(argument: Expression, parameter: Expression): Expression
@@ -1106,7 +1150,7 @@ The pinned Jacobi amplitude \(\operatorname{am}(u\mid m)\), with parameter \(m=k
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_jacobiamplitude.a587330f092b"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobiAmplitude</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiAmplitude</code></p>
 
 ```typescript signature
 jacobiAmplitude(argument: Expression, parameter: Expression): Expression
@@ -1116,9 +1160,9 @@ jacobiAmplitude(argument: Expression, parameter: Expression): Expression
 
 ### jacobiCn
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_jacobi_cn_api_session_jacobi_cn"></a>
+<a id="entry-presentation_wasm_api_session_jacobi_cn"></a>
 <a id="placement-placement.wasm.wasm_module.module_jacobicn.17eb37a567b9"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 jacobiCn(argument: Expression, parameter: Expression): Expression
@@ -1130,7 +1174,7 @@ Jacobi's elliptic function \(\operatorname{cn}(u\mid m)\), with parameter \(m=k^
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_jacobicn.f58ebda31a50"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobiCn</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiCn</code></p>
 
 ```typescript signature
 jacobiCn(argument: Expression, parameter: Expression): Expression
@@ -1140,9 +1184,9 @@ jacobiCn(argument: Expression, parameter: Expression): Expression
 
 ### jacobiDn
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_jacobi_dn_api_session_jacobi_dn"></a>
+<a id="entry-presentation_wasm_api_session_jacobi_dn"></a>
 <a id="placement-placement.wasm.wasm_module.module_jacobidn.e6c3ec6d7a4e"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 jacobiDn(argument: Expression, parameter: Expression): Expression
@@ -1154,7 +1198,7 @@ Jacobi's elliptic function \(\operatorname{dn}(u\mid m)\), with parameter \(m=k^
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_jacobidn.00819f251239"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobiDn</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiDn</code></p>
 
 ```typescript signature
 jacobiDn(argument: Expression, parameter: Expression): Expression
@@ -1164,9 +1208,9 @@ jacobiDn(argument: Expression, parameter: Expression): Expression
 
 ### jacobiPolynomial
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_jacobi_polynomial_api_session_jacobi_polynomial"></a>
+<a id="entry-presentation_wasm_api_session_jacobi_polynomial"></a>
 <a id="placement-placement.wasm.wasm_module.module_jacobipolynomial.74ad8252890c"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 jacobiPolynomial(
@@ -1183,7 +1227,7 @@ The Jacobi polynomial \(P_n^{(\alpha,\beta)}(x)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_jacobipolynomial.efcf62ec673a"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobiPolynomial</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiPolynomial</code></p>
 
 ```typescript signature
 jacobiPolynomial(
@@ -1198,9 +1242,9 @@ jacobiPolynomial(
 
 ### jacobiSn
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_jacobi_sn_api_session_jacobi_sn"></a>
+<a id="entry-presentation_wasm_api_session_jacobi_sn"></a>
 <a id="placement-placement.wasm.wasm_module.module_jacobisn.a5c00c764a10"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 jacobiSn(argument: Expression, parameter: Expression): Expression
@@ -1212,7 +1256,7 @@ Jacobi's elliptic function \(\operatorname{sn}(u\mid m)\), with parameter \(m=k^
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_jacobisn.74cfc885f96f"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobiSn</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiSn</code></p>
 
 ```typescript signature
 jacobiSn(argument: Expression, parameter: Expression): Expression
@@ -1222,9 +1266,9 @@ jacobiSn(argument: Expression, parameter: Expression): Expression
 
 ### jacobiTheta1
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_jacobi_theta_1_api_session_jacobi_theta_1"></a>
+<a id="entry-presentation_wasm_api_session_jacobi_theta_1"></a>
 <a id="placement-placement.wasm.wasm_module.module_jacobitheta1.7a2497134f65"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 jacobiTheta1(argument: Expression, tau: Expression): Expression
@@ -1236,7 +1280,7 @@ Jacobi's first theta function \(\theta_1(z\mid\tau)\), with half-period ratio \(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_jacobitheta1.c4d23116584e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobiTheta1</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiTheta1</code></p>
 
 ```typescript signature
 jacobiTheta1(argument: Expression, tau: Expression): Expression
@@ -1246,9 +1290,9 @@ jacobiTheta1(argument: Expression, tau: Expression): Expression
 
 ### jacobiTheta2
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_jacobi_theta_2_api_session_jacobi_theta_2"></a>
+<a id="entry-presentation_wasm_api_session_jacobi_theta_2"></a>
 <a id="placement-placement.wasm.wasm_module.module_jacobitheta2.be1168718010"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 jacobiTheta2(argument: Expression, tau: Expression): Expression
@@ -1260,7 +1304,7 @@ Jacobi's second theta function \(\theta_2(z\mid\tau)\), with half-period ratio \
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_jacobitheta2.189cc40aeeea"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobiTheta2</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiTheta2</code></p>
 
 ```typescript signature
 jacobiTheta2(argument: Expression, tau: Expression): Expression
@@ -1270,9 +1314,9 @@ jacobiTheta2(argument: Expression, tau: Expression): Expression
 
 ### jacobiTheta3
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_jacobi_theta_3_api_session_jacobi_theta_3"></a>
+<a id="entry-presentation_wasm_api_session_jacobi_theta_3"></a>
 <a id="placement-placement.wasm.wasm_module.module_jacobitheta3.00271ffa7a15"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 jacobiTheta3(argument: Expression, tau: Expression): Expression
@@ -1284,7 +1328,7 @@ Jacobi's third theta function \(\theta_3(z\mid\tau)\), with half-period ratio \(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_jacobitheta3.0a910e4dfec6"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobiTheta3</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiTheta3</code></p>
 
 ```typescript signature
 jacobiTheta3(argument: Expression, tau: Expression): Expression
@@ -1294,9 +1338,9 @@ jacobiTheta3(argument: Expression, tau: Expression): Expression
 
 ### jacobiTheta4
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_jacobi_theta_4_api_session_jacobi_theta_4"></a>
+<a id="entry-presentation_wasm_api_session_jacobi_theta_4"></a>
 <a id="placement-placement.wasm.wasm_module.module_jacobitheta4.1dd493afad49"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 jacobiTheta4(argument: Expression, tau: Expression): Expression
@@ -1308,7 +1352,7 @@ Jacobi's fourth theta function \(\theta_4(z\mid\tau)\), with half-period ratio \
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_jacobitheta4.4a26c72700a2"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobiTheta4</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiTheta4</code></p>
 
 ```typescript signature
 jacobiTheta4(argument: Expression, tau: Expression): Expression
@@ -1318,9 +1362,9 @@ jacobiTheta4(argument: Expression, tau: Expression): Expression
 
 ### laguerrePolynomial
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_laguerre_polynomial_api_session_laguerre_polynomial"></a>
+<a id="entry-presentation_wasm_api_session_laguerre_polynomial"></a>
 <a id="placement-placement.wasm.wasm_module.module_laguerrepolynomial.52100b9b20ee"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 laguerrePolynomial(degree: Expression, argument: Expression): Expression
@@ -1332,7 +1376,7 @@ The Laguerre polynomial, lowered to generalized Laguerre with parameter zero.
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_laguerrepolynomial.62995c0f2327"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.laguerrePolynomial</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.laguerrePolynomial</code></p>
 
 ```typescript signature
 laguerrePolynomial(degree: Expression, argument: Expression): Expression
@@ -1342,9 +1386,9 @@ laguerrePolynomial(degree: Expression, argument: Expression): Expression
 
 ### legendrePolynomial
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_legendre_polynomial_api_session_legendre_polynomial"></a>
+<a id="entry-presentation_wasm_api_session_legendre_polynomial"></a>
 <a id="placement-placement.wasm.wasm_module.module_legendrepolynomial.50ac16a05e94"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 legendrePolynomial(degree: Expression, argument: Expression): Expression
@@ -1356,7 +1400,7 @@ The Legendre polynomial \(P_n(x)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_legendrepolynomial.28ff6dbacc69"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.legendrePolynomial</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.legendrePolynomial</code></p>
 
 ```typescript signature
 legendrePolynomial(degree: Expression, argument: Expression): Expression
@@ -1366,9 +1410,9 @@ legendrePolynomial(degree: Expression, argument: Expression): Expression
 
 ### lerchPhi
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_lerch_phi_api_session_lerch_phi"></a>
+<a id="entry-presentation_wasm_api_session_lerch_phi"></a>
 <a id="placement-placement.wasm.wasm_module.module_lerchphi.81f4f0c65935"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 lerchPhi(
@@ -1384,7 +1428,7 @@ The principal Lerch transcendent \(\Phi(z, s, a)\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_lerchphi.1a43d0de986c"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.lerchPhi</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.lerchPhi</code></p>
 
 ```typescript signature
 lerchPhi(
@@ -1396,35 +1440,11 @@ lerchPhi(
 
 </details>
 
-### logGamma
-
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_log_gamma_api_session_log_gamma"></a>
-<a id="placement-placement.wasm.wasm_module.module_loggamma.9e2c3da58bd0"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-logGamma(x: Expression): Expression
-```
-
-The principal-branch log-gamma function (not `log(gamma(x))` off the real axis).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_loggamma.5ec5f03b6584"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.logGamma</code></p>
-
-```typescript signature
-logGamma(x: Expression): Expression
-```
-
-</details>
-
 ### meijerG
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_meijer_g_api_session_meijer_g"></a>
+<a id="entry-presentation_wasm_api_session_meijer_g"></a>
 <a id="placement-placement.wasm.wasm_module.module_meijerg.c09fa2551e5f"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 meijerG(
@@ -1442,7 +1462,7 @@ The Meijer G-function \(G_{p,q}^{m,n}\) from its four ordered parameter groups. 
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_meijerg.ab8f46bb2c1a"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.meijerG</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.meijerG</code></p>
 
 ```typescript signature
 meijerG(
@@ -1458,9 +1478,9 @@ meijerG(
 
 ### ultrasphericalPolynomial
 
-<a id="entry-presentation_wasm_special_functions_capability_special_functions_ultraspherical_polynomial_api_session_ultraspherical_polynomial"></a>
+<a id="entry-presentation_wasm_api_session_ultraspherical_polynomial"></a>
 <a id="placement-placement.wasm.wasm_module.module_ultrasphericalpolynomial.bb8eb9784e52"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 ultrasphericalPolynomial(
@@ -1476,7 +1496,7 @@ The ultraspherical polynomial, lowered to the Gegenbauer head.
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_ultrasphericalpolynomial.0086e7e17f60"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ultrasphericalPolynomial</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.ultrasphericalPolynomial</code></p>
 
 ```typescript signature
 ultrasphericalPolynomial(

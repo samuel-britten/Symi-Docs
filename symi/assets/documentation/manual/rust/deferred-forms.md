@@ -6,7 +6,7 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
-<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_analysis_session_integral_unnamed"></a>
+<a id="entry-presentation_rust_api_session_integral"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_integral.080cbf1c911a"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -29,13 +29,54 @@ the node.
 
 ### derivative
 
+<a id="entry-presentation_rust_api_session_derivative"></a>
+<a id="placement-placement.rust.native_rust.api_session_derivative.0d9fda1ff062"></a>
+<p class="symi-entry-owner">api::Session method</p>
 
-Constructs a deferred derivative. The variable may
-be a name or a same-context symbol expression. Use `execute` to evaluate it.
+```rust signature
+pub fn derivative<'a, VariableType>(
+    &self,
+    target: &Expression,
+    variable: VariableType,
+    order: usize,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_derivative.80685c067dc3"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::derivative</code></p>
+
+```rust signature
+pub fn derivative<'a, VariableType>(
+    &self,
+    variable: VariableType,
+    order: usize,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+</details>
+
+
+
+Constructs an *unevaluated* derivative node of an arbitrary expression. The
+variable may be a name or a same-context symbol expression. Nothing is
+differentiated here: use [`execute`](evaluation-and-constants.md) on the node,
+or [`differentiate`](calculus.md#differentiate) to differentiate now.
+
+This is not the derivative of a named unknown function. An equation built from
+this placeholder is not recognised by the differential-equation classifiers,
+which read the structural derivative built by
+[`UndefinedFunction.derivative`](undefined-functions.md#derivative).
 
 ### summation
 
-<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_analysis_session_summation_unnamed"></a>
+<a id="entry-presentation_rust_api_session_summation"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_summation.e22d295b8180"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -142,7 +183,7 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
-<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_analysis_session_product_unnamed"></a>
+<a id="entry-presentation_rust_api_session_product"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_product.91517c170a43"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -215,7 +256,7 @@ placeholder rather than a guess.
 
 ### product_indefinite
 
-<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_analysis_session_product_indefinite_unnamed"></a>
+<a id="entry-presentation_rust_api_session_product_indefinite"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_product_indefinite.56c49f13639d"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -243,7 +284,7 @@ form is in scope.
 
 ### piecewise
 
-<a id="entry-presentation_rust_deferred_forms_capability_rust_native_rust_api_solving_session_piecewise_unnamed"></a>
+<a id="entry-presentation_rust_api_session_piecewise"></a>
 <a id="placement-placement.rust.native_rust.api_solving_session_piecewise.adb8a1ad3b3e"></a>
 <p class="symi-entry-owner">api::solving::Session method</p>
 
@@ -268,3 +309,43 @@ fails the result is the undefined sentinel.
 
 This family is not part of the recommended `symi::api` facade in this release. Call it through the native modules in the [native Rust API reference](/symi/rust/api/symi/).
 
+
+### summation_indefinite
+
+<a id="entry-presentation_rust_api_session_summation_indefinite"></a>
+<a id="placement-placement.rust.native_rust.api_analysis_session_summation_indefinite.a7d00db2f2e2"></a>
+<p class="symi-entry-owner">api::analysis::Session method</p>
+
+```rust signature
+pub fn summation_indefinite<'a, VariableType>(
+    &self,
+    summand: &Expression,
+    index: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_operations_expression_summation_indefinite.79eaf509ebcd"></a>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::summation_indefinite</code></p>
+
+```rust signature
+pub fn summation_indefinite<'a, VariableType>(
+    &self,
+    index: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+</details>
+
+
+The anti-difference of `summand`: a closed form \(F\) with
+\(F(\mathrm{index}+1) - F(\mathrm{index}) = \mathrm{summand}\). It is the
+discrete counterpart of an indefinite integral, and it sits here beside
+[`product_indefinite`](#product_indefinite) for the same reason — when no closed
+form is found, the unevaluated summation is what is returned.

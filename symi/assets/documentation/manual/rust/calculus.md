@@ -4,11 +4,43 @@ Calculus follows a uniform construct-versus-evaluate model; the summary table
 is in [Evaluation and constants](evaluation-and-constants.md). Every variable
 parameter accepts a name or a same-context symbol expression.
 
+Each operation below is one entry with its receivers listed together: the
+default context, an explicit context, and — where the operation takes an
+expression — the expression itself all reach the same operation, and an
+assumption scope reaches it under the assumptions that scope adds. The
+collapsed *calling forms* block on each entry gives the exact signature of
+each.
+
+**Three tasks are spelled `differentiate` or `derivative`**, and they are not
+interchangeable:
+
+| Task | Entry | Page |
+|---|---|---|
+| Differentiate an expression now | `differentiate` | Below |
+| Wrap an expression in an unevaluated derivative | `derivative` | [Deferred forms](deferred-forms.md#derivative) |
+| Build a derivative of a named unknown from argument orders | `derivative` | [Undefined functions](undefined-functions.md#derivative) |
+
 ### differentiate
 
-<a id="entry-presentation_rust_calculus_capability_differentiate_unnamed"></a>
+<a id="entry-presentation_rust_api_session_differentiate"></a>
+<a id="placement-placement.rust.native_rust.api_session_differentiate.369ed745b4e9"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn differentiate<'a, VariableType>(
+    &self,
+    target: &Expression,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_differentiate.682039a287cd"></a>
-<p class="symi-entry-owner">api::Expression method</p>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::differentiate</code></p>
 
 ```rust signature
 pub fn differentiate<'a, VariableType>(
@@ -19,14 +51,48 @@ where
     VariableType: Into<VariableLike<'a>>,
 ```
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+</details>
 
-<a id="placement-placement.rust.native_rust.api_session_differentiate.369ed745b4e9"></a>
-<p class="symi-entry-owner">api::Session method: <code>api::Session::differentiate</code></p>
+
+Symbolic derivative with respect to `variable`, evaluated now. The derivative is
+total: unknown function calls produce derivative nodes.
+
+### integrate
+
+<a id="entry-presentation_rust_api_session_integrate"></a>
+<a id="placement-placement.rust.native_rust.api_session_integrate.292bc73e00be"></a>
+<p class="symi-entry-owner">api::Session method</p>
 
 ```rust signature
-pub fn differentiate<'a, VariableType>(
+pub fn integrate<'a, VariableType>(
+    &self,
+    target: &Expression,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_integrate.8909719872f1"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::integrate</code></p>
+
+```rust signature
+pub fn integrate<'a, VariableType>(
+    &self,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<a id="placement-placement.rust.native_rust.api_assumptionscope_integrate.b770e6d94dcd"></a>
+<p class="symi-entry-owner">Variant using local assumptions — api::AssumptionScope method: <code>api::AssumptionScope::integrate</code></p>
+
+```rust signature
+pub fn integrate<'a, VariableType>(
     &self,
     target: &Expression,
     variable: VariableType,
@@ -38,12 +104,11 @@ where
 </details>
 
 
-Symbolic derivative with respect to `variable`. The derivative is total: unknown
-function calls produce derivative nodes.
-
-### integrate
-
-Indefinite integration (no constant of integration). When every symbolic
+Indefinite integration (no constant of integration). The variant on an
+[assumption scope](assumptions.md#assumption_scope) runs the same integration
+under that scope's captured assumptions, which can close a branch the durable
+context leaves open; the scope is immutable and the owning context is
+unchanged. When every symbolic
 strategy fails, the result is an *unevaluated* `integral` node, never a
 guess. Real symbolic parameters can produce a `piecewise` antiderivative
 whose conditions describe the supported parameter strata. A parameter value
@@ -51,23 +116,7 @@ outside every branch is undefined rather than a hidden declined branch.
 
 ### integrate_definite
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_assumptionscope_integrate_definite_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_assumptionscope_integrate_definite.24d02a0b329e"></a>
-<p class="symi-entry-owner">api::AssumptionScope method</p>
-
-```rust signature
-pub fn integrate_definite<'a, VariableType>(
-    &self,
-    target: &Expression,
-    variable: VariableType,
-    lower_bound: &Expression,
-    upper_bound: &Expression,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_analysis_session_integrate_definite_unnamed"></a>
+<a id="entry-presentation_rust_api_session_integrate_definite"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_integrate_definite.1a86ee562c2c"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -83,9 +132,11 @@ where
     VariableType: Into<VariableLike<'a>>,
 ```
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_expression_operations_expression_integrate_definite_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_integrate_definite.ff5844cb0375"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::integrate_definite</code></p>
 
 ```rust signature
 pub fn integrate_definite<'a, VariableType>(
@@ -97,6 +148,23 @@ pub fn integrate_definite<'a, VariableType>(
 where
     VariableType: Into<VariableLike<'a>>,
 ```
+
+<a id="placement-placement.rust.native_rust.api_assumptionscope_integrate_definite.24d02a0b329e"></a>
+<p class="symi-entry-owner">Variant using local assumptions — api::AssumptionScope method: <code>api::AssumptionScope::integrate_definite</code></p>
+
+```rust signature
+pub fn integrate_definite<'a, VariableType>(
+    &self,
+    target: &Expression,
+    variable: VariableType,
+    lower_bound: &Expression,
+    upper_bound: &Expression,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+</details>
 
 
 Definite integration over `[lower, upper]` (bounds may be infinite). Falls
@@ -114,7 +182,7 @@ divergence, a principal value, or a declared parameter region matters.
 
 ### integrate_definite_detailed
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_session_integrate_definite_detailed_unnamed"></a>
+<a id="entry-presentation_rust_api_session_integrate_definite_detailed"></a>
 <a id="placement-placement.rust.native_rust.api_session_integrate_definite_detailed.41b6a7ba1e10"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -154,24 +222,97 @@ as a typed enumeration.
 
 ### DefiniteIntegrationResult
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_results_definiteintegrationresult_unnamed"></a>
+What `integrate_definite_detailed` returns. It keeps the verdict separate from
+the value, so a proved divergence is never read as a declined request, and a
+declined request never as a proved answer. Its members are:
+
+| Member | Meaning | Present |
+|---|---|---|
+| `verdict` | `evaluated`, `divergent`, or `declined` | Always |
+| `interpretation` | The interpretation the request was answered under, `ordinary` or `cauchy_principal_value` | Always |
+| `value` | The exact value of the integral | Exactly when the verdict is `evaluated` |
+| `divergence_direction` | `positive_infinity` or `negative_infinity` | Only when the verdict is `divergent` **and** a single signed infinity was established; a divergence without a proved sign leaves it absent |
+| `decline_reason` | `unsupported_family`, `incomplete_singularity_analysis`, `unknown_endpoint_behavior`, `unknown_bound_order`, or `unsupported_region` | Exactly when the verdict is `declined` |
+
+Each member's exact host type and spelling follows below.
+
+<a id="entry-presentation_rust_api_definiteintegrationresult"></a>
+<a id="placement-placement.rust.native_rust.api_definiteintegrationresult.2e3bde156c2a"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use results::DefiniteIntegrationResult;
+```
+
+A typed exact definite-integration result.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_results_definiteintegrationresult.7ff458b1cba3"></a>
-<p class="symi-entry-owner">Type</p>
+<p class="symi-entry-owner">Type: <code>api::results::DefiniteIntegrationResult</code></p>
 
 ```rust signature
 pub struct DefiniteIntegrationResult
 ```
 
-`interpretation`, `verdict` (`evaluated`, `divergent` or `declined`), `value`
-(present exactly when evaluated), `divergence_direction` (`positive_infinity`
-or `negative_infinity`, present only when a single signed infinity was
-established), and `decline_reason` (`unsupported_family`,
-`incomplete_singularity_analysis`, `unknown_endpoint_behavior`,
-`unknown_bound_order` or `unsupported_region`, present exactly when declined).
+</details>
+
+<a id="entry-presentation_rust_api_definiteintegrationresult_decline_reason"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationresult_decline_reason.bef6643ab9c0"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn decline_reason(&self) -> Option<DefiniteIntegrationDeclineReason>
+```
+
+The reason, present exactly when the verdict is `declined`.
+
+<a id="entry-presentation_rust_api_definiteintegrationresult_divergence_direction"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationresult_divergence_direction.fa421fdafba6"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn divergence_direction(
+    &self,
+) -> Option<DefiniteIntegrationDivergenceDirection>
+```
+
+The signed infinity of a divergent request, when a single direction was established.
+
+<a id="entry-presentation_rust_api_definiteintegrationresult_interpretation"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationresult_interpretation.53873dc2da96"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn interpretation(&self) -> DefiniteIntegrationInterpretation
+```
+
+The interpretation under which the request was answered.
+
+<a id="entry-presentation_rust_api_definiteintegrationresult_value"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationresult_value.1f1a4c8d7f0a"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn value(&self) -> Option<Expression>
+```
+
+The exact value, present exactly when the verdict is `evaluated`.
+
+<a id="entry-presentation_rust_api_definiteintegrationresult_verdict"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationresult_verdict.e47ff697c492"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn verdict(&self) -> DefiniteIntegrationVerdict
+```
+
+Whether the request was evaluated, proved divergent, or declined.
 
 ### integrate_definite_numeric
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_analysis_session_integrate_definite_numeric_unnamed"></a>
+<a id="entry-presentation_rust_api_session_integrate_definite_numeric"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_integrate_definite_numeric.a0f39a1d919d"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -195,21 +336,84 @@ substitutes an unevaluated symbolic integral. The requested precision is in bits
 
 ### NumericDefiniteIntegrationResult
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_results_numericdefiniteintegrationresult_unnamed"></a>
+What `integrate_definite_numeric` returns. An absent `value` is the honest
+outcome of quadrature that did not converge; no symbolic integral is ever
+substituted for it. Its members are:
+
+| Member | Meaning | Present |
+|---|---|---|
+| `value` | The accepted quadrature value, as a `(real, imaginary)` pair | Only when convergence was established |
+| `estimated_absolute_error` | The final difference between successive quadrature rules | With an accepted `value` |
+| `precision_bits` | The precision of the accepted rule, in bits | With an accepted `value` |
+| `node_count` | The number of nodes of the accepted rule | With an accepted `value` |
+
+Each member's exact host type and spelling follows below.
+
+<a id="entry-presentation_rust_api_numericdefiniteintegrationresult"></a>
+<a id="placement-placement.rust.native_rust.api_numericdefiniteintegrationresult.192906e4928b"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use results::NumericDefiniteIntegrationResult;
+```
+
+The result of an explicitly requested numerical definite integral.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_results_numericdefiniteintegrationresult.282b8c5f1572"></a>
-<p class="symi-entry-owner">Type</p>
+<p class="symi-entry-owner">Type: <code>api::results::NumericDefiniteIntegrationResult</code></p>
 
 ```rust signature
 pub struct NumericDefiniteIntegrationResult
 ```
 
-`value` is an optional `(real, imaginary)` pair. When present,
-`estimated_absolute_error` is the final difference between successive quadrature
-rules; `precision_bits` and `node_count` identify the accepted rule.
+</details>
+
+<a id="entry-presentation_rust_api_numericdefiniteintegrationresult_estimated_absolute_error"></a>
+<a id="placement-placement.rust.native_rust.api_results_numericdefiniteintegrationresult_estimated_absolute_error.f336db645ee3"></a>
+<p class="symi-entry-owner">api::results::NumericDefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn estimated_absolute_error(&self) -> Option<f64>
+```
+
+The final difference between successive quadrature rules.
+
+<a id="entry-presentation_rust_api_numericdefiniteintegrationresult_node_count"></a>
+<a id="placement-placement.rust.native_rust.api_results_numericdefiniteintegrationresult_node_count.3fe1abe73c1c"></a>
+<p class="symi-entry-owner">api::results::NumericDefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn node_count(&self) -> Option<usize>
+```
+
+The node count of the accepted Gauss--Legendre rule.
+
+<a id="entry-presentation_rust_api_numericdefiniteintegrationresult_precision_bits"></a>
+<a id="placement-placement.rust.native_rust.api_results_numericdefiniteintegrationresult_precision_bits.e4215245ea04"></a>
+<p class="symi-entry-owner">api::results::NumericDefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn precision_bits(&self) -> Option<u32>
+```
+
+The arithmetic precision used for the result.
+
+<a id="entry-presentation_rust_api_numericdefiniteintegrationresult_value"></a>
+<a id="placement-placement.rust.native_rust.api_results_numericdefiniteintegrationresult_value.d0e154d26fc7"></a>
+<p class="symi-entry-owner">api::results::NumericDefiniteIntegrationResult method</p>
+
+```rust signature
+pub fn value(&self) -> Option<(f64, f64)>
+```
+
+The complex value as real and imaginary components, when convergence was established.
 
 ### integrate_iterated
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_analysis_session_integrate_iterated_unnamed"></a>
+<a id="entry-presentation_rust_api_session_integrate_iterated"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_integrate_iterated.6b5884612565"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -224,9 +428,11 @@ where
     VariableType: Into<VariableLike<'a>>,
 ```
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_expression_operations_expression_integrate_iterated_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_integrate_iterated.0baaf46f1f56"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::integrate_iterated</code></p>
 
 ```rust signature
 pub fn integrate_iterated<'a, IteratorType, VariableType>(
@@ -238,6 +444,8 @@ where
     VariableType: Into<VariableLike<'a>>,
 ```
 
+</details>
+
 
 Iterated indefinite integration, applying the single-variable pipeline once
 per entry of `variables` in **left-to-right order (innermost binder first)**.
@@ -247,13 +455,14 @@ nodes — no partial evaluation through an unclosed inner integral.
 
 ### limit
 
-<a id="entry-presentation_rust_calculus_capability_limit_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_limit.618e6b7fcd91"></a>
-<p class="symi-entry-owner">api::Expression method</p>
+<a id="entry-presentation_rust_api_session_limit"></a>
+<a id="placement-placement.rust.native_rust.api_session_limit.5dd372263c3b"></a>
+<p class="symi-entry-owner">api::Session method</p>
 
 ```rust signature
 pub fn limit<'a, VariableType>(
     &self,
+    target: &Expression,
     variable: VariableType,
     point: &Expression,
     direction: LimitDirection,
@@ -265,13 +474,12 @@ where
 <details class="symi-calling-forms">
 <summary>Calling forms</summary>
 
-<a id="placement-placement.rust.native_rust.api_session_limit.5dd372263c3b"></a>
-<p class="symi-entry-owner">api::Session method: <code>api::Session::limit</code></p>
+<a id="placement-placement.rust.native_rust.api_expression_limit.618e6b7fcd91"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::limit</code></p>
 
 ```rust signature
 pub fn limit<'a, VariableType>(
     &self,
-    target: &Expression,
     variable: VariableType,
     point: &Expression,
     direction: LimitDirection,
@@ -287,9 +495,9 @@ where
 
 ### evaluate_limit
 
-<a id="entry-presentation_rust_calculus_capability_evaluate_limit_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_assumptionscope_evaluate_limit.cfb9cdd3bca2"></a>
-<p class="symi-entry-owner">api::AssumptionScope method</p>
+<a id="entry-presentation_rust_api_session_evaluate_limit"></a>
+<a id="placement-placement.rust.native_rust.api_session_evaluate_limit.3144c563fff7"></a>
+<p class="symi-entry-owner">api::Session method</p>
 
 ```rust signature
 pub fn evaluate_limit<'a, VariableType>(
@@ -304,7 +512,7 @@ where
 ```
 
 <details class="symi-calling-forms">
-<summary>Calling forms</summary>
+<summary>Calling forms and variants</summary>
 
 <a id="placement-placement.rust.native_rust.api_expression_evaluate_limit.0725235e85ad"></a>
 <p class="symi-entry-owner">api::Expression method: <code>api::Expression::evaluate_limit</code></p>
@@ -320,8 +528,8 @@ where
     VariableType: Into<VariableLike<'a>>,
 ```
 
-<a id="placement-placement.rust.native_rust.api_session_evaluate_limit.3144c563fff7"></a>
-<p class="symi-entry-owner">api::Session method: <code>api::Session::evaluate_limit</code></p>
+<a id="placement-placement.rust.native_rust.api_assumptionscope_evaluate_limit.cfb9cdd3bca2"></a>
+<p class="symi-entry-owner">Variant using local assumptions — api::AssumptionScope method: <code>api::AssumptionScope::evaluate_limit</code></p>
 
 ```rust signature
 pub fn evaluate_limit<'a, VariableType>(
@@ -424,34 +632,7 @@ exhaustion returns the unevaluated form rather than a guess.
 
 ### singularities
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_assumptionscope_singularities_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_assumptionscope_singularities.a758ff42c596"></a>
-<p class="symi-entry-owner">api::AssumptionScope method</p>
-
-```rust signature
-pub fn singularities<'a, VariableType>(
-    &self,
-    target: &Expression,
-    variable: VariableType,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_expression_singularities_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_singularities.00482b32bc8e"></a>
-<p class="symi-entry-owner">api::Expression method</p>
-
-```rust signature
-pub fn singularities<'a, VariableType>(
-    &self,
-    variable: VariableType,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_session_singularities_unnamed"></a>
+<a id="entry-presentation_rust_api_session_singularities"></a>
 <a id="placement-placement.rust.native_rust.api_session_singularities.bd59bec2aa1a"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -465,6 +646,36 @@ where
     VariableType: Into<VariableLike<'a>>,
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_singularities.00482b32bc8e"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::singularities</code></p>
+
+```rust signature
+pub fn singularities<'a, VariableType>(
+    &self,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<a id="placement-placement.rust.native_rust.api_assumptionscope_singularities.a758ff42c596"></a>
+<p class="symi-entry-owner">Variant using local assumptions — api::AssumptionScope method: <code>api::AssumptionScope::singularities</code></p>
+
+```rust signature
+pub fn singularities<'a, VariableType>(
+    &self,
+    target: &Expression,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+</details>
+
 
 The singular points of the expression in the complex plane, as a set
 expression (finite set, union, image set for periodic families, …). Rational
@@ -475,34 +686,7 @@ point on it were singular.
 
 ### continuous_domain
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_assumptionscope_continuous_domain_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_assumptionscope_continuous_domain.cbeba469872a"></a>
-<p class="symi-entry-owner">api::AssumptionScope method</p>
-
-```rust signature
-pub fn continuous_domain<'a, VariableType>(
-    &self,
-    target: &Expression,
-    variable: VariableType,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_expression_continuous_domain_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_continuous_domain.c99830b5c4d0"></a>
-<p class="symi-entry-owner">api::Expression method</p>
-
-```rust signature
-pub fn continuous_domain<'a, VariableType>(
-    &self,
-    variable: VariableType,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_session_continuous_domain_unnamed"></a>
+<a id="entry-presentation_rust_api_session_continuous_domain"></a>
 <a id="placement-placement.rust.native_rust.api_session_continuous_domain.c2133090f52a"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -516,6 +700,36 @@ where
     VariableType: Into<VariableLike<'a>>,
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_continuous_domain.c99830b5c4d0"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::continuous_domain</code></p>
+
+```rust signature
+pub fn continuous_domain<'a, VariableType>(
+    &self,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<a id="placement-placement.rust.native_rust.api_assumptionscope_continuous_domain.cbeba469872a"></a>
+<p class="symi-entry-owner">Variant using local assumptions — api::AssumptionScope method: <code>api::AssumptionScope::continuous_domain</code></p>
+
+```rust signature
+pub fn continuous_domain<'a, VariableType>(
+    &self,
+    target: &Expression,
+    variable: VariableType,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+</details>
+
 
 The subset of the real line on which the expression is continuous in
 `variable`, as a set expression. Compound rational square-root radicands are
@@ -523,34 +737,6 @@ lowered to an exact univariate semialgebraic condition when supported, so,
 for example, `sqrt(x + 1/x - 2)` has continuous real domain `(0, infinity)`.
 
 ### summation_indefinite
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_analysis_session_summation_indefinite_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_analysis_session_summation_indefinite.a7d00db2f2e2"></a>
-<p class="symi-entry-owner">api::analysis::Session method</p>
-
-```rust signature
-pub fn summation_indefinite<'a, VariableType>(
-    &self,
-    summand: &Expression,
-    index: VariableType,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_expression_operations_expression_summation_indefinite_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_operations_expression_summation_indefinite.79eaf509ebcd"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
-
-```rust signature
-pub fn summation_indefinite<'a, VariableType>(
-    &self,
-    index: VariableType,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
 
 Anti-difference: a closed form \(F\) with \(F(\operatorname{index}+1) - F(\operatorname{index}) = \operatorname{summand}\).
 Strategy stack: constant summands, linearity, polynomial power sums, rational
@@ -582,7 +768,7 @@ unrestricted Gamma-analytic identities.
 
 ### evaluate_numeric
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_analysis_session_evaluate_numeric_unnamed"></a>
+<a id="entry-presentation_rust_api_session_evaluate_numeric"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_evaluate_numeric.21004576e862"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -593,13 +779,17 @@ pub fn evaluate_numeric(
 ) -> Result<Expression, ApiError>
 ```
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_expression_operations_expression_evaluate_numeric_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_evaluate_numeric.9ee3f0ea35b3"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::evaluate_numeric</code></p>
 
 ```rust signature
 pub fn evaluate_numeric(&self) -> Result<Expression, ApiError>
 ```
+
+</details>
 
 
 Numerically evaluate to a float and re-encode as an exact rational literal;
@@ -608,7 +798,7 @@ For direct float output use `expression.evaluate_to_float`.
 
 ### evaluate_on_grid
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_analysis_session_evaluate_on_grid_unnamed"></a>
+<a id="entry-presentation_rust_api_session_evaluate_on_grid"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_evaluate_on_grid.c15be5e83a64"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -630,7 +820,7 @@ plotting.
 
 ### evaluate_on_grid_points
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_analysis_session_evaluate_on_grid_points_unnamed"></a>
+<a id="entry-presentation_rust_api_session_evaluate_on_grid_points"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_evaluate_on_grid_points.fe7fce6f4ff0"></a>
 <p class="symi-entry-owner">api::analysis::Session method</p>
 
@@ -656,6 +846,30 @@ curves.
 
 ### execute
 
+<a id="entry-presentation_rust_api_session_execute"></a>
+<a id="placement-placement.rust.native_rust.api_session_execute.26c907aa993e"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn execute(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_execute.82ab97fbc289"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::execute</code></p>
+
+```rust signature
+pub fn execute(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
+
 Re-dispatch every unevaluated node (integral, derivative, summation,
 transform, ODE/recurrence placeholder) in the expression; useful after
 substitution has changed the inputs.
@@ -680,172 +894,187 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```
 
 
-## Additional API
+### integrate_definite_under_constraint
 
-### DefiniteIntegrationResult
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_definiteintegrationresult_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_definiteintegrationresult.2e3bde156c2a"></a>
-<p class="symi-entry-owner">api re_export</p>
+<a id="entry-presentation_rust_api_session_integrate_definite_under_constraint"></a>
+<a id="placement-placement.rust.native_rust.api_session_integrate_definite_under_constraint.2836b26c39be"></a>
+<p class="symi-entry-owner">api::Session method</p>
 
 ```rust signature
-pub use results::DefiniteIntegrationResult;
-```
-
-`interpretation`, `verdict` (`evaluated`, `divergent` or `declined`), `value` (present exactly when evaluated), `divergence_direction` (`positive_infinity` or `negative_infinity`, present only when a single signed infinity was established), and `decline_reason` (`unsupported_family`, `incomplete_singularity_analysis`, `unknown_endpoint_behavior`, `unknown_bound_order` or `unsupported_region`, present exactly when declined).
-
-### NumericDefiniteIntegrationResult
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_numericdefiniteintegrationresult_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_numericdefiniteintegrationresult.192906e4928b"></a>
-<p class="symi-entry-owner">api re_export</p>
-
-```rust signature
-pub use results::NumericDefiniteIntegrationResult;
-```
-
-`value` is an optional `(real, imaginary)` pair. When present, `estimated_absolute_error` is the final difference between successive quadrature rules; `precision_bits` and `node_count` identify the accepted rule.
-
-### derivative
-
-<a id="entry-presentation_rust_calculus_capability_derivative_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_derivative.80685c067dc3"></a>
-<p class="symi-entry-owner">api::Expression method</p>
-
-```rust signature
-pub fn derivative<'a, VariableType>(
+pub fn integrate_definite_under_constraint<'a, VariableType>(
     &self,
+    target: &Expression,
     variable: VariableType,
-    order: usize,
+    lower_bound: &Expression,
+    upper_bound: &Expression,
+    constraint: &Expression,
 ) -> Result<Expression, ApiError>
 where
     VariableType: Into<VariableLike<'a>>,
 ```
-
-Constructs a deferred derivative. The variable may be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 <details class="symi-calling-forms">
 <summary>Calling forms</summary>
 
-<a id="placement-placement.rust.native_rust.api_session_derivative.0d9fda1ff062"></a>
-<p class="symi-entry-owner">api::Session method: <code>api::Session::derivative</code></p>
+<a id="placement-placement.rust.native_rust.api_expression_integrate_definite_under_constraint.546138d50f65"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::integrate_definite_under_constraint</code></p>
 
 ```rust signature
-pub fn derivative<'a, VariableType>(
+pub fn integrate_definite_under_constraint<'a, VariableType>(
     &self,
-    target: &Expression,
     variable: VariableType,
-    order: usize,
+    lower_bound: &Expression,
+    upper_bound: &Expression,
+    constraint: &Expression,
 ) -> Result<Expression, ApiError>
 where
     VariableType: Into<VariableLike<'a>>,
-```
-
-<a id="placement-placement.rust.native_rust.api_undefinedfunction_derivative.4f718506c81e"></a>
-<p class="symi-entry-owner">api::UndefinedFunction method: <code>api::UndefinedFunction::derivative</code></p>
-
-```rust signature
-pub fn derivative<OrderIterator, ArgumentIterator>(
-    &self,
-    orders: OrderIterator,
-    arguments: ArgumentIterator,
-) -> Result<Expression, ApiError>
-where
-    OrderIterator: IntoIterator<Item = usize>,
-    ArgumentIterator: IntoIterator<Item = Expression>,
 ```
 
 </details>
 
-### execute
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_expression_execute_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_execute.82ab97fbc289"></a>
-<p class="symi-entry-owner">api::Expression method</p>
+Definite integration under a local bounded logical constraint. The constraint
+holds for this call only: it is not recorded on any symbol, so it cannot leak
+into a later operation on the same context. Use it when the integral is
+determined only on part of a parameter range — a sign condition on a parameter,
+say — without committing the context to that condition.
 
-```rust signature
-pub fn execute(&self) -> Result<Expression, ApiError>
-```
+See [Assumptions](assumptions.md) for durable symbol assumptions and for
+`AssumptionScope`, which applies a set of assumptions to a whole block of
+operations rather than to one call.
 
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
+## Additional API
 
-### execute
+### api::analysis
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_matrix_execute_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_matrix_execute.2c2972cecb2e"></a>
-<p class="symi-entry-owner">api::Matrix method</p>
-
-```rust signature
-pub fn execute(&self) -> Result<Matrix, ApiError>
-```
-
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
-
-### execute
-
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_session_execute_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_session_execute.26c907aa993e"></a>
-<p class="symi-entry-owner">api::Session method</p>
+<a id="entry-presentation_rust_native_module_api_analysis"></a>
+<a id="placement-placement.rust.native_rust.api_analysis.9c0eda85971b"></a>
+<p class="symi-entry-owner">api module</p>
 
 ```rust signature
-pub fn execute(
-    &self,
-    target: &Expression,
-) -> Result<Expression, ApiError>
+pub mod analysis;
 ```
 
-Re-dispatch every unevaluated node (integral, derivative, summation, transform, ODE/recurrence placeholder) in the expression; useful after substitution has changed the inputs.
+Calculus, series, and vector-calculus operations of the native API.
 
-### integrate
+### DefiniteIntegrationDeclineReason
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_assumptionscope_integrate_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_assumptionscope_integrate.b770e6d94dcd"></a>
-<p class="symi-entry-owner">api::AssumptionScope method</p>
+<a id="entry-presentation_rust_api_definiteintegrationdeclinereason"></a>
+<a id="placement-placement.rust.native_rust.api_definiteintegrationdeclinereason.03b7b28d755e"></a>
+<p class="symi-entry-owner">api re_export</p>
 
 ```rust signature
-pub fn integrate<'a, VariableType>(
-    &self,
-    target: &Expression,
-    variable: VariableType,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
+pub use crate::integrate::definite::DefiniteIntegrationDeclineReason;
 ```
 
-Indefinite integration (no constant of integration).
+Re-exports the definite-integration interpretation, divergence direction and decline reason.
 
-### integrate
+### DefiniteIntegrationDivergenceDirection
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_expression_integrate_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_integrate.8909719872f1"></a>
-<p class="symi-entry-owner">api::Expression method</p>
+<a id="entry-presentation_rust_api_definiteintegrationdivergencedirection"></a>
+<a id="placement-placement.rust.native_rust.api_definiteintegrationdivergencedirection.e03b9865f485"></a>
+<p class="symi-entry-owner">api re_export</p>
 
 ```rust signature
-pub fn integrate<'a, VariableType>(
-    &self,
-    variable: VariableType,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
+pub use crate::integrate::definite::DefiniteIntegrationDivergenceDirection;
 ```
 
-Indefinite integration (no constant of integration).
+Re-exports the definite-integration interpretation, divergence direction and decline reason.
 
-### integrate
+### DefiniteIntegrationInterpretation
 
-<a id="entry-presentation_rust_calculus_capability_rust_native_rust_api_session_integrate_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_session_integrate.292bc73e00be"></a>
-<p class="symi-entry-owner">api::Session method</p>
+<a id="entry-presentation_rust_api_definiteintegrationinterpretation"></a>
+<a id="placement-placement.rust.native_rust.api_definiteintegrationinterpretation.d10c2e6398e2"></a>
+<p class="symi-entry-owner">api re_export</p>
 
 ```rust signature
-pub fn integrate<'a, VariableType>(
-    &self,
-    target: &Expression,
-    variable: VariableType,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
+pub use crate::integrate::definite::DefiniteIntegrationInterpretation;
 ```
 
-Indefinite integration (no constant of integration).
+Re-exports the definite-integration interpretation, divergence direction and decline reason.
+
+### DefiniteIntegrationVerdict
+
+<a id="entry-presentation_rust_api_definiteintegrationverdict"></a>
+<a id="placement-placement.rust.native_rust.api_definiteintegrationverdict.5908e3222768"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use results::DefiniteIntegrationVerdict;
+```
+
+The classification of a definite-integration request.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationverdict.55bc1cab789f"></a>
+<p class="symi-entry-owner">Type: <code>api::results::DefiniteIntegrationVerdict</code></p>
+
+```rust signature
+pub enum DefiniteIntegrationVerdict
+```
+
+</details>
+
+#### DefiniteIntegrationVerdict.Declined
+
+<a id="entry-presentation_rust_api_definiteintegrationverdict_declined"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationverdict_declined.8cbfd9bacf86"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationVerdict variant</p>
+
+```rust signature
+Declined,
+```
+
+Available methods established neither a value nor divergence.
+
+#### DefiniteIntegrationVerdict.Divergent
+
+<a id="entry-presentation_rust_api_definiteintegrationverdict_divergent"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationverdict_divergent.0791b4778728"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationVerdict variant</p>
+
+```rust signature
+Divergent,
+```
+
+The requested improper limit was proved not to exist.
+
+#### DefiniteIntegrationVerdict.Evaluated
+
+<a id="entry-presentation_rust_api_definiteintegrationverdict_evaluated"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationverdict_evaluated.c496636cafef"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationVerdict variant</p>
+
+```rust signature
+Evaluated,
+```
+
+An exact value was established under the requested interpretation.
+
+#### DefiniteIntegrationVerdict.name
+
+<a id="entry-presentation_rust_api_definiteintegrationverdict_name"></a>
+<a id="placement-placement.rust.native_rust.api_results_definiteintegrationverdict_name.6f3ee20610a1"></a>
+<p class="symi-entry-owner">api::results::DefiniteIntegrationVerdict method</p>
+
+```rust signature
+pub fn name(&self) -> &'static str
+```
+
+The stable lowercase spelling shared by every binding.
+
+### LimitDirection
+
+<a id="entry-presentation_rust_api_limitdirection"></a>
+<a id="placement-placement.rust.native_rust.api_limitdirection.e823bae61aba"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use crate::limit::LimitDirection;
+```
+
+Re-exports the limit direction vocabulary shared by every binding.
 

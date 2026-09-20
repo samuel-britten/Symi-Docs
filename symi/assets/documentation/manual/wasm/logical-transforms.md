@@ -13,7 +13,32 @@ are described in [Boolean algebra and logic](logic.md).
 
 ### disjunctive_normal_form
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.disjunctive_normal_form`](/symi/python/logical-transforms#disjunctive_normal_form) in Python, [`UniffiExpression.disjunctiveNormalForm`](/symi/kotlin/logical-transforms#disjunctive_normal_form) in Kotlin, [`UniffiExpression.disjunctiveNormalForm`](/symi/swift/logical-transforms#disjunctive_normal_form) in Swift, [`api::expression_operations::Expression::disjunctive_normal_form`](/symi/rust/logical-transforms#disjunctive_normal_form) in Rust.*
+<a id="entry-presentation_wasm_api_session_disjunctive_normal_form"></a>
+<a id="placement-placement.wasm.wasm_module.module_disjunctivenormalform.5d44449a582f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+disjunctiveNormalForm(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_disjunctivenormalform.08f586ff9227"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.disjunctiveNormalForm</code></p>
+
+```typescript signature
+disjunctiveNormalForm(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_disjunctivenormalform.9a756d79b061"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.disjunctiveNormalForm</code></p>
+
+```typescript signature
+disjunctiveNormalForm(): Expression
+```
+
+</details>
 
 
 Rewrite a propositional formula into a reduced disjunctive normal form (an
@@ -23,7 +48,32 @@ contradictory, duplicate, and subsumed terms are dropped.
 
 ### conjunctive_normal_form
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.conjunctive_normal_form`](/symi/python/logical-transforms#conjunctive_normal_form) in Python, [`UniffiExpression.conjunctiveNormalForm`](/symi/kotlin/logical-transforms#conjunctive_normal_form) in Kotlin, [`UniffiExpression.conjunctiveNormalForm`](/symi/swift/logical-transforms#conjunctive_normal_form) in Swift, [`api::expression_operations::Expression::conjunctive_normal_form`](/symi/rust/logical-transforms#conjunctive_normal_form) in Rust.*
+<a id="entry-presentation_wasm_api_session_conjunctive_normal_form"></a>
+<a id="placement-placement.wasm.wasm_module.module_conjunctivenormalform.18125e7d91b4"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+conjunctiveNormalForm(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_conjunctivenormalform.fd02ee7d14f1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.conjunctiveNormalForm</code></p>
+
+```typescript signature
+conjunctiveNormalForm(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_conjunctivenormalform.eef84cedcdfd"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.conjunctiveNormalForm</code></p>
+
+```typescript signature
+conjunctiveNormalForm(): Expression
+```
+
+</details>
 
 
 The dual of `disjunctive_normal_form`: a reduced conjunctive normal form (an
@@ -31,7 +81,32 @@ AND of OR-clauses over literals).
 
 ### minimize_logical
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.minimize_logical`](/symi/python/logical-transforms#minimize_logical) in Python, [`UniffiExpression.minimizeLogical`](/symi/kotlin/logical-transforms#minimize_logical) in Kotlin, [`UniffiExpression.minimizeLogical`](/symi/swift/logical-transforms#minimize_logical) in Swift, [`api::expression_operations::Expression::minimize_logical`](/symi/rust/logical-transforms#minimize_logical) in Rust.*
+<a id="entry-presentation_wasm_api_session_minimize_logical"></a>
+<a id="placement-placement.wasm.wasm_module.module_minimizelogical.b1927e04de80"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+minimizeLogical(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_minimizelogical.e8634cea64ca"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.minimizeLogical</code></p>
+
+```typescript signature
+minimizeLogical(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_minimizelogical.1eeedfe07389"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.minimizeLogical</code></p>
+
+```typescript signature
+minimizeLogical(): Expression
+```
+
+</details>
 
 
 The smaller of the minimum sum-of-products and product-of-sums two-level
@@ -42,7 +117,53 @@ provably minimal — cover.
 
 ### simplify_logical
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.simplify_logical`](/symi/python/logical-transforms#simplify_logical) in Python, [`UniffiExpression.simplifyLogical`](/symi/kotlin/logical-transforms#simplify_logical) in Kotlin, [`UniffiExpression.simplifyLogical`](/symi/swift/logical-transforms#simplify_logical) in Swift, [`api::expression_operations::Expression::simplify_logical`](/symi/rust/logical-transforms#simplify_logical) in Rust.*
+<a id="entry-presentation_wasm_api_session_simplify_logical"></a>
+<a id="placement-placement.wasm.wasm_module.module_simplifylogical.c91f7d3e4b36"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+simplifyLogical(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_simplifylogical.d5a84750401d"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.simplifyLogical</code></p>
+
+```typescript signature
+simplifyLogical(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_simplifylogical.0449b898501d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.simplifyLogical</code></p>
+
+```typescript signature
+simplifyLogical(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_simplifylogical.7e8c3741add9"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.simplifyLogical</code></p>
+
+```typescript signature
+simplifyLogical(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.expression_simplifylogical.dce05b71d665"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.simplifyLogical</code></p>
+
+```typescript signature
+simplifyLogical(): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_simplifylogical.b150d8671266"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.simplifyLogical</code></p>
+
+```typescript signature
+simplifyLogical(): Expression
+```
+
+</details>
 
 
 Return whichever of the original form, the disjunctive and conjunctive
@@ -60,7 +181,53 @@ either of them, and neither performs hidden normal-form work.
 
 ### eliminate_derived_logical_connectives
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.eliminate_derived_logical_connectives`](/symi/python/logical-transforms#eliminate_derived_logical_connectives) in Python, [`UniffiExpression.eliminateDerivedLogicalConnectives`](/symi/kotlin/logical-transforms#eliminate_derived_logical_connectives) in Kotlin, [`UniffiExpression.eliminateDerivedLogicalConnectives`](/symi/swift/logical-transforms#eliminate_derived_logical_connectives) in Swift, [`api::expression_operations::Expression::eliminate_derived_logical_connectives`](/symi/rust/logical-transforms#eliminate_derived_logical_connectives) in Rust.*
+<a id="entry-presentation_wasm_api_session_eliminate_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.wasm_module.module_eliminatederivedlogicalconnectives.86334ce1fe59"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+eliminateDerivedLogicalConnectives(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_eliminatederivedlogicalconnectives.fbf21e222b48"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.eliminateDerivedLogicalConnectives</code></p>
+
+```typescript signature
+eliminateDerivedLogicalConnectives(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_eliminatederivedlogicalconnectives.3556bcb58aec"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.eliminateDerivedLogicalConnectives</code></p>
+
+```typescript signature
+eliminateDerivedLogicalConnectives(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_eliminatederivedlogicalconnectives.ac05ca331ca5"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.eliminateDerivedLogicalConnectives</code></p>
+
+```typescript signature
+eliminateDerivedLogicalConnectives(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.expression_eliminatederivedlogicalconnectives.03dbed4ef109"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.eliminateDerivedLogicalConnectives</code></p>
+
+```typescript signature
+eliminateDerivedLogicalConnectives(): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_eliminatederivedlogicalconnectives.1f7a9ae4427f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.eliminateDerivedLogicalConnectives</code></p>
+
+```typescript signature
+eliminateDerivedLogicalConnectives(): Expression
+```
+
+</details>
 
 
 Rewrite every `implies`, `equivalent`, and `exclusive_or` occurrence in a
@@ -113,7 +280,53 @@ symi.eliminateDerivedLogicalConnectives(formula).toString();
 
 ### introduce_derived_logical_connectives
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.introduce_derived_logical_connectives`](/symi/python/logical-transforms#introduce_derived_logical_connectives) in Python, [`UniffiExpression.introduceDerivedLogicalConnectives`](/symi/kotlin/logical-transforms#introduce_derived_logical_connectives) in Kotlin, [`UniffiExpression.introduceDerivedLogicalConnectives`](/symi/swift/logical-transforms#introduce_derived_logical_connectives) in Swift, [`api::expression_operations::Expression::introduce_derived_logical_connectives`](/symi/rust/logical-transforms#introduce_derived_logical_connectives) in Rust.*
+<a id="entry-presentation_wasm_api_session_introduce_derived_logical_connectives"></a>
+<a id="placement-placement.wasm.wasm_module.module_introducederivedlogicalconnectives.83816a1b06a4"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_introducederivedlogicalconnectives.1178bb7be801"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.introduceDerivedLogicalConnectives</code></p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_introducederivedlogicalconnectives.b3bbbe9c8c71"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.introduceDerivedLogicalConnectives</code></p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_introducederivedlogicalconnectives.d87c58b06818"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.introduceDerivedLogicalConnectives</code></p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(value: ExpressionLike): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.expression_introducederivedlogicalconnectives.d61df7a5125f"></a>
+<p class="symi-entry-owner">Expression method: <code>Expression.introduceDerivedLogicalConnectives</code></p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_introducederivedlogicalconnectives.174398edf818"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.introduceDerivedLogicalConnectives</code></p>
+
+```typescript signature
+introduceDerivedLogicalConnectives(): Expression
+```
+
+</details>
 
 
 The inverse presentation direction. Recognise the exact canonical definitions

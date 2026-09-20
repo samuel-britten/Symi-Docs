@@ -2,7 +2,7 @@
 
 ### solve
 
-<a id="entry-presentation_python_solving_capability_equations_solve_api_solving_session_solve"></a>
+<a id="entry-presentation_python_api_session_solve"></a>
 <a id="placement-placement.python.python_module.module_solve.644a18093e3a"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -26,15 +26,14 @@ solve(
 ) -> list[Expression]
 ```
 
-</details>
-
-<a id="entry-presentation_python_solving_capability_equations_solve_api_expression_operations_expression_solve"></a>
 <a id="placement-placement.python.python_class.expression_solve.a98fe09639f3"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.solve</code></p>
 
 ```python signature
 solve(variable: VariableLike) -> list[Expression]
 ```
+
+</details>
 
 
 Solve an equation (an `equal` node, or an expression implicitly equated to
@@ -44,7 +43,7 @@ solver's reach are simply absent — prefer `solveset` when you need an honest
 
 ### solveset
 
-<a id="entry-presentation_python_solving_capability_equations_solveset_api_solving_session_solveset"></a>
+<a id="entry-presentation_python_api_session_solveset"></a>
 <a id="placement-placement.python.python_module.module_solveset.d687000dc23c"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -70,11 +69,8 @@ solveset(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_solving_capability_equations_solveset_api_expression_operations_expression_solveset"></a>
 <a id="placement-placement.python.python_class.expression_solveset.e204d9960687"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.solveset</code></p>
 
 ```python signature
 solveset(
@@ -82,6 +78,8 @@ solveset(
     domain: Optional[ExpressionLike] = None,
 ) -> Expression
 ```
+
+</details>
 
 
 Solution **set** of the equation or inequality: a finite set, interval,
@@ -202,7 +200,7 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### solveset_in_domain
 
-<a id="entry-presentation_python_solving_capability_equations_solveset_in_domain_api_solving_session_solveset_in_domain"></a>
+<a id="entry-presentation_python_api_session_solveset_in_domain"></a>
 <a id="placement-placement.python.python_module.module_solveset_in_domain.5dc47cc84338"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -236,7 +234,7 @@ solveset_in_domain(
 
 ### roots_with_multiplicities
 
-<a id="entry-presentation_python_solving_capability_equations_roots_with_multiplicities_api_solving_session_roots_with_multiplicities"></a>
+<a id="entry-presentation_python_api_session_roots_with_multiplicities"></a>
 <a id="placement-placement.python.python_module.module_roots_with_multiplicities.a15c88775319"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -260,15 +258,14 @@ roots_with_multiplicities(
 ) -> Any
 ```
 
-</details>
-
-<a id="entry-presentation_python_solving_capability_equations_roots_with_multiplicities_api_expression_operations_expression_roots_with_multiplicities"></a>
 <a id="placement-placement.python.python_class.expression_roots_with_multiplicities.30879349c706"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.roots_with_multiplicities</code></p>
 
 ```python signature
 roots_with_multiplicities(variable: VariableLike) -> Any
 ```
+
+</details>
 
 
 Roots of a polynomial with their multiplicities. **Notes:** Python returns a
@@ -276,7 +273,7 @@ dict keyed by root; WASM returns an array of `RootMultiplicity` objects.
 
 ### polynomial_root
 
-<a id="entry-presentation_python_solving_capability_equations_polynomial_root_api_solving_session_polynomial_root"></a>
+<a id="entry-presentation_python_api_session_polynomial_root"></a>
 <a id="placement-placement.python.python_module.module_polynomial_root.078947de5378"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -319,7 +316,7 @@ explicit, separate operation.
 
 ### minimal_polynomial_of
 
-<a id="entry-presentation_python_solving_capability_equations_minimal_polynomial_of_api_algebra_session_minimal_polynomial_of"></a>
+<a id="entry-presentation_python_api_session_minimal_polynomial_of"></a>
 <a id="placement-placement.python.python_module.module_minimal_polynomial_of.55b3ebd83e25"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -356,7 +353,7 @@ Has `root` and `multiplicity` getters; see object model.
 
 ### solve_polynomial_system
 
-<a id="entry-presentation_python_solving_capability_equations_solve_polynomial_system_api_solving_session_solve_polynomial_system"></a>
+<a id="entry-presentation_python_api_session_solve_polynomial_system"></a>
 <a id="placement-placement.python.python_module.module_solve_polynomial_system.2a04d647f98e"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -403,12 +400,15 @@ The WASM return of `solve_polynomial_system`. Python returns a plain dict in its
 place.
 
 ### verdict
+
+*Not exposed by the Python bindings. Available as [`UniffiPolynomialSystemSolution.verdict`](/symi/kotlin/solving#verdict) in Kotlin, [`UniffiPolynomialSystemSolution.verdict`](/symi/swift/solving#verdict) in Swift, [`api::results::PolynomialSystemSolution::verdict`](/symi/rust/solving#verdict) in Rust.*
+
 Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`,
 `"empty"`, `"positive_dimensional"`, or `"declined"`.
 
 ### complete
 
-*Not exposed by the Python bindings. Available as [`UniffiOptimizationOutcome.complete`](/symi/kotlin/solving#complete) in Kotlin, [`UniffiOptimizationOutcome.complete`](/symi/swift/solving#complete) in Swift, [`api::results::OptimizationOutcome::complete`](/symi/rust/solving#complete) in Rust.*
+*Not exposed by the Python bindings. Available as [`UniffiPolynomialSystemSolution.complete`](/symi/kotlin/solving#complete) in Kotlin, [`UniffiPolynomialSystemSolution.complete`](/symi/swift/solving#complete) in Swift, [`api::results::PolynomialSystemSolution::complete`](/symi/rust/solving#complete) in Rust.*
 
 Getter on `PolynomialSystemSolution`: whether the solver certified it found
 every solution.
@@ -426,20 +426,20 @@ One solution tuple of a polynomial system, pairing each unknown with its value.
 
 ### variables
 
-*Not exposed by the Python bindings. Available as [`UniffiCriticalPoint.variables`](/symi/kotlin/solving#variables) in Kotlin, [`UniffiCriticalPoint.variables`](/symi/swift/solving#variables) in Swift, [`api::results::CriticalPoint::variables`](/symi/rust/solving#variables) in Rust.*
+*Not exposed by the Python bindings. Available as [`UniffiSystemAssignment.variables`](/symi/kotlin/solving#variables) in Kotlin, [`UniffiSystemAssignment.variables`](/symi/swift/solving#variables) in Swift, [`api::results::SystemAssignment::variables`](/symi/rust/solving#variables) in Rust.*
 
 Getter on `SystemAssignment`: the unknown names, in order.
 
 ### values
 
-*Not exposed by the Python bindings. Available as [`UniffiCriticalPoint.values`](/symi/kotlin/solving#values) in Kotlin, [`UniffiCriticalPoint.values`](/symi/swift/solving#values) in Swift, [`api::results::CriticalPoint::values`](/symi/rust/solving#values) in Rust.*
+*Not exposed by the Python bindings. Available as [`UniffiSystemAssignment.values`](/symi/kotlin/solving#values) in Kotlin, [`UniffiSystemAssignment.values`](/symi/swift/solving#values) in Swift, [`api::results::SystemAssignment::values`](/symi/rust/solving#values) in Rust.*
 
 Getter on `SystemAssignment`: the assigned value expressions, aligned with
 `variables`.
 
 ### real_root_count
 
-<a id="entry-presentation_python_solving_capability_equations_real_root_count_api_solving_session_real_root_count"></a>
+<a id="entry-presentation_python_api_session_real_root_count"></a>
 <a id="placement-placement.python.python_module.module_real_root_count.85194a5b19fc"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -476,7 +476,7 @@ univariate polynomial over the rationals.
 
 ### count_distinct_real_roots
 
-<a id="entry-presentation_python_solving_capability_equations_count_distinct_real_roots_api_solving_session_count_distinct_real_roots"></a>
+<a id="entry-presentation_python_api_session_count_distinct_real_roots"></a>
 <a id="placement-placement.python.python_module.module_count_distinct_real_roots.a838a3619f68"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -508,7 +508,7 @@ Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions
 
 ### real_root_sign
 
-<a id="entry-presentation_python_solving_capability_equations_real_root_sign_api_solving_session_real_root_sign"></a>
+<a id="entry-presentation_python_api_session_real_root_sign"></a>
 <a id="placement-placement.python.python_module.module_real_root_sign.c8e22d8c4a52"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -545,7 +545,7 @@ is out of range.
 
 ### compare_real_roots
 
-<a id="entry-presentation_python_solving_capability_equations_compare_real_roots_api_solving_session_compare_real_roots"></a>
+<a id="entry-presentation_python_api_session_compare_real_roots"></a>
 <a id="placement-placement.python.python_module.module_compare_real_roots.64c6a3af0b12"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -591,7 +591,7 @@ polynomial over the rationals or an index is out of range.
 
 ### eliminate_quantifiers
 
-<a id="entry-presentation_python_solving_capability_equations_eliminate_quantifiers_api_logic_session_eliminate_quantifiers"></a>
+<a id="entry-presentation_python_api_session_eliminate_quantifiers"></a>
 <a id="placement-placement.python.python_module.module_eliminate_quantifiers.671ab41c3767"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -634,7 +634,7 @@ decline, or when the solution formula cannot be certified.
 
 ### solve_semialgebraic
 
-<a id="entry-presentation_python_solving_capability_equations_solve_semialgebraic_api_logic_session_solve_semialgebraic"></a>
+<a id="entry-presentation_python_api_session_solve_semialgebraic"></a>
 <a id="placement-placement.python.python_module.module_solve_semialgebraic.150db5c326a7"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -686,113 +686,13 @@ print(symi.roots_with_multiplicities(x**3 - x, "x"))
 ```
 
 
-## Additional API
+### solve_as_set
 
-### verdict
+*Not exposed by the Python bindings. Available as [`api::Expression::solve_as_set`](/symi/rust/solving#solve_as_set) in Rust.*
 
-<a id="entry-presentation_python_solving_capability_calculus_verdict_api_results_definiteintegrationresult_verdict"></a>
-<a id="placement-placement.python.python_class.definiteintegrationresult_verdict.be0b21cf7d5e"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
 
-```python signature
-verdict: str
-```
-
-Whether the request was evaluated, proved divergent, or declined.
-
-### verdict
-
-<a id="entry-presentation_python_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verdict"></a>
-<a id="placement-placement.python.python_class.ordinarydifferentialequationsolveresult_verdict.592a8fe7421b"></a>
-<p class="symi-entry-owner">OrdinaryDifferentialEquationSolveResult property</p>
-
-```python signature
-verdict: str
-```
-
-Whether the request was solved or declined.
-
-### verdict
-
-<a id="entry-presentation_python_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verdict"></a>
-<a id="placement-placement.python.python_class.ordinarydifferentialequationsystemsolveresult_verdict.ee565ebcb9d3"></a>
-<p class="symi-entry-owner">OrdinaryDifferentialEquationSystemSolveResult property</p>
-
-```python signature
-verdict: str
-```
-
-Whether the system was solved or declined.
-
-### verdict
-
-<a id="entry-presentation_python_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_verdict"></a>
-<a id="placement-placement.python.python_class.ordinarydifferentialequationsystemverificationreport_verdict.c3b045f19390"></a>
-<p class="symi-entry-owner">OrdinaryDifferentialEquationSystemVerificationReport property</p>
-
-```python signature
-verdict: str
-```
-
-The decision on every equation residual and every datum of the supplied assignment.
-
-### verdict
-
-<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_verdict"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationsecondorderclassification_verdict.b16642fd9fa2"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationSecondOrderClassification property</p>
-
-```python signature
-verdict: str
-```
-
-Whether one type, a complete case table, or neither was proved.
-
-### verdict
-
-<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsolveresult_verdict"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationsolveresult_verdict.a23066465fd2"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationSolveResult property</p>
-
-```python signature
-verdict: str
-```
-
-Whether the dispatcher solved or honestly declined.
-
-### verdict
-
-<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_verdict"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationtransformationverificationreport_verdict.9f9cab5a462b"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationTransformationVerificationReport property</p>
-
-```python signature
-verdict: str
-```
-
-The aggregate exact verification verdict.
-
-### verdict
-
-<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationreport_verdict"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationverificationreport_verdict.92b062023cbc"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationVerificationReport property</p>
-
-```python signature
-verdict: str
-```
-
-The aggregate exact verification verdict.
-
-### verdict
-
-<a id="entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationresidual_verdict"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationverificationresidual_verdict.24f8a5481097"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationVerificationResidual property</p>
-
-```python signature
-verdict: str
-```
-
-The exact verdict proved about this one residual.
-
+The solution set of an equation as a set-valued expression, rather than the
+list of solutions [`solve`](#solve) returns. A set answer can express solution
+families a list cannot — an image set over the integers, or a union of several
+families — so it is the right entry when the solution set may be infinite.
+See [Sets](sets.md) for what can be done with the result.

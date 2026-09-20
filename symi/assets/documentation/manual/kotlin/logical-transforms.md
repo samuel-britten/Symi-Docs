@@ -13,7 +13,7 @@ are described in [Boolean algebra and logic](logic.md).
 
 ### disjunctive_normal_form
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_disjunctive_normal_form_api_logic_session_disjunctive_normal_form"></a>
+<a id="entry-presentation_kotlin_api_session_disjunctive_normal_form"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_disjunctivenormalform.9475b9ed175f"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -21,13 +21,17 @@ are described in [Boolean algebra and logic](logic.md).
 fun disjunctiveNormalForm(inputExpression: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_disjunctive_normal_form_api_expression_operations_expression_disjunctive_normal_form"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_disjunctivenormalform.81f19859d9f9"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.disjunctiveNormalForm</code></p>
 
 ```kotlin signature
 fun disjunctiveNormalForm(): UniffiExpression
 ```
+
+</details>
 
 
 Rewrite a propositional formula into a reduced disjunctive normal form (an
@@ -37,7 +41,7 @@ contradictory, duplicate, and subsumed terms are dropped.
 
 ### conjunctive_normal_form
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_conjunctive_normal_form_api_logic_session_conjunctive_normal_form"></a>
+<a id="entry-presentation_kotlin_api_session_conjunctive_normal_form"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_conjunctivenormalform.fc5b02bceb9c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -45,13 +49,17 @@ contradictory, duplicate, and subsumed terms are dropped.
 fun conjunctiveNormalForm(inputExpression: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_conjunctive_normal_form_api_expression_operations_expression_conjunctive_normal_form"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_conjunctivenormalform.5b0f83c7b125"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.conjunctiveNormalForm</code></p>
 
 ```kotlin signature
 fun conjunctiveNormalForm(): UniffiExpression
 ```
+
+</details>
 
 
 The dual of `disjunctive_normal_form`: a reduced conjunctive normal form (an
@@ -59,7 +67,7 @@ AND of OR-clauses over literals).
 
 ### minimize_logical
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_minimize_logical_api_logic_session_minimize_logical"></a>
+<a id="entry-presentation_kotlin_api_session_minimize_logical"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_minimizelogical.efb721bed62b"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -67,13 +75,17 @@ AND of OR-clauses over literals).
 fun minimizeLogical(inputExpression: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_minimize_logical_api_expression_operations_expression_minimize_logical"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_minimizelogical.ea2318b7d190"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.minimizeLogical</code></p>
 
 ```kotlin signature
 fun minimizeLogical(): UniffiExpression
 ```
+
+</details>
 
 
 The smaller of the minimum sum-of-products and product-of-sums two-level
@@ -84,7 +96,7 @@ provably minimal — cover.
 
 ### simplify_logical
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_simplify_logical_api_logic_session_simplify_logical"></a>
+<a id="entry-presentation_kotlin_api_session_simplify_logical"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_simplifylogical.8f957a00afdf"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -92,13 +104,17 @@ provably minimal — cover.
 fun simplifyLogical(inputExpression: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_simplify_logical_api_expression_operations_expression_simplify_logical"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_simplifylogical.67c7da608aaa"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.simplifyLogical</code></p>
 
 ```kotlin signature
 fun simplifyLogical(): UniffiExpression
 ```
+
+</details>
 
 
 Return whichever of the original form, the disjunctive and conjunctive
@@ -116,7 +132,7 @@ either of them, and neither performs hidden normal-form work.
 
 ### eliminate_derived_logical_connectives
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_logic_session_eliminate_derived_logical_connectives"></a>
+<a id="entry-presentation_kotlin_api_session_eliminate_derived_logical_connectives"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_eliminatederivedlogicalconnectives.5447c04eeffa"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -124,13 +140,17 @@ either of them, and neither performs hidden normal-form work.
 fun eliminateDerivedLogicalConnectives(inputExpression: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_expression_operations_expression_eliminate_derived_logical_connectives"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_eliminatederivedlogicalconnectives.df94b9e157c3"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.eliminateDerivedLogicalConnectives</code></p>
 
 ```kotlin signature
 fun eliminateDerivedLogicalConnectives(): UniffiExpression
 ```
+
+</details>
 
 
 Rewrite every `implies`, `equivalent`, and `exclusive_or` occurrence in a
@@ -178,7 +198,7 @@ already in the basis also comes back unchanged.
 
 ### introduce_derived_logical_connectives
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_introduce_derived_logical_connectives_api_logic_session_introduce_derived_logical_connectives"></a>
+<a id="entry-presentation_kotlin_api_session_introduce_derived_logical_connectives"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_introducederivedlogicalconnectives.b463500bc8b9"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -186,13 +206,17 @@ already in the basis also comes back unchanged.
 fun introduceDerivedLogicalConnectives(inputExpression: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_logical_transforms_capability_discrete_mathematics_introduce_derived_logical_connectives_api_expression_operations_expression_introduce_derived_logical_connectives"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_introducederivedlogicalconnectives.e8d84a9a4e36"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.introduceDerivedLogicalConnectives</code></p>
 
 ```kotlin signature
 fun introduceDerivedLogicalConnectives(): UniffiExpression
 ```
+
+</details>
 
 
 The inverse presentation direction. Recognise the exact canonical definitions

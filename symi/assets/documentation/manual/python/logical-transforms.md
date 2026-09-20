@@ -13,7 +13,7 @@ are described in [Boolean algebra and logic](logic.md).
 
 ### disjunctive_normal_form
 
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_disjunctive_normal_form_api_logic_session_disjunctive_normal_form"></a>
+<a id="entry-presentation_python_api_session_disjunctive_normal_form"></a>
 <a id="placement-placement.python.python_module.module_disjunctive_normal_form.fdced179b826"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -31,15 +31,14 @@ disjunctive_normal_form(input_expression: ExpressionLike) -> Expression
 disjunctive_normal_form(input_expression: ExpressionLike) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_disjunctive_normal_form_api_expression_operations_expression_disjunctive_normal_form"></a>
 <a id="placement-placement.python.python_class.expression_disjunctive_normal_form.f2c63596196e"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.disjunctive_normal_form</code></p>
 
 ```python signature
 disjunctive_normal_form() -> Expression
 ```
+
+</details>
 
 
 Rewrite a propositional formula into a reduced disjunctive normal form (an
@@ -49,7 +48,7 @@ contradictory, duplicate, and subsumed terms are dropped.
 
 ### conjunctive_normal_form
 
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_conjunctive_normal_form_api_logic_session_conjunctive_normal_form"></a>
+<a id="entry-presentation_python_api_session_conjunctive_normal_form"></a>
 <a id="placement-placement.python.python_module.module_conjunctive_normal_form.f4432ad40575"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -67,15 +66,14 @@ conjunctive_normal_form(input_expression: ExpressionLike) -> Expression
 conjunctive_normal_form(input_expression: ExpressionLike) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_conjunctive_normal_form_api_expression_operations_expression_conjunctive_normal_form"></a>
 <a id="placement-placement.python.python_class.expression_conjunctive_normal_form.f887d3e3aba7"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.conjunctive_normal_form</code></p>
 
 ```python signature
 conjunctive_normal_form() -> Expression
 ```
+
+</details>
 
 
 The dual of `disjunctive_normal_form`: a reduced conjunctive normal form (an
@@ -83,7 +81,7 @@ AND of OR-clauses over literals).
 
 ### minimize_logical
 
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_minimize_logical_api_logic_session_minimize_logical"></a>
+<a id="entry-presentation_python_api_session_minimize_logical"></a>
 <a id="placement-placement.python.python_module.module_minimize_logical.6aa7301c62f6"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -101,15 +99,14 @@ minimize_logical(input_expression: ExpressionLike) -> Expression
 minimize_logical(input_expression: ExpressionLike) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_minimize_logical_api_expression_operations_expression_minimize_logical"></a>
 <a id="placement-placement.python.python_class.expression_minimize_logical.b25a9a94bc0a"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.minimize_logical</code></p>
 
 ```python signature
 minimize_logical() -> Expression
 ```
+
+</details>
 
 
 The smaller of the minimum sum-of-products and product-of-sums two-level
@@ -120,7 +117,7 @@ provably minimal — cover.
 
 ### simplify_logical
 
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_simplify_logical_api_logic_session_simplify_logical"></a>
+<a id="entry-presentation_python_api_session_simplify_logical"></a>
 <a id="placement-placement.python.python_module.module_simplify_logical.106a43a65d64"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -138,15 +135,14 @@ simplify_logical(input_expression: ExpressionLike) -> Expression
 simplify_logical(input_expression: ExpressionLike) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_simplify_logical_api_expression_operations_expression_simplify_logical"></a>
 <a id="placement-placement.python.python_class.expression_simplify_logical.b7532204a234"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.simplify_logical</code></p>
 
 ```python signature
 simplify_logical() -> Expression
 ```
+
+</details>
 
 
 Return whichever of the original form, the disjunctive and conjunctive
@@ -164,7 +160,7 @@ either of them, and neither performs hidden normal-form work.
 
 ### eliminate_derived_logical_connectives
 
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_logic_session_eliminate_derived_logical_connectives"></a>
+<a id="entry-presentation_python_api_session_eliminate_derived_logical_connectives"></a>
 <a id="placement-placement.python.python_module.module_eliminate_derived_logical_connectives.c9c77eaa3fb7"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -182,15 +178,14 @@ eliminate_derived_logical_connectives(input_expression: ExpressionLike) -> Expre
 eliminate_derived_logical_connectives(input_expression: ExpressionLike) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_expression_operations_expression_eliminate_derived_logical_connectives"></a>
 <a id="placement-placement.python.python_class.expression_eliminate_derived_logical_connectives.05b5e44aa2e4"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.eliminate_derived_logical_connectives</code></p>
 
 ```python signature
 eliminate_derived_logical_connectives() -> Expression
 ```
+
+</details>
 
 
 Rewrite every `implies`, `equivalent`, and `exclusive_or` occurrence in a
@@ -245,7 +240,7 @@ symi.eliminate_derived_logical_connectives(formula)
 
 ### introduce_derived_logical_connectives
 
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_introduce_derived_logical_connectives_api_logic_session_introduce_derived_logical_connectives"></a>
+<a id="entry-presentation_python_api_session_introduce_derived_logical_connectives"></a>
 <a id="placement-placement.python.python_module.module_introduce_derived_logical_connectives.f87b90e17341"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -263,15 +258,14 @@ introduce_derived_logical_connectives(input_expression: ExpressionLike) -> Expre
 introduce_derived_logical_connectives(input_expression: ExpressionLike) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_logical_transforms_capability_discrete_mathematics_introduce_derived_logical_connectives_api_expression_operations_expression_introduce_derived_logical_connectives"></a>
 <a id="placement-placement.python.python_class.expression_introduce_derived_logical_connectives.8f28ec501589"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.introduce_derived_logical_connectives</code></p>
 
 ```python signature
 introduce_derived_logical_connectives() -> Expression
 ```
+
+</details>
 
 
 The inverse presentation direction. Recognise the exact canonical definitions

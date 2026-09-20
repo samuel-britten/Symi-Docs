@@ -8,15 +8,7 @@ machine integers.)
 
 ### is_prime
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_expression_is_prime_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_is_prime.97b7d44ac9fc"></a>
-<p class="symi-entry-owner">api::Expression method</p>
-
-```rust signature
-pub fn is_prime(&self) -> Result<TruthValue, ApiError>
-```
-
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_is_prime_unnamed"></a>
+<a id="entry-presentation_rust_api_session_is_prime"></a>
 <a id="placement-placement.rust.native_rust.api_session_is_prime.6ee08885c070"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -27,6 +19,18 @@ pub fn is_prime(
 ) -> Result<Option<bool>, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_is_prime.97b7d44ac9fc"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::is_prime</code></p>
+
+```rust signature
+pub fn is_prime(&self) -> Result<TruthValue, ApiError>
+```
+
+</details>
+
 
 Deterministic primality verdict; `None` when the input is outside the
 classifier's domain (e.g. not a natural number \(\geq 0\) representation it
@@ -34,7 +38,7 @@ handles).
 
 ### factor_integer
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_factor_integer_unnamed"></a>
+<a id="entry-presentation_rust_api_session_factor_integer"></a>
 <a id="placement-placement.rust.native_rust.api_session_factor_integer.5b4d36ec2cb1"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -55,7 +59,7 @@ as a leading `(-1, 1)` factor exactly as the core reports it.
 
 ### prime
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_results_primefactor_prime_unnamed"></a>
+<a id="entry-presentation_rust_api_primefactor_prime"></a>
 <a id="placement-placement.rust.native_rust.api_results_primefactor_prime.3a2e508734a8"></a>
 <p class="symi-entry-owner">api::results::PrimeFactor method</p>
 
@@ -63,12 +67,34 @@ as a leading `(-1, 1)` factor exactly as the core reports it.
 pub fn prime(&self) -> Expression
 ```
 
+The prime itself.
 
 ### multiplicity
 
+<a id="entry-presentation_rust_api_primefactor_multiplicity"></a>
+<a id="placement-placement.rust.native_rust.api_results_primefactor_multiplicity.4b907330b738"></a>
+<p class="symi-entry-owner">api::results::PrimeFactor method</p>
+
+```rust signature
+pub fn multiplicity(&self) -> u32
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.rust.native_rust.api_results_rootmultiplicity_multiplicity.7415f4bc8d5d"></a>
+<p class="symi-entry-owner">Variant for this object — api::results::RootMultiplicity method: <code>api::results::RootMultiplicity::multiplicity</code></p>
+
+```rust signature
+pub fn multiplicity(&self) -> usize
+```
+
+</details>
+
+
 ### integer_gcd
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_integer_gcd_unnamed"></a>
+<a id="entry-presentation_rust_api_session_integer_gcd"></a>
 <a id="placement-placement.rust.native_rust.api_session_integer_gcd.150b6749a670"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -85,7 +111,7 @@ Greatest common divisor (non-negative).
 
 ### integer_lcm
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_integer_lcm_unnamed"></a>
+<a id="entry-presentation_rust_api_session_integer_lcm"></a>
 <a id="placement-placement.rust.native_rust.api_session_integer_lcm.11d2e05b697f"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -102,7 +128,7 @@ Least common multiple.
 
 ### extended_euclidean
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_extended_euclidean_unnamed"></a>
+<a id="entry-presentation_rust_api_session_extended_euclidean"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_extended_euclidean.90f30ce6180f"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -120,7 +146,7 @@ array `[gcd, x, y]`.
 
 ### modular_power
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_modular_power_unnamed"></a>
+<a id="entry-presentation_rust_api_session_modular_power"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_modular_power.886d6455cfab"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -139,7 +165,7 @@ modulus and non-negative exponent.
 
 ### modular_inverse
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_modular_inverse_unnamed"></a>
+<a id="entry-presentation_rust_api_session_modular_inverse"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_modular_inverse.c12965305873"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -157,7 +183,7 @@ Multiplicative inverse of `value` modulo `modulus`; errors when
 
 ### chinese_remainder
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_chinese_remainder_unnamed"></a>
+<a id="entry-presentation_rust_api_session_chinese_remainder"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_chinese_remainder.a8b821e21bbc"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -176,7 +202,7 @@ raise. **Notes:** WASM passes a flat interleaved array
 
 ### euler_totient
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_euler_totient_unnamed"></a>
+<a id="entry-presentation_rust_api_session_euler_totient"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_euler_totient.595b9915aee0"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -192,7 +218,7 @@ Euler's \(\varphi(n)\); requires a positive integer.
 
 ### mobius
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_mobius_unnamed"></a>
+<a id="entry-presentation_rust_api_session_mobius"></a>
 <a id="placement-placement.rust.native_rust.api_session_mobius.e1b3170998d8"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -208,7 +234,7 @@ Möbius \(\mu(n) \in \{-1, 0, 1\}\); requires a positive integer.
 
 ### divisor_count
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_divisor_count_unnamed"></a>
+<a id="entry-presentation_rust_api_session_divisor_count"></a>
 <a id="placement-placement.rust.native_rust.api_session_divisor_count.8676833c6be4"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -224,7 +250,7 @@ Number of positive divisors \(\tau(n)\).
 
 ### divisor_sigma
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_divisor_sigma_unnamed"></a>
+<a id="entry-presentation_rust_api_session_divisor_sigma"></a>
 <a id="placement-placement.rust.native_rust.api_session_divisor_sigma.874d3f946fd9"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -242,7 +268,7 @@ Sum of the `power`-th powers of the positive divisors \(\sigma_{\mathit{power}}(
 
 ### jacobi_symbol
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_jacobi_symbol_unnamed"></a>
+<a id="entry-presentation_rust_api_session_jacobi_symbol"></a>
 <a id="placement-placement.rust.native_rust.api_session_jacobi_symbol.82e869a6ea54"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -260,7 +286,7 @@ integer.
 
 ### legendre_symbol
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_legendre_symbol_unnamed"></a>
+<a id="entry-presentation_rust_api_session_legendre_symbol"></a>
 <a id="placement-placement.rust.native_rust.api_session_legendre_symbol.e686798e8607"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -277,7 +303,7 @@ The Legendre symbol; the second argument must be an odd prime.
 
 ### kronecker_symbol
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_kronecker_symbol_unnamed"></a>
+<a id="entry-presentation_rust_api_session_kronecker_symbol"></a>
 <a id="placement-placement.rust.native_rust.api_session_kronecker_symbol.bd2b32ad3219"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -294,7 +320,7 @@ The Kronecker extension of the Jacobi symbol to all integer denominators.
 
 ### integer_square_root
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_integer_square_root_unnamed"></a>
+<a id="entry-presentation_rust_api_session_integer_square_root"></a>
 <a id="placement-placement.rust.native_rust.api_session_integer_square_root.86d8755e771b"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -310,7 +336,7 @@ pub fn integer_square_root(
 
 ### integer_nth_root
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_integer_nth_root_unnamed"></a>
+<a id="entry-presentation_rust_api_session_integer_nth_root"></a>
 <a id="placement-placement.rust.native_rust.api_session_integer_nth_root.769bf4217393"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -328,7 +354,7 @@ exists (even index, negative n).
 
 ### continued_fraction_rational
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_continued_fraction_rational_unnamed"></a>
+<a id="entry-presentation_rust_api_session_continued_fraction_rational"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_continued_fraction_rational.8ef169e6e23f"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -345,7 +371,7 @@ or rational expression leaf.
 
 ### continued_fraction_quadratic_irrational
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_continued_fraction_quadratic_irrational_unnamed"></a>
+<a id="entry-presentation_rust_api_session_continued_fraction_quadratic_irrational"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_continued_fraction_quadratic_irrational.2d0be214961d"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -367,7 +393,7 @@ initial part and an empty period. **Notes:** WASM returns a
 
 ### initial_terms
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_results_quadraticcontinuedfractionexpansion_initial_terms_unnamed"></a>
+<a id="entry-presentation_rust_api_quadraticcontinuedfractionexpansion_initial_terms"></a>
 <a id="placement-placement.rust.native_rust.api_results_quadraticcontinuedfractionexpansion_initial_terms.bc0d78ba396d"></a>
 <p class="symi-entry-owner">api::results::QuadraticContinuedFractionExpansion method</p>
 
@@ -375,10 +401,11 @@ initial part and an empty period. **Notes:** WASM returns a
 pub fn initial_terms(&self) -> Vec<Expression>
 ```
 
+The terms preceding the period.
 
 ### periodic_terms
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_results_quadraticcontinuedfractionexpansion_periodic_terms_unnamed"></a>
+<a id="entry-presentation_rust_api_quadraticcontinuedfractionexpansion_periodic_terms"></a>
 <a id="placement-placement.rust.native_rust.api_results_quadraticcontinuedfractionexpansion_periodic_terms.a0da231d1228"></a>
 <p class="symi-entry-owner">api::results::QuadraticContinuedFractionExpansion method</p>
 
@@ -386,6 +413,7 @@ pub fn initial_terms(&self) -> Vec<Expression>
 pub fn periodic_terms(&self) -> Vec<Expression>
 ```
 
+The repeating terms of the period.
 
 ## Diophantine equations
 
@@ -397,7 +425,7 @@ exact integers and never guess.
 
 ### solve_linear_diophantine
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_solve_linear_diophantine_unnamed"></a>
+<a id="entry-presentation_rust_api_session_solve_linear_diophantine"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_solve_linear_diophantine.fd859bd1308b"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -419,7 +447,7 @@ coefficients and the constant must be integer expression leaves.
 
 ### solve_linear_diophantine_system
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_solve_linear_diophantine_system_unnamed"></a>
+<a id="entry-presentation_rust_api_session_solve_linear_diophantine_system"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_solve_linear_diophantine_system.9597aebf2e09"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -440,7 +468,7 @@ not an integer expression leaf, or the dimensions do not agree.
 
 ### solve_pell
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_solve_pell_unnamed"></a>
+<a id="entry-presentation_rust_api_session_solve_pell"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_solve_pell.452e3cd8deac"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -460,7 +488,7 @@ solution).
 
 ### solve_negative_pell
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_solve_negative_pell_unnamed"></a>
+<a id="entry-presentation_rust_api_session_solve_negative_pell"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_solve_negative_pell.1ad5e94715af"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -478,7 +506,7 @@ and an empty list otherwise.
 
 ### pell_solutions
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_number_theory_session_pell_solutions_unnamed"></a>
+<a id="entry-presentation_rust_api_session_pell_solutions"></a>
 <a id="placement-placement.rust.native_rust.api_number_theory_session_pell_solutions.78c73b5e93c4"></a>
 <p class="symi-entry-owner">api::number_theory::Session method</p>
 
@@ -502,33 +530,21 @@ This family is not part of the recommended `symi::api` facade in this release. C
 
 ## Additional API
 
-### multiplicity
+### api::number_theory
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_results_primefactor_multiplicity_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_results_primefactor_multiplicity.4b907330b738"></a>
-<p class="symi-entry-owner">api::results::PrimeFactor method</p>
-
-```rust signature
-pub fn multiplicity(&self) -> u32
-```
-
-Public method placement for multiplicity.
-
-### multiplicity
-
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_results_rootmultiplicity_multiplicity_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_results_rootmultiplicity_multiplicity.7415f4bc8d5d"></a>
-<p class="symi-entry-owner">api::results::RootMultiplicity method</p>
+<a id="entry-presentation_rust_native_module_api_number_theory"></a>
+<a id="placement-placement.rust.native_rust.api_number_theory.2093aae9a4f2"></a>
+<p class="symi-entry-owner">api module</p>
 
 ```rust signature
-pub fn multiplicity(&self) -> usize
+pub mod number_theory;
 ```
 
-Public method placement for multiplicity.
+Integer and Diophantine operations of the native API.
 
 ### prime
 
-<a id="entry-presentation_rust_number_theory_capability_rust_native_rust_api_session_prime_unnamed"></a>
+<a id="entry-presentation_rust_api_session_prime"></a>
 <a id="placement-placement.rust.native_rust.api_session_prime.bf74ec14320d"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -539,5 +555,104 @@ pub fn prime(
 ) -> Result<AssumptionProposition, ApiError>
 ```
 
-Public method placement for prime.
+Construct a primality proposition for a scalar expression.
+
+### prime_factorization
+
+<a id="entry-presentation_rust_api_session_prime_factorization"></a>
+<a id="placement-placement.rust.native_rust.api_number_theory_session_prime_factorization.61a7a4c2c18b"></a>
+<p class="symi-entry-owner">api::number_theory::Session method</p>
+
+```rust signature
+pub fn prime_factorization(
+    &self,
+    value: &Expression,
+) -> Result<Vec<PrimeFactor>, ApiError>
+```
+
+The prime factorization of an integer with each prime's exponent.
+
+### PrimeFactor
+
+<a id="entry-presentation_rust_api_primefactor"></a>
+<a id="placement-placement.rust.native_rust.api_primefactor.cd6af6c049d7"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use results::PrimeFactor;
+```
+
+One prime of an integer factorization together with its exponent.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_results_primefactor.4536e31631ca"></a>
+<p class="symi-entry-owner">Type: <code>api::results::PrimeFactor</code></p>
+
+```rust signature
+pub struct PrimeFactor
+```
+
+</details>
+
+### QuadraticContinuedFractionExpansion
+
+<a id="entry-presentation_rust_api_quadraticcontinuedfractionexpansion"></a>
+<a id="placement-placement.rust.native_rust.api_quadraticcontinuedfractionexpansion.18d86502274a"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use results::QuadraticContinuedFractionExpansion;
+```
+
+The eventually periodic continued-fraction expansion of a quadratic irrational.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_results_quadraticcontinuedfractionexpansion.e1d00cd44a76"></a>
+<p class="symi-entry-owner">Type: <code>api::results::QuadraticContinuedFractionExpansion</code></p>
+
+```rust signature
+pub struct QuadraticContinuedFractionExpansion
+```
+
+</details>
+
+### RootMultiplicity
+
+<a id="entry-presentation_rust_api_rootmultiplicity"></a>
+<a id="placement-placement.rust.native_rust.api_rootmultiplicity.23de5815d593"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use results::RootMultiplicity;
+```
+
+One root of a polynomial together with its multiplicity.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_results_rootmultiplicity.2fb3dfaa39d8"></a>
+<p class="symi-entry-owner">Type: <code>api::results::RootMultiplicity</code></p>
+
+```rust signature
+pub struct RootMultiplicity
+```
+
+</details>
+
+#### RootMultiplicity.root
+
+<a id="entry-presentation_rust_api_rootmultiplicity_root"></a>
+<a id="placement-placement.rust.native_rust.api_results_rootmultiplicity_root.02cf359a422d"></a>
+<p class="symi-entry-owner">api::results::RootMultiplicity method</p>
+
+```rust signature
+pub fn root(&self) -> Expression
+```
+
+The root itself.
 

@@ -26,9 +26,9 @@ weak expression store already keeps memory bounded by live objects (see
 
 ### parse
 
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_parse_api_session_parse"></a>
+<a id="entry-presentation_wasm_api_session_parse"></a>
 <a id="placement-placement.wasm.wasm_module.module_parse.d3722c05cfb1"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 parse(text: string): Expression
@@ -45,7 +45,7 @@ parse(text: string): Expression
 ```
 
 <a id="placement-placement.wasm.wasm_class.context_parse.6a687da40992"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.parse</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.parse</code></p>
 
 ```typescript signature
 parse(text: string): Expression
@@ -112,9 +112,9 @@ as a module-level function.
 
 ### symbol
 
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_symbol_api_session_symbol"></a>
+<a id="entry-presentation_wasm_api_session_symbol"></a>
 <a id="placement-placement.wasm.wasm_module.module_symbol.acdb4c2a07a3"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 symbol(
@@ -141,7 +141,7 @@ symbol(name: string): Expression
 ```
 
 <a id="placement-placement.wasm.wasm_class.context_symbol.018ba3ea3259"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.symbol</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.symbol</code></p>
 
 ```typescript signature
 symbol(
@@ -183,9 +183,9 @@ over.
 
 ### integer
 
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_integer_api_session_integer"></a>
+<a id="entry-presentation_wasm_api_session_integer"></a>
 <a id="placement-placement.wasm.wasm_module.module_integer.f6358fe8b988"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 integer(value: bigint): Expression
@@ -202,7 +202,7 @@ integer(value: bigint | number): Expression
 ```
 
 <a id="placement-placement.wasm.wasm_class.context_integer.adbc02ce5b38"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integer</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integer</code></p>
 
 ```typescript signature
 integer(value: bigint): Expression
@@ -223,9 +223,9 @@ recommended facade accepts `bigint` and safe integral `number` values.
 
 ### rational
 
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_rational_api_session_rational"></a>
+<a id="entry-presentation_wasm_api_session_rational"></a>
 <a id="placement-placement.wasm.wasm_module.module_rational.b3d3524e7701"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 rational(numerator: string, denominator: string): Expression
@@ -242,7 +242,7 @@ rational(numerator: bigint | number, denominator: bigint | number): Expression
 ```
 
 <a id="placement-placement.wasm.wasm_class.context_rational.b6817b148a9c"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.rational</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.rational</code></p>
 
 ```typescript signature
 rational(numerator: string, denominator: string): Expression
@@ -278,27 +278,9 @@ Build an arbitrary-precision integer literal from its decimal string.
 Closest rational with denominator \(\leq\) `max_denominator` (the
 `Fraction.limit_denominator` algorithm). Raises on non-finite input.
 
-### undefined_function
-
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.undefined_function`](/symi/python/construction-and-parsing#undefined_function) in Python, [`UniffiSession.undefinedFunction`](/symi/kotlin/construction-and-parsing#undefined_function) in Kotlin, [`UniffiSession.undefinedFunction`](/symi/swift/construction-and-parsing#undefined_function) in Swift, [`api::Session::undefined_function`](/symi/rust/construction-and-parsing#undefined_function) in Rust.*
-
-
-A callable proxy for a user-named function. Calling it with expression
-arguments builds the function-call expression (see the object-model page and
-the worked ODE example).
-
-### call
-
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_call_api_undefinedfunction_call"></a>
-<a id="placement-placement.wasm.wasm_class.undefinedfunction_call.b0d6218d5723"></a>
-<p class="symi-entry-owner">UndefinedFunction method</p>
-
-```typescript signature
-call(args: Expression[]): Expression
-```
-
-
-WASM spelling of the Python `f(x, …)` call syntax on `UndefinedFunction`.
+Named unknown functions are built with `undefined_function`, whose handle,
+calls, and structural derivatives are documented together in
+[Undefined functions](undefined-functions.md).
 
 ## Example
 
@@ -317,9 +299,9 @@ console.log(symi.rational(2n, 3n).add(symi.integer(1n)).toString());
 
 ### integerFromString
 
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string"></a>
+<a id="entry-presentation_wasm_api_session_integer_from_string"></a>
 <a id="placement-placement.wasm.wasm_module.module_integerfromstring.f1a005df6d84"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 integerFromString(text: string): Expression
@@ -331,7 +313,7 @@ Build an arbitrary-precision integer literal from its decimal string.
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_integerfromstring.dac330233bfa"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integerFromString</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integerFromString</code></p>
 
 ```typescript signature
 integerFromString(text: string): Expression
@@ -339,35 +321,65 @@ integerFromString(text: string): Expression
 
 </details>
 
-### productIndefinite
+### parseLatex
 
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_product_indefinite_api_analysis_session_product_indefinite"></a>
-<a id="placement-placement.wasm.wasm_module.module_productindefinite.fd08393adc04"></a>
-<p class="symi-entry-owner">Default context</p>
+<a id="entry-presentation_wasm_api_session_parse_latex"></a>
+<a id="placement-placement.wasm.wasm_module.module_parselatex.f6216d8e0b47"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
-productIndefinite(multiplicand: Expression, index: string): Expression
+parseLatex(latex: string): any
 ```
 
-Indefinite (anti-quotient) product: the `P(k)` satisfying `P(k+1)/P(k) = multiplicand(k)`, the multiplicative analogue of `summation_indefinite`.
+Parse a LaTeX string in Symi's canonical input dialect — the inverse of `to_latex` and the parser the Symi frontend uses. Returns whichever top-level object the input denotes: an ordinary Expression, a `\begin{matrix}…\end{matrix}`, or a geometry figure (`(x, y)` point, segment, polygon, or circle), wrapped in the matching exported class exactly as `parse_serialized_object` does. Coverage spans arithmetic, powers, fractions, roots, the elementary and many special functions, comparisons, integrals (including the bare-`d` differential), Leibniz derivatives (`\frac{d}{dx}` — differentiated eagerly), limits, summations, products, determinants, and actuarial annuities. The resolution is context-aware in a way `parse` is not: a bare `i` is the imaginary unit and a bare `e` is Euler's number unless the letter is a bound index (a summation / product / limit index shadows the constant), and `\mathrm{d}` — or a bare `d` that closes an integral — is the differential operator while a bare `d` elsewhere is an ordinary variable. Raises on syntax errors.
 
 <details class="symi-calling-forms">
 <summary>Calling forms</summary>
 
-<a id="placement-placement.wasm.wasm_class.context_productindefinite.dac6a64f8b80"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.productIndefinite</code></p>
+<a id="placement-placement.wasm.wasm_class.context_parselatex.691f111b5629"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.parseLatex</code></p>
 
 ```typescript signature
-productIndefinite(multiplicand: Expression, index: string): Expression
+parseLatex(latex: string): any
+```
+
+</details>
+
+### parseLatexWithEnvironment
+
+<a id="entry-presentation_wasm_api_session_parse_latex_with_environment"></a>
+<a id="placement-placement.wasm.wasm_module.module_parselatexwithenvironment.0d0f63f757f1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+parseLatexWithEnvironment(
+    latex: string,
+    serialized_definitions: any[],
+): any
+```
+
+Parse LaTeX after building an ordered definition environment. Each serialized definition is a string with four fields separated by ASCII Unit Separator (`U+001F`): `kind`, `name`, `parameters`, and `body_latex`.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_parselatexwithenvironment.3e3cebf3e09b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.parseLatexWithEnvironment</code></p>
+
+```typescript signature
+parseLatexWithEnvironment(
+    latex: string,
+    serialized_definitions: any[],
+): any
 ```
 
 </details>
 
 ### rationalFromFloat
 
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float"></a>
+<a id="entry-presentation_wasm_api_session_rational_from_float"></a>
 <a id="placement-placement.wasm.wasm_module.module_rationalfromfloat.2868d823dc35"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 rationalFromFloat(value: number, max_denominator: bigint): Expression
@@ -379,7 +391,7 @@ Closest rational with denominator \(\leq\) `max_denominator` (the `Fraction.limi
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_rationalfromfloat.1fdc38cc830e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.rationalFromFloat</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.rationalFromFloat</code></p>
 
 ```typescript signature
 rationalFromFloat(value: number, max_denominator: bigint): Expression
@@ -389,7 +401,7 @@ rationalFromFloat(value: number, max_denominator: bigint): Expression
 
 ### resetContext
 
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_reset_context_api_session_reset_context"></a>
+<a id="entry-presentation_wasm_api_session_reset_context"></a>
 <a id="placement-placement.wasm.javascript_facade.context_resetcontext.71381bfb9d67"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -403,23 +415,11 @@ Replace the context's entire symbol table and expression store with fresh empty 
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_resetcontext.31f34760faed"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.resetContext</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.resetContext</code></p>
 
 ```typescript signature
 resetContext(): void
 ```
 
 </details>
-
-### undefinedFunction
-
-<a id="entry-presentation_wasm_construction_and_parsing_capability_construction_undefined_function_api_session_undefined_function"></a>
-<a id="placement-placement.wasm.wasm_class.context_undefinedfunction.57b03936c6a5"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```typescript signature
-undefinedFunction(name: string): UndefinedFunction
-```
-
-A callable proxy for a user-named function. Calling it with expression arguments builds the function-call expression (see the object-model page and the worked ODE example).
 

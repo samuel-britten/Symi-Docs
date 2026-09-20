@@ -54,7 +54,7 @@ API. Each call returns a new handle to the same underlying context.
 
 ### clear_assumptions
 
-<a id="entry-presentation_swift_default_context_capability_contexts_clear_assumptions_api_session_clear_assumptions"></a>
+<a id="entry-presentation_swift_api_session_clear_assumptions"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_clearassumptions.e21da5386c09"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -71,7 +71,7 @@ a re-declaration you actually intend.
 
 ### assumptions_of
 
-<a id="entry-presentation_swift_default_context_capability_contexts_assumptions_of_api_session_assumptions_of"></a>
+<a id="entry-presentation_swift_api_session_assumptions_of"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_assumptionsof.22498f424ef9"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -88,7 +88,7 @@ is one of `complex`, `real`, `rational`, `integer`, `natural`, or
 
 ### interner_length
 
-<a id="entry-presentation_swift_default_context_capability_contexts_interner_length_api_session_interner_length"></a>
+<a id="entry-presentation_swift_api_session_interner_length"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_internerlength.d0d12ba22b0c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 

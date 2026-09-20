@@ -43,7 +43,7 @@ other former module calls must remove the parentheses.
 
 ### pi
 
-<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_pi_api_session_pi"></a>
+<a id="entry-presentation_swift_api_session_pi"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_pi.a7ec0ad34999"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -58,7 +58,7 @@ decimal value.
 
 ### e
 
-<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_e_api_session_e"></a>
+<a id="entry-presentation_swift_api_session_e"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_e.0a37694253d9"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -72,7 +72,7 @@ constant are the same expression.
 
 ### euler_gamma
 
-<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_euler_gamma_api_session_euler_gamma"></a>
+<a id="entry-presentation_swift_api_session_euler_gamma"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_eulergamma.e86e7eafac44"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -86,7 +86,7 @@ The Euler–Mascheroni constant \(\gamma\). It appears in closed forms produced 
 
 ### imaginary_unit
 
-<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_imaginary_unit_api_session_imaginary_unit"></a>
+<a id="entry-presentation_swift_api_session_imaginary_unit"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_imaginaryunit.2eeb81ac47dc"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -102,7 +102,7 @@ decompose a complex expression.
 
 ### infinity
 
-<a id="entry-presentation_swift_evaluation_and_constants_capability_constants_infinity_api_session_infinity"></a>
+<a id="entry-presentation_swift_api_session_infinity"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_infinity.1ec42ec6dc32"></a>
 <p class="symi-entry-owner">Explicit context</p>
 

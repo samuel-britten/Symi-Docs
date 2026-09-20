@@ -9,7 +9,7 @@ values collapse).
 
 ### sin
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_sin_api_session_sin"></a>
+<a id="entry-presentation_python_api_session_sin"></a>
 <a id="placement-placement.python.python_module.module_sin.09bf174f4afd"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -32,7 +32,7 @@ sin(x: Any) -> Expression
 
 ### cos
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_cos_api_session_cos"></a>
+<a id="entry-presentation_python_api_session_cos"></a>
 <a id="placement-placement.python.python_module.module_cos.aab118ba9fe6"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -55,7 +55,7 @@ cos(x: Any) -> Expression
 
 ### tan
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_tan_api_session_tan"></a>
+<a id="entry-presentation_python_api_session_tan"></a>
 <a id="placement-placement.python.python_module.module_tan.ac6870bc257c"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -78,7 +78,7 @@ tan(x: Any) -> Expression
 
 ### sec
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_sec_api_session_sec"></a>
+<a id="entry-presentation_python_api_session_sec"></a>
 <a id="placement-placement.python.python_module.module_sec.6b218dd1fd77"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -101,7 +101,7 @@ sec(x: Any) -> Expression
 
 ### csc
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_csc_api_session_csc"></a>
+<a id="entry-presentation_python_api_session_csc"></a>
 <a id="placement-placement.python.python_module.module_csc.396a68c8eb00"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -124,7 +124,7 @@ csc(x: Any) -> Expression
 
 ### cot
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_cot_api_session_cot"></a>
+<a id="entry-presentation_python_api_session_cot"></a>
 <a id="placement-placement.python.python_module.module_cot.12bfc26ea435"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -147,7 +147,7 @@ cot(x: Any) -> Expression
 
 ### arcsin
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arcsin_api_session_arcsin"></a>
+<a id="entry-presentation_python_api_session_arcsin"></a>
 <a id="placement-placement.python.python_module.module_arcsin.b01f3ac42b69"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -170,7 +170,7 @@ arcsin(x: Any) -> Expression
 
 ### arccos
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arccos_api_session_arccos"></a>
+<a id="entry-presentation_python_api_session_arccos"></a>
 <a id="placement-placement.python.python_module.module_arccos.5a6d3f515812"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -193,7 +193,7 @@ arccos(x: Any) -> Expression
 
 ### arctan
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arctan_api_session_arctan"></a>
+<a id="entry-presentation_python_api_session_arctan"></a>
 <a id="placement-placement.python.python_module.module_arctan.a24571248c9c"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -216,7 +216,7 @@ arctan(x: Any) -> Expression
 
 ### arcsec
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arcsec_api_session_arcsec"></a>
+<a id="entry-presentation_python_api_session_arcsec"></a>
 <a id="placement-placement.python.python_module.module_arcsec.23126297ab40"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -239,7 +239,7 @@ arcsec(x: Any) -> Expression
 
 ### arccsc
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arccsc_api_session_arccsc"></a>
+<a id="entry-presentation_python_api_session_arccsc"></a>
 <a id="placement-placement.python.python_module.module_arccsc.a6d872d21bc4"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -262,7 +262,7 @@ arccsc(x: Any) -> Expression
 
 ### arccot
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arccot_api_session_arccot"></a>
+<a id="entry-presentation_python_api_session_arccot"></a>
 <a id="placement-placement.python.python_module.module_arccot.bd3e2f94ee3a"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -285,7 +285,7 @@ arccot(x: Any) -> Expression
 
 ### sinh
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_sinh_api_session_sinh"></a>
+<a id="entry-presentation_python_api_session_sinh"></a>
 <a id="placement-placement.python.python_module.module_sinh.28622dd64fd0"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -308,7 +308,7 @@ sinh(x: Any) -> Expression
 
 ### cosh
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_cosh_api_session_cosh"></a>
+<a id="entry-presentation_python_api_session_cosh"></a>
 <a id="placement-placement.python.python_module.module_cosh.be83315a3e0f"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -331,7 +331,7 @@ cosh(x: Any) -> Expression
 
 ### tanh
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_tanh_api_session_tanh"></a>
+<a id="entry-presentation_python_api_session_tanh"></a>
 <a id="placement-placement.python.python_module.module_tanh.e4b9688d975c"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -354,7 +354,7 @@ tanh(x: Any) -> Expression
 
 ### sech
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_sech_api_session_sech"></a>
+<a id="entry-presentation_python_api_session_sech"></a>
 <a id="placement-placement.python.python_module.module_sech.ca19dea9b1db"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -377,7 +377,7 @@ sech(x: Any) -> Expression
 
 ### csch
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_csch_api_session_csch"></a>
+<a id="entry-presentation_python_api_session_csch"></a>
 <a id="placement-placement.python.python_module.module_csch.ccb0150d4407"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -400,7 +400,7 @@ csch(x: Any) -> Expression
 
 ### coth
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_coth_api_session_coth"></a>
+<a id="entry-presentation_python_api_session_coth"></a>
 <a id="placement-placement.python.python_module.module_coth.9c8ef48fce23"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -423,7 +423,7 @@ coth(x: Any) -> Expression
 
 ### arcsinh
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arcsinh_api_session_arcsinh"></a>
+<a id="entry-presentation_python_api_session_arcsinh"></a>
 <a id="placement-placement.python.python_module.module_arcsinh.4a3c7bc6a6de"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -446,7 +446,7 @@ arcsinh(x: Any) -> Expression
 
 ### arccosh
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arccosh_api_session_arccosh"></a>
+<a id="entry-presentation_python_api_session_arccosh"></a>
 <a id="placement-placement.python.python_module.module_arccosh.77048ca2ecca"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -469,7 +469,7 @@ arccosh(x: Any) -> Expression
 
 ### arctanh
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arctanh_api_session_arctanh"></a>
+<a id="entry-presentation_python_api_session_arctanh"></a>
 <a id="placement-placement.python.python_module.module_arctanh.a2b27862e4bf"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -492,7 +492,7 @@ arctanh(x: Any) -> Expression
 
 ### arcsech
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arcsech_api_session_arcsech"></a>
+<a id="entry-presentation_python_api_session_arcsech"></a>
 <a id="placement-placement.python.python_module.module_arcsech.a9e154a6bf97"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -515,7 +515,7 @@ arcsech(x: Any) -> Expression
 
 ### arccsch
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arccsch_api_session_arccsch"></a>
+<a id="entry-presentation_python_api_session_arccsch"></a>
 <a id="placement-placement.python.python_module.module_arccsch.8c8f91d0bb39"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -538,7 +538,7 @@ arccsch(x: Any) -> Expression
 
 ### arccoth
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_arccoth_api_session_arccoth"></a>
+<a id="entry-presentation_python_api_session_arccoth"></a>
 <a id="placement-placement.python.python_module.module_arccoth.06f21dde5a9f"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -561,7 +561,7 @@ arccoth(x: Any) -> Expression
 
 ### exp
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_exp_api_session_exp"></a>
+<a id="entry-presentation_python_api_session_exp"></a>
 <a id="placement-placement.python.python_module.module_exp.e532b27d6488"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -586,7 +586,7 @@ The natural exponential.
 
 ### log
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_log_api_session_log"></a>
+<a id="entry-presentation_python_api_session_log"></a>
 <a id="placement-placement.python.python_module.module_log.eb7092dd1433"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -611,7 +611,7 @@ Natural logarithm; with `base` given, `log(x)/log(base)`.
 
 ### sqrt
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_sqrt_api_session_sqrt"></a>
+<a id="entry-presentation_python_api_session_sqrt"></a>
 <a id="placement-placement.python.python_module.module_sqrt.e389cc7b7e6b"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -636,7 +636,7 @@ Principal square root, stored as `x^(1/2)`.
 
 ### root
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_root_api_session_root"></a>
+<a id="entry-presentation_python_api_session_root"></a>
 <a id="placement-placement.python.python_module.module_root.697cfeeca0f3"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -661,7 +661,7 @@ Principal n-th root, stored as `x^(1/n)`.
 
 ### abs
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_abs_api_session_abs"></a>
+<a id="entry-presentation_python_api_session_abs"></a>
 <a id="placement-placement.python.python_module.module_abs.6f3b77996e02"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -689,7 +689,7 @@ call symbolic; `signum` folds on exactly the same reach.
 
 ### floor
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_floor_api_session_floor"></a>
+<a id="entry-presentation_python_api_session_floor"></a>
 <a id="placement-placement.python.python_module.module_floor.c0e8a9897349"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -712,7 +712,7 @@ floor(x: Any) -> Expression
 
 ### ceiling
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_ceiling_api_session_ceiling"></a>
+<a id="entry-presentation_python_api_session_ceiling"></a>
 <a id="placement-placement.python.python_module.module_ceiling.e087a8cc32e2"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -735,7 +735,7 @@ ceiling(x: Any) -> Expression
 
 ### conjugate
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_conjugate_api_session_conjugate"></a>
+<a id="entry-presentation_python_api_session_conjugate"></a>
 <a id="placement-placement.python.python_module.module_conjugate.c7807f5c5e11"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -760,7 +760,7 @@ Complex conjugate.
 
 ### factorial
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_factorial_api_session_factorial"></a>
+<a id="entry-presentation_python_api_session_factorial"></a>
 <a id="placement-placement.python.python_module.module_factorial.ccb203177540"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -783,7 +783,7 @@ factorial(x: Any) -> Expression
 
 ### binomial
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_binomial_api_session_binomial"></a>
+<a id="entry-presentation_python_api_session_binomial"></a>
 <a id="placement-placement.python.python_module.module_binomial.ab64d16a8122"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -808,7 +808,7 @@ Binomial coefficient C(n, k).
 
 ### min
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_min_api_session_min"></a>
+<a id="entry-presentation_python_api_session_min"></a>
 <a id="placement-placement.python.python_module.module_min.97099ca58e67"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -833,7 +833,7 @@ Minimum of the arguments (variadic in Python; a JS array in WASM).
 
 ### max
 
-<a id="entry-presentation_python_elementary_functions_capability_elementary_functions_max_api_session_max"></a>
+<a id="entry-presentation_python_api_session_max"></a>
 <a id="placement-placement.python.python_module.module_max.0cc6820370cc"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -872,3 +872,13 @@ print(symi.log(symi.exp(x)))
 print(symi.cos(x) ** 2 + symi.sin(x) ** 2)
 ```
 
+
+### absolute_value
+
+*Not exposed by the Python bindings. Available as [`Context.absoluteValue`](/symi/wasm/elementary-functions#absolute_value) in WASM / JavaScript, [`UniffiExpression.absoluteValue`](/symi/kotlin/elementary-functions#absolute_value) in Kotlin, [`UniffiExpression.absoluteValue`](/symi/swift/elementary-functions#absolute_value) in Swift, [`api::Expression::absolute_value`](/symi/rust/elementary-functions#absolute_value) in Rust.*
+
+
+The absolute value \(|x|\), spelled in full. It is the same operation as
+[`abs`](#abs); the two names exist because `abs` is the spelling the Python and
+JavaScript hosts use for their own built-in, and the full name is the spelling
+the mobile hosts generate.

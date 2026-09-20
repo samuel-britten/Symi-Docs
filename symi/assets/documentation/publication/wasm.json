@@ -86,29 +86,276 @@
   "default_page": "introduction",
   "label": "WASM / JavaScript",
   "language": "wasm",
+  "legacy_alias_pages": [
+    {
+      "alias_count": 24,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "algebraic-transforms",
+      "path": "legacy/wasm/algebraic-transforms.json"
+    },
+    {
+      "alias_count": 18,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "api-reference",
+      "path": "legacy/wasm/api-reference.json"
+    },
+    {
+      "alias_count": 22,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "assumptions",
+      "path": "legacy/wasm/assumptions.json"
+    },
+    {
+      "alias_count": 2,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "cad",
+      "path": "legacy/wasm/cad.json"
+    },
+    {
+      "alias_count": 70,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "calculus",
+      "path": "legacy/wasm/calculus.json"
+    },
+    {
+      "alias_count": 72,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "combinatorics",
+      "path": "legacy/wasm/combinatorics.json"
+    },
+    {
+      "alias_count": 16,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "construction-and-parsing",
+      "path": "legacy/wasm/construction-and-parsing.json"
+    },
+    {
+      "alias_count": 8,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "construction",
+      "path": "legacy/wasm/construction.json"
+    },
+    {
+      "alias_count": 4,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "deferred-forms",
+      "path": "legacy/wasm/deferred-forms.json"
+    },
+    {
+      "alias_count": 25,
+      "disambiguation_count": 2,
+      "language": "wasm",
+      "page_identifier": "differential-equations",
+      "path": "legacy/wasm/differential-equations.json"
+    },
+    {
+      "alias_count": 42,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "elementary-functions",
+      "path": "legacy/wasm/elementary-functions.json"
+    },
+    {
+      "alias_count": 3,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "evaluation-and-constants",
+      "path": "legacy/wasm/evaluation-and-constants.json"
+    },
+    {
+      "alias_count": 12,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "expressions",
+      "path": "legacy/wasm/expressions.json"
+    },
+    {
+      "alias_count": 39,
+      "disambiguation_count": 1,
+      "language": "wasm",
+      "page_identifier": "geometry",
+      "path": "legacy/wasm/geometry.json"
+    },
+    {
+      "alias_count": 79,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "linear-algebra",
+      "path": "legacy/wasm/linear-algebra.json"
+    },
+    {
+      "alias_count": 33,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "logic",
+      "path": "legacy/wasm/logic.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "matrices",
+      "path": "legacy/wasm/matrices.json"
+    },
+    {
+      "alias_count": 8,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "matrix-canonical-forms",
+      "path": "legacy/wasm/matrix-canonical-forms.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "matrix-construction",
+      "path": "legacy/wasm/matrix-construction.json"
+    },
+    {
+      "alias_count": 11,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "matrix-functions",
+      "path": "legacy/wasm/matrix-functions.json"
+    },
+    {
+      "alias_count": 16,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "number-theory",
+      "path": "legacy/wasm/number-theory.json"
+    },
+    {
+      "alias_count": 647,
+      "disambiguation_count": 2,
+      "language": "wasm",
+      "page_identifier": "object-model",
+      "path": "legacy/wasm/object-model.json"
+    },
+    {
+      "alias_count": 8,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "optimization",
+      "path": "legacy/wasm/optimization.json"
+    },
+    {
+      "alias_count": 360,
+      "disambiguation_count": 1,
+      "language": "wasm",
+      "page_identifier": "polynomials",
+      "path": "legacy/wasm/polynomials.json"
+    },
+    {
+      "alias_count": 7,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "relations",
+      "path": "legacy/wasm/relations.json"
+    },
+    {
+      "alias_count": 30,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "serialization-and-output",
+      "path": "legacy/wasm/serialization-and-output.json"
+    },
+    {
+      "alias_count": 9,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "series",
+      "path": "legacy/wasm/series.json"
+    },
+    {
+      "alias_count": 11,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "sets",
+      "path": "legacy/wasm/sets.json"
+    },
+    {
+      "alias_count": 169,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "simplification-general",
+      "path": "legacy/wasm/simplification-general.json"
+    },
+    {
+      "alias_count": 1,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "simplification",
+      "path": "legacy/wasm/simplification.json"
+    },
+    {
+      "alias_count": 54,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "solving",
+      "path": "legacy/wasm/solving.json"
+    },
+    {
+      "alias_count": 41,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "special-functions",
+      "path": "legacy/wasm/special-functions.json"
+    },
+    {
+      "alias_count": 12,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "statistics",
+      "path": "legacy/wasm/statistics.json"
+    },
+    {
+      "alias_count": 20,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "trigonometric-complex-rewrites",
+      "path": "legacy/wasm/trigonometric-complex-rewrites.json"
+    },
+    {
+      "alias_count": 10,
+      "disambiguation_count": 0,
+      "language": "wasm",
+      "page_identifier": "vector-calculus",
+      "path": "legacy/wasm/vector-calculus.json"
+    }
+  ],
   "navigation_artifacts": [
     {
-      "entry_count": 850,
+      "entry_count": 769,
       "language": "python",
       "path": "navigation/python.json"
     },
     {
-      "entry_count": 1026,
+      "entry_count": 812,
       "language": "wasm",
       "path": "navigation/wasm.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "kotlin",
       "path": "navigation/kotlin.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "swift",
       "path": "navigation/swift.json"
     },
     {
-      "entry_count": 7717,
+      "entry_count": 7476,
       "language": "rust",
       "path": "navigation/rust.json"
     }
@@ -776,6 +1023,66 @@
     },
     {
       "canonical_urls": {
+        "kotlin": "/symi/kotlin/ordinary-differential-equations",
+        "python": "/symi/python/ordinary-differential-equations",
+        "rust": "/symi/rust/ordinary-differential-equations",
+        "swift": "/symi/swift/ordinary-differential-equations",
+        "wasm": "/symi/wasm/ordinary-differential-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/ordinary-differential-equations.md",
+        "python": "manual/python/ordinary-differential-equations.md",
+        "rust": "manual/rust/ordinary-differential-equations.md",
+        "swift": "manual/swift/ordinary-differential-equations.md",
+        "wasm": "manual/wasm/ordinary-differential-equations.md"
+      },
+      "page_identifier": "ordinary-differential-equations",
+      "path": "ordinary-differential-equations.md",
+      "title": "Ordinary differential equations"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/partial-differential-equation-results",
+        "python": "/symi/python/partial-differential-equation-results",
+        "rust": "/symi/rust/partial-differential-equation-results",
+        "swift": "/symi/swift/partial-differential-equation-results",
+        "wasm": "/symi/wasm/partial-differential-equation-results"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/partial-differential-equation-results.md",
+        "python": "manual/python/partial-differential-equation-results.md",
+        "rust": "manual/rust/partial-differential-equation-results.md",
+        "swift": "manual/swift/partial-differential-equation-results.md",
+        "wasm": "manual/wasm/partial-differential-equation-results.md"
+      },
+      "page_identifier": "partial-differential-equation-results",
+      "path": "partial-differential-equation-results.md",
+      "title": "Partial differential equation results"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/partial-differential-equations",
+        "python": "/symi/python/partial-differential-equations",
+        "rust": "/symi/rust/partial-differential-equations",
+        "swift": "/symi/swift/partial-differential-equations",
+        "wasm": "/symi/wasm/partial-differential-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/partial-differential-equations.md",
+        "python": "manual/python/partial-differential-equations.md",
+        "rust": "manual/rust/partial-differential-equations.md",
+        "swift": "manual/swift/partial-differential-equations.md",
+        "wasm": "manual/wasm/partial-differential-equations.md"
+      },
+      "page_identifier": "partial-differential-equations",
+      "path": "partial-differential-equations.md",
+      "title": "Partial differential equations"
+    },
+    {
+      "canonical_urls": {
         "kotlin": "/symi/kotlin/polynomials",
         "python": "/symi/python/polynomials",
         "rust": "/symi/rust/polynomials",
@@ -793,6 +1100,26 @@
       "page_identifier": "polynomials",
       "path": "polynomials.md",
       "title": "Polynomial queries"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/recurrence-equations",
+        "python": "/symi/python/recurrence-equations",
+        "rust": "/symi/rust/recurrence-equations",
+        "swift": "/symi/swift/recurrence-equations",
+        "wasm": "/symi/wasm/recurrence-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/recurrence-equations.md",
+        "python": "manual/python/recurrence-equations.md",
+        "rust": "manual/rust/recurrence-equations.md",
+        "swift": "manual/swift/recurrence-equations.md",
+        "wasm": "manual/wasm/recurrence-equations.md"
+      },
+      "page_identifier": "recurrence-equations",
+      "path": "recurrence-equations.md",
+      "title": "Recurrence equations"
     },
     {
       "canonical_urls": {
@@ -1013,6 +1340,26 @@
       "page_identifier": "trigonometric-complex-rewrites",
       "path": "trigonometric-complex-rewrites.md",
       "title": "Trigonometric and complex rewrites"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/undefined-functions",
+        "python": "/symi/python/undefined-functions",
+        "rust": "/symi/rust/undefined-functions",
+        "swift": "/symi/swift/undefined-functions",
+        "wasm": "/symi/wasm/undefined-functions"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/undefined-functions.md",
+        "python": "manual/python/undefined-functions.md",
+        "rust": "manual/rust/undefined-functions.md",
+        "swift": "manual/swift/undefined-functions.md",
+        "wasm": "manual/wasm/undefined-functions.md"
+      },
+      "page_identifier": "undefined-functions",
+      "path": "undefined-functions.md",
+      "title": "Undefined functions"
     },
     {
       "canonical_urls": {
@@ -2772,27 +3119,27 @@
   ],
   "presentation_artifacts": [
     {
-      "entry_count": 850,
+      "entry_count": 769,
       "language": "python",
       "path": "presentation/python.json"
     },
     {
-      "entry_count": 1026,
+      "entry_count": 812,
       "language": "wasm",
       "path": "presentation/wasm.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "kotlin",
       "path": "presentation/kotlin.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "swift",
       "path": "presentation/swift.json"
     },
     {
-      "entry_count": 7717,
+      "entry_count": 7476,
       "language": "rust",
       "path": "presentation/rust.json"
     }

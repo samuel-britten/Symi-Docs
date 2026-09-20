@@ -7627,786 +7627,788 @@
 <a href=#7627 id=7627 data-nosnippet>7627</a>        owner.publish_expression(<span class="kw-2">&amp;</span>operation, inner)
 <a href=#7628 id=7628 data-nosnippet>7628</a>    }
 <a href=#7629 id=7629 data-nosnippet>7629</a>
-<a href=#7630 id=7630 data-nosnippet>7630</a>    <span class="doccomment">/// Provides the `derivative` operation on this native type.
-<a href=#7631 id=7631 data-nosnippet>7631</a>    </span><span class="kw">pub fn </span>derivative&lt;OrderIterator, ArgumentIterator&gt;(
-<a href=#7632 id=7632 data-nosnippet>7632</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
-<a href=#7633 id=7633 data-nosnippet>7633</a>        orders: OrderIterator,
-<a href=#7634 id=7634 data-nosnippet>7634</a>        arguments: ArgumentIterator,
-<a href=#7635 id=7635 data-nosnippet>7635</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;Expression, ApiError&gt;
-<a href=#7636 id=7636 data-nosnippet>7636</a>    <span class="kw">where
-<a href=#7637 id=7637 data-nosnippet>7637</a>        </span>OrderIterator: IntoIterator&lt;Item = usize&gt;,
-<a href=#7638 id=7638 data-nosnippet>7638</a>        ArgumentIterator: IntoIterator&lt;Item = Expression&gt;,
-<a href=#7639 id=7639 data-nosnippet>7639</a>    {
-<a href=#7640 id=7640 data-nosnippet>7640</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
-<a href=#7641 id=7641 data-nosnippet>7641</a>        <span class="kw">let </span>operation = owner.begin_operation();
-<a href=#7642 id=7642 data-nosnippet>7642</a>        owner.validate_undefined_function(<span class="self">self</span>)<span class="question-mark">?</span>;
-<a href=#7643 id=7643 data-nosnippet>7643</a>        <span class="kw">let </span>orders: Vec&lt;usize&gt; = orders.into_iter().collect();
-<a href=#7644 id=7644 data-nosnippet>7644</a>        <span class="kw">let </span>arguments: Vec&lt;Expression&gt; = arguments.into_iter().collect();
-<a href=#7645 id=7645 data-nosnippet>7645</a>        <span class="kw">if </span>orders.len() != arguments.len() {
-<a href=#7646 id=7646 data-nosnippet>7646</a>            <span class="kw">return </span><span class="prelude-val">Err</span>(ApiError::CollectionLengthMismatch {
-<a href=#7647 id=7647 data-nosnippet>7647</a>                first_parameter: <span class="string">"orders"</span>.to_string(),
-<a href=#7648 id=7648 data-nosnippet>7648</a>                first_length: orders.len(),
-<a href=#7649 id=7649 data-nosnippet>7649</a>                second_parameter: <span class="string">"arguments"</span>.to_string(),
-<a href=#7650 id=7650 data-nosnippet>7650</a>                second_length: arguments.len(),
-<a href=#7651 id=7651 data-nosnippet>7651</a>            });
-<a href=#7652 id=7652 data-nosnippet>7652</a>        }
-<a href=#7653 id=7653 data-nosnippet>7653</a>        <span class="kw">for </span>argument <span class="kw">in </span><span class="kw-2">&amp;</span>arguments {
-<a href=#7654 id=7654 data-nosnippet>7654</a>            owner.validate(argument)<span class="question-mark">?</span>;
-<a href=#7655 id=7655 data-nosnippet>7655</a>        }
-<a href=#7656 id=7656 data-nosnippet>7656</a>        <span class="kw">let </span><span class="kw-2">mut </span>context = operation.derived_context();
-<a href=#7657 id=7657 data-nosnippet>7657</a>        <span class="kw">let </span>function_symbol = context.symbol_table.intern_symbol(<span class="kw-2">&amp;</span><span class="self">self</span>.name);
-<a href=#7658 id=7658 data-nosnippet>7658</a>        <span class="kw">let </span>inner = builders::derivative(
-<a href=#7659 id=7659 data-nosnippet>7659</a>            <span class="kw-2">&amp;mut </span>context,
-<a href=#7660 id=7660 data-nosnippet>7660</a>            FunctionIdentifier::User(function_symbol),
-<a href=#7661 id=7661 data-nosnippet>7661</a>            orders,
-<a href=#7662 id=7662 data-nosnippet>7662</a>            arguments
-<a href=#7663 id=7663 data-nosnippet>7663</a>                .iter()
-<a href=#7664 id=7664 data-nosnippet>7664</a>                .map(|argument| Arc::clone(<span class="kw-2">&amp;</span>argument.inner))
-<a href=#7665 id=7665 data-nosnippet>7665</a>                .collect(),
-<a href=#7666 id=7666 data-nosnippet>7666</a>        );
-<a href=#7667 id=7667 data-nosnippet>7667</a>        drop(context);
-<a href=#7668 id=7668 data-nosnippet>7668</a>        owner.publish_expression(<span class="kw-2">&amp;</span>operation, inner)
-<a href=#7669 id=7669 data-nosnippet>7669</a>    }
-<a href=#7670 id=7670 data-nosnippet>7670</a>}
-<a href=#7671 id=7671 data-nosnippet>7671</a>
-<a href=#7672 id=7672 data-nosnippet>7672</a><span class="kw">impl </span>CylindricalAlgebraicDecomposition {
-<a href=#7673 id=7673 data-nosnippet>7673</a>    <span class="doccomment">/// The session that owns this object, for host adapters that carry the owner alongside it.
-<a href=#7674 id=7674 data-nosnippet>7674</a>    </span><span class="kw">pub fn </span>session(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Session {
-<a href=#7675 id=7675 data-nosnippet>7675</a>        <span class="self">self</span>.owner()
-<a href=#7676 id=7676 data-nosnippet>7676</a>    }
-<a href=#7677 id=7677 data-nosnippet>7677</a>
-<a href=#7678 id=7678 data-nosnippet>7678</a>    <span class="doccomment">/// The session generation this object was created in.
-<a href=#7679 id=7679 data-nosnippet>7679</a>    </span><span class="kw">pub fn </span>generation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u64 {
-<a href=#7680 id=7680 data-nosnippet>7680</a>        <span class="self">self</span>.generation
-<a href=#7681 id=7681 data-nosnippet>7681</a>    }
-<a href=#7682 id=7682 data-nosnippet>7682</a>
-<a href=#7683 id=7683 data-nosnippet>7683</a>    <span class="doccomment">/// Whether this object predates its session's most recent reset.
-<a href=#7684 id=7684 data-nosnippet>7684</a>    </span><span class="kw">pub fn </span>is_stale(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
-<a href=#7685 id=7685 data-nosnippet>7685</a>        <span class="self">self</span>.generation != <span class="self">self</span>.state.generation.get()
-<a href=#7686 id=7686 data-nosnippet>7686</a>    }
-<a href=#7687 id=7687 data-nosnippet>7687</a>
-<a href=#7688 id=7688 data-nosnippet>7688</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>owner(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Session {
-<a href=#7689 id=7689 data-nosnippet>7689</a>        Session {
-<a href=#7690 id=7690 data-nosnippet>7690</a>            state: Arc::clone(<span class="kw-2">&amp;</span><span class="self">self</span>.state),
-<a href=#7691 id=7691 data-nosnippet>7691</a>        }
-<a href=#7692 id=7692 data-nosnippet>7692</a>    }
-<a href=#7693 id=7693 data-nosnippet>7693</a>
-<a href=#7694 id=7694 data-nosnippet>7694</a>    <span class="kw">fn </span>arena_index(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;usize, ApiError&gt; {
-<a href=#7695 id=7695 data-nosnippet>7695</a>        <span class="self">self</span>.full_cells
-<a href=#7696 id=7696 data-nosnippet>7696</a>            .get(index)
-<a href=#7697 id=7697 data-nosnippet>7697</a>            .copied()
-<a href=#7698 id=7698 data-nosnippet>7698</a>            .ok_or(ApiError::IndexOutOfBounds {
-<a href=#7699 id=7699 data-nosnippet>7699</a>                index,
-<a href=#7700 id=7700 data-nosnippet>7700</a>                length: <span class="self">self</span>.full_cells.len(),
-<a href=#7701 id=7701 data-nosnippet>7701</a>            })
-<a href=#7702 id=7702 data-nosnippet>7702</a>    }
-<a href=#7703 id=7703 data-nosnippet>7703</a>
-<a href=#7704 id=7704 data-nosnippet>7704</a>    <span class="doccomment">/// Provides the `cell_count` operation on this native type.
-<a href=#7705 id=7705 data-nosnippet>7705</a>    </span><span class="kw">pub fn </span>cell_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;usize, ApiError&gt; {
-<a href=#7706 id=7706 data-nosnippet>7706</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
-<a href=#7707 id=7707 data-nosnippet>7707</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
-<a href=#7708 id=7708 data-nosnippet>7708</a>        <span class="prelude-val">Ok</span>(<span class="self">self</span>.full_cells.len())
-<a href=#7709 id=7709 data-nosnippet>7709</a>    }
-<a href=#7710 id=7710 data-nosnippet>7710</a>
-<a href=#7711 id=7711 data-nosnippet>7711</a>    <span class="doccomment">/// Provides the `cell_sample_point` operation on this native type.
-<a href=#7712 id=7712 data-nosnippet>7712</a>    </span><span class="kw">pub fn </span>cell_sample_point(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;f64&gt;, ApiError&gt; {
-<a href=#7713 id=7713 data-nosnippet>7713</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
-<a href=#7714 id=7714 data-nosnippet>7714</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
-<a href=#7715 id=7715 data-nosnippet>7715</a>        <span class="kw">let </span>arena_index = <span class="self">self</span>.arena_index(index)<span class="question-mark">?</span>;
-<a href=#7716 id=7716 data-nosnippet>7716</a>        <span class="prelude-val">Ok</span>(sample_point_as_floats(
-<a href=#7717 id=7717 data-nosnippet>7717</a>            <span class="kw-2">&amp;</span><span class="self">self</span>.inner.cells[arena_index].sample_point,
-<a href=#7718 id=7718 data-nosnippet>7718</a>        ))
-<a href=#7719 id=7719 data-nosnippet>7719</a>    }
-<a href=#7720 id=7720 data-nosnippet>7720</a>
-<a href=#7721 id=7721 data-nosnippet>7721</a>    <span class="doccomment">/// Provides the `cell_sign_vector` operation on this native type.
-<a href=#7722 id=7722 data-nosnippet>7722</a>    </span><span class="kw">pub fn </span>cell_sign_vector(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;i32&gt;, ApiError&gt; {
-<a href=#7723 id=7723 data-nosnippet>7723</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
-<a href=#7724 id=7724 data-nosnippet>7724</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
-<a href=#7725 id=7725 data-nosnippet>7725</a>        <span class="kw">let </span>arena_index = <span class="self">self</span>.arena_index(index)<span class="question-mark">?</span>;
-<a href=#7726 id=7726 data-nosnippet>7726</a>        <span class="prelude-val">Ok</span>(<span class="self">self</span>.inner.cells[arena_index].sign_vector.clone())
-<a href=#7727 id=7727 data-nosnippet>7727</a>    }
-<a href=#7728 id=7728 data-nosnippet>7728</a>
-<a href=#7729 id=7729 data-nosnippet>7729</a>    <span class="doccomment">/// Provides the `cell_kind` operation on this native type.
-<a href=#7730 id=7730 data-nosnippet>7730</a>    </span><span class="kw">pub fn </span>cell_kind(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;CadCellKind, ApiError&gt; {
-<a href=#7731 id=7731 data-nosnippet>7731</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
-<a href=#7732 id=7732 data-nosnippet>7732</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
-<a href=#7733 id=7733 data-nosnippet>7733</a>        <span class="kw">let </span>arena_index = <span class="self">self</span>.arena_index(index)<span class="question-mark">?</span>;
-<a href=#7734 id=7734 data-nosnippet>7734</a>        <span class="prelude-val">Ok</span>(<span class="kw">match </span><span class="self">self</span>.inner.cells[arena_index].kind {
-<a href=#7735 id=7735 data-nosnippet>7735</a>            <span class="kw">crate</span>::cad::CellKind::Section { .. } =&gt; CadCellKind::Section,
-<a href=#7736 id=7736 data-nosnippet>7736</a>            <span class="kw">crate</span>::cad::CellKind::Sector =&gt; CadCellKind::Sector,
-<a href=#7737 id=7737 data-nosnippet>7737</a>        })
-<a href=#7738 id=7738 data-nosnippet>7738</a>    }
-<a href=#7739 id=7739 data-nosnippet>7739</a>
-<a href=#7740 id=7740 data-nosnippet>7740</a>    <span class="doccomment">/// Provides the `cell_dimension` operation on this native type.
-<a href=#7741 id=7741 data-nosnippet>7741</a>    </span><span class="kw">pub fn </span>cell_dimension(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;usize, ApiError&gt; {
-<a href=#7742 id=7742 data-nosnippet>7742</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
-<a href=#7743 id=7743 data-nosnippet>7743</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
-<a href=#7744 id=7744 data-nosnippet>7744</a>        <span class="kw">let </span>arena_index = <span class="self">self</span>.arena_index(index)<span class="question-mark">?</span>;
-<a href=#7745 id=7745 data-nosnippet>7745</a>        <span class="prelude-val">Ok</span>(<span class="self">self</span>.inner.cell_dimension(arena_index))
-<a href=#7746 id=7746 data-nosnippet>7746</a>    }
-<a href=#7747 id=7747 data-nosnippet>7747</a>
-<a href=#7748 id=7748 data-nosnippet>7748</a>    <span class="doccomment">/// Provides the `projection_operator_used` operation on this native type.
-<a href=#7749 id=7749 data-nosnippet>7749</a>    </span><span class="kw">pub fn </span>projection_operator_used(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw-2">&amp;</span>str, ApiError&gt; {
-<a href=#7750 id=7750 data-nosnippet>7750</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
-<a href=#7751 id=7751 data-nosnippet>7751</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
-<a href=#7752 id=7752 data-nosnippet>7752</a>        <span class="prelude-val">Ok</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.inner.projection_operator_used)
-<a href=#7753 id=7753 data-nosnippet>7753</a>    }
-<a href=#7754 id=7754 data-nosnippet>7754</a>}
-<a href=#7755 id=7755 data-nosnippet>7755</a>
-<a href=#7756 id=7756 data-nosnippet>7756</a><span class="kw">impl </span>Session {
-<a href=#7757 id=7757 data-nosnippet>7757</a>    <span class="doccomment">/// Resolve a collection of variable operands to interned symbol identifiers.
-<a href=#7758 id=7758 data-nosnippet>7758</a>    </span><span class="kw">pub fn </span>variable_identifiers&lt;<span class="lifetime">'a</span>, IteratorType, VariableType&gt;(
-<a href=#7759 id=7759 data-nosnippet>7759</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
-<a href=#7760 id=7760 data-nosnippet>7760</a>        variables: IteratorType,
-<a href=#7761 id=7761 data-nosnippet>7761</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;<span class="kw">crate</span>::symbol::SymbolIdentifier&gt;, ApiError&gt;
-<a href=#7762 id=7762 data-nosnippet>7762</a>    <span class="kw">where
-<a href=#7763 id=7763 data-nosnippet>7763</a>        </span>IteratorType: IntoIterator&lt;Item = VariableType&gt;,
-<a href=#7764 id=7764 data-nosnippet>7764</a>        VariableType: Into&lt;VariableLike&lt;<span class="lifetime">'a</span>&gt;&gt;,
-<a href=#7765 id=7765 data-nosnippet>7765</a>    {
-<a href=#7766 id=7766 data-nosnippet>7766</a>        variables
-<a href=#7767 id=7767 data-nosnippet>7767</a>            .into_iter()
-<a href=#7768 id=7768 data-nosnippet>7768</a>            .map(|variable| <span class="self">self</span>.variable_identifier(variable.into()))
-<a href=#7769 id=7769 data-nosnippet>7769</a>            .collect()
-<a href=#7770 id=7770 data-nosnippet>7770</a>    }
-<a href=#7771 id=7771 data-nosnippet>7771</a>
-<a href=#7772 id=7772 data-nosnippet>7772</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>expression_references(
-<a href=#7773 id=7773 data-nosnippet>7773</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
-<a href=#7774 id=7774 data-nosnippet>7774</a>        values: <span class="kw-2">&amp;</span>[Expression],
-<a href=#7775 id=7775 data-nosnippet>7775</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;ExpressionReference&gt;, ApiError&gt; {
-<a href=#7776 id=7776 data-nosnippet>7776</a>        values
-<a href=#7777 id=7777 data-nosnippet>7777</a>            .iter()
-<a href=#7778 id=7778 data-nosnippet>7778</a>            .map(|value| {
-<a href=#7779 id=7779 data-nosnippet>7779</a>                <span class="self">self</span>.validate(value)<span class="question-mark">?</span>;
-<a href=#7780 id=7780 data-nosnippet>7780</a>                <span class="prelude-val">Ok</span>(Arc::clone(<span class="kw-2">&amp;</span>value.inner))
-<a href=#7781 id=7781 data-nosnippet>7781</a>            })
-<a href=#7782 id=7782 data-nosnippet>7782</a>            .collect()
-<a href=#7783 id=7783 data-nosnippet>7783</a>    }
-<a href=#7784 id=7784 data-nosnippet>7784</a>
-<a href=#7785 id=7785 data-nosnippet>7785</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>expression_pair_references(
-<a href=#7786 id=7786 data-nosnippet>7786</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
-<a href=#7787 id=7787 data-nosnippet>7787</a>        values: <span class="kw-2">&amp;</span>[(Expression, Expression)],
-<a href=#7788 id=7788 data-nosnippet>7788</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;(ExpressionReference, ExpressionReference)&gt;, ApiError&gt; {
-<a href=#7789 id=7789 data-nosnippet>7789</a>        values
-<a href=#7790 id=7790 data-nosnippet>7790</a>            .iter()
-<a href=#7791 id=7791 data-nosnippet>7791</a>            .map(|(first, second)| {
-<a href=#7792 id=7792 data-nosnippet>7792</a>                <span class="self">self</span>.validate(first)<span class="question-mark">?</span>;
-<a href=#7793 id=7793 data-nosnippet>7793</a>                <span class="self">self</span>.validate(second)<span class="question-mark">?</span>;
-<a href=#7794 id=7794 data-nosnippet>7794</a>                <span class="prelude-val">Ok</span>((Arc::clone(<span class="kw-2">&amp;</span>first.inner), Arc::clone(<span class="kw-2">&amp;</span>second.inner)))
-<a href=#7795 id=7795 data-nosnippet>7795</a>            })
-<a href=#7796 id=7796 data-nosnippet>7796</a>            .collect()
-<a href=#7797 id=7797 data-nosnippet>7797</a>    }
-<a href=#7798 id=7798 data-nosnippet>7798</a>
-<a href=#7799 id=7799 data-nosnippet>7799</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>symbol_names(
-<a href=#7800 id=7800 data-nosnippet>7800</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
-<a href=#7801 id=7801 data-nosnippet>7801</a>        identifiers: <span class="kw-2">&amp;</span>[<span class="kw">crate</span>::symbol::SymbolIdentifier],
-<a href=#7802 id=7802 data-nosnippet>7802</a>    ) -&gt; Vec&lt;String&gt; {
-<a href=#7803 id=7803 data-nosnippet>7803</a>        <span class="kw">let </span>context = <span class="self">self</span>.state.context.borrow();
-<a href=#7804 id=7804 data-nosnippet>7804</a>        identifiers
-<a href=#7805 id=7805 data-nosnippet>7805</a>            .iter()
-<a href=#7806 id=7806 data-nosnippet>7806</a>            .map(|identifier| context.symbol_table.name(<span class="kw-2">*</span>identifier).to_string())
-<a href=#7807 id=7807 data-nosnippet>7807</a>            .collect()
-<a href=#7808 id=7808 data-nosnippet>7808</a>    }
-<a href=#7809 id=7809 data-nosnippet>7809</a>
-<a href=#7810 id=7810 data-nosnippet>7810</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>require_equal_lengths(
-<a href=#7811 id=7811 data-nosnippet>7811</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
-<a href=#7812 id=7812 data-nosnippet>7812</a>        first_parameter: <span class="kw-2">&amp;</span>str,
-<a href=#7813 id=7813 data-nosnippet>7813</a>        first_length: usize,
-<a href=#7814 id=7814 data-nosnippet>7814</a>        second_parameter: <span class="kw-2">&amp;</span>str,
-<a href=#7815 id=7815 data-nosnippet>7815</a>        second_length: usize,
-<a href=#7816 id=7816 data-nosnippet>7816</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;(), ApiError&gt; {
-<a href=#7817 id=7817 data-nosnippet>7817</a>        <span class="kw">if </span>first_length == second_length {
-<a href=#7818 id=7818 data-nosnippet>7818</a>            <span class="prelude-val">Ok</span>(())
-<a href=#7819 id=7819 data-nosnippet>7819</a>        } <span class="kw">else </span>{
-<a href=#7820 id=7820 data-nosnippet>7820</a>            <span class="prelude-val">Err</span>(ApiError::CollectionLengthMismatch {
-<a href=#7821 id=7821 data-nosnippet>7821</a>                first_parameter: first_parameter.to_string(),
-<a href=#7822 id=7822 data-nosnippet>7822</a>                first_length,
-<a href=#7823 id=7823 data-nosnippet>7823</a>                second_parameter: second_parameter.to_string(),
-<a href=#7824 id=7824 data-nosnippet>7824</a>                second_length,
-<a href=#7825 id=7825 data-nosnippet>7825</a>            })
-<a href=#7826 id=7826 data-nosnippet>7826</a>        }
-<a href=#7827 id=7827 data-nosnippet>7827</a>    }
-<a href=#7828 id=7828 data-nosnippet>7828</a>}
-<a href=#7829 id=7829 data-nosnippet>7829</a>
-<a href=#7830 id=7830 data-nosnippet>7830</a><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>validate_provenance(
-<a href=#7831 id=7831 data-nosnippet>7831</a>    receiver_state: <span class="kw-2">&amp;</span>Arc&lt;SessionState&gt;,
-<a href=#7832 id=7832 data-nosnippet>7832</a>    argument_state: <span class="kw-2">&amp;</span>Arc&lt;SessionState&gt;,
-<a href=#7833 id=7833 data-nosnippet>7833</a>    argument_generation: u64,
-<a href=#7834 id=7834 data-nosnippet>7834</a>) -&gt; <span class="prelude-ty">Result</span>&lt;(), ApiError&gt; {
-<a href=#7835 id=7835 data-nosnippet>7835</a>    <span class="kw">if </span>argument_generation != argument_state.generation.get() {
-<a href=#7836 id=7836 data-nosnippet>7836</a>        <span class="kw">return </span><span class="prelude-val">Err</span>(ApiError::StaleObject);
-<a href=#7837 id=7837 data-nosnippet>7837</a>    }
-<a href=#7838 id=7838 data-nosnippet>7838</a>    <span class="kw">if </span>!Arc::ptr_eq(receiver_state, argument_state) {
-<a href=#7839 id=7839 data-nosnippet>7839</a>        <span class="kw">return </span><span class="prelude-val">Err</span>(ApiError::ContextMismatch);
-<a href=#7840 id=7840 data-nosnippet>7840</a>    }
-<a href=#7841 id=7841 data-nosnippet>7841</a>    <span class="prelude-val">Ok</span>(())
-<a href=#7842 id=7842 data-nosnippet>7842</a>}
-<a href=#7843 id=7843 data-nosnippet>7843</a>
-<a href=#7844 id=7844 data-nosnippet>7844</a><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>matrix_error_category(error: <span class="kw-2">&amp;</span>MatrixError) -&gt; DiagnosticCategory {
-<a href=#7845 id=7845 data-nosnippet>7845</a>    <span class="kw">match </span>error {
-<a href=#7846 id=7846 data-nosnippet>7846</a>        MatrixError::IndexOutOfBounds { .. }
-<a href=#7847 id=7847 data-nosnippet>7847</a>        | MatrixError::DimensionMismatch { .. }
-<a href=#7848 id=7848 data-nosnippet>7848</a>        | MatrixError::DeterminantRequiresSquare { .. }
-<a href=#7849 id=7849 data-nosnippet>7849</a>        | MatrixError::InverseRequiresSquare { .. }
-<a href=#7850 id=7850 data-nosnippet>7850</a>        | MatrixError::TraceRequiresSquare { .. }
-<a href=#7851 id=7851 data-nosnippet>7851</a>        | MatrixError::CharacteristicPolynomialRequiresSquare { .. }
-<a href=#7852 id=7852 data-nosnippet>7852</a>        | MatrixError::EmptyMatrix
-<a href=#7853 id=7853 data-nosnippet>7853</a>        | MatrixError::InconsistentRowLength { .. }
-<a href=#7854 id=7854 data-nosnippet>7854</a>        | MatrixError::JordanRequiresSquare { .. }
-<a href=#7855 id=7855 data-nosnippet>7855</a>        | MatrixError::RationalCanonicalRequiresSquare { .. } =&gt; {
-<a href=#7856 id=7856 data-nosnippet>7856</a>            DiagnosticCategory::WrongCollectionShapeOrLength
-<a href=#7857 id=7857 data-nosnippet>7857</a>        }
-<a href=#7858 id=7858 data-nosnippet>7858</a>        MatrixError::ResourceBudgetExhausted
-<a href=#7859 id=7859 data-nosnippet>7859</a>        | MatrixError::IntegerLinearAlgebraSizeBudgetExceeded { .. }
-<a href=#7860 id=7860 data-nosnippet>7860</a>        | MatrixError::PolynomialSmithSizeBudgetExceeded { .. } =&gt; {
-<a href=#7861 id=7861 data-nosnippet>7861</a>            DiagnosticCategory::ResourceBudgetExhaustion
-<a href=#7862 id=7862 data-nosnippet>7862</a>        }
-<a href=#7863 id=7863 data-nosnippet>7863</a>        MatrixError::EigenvectorVerificationFailed { .. }
-<a href=#7864 id=7864 data-nosnippet>7864</a>        | MatrixError::JordanKernelGrowthInconsistent
-<a href=#7865 id=7865 data-nosnippet>7865</a>        | MatrixError::JordanChainConstructionFailed
-<a href=#7866 id=7866 data-nosnippet>7866</a>        | MatrixError::JordanSimilarityVerificationFailed
-<a href=#7867 id=7867 data-nosnippet>7867</a>        | MatrixError::MatrixFunctionVerificationFailed
-<a href=#7868 id=7868 data-nosnippet>7868</a>        | MatrixError::LowerUpperVerificationFailed
-<a href=#7869 id=7869 data-nosnippet>7869</a>        | MatrixError::IntegerLinearAlgebraVerificationFailed { .. }
-<a href=#7870 id=7870 data-nosnippet>7870</a>        | MatrixError::PolynomialSmithVerificationFailed
-<a href=#7871 id=7871 data-nosnippet>7871</a>        | MatrixError::RationalCanonicalVerificationFailed =&gt; {
-<a href=#7872 id=7872 data-nosnippet>7872</a>            DiagnosticCategory::InternalVerificationFailure
-<a href=#7873 id=7873 data-nosnippet>7873</a>        }
-<a href=#7874 id=7874 data-nosnippet>7874</a>        MatrixError::PivotIndeterminate { .. }
-<a href=#7875 id=7875 data-nosnippet>7875</a>        | MatrixError::EigenvectorVerificationIndeterminate { .. }
-<a href=#7876 id=7876 data-nosnippet>7876</a>        | MatrixError::SingularityIndeterminate =&gt; DiagnosticCategory::IndeterminateProof,
-<a href=#7877 id=7877 data-nosnippet>7877</a>        MatrixError::ExactEntryUnsupported
-<a href=#7878 id=7878 data-nosnippet>7878</a>        | MatrixError::RootDescriptorUncertified
-<a href=#7879 id=7879 data-nosnippet>7879</a>        | MatrixError::RootClassificationUnsupported =&gt; {
-<a href=#7880 id=7880 data-nosnippet>7880</a>            DiagnosticCategory::UnsupportedOrDeclinedComputation
-<a href=#7881 id=7881 data-nosnippet>7881</a>        }
-<a href=#7882 id=7882 data-nosnippet>7882</a>        <span class="kw">_ </span>=&gt; DiagnosticCategory::MathematicalDomainError,
-<a href=#7883 id=7883 data-nosnippet>7883</a>    }
-<a href=#7884 id=7884 data-nosnippet>7884</a>}
-<a href=#7885 id=7885 data-nosnippet>7885</a>
-<a href=#7886 id=7886 data-nosnippet>7886</a><span class="doccomment">/// Advanced native module for `prelude` functionality.
-<a href=#7887 id=7887 data-nosnippet>7887</a></span><span class="kw">pub mod </span>prelude {
-<a href=#7888 id=7888 data-nosnippet>7888</a>    <span class="doccomment">/// Re-exports the public native items named by this declaration.
-<a href=#7889 id=7889 data-nosnippet>7889</a>    </span><span class="kw">pub use </span>super::{
-<a href=#7890 id=7890 data-nosnippet>7890</a>        ApiError, AssumptionProposition, AssumptionReport, AssumptionScope, BulkExpressionOutcome,
-<a href=#7891 id=7891 data-nosnippet>7891</a>        BulkTextOutcome, CadCellKind, Circle2d, ComputationOutcome,
-<a href=#7892 id=7892 data-nosnippet>7892</a>        CylindricalAlgebraicDecomposition, ExactIntegerInput, ExecutionMode, Expression,
-<a href=#7893 id=7893 data-nosnippet>7893</a>        ExpressionInput, Geometry2d, GeometryIntersectionComponent, Matrix, MonomialOrdering,
-<a href=#7894 id=7894 data-nosnippet>7894</a>        ParallelBackend, ParallelismCapability, ParallelismInitialization,
-<a href=#7895 id=7895 data-nosnippet>7895</a>        ParallelismUnavailableReason, PartialDifferentialEquationArbitraryFunction,
-<a href=#7896 id=7896 data-nosnippet>7896</a>        PartialDifferentialEquationClassification, PartialDifferentialEquationCoefficientData,
-<a href=#7897 id=7897 data-nosnippet>7897</a>        PartialDifferentialEquationJet, PartialDifferentialEquationJetCoefficient,
-<a href=#7898 id=7898 data-nosnippet>7898</a>        PartialDifferentialEquationLinearity, PartialDifferentialEquationMethod,
-<a href=#7899 id=7899 data-nosnippet>7899</a>        PartialDifferentialEquationMethodCandidate,
-<a href=#7900 id=7900 data-nosnippet>7900</a>        PartialDifferentialEquationPrincipalCoefficient, PartialDifferentialEquationPrincipalPart,
-<a href=#7901 id=7901 data-nosnippet>7901</a>        PartialDifferentialEquationProblem, PartialDifferentialEquationProblemError,
-<a href=#7902 id=7902 data-nosnippet>7902</a>        PartialDifferentialEquationProofObligation, PartialDifferentialEquationSolutionFamily,
-<a href=#7903 id=7903 data-nosnippet>7903</a>        PartialDifferentialEquationSolutionForm, PartialDifferentialEquationSolutionProvenance,
-<a href=#7904 id=7904 data-nosnippet>7904</a>        PartialDifferentialEquationSolveDecline, PartialDifferentialEquationSolveResult,
-<a href=#7905 id=7905 data-nosnippet>7905</a>        PartialDifferentialEquationSolveVerdict,
-<a href=#7906 id=7906 data-nosnippet>7906</a>        PartialDifferentialEquationVerificationInconclusiveReason,
-<a href=#7907 id=7907 data-nosnippet>7907</a>        PartialDifferentialEquationVerificationReport,
-<a href=#7908 id=7908 data-nosnippet>7908</a>        PartialDifferentialEquationVerificationResidual,
-<a href=#7909 id=7909 data-nosnippet>7909</a>        PartialDifferentialEquationVerificationVerdict, Point2d, Polygon2d, Segment2d, Session,
-<a href=#7910 id=7910 data-nosnippet>7910</a>        SpecialFunctionBasis, Triangle2d, TrigonometricBasis, UndefinedFunction, VariableLike,
-<a href=#7911 id=7911 data-nosnippet>7911</a>    };
-<a href=#7912 id=7912 data-nosnippet>7912</a>    <span class="doccomment">/// Re-exports the public native items named by this declaration.
-<a href=#7913 id=7913 data-nosnippet>7913</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::assumptions::TruthValue;
-<a href=#7914 id=7914 data-nosnippet>7914</a>    <span class="doccomment">/// Re-exports the public native matrix predicate types.
-<a href=#7915 id=7915 data-nosnippet>7915</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::assumptions::{MatrixPredicate, MatrixPredicateApplication};
-<a href=#7916 id=7916 data-nosnippet>7916</a>    <span class="doccomment">/// Re-exports the public native items named by this declaration.
-<a href=#7917 id=7917 data-nosnippet>7917</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::limit::LimitDirection;
-<a href=#7918 id=7918 data-nosnippet>7918</a>}
-<a href=#7919 id=7919 data-nosnippet>7919</a>
-<a href=#7920 id=7920 data-nosnippet>7920</a><span class="attr">#[cfg(test)]
-<a href=#7921 id=7921 data-nosnippet>7921</a></span><span class="kw">mod </span>tests {
-<a href=#7922 id=7922 data-nosnippet>7922</a>    <span class="kw">use </span>super::{
-<a href=#7923 id=7923 data-nosnippet>7923</a>        ApiError, ExpressionInput, MathematicalObject, MonomialOrdering,
-<a href=#7924 id=7924 data-nosnippet>7924</a>        PartialDifferentialEquationLinearity, PartialDifferentialEquationMethod,
-<a href=#7925 id=7925 data-nosnippet>7925</a>        PartialDifferentialEquationProofObligation, PartialDifferentialEquationSolveVerdict,
-<a href=#7926 id=7926 data-nosnippet>7926</a>        Session, SpecialFunctionBasis, TrigonometricBasis,
-<a href=#7927 id=7927 data-nosnippet>7927</a>    };
-<a href=#7928 id=7928 data-nosnippet>7928</a>
-<a href=#7929 id=7929 data-nosnippet>7929</a>    <span class="attr">#[test]
-<a href=#7930 id=7930 data-nosnippet>7930</a>    </span><span class="kw">fn </span>binding_option_types_preserve_stable_spellings_and_diagnostics() {
-<a href=#7931 id=7931 data-nosnippet>7931</a>        <span class="macro">assert_eq!</span>(
-<a href=#7932 id=7932 data-nosnippet>7932</a>            TrigonometricBasis::from_name(<span class="string">"sine_cosine"</span>).unwrap(),
-<a href=#7933 id=7933 data-nosnippet>7933</a>            TrigonometricBasis::SineCosine
-<a href=#7934 id=7934 data-nosnippet>7934</a>        );
-<a href=#7935 id=7935 data-nosnippet>7935</a>        <span class="macro">assert_eq!</span>(
-<a href=#7936 id=7936 data-nosnippet>7936</a>            SpecialFunctionBasis::from_name(<span class="string">"rising_factorial"</span>)
-<a href=#7937 id=7937 data-nosnippet>7937</a>                .unwrap()
-<a href=#7938 id=7938 data-nosnippet>7938</a>                .name(),
-<a href=#7939 id=7939 data-nosnippet>7939</a>            <span class="string">"rising_factorial"
-<a href=#7940 id=7940 data-nosnippet>7940</a>        </span>);
-<a href=#7941 id=7941 data-nosnippet>7941</a>        <span class="macro">assert_eq!</span>(
-<a href=#7942 id=7942 data-nosnippet>7942</a>            MonomialOrdering::from_name(<span class="string">"degrevlex"</span>).unwrap(),
-<a href=#7943 id=7943 data-nosnippet>7943</a>            MonomialOrdering::DegreeReverseLexicographic
-<a href=#7944 id=7944 data-nosnippet>7944</a>        );
-<a href=#7945 id=7945 data-nosnippet>7945</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
-<a href=#7946 id=7946 data-nosnippet>7946</a>            TrigonometricBasis::from_name(<span class="string">"invalid"</span>),
-<a href=#7947 id=7947 data-nosnippet>7947</a>            <span class="prelude-val">Err</span>(ApiError::InvalidOption { .. })
-<a href=#7948 id=7948 data-nosnippet>7948</a>        ));
-<a href=#7949 id=7949 data-nosnippet>7949</a>    }
-<a href=#7950 id=7950 data-nosnippet>7950</a>
-<a href=#7951 id=7951 data-nosnippet>7951</a>    <span class="attr">#[test]
-<a href=#7952 id=7952 data-nosnippet>7952</a>    </span><span class="kw">fn </span>classified_inputs_share_exact_conversion_and_session_provenance_rules() {
-<a href=#7953 id=7953 data-nosnippet>7953</a>        <span class="kw">let </span>session = Session::new();
-<a href=#7954 id=7954 data-nosnippet>7954</a>        <span class="macro">assert_eq!</span>(
-<a href=#7955 id=7955 data-nosnippet>7955</a>            ExpressionInput::ExactRationalText(<span class="string">"6/8"</span>.to_string())
-<a href=#7956 id=7956 data-nosnippet>7956</a>                .resolve(<span class="kw-2">&amp;</span>session)
-<a href=#7957 id=7957 data-nosnippet>7957</a>                .unwrap()
-<a href=#7958 id=7958 data-nosnippet>7958</a>                .to_string(),
-<a href=#7959 id=7959 data-nosnippet>7959</a>            <span class="string">"3/4"
-<a href=#7960 id=7960 data-nosnippet>7960</a>        </span>);
-<a href=#7961 id=7961 data-nosnippet>7961</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
-<a href=#7962 id=7962 data-nosnippet>7962</a>            ExpressionInput::ExactIntegerText(<span class="string">"three"</span>.to_string()).resolve(<span class="kw-2">&amp;</span>session),
-<a href=#7963 id=7963 data-nosnippet>7963</a>            <span class="prelude-val">Err</span>(ApiError::InvalidExactInput { .. })
-<a href=#7964 id=7964 data-nosnippet>7964</a>        ));
-<a href=#7965 id=7965 data-nosnippet>7965</a>        <span class="kw">let </span>foreign_session = Session::new();
-<a href=#7966 id=7966 data-nosnippet>7966</a>        <span class="kw">let </span>foreign_expression = foreign_session.symbol(<span class="string">"x"</span>);
-<a href=#7967 id=7967 data-nosnippet>7967</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
-<a href=#7968 id=7968 data-nosnippet>7968</a>            ExpressionInput::Expression(foreign_expression).resolve(<span class="kw-2">&amp;</span>session),
-<a href=#7969 id=7969 data-nosnippet>7969</a>            <span class="prelude-val">Err</span>(ApiError::ContextMismatch)
-<a href=#7970 id=7970 data-nosnippet>7970</a>        ));
-<a href=#7971 id=7971 data-nosnippet>7971</a>    }
-<a href=#7972 id=7972 data-nosnippet>7972</a>
-<a href=#7973 id=7973 data-nosnippet>7973</a>    <span class="attr">#[test]
-<a href=#7974 id=7974 data-nosnippet>7974</a>    </span><span class="kw">fn </span>typed_rewrite_operations_share_session_provenance_checks() {
-<a href=#7975 id=7975 data-nosnippet>7975</a>        <span class="kw">let </span>session = Session::new();
-<a href=#7976 id=7976 data-nosnippet>7976</a>        <span class="kw">let </span>target = session.parse(<span class="string">"sin(x)"</span>).unwrap();
-<a href=#7977 id=7977 data-nosnippet>7977</a>        <span class="macro">assert!</span>(
-<a href=#7978 id=7978 data-nosnippet>7978</a>            !session
-<a href=#7979 id=7979 data-nosnippet>7979</a>                .rewrite_trigonometric_basis(<span class="kw-2">&amp;</span>target, TrigonometricBasis::Exponential)
-<a href=#7980 id=7980 data-nosnippet>7980</a>                .unwrap()
-<a href=#7981 id=7981 data-nosnippet>7981</a>                .to_string()
-<a href=#7982 id=7982 data-nosnippet>7982</a>                .is_empty()
-<a href=#7983 id=7983 data-nosnippet>7983</a>        );
-<a href=#7984 id=7984 data-nosnippet>7984</a>        <span class="macro">assert!</span>(
-<a href=#7985 id=7985 data-nosnippet>7985</a>            !session
-<a href=#7986 id=7986 data-nosnippet>7986</a>                .rewrite_special_functions(<span class="kw-2">&amp;</span>target, SpecialFunctionBasis::Gamma)
-<a href=#7987 id=7987 data-nosnippet>7987</a>                .unwrap()
-<a href=#7988 id=7988 data-nosnippet>7988</a>                .to_string()
-<a href=#7989 id=7989 data-nosnippet>7989</a>                .is_empty()
-<a href=#7990 id=7990 data-nosnippet>7990</a>        );
-<a href=#7991 id=7991 data-nosnippet>7991</a>        session.reset().unwrap();
-<a href=#7992 id=7992 data-nosnippet>7992</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
-<a href=#7993 id=7993 data-nosnippet>7993</a>            session.simplify_trigonometric(<span class="kw-2">&amp;</span>target),
-<a href=#7994 id=7994 data-nosnippet>7994</a>            <span class="prelude-val">Err</span>(ApiError::StaleObject)
-<a href=#7995 id=7995 data-nosnippet>7995</a>        ));
-<a href=#7996 id=7996 data-nosnippet>7996</a>    }
-<a href=#7997 id=7997 data-nosnippet>7997</a>
-<a href=#7998 id=7998 data-nosnippet>7998</a>    <span class="attr">#[test]
-<a href=#7999 id=7999 data-nosnippet>7999</a>    </span><span class="kw">fn </span>rejects_mixed_and_stale_expressions() {
-<a href=#8000 id=8000 data-nosnippet>8000</a>        <span class="kw">let </span>first = Session::new();
-<a href=#8001 id=8001 data-nosnippet>8001</a>        <span class="kw">let </span>second = Session::new();
-<a href=#8002 id=8002 data-nosnippet>8002</a>        <span class="kw">let </span>x = first.symbol(<span class="string">"x"</span>);
-<a href=#8003 id=8003 data-nosnippet>8003</a>        <span class="kw">let </span>y = second.symbol(<span class="string">"y"</span>);
-<a href=#8004 id=8004 data-nosnippet>8004</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(first.add(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>y), <span class="prelude-val">Err</span>(ApiError::ContextMismatch)));
-<a href=#8005 id=8005 data-nosnippet>8005</a>        first.reset().unwrap();
-<a href=#8006 id=8006 data-nosnippet>8006</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(first.add(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>x), <span class="prelude-val">Err</span>(ApiError::StaleObject)));
-<a href=#8007 id=8007 data-nosnippet>8007</a>    }
-<a href=#8008 id=8008 data-nosnippet>8008</a>
-<a href=#8009 id=8009 data-nosnippet>8009</a>    <span class="attr">#[test]
-<a href=#8010 id=8010 data-nosnippet>8010</a>    </span><span class="kw">fn </span>supports_exact_scalar_and_symbolic_operations() {
-<a href=#8011 id=8011 data-nosnippet>8011</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8012 id=8012 data-nosnippet>8012</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8013 id=8013 data-nosnippet>8013</a>        <span class="kw">let </span>huge = session.integer(u128::MAX);
-<a href=#8014 id=8014 data-nosnippet>8014</a>        <span class="kw">let </span>sum = session.add(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>huge).unwrap();
-<a href=#8015 id=8015 data-nosnippet>8015</a>        <span class="macro">assert!</span>(!sum.is_stale());
-<a href=#8016 id=8016 data-nosnippet>8016</a>        <span class="kw">let </span>half = session.rational(<span class="number">1</span>, <span class="number">2</span>).unwrap();
-<a href=#8017 id=8017 data-nosnippet>8017</a>        <span class="kw">let </span>derivative = session.differentiate(<span class="kw-2">&amp;</span>half, <span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8018 id=8018 data-nosnippet>8018</a>        <span class="macro">assert!</span>(derivative == session.integer(<span class="number">0</span>));
-<a href=#8019 id=8019 data-nosnippet>8019</a>    }
-<a href=#8020 id=8020 data-nosnippet>8020</a>
-<a href=#8021 id=8021 data-nosnippet>8021</a>    <span class="attr">#[test]
-<a href=#8022 id=8022 data-nosnippet>8022</a>    </span><span class="kw">fn </span>covers_transform_set_matrix_geometry_and_function_families() {
-<a href=#8023 id=8023 data-nosnippet>8023</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8024 id=8024 data-nosnippet>8024</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8025 id=8025 data-nosnippet>8025</a>        <span class="kw">let </span>polynomial = session.parse(<span class="string">"x^2 + 2*x + 1"</span>).unwrap();
-<a href=#8026 id=8026 data-nosnippet>8026</a>        <span class="macro">assert_eq!</span>(
-<a href=#8027 id=8027 data-nosnippet>8027</a>            session.factor(<span class="kw-2">&amp;</span>polynomial).unwrap().to_string(),
-<a href=#8028 id=8028 data-nosnippet>8028</a>            <span class="string">"(x + 1)^2"
-<a href=#8029 id=8029 data-nosnippet>8029</a>        </span>);
-<a href=#8030 id=8030 data-nosnippet>8030</a>        <span class="kw">let </span>roots = session.solve_as_set(<span class="kw-2">&amp;</span>polynomial, <span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8031 id=8031 data-nosnippet>8031</a>        <span class="macro">assert!</span>(roots.to_string().contains(<span class="string">"-1"</span>));
-<a href=#8032 id=8032 data-nosnippet>8032</a>
-<a href=#8033 id=8033 data-nosnippet>8033</a>        <span class="kw">let </span>one = session.integer(<span class="number">1</span>);
-<a href=#8034 id=8034 data-nosnippet>8034</a>        <span class="kw">let </span>two = session.integer(<span class="number">2</span>);
-<a href=#8035 id=8035 data-nosnippet>8035</a>        <span class="kw">let </span>matrix = session
-<a href=#8036 id=8036 data-nosnippet>8036</a>            .matrix([[one.clone(), two.clone()], [two.clone(), one.clone()]])
-<a href=#8037 id=8037 data-nosnippet>8037</a>            .unwrap();
-<a href=#8038 id=8038 data-nosnippet>8038</a>        <span class="macro">assert_eq!</span>(matrix.determinant().unwrap().to_string(), <span class="string">"-3"</span>);
-<a href=#8039 id=8039 data-nosnippet>8039</a>
-<a href=#8040 id=8040 data-nosnippet>8040</a>        <span class="kw">let </span>zero = session.integer(<span class="number">0</span>);
-<a href=#8041 id=8041 data-nosnippet>8041</a>        <span class="kw">let </span>first = session.point_2d(<span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>zero).unwrap();
-<a href=#8042 id=8042 data-nosnippet>8042</a>        <span class="kw">let </span>second = session.point_2d(<span class="kw-2">&amp;</span>one, <span class="kw-2">&amp;</span>zero).unwrap();
-<a href=#8043 id=8043 data-nosnippet>8043</a>        <span class="macro">assert_eq!</span>(first.distance_to(<span class="kw-2">&amp;</span>second).unwrap().to_string(), <span class="string">"1"</span>);
-<a href=#8044 id=8044 data-nosnippet>8044</a>        <span class="kw">let </span>circle = session.circle_2d(<span class="kw-2">&amp;</span>first, <span class="kw-2">&amp;</span>one).unwrap();
-<a href=#8045 id=8045 data-nosnippet>8045</a>        <span class="macro">assert_eq!</span>(circle.area().unwrap().to_string(), <span class="string">"pi"</span>);
-<a href=#8046 id=8046 data-nosnippet>8046</a>
-<a href=#8047 id=8047 data-nosnippet>8047</a>        <span class="kw">let </span>function = session.undefined_function(<span class="string">"f"</span>);
-<a href=#8048 id=8048 data-nosnippet>8048</a>        <span class="kw">let </span>call = function.call([x.clone()]).unwrap();
-<a href=#8049 id=8049 data-nosnippet>8049</a>        <span class="macro">assert_eq!</span>(call.to_string(), <span class="string">"f(x)"</span>);
-<a href=#8050 id=8050 data-nosnippet>8050</a>    }
-<a href=#8051 id=8051 data-nosnippet>8051</a>
-<a href=#8052 id=8052 data-nosnippet>8052</a>    <span class="attr">#[test]
-<a href=#8053 id=8053 data-nosnippet>8053</a>    </span><span class="kw">fn </span>applies_provenance_checks_to_every_facade_handle_family() {
-<a href=#8054 id=8054 data-nosnippet>8054</a>        <span class="kw">let </span>first = Session::new();
-<a href=#8055 id=8055 data-nosnippet>8055</a>        <span class="kw">let </span>second = Session::new();
-<a href=#8056 id=8056 data-nosnippet>8056</a>        <span class="kw">let </span>zero = first.integer(<span class="number">0</span>);
-<a href=#8057 id=8057 data-nosnippet>8057</a>        <span class="kw">let </span>point = first.point_2d(<span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>zero).unwrap();
-<a href=#8058 id=8058 data-nosnippet>8058</a>        <span class="kw">let </span>other_zero = second.integer(<span class="number">0</span>);
-<a href=#8059 id=8059 data-nosnippet>8059</a>        <span class="kw">let </span>other_point = second.point_2d(<span class="kw-2">&amp;</span>other_zero, <span class="kw-2">&amp;</span>other_zero).unwrap();
-<a href=#8060 id=8060 data-nosnippet>8060</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
-<a href=#8061 id=8061 data-nosnippet>8061</a>            first.segment_2d(<span class="kw-2">&amp;</span>point, <span class="kw-2">&amp;</span>other_point),
-<a href=#8062 id=8062 data-nosnippet>8062</a>            <span class="prelude-val">Err</span>(ApiError::ContextMismatch)
-<a href=#8063 id=8063 data-nosnippet>8063</a>        ));
-<a href=#8064 id=8064 data-nosnippet>8064</a>
-<a href=#8065 id=8065 data-nosnippet>8065</a>        <span class="kw">let </span>matrix = first.matrix([[zero.clone()]]).unwrap();
-<a href=#8066 id=8066 data-nosnippet>8066</a>        first.reset().unwrap();
-<a href=#8067 id=8067 data-nosnippet>8067</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(matrix.determinant(), <span class="prelude-val">Err</span>(ApiError::StaleObject)));
-<a href=#8068 id=8068 data-nosnippet>8068</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(point.coordinates(), <span class="prelude-val">Err</span>(ApiError::StaleObject)));
-<a href=#8069 id=8069 data-nosnippet>8069</a>    }
-<a href=#8070 id=8070 data-nosnippet>8070</a>
-<a href=#8071 id=8071 data-nosnippet>8071</a>    <span class="attr">#[test]
-<a href=#8072 id=8072 data-nosnippet>8072</a>    </span><span class="kw">fn </span>assumption_formulas_support_entailment_possibility_and_scopes() {
-<a href=#8073 id=8073 data-nosnippet>8073</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8074 id=8074 data-nosnippet>8074</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8075 id=8075 data-nosnippet>8075</a>        <span class="kw">let </span>positive = session.positive(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8076 id=8076 data-nosnippet>8076</a>        <span class="kw">let </span>negative = session.negative(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8077 id=8077 data-nosnippet>8077</a>        <span class="kw">let </span>nonzero = session.nonzero(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8078 id=8078 data-nosnippet>8078</a>        <span class="kw">let </span>disjunction = positive.or(<span class="kw-2">&amp;</span>negative).unwrap();
-<a href=#8079 id=8079 data-nosnippet>8079</a>        session.add_assumptions(<span class="kw-2">&amp;</span>disjunction).unwrap();
-<a href=#8080 id=8080 data-nosnippet>8080</a>        <span class="macro">assert_eq!</span>(
-<a href=#8081 id=8081 data-nosnippet>8081</a>            session.ask(<span class="kw-2">&amp;</span>nonzero).unwrap(),
-<a href=#8082 id=8082 data-nosnippet>8082</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
-<a href=#8083 id=8083 data-nosnippet>8083</a>        );
-<a href=#8084 id=8084 data-nosnippet>8084</a>        <span class="macro">assert_eq!</span>(
-<a href=#8085 id=8085 data-nosnippet>8085</a>            <span class="kw">crate</span>::assumptions::queries::is_nonzero(
-<a href=#8086 id=8086 data-nosnippet>8086</a>                <span class="kw-2">&amp;</span>x.inner,
-<a href=#8087 id=8087 data-nosnippet>8087</a>                <span class="kw-2">&amp;</span>session.state.context.borrow().symbol_table,
-<a href=#8088 id=8088 data-nosnippet>8088</a>            ),
-<a href=#8089 id=8089 data-nosnippet>8089</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes,
-<a href=#8090 id=8090 data-nosnippet>8090</a>        );
-<a href=#8091 id=8091 data-nosnippet>8091</a>        <span class="macro">assert_eq!</span>(
-<a href=#8092 id=8092 data-nosnippet>8092</a>            session.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
-<a href=#8093 id=8093 data-nosnippet>8093</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown
-<a href=#8094 id=8094 data-nosnippet>8094</a>        );
-<a href=#8095 id=8095 data-nosnippet>8095</a>        <span class="macro">assert_eq!</span>(
-<a href=#8096 id=8096 data-nosnippet>8096</a>            session.could_hold(<span class="kw-2">&amp;</span>positive).unwrap(),
-<a href=#8097 id=8097 data-nosnippet>8097</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
-<a href=#8098 id=8098 data-nosnippet>8098</a>        );
-<a href=#8099 id=8099 data-nosnippet>8099</a>        <span class="macro">assert_eq!</span>(
-<a href=#8100 id=8100 data-nosnippet>8100</a>            session.could_hold(<span class="kw-2">&amp;</span>positive.not().unwrap()).unwrap(),
-<a href=#8101 id=8101 data-nosnippet>8101</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
-<a href=#8102 id=8102 data-nosnippet>8102</a>        );
-<a href=#8103 id=8103 data-nosnippet>8103</a>
-<a href=#8104 id=8104 data-nosnippet>8104</a>        <span class="kw">let </span>scope = session.assuming(<span class="kw-2">&amp;</span>positive).unwrap();
-<a href=#8105 id=8105 data-nosnippet>8105</a>        <span class="macro">assert_eq!</span>(
-<a href=#8106 id=8106 data-nosnippet>8106</a>            scope.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
-<a href=#8107 id=8107 data-nosnippet>8107</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
-<a href=#8108 id=8108 data-nosnippet>8108</a>        );
-<a href=#8109 id=8109 data-nosnippet>8109</a>        <span class="macro">assert_eq!</span>(
-<a href=#8110 id=8110 data-nosnippet>8110</a>            scope.could_hold(<span class="kw-2">&amp;</span>negative).unwrap(),
-<a href=#8111 id=8111 data-nosnippet>8111</a>            <span class="kw">crate</span>::assumptions::TruthValue::No
-<a href=#8112 id=8112 data-nosnippet>8112</a>        );
-<a href=#8113 id=8113 data-nosnippet>8113</a>        <span class="macro">assert_eq!</span>(
-<a href=#8114 id=8114 data-nosnippet>8114</a>            session.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
-<a href=#8115 id=8115 data-nosnippet>8115</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown
-<a href=#8116 id=8116 data-nosnippet>8116</a>        );
-<a href=#8117 id=8117 data-nosnippet>8117</a>    }
-<a href=#8118 id=8118 data-nosnippet>8118</a>
-<a href=#8119 id=8119 data-nosnippet>8119</a>    <span class="attr">#[test]
-<a href=#8120 id=8120 data-nosnippet>8120</a>    </span><span class="kw">fn </span>assumption_scopes_thread_facts_through_integration_and_solving() {
-<a href=#8121 id=8121 data-nosnippet>8121</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8122 id=8122 data-nosnippet>8122</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8123 id=8123 data-nosnippet>8123</a>        <span class="kw">let </span>real = session.real(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8124 id=8124 data-nosnippet>8124</a>        <span class="kw">let </span>scope = session.assuming(<span class="kw-2">&amp;</span>real).unwrap();
-<a href=#8125 id=8125 data-nosnippet>8125</a>        <span class="kw">let </span>operation = session.begin_operation();
-<a href=#8126 id=8126 data-nosnippet>8126</a>
-<a href=#8127 id=8127 data-nosnippet>8127</a>        <span class="kw">let </span>reciprocal = session.parse(<span class="string">"1/x"</span>).unwrap();
-<a href=#8128 id=8128 data-nosnippet>8128</a>        <span class="kw">let </span>variable = session.variable_identifier((<span class="kw-2">&amp;</span>x).into()).unwrap();
-<a href=#8129 id=8129 data-nosnippet>8129</a>        <span class="kw">let </span>integrated = scope
-<a href=#8130 id=8130 data-nosnippet>8130</a>            .with_scoped_context(|context| {
-<a href=#8131 id=8131 data-nosnippet>8131</a>                <span class="kw">crate</span>::integrate::integrate(context, <span class="kw-2">&amp;</span>reciprocal.inner, variable)
-<a href=#8132 id=8132 data-nosnippet>8132</a>            })
-<a href=#8133 id=8133 data-nosnippet>8133</a>            .unwrap();
-<a href=#8134 id=8134 data-nosnippet>8134</a>        <span class="macro">assert_eq!</span>(
-<a href=#8135 id=8135 data-nosnippet>8135</a>            session
-<a href=#8136 id=8136 data-nosnippet>8136</a>                .publish_expression(<span class="kw-2">&amp;</span>operation, integrated)
-<a href=#8137 id=8137 data-nosnippet>8137</a>                .unwrap()
-<a href=#8138 id=8138 data-nosnippet>8138</a>                .to_string(),
-<a href=#8139 id=8139 data-nosnippet>8139</a>            <span class="string">"log(abs(x))"
-<a href=#8140 id=8140 data-nosnippet>8140</a>        </span>);
-<a href=#8141 id=8141 data-nosnippet>8141</a>
-<a href=#8142 id=8142 data-nosnippet>8142</a>        <span class="kw">let </span>impossible_real_equation = session.parse(<span class="string">"cos(x) - 2"</span>).unwrap();
-<a href=#8143 id=8143 data-nosnippet>8143</a>        <span class="kw">let </span>solved = scope
-<a href=#8144 id=8144 data-nosnippet>8144</a>            .with_scoped_context(|context| {
-<a href=#8145 id=8145 data-nosnippet>8145</a>                <span class="kw">crate</span>::solve::vec::solve_as_set(context, <span class="kw-2">&amp;</span>impossible_real_equation.inner, variable)
-<a href=#8146 id=8146 data-nosnippet>8146</a>            })
-<a href=#8147 id=8147 data-nosnippet>8147</a>            .unwrap();
-<a href=#8148 id=8148 data-nosnippet>8148</a>        <span class="macro">assert_eq!</span>(
-<a href=#8149 id=8149 data-nosnippet>8149</a>            session
-<a href=#8150 id=8150 data-nosnippet>8150</a>                .publish_expression(<span class="kw-2">&amp;</span>operation, solved)
-<a href=#8151 id=8151 data-nosnippet>8151</a>                .unwrap()
-<a href=#8152 id=8152 data-nosnippet>8152</a>                .to_string(),
-<a href=#8153 id=8153 data-nosnippet>8153</a>            <span class="string">"empty_set"
-<a href=#8154 id=8154 data-nosnippet>8154</a>        </span>);
-<a href=#8155 id=8155 data-nosnippet>8155</a>
-<a href=#8156 id=8156 data-nosnippet>8156</a>        <span class="macro">assert_eq!</span>(
-<a href=#8157 id=8157 data-nosnippet>8157</a>            session.ask(<span class="kw-2">&amp;</span>real).unwrap(),
-<a href=#8158 id=8158 data-nosnippet>8158</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown
-<a href=#8159 id=8159 data-nosnippet>8159</a>        );
-<a href=#8160 id=8160 data-nosnippet>8160</a>    }
-<a href=#8161 id=8161 data-nosnippet>8161</a>
-<a href=#8162 id=8162 data-nosnippet>8162</a>    <span class="attr">#[test]
-<a href=#8163 id=8163 data-nosnippet>8163</a>    </span><span class="kw">fn </span>contradictory_assumption_addition_is_atomic() {
-<a href=#8164 id=8164 data-nosnippet>8164</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8165 id=8165 data-nosnippet>8165</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8166 id=8166 data-nosnippet>8166</a>        <span class="kw">let </span>positive = session.positive(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8167 id=8167 data-nosnippet>8167</a>        <span class="kw">let </span>negative = session.negative(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8168 id=8168 data-nosnippet>8168</a>        session.add_assumptions(<span class="kw-2">&amp;</span>positive).unwrap();
-<a href=#8169 id=8169 data-nosnippet>8169</a>        <span class="kw">let </span>before = session.all_assumptions().unwrap();
-<a href=#8170 id=8170 data-nosnippet>8170</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
-<a href=#8171 id=8171 data-nosnippet>8171</a>            session.add_assumptions(<span class="kw-2">&amp;</span>negative),
-<a href=#8172 id=8172 data-nosnippet>8172</a>            <span class="prelude-val">Err</span>(ApiError::AssumptionConflict(<span class="kw">_</span>))
-<a href=#8173 id=8173 data-nosnippet>8173</a>        ));
-<a href=#8174 id=8174 data-nosnippet>8174</a>        <span class="macro">assert_eq!</span>(session.all_assumptions().unwrap(), before);
-<a href=#8175 id=8175 data-nosnippet>8175</a>    }
-<a href=#8176 id=8176 data-nosnippet>8176</a>
-<a href=#8177 id=8177 data-nosnippet>8177</a>    <span class="attr">#[test]
-<a href=#8178 id=8178 data-nosnippet>8178</a>    </span><span class="kw">fn </span>predicate_implications_are_closed_transitively() {
-<a href=#8179 id=8179 data-nosnippet>8179</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8180 id=8180 data-nosnippet>8180</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8181 id=8181 data-nosnippet>8181</a>        <span class="kw">let </span>positive_integer = session.positive_integer(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8182 id=8182 data-nosnippet>8182</a>        <span class="kw">let </span>real = session.real(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8183 id=8183 data-nosnippet>8183</a>
-<a href=#8184 id=8184 data-nosnippet>8184</a>        session.add_assumptions(<span class="kw-2">&amp;</span>positive_integer).unwrap();
+<a href=#7630 id=7630 data-nosnippet>7630</a>    <span class="doccomment">/// Constructs the structural derivative of this named function, one order per argument:
+<a href=#7631 id=7631 data-nosnippet>7631</a>    /// `y.derivative([1], [x])` is `y'(x)`. This is the shape the differential-equation
+<a href=#7632 id=7632 data-nosnippet>7632</a>    /// classifiers recognise, not a deferred derivative of an arbitrary expression.
+<a href=#7633 id=7633 data-nosnippet>7633</a>    </span><span class="kw">pub fn </span>derivative&lt;OrderIterator, ArgumentIterator&gt;(
+<a href=#7634 id=7634 data-nosnippet>7634</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
+<a href=#7635 id=7635 data-nosnippet>7635</a>        orders: OrderIterator,
+<a href=#7636 id=7636 data-nosnippet>7636</a>        arguments: ArgumentIterator,
+<a href=#7637 id=7637 data-nosnippet>7637</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;Expression, ApiError&gt;
+<a href=#7638 id=7638 data-nosnippet>7638</a>    <span class="kw">where
+<a href=#7639 id=7639 data-nosnippet>7639</a>        </span>OrderIterator: IntoIterator&lt;Item = usize&gt;,
+<a href=#7640 id=7640 data-nosnippet>7640</a>        ArgumentIterator: IntoIterator&lt;Item = Expression&gt;,
+<a href=#7641 id=7641 data-nosnippet>7641</a>    {
+<a href=#7642 id=7642 data-nosnippet>7642</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
+<a href=#7643 id=7643 data-nosnippet>7643</a>        <span class="kw">let </span>operation = owner.begin_operation();
+<a href=#7644 id=7644 data-nosnippet>7644</a>        owner.validate_undefined_function(<span class="self">self</span>)<span class="question-mark">?</span>;
+<a href=#7645 id=7645 data-nosnippet>7645</a>        <span class="kw">let </span>orders: Vec&lt;usize&gt; = orders.into_iter().collect();
+<a href=#7646 id=7646 data-nosnippet>7646</a>        <span class="kw">let </span>arguments: Vec&lt;Expression&gt; = arguments.into_iter().collect();
+<a href=#7647 id=7647 data-nosnippet>7647</a>        <span class="kw">if </span>orders.len() != arguments.len() {
+<a href=#7648 id=7648 data-nosnippet>7648</a>            <span class="kw">return </span><span class="prelude-val">Err</span>(ApiError::CollectionLengthMismatch {
+<a href=#7649 id=7649 data-nosnippet>7649</a>                first_parameter: <span class="string">"orders"</span>.to_string(),
+<a href=#7650 id=7650 data-nosnippet>7650</a>                first_length: orders.len(),
+<a href=#7651 id=7651 data-nosnippet>7651</a>                second_parameter: <span class="string">"arguments"</span>.to_string(),
+<a href=#7652 id=7652 data-nosnippet>7652</a>                second_length: arguments.len(),
+<a href=#7653 id=7653 data-nosnippet>7653</a>            });
+<a href=#7654 id=7654 data-nosnippet>7654</a>        }
+<a href=#7655 id=7655 data-nosnippet>7655</a>        <span class="kw">for </span>argument <span class="kw">in </span><span class="kw-2">&amp;</span>arguments {
+<a href=#7656 id=7656 data-nosnippet>7656</a>            owner.validate(argument)<span class="question-mark">?</span>;
+<a href=#7657 id=7657 data-nosnippet>7657</a>        }
+<a href=#7658 id=7658 data-nosnippet>7658</a>        <span class="kw">let </span><span class="kw-2">mut </span>context = operation.derived_context();
+<a href=#7659 id=7659 data-nosnippet>7659</a>        <span class="kw">let </span>function_symbol = context.symbol_table.intern_symbol(<span class="kw-2">&amp;</span><span class="self">self</span>.name);
+<a href=#7660 id=7660 data-nosnippet>7660</a>        <span class="kw">let </span>inner = builders::derivative(
+<a href=#7661 id=7661 data-nosnippet>7661</a>            <span class="kw-2">&amp;mut </span>context,
+<a href=#7662 id=7662 data-nosnippet>7662</a>            FunctionIdentifier::User(function_symbol),
+<a href=#7663 id=7663 data-nosnippet>7663</a>            orders,
+<a href=#7664 id=7664 data-nosnippet>7664</a>            arguments
+<a href=#7665 id=7665 data-nosnippet>7665</a>                .iter()
+<a href=#7666 id=7666 data-nosnippet>7666</a>                .map(|argument| Arc::clone(<span class="kw-2">&amp;</span>argument.inner))
+<a href=#7667 id=7667 data-nosnippet>7667</a>                .collect(),
+<a href=#7668 id=7668 data-nosnippet>7668</a>        );
+<a href=#7669 id=7669 data-nosnippet>7669</a>        drop(context);
+<a href=#7670 id=7670 data-nosnippet>7670</a>        owner.publish_expression(<span class="kw-2">&amp;</span>operation, inner)
+<a href=#7671 id=7671 data-nosnippet>7671</a>    }
+<a href=#7672 id=7672 data-nosnippet>7672</a>}
+<a href=#7673 id=7673 data-nosnippet>7673</a>
+<a href=#7674 id=7674 data-nosnippet>7674</a><span class="kw">impl </span>CylindricalAlgebraicDecomposition {
+<a href=#7675 id=7675 data-nosnippet>7675</a>    <span class="doccomment">/// The session that owns this object, for host adapters that carry the owner alongside it.
+<a href=#7676 id=7676 data-nosnippet>7676</a>    </span><span class="kw">pub fn </span>session(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Session {
+<a href=#7677 id=7677 data-nosnippet>7677</a>        <span class="self">self</span>.owner()
+<a href=#7678 id=7678 data-nosnippet>7678</a>    }
+<a href=#7679 id=7679 data-nosnippet>7679</a>
+<a href=#7680 id=7680 data-nosnippet>7680</a>    <span class="doccomment">/// The session generation this object was created in.
+<a href=#7681 id=7681 data-nosnippet>7681</a>    </span><span class="kw">pub fn </span>generation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u64 {
+<a href=#7682 id=7682 data-nosnippet>7682</a>        <span class="self">self</span>.generation
+<a href=#7683 id=7683 data-nosnippet>7683</a>    }
+<a href=#7684 id=7684 data-nosnippet>7684</a>
+<a href=#7685 id=7685 data-nosnippet>7685</a>    <span class="doccomment">/// Whether this object predates its session's most recent reset.
+<a href=#7686 id=7686 data-nosnippet>7686</a>    </span><span class="kw">pub fn </span>is_stale(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+<a href=#7687 id=7687 data-nosnippet>7687</a>        <span class="self">self</span>.generation != <span class="self">self</span>.state.generation.get()
+<a href=#7688 id=7688 data-nosnippet>7688</a>    }
+<a href=#7689 id=7689 data-nosnippet>7689</a>
+<a href=#7690 id=7690 data-nosnippet>7690</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>owner(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Session {
+<a href=#7691 id=7691 data-nosnippet>7691</a>        Session {
+<a href=#7692 id=7692 data-nosnippet>7692</a>            state: Arc::clone(<span class="kw-2">&amp;</span><span class="self">self</span>.state),
+<a href=#7693 id=7693 data-nosnippet>7693</a>        }
+<a href=#7694 id=7694 data-nosnippet>7694</a>    }
+<a href=#7695 id=7695 data-nosnippet>7695</a>
+<a href=#7696 id=7696 data-nosnippet>7696</a>    <span class="kw">fn </span>arena_index(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;usize, ApiError&gt; {
+<a href=#7697 id=7697 data-nosnippet>7697</a>        <span class="self">self</span>.full_cells
+<a href=#7698 id=7698 data-nosnippet>7698</a>            .get(index)
+<a href=#7699 id=7699 data-nosnippet>7699</a>            .copied()
+<a href=#7700 id=7700 data-nosnippet>7700</a>            .ok_or(ApiError::IndexOutOfBounds {
+<a href=#7701 id=7701 data-nosnippet>7701</a>                index,
+<a href=#7702 id=7702 data-nosnippet>7702</a>                length: <span class="self">self</span>.full_cells.len(),
+<a href=#7703 id=7703 data-nosnippet>7703</a>            })
+<a href=#7704 id=7704 data-nosnippet>7704</a>    }
+<a href=#7705 id=7705 data-nosnippet>7705</a>
+<a href=#7706 id=7706 data-nosnippet>7706</a>    <span class="doccomment">/// Provides the `cell_count` operation on this native type.
+<a href=#7707 id=7707 data-nosnippet>7707</a>    </span><span class="kw">pub fn </span>cell_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;usize, ApiError&gt; {
+<a href=#7708 id=7708 data-nosnippet>7708</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
+<a href=#7709 id=7709 data-nosnippet>7709</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
+<a href=#7710 id=7710 data-nosnippet>7710</a>        <span class="prelude-val">Ok</span>(<span class="self">self</span>.full_cells.len())
+<a href=#7711 id=7711 data-nosnippet>7711</a>    }
+<a href=#7712 id=7712 data-nosnippet>7712</a>
+<a href=#7713 id=7713 data-nosnippet>7713</a>    <span class="doccomment">/// Provides the `cell_sample_point` operation on this native type.
+<a href=#7714 id=7714 data-nosnippet>7714</a>    </span><span class="kw">pub fn </span>cell_sample_point(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;f64&gt;, ApiError&gt; {
+<a href=#7715 id=7715 data-nosnippet>7715</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
+<a href=#7716 id=7716 data-nosnippet>7716</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
+<a href=#7717 id=7717 data-nosnippet>7717</a>        <span class="kw">let </span>arena_index = <span class="self">self</span>.arena_index(index)<span class="question-mark">?</span>;
+<a href=#7718 id=7718 data-nosnippet>7718</a>        <span class="prelude-val">Ok</span>(sample_point_as_floats(
+<a href=#7719 id=7719 data-nosnippet>7719</a>            <span class="kw-2">&amp;</span><span class="self">self</span>.inner.cells[arena_index].sample_point,
+<a href=#7720 id=7720 data-nosnippet>7720</a>        ))
+<a href=#7721 id=7721 data-nosnippet>7721</a>    }
+<a href=#7722 id=7722 data-nosnippet>7722</a>
+<a href=#7723 id=7723 data-nosnippet>7723</a>    <span class="doccomment">/// Provides the `cell_sign_vector` operation on this native type.
+<a href=#7724 id=7724 data-nosnippet>7724</a>    </span><span class="kw">pub fn </span>cell_sign_vector(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;i32&gt;, ApiError&gt; {
+<a href=#7725 id=7725 data-nosnippet>7725</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
+<a href=#7726 id=7726 data-nosnippet>7726</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
+<a href=#7727 id=7727 data-nosnippet>7727</a>        <span class="kw">let </span>arena_index = <span class="self">self</span>.arena_index(index)<span class="question-mark">?</span>;
+<a href=#7728 id=7728 data-nosnippet>7728</a>        <span class="prelude-val">Ok</span>(<span class="self">self</span>.inner.cells[arena_index].sign_vector.clone())
+<a href=#7729 id=7729 data-nosnippet>7729</a>    }
+<a href=#7730 id=7730 data-nosnippet>7730</a>
+<a href=#7731 id=7731 data-nosnippet>7731</a>    <span class="doccomment">/// Provides the `cell_kind` operation on this native type.
+<a href=#7732 id=7732 data-nosnippet>7732</a>    </span><span class="kw">pub fn </span>cell_kind(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;CadCellKind, ApiError&gt; {
+<a href=#7733 id=7733 data-nosnippet>7733</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
+<a href=#7734 id=7734 data-nosnippet>7734</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
+<a href=#7735 id=7735 data-nosnippet>7735</a>        <span class="kw">let </span>arena_index = <span class="self">self</span>.arena_index(index)<span class="question-mark">?</span>;
+<a href=#7736 id=7736 data-nosnippet>7736</a>        <span class="prelude-val">Ok</span>(<span class="kw">match </span><span class="self">self</span>.inner.cells[arena_index].kind {
+<a href=#7737 id=7737 data-nosnippet>7737</a>            <span class="kw">crate</span>::cad::CellKind::Section { .. } =&gt; CadCellKind::Section,
+<a href=#7738 id=7738 data-nosnippet>7738</a>            <span class="kw">crate</span>::cad::CellKind::Sector =&gt; CadCellKind::Sector,
+<a href=#7739 id=7739 data-nosnippet>7739</a>        })
+<a href=#7740 id=7740 data-nosnippet>7740</a>    }
+<a href=#7741 id=7741 data-nosnippet>7741</a>
+<a href=#7742 id=7742 data-nosnippet>7742</a>    <span class="doccomment">/// Provides the `cell_dimension` operation on this native type.
+<a href=#7743 id=7743 data-nosnippet>7743</a>    </span><span class="kw">pub fn </span>cell_dimension(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; <span class="prelude-ty">Result</span>&lt;usize, ApiError&gt; {
+<a href=#7744 id=7744 data-nosnippet>7744</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
+<a href=#7745 id=7745 data-nosnippet>7745</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
+<a href=#7746 id=7746 data-nosnippet>7746</a>        <span class="kw">let </span>arena_index = <span class="self">self</span>.arena_index(index)<span class="question-mark">?</span>;
+<a href=#7747 id=7747 data-nosnippet>7747</a>        <span class="prelude-val">Ok</span>(<span class="self">self</span>.inner.cell_dimension(arena_index))
+<a href=#7748 id=7748 data-nosnippet>7748</a>    }
+<a href=#7749 id=7749 data-nosnippet>7749</a>
+<a href=#7750 id=7750 data-nosnippet>7750</a>    <span class="doccomment">/// Provides the `projection_operator_used` operation on this native type.
+<a href=#7751 id=7751 data-nosnippet>7751</a>    </span><span class="kw">pub fn </span>projection_operator_used(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw-2">&amp;</span>str, ApiError&gt; {
+<a href=#7752 id=7752 data-nosnippet>7752</a>        <span class="kw">let </span>owner = <span class="self">self</span>.owner();
+<a href=#7753 id=7753 data-nosnippet>7753</a>        owner.validate_cylindrical_algebraic_decomposition(<span class="self">self</span>)<span class="question-mark">?</span>;
+<a href=#7754 id=7754 data-nosnippet>7754</a>        <span class="prelude-val">Ok</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.inner.projection_operator_used)
+<a href=#7755 id=7755 data-nosnippet>7755</a>    }
+<a href=#7756 id=7756 data-nosnippet>7756</a>}
+<a href=#7757 id=7757 data-nosnippet>7757</a>
+<a href=#7758 id=7758 data-nosnippet>7758</a><span class="kw">impl </span>Session {
+<a href=#7759 id=7759 data-nosnippet>7759</a>    <span class="doccomment">/// Resolve a collection of variable operands to interned symbol identifiers.
+<a href=#7760 id=7760 data-nosnippet>7760</a>    </span><span class="kw">pub fn </span>variable_identifiers&lt;<span class="lifetime">'a</span>, IteratorType, VariableType&gt;(
+<a href=#7761 id=7761 data-nosnippet>7761</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
+<a href=#7762 id=7762 data-nosnippet>7762</a>        variables: IteratorType,
+<a href=#7763 id=7763 data-nosnippet>7763</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;<span class="kw">crate</span>::symbol::SymbolIdentifier&gt;, ApiError&gt;
+<a href=#7764 id=7764 data-nosnippet>7764</a>    <span class="kw">where
+<a href=#7765 id=7765 data-nosnippet>7765</a>        </span>IteratorType: IntoIterator&lt;Item = VariableType&gt;,
+<a href=#7766 id=7766 data-nosnippet>7766</a>        VariableType: Into&lt;VariableLike&lt;<span class="lifetime">'a</span>&gt;&gt;,
+<a href=#7767 id=7767 data-nosnippet>7767</a>    {
+<a href=#7768 id=7768 data-nosnippet>7768</a>        variables
+<a href=#7769 id=7769 data-nosnippet>7769</a>            .into_iter()
+<a href=#7770 id=7770 data-nosnippet>7770</a>            .map(|variable| <span class="self">self</span>.variable_identifier(variable.into()))
+<a href=#7771 id=7771 data-nosnippet>7771</a>            .collect()
+<a href=#7772 id=7772 data-nosnippet>7772</a>    }
+<a href=#7773 id=7773 data-nosnippet>7773</a>
+<a href=#7774 id=7774 data-nosnippet>7774</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>expression_references(
+<a href=#7775 id=7775 data-nosnippet>7775</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
+<a href=#7776 id=7776 data-nosnippet>7776</a>        values: <span class="kw-2">&amp;</span>[Expression],
+<a href=#7777 id=7777 data-nosnippet>7777</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;ExpressionReference&gt;, ApiError&gt; {
+<a href=#7778 id=7778 data-nosnippet>7778</a>        values
+<a href=#7779 id=7779 data-nosnippet>7779</a>            .iter()
+<a href=#7780 id=7780 data-nosnippet>7780</a>            .map(|value| {
+<a href=#7781 id=7781 data-nosnippet>7781</a>                <span class="self">self</span>.validate(value)<span class="question-mark">?</span>;
+<a href=#7782 id=7782 data-nosnippet>7782</a>                <span class="prelude-val">Ok</span>(Arc::clone(<span class="kw-2">&amp;</span>value.inner))
+<a href=#7783 id=7783 data-nosnippet>7783</a>            })
+<a href=#7784 id=7784 data-nosnippet>7784</a>            .collect()
+<a href=#7785 id=7785 data-nosnippet>7785</a>    }
+<a href=#7786 id=7786 data-nosnippet>7786</a>
+<a href=#7787 id=7787 data-nosnippet>7787</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>expression_pair_references(
+<a href=#7788 id=7788 data-nosnippet>7788</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
+<a href=#7789 id=7789 data-nosnippet>7789</a>        values: <span class="kw-2">&amp;</span>[(Expression, Expression)],
+<a href=#7790 id=7790 data-nosnippet>7790</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;(ExpressionReference, ExpressionReference)&gt;, ApiError&gt; {
+<a href=#7791 id=7791 data-nosnippet>7791</a>        values
+<a href=#7792 id=7792 data-nosnippet>7792</a>            .iter()
+<a href=#7793 id=7793 data-nosnippet>7793</a>            .map(|(first, second)| {
+<a href=#7794 id=7794 data-nosnippet>7794</a>                <span class="self">self</span>.validate(first)<span class="question-mark">?</span>;
+<a href=#7795 id=7795 data-nosnippet>7795</a>                <span class="self">self</span>.validate(second)<span class="question-mark">?</span>;
+<a href=#7796 id=7796 data-nosnippet>7796</a>                <span class="prelude-val">Ok</span>((Arc::clone(<span class="kw-2">&amp;</span>first.inner), Arc::clone(<span class="kw-2">&amp;</span>second.inner)))
+<a href=#7797 id=7797 data-nosnippet>7797</a>            })
+<a href=#7798 id=7798 data-nosnippet>7798</a>            .collect()
+<a href=#7799 id=7799 data-nosnippet>7799</a>    }
+<a href=#7800 id=7800 data-nosnippet>7800</a>
+<a href=#7801 id=7801 data-nosnippet>7801</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>symbol_names(
+<a href=#7802 id=7802 data-nosnippet>7802</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
+<a href=#7803 id=7803 data-nosnippet>7803</a>        identifiers: <span class="kw-2">&amp;</span>[<span class="kw">crate</span>::symbol::SymbolIdentifier],
+<a href=#7804 id=7804 data-nosnippet>7804</a>    ) -&gt; Vec&lt;String&gt; {
+<a href=#7805 id=7805 data-nosnippet>7805</a>        <span class="kw">let </span>context = <span class="self">self</span>.state.context.borrow();
+<a href=#7806 id=7806 data-nosnippet>7806</a>        identifiers
+<a href=#7807 id=7807 data-nosnippet>7807</a>            .iter()
+<a href=#7808 id=7808 data-nosnippet>7808</a>            .map(|identifier| context.symbol_table.name(<span class="kw-2">*</span>identifier).to_string())
+<a href=#7809 id=7809 data-nosnippet>7809</a>            .collect()
+<a href=#7810 id=7810 data-nosnippet>7810</a>    }
+<a href=#7811 id=7811 data-nosnippet>7811</a>
+<a href=#7812 id=7812 data-nosnippet>7812</a>    <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>require_equal_lengths(
+<a href=#7813 id=7813 data-nosnippet>7813</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
+<a href=#7814 id=7814 data-nosnippet>7814</a>        first_parameter: <span class="kw-2">&amp;</span>str,
+<a href=#7815 id=7815 data-nosnippet>7815</a>        first_length: usize,
+<a href=#7816 id=7816 data-nosnippet>7816</a>        second_parameter: <span class="kw-2">&amp;</span>str,
+<a href=#7817 id=7817 data-nosnippet>7817</a>        second_length: usize,
+<a href=#7818 id=7818 data-nosnippet>7818</a>    ) -&gt; <span class="prelude-ty">Result</span>&lt;(), ApiError&gt; {
+<a href=#7819 id=7819 data-nosnippet>7819</a>        <span class="kw">if </span>first_length == second_length {
+<a href=#7820 id=7820 data-nosnippet>7820</a>            <span class="prelude-val">Ok</span>(())
+<a href=#7821 id=7821 data-nosnippet>7821</a>        } <span class="kw">else </span>{
+<a href=#7822 id=7822 data-nosnippet>7822</a>            <span class="prelude-val">Err</span>(ApiError::CollectionLengthMismatch {
+<a href=#7823 id=7823 data-nosnippet>7823</a>                first_parameter: first_parameter.to_string(),
+<a href=#7824 id=7824 data-nosnippet>7824</a>                first_length,
+<a href=#7825 id=7825 data-nosnippet>7825</a>                second_parameter: second_parameter.to_string(),
+<a href=#7826 id=7826 data-nosnippet>7826</a>                second_length,
+<a href=#7827 id=7827 data-nosnippet>7827</a>            })
+<a href=#7828 id=7828 data-nosnippet>7828</a>        }
+<a href=#7829 id=7829 data-nosnippet>7829</a>    }
+<a href=#7830 id=7830 data-nosnippet>7830</a>}
+<a href=#7831 id=7831 data-nosnippet>7831</a>
+<a href=#7832 id=7832 data-nosnippet>7832</a><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>validate_provenance(
+<a href=#7833 id=7833 data-nosnippet>7833</a>    receiver_state: <span class="kw-2">&amp;</span>Arc&lt;SessionState&gt;,
+<a href=#7834 id=7834 data-nosnippet>7834</a>    argument_state: <span class="kw-2">&amp;</span>Arc&lt;SessionState&gt;,
+<a href=#7835 id=7835 data-nosnippet>7835</a>    argument_generation: u64,
+<a href=#7836 id=7836 data-nosnippet>7836</a>) -&gt; <span class="prelude-ty">Result</span>&lt;(), ApiError&gt; {
+<a href=#7837 id=7837 data-nosnippet>7837</a>    <span class="kw">if </span>argument_generation != argument_state.generation.get() {
+<a href=#7838 id=7838 data-nosnippet>7838</a>        <span class="kw">return </span><span class="prelude-val">Err</span>(ApiError::StaleObject);
+<a href=#7839 id=7839 data-nosnippet>7839</a>    }
+<a href=#7840 id=7840 data-nosnippet>7840</a>    <span class="kw">if </span>!Arc::ptr_eq(receiver_state, argument_state) {
+<a href=#7841 id=7841 data-nosnippet>7841</a>        <span class="kw">return </span><span class="prelude-val">Err</span>(ApiError::ContextMismatch);
+<a href=#7842 id=7842 data-nosnippet>7842</a>    }
+<a href=#7843 id=7843 data-nosnippet>7843</a>    <span class="prelude-val">Ok</span>(())
+<a href=#7844 id=7844 data-nosnippet>7844</a>}
+<a href=#7845 id=7845 data-nosnippet>7845</a>
+<a href=#7846 id=7846 data-nosnippet>7846</a><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn </span>matrix_error_category(error: <span class="kw-2">&amp;</span>MatrixError) -&gt; DiagnosticCategory {
+<a href=#7847 id=7847 data-nosnippet>7847</a>    <span class="kw">match </span>error {
+<a href=#7848 id=7848 data-nosnippet>7848</a>        MatrixError::IndexOutOfBounds { .. }
+<a href=#7849 id=7849 data-nosnippet>7849</a>        | MatrixError::DimensionMismatch { .. }
+<a href=#7850 id=7850 data-nosnippet>7850</a>        | MatrixError::DeterminantRequiresSquare { .. }
+<a href=#7851 id=7851 data-nosnippet>7851</a>        | MatrixError::InverseRequiresSquare { .. }
+<a href=#7852 id=7852 data-nosnippet>7852</a>        | MatrixError::TraceRequiresSquare { .. }
+<a href=#7853 id=7853 data-nosnippet>7853</a>        | MatrixError::CharacteristicPolynomialRequiresSquare { .. }
+<a href=#7854 id=7854 data-nosnippet>7854</a>        | MatrixError::EmptyMatrix
+<a href=#7855 id=7855 data-nosnippet>7855</a>        | MatrixError::InconsistentRowLength { .. }
+<a href=#7856 id=7856 data-nosnippet>7856</a>        | MatrixError::JordanRequiresSquare { .. }
+<a href=#7857 id=7857 data-nosnippet>7857</a>        | MatrixError::RationalCanonicalRequiresSquare { .. } =&gt; {
+<a href=#7858 id=7858 data-nosnippet>7858</a>            DiagnosticCategory::WrongCollectionShapeOrLength
+<a href=#7859 id=7859 data-nosnippet>7859</a>        }
+<a href=#7860 id=7860 data-nosnippet>7860</a>        MatrixError::ResourceBudgetExhausted
+<a href=#7861 id=7861 data-nosnippet>7861</a>        | MatrixError::IntegerLinearAlgebraSizeBudgetExceeded { .. }
+<a href=#7862 id=7862 data-nosnippet>7862</a>        | MatrixError::PolynomialSmithSizeBudgetExceeded { .. } =&gt; {
+<a href=#7863 id=7863 data-nosnippet>7863</a>            DiagnosticCategory::ResourceBudgetExhaustion
+<a href=#7864 id=7864 data-nosnippet>7864</a>        }
+<a href=#7865 id=7865 data-nosnippet>7865</a>        MatrixError::EigenvectorVerificationFailed { .. }
+<a href=#7866 id=7866 data-nosnippet>7866</a>        | MatrixError::JordanKernelGrowthInconsistent
+<a href=#7867 id=7867 data-nosnippet>7867</a>        | MatrixError::JordanChainConstructionFailed
+<a href=#7868 id=7868 data-nosnippet>7868</a>        | MatrixError::JordanSimilarityVerificationFailed
+<a href=#7869 id=7869 data-nosnippet>7869</a>        | MatrixError::MatrixFunctionVerificationFailed
+<a href=#7870 id=7870 data-nosnippet>7870</a>        | MatrixError::LowerUpperVerificationFailed
+<a href=#7871 id=7871 data-nosnippet>7871</a>        | MatrixError::IntegerLinearAlgebraVerificationFailed { .. }
+<a href=#7872 id=7872 data-nosnippet>7872</a>        | MatrixError::PolynomialSmithVerificationFailed
+<a href=#7873 id=7873 data-nosnippet>7873</a>        | MatrixError::RationalCanonicalVerificationFailed =&gt; {
+<a href=#7874 id=7874 data-nosnippet>7874</a>            DiagnosticCategory::InternalVerificationFailure
+<a href=#7875 id=7875 data-nosnippet>7875</a>        }
+<a href=#7876 id=7876 data-nosnippet>7876</a>        MatrixError::PivotIndeterminate { .. }
+<a href=#7877 id=7877 data-nosnippet>7877</a>        | MatrixError::EigenvectorVerificationIndeterminate { .. }
+<a href=#7878 id=7878 data-nosnippet>7878</a>        | MatrixError::SingularityIndeterminate =&gt; DiagnosticCategory::IndeterminateProof,
+<a href=#7879 id=7879 data-nosnippet>7879</a>        MatrixError::ExactEntryUnsupported
+<a href=#7880 id=7880 data-nosnippet>7880</a>        | MatrixError::RootDescriptorUncertified
+<a href=#7881 id=7881 data-nosnippet>7881</a>        | MatrixError::RootClassificationUnsupported =&gt; {
+<a href=#7882 id=7882 data-nosnippet>7882</a>            DiagnosticCategory::UnsupportedOrDeclinedComputation
+<a href=#7883 id=7883 data-nosnippet>7883</a>        }
+<a href=#7884 id=7884 data-nosnippet>7884</a>        <span class="kw">_ </span>=&gt; DiagnosticCategory::MathematicalDomainError,
+<a href=#7885 id=7885 data-nosnippet>7885</a>    }
+<a href=#7886 id=7886 data-nosnippet>7886</a>}
+<a href=#7887 id=7887 data-nosnippet>7887</a>
+<a href=#7888 id=7888 data-nosnippet>7888</a><span class="doccomment">/// Advanced native module for `prelude` functionality.
+<a href=#7889 id=7889 data-nosnippet>7889</a></span><span class="kw">pub mod </span>prelude {
+<a href=#7890 id=7890 data-nosnippet>7890</a>    <span class="doccomment">/// Re-exports the public native items named by this declaration.
+<a href=#7891 id=7891 data-nosnippet>7891</a>    </span><span class="kw">pub use </span>super::{
+<a href=#7892 id=7892 data-nosnippet>7892</a>        ApiError, AssumptionProposition, AssumptionReport, AssumptionScope, BulkExpressionOutcome,
+<a href=#7893 id=7893 data-nosnippet>7893</a>        BulkTextOutcome, CadCellKind, Circle2d, ComputationOutcome,
+<a href=#7894 id=7894 data-nosnippet>7894</a>        CylindricalAlgebraicDecomposition, ExactIntegerInput, ExecutionMode, Expression,
+<a href=#7895 id=7895 data-nosnippet>7895</a>        ExpressionInput, Geometry2d, GeometryIntersectionComponent, Matrix, MonomialOrdering,
+<a href=#7896 id=7896 data-nosnippet>7896</a>        ParallelBackend, ParallelismCapability, ParallelismInitialization,
+<a href=#7897 id=7897 data-nosnippet>7897</a>        ParallelismUnavailableReason, PartialDifferentialEquationArbitraryFunction,
+<a href=#7898 id=7898 data-nosnippet>7898</a>        PartialDifferentialEquationClassification, PartialDifferentialEquationCoefficientData,
+<a href=#7899 id=7899 data-nosnippet>7899</a>        PartialDifferentialEquationJet, PartialDifferentialEquationJetCoefficient,
+<a href=#7900 id=7900 data-nosnippet>7900</a>        PartialDifferentialEquationLinearity, PartialDifferentialEquationMethod,
+<a href=#7901 id=7901 data-nosnippet>7901</a>        PartialDifferentialEquationMethodCandidate,
+<a href=#7902 id=7902 data-nosnippet>7902</a>        PartialDifferentialEquationPrincipalCoefficient, PartialDifferentialEquationPrincipalPart,
+<a href=#7903 id=7903 data-nosnippet>7903</a>        PartialDifferentialEquationProblem, PartialDifferentialEquationProblemError,
+<a href=#7904 id=7904 data-nosnippet>7904</a>        PartialDifferentialEquationProofObligation, PartialDifferentialEquationSolutionFamily,
+<a href=#7905 id=7905 data-nosnippet>7905</a>        PartialDifferentialEquationSolutionForm, PartialDifferentialEquationSolutionProvenance,
+<a href=#7906 id=7906 data-nosnippet>7906</a>        PartialDifferentialEquationSolveDecline, PartialDifferentialEquationSolveResult,
+<a href=#7907 id=7907 data-nosnippet>7907</a>        PartialDifferentialEquationSolveVerdict,
+<a href=#7908 id=7908 data-nosnippet>7908</a>        PartialDifferentialEquationVerificationInconclusiveReason,
+<a href=#7909 id=7909 data-nosnippet>7909</a>        PartialDifferentialEquationVerificationReport,
+<a href=#7910 id=7910 data-nosnippet>7910</a>        PartialDifferentialEquationVerificationResidual,
+<a href=#7911 id=7911 data-nosnippet>7911</a>        PartialDifferentialEquationVerificationVerdict, Point2d, Polygon2d, Segment2d, Session,
+<a href=#7912 id=7912 data-nosnippet>7912</a>        SpecialFunctionBasis, Triangle2d, TrigonometricBasis, UndefinedFunction, VariableLike,
+<a href=#7913 id=7913 data-nosnippet>7913</a>    };
+<a href=#7914 id=7914 data-nosnippet>7914</a>    <span class="doccomment">/// Re-exports the public native items named by this declaration.
+<a href=#7915 id=7915 data-nosnippet>7915</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::assumptions::TruthValue;
+<a href=#7916 id=7916 data-nosnippet>7916</a>    <span class="doccomment">/// Re-exports the public native matrix predicate types.
+<a href=#7917 id=7917 data-nosnippet>7917</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::assumptions::{MatrixPredicate, MatrixPredicateApplication};
+<a href=#7918 id=7918 data-nosnippet>7918</a>    <span class="doccomment">/// Re-exports the public native items named by this declaration.
+<a href=#7919 id=7919 data-nosnippet>7919</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::limit::LimitDirection;
+<a href=#7920 id=7920 data-nosnippet>7920</a>}
+<a href=#7921 id=7921 data-nosnippet>7921</a>
+<a href=#7922 id=7922 data-nosnippet>7922</a><span class="attr">#[cfg(test)]
+<a href=#7923 id=7923 data-nosnippet>7923</a></span><span class="kw">mod </span>tests {
+<a href=#7924 id=7924 data-nosnippet>7924</a>    <span class="kw">use </span>super::{
+<a href=#7925 id=7925 data-nosnippet>7925</a>        ApiError, ExpressionInput, MathematicalObject, MonomialOrdering,
+<a href=#7926 id=7926 data-nosnippet>7926</a>        PartialDifferentialEquationLinearity, PartialDifferentialEquationMethod,
+<a href=#7927 id=7927 data-nosnippet>7927</a>        PartialDifferentialEquationProofObligation, PartialDifferentialEquationSolveVerdict,
+<a href=#7928 id=7928 data-nosnippet>7928</a>        Session, SpecialFunctionBasis, TrigonometricBasis,
+<a href=#7929 id=7929 data-nosnippet>7929</a>    };
+<a href=#7930 id=7930 data-nosnippet>7930</a>
+<a href=#7931 id=7931 data-nosnippet>7931</a>    <span class="attr">#[test]
+<a href=#7932 id=7932 data-nosnippet>7932</a>    </span><span class="kw">fn </span>binding_option_types_preserve_stable_spellings_and_diagnostics() {
+<a href=#7933 id=7933 data-nosnippet>7933</a>        <span class="macro">assert_eq!</span>(
+<a href=#7934 id=7934 data-nosnippet>7934</a>            TrigonometricBasis::from_name(<span class="string">"sine_cosine"</span>).unwrap(),
+<a href=#7935 id=7935 data-nosnippet>7935</a>            TrigonometricBasis::SineCosine
+<a href=#7936 id=7936 data-nosnippet>7936</a>        );
+<a href=#7937 id=7937 data-nosnippet>7937</a>        <span class="macro">assert_eq!</span>(
+<a href=#7938 id=7938 data-nosnippet>7938</a>            SpecialFunctionBasis::from_name(<span class="string">"rising_factorial"</span>)
+<a href=#7939 id=7939 data-nosnippet>7939</a>                .unwrap()
+<a href=#7940 id=7940 data-nosnippet>7940</a>                .name(),
+<a href=#7941 id=7941 data-nosnippet>7941</a>            <span class="string">"rising_factorial"
+<a href=#7942 id=7942 data-nosnippet>7942</a>        </span>);
+<a href=#7943 id=7943 data-nosnippet>7943</a>        <span class="macro">assert_eq!</span>(
+<a href=#7944 id=7944 data-nosnippet>7944</a>            MonomialOrdering::from_name(<span class="string">"degrevlex"</span>).unwrap(),
+<a href=#7945 id=7945 data-nosnippet>7945</a>            MonomialOrdering::DegreeReverseLexicographic
+<a href=#7946 id=7946 data-nosnippet>7946</a>        );
+<a href=#7947 id=7947 data-nosnippet>7947</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
+<a href=#7948 id=7948 data-nosnippet>7948</a>            TrigonometricBasis::from_name(<span class="string">"invalid"</span>),
+<a href=#7949 id=7949 data-nosnippet>7949</a>            <span class="prelude-val">Err</span>(ApiError::InvalidOption { .. })
+<a href=#7950 id=7950 data-nosnippet>7950</a>        ));
+<a href=#7951 id=7951 data-nosnippet>7951</a>    }
+<a href=#7952 id=7952 data-nosnippet>7952</a>
+<a href=#7953 id=7953 data-nosnippet>7953</a>    <span class="attr">#[test]
+<a href=#7954 id=7954 data-nosnippet>7954</a>    </span><span class="kw">fn </span>classified_inputs_share_exact_conversion_and_session_provenance_rules() {
+<a href=#7955 id=7955 data-nosnippet>7955</a>        <span class="kw">let </span>session = Session::new();
+<a href=#7956 id=7956 data-nosnippet>7956</a>        <span class="macro">assert_eq!</span>(
+<a href=#7957 id=7957 data-nosnippet>7957</a>            ExpressionInput::ExactRationalText(<span class="string">"6/8"</span>.to_string())
+<a href=#7958 id=7958 data-nosnippet>7958</a>                .resolve(<span class="kw-2">&amp;</span>session)
+<a href=#7959 id=7959 data-nosnippet>7959</a>                .unwrap()
+<a href=#7960 id=7960 data-nosnippet>7960</a>                .to_string(),
+<a href=#7961 id=7961 data-nosnippet>7961</a>            <span class="string">"3/4"
+<a href=#7962 id=7962 data-nosnippet>7962</a>        </span>);
+<a href=#7963 id=7963 data-nosnippet>7963</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
+<a href=#7964 id=7964 data-nosnippet>7964</a>            ExpressionInput::ExactIntegerText(<span class="string">"three"</span>.to_string()).resolve(<span class="kw-2">&amp;</span>session),
+<a href=#7965 id=7965 data-nosnippet>7965</a>            <span class="prelude-val">Err</span>(ApiError::InvalidExactInput { .. })
+<a href=#7966 id=7966 data-nosnippet>7966</a>        ));
+<a href=#7967 id=7967 data-nosnippet>7967</a>        <span class="kw">let </span>foreign_session = Session::new();
+<a href=#7968 id=7968 data-nosnippet>7968</a>        <span class="kw">let </span>foreign_expression = foreign_session.symbol(<span class="string">"x"</span>);
+<a href=#7969 id=7969 data-nosnippet>7969</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
+<a href=#7970 id=7970 data-nosnippet>7970</a>            ExpressionInput::Expression(foreign_expression).resolve(<span class="kw-2">&amp;</span>session),
+<a href=#7971 id=7971 data-nosnippet>7971</a>            <span class="prelude-val">Err</span>(ApiError::ContextMismatch)
+<a href=#7972 id=7972 data-nosnippet>7972</a>        ));
+<a href=#7973 id=7973 data-nosnippet>7973</a>    }
+<a href=#7974 id=7974 data-nosnippet>7974</a>
+<a href=#7975 id=7975 data-nosnippet>7975</a>    <span class="attr">#[test]
+<a href=#7976 id=7976 data-nosnippet>7976</a>    </span><span class="kw">fn </span>typed_rewrite_operations_share_session_provenance_checks() {
+<a href=#7977 id=7977 data-nosnippet>7977</a>        <span class="kw">let </span>session = Session::new();
+<a href=#7978 id=7978 data-nosnippet>7978</a>        <span class="kw">let </span>target = session.parse(<span class="string">"sin(x)"</span>).unwrap();
+<a href=#7979 id=7979 data-nosnippet>7979</a>        <span class="macro">assert!</span>(
+<a href=#7980 id=7980 data-nosnippet>7980</a>            !session
+<a href=#7981 id=7981 data-nosnippet>7981</a>                .rewrite_trigonometric_basis(<span class="kw-2">&amp;</span>target, TrigonometricBasis::Exponential)
+<a href=#7982 id=7982 data-nosnippet>7982</a>                .unwrap()
+<a href=#7983 id=7983 data-nosnippet>7983</a>                .to_string()
+<a href=#7984 id=7984 data-nosnippet>7984</a>                .is_empty()
+<a href=#7985 id=7985 data-nosnippet>7985</a>        );
+<a href=#7986 id=7986 data-nosnippet>7986</a>        <span class="macro">assert!</span>(
+<a href=#7987 id=7987 data-nosnippet>7987</a>            !session
+<a href=#7988 id=7988 data-nosnippet>7988</a>                .rewrite_special_functions(<span class="kw-2">&amp;</span>target, SpecialFunctionBasis::Gamma)
+<a href=#7989 id=7989 data-nosnippet>7989</a>                .unwrap()
+<a href=#7990 id=7990 data-nosnippet>7990</a>                .to_string()
+<a href=#7991 id=7991 data-nosnippet>7991</a>                .is_empty()
+<a href=#7992 id=7992 data-nosnippet>7992</a>        );
+<a href=#7993 id=7993 data-nosnippet>7993</a>        session.reset().unwrap();
+<a href=#7994 id=7994 data-nosnippet>7994</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
+<a href=#7995 id=7995 data-nosnippet>7995</a>            session.simplify_trigonometric(<span class="kw-2">&amp;</span>target),
+<a href=#7996 id=7996 data-nosnippet>7996</a>            <span class="prelude-val">Err</span>(ApiError::StaleObject)
+<a href=#7997 id=7997 data-nosnippet>7997</a>        ));
+<a href=#7998 id=7998 data-nosnippet>7998</a>    }
+<a href=#7999 id=7999 data-nosnippet>7999</a>
+<a href=#8000 id=8000 data-nosnippet>8000</a>    <span class="attr">#[test]
+<a href=#8001 id=8001 data-nosnippet>8001</a>    </span><span class="kw">fn </span>rejects_mixed_and_stale_expressions() {
+<a href=#8002 id=8002 data-nosnippet>8002</a>        <span class="kw">let </span>first = Session::new();
+<a href=#8003 id=8003 data-nosnippet>8003</a>        <span class="kw">let </span>second = Session::new();
+<a href=#8004 id=8004 data-nosnippet>8004</a>        <span class="kw">let </span>x = first.symbol(<span class="string">"x"</span>);
+<a href=#8005 id=8005 data-nosnippet>8005</a>        <span class="kw">let </span>y = second.symbol(<span class="string">"y"</span>);
+<a href=#8006 id=8006 data-nosnippet>8006</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(first.add(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>y), <span class="prelude-val">Err</span>(ApiError::ContextMismatch)));
+<a href=#8007 id=8007 data-nosnippet>8007</a>        first.reset().unwrap();
+<a href=#8008 id=8008 data-nosnippet>8008</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(first.add(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>x), <span class="prelude-val">Err</span>(ApiError::StaleObject)));
+<a href=#8009 id=8009 data-nosnippet>8009</a>    }
+<a href=#8010 id=8010 data-nosnippet>8010</a>
+<a href=#8011 id=8011 data-nosnippet>8011</a>    <span class="attr">#[test]
+<a href=#8012 id=8012 data-nosnippet>8012</a>    </span><span class="kw">fn </span>supports_exact_scalar_and_symbolic_operations() {
+<a href=#8013 id=8013 data-nosnippet>8013</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8014 id=8014 data-nosnippet>8014</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8015 id=8015 data-nosnippet>8015</a>        <span class="kw">let </span>huge = session.integer(u128::MAX);
+<a href=#8016 id=8016 data-nosnippet>8016</a>        <span class="kw">let </span>sum = session.add(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>huge).unwrap();
+<a href=#8017 id=8017 data-nosnippet>8017</a>        <span class="macro">assert!</span>(!sum.is_stale());
+<a href=#8018 id=8018 data-nosnippet>8018</a>        <span class="kw">let </span>half = session.rational(<span class="number">1</span>, <span class="number">2</span>).unwrap();
+<a href=#8019 id=8019 data-nosnippet>8019</a>        <span class="kw">let </span>derivative = session.differentiate(<span class="kw-2">&amp;</span>half, <span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8020 id=8020 data-nosnippet>8020</a>        <span class="macro">assert!</span>(derivative == session.integer(<span class="number">0</span>));
+<a href=#8021 id=8021 data-nosnippet>8021</a>    }
+<a href=#8022 id=8022 data-nosnippet>8022</a>
+<a href=#8023 id=8023 data-nosnippet>8023</a>    <span class="attr">#[test]
+<a href=#8024 id=8024 data-nosnippet>8024</a>    </span><span class="kw">fn </span>covers_transform_set_matrix_geometry_and_function_families() {
+<a href=#8025 id=8025 data-nosnippet>8025</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8026 id=8026 data-nosnippet>8026</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8027 id=8027 data-nosnippet>8027</a>        <span class="kw">let </span>polynomial = session.parse(<span class="string">"x^2 + 2*x + 1"</span>).unwrap();
+<a href=#8028 id=8028 data-nosnippet>8028</a>        <span class="macro">assert_eq!</span>(
+<a href=#8029 id=8029 data-nosnippet>8029</a>            session.factor(<span class="kw-2">&amp;</span>polynomial).unwrap().to_string(),
+<a href=#8030 id=8030 data-nosnippet>8030</a>            <span class="string">"(x + 1)^2"
+<a href=#8031 id=8031 data-nosnippet>8031</a>        </span>);
+<a href=#8032 id=8032 data-nosnippet>8032</a>        <span class="kw">let </span>roots = session.solve_as_set(<span class="kw-2">&amp;</span>polynomial, <span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8033 id=8033 data-nosnippet>8033</a>        <span class="macro">assert!</span>(roots.to_string().contains(<span class="string">"-1"</span>));
+<a href=#8034 id=8034 data-nosnippet>8034</a>
+<a href=#8035 id=8035 data-nosnippet>8035</a>        <span class="kw">let </span>one = session.integer(<span class="number">1</span>);
+<a href=#8036 id=8036 data-nosnippet>8036</a>        <span class="kw">let </span>two = session.integer(<span class="number">2</span>);
+<a href=#8037 id=8037 data-nosnippet>8037</a>        <span class="kw">let </span>matrix = session
+<a href=#8038 id=8038 data-nosnippet>8038</a>            .matrix([[one.clone(), two.clone()], [two.clone(), one.clone()]])
+<a href=#8039 id=8039 data-nosnippet>8039</a>            .unwrap();
+<a href=#8040 id=8040 data-nosnippet>8040</a>        <span class="macro">assert_eq!</span>(matrix.determinant().unwrap().to_string(), <span class="string">"-3"</span>);
+<a href=#8041 id=8041 data-nosnippet>8041</a>
+<a href=#8042 id=8042 data-nosnippet>8042</a>        <span class="kw">let </span>zero = session.integer(<span class="number">0</span>);
+<a href=#8043 id=8043 data-nosnippet>8043</a>        <span class="kw">let </span>first = session.point_2d(<span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>zero).unwrap();
+<a href=#8044 id=8044 data-nosnippet>8044</a>        <span class="kw">let </span>second = session.point_2d(<span class="kw-2">&amp;</span>one, <span class="kw-2">&amp;</span>zero).unwrap();
+<a href=#8045 id=8045 data-nosnippet>8045</a>        <span class="macro">assert_eq!</span>(first.distance_to(<span class="kw-2">&amp;</span>second).unwrap().to_string(), <span class="string">"1"</span>);
+<a href=#8046 id=8046 data-nosnippet>8046</a>        <span class="kw">let </span>circle = session.circle_2d(<span class="kw-2">&amp;</span>first, <span class="kw-2">&amp;</span>one).unwrap();
+<a href=#8047 id=8047 data-nosnippet>8047</a>        <span class="macro">assert_eq!</span>(circle.area().unwrap().to_string(), <span class="string">"pi"</span>);
+<a href=#8048 id=8048 data-nosnippet>8048</a>
+<a href=#8049 id=8049 data-nosnippet>8049</a>        <span class="kw">let </span>function = session.undefined_function(<span class="string">"f"</span>);
+<a href=#8050 id=8050 data-nosnippet>8050</a>        <span class="kw">let </span>call = function.call([x.clone()]).unwrap();
+<a href=#8051 id=8051 data-nosnippet>8051</a>        <span class="macro">assert_eq!</span>(call.to_string(), <span class="string">"f(x)"</span>);
+<a href=#8052 id=8052 data-nosnippet>8052</a>    }
+<a href=#8053 id=8053 data-nosnippet>8053</a>
+<a href=#8054 id=8054 data-nosnippet>8054</a>    <span class="attr">#[test]
+<a href=#8055 id=8055 data-nosnippet>8055</a>    </span><span class="kw">fn </span>applies_provenance_checks_to_every_facade_handle_family() {
+<a href=#8056 id=8056 data-nosnippet>8056</a>        <span class="kw">let </span>first = Session::new();
+<a href=#8057 id=8057 data-nosnippet>8057</a>        <span class="kw">let </span>second = Session::new();
+<a href=#8058 id=8058 data-nosnippet>8058</a>        <span class="kw">let </span>zero = first.integer(<span class="number">0</span>);
+<a href=#8059 id=8059 data-nosnippet>8059</a>        <span class="kw">let </span>point = first.point_2d(<span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>zero).unwrap();
+<a href=#8060 id=8060 data-nosnippet>8060</a>        <span class="kw">let </span>other_zero = second.integer(<span class="number">0</span>);
+<a href=#8061 id=8061 data-nosnippet>8061</a>        <span class="kw">let </span>other_point = second.point_2d(<span class="kw-2">&amp;</span>other_zero, <span class="kw-2">&amp;</span>other_zero).unwrap();
+<a href=#8062 id=8062 data-nosnippet>8062</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
+<a href=#8063 id=8063 data-nosnippet>8063</a>            first.segment_2d(<span class="kw-2">&amp;</span>point, <span class="kw-2">&amp;</span>other_point),
+<a href=#8064 id=8064 data-nosnippet>8064</a>            <span class="prelude-val">Err</span>(ApiError::ContextMismatch)
+<a href=#8065 id=8065 data-nosnippet>8065</a>        ));
+<a href=#8066 id=8066 data-nosnippet>8066</a>
+<a href=#8067 id=8067 data-nosnippet>8067</a>        <span class="kw">let </span>matrix = first.matrix([[zero.clone()]]).unwrap();
+<a href=#8068 id=8068 data-nosnippet>8068</a>        first.reset().unwrap();
+<a href=#8069 id=8069 data-nosnippet>8069</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(matrix.determinant(), <span class="prelude-val">Err</span>(ApiError::StaleObject)));
+<a href=#8070 id=8070 data-nosnippet>8070</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(point.coordinates(), <span class="prelude-val">Err</span>(ApiError::StaleObject)));
+<a href=#8071 id=8071 data-nosnippet>8071</a>    }
+<a href=#8072 id=8072 data-nosnippet>8072</a>
+<a href=#8073 id=8073 data-nosnippet>8073</a>    <span class="attr">#[test]
+<a href=#8074 id=8074 data-nosnippet>8074</a>    </span><span class="kw">fn </span>assumption_formulas_support_entailment_possibility_and_scopes() {
+<a href=#8075 id=8075 data-nosnippet>8075</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8076 id=8076 data-nosnippet>8076</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8077 id=8077 data-nosnippet>8077</a>        <span class="kw">let </span>positive = session.positive(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8078 id=8078 data-nosnippet>8078</a>        <span class="kw">let </span>negative = session.negative(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8079 id=8079 data-nosnippet>8079</a>        <span class="kw">let </span>nonzero = session.nonzero(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8080 id=8080 data-nosnippet>8080</a>        <span class="kw">let </span>disjunction = positive.or(<span class="kw-2">&amp;</span>negative).unwrap();
+<a href=#8081 id=8081 data-nosnippet>8081</a>        session.add_assumptions(<span class="kw-2">&amp;</span>disjunction).unwrap();
+<a href=#8082 id=8082 data-nosnippet>8082</a>        <span class="macro">assert_eq!</span>(
+<a href=#8083 id=8083 data-nosnippet>8083</a>            session.ask(<span class="kw-2">&amp;</span>nonzero).unwrap(),
+<a href=#8084 id=8084 data-nosnippet>8084</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
+<a href=#8085 id=8085 data-nosnippet>8085</a>        );
+<a href=#8086 id=8086 data-nosnippet>8086</a>        <span class="macro">assert_eq!</span>(
+<a href=#8087 id=8087 data-nosnippet>8087</a>            <span class="kw">crate</span>::assumptions::queries::is_nonzero(
+<a href=#8088 id=8088 data-nosnippet>8088</a>                <span class="kw-2">&amp;</span>x.inner,
+<a href=#8089 id=8089 data-nosnippet>8089</a>                <span class="kw-2">&amp;</span>session.state.context.borrow().symbol_table,
+<a href=#8090 id=8090 data-nosnippet>8090</a>            ),
+<a href=#8091 id=8091 data-nosnippet>8091</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes,
+<a href=#8092 id=8092 data-nosnippet>8092</a>        );
+<a href=#8093 id=8093 data-nosnippet>8093</a>        <span class="macro">assert_eq!</span>(
+<a href=#8094 id=8094 data-nosnippet>8094</a>            session.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
+<a href=#8095 id=8095 data-nosnippet>8095</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown
+<a href=#8096 id=8096 data-nosnippet>8096</a>        );
+<a href=#8097 id=8097 data-nosnippet>8097</a>        <span class="macro">assert_eq!</span>(
+<a href=#8098 id=8098 data-nosnippet>8098</a>            session.could_hold(<span class="kw-2">&amp;</span>positive).unwrap(),
+<a href=#8099 id=8099 data-nosnippet>8099</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
+<a href=#8100 id=8100 data-nosnippet>8100</a>        );
+<a href=#8101 id=8101 data-nosnippet>8101</a>        <span class="macro">assert_eq!</span>(
+<a href=#8102 id=8102 data-nosnippet>8102</a>            session.could_hold(<span class="kw-2">&amp;</span>positive.not().unwrap()).unwrap(),
+<a href=#8103 id=8103 data-nosnippet>8103</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
+<a href=#8104 id=8104 data-nosnippet>8104</a>        );
+<a href=#8105 id=8105 data-nosnippet>8105</a>
+<a href=#8106 id=8106 data-nosnippet>8106</a>        <span class="kw">let </span>scope = session.assuming(<span class="kw-2">&amp;</span>positive).unwrap();
+<a href=#8107 id=8107 data-nosnippet>8107</a>        <span class="macro">assert_eq!</span>(
+<a href=#8108 id=8108 data-nosnippet>8108</a>            scope.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
+<a href=#8109 id=8109 data-nosnippet>8109</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
+<a href=#8110 id=8110 data-nosnippet>8110</a>        );
+<a href=#8111 id=8111 data-nosnippet>8111</a>        <span class="macro">assert_eq!</span>(
+<a href=#8112 id=8112 data-nosnippet>8112</a>            scope.could_hold(<span class="kw-2">&amp;</span>negative).unwrap(),
+<a href=#8113 id=8113 data-nosnippet>8113</a>            <span class="kw">crate</span>::assumptions::TruthValue::No
+<a href=#8114 id=8114 data-nosnippet>8114</a>        );
+<a href=#8115 id=8115 data-nosnippet>8115</a>        <span class="macro">assert_eq!</span>(
+<a href=#8116 id=8116 data-nosnippet>8116</a>            session.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
+<a href=#8117 id=8117 data-nosnippet>8117</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown
+<a href=#8118 id=8118 data-nosnippet>8118</a>        );
+<a href=#8119 id=8119 data-nosnippet>8119</a>    }
+<a href=#8120 id=8120 data-nosnippet>8120</a>
+<a href=#8121 id=8121 data-nosnippet>8121</a>    <span class="attr">#[test]
+<a href=#8122 id=8122 data-nosnippet>8122</a>    </span><span class="kw">fn </span>assumption_scopes_thread_facts_through_integration_and_solving() {
+<a href=#8123 id=8123 data-nosnippet>8123</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8124 id=8124 data-nosnippet>8124</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8125 id=8125 data-nosnippet>8125</a>        <span class="kw">let </span>real = session.real(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8126 id=8126 data-nosnippet>8126</a>        <span class="kw">let </span>scope = session.assuming(<span class="kw-2">&amp;</span>real).unwrap();
+<a href=#8127 id=8127 data-nosnippet>8127</a>        <span class="kw">let </span>operation = session.begin_operation();
+<a href=#8128 id=8128 data-nosnippet>8128</a>
+<a href=#8129 id=8129 data-nosnippet>8129</a>        <span class="kw">let </span>reciprocal = session.parse(<span class="string">"1/x"</span>).unwrap();
+<a href=#8130 id=8130 data-nosnippet>8130</a>        <span class="kw">let </span>variable = session.variable_identifier((<span class="kw-2">&amp;</span>x).into()).unwrap();
+<a href=#8131 id=8131 data-nosnippet>8131</a>        <span class="kw">let </span>integrated = scope
+<a href=#8132 id=8132 data-nosnippet>8132</a>            .with_scoped_context(|context| {
+<a href=#8133 id=8133 data-nosnippet>8133</a>                <span class="kw">crate</span>::integrate::integrate(context, <span class="kw-2">&amp;</span>reciprocal.inner, variable)
+<a href=#8134 id=8134 data-nosnippet>8134</a>            })
+<a href=#8135 id=8135 data-nosnippet>8135</a>            .unwrap();
+<a href=#8136 id=8136 data-nosnippet>8136</a>        <span class="macro">assert_eq!</span>(
+<a href=#8137 id=8137 data-nosnippet>8137</a>            session
+<a href=#8138 id=8138 data-nosnippet>8138</a>                .publish_expression(<span class="kw-2">&amp;</span>operation, integrated)
+<a href=#8139 id=8139 data-nosnippet>8139</a>                .unwrap()
+<a href=#8140 id=8140 data-nosnippet>8140</a>                .to_string(),
+<a href=#8141 id=8141 data-nosnippet>8141</a>            <span class="string">"log(abs(x))"
+<a href=#8142 id=8142 data-nosnippet>8142</a>        </span>);
+<a href=#8143 id=8143 data-nosnippet>8143</a>
+<a href=#8144 id=8144 data-nosnippet>8144</a>        <span class="kw">let </span>impossible_real_equation = session.parse(<span class="string">"cos(x) - 2"</span>).unwrap();
+<a href=#8145 id=8145 data-nosnippet>8145</a>        <span class="kw">let </span>solved = scope
+<a href=#8146 id=8146 data-nosnippet>8146</a>            .with_scoped_context(|context| {
+<a href=#8147 id=8147 data-nosnippet>8147</a>                <span class="kw">crate</span>::solve::vec::solve_as_set(context, <span class="kw-2">&amp;</span>impossible_real_equation.inner, variable)
+<a href=#8148 id=8148 data-nosnippet>8148</a>            })
+<a href=#8149 id=8149 data-nosnippet>8149</a>            .unwrap();
+<a href=#8150 id=8150 data-nosnippet>8150</a>        <span class="macro">assert_eq!</span>(
+<a href=#8151 id=8151 data-nosnippet>8151</a>            session
+<a href=#8152 id=8152 data-nosnippet>8152</a>                .publish_expression(<span class="kw-2">&amp;</span>operation, solved)
+<a href=#8153 id=8153 data-nosnippet>8153</a>                .unwrap()
+<a href=#8154 id=8154 data-nosnippet>8154</a>                .to_string(),
+<a href=#8155 id=8155 data-nosnippet>8155</a>            <span class="string">"empty_set"
+<a href=#8156 id=8156 data-nosnippet>8156</a>        </span>);
+<a href=#8157 id=8157 data-nosnippet>8157</a>
+<a href=#8158 id=8158 data-nosnippet>8158</a>        <span class="macro">assert_eq!</span>(
+<a href=#8159 id=8159 data-nosnippet>8159</a>            session.ask(<span class="kw-2">&amp;</span>real).unwrap(),
+<a href=#8160 id=8160 data-nosnippet>8160</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown
+<a href=#8161 id=8161 data-nosnippet>8161</a>        );
+<a href=#8162 id=8162 data-nosnippet>8162</a>    }
+<a href=#8163 id=8163 data-nosnippet>8163</a>
+<a href=#8164 id=8164 data-nosnippet>8164</a>    <span class="attr">#[test]
+<a href=#8165 id=8165 data-nosnippet>8165</a>    </span><span class="kw">fn </span>contradictory_assumption_addition_is_atomic() {
+<a href=#8166 id=8166 data-nosnippet>8166</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8167 id=8167 data-nosnippet>8167</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8168 id=8168 data-nosnippet>8168</a>        <span class="kw">let </span>positive = session.positive(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8169 id=8169 data-nosnippet>8169</a>        <span class="kw">let </span>negative = session.negative(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8170 id=8170 data-nosnippet>8170</a>        session.add_assumptions(<span class="kw-2">&amp;</span>positive).unwrap();
+<a href=#8171 id=8171 data-nosnippet>8171</a>        <span class="kw">let </span>before = session.all_assumptions().unwrap();
+<a href=#8172 id=8172 data-nosnippet>8172</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
+<a href=#8173 id=8173 data-nosnippet>8173</a>            session.add_assumptions(<span class="kw-2">&amp;</span>negative),
+<a href=#8174 id=8174 data-nosnippet>8174</a>            <span class="prelude-val">Err</span>(ApiError::AssumptionConflict(<span class="kw">_</span>))
+<a href=#8175 id=8175 data-nosnippet>8175</a>        ));
+<a href=#8176 id=8176 data-nosnippet>8176</a>        <span class="macro">assert_eq!</span>(session.all_assumptions().unwrap(), before);
+<a href=#8177 id=8177 data-nosnippet>8177</a>    }
+<a href=#8178 id=8178 data-nosnippet>8178</a>
+<a href=#8179 id=8179 data-nosnippet>8179</a>    <span class="attr">#[test]
+<a href=#8180 id=8180 data-nosnippet>8180</a>    </span><span class="kw">fn </span>predicate_implications_are_closed_transitively() {
+<a href=#8181 id=8181 data-nosnippet>8181</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8182 id=8182 data-nosnippet>8182</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8183 id=8183 data-nosnippet>8183</a>        <span class="kw">let </span>positive_integer = session.positive_integer(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8184 id=8184 data-nosnippet>8184</a>        <span class="kw">let </span>real = session.real(<span class="kw-2">&amp;</span>x).unwrap();
 <a href=#8185 id=8185 data-nosnippet>8185</a>
-<a href=#8186 id=8186 data-nosnippet>8186</a>        <span class="macro">assert_eq!</span>(
-<a href=#8187 id=8187 data-nosnippet>8187</a>            session.ask(<span class="kw-2">&amp;</span>real).unwrap(),
-<a href=#8188 id=8188 data-nosnippet>8188</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes,
-<a href=#8189 id=8189 data-nosnippet>8189</a>        );
-<a href=#8190 id=8190 data-nosnippet>8190</a>    }
-<a href=#8191 id=8191 data-nosnippet>8191</a>
-<a href=#8192 id=8192 data-nosnippet>8192</a>    <span class="attr">#[test]
-<a href=#8193 id=8193 data-nosnippet>8193</a>    </span><span class="kw">fn </span>exact_handler_facts_reject_false_additions_and_overlays() {
-<a href=#8194 id=8194 data-nosnippet>8194</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8195 id=8195 data-nosnippet>8195</a>        <span class="kw">let </span>one = session.integer(<span class="number">1</span>);
-<a href=#8196 id=8196 data-nosnippet>8196</a>        <span class="kw">let </span>integer = session.integer_assumption(<span class="kw-2">&amp;</span>one).unwrap();
-<a href=#8197 id=8197 data-nosnippet>8197</a>        <span class="kw">let </span>not_integer = integer.not().unwrap();
-<a href=#8198 id=8198 data-nosnippet>8198</a>
-<a href=#8199 id=8199 data-nosnippet>8199</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
-<a href=#8200 id=8200 data-nosnippet>8200</a>            session.add_assumptions(<span class="kw-2">&amp;</span>not_integer),
-<a href=#8201 id=8201 data-nosnippet>8201</a>            <span class="prelude-val">Err</span>(ApiError::AssumptionConflict(<span class="kw">_</span>))
-<a href=#8202 id=8202 data-nosnippet>8202</a>        ));
-<a href=#8203 id=8203 data-nosnippet>8203</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
-<a href=#8204 id=8204 data-nosnippet>8204</a>            session.assuming(<span class="kw-2">&amp;</span>not_integer),
-<a href=#8205 id=8205 data-nosnippet>8205</a>            <span class="prelude-val">Err</span>(ApiError::AssumptionConflict(<span class="kw">_</span>))
-<a href=#8206 id=8206 data-nosnippet>8206</a>        ));
-<a href=#8207 id=8207 data-nosnippet>8207</a>    }
-<a href=#8208 id=8208 data-nosnippet>8208</a>
-<a href=#8209 id=8209 data-nosnippet>8209</a>    <span class="attr">#[test]
-<a href=#8210 id=8210 data-nosnippet>8210</a>    </span><span class="kw">fn </span>scope_handlers_use_the_captured_formula_snapshot() {
-<a href=#8211 id=8211 data-nosnippet>8211</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8212 id=8212 data-nosnippet>8212</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8213 id=8213 data-nosnippet>8213</a>        <span class="kw">let </span>finite = session.finite(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8214 id=8214 data-nosnippet>8214</a>        <span class="kw">let </span>positive = session.positive(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8215 id=8215 data-nosnippet>8215</a>        <span class="kw">let </span>scope = session.assuming(<span class="kw-2">&amp;</span>finite).unwrap();
-<a href=#8216 id=8216 data-nosnippet>8216</a>
-<a href=#8217 id=8217 data-nosnippet>8217</a>        session.add_assumptions(<span class="kw-2">&amp;</span>positive).unwrap();
+<a href=#8186 id=8186 data-nosnippet>8186</a>        session.add_assumptions(<span class="kw-2">&amp;</span>positive_integer).unwrap();
+<a href=#8187 id=8187 data-nosnippet>8187</a>
+<a href=#8188 id=8188 data-nosnippet>8188</a>        <span class="macro">assert_eq!</span>(
+<a href=#8189 id=8189 data-nosnippet>8189</a>            session.ask(<span class="kw-2">&amp;</span>real).unwrap(),
+<a href=#8190 id=8190 data-nosnippet>8190</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes,
+<a href=#8191 id=8191 data-nosnippet>8191</a>        );
+<a href=#8192 id=8192 data-nosnippet>8192</a>    }
+<a href=#8193 id=8193 data-nosnippet>8193</a>
+<a href=#8194 id=8194 data-nosnippet>8194</a>    <span class="attr">#[test]
+<a href=#8195 id=8195 data-nosnippet>8195</a>    </span><span class="kw">fn </span>exact_handler_facts_reject_false_additions_and_overlays() {
+<a href=#8196 id=8196 data-nosnippet>8196</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8197 id=8197 data-nosnippet>8197</a>        <span class="kw">let </span>one = session.integer(<span class="number">1</span>);
+<a href=#8198 id=8198 data-nosnippet>8198</a>        <span class="kw">let </span>integer = session.integer_assumption(<span class="kw-2">&amp;</span>one).unwrap();
+<a href=#8199 id=8199 data-nosnippet>8199</a>        <span class="kw">let </span>not_integer = integer.not().unwrap();
+<a href=#8200 id=8200 data-nosnippet>8200</a>
+<a href=#8201 id=8201 data-nosnippet>8201</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
+<a href=#8202 id=8202 data-nosnippet>8202</a>            session.add_assumptions(<span class="kw-2">&amp;</span>not_integer),
+<a href=#8203 id=8203 data-nosnippet>8203</a>            <span class="prelude-val">Err</span>(ApiError::AssumptionConflict(<span class="kw">_</span>))
+<a href=#8204 id=8204 data-nosnippet>8204</a>        ));
+<a href=#8205 id=8205 data-nosnippet>8205</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
+<a href=#8206 id=8206 data-nosnippet>8206</a>            session.assuming(<span class="kw-2">&amp;</span>not_integer),
+<a href=#8207 id=8207 data-nosnippet>8207</a>            <span class="prelude-val">Err</span>(ApiError::AssumptionConflict(<span class="kw">_</span>))
+<a href=#8208 id=8208 data-nosnippet>8208</a>        ));
+<a href=#8209 id=8209 data-nosnippet>8209</a>    }
+<a href=#8210 id=8210 data-nosnippet>8210</a>
+<a href=#8211 id=8211 data-nosnippet>8211</a>    <span class="attr">#[test]
+<a href=#8212 id=8212 data-nosnippet>8212</a>    </span><span class="kw">fn </span>scope_handlers_use_the_captured_formula_snapshot() {
+<a href=#8213 id=8213 data-nosnippet>8213</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8214 id=8214 data-nosnippet>8214</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8215 id=8215 data-nosnippet>8215</a>        <span class="kw">let </span>finite = session.finite(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8216 id=8216 data-nosnippet>8216</a>        <span class="kw">let </span>positive = session.positive(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8217 id=8217 data-nosnippet>8217</a>        <span class="kw">let </span>scope = session.assuming(<span class="kw-2">&amp;</span>finite).unwrap();
 <a href=#8218 id=8218 data-nosnippet>8218</a>
-<a href=#8219 id=8219 data-nosnippet>8219</a>        <span class="macro">assert_eq!</span>(
-<a href=#8220 id=8220 data-nosnippet>8220</a>            scope.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
-<a href=#8221 id=8221 data-nosnippet>8221</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown,
-<a href=#8222 id=8222 data-nosnippet>8222</a>        );
-<a href=#8223 id=8223 data-nosnippet>8223</a>        <span class="macro">assert_eq!</span>(
-<a href=#8224 id=8224 data-nosnippet>8224</a>            session.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
-<a href=#8225 id=8225 data-nosnippet>8225</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes,
-<a href=#8226 id=8226 data-nosnippet>8226</a>        );
-<a href=#8227 id=8227 data-nosnippet>8227</a>    }
-<a href=#8228 id=8228 data-nosnippet>8228</a>
-<a href=#8229 id=8229 data-nosnippet>8229</a>    <span class="attr">#[test]
-<a href=#8230 id=8230 data-nosnippet>8230</a>    </span><span class="kw">fn </span>broader_public_domain_fact_does_not_weaken_formula_projection() {
-<a href=#8231 id=8231 data-nosnippet>8231</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8232 id=8232 data-nosnippet>8232</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8233 id=8233 data-nosnippet>8233</a>        <span class="kw">let </span>integer = session.integer_assumption(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8234 id=8234 data-nosnippet>8234</a>        <span class="kw">let </span>rational = session.rational_assumption(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8235 id=8235 data-nosnippet>8235</a>
-<a href=#8236 id=8236 data-nosnippet>8236</a>        session.add_assumptions(<span class="kw-2">&amp;</span>integer).unwrap();
-<a href=#8237 id=8237 data-nosnippet>8237</a>        <span class="kw">let </span>revision_after_integer = session.all_assumptions().unwrap().revision;
-<a href=#8238 id=8238 data-nosnippet>8238</a>        session.add_assumptions(<span class="kw-2">&amp;</span>rational).unwrap();
-<a href=#8239 id=8239 data-nosnippet>8239</a>
-<a href=#8240 id=8240 data-nosnippet>8240</a>        <span class="macro">assert_eq!</span>(
-<a href=#8241 id=8241 data-nosnippet>8241</a>            session.ask(<span class="kw-2">&amp;</span>integer).unwrap(),
-<a href=#8242 id=8242 data-nosnippet>8242</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes,
-<a href=#8243 id=8243 data-nosnippet>8243</a>        );
-<a href=#8244 id=8244 data-nosnippet>8244</a>        <span class="macro">assert_eq!</span>(
-<a href=#8245 id=8245 data-nosnippet>8245</a>            session.all_assumptions().unwrap().revision,
-<a href=#8246 id=8246 data-nosnippet>8246</a>            revision_after_integer,
-<a href=#8247 id=8247 data-nosnippet>8247</a>        );
-<a href=#8248 id=8248 data-nosnippet>8248</a>    }
-<a href=#8249 id=8249 data-nosnippet>8249</a>
-<a href=#8250 id=8250 data-nosnippet>8250</a>    <span class="attr">#[test]
-<a href=#8251 id=8251 data-nosnippet>8251</a>    </span><span class="kw">fn </span>relational_assumption_constructors_are_canonical_and_admitted_when_checked() {
-<a href=#8252 id=8252 data-nosnippet>8252</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8253 id=8253 data-nosnippet>8253</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8254 id=8254 data-nosnippet>8254</a>        <span class="kw">let </span>y = session.symbol(<span class="string">"y"</span>);
-<a href=#8255 id=8255 data-nosnippet>8255</a>        <span class="kw">let </span>forward = session.assumption_greater(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>y).unwrap();
-<a href=#8256 id=8256 data-nosnippet>8256</a>        <span class="kw">let </span>reversed = session.assumption_less(<span class="kw-2">&amp;</span>y, <span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8257 id=8257 data-nosnippet>8257</a>        <span class="macro">assert_eq!</span>(
-<a href=#8258 id=8258 data-nosnippet>8258</a>            forward.stable_text().unwrap(),
-<a href=#8259 id=8259 data-nosnippet>8259</a>            reversed.stable_text().unwrap()
-<a href=#8260 id=8260 data-nosnippet>8260</a>        );
-<a href=#8261 id=8261 data-nosnippet>8261</a>
-<a href=#8262 id=8262 data-nosnippet>8262</a>        <span class="kw">let </span>equality = session.assumption_equal(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>y).unwrap();
-<a href=#8263 id=8263 data-nosnippet>8263</a>        <span class="kw">let </span>serialized = equality.serialize().unwrap();
-<a href=#8264 id=8264 data-nosnippet>8264</a>        <span class="kw">let </span>deserialized = session
-<a href=#8265 id=8265 data-nosnippet>8265</a>            .deserialize_assumption_proposition(<span class="kw-2">&amp;</span>serialized)
-<a href=#8266 id=8266 data-nosnippet>8266</a>            .unwrap();
-<a href=#8267 id=8267 data-nosnippet>8267</a>        <span class="macro">assert_eq!</span>(
-<a href=#8268 id=8268 data-nosnippet>8268</a>            equality.stable_text().unwrap(),
-<a href=#8269 id=8269 data-nosnippet>8269</a>            deserialized.stable_text().unwrap()
-<a href=#8270 id=8270 data-nosnippet>8270</a>        );
-<a href=#8271 id=8271 data-nosnippet>8271</a>        session.add_assumptions(<span class="kw-2">&amp;</span>equality).unwrap();
-<a href=#8272 id=8272 data-nosnippet>8272</a>        <span class="macro">assert_eq!</span>(
-<a href=#8273 id=8273 data-nosnippet>8273</a>            session.ask(<span class="kw-2">&amp;</span>equality).unwrap(),
-<a href=#8274 id=8274 data-nosnippet>8274</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
-<a href=#8275 id=8275 data-nosnippet>8275</a>        );
-<a href=#8276 id=8276 data-nosnippet>8276</a>    }
-<a href=#8277 id=8277 data-nosnippet>8277</a>
-<a href=#8278 id=8278 data-nosnippet>8278</a>    <span class="attr">#[test]
-<a href=#8279 id=8279 data-nosnippet>8279</a>    </span><span class="kw">fn </span>congruence_constructor_normalizes_negative_moduli_and_rejects_zero() {
-<a href=#8280 id=8280 data-nosnippet>8280</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8281 id=8281 data-nosnippet>8281</a>        <span class="kw">let </span>n = session.symbol(<span class="string">"n"</span>);
-<a href=#8282 id=8282 data-nosnippet>8282</a>        <span class="kw">let </span>zero = session.integer(<span class="number">0</span>);
-<a href=#8283 id=8283 data-nosnippet>8283</a>        <span class="kw">let </span>three = session.integer(<span class="number">3</span>);
-<a href=#8284 id=8284 data-nosnippet>8284</a>        <span class="kw">let </span>negative_three = session.integer(-<span class="number">3</span>);
-<a href=#8285 id=8285 data-nosnippet>8285</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
-<a href=#8286 id=8286 data-nosnippet>8286</a>            session.assumption_congruent(<span class="kw-2">&amp;</span>n, <span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>zero),
-<a href=#8287 id=8287 data-nosnippet>8287</a>            <span class="prelude-val">Err</span>(ApiError::InvalidAssumption)
-<a href=#8288 id=8288 data-nosnippet>8288</a>        ));
-<a href=#8289 id=8289 data-nosnippet>8289</a>        <span class="kw">let </span>positive = session.assumption_congruent(<span class="kw-2">&amp;</span>n, <span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>three).unwrap();
-<a href=#8290 id=8290 data-nosnippet>8290</a>        <span class="kw">let </span>negative = session
-<a href=#8291 id=8291 data-nosnippet>8291</a>            .assumption_congruent(<span class="kw-2">&amp;</span>n, <span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>negative_three)
-<a href=#8292 id=8292 data-nosnippet>8292</a>            .unwrap();
-<a href=#8293 id=8293 data-nosnippet>8293</a>        <span class="macro">assert_eq!</span>(
-<a href=#8294 id=8294 data-nosnippet>8294</a>            positive.stable_text().unwrap(),
-<a href=#8295 id=8295 data-nosnippet>8295</a>            negative.stable_text().unwrap()
-<a href=#8296 id=8296 data-nosnippet>8296</a>        );
-<a href=#8297 id=8297 data-nosnippet>8297</a>    }
-<a href=#8298 id=8298 data-nosnippet>8298</a>
-<a href=#8299 id=8299 data-nosnippet>8299</a>    <span class="attr">#[test]
-<a href=#8300 id=8300 data-nosnippet>8300</a>    </span><span class="kw">fn </span>refine_uses_checked_local_assumptions_without_mutating_the_context() {
-<a href=#8301 id=8301 data-nosnippet>8301</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8302 id=8302 data-nosnippet>8302</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8303 id=8303 data-nosnippet>8303</a>        <span class="kw">let </span>absolute_value = session.parse(<span class="string">"abs(x)"</span>).unwrap();
-<a href=#8304 id=8304 data-nosnippet>8304</a>        <span class="kw">let </span>positive = session.positive(<span class="kw-2">&amp;</span>x).unwrap();
-<a href=#8305 id=8305 data-nosnippet>8305</a>        <span class="kw">let </span>refined = session.refine(<span class="kw-2">&amp;</span>absolute_value, <span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>positive)).unwrap();
-<a href=#8306 id=8306 data-nosnippet>8306</a>        <span class="macro">assert_eq!</span>(refined.to_string(), <span class="string">"x"</span>);
-<a href=#8307 id=8307 data-nosnippet>8307</a>        <span class="macro">assert_eq!</span>(
-<a href=#8308 id=8308 data-nosnippet>8308</a>            session.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
-<a href=#8309 id=8309 data-nosnippet>8309</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown
-<a href=#8310 id=8310 data-nosnippet>8310</a>        );
-<a href=#8311 id=8311 data-nosnippet>8311</a>    }
-<a href=#8312 id=8312 data-nosnippet>8312</a>
-<a href=#8313 id=8313 data-nosnippet>8313</a>    <span class="attr">#[test]
-<a href=#8314 id=8314 data-nosnippet>8314</a>    </span><span class="kw">fn </span>partial_differential_equation_api_preserves_exact_analysis_verification_and_decline() {
-<a href=#8315 id=8315 data-nosnippet>8315</a>        <span class="kw">let </span>session = Session::new();
-<a href=#8316 id=8316 data-nosnippet>8316</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
-<a href=#8317 id=8317 data-nosnippet>8317</a>        <span class="kw">let </span>y = session.symbol(<span class="string">"y"</span>);
-<a href=#8318 id=8318 data-nosnippet>8318</a>        <span class="kw">let </span>u = session.undefined_function(<span class="string">"u"</span>);
-<a href=#8319 id=8319 data-nosnippet>8319</a>        <span class="kw">let </span>u_x = u.derivative([<span class="number">1</span>, <span class="number">0</span>], [x.clone(), y.clone()]).unwrap();
-<a href=#8320 id=8320 data-nosnippet>8320</a>        <span class="kw">let </span>equation = session.subtract(<span class="kw-2">&amp;</span>u_x, <span class="kw-2">&amp;</span>session.integer(<span class="number">1</span>)).unwrap();
-<a href=#8321 id=8321 data-nosnippet>8321</a>        <span class="kw">let </span>problem = session
-<a href=#8322 id=8322 data-nosnippet>8322</a>            .partial_differential_equation(<span class="kw-2">&amp;</span>equation, <span class="kw-2">&amp;</span>u, <span class="macro">vec!</span>[<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>y], <span class="kw-2">&amp;</span>[], <span class="kw-2">&amp;</span>[])
-<a href=#8323 id=8323 data-nosnippet>8323</a>            .unwrap();
-<a href=#8324 id=8324 data-nosnippet>8324</a>
-<a href=#8325 id=8325 data-nosnippet>8325</a>        <span class="kw">let </span>classification = session
-<a href=#8326 id=8326 data-nosnippet>8326</a>            .classify_partial_differential_equation(<span class="kw-2">&amp;</span>problem)
-<a href=#8327 id=8327 data-nosnippet>8327</a>            .unwrap();
-<a href=#8328 id=8328 data-nosnippet>8328</a>        <span class="macro">assert_eq!</span>(classification.order().unwrap(), <span class="number">1</span>);
-<a href=#8329 id=8329 data-nosnippet>8329</a>        <span class="macro">assert_eq!</span>(
-<a href=#8330 id=8330 data-nosnippet>8330</a>            classification.linearity().unwrap(),
-<a href=#8331 id=8331 data-nosnippet>8331</a>            PartialDifferentialEquationLinearity::Linear
-<a href=#8332 id=8332 data-nosnippet>8332</a>        );
-<a href=#8333 id=8333 data-nosnippet>8333</a>        <span class="kw">let </span>coefficient_data = classification.coefficient_data().unwrap();
-<a href=#8334 id=8334 data-nosnippet>8334</a>        <span class="kw">let </span>coefficients = coefficient_data.full_coefficients().unwrap();
-<a href=#8335 id=8335 data-nosnippet>8335</a>        <span class="macro">assert_eq!</span>(coefficients.len(), <span class="number">1</span>);
-<a href=#8336 id=8336 data-nosnippet>8336</a>        <span class="macro">assert_eq!</span>(coefficients[<span class="number">0</span>].jet().derivative_orders(), <span class="macro">vec!</span>[<span class="number">1</span>, <span class="number">0</span>]);
-<a href=#8337 id=8337 data-nosnippet>8337</a>        <span class="macro">assert_eq!</span>(coefficients[<span class="number">0</span>].coefficient().to_string(), <span class="string">"1"</span>);
-<a href=#8338 id=8338 data-nosnippet>8338</a>
-<a href=#8339 id=8339 data-nosnippet>8339</a>        <span class="kw">let </span>solution = session
-<a href=#8340 id=8340 data-nosnippet>8340</a>            .explicit_partial_differential_equation_solution(<span class="kw-2">&amp;</span>x)
-<a href=#8341 id=8341 data-nosnippet>8341</a>            .unwrap();
-<a href=#8342 id=8342 data-nosnippet>8342</a>        <span class="macro">assert_eq!</span>(
-<a href=#8343 id=8343 data-nosnippet>8343</a>            session
-<a href=#8344 id=8344 data-nosnippet>8344</a>                .verify_partial_differential_equation_solution(<span class="kw-2">&amp;</span>problem, <span class="kw-2">&amp;</span>solution)
-<a href=#8345 id=8345 data-nosnippet>8345</a>                .unwrap()
-<a href=#8346 id=8346 data-nosnippet>8346</a>                .verdict()
-<a href=#8347 id=8347 data-nosnippet>8347</a>                .name(),
-<a href=#8348 id=8348 data-nosnippet>8348</a>            <span class="string">"verified"
-<a href=#8349 id=8349 data-nosnippet>8349</a>        </span>);
-<a href=#8350 id=8350 data-nosnippet>8350</a>
-<a href=#8351 id=8351 data-nosnippet>8351</a>        <span class="kw">let </span>arbitrary_function = session.partial_differential_equation_arbitrary_function(<span class="string">"F"</span>, <span class="number">1</span>);
-<a href=#8352 id=8352 data-nosnippet>8352</a>        <span class="kw">let </span>metadata_solution = session
-<a href=#8353 id=8353 data-nosnippet>8353</a>            .explicit_partial_differential_equation_solution_with_metadata(
-<a href=#8354 id=8354 data-nosnippet>8354</a>                <span class="kw-2">&amp;</span>x,
-<a href=#8355 id=8355 data-nosnippet>8355</a>                <span class="kw-2">&amp;</span>[arbitrary_function.clone()],
-<a href=#8356 id=8356 data-nosnippet>8356</a>                <span class="kw-2">&amp;</span>[PartialDifferentialEquationProofObligation::CoefficientNonzero],
-<a href=#8357 id=8357 data-nosnippet>8357</a>            )
-<a href=#8358 id=8358 data-nosnippet>8358</a>            .unwrap();
-<a href=#8359 id=8359 data-nosnippet>8359</a>        <span class="macro">assert_eq!</span>(arbitrary_function.name().unwrap(), <span class="string">"F"</span>);
-<a href=#8360 id=8360 data-nosnippet>8360</a>        <span class="macro">assert_eq!</span>(arbitrary_function.arity().unwrap(), <span class="number">1</span>);
-<a href=#8361 id=8361 data-nosnippet>8361</a>        <span class="macro">assert_eq!</span>(
-<a href=#8362 id=8362 data-nosnippet>8362</a>            metadata_solution.arbitrary_functions().unwrap()[<span class="number">0</span>]
-<a href=#8363 id=8363 data-nosnippet>8363</a>                .name()
-<a href=#8364 id=8364 data-nosnippet>8364</a>                .unwrap(),
-<a href=#8365 id=8365 data-nosnippet>8365</a>            <span class="string">"F"
-<a href=#8366 id=8366 data-nosnippet>8366</a>        </span>);
-<a href=#8367 id=8367 data-nosnippet>8367</a>        <span class="macro">assert_eq!</span>(
-<a href=#8368 id=8368 data-nosnippet>8368</a>            metadata_solution.proof_obligations().unwrap(),
-<a href=#8369 id=8369 data-nosnippet>8369</a>            <span class="macro">vec!</span>[PartialDifferentialEquationProofObligation::CoefficientNonzero]
-<a href=#8370 id=8370 data-nosnippet>8370</a>        );
-<a href=#8371 id=8371 data-nosnippet>8371</a>
-<a href=#8372 id=8372 data-nosnippet>8372</a>        <span class="kw">let </span>result = session
-<a href=#8373 id=8373 data-nosnippet>8373</a>            .solve_partial_differential_equation(
-<a href=#8374 id=8374 data-nosnippet>8374</a>                <span class="kw-2">&amp;</span>problem,
-<a href=#8375 id=8375 data-nosnippet>8375</a>                PartialDifferentialEquationMethod::Automatic,
-<a href=#8376 id=8376 data-nosnippet>8376</a>            )
-<a href=#8377 id=8377 data-nosnippet>8377</a>            .unwrap();
-<a href=#8378 id=8378 data-nosnippet>8378</a>        <span class="comment">// `characteristics` is implemented, and the classifier
-<a href=#8379 id=8379 data-nosnippet>8379</a>        // ranks it first for a first-order equation, so automatic dispatch now
-<a href=#8380 id=8380 data-nosnippet>8380</a>        // returns a centrally verified family instead of declining.
-<a href=#8381 id=8381 data-nosnippet>8381</a>        </span><span class="macro">assert_eq!</span>(
-<a href=#8382 id=8382 data-nosnippet>8382</a>            result.verdict(),
-<a href=#8383 id=8383 data-nosnippet>8383</a>            PartialDifferentialEquationSolveVerdict::Solved
-<a href=#8384 id=8384 data-nosnippet>8384</a>        );
-<a href=#8385 id=8385 data-nosnippet>8385</a>        <span class="macro">assert_eq!</span>(result.decline(), <span class="prelude-val">None</span>);
-<a href=#8386 id=8386 data-nosnippet>8386</a>        <span class="macro">assert_eq!</span>(
-<a href=#8387 id=8387 data-nosnippet>8387</a>            result.method().map(|method| method.name()),
-<a href=#8388 id=8388 data-nosnippet>8388</a>            <span class="prelude-val">Some</span>(<span class="string">"characteristics"</span>)
-<a href=#8389 id=8389 data-nosnippet>8389</a>        );
-<a href=#8390 id=8390 data-nosnippet>8390</a>        <span class="macro">assert_eq!</span>(result.verification().unwrap().verdict().name(), <span class="string">"verified"</span>);
-<a href=#8391 id=8391 data-nosnippet>8391</a>
-<a href=#8392 id=8392 data-nosnippet>8392</a>        <span class="kw">let </span>text = problem.to_string().unwrap();
-<a href=#8393 id=8393 data-nosnippet>8393</a>        <span class="macro">assert!</span>(
-<a href=#8394 id=8394 data-nosnippet>8394</a>            text.starts_with(<span class="string">"partial differential equation for u(x, y) in x, y:"</span>),
-<a href=#8395 id=8395 data-nosnippet>8395</a>            <span class="string">"{text}"
-<a href=#8396 id=8396 data-nosnippet>8396</a>        </span>);
-<a href=#8397 id=8397 data-nosnippet>8397</a>        <span class="macro">assert!</span>(problem.to_latex().unwrap().ends_with(<span class="string">"= 0"</span>));
-<a href=#8398 id=8398 data-nosnippet>8398</a>        <span class="kw">let </span>serialized = problem.serialize_object().unwrap();
-<a href=#8399 id=8399 data-nosnippet>8399</a>        <span class="macro">assert!</span>(serialized.starts_with(<span class="string">"partial_differential_equation("</span>));
-<a href=#8400 id=8400 data-nosnippet>8400</a>        <span class="kw">match </span>session.parse_serialized_object(<span class="kw-2">&amp;</span>serialized).unwrap() {
-<a href=#8401 id=8401 data-nosnippet>8401</a>            MathematicalObject::PartialDifferentialEquation(rebuilt) =&gt; {
-<a href=#8402 id=8402 data-nosnippet>8402</a>                <span class="macro">assert_eq!</span>(
-<a href=#8403 id=8403 data-nosnippet>8403</a>                    rebuilt.independent_variables().unwrap(),
-<a href=#8404 id=8404 data-nosnippet>8404</a>                    <span class="macro">vec!</span>[<span class="string">"x"</span>.to_owned(), <span class="string">"y"</span>.to_owned()]
-<a href=#8405 id=8405 data-nosnippet>8405</a>                );
-<a href=#8406 id=8406 data-nosnippet>8406</a>                <span class="macro">assert_eq!</span>(rebuilt.dependent_function().unwrap(), <span class="string">"u"</span>);
-<a href=#8407 id=8407 data-nosnippet>8407</a>            }
-<a href=#8408 id=8408 data-nosnippet>8408</a>            <span class="kw">_ </span>=&gt; <span class="macro">panic!</span>(<span class="string">"expected a PDE object, found a different mathematical object kind"</span>),
-<a href=#8409 id=8409 data-nosnippet>8409</a>        }
-<a href=#8410 id=8410 data-nosnippet>8410</a>    }
-<a href=#8411 id=8411 data-nosnippet>8411</a>}
+<a href=#8219 id=8219 data-nosnippet>8219</a>        session.add_assumptions(<span class="kw-2">&amp;</span>positive).unwrap();
+<a href=#8220 id=8220 data-nosnippet>8220</a>
+<a href=#8221 id=8221 data-nosnippet>8221</a>        <span class="macro">assert_eq!</span>(
+<a href=#8222 id=8222 data-nosnippet>8222</a>            scope.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
+<a href=#8223 id=8223 data-nosnippet>8223</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown,
+<a href=#8224 id=8224 data-nosnippet>8224</a>        );
+<a href=#8225 id=8225 data-nosnippet>8225</a>        <span class="macro">assert_eq!</span>(
+<a href=#8226 id=8226 data-nosnippet>8226</a>            session.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
+<a href=#8227 id=8227 data-nosnippet>8227</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes,
+<a href=#8228 id=8228 data-nosnippet>8228</a>        );
+<a href=#8229 id=8229 data-nosnippet>8229</a>    }
+<a href=#8230 id=8230 data-nosnippet>8230</a>
+<a href=#8231 id=8231 data-nosnippet>8231</a>    <span class="attr">#[test]
+<a href=#8232 id=8232 data-nosnippet>8232</a>    </span><span class="kw">fn </span>broader_public_domain_fact_does_not_weaken_formula_projection() {
+<a href=#8233 id=8233 data-nosnippet>8233</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8234 id=8234 data-nosnippet>8234</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8235 id=8235 data-nosnippet>8235</a>        <span class="kw">let </span>integer = session.integer_assumption(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8236 id=8236 data-nosnippet>8236</a>        <span class="kw">let </span>rational = session.rational_assumption(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8237 id=8237 data-nosnippet>8237</a>
+<a href=#8238 id=8238 data-nosnippet>8238</a>        session.add_assumptions(<span class="kw-2">&amp;</span>integer).unwrap();
+<a href=#8239 id=8239 data-nosnippet>8239</a>        <span class="kw">let </span>revision_after_integer = session.all_assumptions().unwrap().revision;
+<a href=#8240 id=8240 data-nosnippet>8240</a>        session.add_assumptions(<span class="kw-2">&amp;</span>rational).unwrap();
+<a href=#8241 id=8241 data-nosnippet>8241</a>
+<a href=#8242 id=8242 data-nosnippet>8242</a>        <span class="macro">assert_eq!</span>(
+<a href=#8243 id=8243 data-nosnippet>8243</a>            session.ask(<span class="kw-2">&amp;</span>integer).unwrap(),
+<a href=#8244 id=8244 data-nosnippet>8244</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes,
+<a href=#8245 id=8245 data-nosnippet>8245</a>        );
+<a href=#8246 id=8246 data-nosnippet>8246</a>        <span class="macro">assert_eq!</span>(
+<a href=#8247 id=8247 data-nosnippet>8247</a>            session.all_assumptions().unwrap().revision,
+<a href=#8248 id=8248 data-nosnippet>8248</a>            revision_after_integer,
+<a href=#8249 id=8249 data-nosnippet>8249</a>        );
+<a href=#8250 id=8250 data-nosnippet>8250</a>    }
+<a href=#8251 id=8251 data-nosnippet>8251</a>
+<a href=#8252 id=8252 data-nosnippet>8252</a>    <span class="attr">#[test]
+<a href=#8253 id=8253 data-nosnippet>8253</a>    </span><span class="kw">fn </span>relational_assumption_constructors_are_canonical_and_admitted_when_checked() {
+<a href=#8254 id=8254 data-nosnippet>8254</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8255 id=8255 data-nosnippet>8255</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8256 id=8256 data-nosnippet>8256</a>        <span class="kw">let </span>y = session.symbol(<span class="string">"y"</span>);
+<a href=#8257 id=8257 data-nosnippet>8257</a>        <span class="kw">let </span>forward = session.assumption_greater(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>y).unwrap();
+<a href=#8258 id=8258 data-nosnippet>8258</a>        <span class="kw">let </span>reversed = session.assumption_less(<span class="kw-2">&amp;</span>y, <span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8259 id=8259 data-nosnippet>8259</a>        <span class="macro">assert_eq!</span>(
+<a href=#8260 id=8260 data-nosnippet>8260</a>            forward.stable_text().unwrap(),
+<a href=#8261 id=8261 data-nosnippet>8261</a>            reversed.stable_text().unwrap()
+<a href=#8262 id=8262 data-nosnippet>8262</a>        );
+<a href=#8263 id=8263 data-nosnippet>8263</a>
+<a href=#8264 id=8264 data-nosnippet>8264</a>        <span class="kw">let </span>equality = session.assumption_equal(<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>y).unwrap();
+<a href=#8265 id=8265 data-nosnippet>8265</a>        <span class="kw">let </span>serialized = equality.serialize().unwrap();
+<a href=#8266 id=8266 data-nosnippet>8266</a>        <span class="kw">let </span>deserialized = session
+<a href=#8267 id=8267 data-nosnippet>8267</a>            .deserialize_assumption_proposition(<span class="kw-2">&amp;</span>serialized)
+<a href=#8268 id=8268 data-nosnippet>8268</a>            .unwrap();
+<a href=#8269 id=8269 data-nosnippet>8269</a>        <span class="macro">assert_eq!</span>(
+<a href=#8270 id=8270 data-nosnippet>8270</a>            equality.stable_text().unwrap(),
+<a href=#8271 id=8271 data-nosnippet>8271</a>            deserialized.stable_text().unwrap()
+<a href=#8272 id=8272 data-nosnippet>8272</a>        );
+<a href=#8273 id=8273 data-nosnippet>8273</a>        session.add_assumptions(<span class="kw-2">&amp;</span>equality).unwrap();
+<a href=#8274 id=8274 data-nosnippet>8274</a>        <span class="macro">assert_eq!</span>(
+<a href=#8275 id=8275 data-nosnippet>8275</a>            session.ask(<span class="kw-2">&amp;</span>equality).unwrap(),
+<a href=#8276 id=8276 data-nosnippet>8276</a>            <span class="kw">crate</span>::assumptions::TruthValue::Yes
+<a href=#8277 id=8277 data-nosnippet>8277</a>        );
+<a href=#8278 id=8278 data-nosnippet>8278</a>    }
+<a href=#8279 id=8279 data-nosnippet>8279</a>
+<a href=#8280 id=8280 data-nosnippet>8280</a>    <span class="attr">#[test]
+<a href=#8281 id=8281 data-nosnippet>8281</a>    </span><span class="kw">fn </span>congruence_constructor_normalizes_negative_moduli_and_rejects_zero() {
+<a href=#8282 id=8282 data-nosnippet>8282</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8283 id=8283 data-nosnippet>8283</a>        <span class="kw">let </span>n = session.symbol(<span class="string">"n"</span>);
+<a href=#8284 id=8284 data-nosnippet>8284</a>        <span class="kw">let </span>zero = session.integer(<span class="number">0</span>);
+<a href=#8285 id=8285 data-nosnippet>8285</a>        <span class="kw">let </span>three = session.integer(<span class="number">3</span>);
+<a href=#8286 id=8286 data-nosnippet>8286</a>        <span class="kw">let </span>negative_three = session.integer(-<span class="number">3</span>);
+<a href=#8287 id=8287 data-nosnippet>8287</a>        <span class="macro">assert!</span>(<span class="macro">matches!</span>(
+<a href=#8288 id=8288 data-nosnippet>8288</a>            session.assumption_congruent(<span class="kw-2">&amp;</span>n, <span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>zero),
+<a href=#8289 id=8289 data-nosnippet>8289</a>            <span class="prelude-val">Err</span>(ApiError::InvalidAssumption)
+<a href=#8290 id=8290 data-nosnippet>8290</a>        ));
+<a href=#8291 id=8291 data-nosnippet>8291</a>        <span class="kw">let </span>positive = session.assumption_congruent(<span class="kw-2">&amp;</span>n, <span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>three).unwrap();
+<a href=#8292 id=8292 data-nosnippet>8292</a>        <span class="kw">let </span>negative = session
+<a href=#8293 id=8293 data-nosnippet>8293</a>            .assumption_congruent(<span class="kw-2">&amp;</span>n, <span class="kw-2">&amp;</span>zero, <span class="kw-2">&amp;</span>negative_three)
+<a href=#8294 id=8294 data-nosnippet>8294</a>            .unwrap();
+<a href=#8295 id=8295 data-nosnippet>8295</a>        <span class="macro">assert_eq!</span>(
+<a href=#8296 id=8296 data-nosnippet>8296</a>            positive.stable_text().unwrap(),
+<a href=#8297 id=8297 data-nosnippet>8297</a>            negative.stable_text().unwrap()
+<a href=#8298 id=8298 data-nosnippet>8298</a>        );
+<a href=#8299 id=8299 data-nosnippet>8299</a>    }
+<a href=#8300 id=8300 data-nosnippet>8300</a>
+<a href=#8301 id=8301 data-nosnippet>8301</a>    <span class="attr">#[test]
+<a href=#8302 id=8302 data-nosnippet>8302</a>    </span><span class="kw">fn </span>refine_uses_checked_local_assumptions_without_mutating_the_context() {
+<a href=#8303 id=8303 data-nosnippet>8303</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8304 id=8304 data-nosnippet>8304</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8305 id=8305 data-nosnippet>8305</a>        <span class="kw">let </span>absolute_value = session.parse(<span class="string">"abs(x)"</span>).unwrap();
+<a href=#8306 id=8306 data-nosnippet>8306</a>        <span class="kw">let </span>positive = session.positive(<span class="kw-2">&amp;</span>x).unwrap();
+<a href=#8307 id=8307 data-nosnippet>8307</a>        <span class="kw">let </span>refined = session.refine(<span class="kw-2">&amp;</span>absolute_value, <span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>positive)).unwrap();
+<a href=#8308 id=8308 data-nosnippet>8308</a>        <span class="macro">assert_eq!</span>(refined.to_string(), <span class="string">"x"</span>);
+<a href=#8309 id=8309 data-nosnippet>8309</a>        <span class="macro">assert_eq!</span>(
+<a href=#8310 id=8310 data-nosnippet>8310</a>            session.ask(<span class="kw-2">&amp;</span>positive).unwrap(),
+<a href=#8311 id=8311 data-nosnippet>8311</a>            <span class="kw">crate</span>::assumptions::TruthValue::Unknown
+<a href=#8312 id=8312 data-nosnippet>8312</a>        );
+<a href=#8313 id=8313 data-nosnippet>8313</a>    }
+<a href=#8314 id=8314 data-nosnippet>8314</a>
+<a href=#8315 id=8315 data-nosnippet>8315</a>    <span class="attr">#[test]
+<a href=#8316 id=8316 data-nosnippet>8316</a>    </span><span class="kw">fn </span>partial_differential_equation_api_preserves_exact_analysis_verification_and_decline() {
+<a href=#8317 id=8317 data-nosnippet>8317</a>        <span class="kw">let </span>session = Session::new();
+<a href=#8318 id=8318 data-nosnippet>8318</a>        <span class="kw">let </span>x = session.symbol(<span class="string">"x"</span>);
+<a href=#8319 id=8319 data-nosnippet>8319</a>        <span class="kw">let </span>y = session.symbol(<span class="string">"y"</span>);
+<a href=#8320 id=8320 data-nosnippet>8320</a>        <span class="kw">let </span>u = session.undefined_function(<span class="string">"u"</span>);
+<a href=#8321 id=8321 data-nosnippet>8321</a>        <span class="kw">let </span>u_x = u.derivative([<span class="number">1</span>, <span class="number">0</span>], [x.clone(), y.clone()]).unwrap();
+<a href=#8322 id=8322 data-nosnippet>8322</a>        <span class="kw">let </span>equation = session.subtract(<span class="kw-2">&amp;</span>u_x, <span class="kw-2">&amp;</span>session.integer(<span class="number">1</span>)).unwrap();
+<a href=#8323 id=8323 data-nosnippet>8323</a>        <span class="kw">let </span>problem = session
+<a href=#8324 id=8324 data-nosnippet>8324</a>            .partial_differential_equation(<span class="kw-2">&amp;</span>equation, <span class="kw-2">&amp;</span>u, <span class="macro">vec!</span>[<span class="kw-2">&amp;</span>x, <span class="kw-2">&amp;</span>y], <span class="kw-2">&amp;</span>[], <span class="kw-2">&amp;</span>[])
+<a href=#8325 id=8325 data-nosnippet>8325</a>            .unwrap();
+<a href=#8326 id=8326 data-nosnippet>8326</a>
+<a href=#8327 id=8327 data-nosnippet>8327</a>        <span class="kw">let </span>classification = session
+<a href=#8328 id=8328 data-nosnippet>8328</a>            .classify_partial_differential_equation(<span class="kw-2">&amp;</span>problem)
+<a href=#8329 id=8329 data-nosnippet>8329</a>            .unwrap();
+<a href=#8330 id=8330 data-nosnippet>8330</a>        <span class="macro">assert_eq!</span>(classification.order().unwrap(), <span class="number">1</span>);
+<a href=#8331 id=8331 data-nosnippet>8331</a>        <span class="macro">assert_eq!</span>(
+<a href=#8332 id=8332 data-nosnippet>8332</a>            classification.linearity().unwrap(),
+<a href=#8333 id=8333 data-nosnippet>8333</a>            PartialDifferentialEquationLinearity::Linear
+<a href=#8334 id=8334 data-nosnippet>8334</a>        );
+<a href=#8335 id=8335 data-nosnippet>8335</a>        <span class="kw">let </span>coefficient_data = classification.coefficient_data().unwrap();
+<a href=#8336 id=8336 data-nosnippet>8336</a>        <span class="kw">let </span>coefficients = coefficient_data.full_coefficients().unwrap();
+<a href=#8337 id=8337 data-nosnippet>8337</a>        <span class="macro">assert_eq!</span>(coefficients.len(), <span class="number">1</span>);
+<a href=#8338 id=8338 data-nosnippet>8338</a>        <span class="macro">assert_eq!</span>(coefficients[<span class="number">0</span>].jet().derivative_orders(), <span class="macro">vec!</span>[<span class="number">1</span>, <span class="number">0</span>]);
+<a href=#8339 id=8339 data-nosnippet>8339</a>        <span class="macro">assert_eq!</span>(coefficients[<span class="number">0</span>].coefficient().to_string(), <span class="string">"1"</span>);
+<a href=#8340 id=8340 data-nosnippet>8340</a>
+<a href=#8341 id=8341 data-nosnippet>8341</a>        <span class="kw">let </span>solution = session
+<a href=#8342 id=8342 data-nosnippet>8342</a>            .explicit_partial_differential_equation_solution(<span class="kw-2">&amp;</span>x)
+<a href=#8343 id=8343 data-nosnippet>8343</a>            .unwrap();
+<a href=#8344 id=8344 data-nosnippet>8344</a>        <span class="macro">assert_eq!</span>(
+<a href=#8345 id=8345 data-nosnippet>8345</a>            session
+<a href=#8346 id=8346 data-nosnippet>8346</a>                .verify_partial_differential_equation_solution(<span class="kw-2">&amp;</span>problem, <span class="kw-2">&amp;</span>solution)
+<a href=#8347 id=8347 data-nosnippet>8347</a>                .unwrap()
+<a href=#8348 id=8348 data-nosnippet>8348</a>                .verdict()
+<a href=#8349 id=8349 data-nosnippet>8349</a>                .name(),
+<a href=#8350 id=8350 data-nosnippet>8350</a>            <span class="string">"verified"
+<a href=#8351 id=8351 data-nosnippet>8351</a>        </span>);
+<a href=#8352 id=8352 data-nosnippet>8352</a>
+<a href=#8353 id=8353 data-nosnippet>8353</a>        <span class="kw">let </span>arbitrary_function = session.partial_differential_equation_arbitrary_function(<span class="string">"F"</span>, <span class="number">1</span>);
+<a href=#8354 id=8354 data-nosnippet>8354</a>        <span class="kw">let </span>metadata_solution = session
+<a href=#8355 id=8355 data-nosnippet>8355</a>            .explicit_partial_differential_equation_solution_with_metadata(
+<a href=#8356 id=8356 data-nosnippet>8356</a>                <span class="kw-2">&amp;</span>x,
+<a href=#8357 id=8357 data-nosnippet>8357</a>                <span class="kw-2">&amp;</span>[arbitrary_function.clone()],
+<a href=#8358 id=8358 data-nosnippet>8358</a>                <span class="kw-2">&amp;</span>[PartialDifferentialEquationProofObligation::CoefficientNonzero],
+<a href=#8359 id=8359 data-nosnippet>8359</a>            )
+<a href=#8360 id=8360 data-nosnippet>8360</a>            .unwrap();
+<a href=#8361 id=8361 data-nosnippet>8361</a>        <span class="macro">assert_eq!</span>(arbitrary_function.name().unwrap(), <span class="string">"F"</span>);
+<a href=#8362 id=8362 data-nosnippet>8362</a>        <span class="macro">assert_eq!</span>(arbitrary_function.arity().unwrap(), <span class="number">1</span>);
+<a href=#8363 id=8363 data-nosnippet>8363</a>        <span class="macro">assert_eq!</span>(
+<a href=#8364 id=8364 data-nosnippet>8364</a>            metadata_solution.arbitrary_functions().unwrap()[<span class="number">0</span>]
+<a href=#8365 id=8365 data-nosnippet>8365</a>                .name()
+<a href=#8366 id=8366 data-nosnippet>8366</a>                .unwrap(),
+<a href=#8367 id=8367 data-nosnippet>8367</a>            <span class="string">"F"
+<a href=#8368 id=8368 data-nosnippet>8368</a>        </span>);
+<a href=#8369 id=8369 data-nosnippet>8369</a>        <span class="macro">assert_eq!</span>(
+<a href=#8370 id=8370 data-nosnippet>8370</a>            metadata_solution.proof_obligations().unwrap(),
+<a href=#8371 id=8371 data-nosnippet>8371</a>            <span class="macro">vec!</span>[PartialDifferentialEquationProofObligation::CoefficientNonzero]
+<a href=#8372 id=8372 data-nosnippet>8372</a>        );
+<a href=#8373 id=8373 data-nosnippet>8373</a>
+<a href=#8374 id=8374 data-nosnippet>8374</a>        <span class="kw">let </span>result = session
+<a href=#8375 id=8375 data-nosnippet>8375</a>            .solve_partial_differential_equation(
+<a href=#8376 id=8376 data-nosnippet>8376</a>                <span class="kw-2">&amp;</span>problem,
+<a href=#8377 id=8377 data-nosnippet>8377</a>                PartialDifferentialEquationMethod::Automatic,
+<a href=#8378 id=8378 data-nosnippet>8378</a>            )
+<a href=#8379 id=8379 data-nosnippet>8379</a>            .unwrap();
+<a href=#8380 id=8380 data-nosnippet>8380</a>        <span class="comment">// `characteristics` is implemented, and the classifier
+<a href=#8381 id=8381 data-nosnippet>8381</a>        // ranks it first for a first-order equation, so automatic dispatch now
+<a href=#8382 id=8382 data-nosnippet>8382</a>        // returns a centrally verified family instead of declining.
+<a href=#8383 id=8383 data-nosnippet>8383</a>        </span><span class="macro">assert_eq!</span>(
+<a href=#8384 id=8384 data-nosnippet>8384</a>            result.verdict(),
+<a href=#8385 id=8385 data-nosnippet>8385</a>            PartialDifferentialEquationSolveVerdict::Solved
+<a href=#8386 id=8386 data-nosnippet>8386</a>        );
+<a href=#8387 id=8387 data-nosnippet>8387</a>        <span class="macro">assert_eq!</span>(result.decline(), <span class="prelude-val">None</span>);
+<a href=#8388 id=8388 data-nosnippet>8388</a>        <span class="macro">assert_eq!</span>(
+<a href=#8389 id=8389 data-nosnippet>8389</a>            result.method().map(|method| method.name()),
+<a href=#8390 id=8390 data-nosnippet>8390</a>            <span class="prelude-val">Some</span>(<span class="string">"characteristics"</span>)
+<a href=#8391 id=8391 data-nosnippet>8391</a>        );
+<a href=#8392 id=8392 data-nosnippet>8392</a>        <span class="macro">assert_eq!</span>(result.verification().unwrap().verdict().name(), <span class="string">"verified"</span>);
+<a href=#8393 id=8393 data-nosnippet>8393</a>
+<a href=#8394 id=8394 data-nosnippet>8394</a>        <span class="kw">let </span>text = problem.to_string().unwrap();
+<a href=#8395 id=8395 data-nosnippet>8395</a>        <span class="macro">assert!</span>(
+<a href=#8396 id=8396 data-nosnippet>8396</a>            text.starts_with(<span class="string">"partial differential equation for u(x, y) in x, y:"</span>),
+<a href=#8397 id=8397 data-nosnippet>8397</a>            <span class="string">"{text}"
+<a href=#8398 id=8398 data-nosnippet>8398</a>        </span>);
+<a href=#8399 id=8399 data-nosnippet>8399</a>        <span class="macro">assert!</span>(problem.to_latex().unwrap().ends_with(<span class="string">"= 0"</span>));
+<a href=#8400 id=8400 data-nosnippet>8400</a>        <span class="kw">let </span>serialized = problem.serialize_object().unwrap();
+<a href=#8401 id=8401 data-nosnippet>8401</a>        <span class="macro">assert!</span>(serialized.starts_with(<span class="string">"partial_differential_equation("</span>));
+<a href=#8402 id=8402 data-nosnippet>8402</a>        <span class="kw">match </span>session.parse_serialized_object(<span class="kw-2">&amp;</span>serialized).unwrap() {
+<a href=#8403 id=8403 data-nosnippet>8403</a>            MathematicalObject::PartialDifferentialEquation(rebuilt) =&gt; {
+<a href=#8404 id=8404 data-nosnippet>8404</a>                <span class="macro">assert_eq!</span>(
+<a href=#8405 id=8405 data-nosnippet>8405</a>                    rebuilt.independent_variables().unwrap(),
+<a href=#8406 id=8406 data-nosnippet>8406</a>                    <span class="macro">vec!</span>[<span class="string">"x"</span>.to_owned(), <span class="string">"y"</span>.to_owned()]
+<a href=#8407 id=8407 data-nosnippet>8407</a>                );
+<a href=#8408 id=8408 data-nosnippet>8408</a>                <span class="macro">assert_eq!</span>(rebuilt.dependent_function().unwrap(), <span class="string">"u"</span>);
+<a href=#8409 id=8409 data-nosnippet>8409</a>            }
+<a href=#8410 id=8410 data-nosnippet>8410</a>            <span class="kw">_ </span>=&gt; <span class="macro">panic!</span>(<span class="string">"expected a PDE object, found a different mathematical object kind"</span>),
+<a href=#8411 id=8411 data-nosnippet>8411</a>        }
+<a href=#8412 id=8412 data-nosnippet>8412</a>    }
+<a href=#8413 id=8413 data-nosnippet>8413</a>}
 </code></pre></div></section></main></body></html>

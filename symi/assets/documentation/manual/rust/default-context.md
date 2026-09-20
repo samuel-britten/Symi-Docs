@@ -44,7 +44,7 @@ Rules of the model:
 
 ### default_context
 
-<a id="entry-presentation_rust_default_context_capability_rust_native_rust_api_defaults_session_default_context_unnamed"></a>
+<a id="entry-presentation_rust_api_session_default_context"></a>
 <a id="placement-placement.rust.native_rust.api_defaults_session_default_context.4e314f7b17d9"></a>
 <p class="symi-entry-owner">api::defaults::Session method</p>
 
@@ -60,7 +60,7 @@ API. Each call returns a new handle to the same underlying context.
 
 ### clear_assumptions
 
-<a id="entry-presentation_rust_default_context_capability_rust_native_rust_api_session_clear_assumptions_unnamed"></a>
+<a id="entry-presentation_rust_api_session_clear_assumptions"></a>
 <a id="placement-placement.rust.native_rust.api_session_clear_assumptions.168b842c0916"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -82,7 +82,7 @@ a re-declaration you actually intend.
 
 ### assumptions_of
 
-<a id="entry-presentation_rust_default_context_capability_assumptions_of_unnamed"></a>
+<a id="entry-presentation_rust_api_session_assumptions_of"></a>
 <a id="placement-placement.rust.native_rust.api_session_assumptions_of.a6207cbce499"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -104,7 +104,7 @@ is one of `complex`, `real`, `rational`, `integer`, `natural`, or
 
 ### interner_length
 
-<a id="entry-presentation_rust_default_context_capability_rust_native_rust_api_session_interner_length_unnamed"></a>
+<a id="entry-presentation_rust_api_session_interner_length"></a>
 <a id="placement-placement.rust.native_rust.api_session_interner_length.f3167904a63e"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -132,4 +132,31 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+
+## Additional API
+
+### api::defaults
+
+<a id="entry-presentation_rust_native_module_api_defaults"></a>
+<a id="placement-placement.rust.native_rust.api_defaults.e20fc1a31890"></a>
+<p class="symi-entry-owner">api module</p>
+
+```rust signature
+pub mod defaults;
+```
+
+The shared default session and the module-level spellings that back it.
+
+### api::prelude
+
+<a id="entry-presentation_rust_native_module_api_prelude"></a>
+<a id="placement-placement.rust.native_rust.api_prelude.d7b47ad34767"></a>
+<p class="symi-entry-owner">api module</p>
+
+```rust signature
+pub mod prelude;
+```
+
+Advanced native module for `prelude` functionality.
 

@@ -42,7 +42,7 @@ passing a value in an array does not unexpectedly free the caller's value.
 
 ### execution_mode
 
-<a id="entry-presentation_python_context_safety_capability_contexts_execution_mode_api_session_execution_mode"></a>
+<a id="entry-presentation_python_api_session_execution_mode"></a>
 <a id="placement-placement.python.python_module.module_execution_mode.bc3844c8b07c"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -105,7 +105,7 @@ can oversubscribe the device.
 
 ### simplify_bulk
 
-<a id="entry-presentation_python_context_safety_capability_contexts_simplify_bulk_api_session_simplify_bulk"></a>
+<a id="entry-presentation_python_api_session_simplify_bulk"></a>
 <a id="placement-placement.python.python_module.module_simplify_bulk.07f45cc975b7"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -133,3 +133,233 @@ work begins. Results retain input order and use one captured operation
 configuration. A reset during the call rejects publication rather than
 returning a partially completed collection. An item-level decline or
 diagnostic does not reorder or cancel unrelated items.
+
+### generation
+
+*Not exposed by the Python bindings. Available as [`api::AssumptionScope::generation`](/symi/rust/context-safety#generation) in Rust.*
+
+
+The generation objects currently produced by this context belong to. Resetting
+a context advances its generation, which is what makes every object made before
+the reset stale. The same accessor exists on the objects themselves, reporting
+the generation the object was created in; comparing the two is exactly what
+`is_stale` does.
+
+### session
+
+*Not exposed by the Python bindings. Available as [`api::AssumptionScope::session`](/symi/rust/context-safety#session) in Rust.*
+
+
+The context that owns this object. Every mathematical object belongs to one
+context for its whole life, and this accessor is how a host adapter carries the
+owner alongside the object. Objects from two different contexts cannot be
+combined; doing so is a context-mismatch error.
+
+## Additional API
+
+### differentiate_bulk
+
+<a id="entry-presentation_python_api_session_differentiate_bulk"></a>
+<a id="placement-placement.python.python_module.module_differentiate_bulk.362ccffbf089"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+differentiate_bulk(
+    targets: PythonExpressionCollectionInput,
+    variable: PythonExpressionInput,
+) -> Any
+```
+
+Differentiate an ordered collection in the thread's default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_differentiate_bulk.2900b36d44c8"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.differentiate_bulk</code></p>
+
+```python signature
+differentiate_bulk(
+    targets: PythonExpressionCollectionInput,
+    variable: PythonExpressionInput,
+) -> Any
+```
+
+</details>
+
+### evaluate_numeric_bulk
+
+<a id="entry-presentation_python_api_session_evaluate_numeric_bulk"></a>
+<a id="placement-placement.python.python_module.module_evaluate_numeric_bulk.80f5ed832fcb"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+evaluate_numeric_bulk(targets: PythonExpressionCollectionInput) -> Any
+```
+
+Evaluate an ordered collection numerically in the thread's default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_evaluate_numeric_bulk.98a931a15f6a"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.evaluate_numeric_bulk</code></p>
+
+```python signature
+evaluate_numeric_bulk(targets: PythonExpressionCollectionInput) -> Any
+```
+
+</details>
+
+### expand_bulk
+
+<a id="entry-presentation_python_api_session_expand_bulk"></a>
+<a id="placement-placement.python.python_module.module_expand_bulk.dfeb447b0fd8"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+expand_bulk(targets: PythonExpressionCollectionInput) -> Any
+```
+
+Expand an ordered collection in the thread's default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_expand_bulk.0e3995efc016"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.expand_bulk</code></p>
+
+```python signature
+expand_bulk(targets: PythonExpressionCollectionInput) -> Any
+```
+
+</details>
+
+### initialize_parallelism
+
+<a id="entry-presentation_python_api_session_initialize_parallelism"></a>
+<a id="placement-placement.python.python_module.module_initialize_parallelism.4ce7fbe05c03"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+initialize_parallelism(worker_count: int) -> str
+```
+
+Initialize the process-wide parallel backend from the thread's default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_initialize_parallelism.b18527ef97b9"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.initialize_parallelism</code></p>
+
+```python signature
+initialize_parallelism(worker_count: int) -> str
+```
+
+</details>
+
+### parallelism_capability
+
+<a id="entry-presentation_python_api_session_parallelism_capability"></a>
+<a id="placement-placement.python.python_module.module_parallelism_capability.462cfa180ab0"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+parallelism_capability() -> Any
+```
+
+Return capability facts for the thread's default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_parallelism_capability.cbcbdf5e5bf5"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.parallelism_capability</code></p>
+
+```python signature
+parallelism_capability() -> Any
+```
+
+</details>
+
+### serialize_bulk
+
+<a id="entry-presentation_python_api_session_serialize_bulk"></a>
+<a id="placement-placement.python.python_module.module_serialize_bulk.afaf64d0cab2"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+serialize_bulk(targets: PythonExpressionCollectionInput) -> Any
+```
+
+Serialize an ordered collection in the thread's default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_serialize_bulk.6f42f6f244f3"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.serialize_bulk</code></p>
+
+```python signature
+serialize_bulk(targets: PythonExpressionCollectionInput) -> Any
+```
+
+</details>
+
+### set_execution_mode
+
+<a id="entry-presentation_python_api_session_set_execution_mode"></a>
+<a id="placement-placement.python.python_module.module_set_execution_mode.972044f1676d"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+set_execution_mode(name: str) -> None
+```
+
+Select the execution mode used by the thread's default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_set_execution_mode.597c8bd411fc"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.set_execution_mode</code></p>
+
+```python signature
+set_execution_mode(name: str) -> None
+```
+
+</details>
+
+### substitute_bulk
+
+<a id="entry-presentation_python_api_session_substitute_bulk"></a>
+<a id="placement-placement.python.python_module.module_substitute_bulk.865d6094216b"></a>
+<p class="symi-entry-owner">Default context</p>
+
+```python signature
+substitute_bulk(
+    targets: PythonExpressionCollectionInput,
+    variable: PythonExpressionInput,
+    value: PythonExpressionInput,
+) -> Any
+```
+
+Substitute one symbol and value throughout an ordered collection in the thread's default context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.python.python_class.context_substitute_bulk.7da95161fa74"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.substitute_bulk</code></p>
+
+```python signature
+substitute_bulk(
+    targets: PythonExpressionCollectionInput,
+    variable: PythonExpressionInput,
+    value: PythonExpressionInput,
+) -> Any
+```
+
+</details>
+

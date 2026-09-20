@@ -51,6 +51,14 @@
       "excerpt": ""
     },
     {
+      "title": "Additional API",
+      "page_identifier": "default-context",
+      "page_title": "The default context and module-level functions",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
       "title": "Object model",
       "page_identifier": "object-model",
       "page_title": "Object model",
@@ -179,6 +187,14 @@
       "excerpt": "A context owns its symbols, assumptions, interned expressions, and structural objects. Rust calls this owner a Session. Every returned expression, matrix,…"
     },
     {
+      "title": "Additional API",
+      "page_identifier": "context-safety",
+      "page_title": "Context safety",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
       "title": "Diagnostics and outcomes",
       "page_identifier": "diagnostics",
       "page_title": "Diagnostics and outcomes",
@@ -191,6 +207,14 @@
       "page_identifier": "diagnostics",
       "page_title": "Diagnostics and outcomes",
       "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "diagnostics",
+      "page_title": "Diagnostics and outcomes",
+      "anchor": "additional_api",
       "depth": 2,
       "excerpt": ""
     },
@@ -323,6 +347,14 @@
       "excerpt": ""
     },
     {
+      "title": "Additional API",
+      "page_identifier": "deferred-forms",
+      "page_title": "Deferred forms",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
       "title": "Evaluation and constants",
       "page_identifier": "evaluation-and-constants",
       "page_title": "Evaluation and constants",
@@ -343,6 +375,14 @@
       "page_identifier": "evaluation-and-constants",
       "page_title": "Evaluation and constants",
       "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Additional API",
+      "page_identifier": "evaluation-and-constants",
+      "page_title": "Evaluation and constants",
+      "anchor": "additional_api",
       "depth": 2,
       "excerpt": ""
     },
@@ -539,6 +579,14 @@
       "excerpt": ""
     },
     {
+      "title": "Additional API",
+      "page_identifier": "expressions",
+      "page_title": "Expression methods",
+      "anchor": "additional_api",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
       "title": "General simplification",
       "page_identifier": "simplification-general",
       "page_title": "General simplification",
@@ -551,14 +599,6 @@
       "page_identifier": "simplification-general",
       "page_title": "General simplification",
       "anchor": "example",
-      "depth": 2,
-      "excerpt": ""
-    },
-    {
-      "title": "Additional API",
-      "page_identifier": "simplification-general",
-      "page_title": "General simplification",
-      "anchor": "additional_api",
       "depth": 2,
       "excerpt": ""
     },
@@ -587,14 +627,6 @@
       "excerpt": ""
     },
     {
-      "title": "Additional API",
-      "page_identifier": "algebraic-transforms",
-      "page_title": "Algebraic transforms",
-      "anchor": "additional_api",
-      "depth": 2,
-      "excerpt": ""
-    },
-    {
       "title": "Trigonometric and complex rewrites",
       "page_identifier": "trigonometric-complex-rewrites",
       "page_title": "Trigonometric and complex rewrites",
@@ -607,14 +639,6 @@
       "page_identifier": "trigonometric-complex-rewrites",
       "page_title": "Trigonometric and complex rewrites",
       "anchor": "example",
-      "depth": 2,
-      "excerpt": ""
-    },
-    {
-      "title": "Additional API",
-      "page_identifier": "trigonometric-complex-rewrites",
-      "page_title": "Trigonometric and complex rewrites",
-      "anchor": "additional_api",
       "depth": 2,
       "excerpt": ""
     },
@@ -672,21 +696,13 @@
       "page_title": "Series and residues",
       "anchor": "",
       "depth": 1,
-      "excerpt": "Not exposed by the WASM / JavaScript bindings. Available as AssumptionScope.taylor_series in Python, UniffiAssumptionScope.taylorSeries in Kotlin,…"
+      "excerpt": "Truncated Taylor expansion about expansion_point, keeping terms of degree strictly less than order (the remainder is O((x-a)^{\\operatorname{order}}). Returns…"
     },
     {
       "title": "Example",
       "page_identifier": "series",
       "page_title": "Series and residues",
       "anchor": "example",
-      "depth": 2,
-      "excerpt": ""
-    },
-    {
-      "title": "Additional API",
-      "page_identifier": "series",
-      "page_title": "Series and residues",
-      "anchor": "additional_api",
       "depth": 2,
       "excerpt": ""
     },
@@ -739,26 +755,306 @@
       "excerpt": ""
     },
     {
+      "title": "Undefined functions",
+      "page_identifier": "undefined-functions",
+      "page_title": "Undefined functions",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "An undefined function is a named unknown: a function symbol with no definition, such as the y of an ordinary differential equation. It is not an expression.…"
+    },
+    {
+      "title": "Constructing a named unknown",
+      "page_identifier": "undefined-functions",
+      "page_title": "Undefined functions",
+      "anchor": "constructing_a_named_unknown",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Calling the function",
+      "page_identifier": "undefined-functions",
+      "page_title": "Undefined functions",
+      "anchor": "calling_the_function",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Structural derivatives",
+      "page_identifier": "undefined-functions",
+      "page_title": "Undefined functions",
+      "anchor": "structural_derivatives",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Object identity and lifetime",
+      "page_identifier": "undefined-functions",
+      "page_title": "Undefined functions",
+      "anchor": "object_identity_and_lifetime",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Text output",
+      "page_identifier": "undefined-functions",
+      "page_title": "Undefined functions",
+      "anchor": "text_output",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Example",
+      "page_identifier": "undefined-functions",
+      "page_title": "Undefined functions",
+      "anchor": "example",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
       "title": "Differential and recurrence equations",
       "page_identifier": "differential-equations",
       "page_title": "Differential and recurrence equations",
       "anchor": "",
       "depth": 1,
-      "excerpt": "The unknown function is written with undefined_function, and its derivatives with the derivative method on it:"
+      "excerpt": "An equation for an unknown function is solved differently depending on how many variables that function has, and whether its argument is continuous or an…"
     },
     {
-      "title": "Partial differential equation requests and point symmetries",
+      "title": "Compatibility entries and request entries",
       "page_identifier": "differential-equations",
       "page_title": "Differential and recurrence equations",
-      "anchor": "partial_differential_equation_requests_and_point_symmetries",
+      "anchor": "compatibility_entries_and_request_entries",
       "depth": 2,
       "excerpt": ""
     },
     {
-      "title": "Additional API",
+      "title": "Solution scope",
       "page_identifier": "differential-equations",
       "page_title": "Differential and recurrence equations",
-      "anchor": "additional_api",
+      "anchor": "solution_scope",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Ordinary differential equations",
+      "page_identifier": "ordinary-differential-equations",
+      "page_title": "Ordinary differential equations",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "An ordinary differential equation relates an unknown function of one variable to its derivatives. Write the unknown with undefined_function and its…"
+    },
+    {
+      "title": "Solving a scalar equation",
+      "page_identifier": "ordinary-differential-equations",
+      "page_title": "Ordinary differential equations",
+      "anchor": "solving_a_scalar_equation",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Solving a system",
+      "page_identifier": "ordinary-differential-equations",
+      "page_title": "Ordinary differential equations",
+      "anchor": "solving_a_system",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Verifying a supplied solution",
+      "page_identifier": "ordinary-differential-equations",
+      "page_title": "Ordinary differential equations",
+      "anchor": "verifying_a_supplied_solution",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Results",
+      "page_identifier": "ordinary-differential-equations",
+      "page_title": "Ordinary differential equations",
+      "anchor": "results",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Request vocabulary",
+      "page_identifier": "ordinary-differential-equations",
+      "page_title": "Ordinary differential equations",
+      "anchor": "request_vocabulary",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Outcome vocabulary",
+      "page_identifier": "ordinary-differential-equations",
+      "page_title": "Ordinary differential equations",
+      "anchor": "outcome_vocabulary",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Declines",
+      "page_identifier": "ordinary-differential-equations",
+      "page_title": "Ordinary differential equations",
+      "anchor": "declines",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Related",
+      "page_identifier": "ordinary-differential-equations",
+      "page_title": "Ordinary differential equations",
+      "anchor": "related",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Partial differential equations",
+      "page_identifier": "partial-differential-equations",
+      "page_title": "Partial differential equations",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "A partial differential equation relates an unknown function of several variables to its partial derivatives. Everything on this page starts from a…"
+    },
+    {
+      "title": "Constructing a problem",
+      "page_identifier": "partial-differential-equations",
+      "page_title": "Partial differential equations",
+      "anchor": "constructing_a_problem",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Classifying",
+      "page_identifier": "partial-differential-equations",
+      "page_title": "Partial differential equations",
+      "anchor": "classifying",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Changing coordinates",
+      "page_identifier": "partial-differential-equations",
+      "page_title": "Partial differential equations",
+      "anchor": "changing_coordinates",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Solving",
+      "page_identifier": "partial-differential-equations",
+      "page_title": "Partial differential equations",
+      "anchor": "solving",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Point symmetries",
+      "page_identifier": "partial-differential-equations",
+      "page_title": "Partial differential equations",
+      "anchor": "point_symmetries",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Candidate solutions and verification",
+      "page_identifier": "partial-differential-equations",
+      "page_title": "Partial differential equations",
+      "anchor": "candidate_solutions_and_verification",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Related",
+      "page_identifier": "partial-differential-equations",
+      "page_title": "Partial differential equations",
+      "anchor": "related",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Partial differential equation results",
+      "page_identifier": "partial-differential-equation-results",
+      "page_title": "Partial differential equation results",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "Every entry on Partial differential equations returns a record rather than a bare expression, and the records are documented here, grouped by the stage of the…"
+    },
+    {
+      "title": "Problem structure",
+      "page_identifier": "partial-differential-equation-results",
+      "page_title": "Partial differential equation results",
+      "anchor": "problem_structure",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Classification and the principal part",
+      "page_identifier": "partial-differential-equation-results",
+      "page_title": "Partial differential equation results",
+      "anchor": "classification_and_the_principal_part",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Coordinate transformations",
+      "page_identifier": "partial-differential-equation-results",
+      "page_title": "Partial differential equation results",
+      "anchor": "coordinate_transformations",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Point symmetries",
+      "page_identifier": "partial-differential-equation-results",
+      "page_title": "Partial differential equation results",
+      "anchor": "point_symmetries",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Solving",
+      "page_identifier": "partial-differential-equation-results",
+      "page_title": "Partial differential equation results",
+      "anchor": "solving",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Verification",
+      "page_identifier": "partial-differential-equation-results",
+      "page_title": "Partial differential equation results",
+      "anchor": "verification",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Related",
+      "page_identifier": "partial-differential-equation-results",
+      "page_title": "Partial differential equation results",
+      "anchor": "related",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Recurrence equations",
+      "page_identifier": "recurrence-equations",
+      "page_title": "Recurrence equations",
+      "anchor": "",
+      "depth": 1,
+      "excerpt": "A recurrence equation relates an unknown sequence to its own shifted values. It is the discrete analogue of an ordinary differential equation, and it is…"
+    },
+    {
+      "title": "Solving",
+      "page_identifier": "recurrence-equations",
+      "page_title": "Recurrence equations",
+      "anchor": "solving",
+      "depth": 2,
+      "excerpt": ""
+    },
+    {
+      "title": "Related",
+      "page_identifier": "recurrence-equations",
+      "page_title": "Recurrence equations",
+      "anchor": "related",
       "depth": 2,
       "excerpt": ""
     },
@@ -1275,14 +1571,6 @@
       "excerpt": ""
     },
     {
-      "title": "Additional API",
-      "page_identifier": "vector-calculus",
-      "page_title": "Vector calculus",
-      "anchor": "additional_api",
-      "depth": 2,
-      "excerpt": ""
-    },
-    {
       "title": "Structured results",
       "page_identifier": "structured-results",
       "page_title": "Structured results",
@@ -1376,7 +1664,7 @@
       "page_title": "Zero equivalence",
       "anchor": "",
       "depth": 1,
-      "excerpt": "Not exposed by the WASM / JavaScript bindings. Available as Context.zero_equivalent in Python, UniffiExpression.zeroEquivalent in Kotlin,…"
+      "excerpt": "Proves whether an expression is zero at every point where the input expression is defined within the declared region. &quot;true&quot; is an exact theorem…"
     },
     {
       "title": "Complete placement index",
@@ -1392,7 +1680,7 @@
       "page_title": "Category index",
       "anchor": "",
       "depth": 1,
-      "excerpt": ""
+      "excerpt": "One link per documented entry, grouped by the subject it belongs to."
     },
     {
       "title": "Alphabetical index",
@@ -1400,7 +1688,7 @@
       "page_title": "Alphabetical index",
       "anchor": "",
       "depth": 1,
-      "excerpt": ""
+      "excerpt": "One link per documented entry, in name order. An entry owned by an object is spelled with its owner."
     },
     {
       "title": "Owner index",
@@ -1408,7 +1696,7 @@
       "page_title": "Owner index",
       "anchor": "",
       "depth": 1,
-      "excerpt": ""
+      "excerpt": "Entries grouped by the object that receives them. An operation appears under every receiver of its calling forms, so an expression lookup finds an operation…"
     },
     {
       "title": "Result-type index",
@@ -1416,7 +1704,7 @@
       "page_title": "Result-type index",
       "anchor": "",
       "depth": 1,
-      "excerpt": ""
+      "excerpt": "Entries grouped by the shape they return. A host that returns a tuple where another returns a record keeps its own shape here."
     }
   ]
 }

@@ -8,7 +8,7 @@ presentation passes are on
 
 ### simplify
 
-<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_simplify_api_session_simplify"></a>
+<a id="entry-presentation_swift_api_session_simplify"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_simplify.809faad16187"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -16,21 +16,24 @@ presentation passes are on
 func simplify(target: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_simplify_api_expression_simplify"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_simplify.981c0cc8505d"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.simplify</code></p>
 
 ```swift signature
 func simplify() -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify"></a>
 <a id="placement-placement.swift.swift_object.uniffiassumptionscope_simplify.7723216756b6"></a>
-<p class="symi-entry-owner">UniffiAssumptionScope method</p>
+<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.simplify</code></p>
 
 ```swift signature
 func simplify(target: UniffiExpression) -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -84,7 +87,7 @@ guards:
 
 ### cancel
 
-<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_cancel_api_session_cancel"></a>
+<a id="entry-presentation_swift_api_session_cancel"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_cancel.1ced49e0fc6d"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -92,13 +95,17 @@ guards:
 func cancel(target: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_cancel_api_expression_cancel"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_cancel.602b185ecf1a"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.cancel</code></p>
 
 ```swift signature
 func cancel() -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -107,7 +114,7 @@ polynomial GCD of numerator and denominator.
 
 ### together
 
-<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_together_api_session_together"></a>
+<a id="entry-presentation_swift_api_session_together"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_together.2e844db94287"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -115,13 +122,17 @@ polynomial GCD of numerator and denominator.
 func together(target: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_simplification_general_capability_expression_transformations_together_api_expression_together"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_together.3d006fc5c43a"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.together</code></p>
 
 ```swift signature
 func together() -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -131,3 +142,34 @@ they are distinct user intents.
 
 ## Example
 
+
+### simplify_under_constraint
+
+<a id="entry-presentation_swift_api_session_simplify_under_constraint"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_simplifyunderconstraint.96f7054738cf"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func simplifyUnderConstraint(
+    target: UniffiExpression,
+    constraint: UniffiExpression,
+) -> UniffiExpression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_simplifyunderconstraint.a6c17f95a494"></a>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.simplifyUnderConstraint</code></p>
+
+```swift signature
+func simplifyUnderConstraint(constraint: UniffiExpression) -> UniffiExpression
+```
+
+</details>
+
+
+Simplify under a local bounded logical constraint without changing symbol
+assumptions. The constraint is in force for this call alone; nothing about it
+survives into the context, so simplifying `sqrt(x**2)` under `x > 0` does not
+make `x` positive for any later operation.

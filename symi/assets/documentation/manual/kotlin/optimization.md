@@ -24,7 +24,7 @@ object whose getters expose the same data.
 
 ### unconstrained_critical_points
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_unconstrained_critical_points_api_solving_session_unconstrained_critical_points"></a>
+<a id="entry-presentation_kotlin_api_session_unconstrained_critical_points"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_unconstrainedcriticalpoints.b49b043c33ef"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -43,7 +43,7 @@ minors). A quadratic objective yields a complete outcome; a degenerate Hessian
 
 ### classify_unconstrained
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_classify_unconstrained_api_solving_session_classify_unconstrained"></a>
+<a id="entry-presentation_kotlin_api_session_classify_unconstrained"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_classifyunconstrained.a01fdcd7019c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -62,7 +62,7 @@ Classify one given interior point — supplied as the parallel `point_variables`
 
 ### lagrange_critical_points
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_lagrange_critical_points_api_solving_session_lagrange_critical_points"></a>
+<a id="entry-presentation_kotlin_api_session_lagrange_critical_points"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_lagrangecriticalpoints.7c544d7aa511"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -81,7 +81,7 @@ Hessian. The solved multiplier values appear in each point's multipliers.
 
 ### karush_kuhn_tucker_points
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_karush_kuhn_tucker_points_api_solving_session_karush_kuhn_tucker_points"></a>
+<a id="entry-presentation_kotlin_api_session_karush_kuhn_tucker_points"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_karushkuhntuckerpoints.641c92417d65"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -107,8 +107,9 @@ On WASM the outcome and its points are objects with the following getters; on
 Python the same data is returned as plain dicts.
 
 ### points
+The list of `CriticalPoint` objects in an `OptimizationOutcome` (WASM).
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_points_api_results_optimizationoutcome_points"></a>
+<a id="entry-presentation_kotlin_api_optimizationoutcome_points"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffioptimizationoutcome_points.57dc8bc59d44"></a>
 <p class="symi-entry-owner">UniffiOptimizationOutcome method</p>
 
@@ -116,15 +117,26 @@ Python the same data is returned as plain dicts.
 fun points(): List<UniffiCriticalPoint>
 ```
 
-The list of `CriticalPoint` objects in an `OptimizationOutcome` (WASM).
+The list of `critical_point` objects in an `optimization_outcome` (WASM).
 
 ### classification
+
+<a id="entry-presentation_kotlin_api_criticalpoint_classification"></a>
+<a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_classification.7bb1f98d3fd5"></a>
+<p class="symi-entry-owner">UniffiCriticalPoint method</p>
+
+```kotlin signature
+fun classification(): UniffiExtremumClassification
+```
+
 The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`,
 `"saddle_point"`, or `"inconclusive"`.
 
 ### multiplier_variables
+The names of the introduced Lagrange / KKT multipliers at a constrained critical
+point (empty for the unconstrained case).
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_multiplier_variables_api_results_criticalpoint_multiplier_variables"></a>
+<a id="entry-presentation_kotlin_api_criticalpoint_multiplier_variables"></a>
 <a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_multipliervariables.c934a89ea779"></a>
 <p class="symi-entry-owner">UniffiCriticalPoint method</p>
 
@@ -132,12 +144,12 @@ The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`,
 fun multiplierVariables(): List<kotlin.String>
 ```
 
-The names of the introduced Lagrange / KKT multipliers at a constrained critical
-point (empty for the unconstrained case).
+The names of the introduced Lagrange / KKT multipliers at a constrained critical point (empty for the unconstrained case).
 
 ### multiplier_values
+The solved values of those multipliers, in the same order as `multiplier_variables`.
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_multiplier_values_api_results_criticalpoint_multiplier_values"></a>
+<a id="entry-presentation_kotlin_api_criticalpoint_multiplier_values"></a>
 <a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_multipliervalues.d144bd76db7c"></a>
 <p class="symi-entry-owner">UniffiCriticalPoint method</p>
 
@@ -151,7 +163,7 @@ The solved values of those multipliers, in the same order as `multiplier_variabl
 
 ### global_optimum_on_semialgebraic
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_global_optimum_on_semialgebraic_api_solving_session_global_optimum_on_semialgebraic"></a>
+<a id="entry-presentation_kotlin_api_session_global_optimum_on_semialgebraic"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_globaloptimumonsemialgebraic.23df1d9e9cbc"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -183,27 +195,55 @@ exact rationals (an irrational-algebraic optimum declines).
 
 ## Additional API
 
-### classification
+### CriticalPoint
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_classification_api_results_criticalpoint_classification"></a>
-<a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_classification.7bb1f98d3fd5"></a>
+#### CriticalPoint.values
+
+<a id="entry-presentation_kotlin_api_criticalpoint_values"></a>
+<a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_values.3dbc6f02bd77"></a>
 <p class="symi-entry-owner">UniffiCriticalPoint method</p>
 
 ```kotlin signature
-fun classification(): UniffiExtremumClassification
+fun values(): List<UniffiExpression>
 ```
 
-The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`, `"saddle_point"`, or `"inconclusive"`.
+Getter on `system_assignment`: the assigned value expressions, aligned with `variables`.
 
-### classification
+#### CriticalPoint.variables
 
-<a id="entry-presentation_kotlin_optimization_capability_equations_classification_api_partial_differential_equations_partialdifferentialequationsolveresult_classification"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationsolveresult_classification.f5f0975af84a"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationSolveResult method</p>
+<a id="entry-presentation_kotlin_api_criticalpoint_variables"></a>
+<a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_variables.533ae8b1b140"></a>
+<p class="symi-entry-owner">UniffiCriticalPoint method</p>
 
 ```kotlin signature
-fun classification(): UniffiPartialDifferentialEquationClassification?
+fun variables(): List<kotlin.String>
 ```
 
-The exact classification the dispatcher established, when it reached one.
+Getter on `system_assignment`: the unknown names, in order.
+
+### OptimizationOutcome
+
+#### OptimizationOutcome.complete
+
+<a id="entry-presentation_kotlin_api_optimizationoutcome_complete"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffioptimizationoutcome_complete.e62e6866c7ec"></a>
+<p class="symi-entry-owner">UniffiOptimizationOutcome method</p>
+
+```kotlin signature
+fun complete(): kotlin.Boolean
+```
+
+Getter on `polynomial_system_solution`: whether the solver certified it found every solution.
+
+#### OptimizationOutcome.verdict
+
+<a id="entry-presentation_kotlin_api_optimizationoutcome_verdict"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffioptimizationoutcome_verdict.9c78434af28a"></a>
+<p class="symi-entry-owner">UniffiOptimizationOutcome method</p>
+
+```kotlin signature
+fun verdict(): UniffiOptimizationVerdict
+```
+
+The optimization result classification.
 

@@ -24,7 +24,7 @@ object whose getters expose the same data.
 
 ### unconstrained_critical_points
 
-<a id="entry-presentation_python_optimization_capability_equations_unconstrained_critical_points_api_solving_session_unconstrained_critical_points"></a>
+<a id="entry-presentation_python_api_session_unconstrained_critical_points"></a>
 <a id="placement-placement.python.python_module.module_unconstrained_critical_points.031d7a3baf3c"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -58,7 +58,7 @@ minors). A quadratic objective yields a complete outcome; a degenerate Hessian
 
 ### classify_unconstrained
 
-<a id="entry-presentation_python_optimization_capability_equations_classify_unconstrained_api_solving_session_classify_unconstrained"></a>
+<a id="entry-presentation_python_api_session_classify_unconstrained"></a>
 <a id="placement-placement.python.python_module.module_classify_unconstrained.d8b4216e7503"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -94,7 +94,7 @@ Classify one given interior point — supplied as the parallel `point_variables`
 
 ### lagrange_critical_points
 
-<a id="entry-presentation_python_optimization_capability_equations_lagrange_critical_points_api_solving_session_lagrange_critical_points"></a>
+<a id="entry-presentation_python_api_session_lagrange_critical_points"></a>
 <a id="placement-placement.python.python_module.module_lagrange_critical_points.f93e590e2972"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -129,7 +129,7 @@ Hessian. The solved multiplier values appear in each point's multipliers.
 
 ### karush_kuhn_tucker_points
 
-<a id="entry-presentation_python_optimization_capability_equations_karush_kuhn_tucker_points_api_solving_session_karush_kuhn_tucker_points"></a>
+<a id="entry-presentation_python_api_session_karush_kuhn_tucker_points"></a>
 <a id="placement-placement.python.python_module.module_karush_kuhn_tucker_points.71459e1b55c5"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -178,6 +178,9 @@ Python the same data is returned as plain dicts.
 The list of `CriticalPoint` objects in an `OptimizationOutcome` (WASM).
 
 ### classification
+
+*Not exposed by the Python bindings. Available as [`UniffiCriticalPoint.classification`](/symi/kotlin/optimization#classification) in Kotlin, [`UniffiCriticalPoint.classification`](/symi/swift/optimization#classification) in Swift, [`api::results::CriticalPoint::classification`](/symi/rust/optimization#classification) in Rust.*
+
 The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`,
 `"saddle_point"`, or `"inconclusive"`.
 
@@ -198,7 +201,7 @@ The solved values of those multipliers, in the same order as `multiplier_variabl
 
 ### global_optimum_on_semialgebraic
 
-<a id="entry-presentation_python_optimization_capability_equations_global_optimum_on_semialgebraic_api_solving_session_global_optimum_on_semialgebraic"></a>
+<a id="entry-presentation_python_api_session_global_optimum_on_semialgebraic"></a>
 <a id="placement-placement.python.python_module.module_global_optimum_on_semialgebraic.0c8e65687986"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -256,19 +259,4 @@ objective = x**2 + y**2
 print(symi.unconstrained_critical_points(objective, ["x", "y"]))
 print(symi.lagrange_critical_points(objective, [x + y - 1], ["x", "y"]))
 ```
-
-
-## Additional API
-
-### classification
-
-<a id="entry-presentation_python_optimization_capability_equations_classification_api_partial_differential_equations_partialdifferentialequationsolveresult_classification"></a>
-<a id="placement-placement.python.python_class.partialdifferentialequationsolveresult_classification.0c853e3e8c67"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationSolveResult property</p>
-
-```python signature
-classification: Optional[PartialDifferentialEquationClassification]
-```
-
-The exact classification the dispatcher established, when it reached one.
 

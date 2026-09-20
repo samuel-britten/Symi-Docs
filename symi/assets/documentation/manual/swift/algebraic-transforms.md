@@ -8,7 +8,7 @@ the search-based ladder see
 
 ### expand
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_expand_api_session_expand"></a>
+<a id="entry-presentation_swift_api_session_expand"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_expand.2e4777fb7b27"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -16,13 +16,17 @@ the search-based ladder see
 func expand(target: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_expand_api_expression_expand"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_expand.f186951724c4"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.expand</code></p>
 
 ```swift signature
 func expand() -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -30,7 +34,7 @@ Expand products, integer powers, and supported algebraic forms.
 
 ### partial_fractions
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions"></a>
+<a id="entry-presentation_swift_api_session_partial_fractions"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_partialfractions.a7050c197af0"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -41,13 +45,17 @@ func partialFractions(
 ) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_partial_fractions_api_expression_operations_expression_partial_fractions"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_partialfractions.ef670b01ea84"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.partialFractions</code></p>
 
 ```swift signature
 func partialFractions(variable: String) -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -61,7 +69,7 @@ For factorization, cancellation, collection, and radical operations, use
 
 ### factor
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_factor_api_session_factor"></a>
+<a id="entry-presentation_swift_api_session_factor"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_factor.92c9acc8f887"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -69,13 +77,17 @@ For factorization, cancellation, collection, and radical operations, use
 func factor(target: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_factor_api_expression_factor"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_factor.d040ed6cbf42"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.factor</code></p>
 
 ```swift signature
 func factor() -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -85,7 +97,7 @@ Polynomial factorization over the rationals (full multivariate). With
 
 ### collect
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_collect_api_algebra_session_collect"></a>
+<a id="entry-presentation_swift_api_session_collect"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_collect.41ea0e93f668"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -96,13 +108,17 @@ func collect(
 ) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_collect_api_expression_operations_expression_collect"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_collect.436e7c6f877f"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.collect</code></p>
 
 ```swift signature
 func collect(generator: UniffiExpression) -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -116,7 +132,7 @@ generator that appears with only a single power, returns the input unchanged.
 
 ### complete_the_square
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square"></a>
+<a id="entry-presentation_swift_api_session_complete_the_square"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_completethesquare.f649ec0ef170"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -127,13 +143,17 @@ func completeTheSquare(
 ) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_complete_the_square_api_expression_operations_expression_complete_the_square"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_completethesquare.a76877cb15a3"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.completeTheSquare</code></p>
 
 ```swift signature
 func completeTheSquare(variable: UniffiExpression) -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -161,7 +181,7 @@ unrestricted `a` and completes when `a` is assumed positive.
 
 ### factor_common_terms
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_algebra_session_factor_common_terms"></a>
+<a id="entry-presentation_swift_api_session_factor_common_terms"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_factorcommonterms.c6dfda75a394"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -169,13 +189,17 @@ unrestricted `a` and completes when `a` is assumed positive.
 func factorCommonTerms(inputExpression: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_expression_operations_expression_factor_common_terms"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_factorcommonterms.193b5e9165e5"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.factorCommonTerms</code></p>
 
 ```swift signature
 func factorCommonTerms() -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -196,7 +220,7 @@ further — that is `factor`'s job.
 
 ### rationalize_denominator
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_algebra_session_rationalize_denominator"></a>
+<a id="entry-presentation_swift_api_session_rationalize_denominator"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_rationalizedenominator.6701348299e5"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -204,13 +228,17 @@ further — that is `factor`'s job.
 func rationalizeDenominator(inputExpression: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_expression_operations_expression_rationalize_denominator"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_rationalizedenominator.4bc227a3475e"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rationalizeDenominator</code></p>
 
 ```swift signature
 func rationalizeDenominator() -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -223,7 +251,7 @@ bounded supported radical class or the exact remultiplication check fails.
 
 ### collect_radicals
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_collect_radicals_api_algebra_session_collect_radicals"></a>
+<a id="entry-presentation_swift_api_session_collect_radicals"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_collectradicals.65e775e096f6"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -231,13 +259,17 @@ bounded supported radical class or the exact remultiplication check fails.
 func collectRadicals(inputExpression: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_collect_radicals_api_expression_operations_expression_collect_radicals"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_collectradicals.8a12c9e64189"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.collectRadicals</code></p>
 
 ```swift signature
 func collectRadicals() -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -247,7 +279,7 @@ distinct kernels are considered; inputs beyond that bound return unchanged.
 
 ### denest_radicals
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_denest_radicals_api_algebra_session_denest_radicals"></a>
+<a id="entry-presentation_swift_api_session_denest_radicals"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_denestradicals.9508d93c545f"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -255,13 +287,17 @@ distinct kernels are considered; inputs beyond that bound return unchanged.
 func denestRadicals(inputExpression: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_algebraic_transforms_capability_expression_transformations_denest_radicals_api_expression_operations_expression_denest_radicals"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_denestradicals.ef465d8224e8"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.denestRadicals</code></p>
 
 ```swift signature
 func denestRadicals() -> UniffiExpression
 ```
+
+</details>
 
 
 

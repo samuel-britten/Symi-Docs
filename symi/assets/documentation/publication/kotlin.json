@@ -86,29 +86,311 @@
   "default_page": "introduction",
   "label": "Kotlin",
   "language": "kotlin",
+  "legacy_alias_pages": [
+    {
+      "alias_count": 18,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "algebraic-transforms",
+      "path": "legacy/kotlin/algebraic-transforms.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "api-reference",
+      "path": "legacy/kotlin/api-reference.json"
+    },
+    {
+      "alias_count": 52,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "assumptions",
+      "path": "legacy/kotlin/assumptions.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "cad",
+      "path": "legacy/kotlin/cad.json"
+    },
+    {
+      "alias_count": 45,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "calculus",
+      "path": "legacy/kotlin/calculus.json"
+    },
+    {
+      "alias_count": 9,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "combinatorics",
+      "path": "legacy/kotlin/combinatorics.json"
+    },
+    {
+      "alias_count": 15,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "construction-and-parsing",
+      "path": "legacy/kotlin/construction-and-parsing.json"
+    },
+    {
+      "alias_count": 8,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "construction",
+      "path": "legacy/kotlin/construction.json"
+    },
+    {
+      "alias_count": 3,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "default-context",
+      "path": "legacy/kotlin/default-context.json"
+    },
+    {
+      "alias_count": 4,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "deferred-forms",
+      "path": "legacy/kotlin/deferred-forms.json"
+    },
+    {
+      "alias_count": 42,
+      "disambiguation_count": 2,
+      "language": "kotlin",
+      "page_identifier": "differential-equations",
+      "path": "legacy/kotlin/differential-equations.json"
+    },
+    {
+      "alias_count": 42,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "elementary-functions",
+      "path": "legacy/kotlin/elementary-functions.json"
+    },
+    {
+      "alias_count": 5,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "evaluation-and-constants",
+      "path": "legacy/kotlin/evaluation-and-constants.json"
+    },
+    {
+      "alias_count": 79,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "expressions",
+      "path": "legacy/kotlin/expressions.json"
+    },
+    {
+      "alias_count": 33,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "geometry",
+      "path": "legacy/kotlin/geometry.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "integral-transforms",
+      "path": "legacy/kotlin/integral-transforms.json"
+    },
+    {
+      "alias_count": 27,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "linear-algebra",
+      "path": "legacy/kotlin/linear-algebra.json"
+    },
+    {
+      "alias_count": 4,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "logic",
+      "path": "legacy/kotlin/logic.json"
+    },
+    {
+      "alias_count": 12,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "logical-transforms",
+      "path": "legacy/kotlin/logical-transforms.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "matrices",
+      "path": "legacy/kotlin/matrices.json"
+    },
+    {
+      "alias_count": 23,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "matrix-canonical-forms",
+      "path": "legacy/kotlin/matrix-canonical-forms.json"
+    },
+    {
+      "alias_count": 9,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "matrix-construction",
+      "path": "legacy/kotlin/matrix-construction.json"
+    },
+    {
+      "alias_count": 14,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "matrix-functions",
+      "path": "legacy/kotlin/matrix-functions.json"
+    },
+    {
+      "alias_count": 28,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "number-theory",
+      "path": "legacy/kotlin/number-theory.json"
+    },
+    {
+      "alias_count": 282,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "object-model",
+      "path": "legacy/kotlin/object-model.json"
+    },
+    {
+      "alias_count": 11,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "optimization",
+      "path": "legacy/kotlin/optimization.json"
+    },
+    {
+      "alias_count": 144,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "polynomials",
+      "path": "legacy/kotlin/polynomials.json"
+    },
+    {
+      "alias_count": 7,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "relations",
+      "path": "legacy/kotlin/relations.json"
+    },
+    {
+      "alias_count": 25,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "serialization-and-output",
+      "path": "legacy/kotlin/serialization-and-output.json"
+    },
+    {
+      "alias_count": 11,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "series",
+      "path": "legacy/kotlin/series.json"
+    },
+    {
+      "alias_count": 14,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "sets",
+      "path": "legacy/kotlin/sets.json"
+    },
+    {
+      "alias_count": 7,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "simplification-general",
+      "path": "legacy/kotlin/simplification-general.json"
+    },
+    {
+      "alias_count": 1,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "simplification",
+      "path": "legacy/kotlin/simplification.json"
+    },
+    {
+      "alias_count": 47,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "solving",
+      "path": "legacy/kotlin/solving.json"
+    },
+    {
+      "alias_count": 41,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "special-functions",
+      "path": "legacy/kotlin/special-functions.json"
+    },
+    {
+      "alias_count": 6,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "specialized-canonical-forms",
+      "path": "legacy/kotlin/specialized-canonical-forms.json"
+    },
+    {
+      "alias_count": 12,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "statistics",
+      "path": "legacy/kotlin/statistics.json"
+    },
+    {
+      "alias_count": 28,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "trigonometric-complex-rewrites",
+      "path": "legacy/kotlin/trigonometric-complex-rewrites.json"
+    },
+    {
+      "alias_count": 10,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "vector-calculus",
+      "path": "legacy/kotlin/vector-calculus.json"
+    },
+    {
+      "alias_count": 2,
+      "disambiguation_count": 0,
+      "language": "kotlin",
+      "page_identifier": "zero-equivalence",
+      "path": "legacy/kotlin/zero-equivalence.json"
+    }
+  ],
   "navigation_artifacts": [
     {
-      "entry_count": 850,
+      "entry_count": 769,
       "language": "python",
       "path": "navigation/python.json"
     },
     {
-      "entry_count": 1026,
+      "entry_count": 812,
       "language": "wasm",
       "path": "navigation/wasm.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "kotlin",
       "path": "navigation/kotlin.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "swift",
       "path": "navigation/swift.json"
     },
     {
-      "entry_count": 7717,
+      "entry_count": 7476,
       "language": "rust",
       "path": "navigation/rust.json"
     }
@@ -776,6 +1058,66 @@
     },
     {
       "canonical_urls": {
+        "kotlin": "/symi/kotlin/ordinary-differential-equations",
+        "python": "/symi/python/ordinary-differential-equations",
+        "rust": "/symi/rust/ordinary-differential-equations",
+        "swift": "/symi/swift/ordinary-differential-equations",
+        "wasm": "/symi/wasm/ordinary-differential-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/ordinary-differential-equations.md",
+        "python": "manual/python/ordinary-differential-equations.md",
+        "rust": "manual/rust/ordinary-differential-equations.md",
+        "swift": "manual/swift/ordinary-differential-equations.md",
+        "wasm": "manual/wasm/ordinary-differential-equations.md"
+      },
+      "page_identifier": "ordinary-differential-equations",
+      "path": "ordinary-differential-equations.md",
+      "title": "Ordinary differential equations"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/partial-differential-equation-results",
+        "python": "/symi/python/partial-differential-equation-results",
+        "rust": "/symi/rust/partial-differential-equation-results",
+        "swift": "/symi/swift/partial-differential-equation-results",
+        "wasm": "/symi/wasm/partial-differential-equation-results"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/partial-differential-equation-results.md",
+        "python": "manual/python/partial-differential-equation-results.md",
+        "rust": "manual/rust/partial-differential-equation-results.md",
+        "swift": "manual/swift/partial-differential-equation-results.md",
+        "wasm": "manual/wasm/partial-differential-equation-results.md"
+      },
+      "page_identifier": "partial-differential-equation-results",
+      "path": "partial-differential-equation-results.md",
+      "title": "Partial differential equation results"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/partial-differential-equations",
+        "python": "/symi/python/partial-differential-equations",
+        "rust": "/symi/rust/partial-differential-equations",
+        "swift": "/symi/swift/partial-differential-equations",
+        "wasm": "/symi/wasm/partial-differential-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/partial-differential-equations.md",
+        "python": "manual/python/partial-differential-equations.md",
+        "rust": "manual/rust/partial-differential-equations.md",
+        "swift": "manual/swift/partial-differential-equations.md",
+        "wasm": "manual/wasm/partial-differential-equations.md"
+      },
+      "page_identifier": "partial-differential-equations",
+      "path": "partial-differential-equations.md",
+      "title": "Partial differential equations"
+    },
+    {
+      "canonical_urls": {
         "kotlin": "/symi/kotlin/polynomials",
         "python": "/symi/python/polynomials",
         "rust": "/symi/rust/polynomials",
@@ -793,6 +1135,26 @@
       "page_identifier": "polynomials",
       "path": "polynomials.md",
       "title": "Polynomial queries"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/recurrence-equations",
+        "python": "/symi/python/recurrence-equations",
+        "rust": "/symi/rust/recurrence-equations",
+        "swift": "/symi/swift/recurrence-equations",
+        "wasm": "/symi/wasm/recurrence-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/recurrence-equations.md",
+        "python": "manual/python/recurrence-equations.md",
+        "rust": "manual/rust/recurrence-equations.md",
+        "swift": "manual/swift/recurrence-equations.md",
+        "wasm": "manual/wasm/recurrence-equations.md"
+      },
+      "page_identifier": "recurrence-equations",
+      "path": "recurrence-equations.md",
+      "title": "Recurrence equations"
     },
     {
       "canonical_urls": {
@@ -1013,6 +1375,26 @@
       "page_identifier": "trigonometric-complex-rewrites",
       "path": "trigonometric-complex-rewrites.md",
       "title": "Trigonometric and complex rewrites"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/undefined-functions",
+        "python": "/symi/python/undefined-functions",
+        "rust": "/symi/rust/undefined-functions",
+        "swift": "/symi/swift/undefined-functions",
+        "wasm": "/symi/wasm/undefined-functions"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/undefined-functions.md",
+        "python": "manual/python/undefined-functions.md",
+        "rust": "manual/rust/undefined-functions.md",
+        "swift": "manual/swift/undefined-functions.md",
+        "wasm": "manual/wasm/undefined-functions.md"
+      },
+      "page_identifier": "undefined-functions",
+      "path": "undefined-functions.md",
+      "title": "Undefined functions"
     },
     {
       "canonical_urls": {
@@ -2016,27 +2398,27 @@
   ],
   "presentation_artifacts": [
     {
-      "entry_count": 850,
+      "entry_count": 769,
       "language": "python",
       "path": "presentation/python.json"
     },
     {
-      "entry_count": 1026,
+      "entry_count": 812,
       "language": "wasm",
       "path": "presentation/wasm.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "kotlin",
       "path": "presentation/kotlin.json"
     },
     {
-      "entry_count": 837,
+      "entry_count": 730,
       "language": "swift",
       "path": "presentation/swift.json"
     },
     {
-      "entry_count": 7717,
+      "entry_count": 7476,
       "language": "rust",
       "path": "presentation/rust.json"
     }

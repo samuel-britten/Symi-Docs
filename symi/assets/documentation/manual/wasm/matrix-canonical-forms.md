@@ -14,7 +14,13 @@ listed in [structured results](structured-results.md) and the generated
 
 ### rational_canonical_form
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.rational_canonical_form`](/symi/python/matrix-canonical-forms#rational_canonical_form) in Python, [`UniffiMatrix.rationalCanonicalForm`](/symi/kotlin/matrix-canonical-forms#rational_canonical_form) in Kotlin, [`UniffiMatrix.rationalCanonicalForm`](/symi/swift/matrix-canonical-forms#rational_canonical_form) in Swift, [`api::matrix_operations::Matrix::rational_canonical_form`](/symi/rust/matrix-canonical-forms#rational_canonical_form) in Rust.*
+<a id="entry-presentation_wasm_api_matrix_rational_canonical_form"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_rationalcanonicalform.4965226d4f23"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Matrix method</p>
+
+```typescript signature
+rationalCanonicalForm(variable: string): RationalCanonicalForm
+```
 
 
 Returns the certified Frobenius canonical form over the rationals. Its invariant factors are
@@ -23,7 +29,7 @@ monic and ordered by divisibility, and `similarity` satisfies
 
 ### rational_canonical_form (result class)
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.rational_canonical_form`](/symi/python/matrix-canonical-forms#rational_canonical_form) in Python, [`UniffiMatrix.rationalCanonicalForm`](/symi/kotlin/matrix-canonical-forms#rational_canonical_form) in Kotlin, [`UniffiMatrix.rationalCanonicalForm`](/symi/swift/matrix-canonical-forms#rational_canonical_form) in Swift, [`api::matrix_operations::Matrix::rational_canonical_form`](/symi/rust/matrix-canonical-forms#rational_canonical_form) in Rust.*
+*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.rational_canonical_form`](/symi/python/matrix-canonical-forms#rational_canonical_form_result_class) in Python, [`UniffiMatrix.rationalCanonicalForm`](/symi/kotlin/matrix-canonical-forms#rational_canonical_form_result_class) in Kotlin, [`UniffiMatrix.rationalCanonicalForm`](/symi/swift/matrix-canonical-forms#rational_canonical_form_result_class) in Swift, [`api::matrix_operations::Matrix::rational_canonical_form`](/symi/rust/matrix-canonical-forms#rational_canonical_form_result_class) in Rust.*
 
 
 ### canonical_form
@@ -41,7 +47,13 @@ corresponding certified fields documented by their shared headings above.
 
 ### hermite_normal_form
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.hermite_normal_form`](/symi/python/matrix-canonical-forms#hermite_normal_form) in Python, [`UniffiMatrix.hermiteNormalForm`](/symi/kotlin/matrix-canonical-forms#hermite_normal_form) in Kotlin, [`UniffiMatrix.hermiteNormalForm`](/symi/swift/matrix-canonical-forms#hermite_normal_form) in Swift, [`api::matrix_operations::Matrix::hermite_normal_form`](/symi/rust/matrix-canonical-forms#hermite_normal_form) in Rust.*
+<a id="entry-presentation_wasm_api_matrix_hermite_normal_form"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_hermitenormalform.5ca2e19e0780"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Matrix method</p>
+
+```typescript signature
+hermiteNormalForm(): HermiteNormalFormDecomposition
+```
 
 
 Returns the canonical row-oriented Hermite normal form `H`, a unimodular
@@ -53,7 +65,13 @@ getters documented below.
 
 ### column_hermite_normal_form
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.column_hermite_normal_form`](/symi/python/matrix-canonical-forms#column_hermite_normal_form) in Python, [`UniffiMatrix.columnHermiteNormalForm`](/symi/kotlin/matrix-canonical-forms#column_hermite_normal_form) in Kotlin, [`UniffiMatrix.columnHermiteNormalForm`](/symi/swift/matrix-canonical-forms#column_hermite_normal_form) in Swift, [`api::matrix_operations::Matrix::column_hermite_normal_form`](/symi/rust/matrix-canonical-forms#column_hermite_normal_form) in Rust.*
+<a id="entry-presentation_wasm_api_matrix_column_hermite_normal_form"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_columnhermitenormalform.d56e378a6a37"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Matrix method</p>
+
+```typescript signature
+columnHermiteNormalForm(): HermiteNormalFormDecomposition
+```
 
 
 The transpose-dual column form, returning `H`, a unimodular `V` satisfying
@@ -62,7 +80,13 @@ The transpose-dual column form, returning `H`, a unimodular `V` satisfying
 
 ### smith_normal_form
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.smith_normal_form`](/symi/python/matrix-canonical-forms#smith_normal_form) in Python, [`UniffiMatrix.smithNormalForm`](/symi/kotlin/matrix-canonical-forms#smith_normal_form) in Kotlin, [`UniffiMatrix.smithNormalForm`](/symi/swift/matrix-canonical-forms#smith_normal_form) in Swift, [`api::matrix_operations::Matrix::smith_normal_form`](/symi/rust/matrix-canonical-forms#smith_normal_form) in Rust.*
+<a id="entry-presentation_wasm_api_matrix_smith_normal_form"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_smithnormalform.6d537d6b9035"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Matrix method</p>
+
+```typescript signature
+smithNormalForm(): SmithNormalFormDecomposition
+```
 
 
 Returns the canonical integer Smith normal form `D`, unimodular transformations
@@ -74,7 +98,13 @@ unimodularity of both transformations before return. **Notes:** WASM returns a
 
 ### integer_cokernel_structure
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.integer_cokernel_structure`](/symi/python/matrix-canonical-forms#integer_cokernel_structure) in Python, [`UniffiMatrix.integerCokernelStructure`](/symi/kotlin/matrix-canonical-forms#integer_cokernel_structure) in Kotlin, [`UniffiMatrix.integerCokernelStructure`](/symi/swift/matrix-canonical-forms#integer_cokernel_structure) in Swift, [`api::matrix_operations::Matrix::integer_cokernel_structure`](/symi/rust/matrix-canonical-forms#integer_cokernel_structure) in Rust.*
+<a id="entry-presentation_wasm_api_matrix_integer_cokernel_structure"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_integercokernelstructure.6531796e2d45"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Matrix method</p>
+
+```typescript signature
+integerCokernelStructure(): IntegerCokernelData
+```
 
 
 Returns the free rank and nontrivial torsion invariant factors of
@@ -82,14 +112,15 @@ Returns the free rank and nontrivial torsion invariant factors of
 
 ### smith
 
-<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_smith_api_results_smithnormalformdecomposition_smith"></a>
+<a id="entry-presentation_wasm_api_smithnormalformdecomposition_smith"></a>
 <a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_smith.a82ae363b1ec"></a>
-<p class="symi-entry-owner">SmithNormalFormDecomposition property</p>
+<p class="symi-entry-owner">Raw WebAssembly: SmithNormalFormDecomposition property</p>
 
 ```typescript signature
 readonly smith: Matrix
 ```
 
+The Smith normal form `S`.
 
 ### row_transformation
 
@@ -105,17 +136,17 @@ readonly smith: Matrix
 
 ### free_rank
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`UniffiIntegerCokernelData.freeRank`](/symi/kotlin/matrix-canonical-forms#free_rank) in Kotlin, [`UniffiIntegerCokernelData.freeRank`](/symi/swift/matrix-canonical-forms#free_rank) in Swift, [`api::results::IntegerCokernelData::free_rank`](/symi/rust/matrix-canonical-forms#free_rank) in Rust.*
-
-
 ### torsion_invariant_factors
-
-*Not exposed by the WASM / JavaScript bindings. Available as [`UniffiIntegerCokernelData.torsionInvariantFactors`](/symi/kotlin/matrix-canonical-forms#torsion_invariant_factors) in Kotlin, [`UniffiIntegerCokernelData.torsionInvariantFactors`](/symi/swift/matrix-canonical-forms#torsion_invariant_factors) in Swift, [`api::results::IntegerCokernelData::torsion_invariant_factors`](/symi/rust/matrix-canonical-forms#torsion_invariant_factors) in Rust.*
-
 
 ### integer_kernel_basis
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.integer_kernel_basis`](/symi/python/matrix-canonical-forms#integer_kernel_basis) in Python, [`UniffiMatrix.integerKernelBasis`](/symi/kotlin/matrix-canonical-forms#integer_kernel_basis) in Kotlin, [`UniffiMatrix.integerKernelBasis`](/symi/swift/matrix-canonical-forms#integer_kernel_basis) in Swift, [`api::matrix_operations::Matrix::integer_kernel_basis`](/symi/rust/matrix-canonical-forms#integer_kernel_basis) in Rust.*
+<a id="entry-presentation_wasm_api_matrix_integer_kernel_basis"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_integerkernelbasis.01cee525f219"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Matrix method</p>
+
+```typescript signature
+integerKernelBasis(): Matrix[]
+```
 
 
 A canonical basis of the integer kernel \(\{x \in \mathbb{Z}^n : M x = 0\}\), returned as
@@ -123,7 +154,13 @@ column matrices.
 
 ### integer_row_lattice_basis
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.integer_row_lattice_basis`](/symi/python/matrix-canonical-forms#integer_row_lattice_basis) in Python, [`UniffiMatrix.integerRowLatticeBasis`](/symi/kotlin/matrix-canonical-forms#integer_row_lattice_basis) in Kotlin, [`UniffiMatrix.integerRowLatticeBasis`](/symi/swift/matrix-canonical-forms#integer_row_lattice_basis) in Swift, [`api::matrix_operations::Matrix::integer_row_lattice_basis`](/symi/rust/matrix-canonical-forms#integer_row_lattice_basis) in Rust.*
+<a id="entry-presentation_wasm_api_matrix_integer_row_lattice_basis"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_integerrowlatticebasis.81f8585c2e8d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Matrix method</p>
+
+```typescript signature
+integerRowLatticeBasis(): Matrix[]
+```
 
 
 The nonzero rows of the row Hermite form, returned as row matrices; these form
@@ -131,7 +168,13 @@ the canonical basis of the integer row lattice.
 
 ### integer_image_lattice_basis
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Matrix.integer_image_lattice_basis`](/symi/python/matrix-canonical-forms#integer_image_lattice_basis) in Python, [`UniffiMatrix.integerImageLatticeBasis`](/symi/kotlin/matrix-canonical-forms#integer_image_lattice_basis) in Kotlin, [`UniffiMatrix.integerImageLatticeBasis`](/symi/swift/matrix-canonical-forms#integer_image_lattice_basis) in Swift, [`api::matrix_operations::Matrix::integer_image_lattice_basis`](/symi/rust/matrix-canonical-forms#integer_image_lattice_basis) in Rust.*
+<a id="entry-presentation_wasm_api_matrix_integer_image_lattice_basis"></a>
+<a id="placement-placement.wasm.wasm_class.matrix_integerimagelatticebasis.5e205115c515"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Matrix method</p>
+
+```typescript signature
+integerImageLatticeBasis(): Matrix[]
+```
 
 
 The nonzero columns of the column Hermite form, returned as column matrices;
@@ -139,16 +182,26 @@ these form the canonical basis of `M Z^n`.
 
 ### hermite
 
-<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_hermite_api_results_hermitenormalformdecomposition_hermite"></a>
+<a id="entry-presentation_wasm_api_hermitenormalformdecomposition_hermite"></a>
 <a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_hermite.f2a2b5ea8b10"></a>
-<p class="symi-entry-owner">HermiteNormalFormDecomposition property</p>
+<p class="symi-entry-owner">Raw WebAssembly: HermiteNormalFormDecomposition property</p>
 
 ```typescript signature
 readonly hermite: Matrix
 ```
 
+The Hermite normal form `H`.
 
 ### transformation
+
+<a id="entry-presentation_wasm_api_hermitenormalformdecomposition_transformation"></a>
+<a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_transformation.d7078a78935f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: HermiteNormalFormDecomposition property</p>
+
+```typescript signature
+readonly transformation: Matrix
+```
+
 
 ### pivot_columns
 
@@ -165,63 +218,141 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
-### columnHermiteNormalForm
+### HermiteNormalFormDecomposition
 
-<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_column_hermite_normal_form_api_matrix_operations_matrix_column_hermite_normal_form"></a>
-<a id="placement-placement.wasm.wasm_class.matrix_columnhermitenormalform.d56e378a6a37"></a>
-<p class="symi-entry-owner">Matrix method</p>
+#### HermiteNormalFormDecomposition.pivotColumns
 
-```typescript signature
-columnHermiteNormalForm(): HermiteNormalFormDecomposition
-```
-
-The transpose-dual column form, returning `H`, a unimodular `V` satisfying \(M V = H\), the rank, and pivot metadata. Notes: WASM returns a `hermite_normal_form_decomposition` object.
-
-### hermiteNormalForm
-
-<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_hermite_normal_form_api_matrix_operations_matrix_hermite_normal_form"></a>
-<a id="placement-placement.wasm.wasm_class.matrix_hermitenormalform.5ca2e19e0780"></a>
-<p class="symi-entry-owner">Matrix method</p>
+<a id="entry-presentation_wasm_api_hermitenormalformdecomposition_pivot_columns"></a>
+<a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_pivotcolumns.310dd3184c24"></a>
+<p class="symi-entry-owner">Raw WebAssembly: HermiteNormalFormDecomposition property</p>
 
 ```typescript signature
-hermiteNormalForm(): HermiteNormalFormDecomposition
+readonly pivotColumns: Uint32Array
 ```
 
-Returns the canonical row-oriented Hermite normal form `H`, a unimodular transformation `U` satisfying \(U M = H\), the rank, and the strictly increasing pivot-column indices. Entries must be exact integers. Every result is verified for Hermite shape, the certificate identity, and unimodularity before return. Notes: WASM returns a `hermite_normal_form_decomposition` object carrying the same four results as getters.
+The `rank` getter reuses the matrix `rank` heading above.
 
-### smithNormalForm
+#### HermiteNormalFormDecomposition.rank
 
-<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_smith_normal_form_api_matrix_operations_matrix_smith_normal_form"></a>
-<a id="placement-placement.wasm.wasm_class.matrix_smithnormalform.6d537d6b9035"></a>
-<p class="symi-entry-owner">Matrix method</p>
+<a id="entry-presentation_wasm_api_hermitenormalformdecomposition_rank"></a>
+<a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_rank.93db89cc480a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: HermiteNormalFormDecomposition property</p>
 
 ```typescript signature
-smithNormalForm(): SmithNormalFormDecomposition
+readonly rank: number
 ```
 
-Returns the canonical integer Smith normal form `D`, unimodular transformations `U` and `V` satisfying \(U M V = D\), the rank, and the invariant factors including trailing zeros. The nonnegative positive prefix is divisibility-ordered. Every result is verified for diagonal shape, divisibility, the exact certificate, and unimodularity of both transformations before return. Notes: WASM returns a `smith_normal_form_decomposition` object carrying the same results as getters.
+Rank via Bareiss fraction-free elimination.
 
-### transformation
+### RationalCanonicalForm
 
-<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_transformation_api_results_hermitenormalformdecomposition_transformation"></a>
-<a id="placement-placement.wasm.wasm_class.hermitenormalformdecomposition_transformation.d7078a78935f"></a>
-<p class="symi-entry-owner">HermiteNormalFormDecomposition property</p>
+#### RationalCanonicalForm.canonicalForm
+
+<a id="entry-presentation_wasm_api_rationalcanonicalform_canonical_form"></a>
+<a id="placement-placement.wasm.wasm_class.rationalcanonicalform_canonicalform.fa5f7876399d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: RationalCanonicalForm property</p>
 
 ```typescript signature
-readonly transformation: Matrix
+readonly canonicalForm: Matrix
 ```
 
-The unimodular transformation `U` satisfying `U * matrix == H`.
+The Frobenius canonical form of the decomposed matrix.
 
-### transformation
+#### RationalCanonicalForm.characteristicPolynomial
 
-<a id="entry-presentation_wasm_matrix_canonical_forms_capability_algebra_transformation_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_transformation"></a>
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationcanonicalizationresult_transformation.4b578977217f"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationCanonicalizationResult property</p>
+<a id="entry-presentation_wasm_api_rationalcanonicalform_characteristic_polynomial"></a>
+<a id="placement-placement.wasm.wasm_class.rationalcanonicalform_characteristicpolynomial.62eae1d83074"></a>
+<p class="symi-entry-owner">Raw WebAssembly: RationalCanonicalForm property</p>
 
 ```typescript signature
-readonly transformation: PartialDifferentialEquationTransformationResult | undefined
+readonly characteristicPolynomial: Expression
 ```
 
-The verified coordinate transformation of a successful canonicalization.
+\(\det(\lambda I - M)\) as a polynomial in the named variable.
+
+#### RationalCanonicalForm.invariantFactors
+
+<a id="entry-presentation_wasm_api_rationalcanonicalform_invariant_factors"></a>
+<a id="placement-placement.wasm.wasm_class.rationalcanonicalform_invariantfactors.ab13f6a73bd5"></a>
+<p class="symi-entry-owner">Raw WebAssembly: RationalCanonicalForm property</p>
+
+```typescript signature
+readonly invariantFactors: Expression[]
+```
+
+The certified invariant factors, monic and ordered by divisibility.
+
+#### RationalCanonicalForm.minimalPolynomial
+
+<a id="entry-presentation_wasm_api_rationalcanonicalform_minimal_polynomial"></a>
+<a id="placement-placement.wasm.wasm_class.rationalcanonicalform_minimalpolynomial.78ee02aaf497"></a>
+<p class="symi-entry-owner">Raw WebAssembly: RationalCanonicalForm property</p>
+
+```typescript signature
+readonly minimalPolynomial: Expression
+```
+
+The monic minimal polynomial over the rationals. The matrix must have rational entries.
+
+#### RationalCanonicalForm.similarity
+
+<a id="entry-presentation_wasm_api_rationalcanonicalform_similarity"></a>
+<a id="placement-placement.wasm.wasm_class.rationalcanonicalform_similarity.d2577308ef20"></a>
+<p class="symi-entry-owner">Raw WebAssembly: RationalCanonicalForm property</p>
+
+```typescript signature
+readonly similarity: Matrix
+```
+
+The certified change of basis `S`, satisfying `matrix * S == S * canonical_form`.
+
+### SmithNormalFormDecomposition
+
+#### SmithNormalFormDecomposition.columnTransformation
+
+<a id="entry-presentation_wasm_api_smithnormalformdecomposition_column_transformation"></a>
+<a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_columntransformation.9b91a0b807db"></a>
+<p class="symi-entry-owner">Raw WebAssembly: SmithNormalFormDecomposition property</p>
+
+```typescript signature
+readonly columnTransformation: Matrix
+```
+
+The unimodular column transformation `V` satisfying `U * matrix * V == S`.
+
+#### SmithNormalFormDecomposition.invariantFactors
+
+<a id="entry-presentation_wasm_api_smithnormalformdecomposition_invariant_factors"></a>
+<a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_invariantfactors.429da175d3de"></a>
+<p class="symi-entry-owner">Raw WebAssembly: SmithNormalFormDecomposition property</p>
+
+```typescript signature
+readonly invariantFactors: Expression[]
+```
+
+The certified invariant factors, monic and ordered by divisibility.
+
+#### SmithNormalFormDecomposition.rank
+
+<a id="entry-presentation_wasm_api_smithnormalformdecomposition_rank"></a>
+<a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_rank.25c1ef898b6b"></a>
+<p class="symi-entry-owner">Raw WebAssembly: SmithNormalFormDecomposition property</p>
+
+```typescript signature
+readonly rank: number
+```
+
+Rank via Bareiss fraction-free elimination.
+
+#### SmithNormalFormDecomposition.rowTransformation
+
+<a id="entry-presentation_wasm_api_smithnormalformdecomposition_row_transformation"></a>
+<a id="placement-placement.wasm.wasm_class.smithnormalformdecomposition_rowtransformation.29118694c1ef"></a>
+<p class="symi-entry-owner">Raw WebAssembly: SmithNormalFormDecomposition property</p>
+
+```typescript signature
+readonly rowTransformation: Matrix
+```
+
+The unimodular row transformation `U` satisfying `U * matrix * V == S`.
 

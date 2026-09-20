@@ -7,9 +7,9 @@ expressions page.
 
 ### interval
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_interval_api_sets_session_interval"></a>
+<a id="entry-presentation_wasm_api_session_interval"></a>
 <a id="placement-placement.wasm.wasm_module.module_interval.9788b55cf0be"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 interval(
@@ -24,7 +24,7 @@ interval(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_interval.abdb397ea405"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.interval</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.interval</code></p>
 
 ```typescript signature
 interval(
@@ -123,7 +123,25 @@ The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{co
 
 ### is_member
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.is_member`](/symi/python/sets#is_member) in Python, [`UniffiSession.isMember`](/symi/kotlin/sets#is_member) in Kotlin, [`UniffiSession.isMember`](/symi/swift/sets#is_member) in Swift, [`api::expression_operations::Expression::is_member`](/symi/rust/sets#is_member) in Rust.*
+<a id="entry-presentation_wasm_api_session_is_member"></a>
+<a id="placement-placement.wasm.wasm_module.module_ismember.1e1e670a4cc3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+isMember(element: Expression, set: Expression): boolean | undefined
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_ismember.c95641df7e1f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.isMember</code></p>
+
+```typescript signature
+isMember(element: Expression, set: Expression): boolean | undefined
+```
+
+</details>
 
 
 Three-valued membership: `True` only on structural proof, `False` only on a
@@ -168,11 +186,49 @@ console.log(symi.emptySet.toString());
 
 ## Additional API
 
+### complexPlane
+
+<a id="entry-presentation_wasm_api_session_complex_plane"></a>
+<a id="placement-placement.wasm.wasm_module.module_complexplane.a46c1c83bcc0"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+complexPlane(): Expression
+```
+
+The set \(\mathbb{C}\) — the ambient universe, and the domain a variable ranges over when it carries no realness assumption.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_complexplane.336fcef1c7a5"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.complexPlane</code></p>
+
+```typescript signature
+readonly complexPlane: Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_complexplane.586e5589826d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.complexPlane</code></p>
+
+```typescript signature
+complexPlane(): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_complexplane.64775d0049e5"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.complexPlane</code></p>
+
+```typescript signature
+readonly complexPlane: Expression
+```
+
+</details>
+
 ### conditionSet
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_condition_set_api_sets_session_condition_set"></a>
+<a id="entry-presentation_wasm_api_session_condition_set"></a>
 <a id="placement-placement.wasm.wasm_module.module_conditionset.ea293f0d117b"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 conditionSet(
@@ -188,7 +244,7 @@ The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{co
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_conditionset.ca3ed9f0ad48"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.conditionSet</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.conditionSet</code></p>
 
 ```typescript signature
 conditionSet(
@@ -202,9 +258,9 @@ conditionSet(
 
 ### emptySet
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_empty_set_api_session_empty_set"></a>
+<a id="entry-presentation_wasm_api_session_empty_set"></a>
 <a id="placement-placement.wasm.wasm_module.module_emptyset.bc3dac94e421"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 emptySet(): Expression
@@ -223,7 +279,7 @@ readonly emptySet: Expression
 ```
 
 <a id="placement-placement.wasm.wasm_class.context_emptyset.a28d7059ab50"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.emptySet</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.emptySet</code></p>
 
 ```typescript signature
 emptySet(): Expression
@@ -240,9 +296,9 @@ readonly emptySet: Expression
 
 ### enumerateSetInInterval
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_enumerate_set_in_interval_api_sets_session_enumerate_set_in_interval"></a>
+<a id="entry-presentation_wasm_api_session_enumerate_set_in_interval"></a>
 <a id="placement-placement.wasm.wasm_module.module_enumeratesetininterval.389b8414264e"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 enumerateSetInInterval(
@@ -261,7 +317,7 @@ Exact elements of a set inside \([\operatorname{lower}, \operatorname{upper}]\),
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_enumeratesetininterval.b6c6fc34da8d"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.enumerateSetInInterval</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.enumerateSetInInterval</code></p>
 
 ```typescript signature
 enumerateSetInInterval(
@@ -278,9 +334,9 @@ enumerateSetInInterval(
 
 ### finiteSet
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_finite_set_api_session_finite_set"></a>
+<a id="entry-presentation_wasm_api_session_finite_set"></a>
 <a id="placement-placement.wasm.wasm_module.module_finiteset.149f36c22cd9"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 finiteSet(elements: Expression[]): Expression
@@ -299,7 +355,7 @@ finiteSet(values: Iterable<ExpressionLike>): Expression
 ```
 
 <a id="placement-placement.wasm.wasm_class.context_finiteset.3a45883a0e93"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.finiteSet</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.finiteSet</code></p>
 
 ```typescript signature
 finiteSet(elements: Expression[]): Expression
@@ -316,9 +372,9 @@ finiteSet(values: Iterable<ExpressionLike>): Expression
 
 ### imageSet
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_image_set_api_sets_session_image_set"></a>
+<a id="entry-presentation_wasm_api_session_image_set"></a>
 <a id="placement-placement.wasm.wasm_module.module_imageset.d648714b36fe"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 imageSet(
@@ -334,7 +390,7 @@ The set \(\{\operatorname{lambda\_expression} : \operatorname{variable} \in \ope
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_imageset.5630fa218da7"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.imageSet</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.imageSet</code></p>
 
 ```typescript signature
 imageSet(
@@ -348,9 +404,9 @@ imageSet(
 
 ### integerSet
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_integer_set_api_session_integer_set"></a>
+<a id="entry-presentation_wasm_api_session_integer_set"></a>
 <a id="placement-placement.wasm.wasm_module.module_integerset.5179601c652e"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 integerSet(): Expression
@@ -369,7 +425,7 @@ readonly integerSet: Expression
 ```
 
 <a id="placement-placement.wasm.wasm_class.context_integerset.85a66913c2aa"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integerSet</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integerSet</code></p>
 
 ```typescript signature
 integerSet(): Expression
@@ -386,9 +442,9 @@ readonly integerSet: Expression
 
 ### isSubset
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_is_subset_api_sets_session_is_subset"></a>
+<a id="entry-presentation_wasm_api_session_is_subset"></a>
 <a id="placement-placement.wasm.wasm_module.module_issubset.895b73859022"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 isSubset(set_a: Expression, set_b: Expression): boolean | undefined
@@ -400,7 +456,7 @@ Three-valued subset query: \(\varnothing \subseteq\) anything, structural equali
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_issubset.f566fef15352"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.isSubset</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.isSubset</code></p>
 
 ```typescript signature
 isSubset(set_a: Expression, set_b: Expression): boolean | undefined
@@ -408,11 +464,61 @@ isSubset(set_a: Expression, set_b: Expression): boolean | undefined
 
 </details>
 
+### length
+
+<a id="entry-presentation_wasm_api_expression_length"></a>
+<a id="placement-placement.wasm.wasm_class.expression_length.45f409e47bab"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method</p>
+
+```typescript signature
+readonly length: number
+```
+
+Number of elements of a finite-set expression.
+
+### realLine
+
+<a id="entry-presentation_wasm_api_session_real_line"></a>
+<a id="placement-placement.wasm.wasm_module.module_realline.d150784a3d9d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+realLine(): Expression
+```
+
+The set \(\mathbb{R}\).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_realline.04c11e555295"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.realLine</code></p>
+
+```typescript signature
+readonly realLine: Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.context_realline.f9ddcef2c243"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.realLine</code></p>
+
+```typescript signature
+realLine(): Expression
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_realline.84c2087be448"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.realLine</code></p>
+
+```typescript signature
+readonly realLine: Expression
+```
+
+</details>
+
 ### setComplement
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_set_complement_api_sets_session_set_complement"></a>
+<a id="entry-presentation_wasm_api_session_set_complement"></a>
 <a id="placement-placement.wasm.wasm_module.module_setcomplement.2a16985668e3"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 setComplement(set_a: Expression, set_b: Expression): Expression
@@ -424,7 +530,7 @@ The relative complement \(a \setminus b\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_setcomplement.0e0d00ff962c"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.setComplement</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.setComplement</code></p>
 
 ```typescript signature
 setComplement(set_a: Expression, set_b: Expression): Expression
@@ -434,9 +540,9 @@ setComplement(set_a: Expression, set_b: Expression): Expression
 
 ### setIntersection
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_set_intersection_api_sets_session_set_intersection"></a>
+<a id="entry-presentation_wasm_api_session_set_intersection"></a>
 <a id="placement-placement.wasm.wasm_module.module_setintersection.2a72a9ce82c8"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 setIntersection(set_a: Expression, set_b: Expression): Expression
@@ -448,7 +554,7 @@ Intersection, computed eagerly where the structural rules allow (interval pairs,
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_setintersection.007766d08e05"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.setIntersection</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.setIntersection</code></p>
 
 ```typescript signature
 setIntersection(set_a: Expression, set_b: Expression): Expression
@@ -458,9 +564,9 @@ setIntersection(set_a: Expression, set_b: Expression): Expression
 
 ### setUnion
 
-<a id="entry-presentation_wasm_sets_capability_discrete_mathematics_set_union_api_sets_session_set_union"></a>
+<a id="entry-presentation_wasm_api_session_set_union"></a>
 <a id="placement-placement.wasm.wasm_module.module_setunion.5d97c0bd64f6"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 setUnion(set_a: Expression, set_b: Expression): Expression
@@ -472,11 +578,37 @@ Union, computed eagerly where the structural rules allow (overlapping or touchin
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_setunion.107649293a43"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.setUnion</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.setUnion</code></p>
 
 ```typescript signature
 setUnion(set_a: Expression, set_b: Expression): Expression
 ```
 
 </details>
+
+### SetEnumeration
+
+#### SetEnumeration.elements
+
+<a id="entry-presentation_wasm_api_setenumeration_elements"></a>
+<a id="placement-placement.wasm.wasm_class.setenumeration_elements.521d21fa5162"></a>
+<p class="symi-entry-owner">Raw WebAssembly: SetEnumeration property</p>
+
+```typescript signature
+readonly elements: Expression[]
+```
+
+The exact elements produced, in increasing order.
+
+#### SetEnumeration.outcome
+
+<a id="entry-presentation_wasm_api_setenumeration_outcome"></a>
+<a id="placement-placement.wasm.wasm_class.setenumeration_outcome.7db4df413ad1"></a>
+<p class="symi-entry-owner">Raw WebAssembly: SetEnumeration property</p>
+
+```typescript signature
+readonly outcome: string
+```
+
+`"complete"`, `"truncated"`, or `"declined"`.
 

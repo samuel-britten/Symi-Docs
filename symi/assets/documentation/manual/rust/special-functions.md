@@ -10,7 +10,7 @@ arbitrary-precision numeric evaluation (real and complex) all apply.
 
 ### gamma
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_gamma_unnamed"></a>
+<a id="entry-presentation_rust_api_session_gamma"></a>
 <a id="placement-placement.rust.native_rust.api_session_gamma.59dc77ac52f1"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -21,12 +21,24 @@ pub fn gamma(
 ) -> Result<Expression, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_gamma.29eb55104888"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::gamma</code></p>
+
+```rust signature
+pub fn gamma(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
 
 The gamma function \(\Gamma(x)\), the analytic continuation of `(x-1)!`.
 
 ### log_gamma
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_log_gamma_unnamed"></a>
+<a id="entry-presentation_rust_api_session_log_gamma"></a>
 <a id="placement-placement.rust.native_rust.api_session_log_gamma.574ab2a1c976"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -37,12 +49,24 @@ pub fn log_gamma(
 ) -> Result<Expression, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_log_gamma.ab07da665db2"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::log_gamma</code></p>
+
+```rust signature
+pub fn log_gamma(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
 
 The principal-branch log-gamma function (not `log(gamma(x))` off the real axis).
 
 ### digamma
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_digamma_unnamed"></a>
+<a id="entry-presentation_rust_api_session_digamma"></a>
 <a id="placement-placement.rust.native_rust.api_session_digamma.931bf2b66a09"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -53,12 +77,24 @@ pub fn digamma(
 ) -> Result<Expression, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_digamma.a874b51f95cc"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::digamma</code></p>
+
+```rust signature
+pub fn digamma(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
 
 The digamma function \(\psi(x) = \Gamma'(x)/\Gamma(x)\).
 
 ### polygamma
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_polygamma_unnamed"></a>
+<a id="entry-presentation_rust_api_session_polygamma"></a>
 <a id="placement-placement.rust.native_rust.api_session_polygamma.4c2bdd651ecb"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -76,7 +112,7 @@ The polygamma function \(\psi^{(n)}(x)\), the order-th derivative of digamma;
 
 ### beta
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_beta_unnamed"></a>
+<a id="entry-presentation_rust_api_session_beta"></a>
 <a id="placement-placement.rust.native_rust.api_session_beta.b5bd59498226"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -93,7 +129,7 @@ The beta function \(\operatorname{B}(x, y) = \Gamma(x)\Gamma(y)/\Gamma(x+y)\).
 
 ### zeta
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_zeta_unnamed"></a>
+<a id="entry-presentation_rust_api_session_zeta"></a>
 <a id="placement-placement.rust.native_rust.api_session_zeta.5933429e5c9b"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -114,7 +150,7 @@ arbitrary precision over \(\mathbb{R}\) and \(\mathbb{C}\).
 
 ### hurwitz_zeta
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hurwitz_zeta_unnamed"></a>
+<a id="entry-presentation_rust_api_session_hurwitz_zeta"></a>
 <a id="placement-placement.rust.native_rust.api_session_hurwitz_zeta.ea751077131a"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -135,7 +171,7 @@ polynomial in `a`.
 
 ### polylogarithm
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_polylogarithm_unnamed"></a>
+<a id="entry-presentation_rust_api_session_polylogarithm"></a>
 <a id="placement-placement.rust.native_rust.api_session_polylogarithm.99795f2d020b"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -160,7 +196,7 @@ routes decline numerically rather than returning a low-confidence value.
 
 ### lerch_phi
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_lerch_phi_unnamed"></a>
+<a id="entry-presentation_rust_api_session_lerch_phi"></a>
 <a id="placement-placement.rust.native_rust.api_session_lerch_phi.9d9db6667641"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -229,7 +265,7 @@ genuinely diverges when it fails.
 
 ### hypergeometric_pfq
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hypergeometric_pfq_unnamed"></a>
+<a id="entry-presentation_rust_api_session_hypergeometric_pfq"></a>
 <a id="placement-placement.rust.native_rust.api_session_hypergeometric_pfq.9c858dc3a117"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -252,7 +288,7 @@ rejected.
 
 ### hypergeometric_0f1
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hypergeometric_0f1_unnamed"></a>
+<a id="entry-presentation_rust_api_session_hypergeometric_0f1"></a>
 <a id="placement-placement.rust.native_rust.api_session_hypergeometric_0f1.5bd6276d462c"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -269,7 +305,7 @@ The confluent limit \({}_0F_1(; b; z)\), lowered to `hypergeometric_pfq`.
 
 ### hypergeometric_1f1
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hypergeometric_1f1_unnamed"></a>
+<a id="entry-presentation_rust_api_session_hypergeometric_1f1"></a>
 <a id="placement-placement.rust.native_rust.api_session_hypergeometric_1f1.8cfe5c4e24b4"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -287,7 +323,7 @@ Kummer's confluent hypergeometric function \({}_1F_1(a; b; z)\).
 
 ### hypergeometric_2f1
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hypergeometric_2f1_unnamed"></a>
+<a id="entry-presentation_rust_api_session_hypergeometric_2f1"></a>
 <a id="placement-placement.rust.native_rust.api_session_hypergeometric_2f1.d16bd353849e"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -308,7 +344,7 @@ The Gauss hypergeometric function \({}_2F_1(a, b; c; z)\).
 
 ### meijer_g
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_meijer_g_unnamed"></a>
+<a id="entry-presentation_rust_api_session_meijer_g"></a>
 <a id="placement-placement.rust.native_rust.api_session_meijer_g.ce43935b3f3c"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -366,7 +402,7 @@ spurious cut from their half-integer cylinder representation. Airy functions are
 
 ### bessel_j
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_bessel_j_unnamed"></a>
+<a id="entry-presentation_rust_api_session_bessel_j"></a>
 <a id="placement-placement.rust.native_rust.api_session_bessel_j.47f75d1984f8"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -383,7 +419,7 @@ The principal Bessel function \(J_\nu(z)\).
 
 ### bessel_y
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_bessel_y_unnamed"></a>
+<a id="entry-presentation_rust_api_session_bessel_y"></a>
 <a id="placement-placement.rust.native_rust.api_session_bessel_y.968465448244"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -400,7 +436,7 @@ The principal Bessel function \(Y_\nu(z)\).
 
 ### bessel_i
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_bessel_i_unnamed"></a>
+<a id="entry-presentation_rust_api_session_bessel_i"></a>
 <a id="placement-placement.rust.native_rust.api_session_bessel_i.ddbee38041f7"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -417,7 +453,7 @@ The principal modified Bessel function \(I_\nu(z)\).
 
 ### bessel_k
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_bessel_k_unnamed"></a>
+<a id="entry-presentation_rust_api_session_bessel_k"></a>
 <a id="placement-placement.rust.native_rust.api_session_bessel_k.f2b6aa38cdf4"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -434,7 +470,7 @@ The principal modified Bessel function \(K_\nu(z)\).
 
 ### hankel_first_kind
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hankel_first_kind_unnamed"></a>
+<a id="entry-presentation_rust_api_session_hankel_first_kind"></a>
 <a id="placement-placement.rust.native_rust.api_session_hankel_first_kind.06660d0840d2"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -451,7 +487,7 @@ The principal Hankel function \(H_\nu^{(1)}(z)\).
 
 ### hankel_second_kind
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hankel_second_kind_unnamed"></a>
+<a id="entry-presentation_rust_api_session_hankel_second_kind"></a>
 <a id="placement-placement.rust.native_rust.api_session_hankel_second_kind.5fbd0ff066f5"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -468,7 +504,7 @@ The principal Hankel function \(H_\nu^{(2)}(z)\).
 
 ### spherical_bessel_j
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_spherical_bessel_j_unnamed"></a>
+<a id="entry-presentation_rust_api_session_spherical_bessel_j"></a>
 <a id="placement-placement.rust.native_rust.api_session_spherical_bessel_j.d6675f419838"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -485,7 +521,7 @@ The spherical Bessel function \(\mathsf j_n(z)\), for \(n\in\mathbb N_0\).
 
 ### spherical_bessel_y
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_spherical_bessel_y_unnamed"></a>
+<a id="entry-presentation_rust_api_session_spherical_bessel_y"></a>
 <a id="placement-placement.rust.native_rust.api_session_spherical_bessel_y.5bf1ea40bd24"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -502,7 +538,7 @@ The spherical Bessel function \(\mathsf y_n(z)\), for \(n\in\mathbb N_0\).
 
 ### spherical_hankel_first_kind
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_spherical_hankel_first_kind_unnamed"></a>
+<a id="entry-presentation_rust_api_session_spherical_hankel_first_kind"></a>
 <a id="placement-placement.rust.native_rust.api_session_spherical_hankel_first_kind.e0a1b4b5e616"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -519,7 +555,7 @@ The spherical Hankel function \(\mathsf h_n^{(1)}(z)\), for \(n\in\mathbb N_0\).
 
 ### spherical_hankel_second_kind
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_spherical_hankel_second_kind_unnamed"></a>
+<a id="entry-presentation_rust_api_session_spherical_hankel_second_kind"></a>
 <a id="placement-placement.rust.native_rust.api_session_spherical_hankel_second_kind.c5bffb2aa370"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -536,7 +572,7 @@ The spherical Hankel function \(\mathsf h_n^{(2)}(z)\), for \(n\in\mathbb N_0\).
 
 ### airy_ai
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_airy_ai_unnamed"></a>
+<a id="entry-presentation_rust_api_session_airy_ai"></a>
 <a id="placement-placement.rust.native_rust.api_session_airy_ai.a75fdb366456"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -552,7 +588,7 @@ The Airy function \(\operatorname{Ai}(z)\).
 
 ### airy_bi
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_airy_bi_unnamed"></a>
+<a id="entry-presentation_rust_api_session_airy_bi"></a>
 <a id="placement-placement.rust.native_rust.api_session_airy_bi.f34f9c8539f1"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -568,7 +604,7 @@ The Airy function \(\operatorname{Bi}(z)\).
 
 ### airy_ai_prime
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_airy_ai_prime_unnamed"></a>
+<a id="entry-presentation_rust_api_session_airy_ai_prime"></a>
 <a id="placement-placement.rust.native_rust.api_session_airy_ai_prime.d3eb69c71709"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -584,7 +620,7 @@ The derivative \(\operatorname{Ai}'(z)\).
 
 ### airy_bi_prime
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_airy_bi_prime_unnamed"></a>
+<a id="entry-presentation_rust_api_session_airy_bi_prime"></a>
 <a id="placement-placement.rust.native_rust.api_session_airy_bi_prime.a6ae3e4a474e"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -610,7 +646,7 @@ is the physicists' \(H_n\).
 
 ### jacobi_polynomial
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_jacobi_polynomial_unnamed"></a>
+<a id="entry-presentation_rust_api_session_jacobi_polynomial"></a>
 <a id="placement-placement.rust.native_rust.api_session_jacobi_polynomial.00d0c408d6fc"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -629,7 +665,7 @@ The Jacobi polynomial \(P_n^{(\alpha,\beta)}(x)\).
 
 ### gegenbauer_polynomial
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_gegenbauer_polynomial_unnamed"></a>
+<a id="entry-presentation_rust_api_session_gegenbauer_polynomial"></a>
 <a id="placement-placement.rust.native_rust.api_session_gegenbauer_polynomial.1c7fa9a2584c"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -647,7 +683,7 @@ The Gegenbauer polynomial \(C_n^{(\lambda)}(x)\).
 
 ### chebyshev_polynomial_first_kind
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_chebyshev_polynomial_first_kind_unnamed"></a>
+<a id="entry-presentation_rust_api_session_chebyshev_polynomial_first_kind"></a>
 <a id="placement-placement.rust.native_rust.api_session_chebyshev_polynomial_first_kind.83f338bfe9af"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -664,7 +700,7 @@ The Chebyshev polynomial of the first kind \(T_n(x)\).
 
 ### chebyshev_polynomial_second_kind
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_chebyshev_polynomial_second_kind_unnamed"></a>
+<a id="entry-presentation_rust_api_session_chebyshev_polynomial_second_kind"></a>
 <a id="placement-placement.rust.native_rust.api_session_chebyshev_polynomial_second_kind.b240a9102eeb"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -681,7 +717,7 @@ The Chebyshev polynomial of the second kind \(U_n(x)\).
 
 ### legendre_polynomial
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_legendre_polynomial_unnamed"></a>
+<a id="entry-presentation_rust_api_session_legendre_polynomial"></a>
 <a id="placement-placement.rust.native_rust.api_session_legendre_polynomial.e2028898db05"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -698,7 +734,7 @@ The Legendre polynomial \(P_n(x)\).
 
 ### generalized_laguerre_polynomial
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_generalized_laguerre_polynomial_unnamed"></a>
+<a id="entry-presentation_rust_api_session_generalized_laguerre_polynomial"></a>
 <a id="placement-placement.rust.native_rust.api_session_generalized_laguerre_polynomial.234d3baaf3fe"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -716,7 +752,7 @@ The generalized Laguerre polynomial \(L_n^{(\alpha)}(x)\).
 
 ### hermite_polynomial
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_hermite_polynomial_unnamed"></a>
+<a id="entry-presentation_rust_api_session_hermite_polynomial"></a>
 <a id="placement-placement.rust.native_rust.api_session_hermite_polynomial.11463cebdf3a"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -733,7 +769,7 @@ The physicists' Hermite polynomial \(H_n(x)\).
 
 ### ultraspherical_polynomial
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_ultraspherical_polynomial_unnamed"></a>
+<a id="entry-presentation_rust_api_session_ultraspherical_polynomial"></a>
 <a id="placement-placement.rust.native_rust.api_session_ultraspherical_polynomial.fa3dd3fd84eb"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -751,7 +787,7 @@ The ultraspherical polynomial, lowered to its canonical Gegenbauer head.
 
 ### laguerre_polynomial
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_laguerre_polynomial_unnamed"></a>
+<a id="entry-presentation_rust_api_session_laguerre_polynomial"></a>
 <a id="placement-placement.rust.native_rust.api_session_laguerre_polynomial.fd40d0978c75"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -785,35 +821,222 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```
 
 
+### convert_polynomial_basis
+
+<a id="entry-presentation_rust_api_session_convert_polynomial_basis"></a>
+<a id="placement-placement.rust.native_rust.api_session_convert_polynomial_basis.0da7efd61ecb"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn convert_polynomial_basis<'a, VariableType>(
+    &self,
+    target: &Expression,
+    variable: VariableType,
+    basis: &OrthogonalPolynomialBasis,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_convert_polynomial_basis.df0c39510b5b"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::convert_polynomial_basis</code></p>
+
+```rust signature
+pub fn convert_polynomial_basis<'a, VariableType>(
+    &self,
+    variable: VariableType,
+    basis: &OrthogonalPolynomialBasis,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+</details>
+
+
+Express a finite univariate polynomial in a classical orthogonal basis — as a
+combination of Chebyshev, Legendre, Hermite, Laguerre, Gegenbauer, or Jacobi
+polynomials rather than powers of the variable. The conversion is exact; a
+target that is not a finite univariate polynomial in `variable` declines.
+
+### orthogonal_polynomial_coefficient
+
+<a id="entry-presentation_rust_api_session_orthogonal_polynomial_coefficient"></a>
+<a id="placement-placement.rust.native_rust.api_session_orthogonal_polynomial_coefficient.1b2ef4ad217a"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn orthogonal_polynomial_coefficient<'a, VariableType>(
+    &self,
+    target: &Expression,
+    variable: VariableType,
+    basis: &OrthogonalPolynomialBasis,
+    degree: usize,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_orthogonal_polynomial_coefficient.6d3fff5ae9ce"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::orthogonal_polynomial_coefficient</code></p>
+
+```rust signature
+pub fn orthogonal_polynomial_coefficient<'a, VariableType>(
+    &self,
+    variable: VariableType,
+    basis: &OrthogonalPolynomialBasis,
+    degree: usize,
+) -> Result<Expression, ApiError>
+where
+    VariableType: Into<VariableLike<'a>>,
+```
+
+</details>
+
+
+One exact coefficient of that expansion, without forming the whole of it: the
+coefficient of the basis polynomial of the given degree.
+
+### expand_orthogonal_polynomial
+
+<a id="entry-presentation_rust_api_session_expand_orthogonal_polynomial"></a>
+<a id="placement-placement.rust.native_rust.api_session_expand_orthogonal_polynomial.ebee9df86fc5"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn expand_orthogonal_polynomial(
+    &self,
+    target: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_expand_orthogonal_polynomial.7cfe147549d1"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::expand_orthogonal_polynomial</code></p>
+
+```rust signature
+pub fn expand_orthogonal_polynomial(
+    &self,
+) -> Result<Expression, ApiError>
+```
+
+</details>
+
+
+The inverse direction: expand every classical orthogonal polynomial call in the
+expression into an ordinary polynomial in its variable.
+
 ## Additional API
 
-### Gamma
+### carlson_rc
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_options_specialfunctionbasis_gamma_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_options_specialfunctionbasis_gamma.6ba024890f5d"></a>
-<p class="symi-entry-owner">api::options::SpecialFunctionBasis variant</p>
-
-```rust signature
-Gamma,
-```
-
-Public variant placement for Gamma.
-
-### digamma
-
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_expression_digamma_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_digamma.a874b51f95cc"></a>
-<p class="symi-entry-owner">api::Expression method</p>
+<a id="entry-presentation_rust_api_session_carlson_rc"></a>
+<a id="placement-placement.rust.native_rust.api_session_carlson_rc.0ab5545bcced"></a>
+<p class="symi-entry-owner">api::Session method</p>
 
 ```rust signature
-pub fn digamma(&self) -> Result<Expression, ApiError>
+pub fn carlson_rc(
+    &self,
+    first_argument: &Expression,
+    second_argument: &Expression,
+) -> Result<Expression, ApiError>
 ```
 
-The digamma function \(\psi(x) = \Gamma'(x)/\Gamma(x)\).
+Carlson's degenerate symmetric elliptic integral \(R_C(x,y)\).
+
+### carlson_rd
+
+<a id="entry-presentation_rust_api_session_carlson_rd"></a>
+<a id="placement-placement.rust.native_rust.api_session_carlson_rd.3e957170046d"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn carlson_rd(
+    &self,
+    first_argument: &Expression,
+    second_argument: &Expression,
+    third_argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Carlson's symmetric elliptic integral \(R_D(x,y,z)\).
+
+### carlson_rf
+
+<a id="entry-presentation_rust_api_session_carlson_rf"></a>
+<a id="placement-placement.rust.native_rust.api_session_carlson_rf.ec8d84b6a7e9"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn carlson_rf(
+    &self,
+    first_argument: &Expression,
+    second_argument: &Expression,
+    third_argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Carlson's symmetric elliptic integral \(R_F(x,y,z)\).
+
+### carlson_rj
+
+<a id="entry-presentation_rust_api_session_carlson_rj"></a>
+<a id="placement-placement.rust.native_rust.api_session_carlson_rj.66145e304c30"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn carlson_rj(
+    &self,
+    first_argument: &Expression,
+    second_argument: &Expression,
+    third_argument: &Expression,
+    fourth_argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Carlson's symmetric elliptic integral \(R_J(x,y,z,p)\).
+
+### cosine_integral
+
+<a id="entry-presentation_rust_api_session_cosine_integral"></a>
+<a id="placement-placement.rust.native_rust.api_session_cosine_integral.5387585e9ae9"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn cosine_integral(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Provides the `cosine_integral` operation on this native type.
+
+### dirac_delta
+
+<a id="entry-presentation_rust_api_session_dirac_delta"></a>
+<a id="placement-placement.rust.native_rust.api_session_dirac_delta.f63c613f326e"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn dirac_delta(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Provides the `dirac_delta` operation on this native type.
 
 ### elliptic_e
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_elliptic_e_unnamed"></a>
+<a id="entry-presentation_rust_api_session_elliptic_e"></a>
 <a id="placement-placement.rust.native_rust.api_session_elliptic_e.96e8718126a7"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -824,11 +1047,43 @@ pub fn elliptic_e(
 ) -> Result<Expression, ApiError>
 ```
 
-Public method placement for elliptic_e.
+The complete second-kind elliptic integral \(E(m)\), with parameter \(m=k^2\).
+
+### elliptic_e_incomplete
+
+<a id="entry-presentation_rust_api_session_elliptic_e_incomplete"></a>
+<a id="placement-placement.rust.native_rust.api_session_elliptic_e_incomplete.2a983dd513db"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn elliptic_e_incomplete(
+    &self,
+    amplitude: &Expression,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+The incomplete second-kind elliptic integral \(E(\phi\mid m)\), with parameter \(m=k^2\).
+
+### elliptic_f
+
+<a id="entry-presentation_rust_api_session_elliptic_f"></a>
+<a id="placement-placement.rust.native_rust.api_session_elliptic_f.ae653ac6c168"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn elliptic_f(
+    &self,
+    amplitude: &Expression,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+The incomplete first-kind elliptic integral \(F(\phi\mid m)\), with parameter \(m=k^2\).
 
 ### elliptic_k
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_elliptic_k_unnamed"></a>
+<a id="entry-presentation_rust_api_session_elliptic_k"></a>
 <a id="placement-placement.rust.native_rust.api_session_elliptic_k.f8860285c852"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -839,23 +1094,232 @@ pub fn elliptic_k(
 ) -> Result<Expression, ApiError>
 ```
 
-Public method placement for elliptic_k.
+The complete first-kind elliptic integral \(K(m)\), with parameter \(m=k^2\).
 
-### gamma
+### elliptic_pi
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_expression_gamma_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_gamma.29eb55104888"></a>
-<p class="symi-entry-owner">api::Expression method</p>
+<a id="entry-presentation_rust_api_session_elliptic_pi"></a>
+<a id="placement-placement.rust.native_rust.api_session_elliptic_pi.830995e55ef4"></a>
+<p class="symi-entry-owner">api::Session method</p>
 
 ```rust signature
-pub fn gamma(&self) -> Result<Expression, ApiError>
+pub fn elliptic_pi(
+    &self,
+    characteristic: &Expression,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
 ```
 
-The gamma function \(\Gamma(x)\), the analytic continuation of `(x-1)!`.
+The complete third-kind elliptic integral \(\Pi(n\mid m)\), with parameter \(m=k^2\).
+
+### elliptic_pi_incomplete
+
+<a id="entry-presentation_rust_api_session_elliptic_pi_incomplete"></a>
+<a id="placement-placement.rust.native_rust.api_session_elliptic_pi_incomplete.20b3dafd3415"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn elliptic_pi_incomplete(
+    &self,
+    characteristic: &Expression,
+    amplitude: &Expression,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+The incomplete third-kind elliptic integral \(\Pi(n;\phi\mid m)\), with parameter \(m=k^2\).
+
+### error_function
+
+<a id="entry-presentation_rust_api_session_error_function"></a>
+<a id="placement-placement.rust.native_rust.api_session_error_function.2fa2f7f54f81"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn error_function(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Provides the `error_function` operation on this native type.
+
+### error_function_complementary
+
+<a id="entry-presentation_rust_api_session_error_function_complementary"></a>
+<a id="placement-placement.rust.native_rust.api_session_error_function_complementary.53631097dfd6"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn error_function_complementary(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Provides the `error_function_complementary` operation on this native type.
+
+### exponential_integral
+
+<a id="entry-presentation_rust_api_session_exponential_integral"></a>
+<a id="placement-placement.rust.native_rust.api_session_exponential_integral.7259b91e9e27"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn exponential_integral(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Provides the `exponential_integral` operation on this native type.
+
+### heaviside_step
+
+<a id="entry-presentation_rust_api_session_heaviside_step"></a>
+<a id="placement-placement.rust.native_rust.api_session_heaviside_step.067936c12edd"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn heaviside_step(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Provides the `heaviside_step` operation on this native type.
+
+### jacobi_amplitude
+
+<a id="entry-presentation_rust_api_session_jacobi_amplitude"></a>
+<a id="placement-placement.rust.native_rust.api_session_jacobi_amplitude.59bfe76c4df5"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn jacobi_amplitude(
+    &self,
+    argument: &Expression,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+The pinned Jacobi amplitude \(\operatorname{am}(u\mid m)\), with parameter \(m=k^2\).
+
+### jacobi_cn
+
+<a id="entry-presentation_rust_api_session_jacobi_cn"></a>
+<a id="placement-placement.rust.native_rust.api_session_jacobi_cn.4ebe048b1499"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn jacobi_cn(
+    &self,
+    argument: &Expression,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Jacobi's elliptic function \(\operatorname{cn}(u\mid m)\), with parameter \(m=k^2\).
+
+### jacobi_dn
+
+<a id="entry-presentation_rust_api_session_jacobi_dn"></a>
+<a id="placement-placement.rust.native_rust.api_session_jacobi_dn.9140e04e4d83"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn jacobi_dn(
+    &self,
+    argument: &Expression,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Jacobi's elliptic function \(\operatorname{dn}(u\mid m)\), with parameter \(m=k^2\).
+
+### jacobi_sn
+
+<a id="entry-presentation_rust_api_session_jacobi_sn"></a>
+<a id="placement-placement.rust.native_rust.api_session_jacobi_sn.66357aebf510"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn jacobi_sn(
+    &self,
+    argument: &Expression,
+    parameter: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Jacobi's elliptic function \(\operatorname{sn}(u\mid m)\), with parameter \(m=k^2\).
+
+### jacobi_theta_1
+
+<a id="entry-presentation_rust_api_session_jacobi_theta_1"></a>
+<a id="placement-placement.rust.native_rust.api_session_jacobi_theta_1.513b848b5e9a"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn jacobi_theta_1(
+    &self,
+    argument: &Expression,
+    half_period_ratio: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Jacobi's first theta function \(\theta_1(z\mid\tau)\), with half-period ratio \(\tau\).
+
+### jacobi_theta_2
+
+<a id="entry-presentation_rust_api_session_jacobi_theta_2"></a>
+<a id="placement-placement.rust.native_rust.api_session_jacobi_theta_2.56f271faea65"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn jacobi_theta_2(
+    &self,
+    argument: &Expression,
+    half_period_ratio: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Jacobi's second theta function \(\theta_2(z\mid\tau)\), with half-period ratio \(\tau\).
+
+### jacobi_theta_3
+
+<a id="entry-presentation_rust_api_session_jacobi_theta_3"></a>
+<a id="placement-placement.rust.native_rust.api_session_jacobi_theta_3.e177299887b8"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn jacobi_theta_3(
+    &self,
+    argument: &Expression,
+    half_period_ratio: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Jacobi's third theta function \(\theta_3(z\mid\tau)\), with half-period ratio \(\tau\).
+
+### jacobi_theta_4
+
+<a id="entry-presentation_rust_api_session_jacobi_theta_4"></a>
+<a id="placement-placement.rust.native_rust.api_session_jacobi_theta_4.b4ae94e3aa37"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn jacobi_theta_4(
+    &self,
+    argument: &Expression,
+    half_period_ratio: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Jacobi's fourth theta function \(\theta_4(z\mid\tau)\), with half-period ratio \(\tau\).
 
 ### lambert_w
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_session_lambert_w_unnamed"></a>
+<a id="entry-presentation_rust_api_session_lambert_w"></a>
 <a id="placement-placement.rust.native_rust.api_session_lambert_w.39c757c31857"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -866,17 +1330,266 @@ pub fn lambert_w(
 ) -> Result<Expression, ApiError>
 ```
 
-Public method placement for lambert_w.
+Provides the `lambert_w` operation on this native type.
 
-### log_gamma
+### logarithmic_integral
 
-<a id="entry-presentation_rust_special_functions_capability_rust_native_rust_api_expression_log_gamma_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_log_gamma.ab07da665db2"></a>
-<p class="symi-entry-owner">api::Expression method</p>
+<a id="entry-presentation_rust_api_session_logarithmic_integral"></a>
+<a id="placement-placement.rust.native_rust.api_session_logarithmic_integral.c7cfc3614f77"></a>
+<p class="symi-entry-owner">api::Session method</p>
 
 ```rust signature
-pub fn log_gamma(&self) -> Result<Expression, ApiError>
+pub fn logarithmic_integral(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
 ```
 
-The principal-branch log-gamma function (not `log(gamma(x))` off the real axis).
+Provides the `logarithmic_integral` operation on this native type.
+
+### sine_integral
+
+<a id="entry-presentation_rust_api_session_sine_integral"></a>
+<a id="placement-placement.rust.native_rust.api_session_sine_integral.a6389eb5d184"></a>
+<p class="symi-entry-owner">api::Session method</p>
+
+```rust signature
+pub fn sine_integral(
+    &self,
+    argument: &Expression,
+) -> Result<Expression, ApiError>
+```
+
+Provides the `sine_integral` operation on this native type.
+
+### OrthogonalPolynomialBasis
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialbasis"></a>
+<a id="placement-placement.rust.native_rust.api_orthogonalpolynomialbasis.370251607a5b"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use options::OrthogonalPolynomialBasis;
+```
+
+A requested classical orthogonal polynomial basis and its parameters.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialbasis.04fb9abf1806"></a>
+<p class="symi-entry-owner">Type: <code>api::options::OrthogonalPolynomialBasis</code></p>
+
+```rust signature
+pub struct OrthogonalPolynomialBasis
+```
+
+</details>
+
+#### OrthogonalPolynomialBasis.family
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialbasis_family"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialbasis_family.5c6b79da197b"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialBasis field</p>
+
+```rust signature
+pub family:
+```
+
+The requested family.
+
+#### OrthogonalPolynomialBasis.new
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialbasis_new"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialbasis_new.c2f18c2e4f4e"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialBasis method</p>
+
+```rust signature
+pub fn new(
+    family: OrthogonalPolynomialFamily,
+    parameters: Vec<Expression>,
+) -> Self
+```
+
+Names one basis and its parameters in canonical call order.
+
+#### OrthogonalPolynomialBasis.parameters
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialbasis_parameters"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialbasis_parameters.3ac78ae0483d"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialBasis field</p>
+
+```rust signature
+pub parameters:
+```
+
+The family parameters, in canonical call order.
+
+#### OrthogonalPolynomialBasis.resolve
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialbasis_resolve"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialbasis_resolve.9db79e15663b"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialBasis method</p>
+
+```rust signature
+pub fn resolve(&self, session: &Session) -> Result<core_basis, ApiError>
+```
+
+Resolves this requested basis against a session that owns its parameters.
+
+### OrthogonalPolynomialFamily
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily"></a>
+<a id="placement-placement.rust.native_rust.api_orthogonalpolynomialfamily.34934096529d"></a>
+<p class="symi-entry-owner">api re_export</p>
+
+```rust signature
+pub use options::OrthogonalPolynomialFamily;
+```
+
+A classical orthogonal polynomial family named at the API boundary.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily.44acbda7c6fa"></a>
+<p class="symi-entry-owner">Type: <code>api::options::OrthogonalPolynomialFamily</code></p>
+
+```rust signature
+pub enum OrthogonalPolynomialFamily
+```
+
+</details>
+
+#### OrthogonalPolynomialFamily.ChebyshevFirstKind
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_chebyshevfirstkind"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_chebyshevfirstkind.f402e01d4aad"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily variant</p>
+
+```rust signature
+ChebyshevFirstKind,
+```
+
+The Chebyshev family of the first kind.
+
+#### OrthogonalPolynomialFamily.ChebyshevSecondKind
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_chebyshevsecondkind"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_chebyshevsecondkind.4dd13b2911ea"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily variant</p>
+
+```rust signature
+ChebyshevSecondKind,
+```
+
+The Chebyshev family of the second kind.
+
+#### OrthogonalPolynomialFamily.Gegenbauer
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_gegenbauer"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_gegenbauer.b87109555ffa"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily variant</p>
+
+```rust signature
+Gegenbauer,
+```
+
+The Gegenbauer family, carrying one parameter.
+
+#### OrthogonalPolynomialFamily.GeneralizedLaguerre
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_generalizedlaguerre"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_generalizedlaguerre.ec30b467ff32"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily variant</p>
+
+```rust signature
+GeneralizedLaguerre,
+```
+
+The generalized Laguerre family, carrying one parameter.
+
+#### OrthogonalPolynomialFamily.Hermite
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_hermite"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_hermite.79244af84bf2"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily variant</p>
+
+```rust signature
+Hermite,
+```
+
+The physicists' Hermite family.
+
+#### OrthogonalPolynomialFamily.Jacobi
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_jacobi"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_jacobi.dbde0db1762c"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily variant</p>
+
+```rust signature
+Jacobi,
+```
+
+The Jacobi family, carrying two parameters.
+
+#### OrthogonalPolynomialFamily.Legendre
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_legendre"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_legendre.8405507b168d"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily variant</p>
+
+```rust signature
+Legendre,
+```
+
+The Legendre family.
+
+#### OrthogonalPolynomialFamily.from_name
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_from_name"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_from_name.c56e40287b82"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily method</p>
+
+```rust signature
+pub fn from_name(name: &str) -> Result<Self, ApiError>
+```
+
+Resolves the stable binding spelling of an orthogonal polynomial family.
+
+#### OrthogonalPolynomialFamily.into_core
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_into_core"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_into_core.a609221c1904"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily method</p>
+
+```rust signature
+pub fn into_core(self) -> core_family
+```
+
+Converts this binding-neutral value to the engine representation.
+
+#### OrthogonalPolynomialFamily.name
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_name"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_name.ae01d85e05b7"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily method</p>
+
+```rust signature
+pub fn name(self) -> &'static str
+```
+
+Returns the stable binding spelling of this orthogonal polynomial family.
+
+#### OrthogonalPolynomialFamily.parameter_count
+
+<a id="entry-presentation_rust_api_orthogonalpolynomialfamily_parameter_count"></a>
+<a id="placement-placement.rust.native_rust.api_options_orthogonalpolynomialfamily_parameter_count.b0eccf408a90"></a>
+<p class="symi-entry-owner">api::options::OrthogonalPolynomialFamily method</p>
+
+```rust signature
+pub fn parameter_count(self) -> usize
+```
+
+The number of family parameters this family carries.
 

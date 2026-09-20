@@ -10,7 +10,7 @@ arbitrary-precision numeric evaluation (real and complex) all apply.
 
 ### gamma
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_gamma_api_session_gamma"></a>
+<a id="entry-presentation_python_api_session_gamma"></a>
 <a id="placement-placement.python.python_module.module_gamma.3519c91de883"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -35,7 +35,7 @@ The gamma function \(\Gamma(x)\), the analytic continuation of `(x-1)!`.
 
 ### log_gamma
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_log_gamma_api_session_log_gamma"></a>
+<a id="entry-presentation_python_api_session_log_gamma"></a>
 <a id="placement-placement.python.python_module.module_log_gamma.72b9b1adff8c"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -60,7 +60,7 @@ The principal-branch log-gamma function (not `log(gamma(x))` off the real axis).
 
 ### digamma
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_digamma_api_session_digamma"></a>
+<a id="entry-presentation_python_api_session_digamma"></a>
 <a id="placement-placement.python.python_module.module_digamma.483bce136a30"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -85,7 +85,7 @@ The digamma function \(\psi(x) = \Gamma'(x)/\Gamma(x)\).
 
 ### polygamma
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_polygamma_api_session_polygamma"></a>
+<a id="entry-presentation_python_api_session_polygamma"></a>
 <a id="placement-placement.python.python_module.module_polygamma.c31121e20084"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -111,7 +111,7 @@ The polygamma function \(\psi^{(n)}(x)\), the order-th derivative of digamma;
 
 ### beta
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_beta_api_session_beta"></a>
+<a id="entry-presentation_python_api_session_beta"></a>
 <a id="placement-placement.python.python_module.module_beta.d5028cced6a3"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -136,7 +136,7 @@ The beta function \(\operatorname{B}(x, y) = \Gamma(x)\Gamma(y)/\Gamma(x+y)\).
 
 ### zeta
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_zeta_api_session_zeta"></a>
+<a id="entry-presentation_python_api_session_zeta"></a>
 <a id="placement-placement.python.python_module.module_zeta.0c28cf4de55a"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -166,7 +166,7 @@ arbitrary precision over \(\mathbb{R}\) and \(\mathbb{C}\).
 
 ### hurwitz_zeta
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_hurwitz_zeta_api_session_hurwitz_zeta"></a>
+<a id="entry-presentation_python_api_session_hurwitz_zeta"></a>
 <a id="placement-placement.python.python_module.module_hurwitz_zeta.21812eff4922"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -195,7 +195,7 @@ polynomial in `a`.
 
 ### polylogarithm
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_polylogarithm_api_session_polylogarithm"></a>
+<a id="entry-presentation_python_api_session_polylogarithm"></a>
 <a id="placement-placement.python.python_module.module_polylogarithm.9a8d6c19e530"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -228,7 +228,7 @@ routes decline numerically rather than returning a low-confidence value.
 
 ### lerch_phi
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_lerch_phi_api_session_lerch_phi"></a>
+<a id="entry-presentation_python_api_session_lerch_phi"></a>
 <a id="placement-placement.python.python_module.module_lerch_phi.1dc5c9bba868"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -308,7 +308,7 @@ genuinely diverges when it fails.
 
 ### hypergeometric_pfq
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_hypergeometric_pfq_api_session_hypergeometric_pfq"></a>
+<a id="entry-presentation_python_api_session_hypergeometric_pfq"></a>
 <a id="placement-placement.python.python_module.module_hypergeometric_pfq.02a265af88b6"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -343,7 +343,7 @@ rejected.
 
 ### hypergeometric_0f1
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_hypergeometric_0f1_api_session_hypergeometric_0f1"></a>
+<a id="entry-presentation_python_api_session_hypergeometric_0f1"></a>
 <a id="placement-placement.python.python_module.module_hypergeometric_0f1.e8b6f213dd26"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -368,7 +368,7 @@ The confluent limit \({}_0F_1(; b; z)\), lowered to `hypergeometric_pfq`.
 
 ### hypergeometric_1f1
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_hypergeometric_1f1_api_session_hypergeometric_1f1"></a>
+<a id="entry-presentation_python_api_session_hypergeometric_1f1"></a>
 <a id="placement-placement.python.python_module.module_hypergeometric_1f1.69ebe7116c8a"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -401,7 +401,7 @@ Kummer's confluent hypergeometric function \({}_1F_1(a; b; z)\).
 
 ### hypergeometric_2f1
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_hypergeometric_2f1_api_session_hypergeometric_2f1"></a>
+<a id="entry-presentation_python_api_session_hypergeometric_2f1"></a>
 <a id="placement-placement.python.python_module.module_hypergeometric_2f1.5e19c8c8c3b3"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -438,7 +438,7 @@ The Gauss hypergeometric function \({}_2F_1(a, b; c; z)\).
 
 ### meijer_g
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_meijer_g_api_session_meijer_g"></a>
+<a id="entry-presentation_python_api_session_meijer_g"></a>
 <a id="placement-placement.python.python_module.module_meijer_g.e1235747d7bb"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -616,7 +616,7 @@ is the physicists' \(H_n\).
 
 ### jacobi_polynomial
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_polynomial_api_session_jacobi_polynomial"></a>
+<a id="entry-presentation_python_api_session_jacobi_polynomial"></a>
 <a id="placement-placement.python.python_module.module_jacobi_polynomial.5d9827799e23"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -651,7 +651,7 @@ The Jacobi polynomial \(P_n^{(\alpha,\beta)}(x)\).
 
 ### gegenbauer_polynomial
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_gegenbauer_polynomial_api_session_gegenbauer_polynomial"></a>
+<a id="entry-presentation_python_api_session_gegenbauer_polynomial"></a>
 <a id="placement-placement.python.python_module.module_gegenbauer_polynomial.7c074bcbda06"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -684,7 +684,7 @@ The Gegenbauer polynomial \(C_n^{(\lambda)}(x)\).
 
 ### chebyshev_polynomial_first_kind
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_chebyshev_polynomial_first_kind_api_session_chebyshev_polynomial_first_kind"></a>
+<a id="entry-presentation_python_api_session_chebyshev_polynomial_first_kind"></a>
 <a id="placement-placement.python.python_module.module_chebyshev_polynomial_first_kind.14d02036658d"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -715,7 +715,7 @@ The Chebyshev polynomial of the first kind \(T_n(x)\).
 
 ### chebyshev_polynomial_second_kind
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_chebyshev_polynomial_second_kind_api_session_chebyshev_polynomial_second_kind"></a>
+<a id="entry-presentation_python_api_session_chebyshev_polynomial_second_kind"></a>
 <a id="placement-placement.python.python_module.module_chebyshev_polynomial_second_kind.72deb4c741ac"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -746,7 +746,7 @@ The Chebyshev polynomial of the second kind \(U_n(x)\).
 
 ### legendre_polynomial
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_legendre_polynomial_api_session_legendre_polynomial"></a>
+<a id="entry-presentation_python_api_session_legendre_polynomial"></a>
 <a id="placement-placement.python.python_module.module_legendre_polynomial.e888215e86b2"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -777,7 +777,7 @@ The Legendre polynomial \(P_n(x)\).
 
 ### generalized_laguerre_polynomial
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_generalized_laguerre_polynomial_api_session_generalized_laguerre_polynomial"></a>
+<a id="entry-presentation_python_api_session_generalized_laguerre_polynomial"></a>
 <a id="placement-placement.python.python_module.module_generalized_laguerre_polynomial.474a0697b788"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -810,7 +810,7 @@ The generalized Laguerre polynomial \(L_n^{(\alpha)}(x)\).
 
 ### hermite_polynomial
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_hermite_polynomial_api_session_hermite_polynomial"></a>
+<a id="entry-presentation_python_api_session_hermite_polynomial"></a>
 <a id="placement-placement.python.python_module.module_hermite_polynomial.69f56e849918"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -841,7 +841,7 @@ The physicists' Hermite polynomial \(H_n(x)\).
 
 ### ultraspherical_polynomial
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_ultraspherical_polynomial_api_session_ultraspherical_polynomial"></a>
+<a id="entry-presentation_python_api_session_ultraspherical_polynomial"></a>
 <a id="placement-placement.python.python_module.module_ultraspherical_polynomial.8990d481e4a3"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -874,7 +874,7 @@ The ultraspherical polynomial, lowered to its canonical Gegenbauer head.
 
 ### laguerre_polynomial
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_laguerre_polynomial_api_session_laguerre_polynomial"></a>
+<a id="entry-presentation_python_api_session_laguerre_polynomial"></a>
 <a id="placement-placement.python.python_module.module_laguerre_polynomial.fa6a108a7e43"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -917,11 +917,37 @@ print(symi.digamma(1))
 ```
 
 
+### convert_polynomial_basis
+
+*Not exposed by the Python bindings. Available as [`api::Expression::convert_polynomial_basis`](/symi/rust/special-functions#convert_polynomial_basis) in Rust.*
+
+
+Express a finite univariate polynomial in a classical orthogonal basis — as a
+combination of Chebyshev, Legendre, Hermite, Laguerre, Gegenbauer, or Jacobi
+polynomials rather than powers of the variable. The conversion is exact; a
+target that is not a finite univariate polynomial in `variable` declines.
+
+### orthogonal_polynomial_coefficient
+
+*Not exposed by the Python bindings. Available as [`api::Expression::orthogonal_polynomial_coefficient`](/symi/rust/special-functions#orthogonal_polynomial_coefficient) in Rust.*
+
+
+One exact coefficient of that expansion, without forming the whole of it: the
+coefficient of the basis polynomial of the given degree.
+
+### expand_orthogonal_polynomial
+
+*Not exposed by the Python bindings. Available as [`api::Expression::expand_orthogonal_polynomial`](/symi/rust/special-functions#expand_orthogonal_polynomial) in Rust.*
+
+
+The inverse direction: expand every classical orthogonal polynomial call in the
+expression into an ordinary polynomial in its variable.
+
 ## Additional API
 
 ### carlson_rc
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_carlson_rc_api_session_carlson_rc"></a>
+<a id="entry-presentation_python_api_session_carlson_rc"></a>
 <a id="placement-placement.python.python_module.module_carlson_rc.7a62fd509b45"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -951,7 +977,7 @@ carlson_rc(
 
 ### carlson_rd
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_carlson_rd_api_session_carlson_rd"></a>
+<a id="entry-presentation_python_api_session_carlson_rd"></a>
 <a id="placement-placement.python.python_module.module_carlson_rd.b8aad0a4cb2d"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -983,7 +1009,7 @@ carlson_rd(
 
 ### carlson_rf
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_carlson_rf_api_session_carlson_rf"></a>
+<a id="entry-presentation_python_api_session_carlson_rf"></a>
 <a id="placement-placement.python.python_module.module_carlson_rf.e1b92d7a3eb3"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1015,7 +1041,7 @@ carlson_rf(
 
 ### carlson_rj
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_carlson_rj_api_session_carlson_rj"></a>
+<a id="entry-presentation_python_api_session_carlson_rj"></a>
 <a id="placement-placement.python.python_module.module_carlson_rj.92717308a5ed"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1049,7 +1075,7 @@ carlson_rj(
 
 ### elliptic_e
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_e_api_session_elliptic_e"></a>
+<a id="entry-presentation_python_api_session_elliptic_e"></a>
 <a id="placement-placement.python.python_module.module_elliptic_e.d2350530f40b"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1073,7 +1099,7 @@ elliptic_e(parameter: ExpressionLike) -> Expression
 
 ### elliptic_e_incomplete
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_e_incomplete_api_session_elliptic_e_incomplete"></a>
+<a id="entry-presentation_python_api_session_elliptic_e_incomplete"></a>
 <a id="placement-placement.python.python_module.module_elliptic_e_incomplete.9daed527f7c1"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1103,7 +1129,7 @@ elliptic_e_incomplete(
 
 ### elliptic_f
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_f_api_session_elliptic_f"></a>
+<a id="entry-presentation_python_api_session_elliptic_f"></a>
 <a id="placement-placement.python.python_module.module_elliptic_f.9ae910ef2fdf"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1133,7 +1159,7 @@ elliptic_f(
 
 ### elliptic_k
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_k_api_session_elliptic_k"></a>
+<a id="entry-presentation_python_api_session_elliptic_k"></a>
 <a id="placement-placement.python.python_module.module_elliptic_k.f59acccd7929"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1157,7 +1183,7 @@ elliptic_k(parameter: ExpressionLike) -> Expression
 
 ### elliptic_pi
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_pi_api_session_elliptic_pi"></a>
+<a id="entry-presentation_python_api_session_elliptic_pi"></a>
 <a id="placement-placement.python.python_module.module_elliptic_pi.b2caf9b2f483"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1187,7 +1213,7 @@ elliptic_pi(
 
 ### elliptic_pi_incomplete
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_elliptic_pi_incomplete_api_session_elliptic_pi_incomplete"></a>
+<a id="entry-presentation_python_api_session_elliptic_pi_incomplete"></a>
 <a id="placement-placement.python.python_module.module_elliptic_pi_incomplete.6998450e30c4"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1219,7 +1245,7 @@ elliptic_pi_incomplete(
 
 ### jacobi_amplitude
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_amplitude_api_session_jacobi_amplitude"></a>
+<a id="entry-presentation_python_api_session_jacobi_amplitude"></a>
 <a id="placement-placement.python.python_module.module_jacobi_amplitude.bcc9ba96ede7"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1249,7 +1275,7 @@ jacobi_amplitude(
 
 ### jacobi_cn
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_cn_api_session_jacobi_cn"></a>
+<a id="entry-presentation_python_api_session_jacobi_cn"></a>
 <a id="placement-placement.python.python_module.module_jacobi_cn.ef9f43c6c15b"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1279,7 +1305,7 @@ jacobi_cn(
 
 ### jacobi_dn
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_dn_api_session_jacobi_dn"></a>
+<a id="entry-presentation_python_api_session_jacobi_dn"></a>
 <a id="placement-placement.python.python_module.module_jacobi_dn.0d987137c1d8"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1309,7 +1335,7 @@ jacobi_dn(
 
 ### jacobi_sn
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_sn_api_session_jacobi_sn"></a>
+<a id="entry-presentation_python_api_session_jacobi_sn"></a>
 <a id="placement-placement.python.python_module.module_jacobi_sn.acd020b3768d"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1339,7 +1365,7 @@ jacobi_sn(
 
 ### jacobi_theta_1
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_1_api_session_jacobi_theta_1"></a>
+<a id="entry-presentation_python_api_session_jacobi_theta_1"></a>
 <a id="placement-placement.python.python_module.module_jacobi_theta_1.2824d6af6ed1"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1369,7 +1395,7 @@ jacobi_theta_1(
 
 ### jacobi_theta_2
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_2_api_session_jacobi_theta_2"></a>
+<a id="entry-presentation_python_api_session_jacobi_theta_2"></a>
 <a id="placement-placement.python.python_module.module_jacobi_theta_2.47ed91301e1f"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1399,7 +1425,7 @@ jacobi_theta_2(
 
 ### jacobi_theta_3
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_3_api_session_jacobi_theta_3"></a>
+<a id="entry-presentation_python_api_session_jacobi_theta_3"></a>
 <a id="placement-placement.python.python_module.module_jacobi_theta_3.40b6b95af764"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -1429,7 +1455,7 @@ jacobi_theta_3(
 
 ### jacobi_theta_4
 
-<a id="entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_4_api_session_jacobi_theta_4"></a>
+<a id="entry-presentation_python_api_session_jacobi_theta_4"></a>
 <a id="placement-placement.python.python_module.module_jacobi_theta_4.63583e3ae5cc"></a>
 <p class="symi-entry-owner">Default context</p>
 

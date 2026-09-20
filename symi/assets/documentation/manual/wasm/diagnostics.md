@@ -48,3 +48,92 @@ try {
 }
 ```
 
+
+## Additional API
+
+### SymiError
+
+#### SymiError.category
+
+<a id="entry-presentation_wasm_host_wasm_symierror_category"></a>
+<a id="placement-placement.wasm.javascript_facade.symierror_category.6b54a640412f"></a>
+<p class="symi-entry-owner">SymiError property</p>
+
+```typescript signature
+readonly category: DiagnosticCategory
+```
+
+Public property placement for category.
+
+#### SymiError.code
+
+<a id="entry-presentation_wasm_host_wasm_symierror_code"></a>
+<a id="placement-placement.wasm.javascript_facade.symierror_code.30f9d8518f8d"></a>
+<p class="symi-entry-owner">SymiError property</p>
+
+```typescript signature
+readonly code: DiagnosticCategory
+```
+
+Public property placement for code.
+
+#### SymiError.expected
+
+<a id="entry-presentation_wasm_host_wasm_symierror_expected"></a>
+<a id="placement-placement.wasm.javascript_facade.symierror_expected.a59eda760e94"></a>
+<p class="symi-entry-owner">SymiError property</p>
+
+```typescript signature
+readonly expected: string | null
+```
+
+Public property placement for expected.
+
+#### SymiError.hint
+
+<a id="entry-presentation_wasm_host_wasm_symierror_hint"></a>
+<a id="placement-placement.wasm.javascript_facade.symierror_hint.dc290abb816b"></a>
+<p class="symi-entry-owner">SymiError property</p>
+
+```typescript signature
+readonly hint: string | null
+```
+
+Public property placement for hint.
+
+#### SymiError.operation
+
+<a id="entry-presentation_wasm_host_wasm_symierror_operation"></a>
+<a id="placement-placement.wasm.javascript_facade.symierror_operation.27d0151a414d"></a>
+<p class="symi-entry-owner">SymiError property</p>
+
+```typescript signature
+readonly operation: string | null
+```
+
+Public property placement for operation.
+
+#### SymiError.parameterPath
+
+<a id="entry-presentation_wasm_host_wasm_symierror_parameterpath"></a>
+<a id="placement-placement.wasm.javascript_facade.symierror_parameterpath.4560085cfcfd"></a>
+<p class="symi-entry-owner">SymiError property</p>
+
+```typescript signature
+readonly parameterPath: string | null
+```
+
+Public property placement for parameterPath.
+
+#### SymiError.received
+
+<a id="entry-presentation_wasm_host_wasm_symierror_received"></a>
+<a id="placement-placement.wasm.javascript_facade.symierror_received.ae703f25576e"></a>
+<p class="symi-entry-owner">SymiError property</p>
+
+```typescript signature
+readonly received: string | null
+```
+
+Public property placement for received.
+

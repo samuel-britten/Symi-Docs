@@ -12,7 +12,7 @@ Related rewrites are on [algebraic transforms](algebraic-transforms.md) and
 
 ### piecewise_fold
 
-<a id="entry-presentation_swift_specialized_canonical_forms_capability_expression_transformations_piecewise_fold_api_solving_session_piecewise_fold"></a>
+<a id="entry-presentation_swift_api_session_piecewise_fold"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_piecewisefold.ad7f0c837ae1"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -20,13 +20,17 @@ Related rewrites are on [algebraic transforms](algebraic-transforms.md) and
 func piecewiseFold(inputExpression: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_specialized_canonical_forms_capability_expression_transformations_piecewise_fold_api_expression_operations_expression_piecewise_fold"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_piecewisefold.0c8ba9c78761"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.piecewiseFold</code></p>
 
 ```swift signature
 func piecewiseFold() -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -44,7 +48,7 @@ equality-preserving expression and may therefore return the input unchanged.
 
 ### rewrite_special_functions
 
-<a id="entry-presentation_swift_specialized_canonical_forms_capability_expression_transformations_rewrite_special_functions_api_session_rewrite_special_functions"></a>
+<a id="entry-presentation_swift_api_session_rewrite_special_functions"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_rewritespecialfunctions.a5cfcdf7d801"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -55,13 +59,17 @@ func rewriteSpecialFunctions(
 ) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_specialized_canonical_forms_capability_expression_transformations_rewrite_special_functions_api_expression_rewrite_special_functions"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_rewritespecialfunctions.3d399f43f7ae"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rewriteSpecialFunctions</code></p>
 
 ```swift signature
 func rewriteSpecialFunctions(basis: UniffiSpecialFunctionBasis) -> UniffiExpression
 ```
+
+</details>
 
 
 
@@ -82,7 +90,7 @@ force mode.
 
 ### presentation_normal_form
 
-<a id="entry-presentation_swift_specialized_canonical_forms_capability_expression_transformations_presentation_normal_form_api_algebra_session_presentation_normal_form"></a>
+<a id="entry-presentation_swift_api_session_presentation_normal_form"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_presentationnormalform.ba6e3a1e8f5c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -90,13 +98,17 @@ force mode.
 func presentationNormalForm(inputExpression: UniffiExpression) -> UniffiExpression
 ```
 
-<a id="entry-presentation_swift_specialized_canonical_forms_capability_expression_transformations_presentation_normal_form_api_expression_operations_expression_presentation_normal_form"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_presentationnormalform.bd719e9b0743"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.presentationNormalForm</code></p>
 
 ```swift signature
 func presentationNormalForm() -> UniffiExpression
 ```
+
+</details>
 
 
 

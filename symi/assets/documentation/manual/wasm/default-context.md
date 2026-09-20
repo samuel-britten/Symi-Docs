@@ -96,3 +96,116 @@ long-running sessions and in tests that assert the store stays bounded.
 
 This family is not part of the recommended JavaScript facade in this release. Call it through the generated `symi.raw` layer, whose entries are listed with their wasm-bindgen signatures above, and read [Migration](migration.md) for the ownership rules that apply there.
 
+
+## Additional API
+
+### assumptionsOf
+
+<a id="entry-presentation_wasm_api_session_assumptions_of"></a>
+<a id="placement-placement.wasm.wasm_module.module_assumptionsof.55389b6d8956"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+assumptionsOf(name: string): string
+```
+
+Return every assumption declared about one symbol, as a list of proposition texts such as `"real(x)"` or `"prime(n)"`. The variable may be a name or same-context symbol. The list is what was declared, not what can be proved; use `ask` for a three-valued verdict.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.context_assumptionsof.3e2500baccd2"></a>
+<p class="symi-entry-owner">Explicit context: <code>Context.assumptionsOf</code></p>
+
+```typescript signature
+assumptionsOf(value: VariableLike): Record<string, string>
+```
+
+<a id="placement-placement.wasm.wasm_class.context_assumptionsof.66a8eb453c55"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.assumptionsOf</code></p>
+
+```typescript signature
+assumptionsOf(name: string): string
+```
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_assumptionsof.b9741e10cd22"></a>
+<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.assumptionsOf</code></p>
+
+```typescript signature
+assumptionsOf(value: VariableLike): Record<string, string>
+```
+
+</details>
+
+### clearAssumptions
+
+<a id="entry-presentation_wasm_api_session_clear_assumptions"></a>
+<a id="placement-placement.wasm.wasm_module.module_clearassumptions.b12f408b3470"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+clearAssumptions(name: string): void
+```
+
+Reset one symbol's assumptions to the default (complex domain, every property unknown).
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_clearassumptions.5956b856933d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.clearAssumptions</code></p>
+
+```typescript signature
+clearAssumptions(name: string): void
+```
+
+</details>
+
+### defaultContext
+
+<a id="entry-presentation_wasm_api_session_default_context"></a>
+<a id="placement-placement.wasm.wasm_module.module_defaultcontext.6f6779c9ec73"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+defaultContext(): Context
+```
+
+Return a handle to the thread's default context — the same context every module-level function and direct structural-class constructor uses. Use it for `undefined_function`, or to pass to code written against the explicit-context API. Each call returns a new handle to the same underlying context.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_defaultcontext.9502059e3f0c"></a>
+<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.defaultContext</code></p>
+
+```typescript signature
+defaultContext: Context
+```
+
+</details>
+
+### internerLength
+
+<a id="entry-presentation_wasm_api_session_interner_length"></a>
+<a id="placement-placement.wasm.wasm_module.module_internerlength.16f9ad37f8f3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+internerLength(): number
+```
+
+Number of live expressions currently interned in the context. Dead entries awaiting the amortized sweep are not counted. Useful for observing memory in long-running sessions and in tests that assert the store stays bounded.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_internerlength.eae1ce3bb1ac"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.internerLength</code></p>
+
+```typescript signature
+internerLength(): number
+```
+
+</details>
+

@@ -9,7 +9,7 @@ conditions, and as boolean-valued results.
 
 ### equal
 
-<a id="entry-presentation_python_relations_capability_elementary_functions_equal_api_session_equal"></a>
+<a id="entry-presentation_python_api_session_equal"></a>
 <a id="placement-placement.python.python_module.module_equal.326e1221df85"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -32,7 +32,7 @@ equal(left: Any, right: Any) -> Expression
 
 ### not_equal
 
-<a id="entry-presentation_python_relations_capability_elementary_functions_not_equal_api_session_not_equal"></a>
+<a id="entry-presentation_python_api_session_not_equal"></a>
 <a id="placement-placement.python.python_module.module_not_equal.e47c657bdbb8"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -55,7 +55,7 @@ not_equal(left: Any, right: Any) -> Expression
 
 ### less_than
 
-<a id="entry-presentation_python_relations_capability_elementary_functions_less_than_api_session_less_than"></a>
+<a id="entry-presentation_python_api_session_less_than"></a>
 <a id="placement-placement.python.python_module.module_less_than.1210afe36701"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -78,7 +78,7 @@ less_than(left: Any, right: Any) -> Expression
 
 ### less_than_or_equal
 
-<a id="entry-presentation_python_relations_capability_elementary_functions_less_than_or_equal_api_session_less_than_or_equal"></a>
+<a id="entry-presentation_python_api_session_less_than_or_equal"></a>
 <a id="placement-placement.python.python_module.module_less_than_or_equal.b08ae5aa68dc"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -101,7 +101,7 @@ less_than_or_equal(left: Any, right: Any) -> Expression
 
 ### greater_than
 
-<a id="entry-presentation_python_relations_capability_elementary_functions_greater_than_api_session_greater_than"></a>
+<a id="entry-presentation_python_api_session_greater_than"></a>
 <a id="placement-placement.python.python_module.module_greater_than.6e179ea266ec"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -124,7 +124,7 @@ greater_than(left: Any, right: Any) -> Expression
 
 ### greater_than_or_equal
 
-<a id="entry-presentation_python_relations_capability_elementary_functions_greater_than_or_equal_api_session_greater_than_or_equal"></a>
+<a id="entry-presentation_python_api_session_greater_than_or_equal"></a>
 <a id="placement-placement.python.python_module.module_greater_than_or_equal.0519fede2619"></a>
 <p class="symi-entry-owner">Default context</p>
 

@@ -53,3 +53,42 @@ Use the generated [result-type index](result-type-index.md) to locate every
 published result type and its producer. Accessor entries link back to their
 owner-specific operation pages; identical field names on different result types
 do not share a result contract.
+
+## Additional API
+
+### api::results
+
+<a id="entry-presentation_rust_native_module_api_results"></a>
+<a id="placement-placement.rust.native_rust.api_results.2330d8e2a9d7"></a>
+<p class="symi-entry-owner">api module</p>
+
+```rust signature
+pub mod results;
+```
+
+Binding-neutral structured result records returned by the native API.
+
+### ComputationOutcome
+
+<a id="entry-presentation_rust_api_computationoutcome"></a>
+<a id="placement-placement.rust.native_rust.api_computationoutcome.74a0e3d9b651"></a>
+<p class="symi-entry-owner">Type</p>
+
+```rust signature
+pub enum ComputationOutcome<ValueType>
+```
+
+Public native enumeration named `computation_outcome`.
+
+#### ComputationOutcome.Declined
+
+<a id="entry-presentation_rust_api_computationoutcome_declined"></a>
+<a id="placement-placement.rust.native_rust.api_computationoutcome_declined.218b6a88acd3"></a>
+<p class="symi-entry-owner">api::ComputationOutcome variant</p>
+
+```rust signature
+Declined,
+```
+
+Represents the `declined` case.
+

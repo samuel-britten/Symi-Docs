@@ -6,6 +6,15 @@ Construct matrices from ordered rows or from identity, zero, and diagonal famili
 
 ### matrix
 
+<a id="entry-presentation_swift_api_session_matrix"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_matrix.437fcad3cd31"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func matrix(rows: [[UniffiExpression]]) -> UniffiMatrix
+```
+
+
 
 
 Build a matrix from ordered rows. Direct Python construction and the facade
@@ -15,7 +24,7 @@ code should use the nested facade form.
 
 ### matrix_identity
 
-<a id="entry-presentation_swift_matrix_construction_capability_algebra_matrix_identity_api_session_matrix_identity"></a>
+<a id="entry-presentation_swift_api_session_matrix_identity"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_matrixidentity.9b53fbdd535c"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -28,7 +37,7 @@ The \(\mathit{size}\times\mathit{size}\) identity; size 0 raises.
 
 ### matrix_zero
 
-<a id="entry-presentation_swift_matrix_construction_capability_algebra_matrix_zero_api_session_matrix_zero"></a>
+<a id="entry-presentation_swift_api_session_matrix_zero"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_matrixzero.955e0bac4afd"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -41,7 +50,7 @@ The \(\mathit{rows}\times\mathit{columns}\) zero matrix.
 
 ### matrix_diagonal
 
-<a id="entry-presentation_swift_matrix_construction_capability_algebra_matrix_diagonal_api_session_matrix_diagonal"></a>
+<a id="entry-presentation_swift_api_session_matrix_diagonal"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_matrixdiagonal.83729260e711"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -57,7 +66,7 @@ list raises.
 
 ### rows
 
-<a id="entry-presentation_swift_matrix_construction_capability_algebra_rows_api_matrix_rows"></a>
+<a id="entry-presentation_swift_api_matrix_rows"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_rows.35b7b4b5025b"></a>
 <p class="symi-entry-owner">UniffiMatrix method</p>
 
@@ -68,7 +77,7 @@ func rows() -> UInt64
 
 ### columns
 
-<a id="entry-presentation_swift_matrix_construction_capability_algebra_columns_api_matrix_columns"></a>
+<a id="entry-presentation_swift_api_matrix_columns"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_columns.4d50379839e3"></a>
 <p class="symi-entry-owner">UniffiMatrix method</p>
 
@@ -79,7 +88,7 @@ func columns() -> UInt64
 
 ### entry
 
-<a id="entry-presentation_swift_matrix_construction_capability_algebra_entry_api_matrix_entry"></a>
+<a id="entry-presentation_swift_api_matrix_entry"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_entry.7eb42040599b"></a>
 <p class="symi-entry-owner">UniffiMatrix method</p>
 
@@ -95,27 +104,39 @@ Element access. **Notes:** Python uses indexing `m[row, column]` instead.
 
 ## Additional API
 
-### matrix
+### diagonal_matrix
 
-<a id="entry-presentation_swift_matrix_construction_capability_algebra_matrix_api_session_matrix"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_matrix.437fcad3cd31"></a>
+<a id="entry-presentation_swift_api_session_diagonal_matrix"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_diagonalmatrix.23ce19207678"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
 ```swift signature
-func matrix(rows: [[UniffiExpression]]) -> UniffiMatrix
+func diagonalMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition
 ```
 
-Build a matrix from ordered rows. Direct Python construction and the facade module function use the shared default context. The raw wasm-bindgen compatibility layer retains `(rows, columns, flat_entries)`; new JavaScript code should use the nested facade form.
+Provides the `diagonal_matrix` operation on this mobile object.
 
-### matrix
+### identity_matrix
 
-<a id="entry-presentation_swift_matrix_construction_capability_algebra_matrix_api_partial_differential_equations_partialdifferentialequationprincipalpart_matrix"></a>
-<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationprincipalpart_matrix.373467e897b0"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationPrincipalPart method</p>
+<a id="entry-presentation_swift_api_session_identity_matrix"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_identitymatrix.796c1008fa8e"></a>
+<p class="symi-entry-owner">Explicit context</p>
 
 ```swift signature
-func matrix() -> UniffiMatrix
+func identityMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition
 ```
 
-The symmetric principal matrix whose quadratic form is the exact principal symbol.
+Provides the `identity_matrix` operation on this mobile object.
+
+### zero_matrix
+
+<a id="entry-presentation_swift_api_session_zero_matrix"></a>
+<a id="placement-placement.swift.swift_object.uniffisession_zeromatrix.3cd60fff040e"></a>
+<p class="symi-entry-owner">Explicit context</p>
+
+```swift signature
+func zeroMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition
+```
+
+Provides the `zero_matrix` operation on this mobile object.
 

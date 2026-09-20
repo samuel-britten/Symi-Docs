@@ -43,7 +43,7 @@ other former module calls must remove the parentheses.
 
 ### pi
 
-<a id="entry-presentation_python_evaluation_and_constants_capability_constants_pi_api_session_pi"></a>
+<a id="entry-presentation_python_api_session_pi"></a>
 <a id="placement-placement.python.python_module.module_pi.b74b97bbdd43"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -70,7 +70,7 @@ decimal value.
 
 ### e
 
-<a id="entry-presentation_python_evaluation_and_constants_capability_constants_e_api_session_e"></a>
+<a id="entry-presentation_python_api_session_e"></a>
 <a id="placement-placement.python.python_module.module_e.ca9b49b3b5c4"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -96,7 +96,7 @@ constant are the same expression.
 
 ### euler_gamma
 
-<a id="entry-presentation_python_evaluation_and_constants_capability_constants_euler_gamma_api_session_euler_gamma"></a>
+<a id="entry-presentation_python_api_session_euler_gamma"></a>
 <a id="placement-placement.python.python_module.module_euler_gamma.4e84cb2dd7bd"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -122,7 +122,7 @@ The Euler–Mascheroni constant \(\gamma\). It appears in closed forms produced 
 
 ### imaginary_unit
 
-<a id="entry-presentation_python_evaluation_and_constants_capability_constants_imaginary_unit_api_session_imaginary_unit"></a>
+<a id="entry-presentation_python_api_session_imaginary_unit"></a>
 <a id="placement-placement.python.python_module.module_imaginary_unit.be4f2bad8c68"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -150,7 +150,7 @@ decompose a complex expression.
 
 ### infinity
 
-<a id="entry-presentation_python_evaluation_and_constants_capability_constants_infinity_api_session_infinity"></a>
+<a id="entry-presentation_python_api_session_infinity"></a>
 <a id="placement-placement.python.python_module.module_infinity.078e1f396c68"></a>
 <p class="symi-entry-owner">Default context</p>
 

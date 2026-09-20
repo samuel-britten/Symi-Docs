@@ -2,20 +2,7 @@
 
 ### taylor_series
 
-<a id="entry-presentation_python_series_capability_calculus_taylor_series_api_assumptionscope_taylor_series"></a>
-<a id="placement-placement.python.python_class.assumptionscope_taylor_series.5736549b4857"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```python signature
-taylor_series(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    expansion_point: ExpressionLike,
-    truncation_order: int,
-) -> Expression
-```
-
-<a id="entry-presentation_python_series_capability_calculus_taylor_series_api_session_taylor_series"></a>
+<a id="entry-presentation_python_api_session_taylor_series"></a>
 <a id="placement-placement.python.python_module.module_taylor_series.0b4cd2addb32"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -29,7 +16,7 @@ taylor_series(
 ```
 
 <details class="symi-calling-forms">
-<summary>Calling forms</summary>
+<summary>Calling forms and variants</summary>
 
 <a id="placement-placement.python.python_class.context_taylor_series.751307bc3e60"></a>
 <p class="symi-entry-owner">Explicit context: <code>Context.taylor_series</code></p>
@@ -43,11 +30,8 @@ taylor_series(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_series_capability_calculus_taylor_series_api_expression_taylor_series"></a>
 <a id="placement-placement.python.python_class.expression_taylor_series.3fcdb5395680"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.taylor_series</code></p>
 
 ```python signature
 taylor_series(
@@ -56,6 +40,20 @@ taylor_series(
     order: int,
 ) -> Expression
 ```
+
+<a id="placement-placement.python.python_class.assumptionscope_taylor_series.5736549b4857"></a>
+<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.taylor_series</code></p>
+
+```python signature
+taylor_series(
+    input_expression: ExpressionLike,
+    variable: VariableLike,
+    expansion_point: ExpressionLike,
+    truncation_order: int,
+) -> Expression
+```
+
+</details>
 
 
 Truncated Taylor expansion about `expansion_point`, keeping terms of degree
@@ -66,7 +64,7 @@ symbolic differentiation.
 
 ### maclaurin_series
 
-<a id="entry-presentation_python_series_capability_calculus_maclaurin_series_api_analysis_session_maclaurin_series"></a>
+<a id="entry-presentation_python_api_session_maclaurin_series"></a>
 <a id="placement-placement.python.python_module.module_maclaurin_series.5223942bba31"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -92,22 +90,21 @@ maclaurin_series(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_series_capability_calculus_maclaurin_series_api_expression_operations_expression_maclaurin_series"></a>
 <a id="placement-placement.python.python_class.expression_maclaurin_series.5db0d2e0e680"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.maclaurin_series</code></p>
 
 ```python signature
 maclaurin_series(variable: VariableLike, order: int) -> Expression
 ```
+
+</details>
 
 
 `taylor_series` specialised to expansion point 0.
 
 ### laurent_series
 
-<a id="entry-presentation_python_series_capability_calculus_laurent_series_api_session_laurent_series"></a>
+<a id="entry-presentation_python_api_session_laurent_series"></a>
 <a id="placement-placement.python.python_module.module_laurent_series.d619a8cfcae9"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -135,11 +132,8 @@ laurent_series(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_series_capability_calculus_laurent_series_api_expression_laurent_series"></a>
 <a id="placement-placement.python.python_class.expression_laurent_series.1eabdc09f426"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.laurent_series</code></p>
 
 ```python signature
 laurent_series(
@@ -148,6 +142,8 @@ laurent_series(
     order: int,
 ) -> Expression
 ```
+
+</details>
 
 
 Truncated Laurent expansion at `center`: every \((\operatorname{variable} - \operatorname{center})^k\) term
@@ -158,7 +154,7 @@ because no finite truncation of the principal part is correct.
 
 ### residue
 
-<a id="entry-presentation_python_series_capability_calculus_residue_api_analysis_session_residue"></a>
+<a id="entry-presentation_python_api_session_residue"></a>
 <a id="placement-placement.python.python_module.module_residue.a318d22183f0"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -184,15 +180,14 @@ residue(
 ) -> Expression
 ```
 
-</details>
-
-<a id="entry-presentation_python_series_capability_calculus_residue_api_expression_operations_expression_residue"></a>
 <a id="placement-placement.python.python_class.expression_residue.bf75be4b16ee"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.residue</code></p>
 
 ```python signature
 residue(variable: Any, center: Any) -> Expression
 ```
+
+</details>
 
 
 Coefficient of \((\operatorname{variable} - \operatorname{center})^{-1}\) in the Laurent expansion at
@@ -204,7 +199,7 @@ explicit algebraic centers do not need to occur as structural factors.
 
 ### pole_order
 
-<a id="entry-presentation_python_series_capability_calculus_pole_order_api_analysis_session_pole_order"></a>
+<a id="entry-presentation_python_api_session_pole_order"></a>
 <a id="placement-placement.python.python_module.module_pole_order.9ba61a8cd618"></a>
 <p class="symi-entry-owner">Default context</p>
 
@@ -230,11 +225,8 @@ pole_order(
 ) -> Optional[int]
 ```
 
-</details>
-
-<a id="entry-presentation_python_series_capability_calculus_pole_order_api_expression_operations_expression_pole_order"></a>
 <a id="placement-placement.python.python_class.expression_pole_order.412f4c586190"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>Expression.pole_order</code></p>
 
 ```python signature
 pole_order(
@@ -242,6 +234,8 @@ pole_order(
     center: ExpressionLike,
 ) -> Optional[int]
 ```
+
+</details>
 
 
 Order of the singularity at `center`: `0` for analytic/removable points,

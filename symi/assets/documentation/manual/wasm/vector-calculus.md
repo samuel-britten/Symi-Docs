@@ -6,9 +6,9 @@ component/variable count mismatches raise.
 
 ### gradient
 
-<a id="entry-presentation_wasm_vector_calculus_capability_vector_calculus_gradient_api_analysis_session_gradient"></a>
+<a id="entry-presentation_wasm_api_session_gradient"></a>
 <a id="placement-placement.wasm.wasm_module.module_gradient.5e6c59111568"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 gradient(scalar_field: Expression, variables: string[]): Expression[]
@@ -18,7 +18,7 @@ gradient(scalar_field: Expression, variables: string[]): Expression[]
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_gradient.61111b1393d7"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.gradient</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.gradient</code></p>
 
 ```typescript signature
 gradient(scalar_field: Expression, variables: string[]): Expression[]
@@ -31,9 +31,9 @@ gradient(scalar_field: Expression, variables: string[]): Expression[]
 
 ### divergence
 
-<a id="entry-presentation_wasm_vector_calculus_capability_vector_calculus_divergence_api_analysis_session_divergence"></a>
+<a id="entry-presentation_wasm_api_session_divergence"></a>
 <a id="placement-placement.wasm.wasm_module.module_divergence.22455ef9ce79"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 divergence(
@@ -46,7 +46,7 @@ divergence(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_divergence.b0dfa0093378"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.divergence</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.divergence</code></p>
 
 ```typescript signature
 divergence(
@@ -62,9 +62,9 @@ divergence(
 
 ### curl
 
-<a id="entry-presentation_wasm_vector_calculus_capability_vector_calculus_curl_api_analysis_session_curl"></a>
+<a id="entry-presentation_wasm_api_session_curl"></a>
 <a id="placement-placement.wasm.wasm_module.module_curl.04cc2d24b092"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 curl(vector_components: Expression[], variables: string[]): Expression[]
@@ -74,7 +74,7 @@ curl(vector_components: Expression[], variables: string[]): Expression[]
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_curl.4644328f1a4b"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.curl</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.curl</code></p>
 
 ```typescript signature
 curl(vector_components: Expression[], variables: string[]): Expression[]
@@ -88,9 +88,9 @@ dimensions raise.
 
 ### laplacian
 
-<a id="entry-presentation_wasm_vector_calculus_capability_vector_calculus_laplacian_api_analysis_session_laplacian"></a>
+<a id="entry-presentation_wasm_api_session_laplacian"></a>
 <a id="placement-placement.wasm.wasm_module.module_laplacian.441c89e28847"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 laplacian(scalar_field: Expression, variables: string[]): Expression
@@ -100,7 +100,7 @@ laplacian(scalar_field: Expression, variables: string[]): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_laplacian.d47f5d0355d4"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.laplacian</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.laplacian</code></p>
 
 ```typescript signature
 laplacian(scalar_field: Expression, variables: string[]): Expression
@@ -113,15 +113,36 @@ laplacian(scalar_field: Expression, variables: string[]): Expression
 
 ### jacobian
 
+<a id="entry-presentation_wasm_api_session_jacobian"></a>
+<a id="placement-placement.wasm.wasm_module.module_jacobian.9371d4f76961"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+jacobian(vector_components: Expression[], variables: string[]): Matrix
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_jacobian.a16e01c96433"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobian</code></p>
+
+```typescript signature
+jacobian(vector_components: Expression[], variables: string[]): Matrix
+```
+
+</details>
+
+
 The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index
 variables). Returned as a `Matrix` so the result composes with the matrix
 methods.
 
 ### hessian
 
-<a id="entry-presentation_wasm_vector_calculus_capability_vector_calculus_hessian_api_analysis_session_hessian"></a>
+<a id="entry-presentation_wasm_api_session_hessian"></a>
 <a id="placement-placement.wasm.wasm_module.module_hessian.c1073609193d"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 hessian(scalar_field: Expression, variables: string[]): Matrix
@@ -131,7 +152,7 @@ hessian(scalar_field: Expression, variables: string[]): Matrix
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_hessian.20761aa7d61e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.hessian</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.hessian</code></p>
 
 ```typescript signature
 hessian(scalar_field: Expression, variables: string[]): Matrix
@@ -146,55 +167,4 @@ structurally symmetric on smooth input.
 ## Example
 
 This family is not part of the recommended JavaScript facade in this release. Call it through the generated `symi.raw` layer, whose entries are listed with their wasm-bindgen signatures above, and read [Migration](migration.md) for the ownership rules that apply there.
-
-
-## Additional API
-
-### jacobian
-
-<a id="entry-presentation_wasm_vector_calculus_capability_vector_calculus_jacobian_api_analysis_session_jacobian"></a>
-<a id="placement-placement.wasm.wasm_module.module_jacobian.9371d4f76961"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-jacobian(vector_components: Expression[], variables: string[]): Matrix
-```
-
-The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index variables).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_jacobian.a16e01c96433"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobian</code></p>
-
-```typescript signature
-jacobian(vector_components: Expression[], variables: string[]): Matrix
-```
-
-</details>
-
-### jacobian
-
-<a id="entry-presentation_wasm_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationcoordinatechange_jacobian"></a>
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationcoordinatechange_jacobian.598b8fca5781"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationCoordinateChange property</p>
-
-```typescript signature
-readonly jacobian: Expression
-```
-
-The exact forward-map Jacobian determinant.
-
-### jacobian
-
-<a id="entry-presentation_wasm_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_jacobian"></a>
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationtransformationverificationreport_jacobian.59d33834bad1"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationTransformationVerificationReport property</p>
-
-```typescript signature
-readonly jacobian: Expression
-```
-
-The independently recomputed forward-map Jacobian.
 

@@ -9,7 +9,7 @@ conditions, and as boolean-valued results.
 
 ### equal
 
-<a id="entry-presentation_rust_relations_capability_rust_native_rust_api_session_equal_unnamed"></a>
+<a id="entry-presentation_rust_api_session_equal"></a>
 <a id="placement-placement.rust.native_rust.api_session_equal.eeef94e2f603"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -24,7 +24,7 @@ pub fn equal(
 
 ### not_equal
 
-<a id="entry-presentation_rust_relations_capability_rust_native_rust_api_session_not_equal_unnamed"></a>
+<a id="entry-presentation_rust_api_session_not_equal"></a>
 <a id="placement-placement.rust.native_rust.api_session_not_equal.5c557c43a467"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -39,7 +39,7 @@ pub fn not_equal(
 
 ### less_than
 
-<a id="entry-presentation_rust_relations_capability_rust_native_rust_api_session_less_than_unnamed"></a>
+<a id="entry-presentation_rust_api_session_less_than"></a>
 <a id="placement-placement.rust.native_rust.api_session_less_than.3a6123cc16eb"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -51,9 +51,11 @@ pub fn less_than(
 ) -> Result<Expression, ApiError>
 ```
 
-<a id="entry-presentation_rust_relations_capability_rust_native_rust_api_expression_operations_expression_less_than_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_less_than.5104f51d812f"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::less_than</code></p>
 
 ```rust signature
 pub fn less_than(
@@ -62,10 +64,12 @@ pub fn less_than(
 ) -> Result<Expression, ApiError>
 ```
 
+</details>
+
 
 ### less_than_or_equal
 
-<a id="entry-presentation_rust_relations_capability_rust_native_rust_api_session_less_than_or_equal_unnamed"></a>
+<a id="entry-presentation_rust_api_session_less_than_or_equal"></a>
 <a id="placement-placement.rust.native_rust.api_session_less_than_or_equal.84a3cf06d28d"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -80,7 +84,7 @@ pub fn less_than_or_equal(
 
 ### greater_than
 
-<a id="entry-presentation_rust_relations_capability_rust_native_rust_api_session_greater_than_unnamed"></a>
+<a id="entry-presentation_rust_api_session_greater_than"></a>
 <a id="placement-placement.rust.native_rust.api_session_greater_than.406463643ad7"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -95,7 +99,7 @@ pub fn greater_than(
 
 ### greater_than_or_equal
 
-<a id="entry-presentation_rust_relations_capability_rust_native_rust_api_session_greater_than_or_equal_unnamed"></a>
+<a id="entry-presentation_rust_api_session_greater_than_or_equal"></a>
 <a id="placement-placement.rust.native_rust.api_session_greater_than_or_equal.38854f9b5202"></a>
 <p class="symi-entry-owner">api::Session method</p>
 

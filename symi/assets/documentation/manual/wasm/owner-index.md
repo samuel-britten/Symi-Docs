@@ -1,1276 +1,2013 @@
 # Owner index
 
-## AssumptionProposition method
-
-- [`and`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_and_api_assumptionproposition_and) — AssumptionProposition method
-- [`and`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_and_api_assumptionproposition_and) — AssumptionProposition method
-- [`congruenceModulus`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_congruence_modulus_api_assumptionproposition_congruence_modulus) — AssumptionProposition method
-- [`leftOperand`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_left_operand_api_assumptionproposition_left_operand) — AssumptionProposition method
-- [`membershipElement`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_membership_element_api_assumptionproposition_membership_element) — AssumptionProposition method
-- [`membershipSet`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_membership_set_api_assumptionproposition_membership_set) — AssumptionProposition method
-- [`not`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_not_api_assumptionproposition_not) — AssumptionProposition method
-- [`not`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_not_api_assumptionproposition_not) — AssumptionProposition method
-- [`or`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_or_api_assumptionproposition_or) — AssumptionProposition method
-- [`or`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_or_api_assumptionproposition_or) — AssumptionProposition method
-- [`relationKind`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_relation_kind_api_assumptionproposition_relation_kind) — AssumptionProposition method
-- [`rightOperand`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_right_operand_api_assumptionproposition_right_operand) — AssumptionProposition method
-- [`serialize`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_serialize_api_assumptionproposition_serialize) — AssumptionProposition method
-- [`toString`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_tostring_api_assumptionproposition_to_string) — AssumptionProposition method
-- [`toString`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_to_string_api_assumptionproposition_to_string) — AssumptionProposition method
-
-## AssumptionScope method
-
-- [`ask`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_ask_api_assumptionscope_ask) — AssumptionScope method
-- [`ask`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_ask_api_assumptionscope_ask) — AssumptionScope method
-- [`assuming`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_assuming_api_assumptionscope_assuming) — AssumptionScope method
-- [`assuming`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_assuming_api_assumptionscope_assuming) — AssumptionScope method
-- [`continuousDomain`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_continuous_domain_api_assumptionscope_continuous_domain) — AssumptionScope method
-- [`couldHold`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_could_hold_api_assumptionscope_could_hold) — AssumptionScope method
-- [`couldHold`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_could_hold_api_assumptionscope_could_hold) — AssumptionScope method
-- [`evaluateLimit`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_evaluate_limit_api_assumptionscope_evaluate_limit) — AssumptionScope method
-- [`fourierTransform`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_fourier_transform_api_assumptionscope_fourier_transform) — AssumptionScope method
-- [`integrate`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_api_assumptionscope_integrate) — AssumptionScope method
-- [`integrateDefinite`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_definite_api_assumptionscope_integrate_definite) — AssumptionScope method
-- [`laplaceTransform`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_laplace_transform_api_assumptionscope_laplace_transform) — AssumptionScope method
-- [`refine`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_refine_api_assumptionscope_refine) — AssumptionScope method
-- [`refine`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_refine_api_assumptionscope_refine) — AssumptionScope method
-- [`simplify`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify) — AssumptionScope method
-- [`singularities`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_singularities_api_assumptionscope_singularities) — AssumptionScope method
-- [`taylorSeries`](series.md#entry-presentation_wasm_series_capability_calculus_taylor_series_api_assumptionscope_taylor_series) — AssumptionScope method
-
-## BulkExpressionOutcome property
-
-- [`diagnostic`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_diagnostic_api_parallelism_bulkexpressionoutcome_diagnostic) — BulkExpressionOutcome property
-- [`index`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_index_api_parallelism_bulkexpressionoutcome_index) — BulkExpressionOutcome property
-- [`value`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_value_api_parallelism_bulkexpressionoutcome_value) — BulkExpressionOutcome property
-
-## BulkTextOutcome property
-
-- [`diagnostic`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_diagnostic_api_parallelism_bulktextoutcome_diagnostic) — BulkTextOutcome property
-- [`index`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_index_api_parallelism_bulktextoutcome_index) — BulkTextOutcome property
-- [`value`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_value_api_parallelism_bulktextoutcome_value) — BulkTextOutcome property
-
-## Circle2d constructor
-
-- [`Circle2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_circle_2d_api_circle2d) — Circle2d constructor
-
-## Circle2d method
-
-- [`area`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_area_api_circle2d_area) — Circle2d method
-- [`circumference`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_circumference_api_circle2d_circumference) — Circle2d method
-- [`equation`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_equation_api_geometry_operations_circle2d_equation) — Circle2d method
-- [`intersection`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_intersection_api_circle2d_intersection) — Circle2d method
-- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_circle2d_serialize_object) — Circle2d method
-- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_circle2d_to_latex) — Circle2d method
-- [`toString`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_to_js_string_unresolved) — Circle2d method
-
-## Circle2d property
-
-- [`center`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_center_api_circle2d_center) — Circle2d property
-- [`radius`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_radius_api_circle2d_radius) — Circle2d property
-
-## Context constructor
-
-- [`Context`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_context_api_session) — Context constructor
-
-## CriticalPoint property
-
-- [`classification`](optimization.md#entry-presentation_wasm_optimization_capability_equations_classification_api_results_criticalpoint_classification) — CriticalPoint property
-- [`multiplierValues`](solving.md#entry-presentation_wasm_solving_capability_equations_multiplier_values_api_results_criticalpoint_multiplier_values) — CriticalPoint property
-- [`multiplierVariables`](solving.md#entry-presentation_wasm_solving_capability_equations_multiplier_variables_api_results_criticalpoint_multiplier_variables) — CriticalPoint property
-- [`values`](solving.md#entry-presentation_wasm_solving_capability_equations_values_api_results_criticalpoint_values) — CriticalPoint property
-- [`variables`](solving.md#entry-presentation_wasm_solving_capability_equations_variables_api_results_criticalpoint_variables) — CriticalPoint property
-
-## CylindricalAlgebraicDecomposition constructor
-
-- [`CylindricalAlgebraicDecomposition`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_cylindrical_algebraic_decomposition_api_cylindricalalgebraicdecomposition) — CylindricalAlgebraicDecomposition constructor
-
-## CylindricalAlgebraicDecomposition method
-
-- [`cellCount`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_cell_count_api_cylindricalalgebraicdecomposition_cell_count) — CylindricalAlgebraicDecomposition method
-- [`cellDimension`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_cell_dimension_api_cylindricalalgebraicdecomposition_cell_dimension) — CylindricalAlgebraicDecomposition method
-- [`cellKind`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_cell_kind_api_cylindricalalgebraicdecomposition_cell_kind) — CylindricalAlgebraicDecomposition method
-- [`cellSamplePoint`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_cell_sample_point_api_cylindricalalgebraicdecomposition_cell_sample_point) — CylindricalAlgebraicDecomposition method
-- [`cellSignVector`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_cell_sign_vector_api_cylindricalalgebraicdecomposition_cell_sign_vector) — CylindricalAlgebraicDecomposition method
-- [`projectionOperatorUsed`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_projection_operator_used_api_cylindricalalgebraicdecomposition_projection_operator_used) — CylindricalAlgebraicDecomposition method
-
-## Default context
-
-- [`abs`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_abs_api_session_abs) — Default context
-- [`addAssumptions`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_add_assumptions_api_session_add_assumptions) — Default context
-- [`algebraicAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_algebraic_assumption_api_session_algebraic_assumption) — Default context
-- [`arccos`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arccos_api_session_arccos) — Default context
-- [`arccosh`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arccosh_api_session_arccosh) — Default context
-- [`arccot`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arccot_api_session_arccot) — Default context
-- [`arccoth`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arccoth_api_session_arccoth) — Default context
-- [`arccsc`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arccsc_api_session_arccsc) — Default context
-- [`arccsch`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arccsch_api_session_arccsch) — Default context
-- [`arcsec`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arcsec_api_session_arcsec) — Default context
-- [`arcsech`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arcsech_api_session_arcsech) — Default context
-- [`arcsin`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arcsin_api_session_arcsin) — Default context
-- [`arcsinh`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arcsinh_api_session_arcsinh) — Default context
-- [`arctan`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arctan_api_session_arctan) — Default context
-- [`arctanh`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_arctanh_api_session_arctanh) — Default context
-- [`ask`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_ask_api_session_ask) — Default context
-- [`assuming`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_assuming_api_session_assuming) — Default context
-- [`assumptionPropositionFromLogicalExpression`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_assumption_proposition_from_logical_expression_api_session_assumption_proposition_from_logical_expression) — Default context
-- [`assumptionsOf`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_assumptions_of_api_session_assumptions_of) — Default context
-- [`bellNumber`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_bell_number_api_session_bell_number) — Default context
-- [`beta`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_beta_api_session_beta) — Default context
-- [`binomial`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_binomial_api_session_binomial) — Default context
-- [`cancel`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_cancel_api_session_cancel) — Default context
-- [`canonicalizePartialDifferentialEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_canonicalize_partial_differential_equation_api_partial_differential_equations_session_canonicalize_partial_differential_equation) — Default context
-- [`carlsonRc`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_carlson_rc_api_session_carlson_rc) — Default context
-- [`carlsonRd`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_carlson_rd_api_session_carlson_rd) — Default context
-- [`carlsonRf`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_carlson_rf_api_session_carlson_rf) — Default context
-- [`carlsonRj`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_carlson_rj_api_session_carlson_rj) — Default context
-- [`catalanNumber`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_catalan_number_api_session_catalan_number) — Default context
-- [`ceiling`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_ceiling_api_session_ceiling) — Default context
-- [`changeMonomialOrder`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_change_monomial_order_api_algebra_session_change_monomial_order) — Default context
-- [`changePartialDifferentialEquationVariables`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_change_partial_differential_equation_variables_api_partial_differential_equations_session_change_partial_differential_equation_variables) — Default context
-- [`characteristicFunction`](statistics.md#entry-presentation_wasm_statistics_capability_probability_characteristic_function_api_probability_session_characteristic_function) — Default context
-- [`chebyshevPolynomialFirstKind`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_chebyshev_polynomial_first_kind_api_session_chebyshev_polynomial_first_kind) — Default context
-- [`chebyshevPolynomialSecondKind`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_chebyshev_polynomial_second_kind_api_session_chebyshev_polynomial_second_kind) — Default context
-- [`chineseRemainder`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_chinese_remainder_api_number_theory_session_chinese_remainder) — Default context
-- [`classifyPartialDifferentialEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_classify_partial_differential_equation_api_partial_differential_equations_session_classify_partial_differential_equation) — Default context
-- [`classifySecondOrderPartialDifferentialEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_classify_second_order_partial_differential_equation_api_partial_differential_equations_session_classify_second_order_partial_differential_equation) — Default context
-- [`classifyUnconstrained`](solving.md#entry-presentation_wasm_solving_capability_equations_classify_unconstrained_api_solving_session_classify_unconstrained) — Default context
-- [`clearAllAssumptions`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_clear_all_assumptions_api_session_clear_all_assumptions) — Default context
-- [`clearAssumptions`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_clear_assumptions_api_session_clear_assumptions) — Default context
-- [`coefficient`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_coefficient_api_algebra_session_coefficient) — Default context
-- [`collect`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_collect_api_algebra_session_collect) — Default context
-- [`collectRadicals`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_collect_radicals_api_algebra_session_collect_radicals) — Default context
-- [`combineLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_algebra_session_combine_logarithm) — Default context
-- [`combinePowers`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_combine_powers_api_algebra_session_combine_powers) — Default context
-- [`combineTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_session_combine_trigonometric) — Default context
-- [`compareRealRoots`](solving.md#entry-presentation_wasm_solving_capability_equations_compare_real_roots_api_solving_session_compare_real_roots) — Default context
-- [`completeTheSquare`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square) — Default context
-- [`complexAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_complex_assumption_api_session_complex_assumption) — Default context
-- [`complexEntries`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_complex_entries_api_session_complex_entries) — Default context
-- [`complexPlane`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_complex_plane_api_session_complex_plane) — Default context
-- [`compositeAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_composite_assumption_api_session_composite_assumption) — Default context
-- [`conditionSet`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_condition_set_api_sets_session_condition_set) — Default context
-- [`congruenceModulus`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_congruence_modulus_api_assumptionproposition_congruence_modulus) — Default context
-- [`congruentAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_congruent_assumption_api_defaults_session_congruent_assumption) — Default context
-- [`conjugate`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_conjugate_api_session_conjugate) — Default context
-- [`conjunctiveNormalForm`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_conjunctive_normal_form_api_logic_session_conjunctive_normal_form) — Default context
-- [`constructPartialDifferentialEquationPointSymmetryAction`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_construct_partial_differential_equation_point_symmetry_action_api_partial_differential_equations_session_construct_partial_differential_equation_point_symmetry_action) — Default context
-- [`continuedFractionQuadraticIrrational`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_continued_fraction_quadratic_irrational_api_number_theory_session_continued_fraction_quadratic_irrational) — Default context
-- [`continuedFractionRational`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_continued_fraction_rational_api_number_theory_session_continued_fraction_rational) — Default context
-- [`continuousDomain`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_continuous_domain_api_session_continuous_domain) — Default context
-- [`cos`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_cos_api_session_cos) — Default context
-- [`cosh`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_cosh_api_session_cosh) — Default context
-- [`cot`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_cot_api_session_cot) — Default context
-- [`coth`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_coth_api_session_coth) — Default context
-- [`couldHold`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_could_hold_api_session_could_hold) — Default context
-- [`countDistinctRealRoots`](solving.md#entry-presentation_wasm_solving_capability_equations_count_distinct_real_roots_api_solving_session_count_distinct_real_roots) — Default context
-- [`covariance`](statistics.md#entry-presentation_wasm_statistics_capability_probability_covariance_api_probability_session_covariance) — Default context
-- [`createFacade`](cad.md#entry-presentation_wasm_cad_capability_algebra_create_facade_unresolved) — Default context
-- [`csc`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_csc_api_session_csc) — Default context
-- [`csch`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_csch_api_session_csch) — Default context
-- [`cumulant`](statistics.md#entry-presentation_wasm_statistics_capability_probability_cumulant_api_probability_session_cumulant) — Default context
-- [`cumulativeDistribution`](statistics.md#entry-presentation_wasm_statistics_capability_probability_cumulative_distribution_api_probability_session_cumulative_distribution) — Default context
-- [`curl`](vector-calculus.md#entry-presentation_wasm_vector_calculus_capability_vector_calculus_curl_api_analysis_session_curl) — Default context
-- [`defaultContext`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_default_context_api_defaults_session_default_context) — Default context
-- [`definedAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_defined_assumption_api_session_defined_assumption) — Default context
-- [`degree`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_degree_api_algebra_session_degree) — Default context
-- [`denestPowers`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_denest_powers_api_algebra_session_denest_powers) — Default context
-- [`denestRadicals`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_denest_radicals_api_algebra_session_denest_radicals) — Default context
-- [`denominator`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_denominator_api_session_denominator) — Default context
-- [`density`](statistics.md#entry-presentation_wasm_statistics_capability_probability_density_api_probability_session_density) — Default context
-- [`derivative`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_derivative_api_session_derivative) — Default context
-- [`derivePartialDifferentialEquationPointSymmetries`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_derive_partial_differential_equation_point_symmetries_api_partial_differential_equations_session_derive_partial_differential_equation_point_symmetries) — Default context
-- [`deserializeAssumptionProposition`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_deserialize_assumption_proposition_api_session_deserialize_assumption_proposition) — Default context
-- [`diagonalMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_diagonal_matrix_api_session_diagonal_matrix) — Default context
-- [`differentiate`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_differentiate_api_session_differentiate) — Default context
-- [`differentiateBulk`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_differentiate_bulk_api_session_differentiate_bulk) — Default context
-- [`digamma`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_digamma_api_session_digamma) — Default context
-- [`discoverPartialDifferentialEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_discover_partial_differential_equation_api_partial_differential_equations_session_discover_partial_differential_equation) — Default context
-- [`disjunctiveNormalForm`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_disjunctive_normal_form_api_logic_session_disjunctive_normal_form) — Default context
-- [`distribution`](statistics.md#entry-presentation_wasm_statistics_capability_probability_distribution_api_probability_session_distribution) — Default context
-- [`divergence`](vector-calculus.md#entry-presentation_wasm_vector_calculus_capability_vector_calculus_divergence_api_analysis_session_divergence) — Default context
-- [`divisorCount`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_divisor_count_api_session_divisor_count) — Default context
-- [`divisorSigma`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_divisor_sigma_api_session_divisor_sigma) — Default context
-- [`e`](evaluation-and-constants.md#entry-presentation_wasm_evaluation_and_constants_capability_constants_e_api_session_e) — Default context
-- [`eliminateDerivedLogicalConnectives`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_logic_session_eliminate_derived_logical_connectives) — Default context
-- [`eliminateQuantifiers`](solving.md#entry-presentation_wasm_solving_capability_equations_eliminate_quantifiers_api_logic_session_eliminate_quantifiers) — Default context
-- [`eliminationIdeal`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_elimination_ideal_api_algebra_session_elimination_ideal) — Default context
-- [`ellipticE`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_elliptic_e_api_session_elliptic_e) — Default context
-- [`ellipticEIncomplete`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_elliptic_e_incomplete_api_session_elliptic_e_incomplete) — Default context
-- [`ellipticF`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_elliptic_f_api_session_elliptic_f) — Default context
-- [`ellipticK`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_elliptic_k_api_session_elliptic_k) — Default context
-- [`ellipticPi`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_elliptic_pi_api_session_elliptic_pi) — Default context
-- [`ellipticPiIncomplete`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_elliptic_pi_incomplete_api_session_elliptic_pi_incomplete) — Default context
-- [`emptySet`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_empty_set_api_session_empty_set) — Default context
-- [`enumerateSetInInterval`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_enumerate_set_in_interval_api_sets_session_enumerate_set_in_interval) — Default context
-- [`equal`](relations.md#entry-presentation_wasm_relations_capability_elementary_functions_equal_api_session_equal) — Default context
-- [`equalAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_equal_assumption_api_defaults_session_equal_assumption) — Default context
-- [`eulerGamma`](api-reference.md#entry-presentation_wasm_api_reference_capability_constants_euler_gamma_api_session_euler_gamma) — Default context
-- [`eulerTotient`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_euler_totient_api_number_theory_session_euler_totient) — Default context
-- [`evaluateLimit`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_evaluate_limit_api_session_evaluate_limit) — Default context
-- [`evaluateNumeric`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_evaluate_numeric_api_analysis_session_evaluate_numeric) — Default context
-- [`evaluateNumericBulk`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_evaluate_numeric_bulk_api_session_evaluate_numeric_bulk) — Default context
-- [`evaluateOnGrid`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_evaluate_on_grid_api_analysis_session_evaluate_on_grid) — Default context
-- [`evaluateOnGridPoints`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_evaluate_on_grid_points_api_analysis_session_evaluate_on_grid_points) — Default context
-- [`evaluateTruth`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_evaluate_truth_api_session_evaluate_truth) — Default context
-- [`evenAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_even_assumption_api_session_even_assumption) — Default context
-- [`execute`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_execute_api_session_execute) — Default context
-- [`executionMode`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_execution_mode_api_session_execution_mode) — Default context
-- [`exp`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_exp_api_session_exp) — Default context
-- [`expand`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_expand_api_session_expand) — Default context
-- [`expandBulk`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_expand_bulk_api_session_expand_bulk) — Default context
-- [`expandComplex`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_algebra_session_expand_complex) — Default context
-- [`expandLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_algebra_session_expand_logarithm) — Default context
-- [`expandPowerBase`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_expand_power_base_api_algebra_session_expand_power_base) — Default context
-- [`expandTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_session_expand_trigonometric) — Default context
-- [`expectation`](statistics.md#entry-presentation_wasm_statistics_capability_probability_expectation_api_probability_session_expectation) — Default context
-- [`explicitPartialDifferentialEquationSolution`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_explicit_partial_differential_equation_solution_api_partial_differential_equations_session_explicit_partial_differential_equation_solution) — Default context
-- [`extendedEuclidean`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_extended_euclidean_api_number_theory_session_extended_euclidean) — Default context
-- [`extendedRealAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_extended_real_assumption_api_session_extended_real_assumption) — Default context
-- [`factor`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_factor_api_session_factor) — Default context
-- [`factorCommonTerms`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_algebra_session_factor_common_terms) — Default context
-- [`factorInteger`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_factor_integer_api_session_factor_integer) — Default context
-- [`factorial`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_factorial_api_session_factorial) — Default context
-- [`fallingFactorial`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_falling_factorial_api_session_falling_factorial) — Default context
-- [`fibonacciNumber`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_fibonacci_number_api_session_fibonacci_number) — Default context
-- [`finiteAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_finite_assumption_api_session_finite_assumption) — Default context
-- [`finiteSet`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_finite_set_api_session_finite_set) — Default context
-- [`floor`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_floor_api_session_floor) — Default context
-- [`fourierTransform`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_fourier_transform_api_session_fourier_transform) — Default context
-- [`fullRankMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_full_rank_matrix_api_session_full_rank_matrix) — Default context
-- [`gamma`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_gamma_api_session_gamma) — Default context
-- [`gegenbauerPolynomial`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_gegenbauer_polynomial_api_session_gegenbauer_polynomial) — Default context
-- [`generalizedLaguerrePolynomial`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_generalized_laguerre_polynomial_api_session_generalized_laguerre_polynomial) — Default context
-- [`globalOptimumOnSemialgebraic`](optimization.md#entry-presentation_wasm_optimization_capability_equations_global_optimum_on_semialgebraic_api_solving_session_global_optimum_on_semialgebraic) — Default context
-- [`gradient`](vector-calculus.md#entry-presentation_wasm_vector_calculus_capability_vector_calculus_gradient_api_analysis_session_gradient) — Default context
-- [`greaterAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_greater_assumption_api_defaults_session_greater_assumption) — Default context
-- [`greaterOrEqualAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_greater_or_equal_assumption_api_defaults_session_greater_or_equal_assumption) — Default context
-- [`greaterThan`](relations.md#entry-presentation_wasm_relations_capability_elementary_functions_greater_than_api_session_greater_than) — Default context
-- [`greaterThanOrEqual`](relations.md#entry-presentation_wasm_relations_capability_elementary_functions_greater_than_or_equal_api_session_greater_than_or_equal) — Default context
-- [`groebnerBasis`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_groebner_basis_api_algebra_session_groebner_basis) — Default context
-- [`hermitePolynomial`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_hermite_polynomial_api_session_hermite_polynomial) — Default context
-- [`hermitianMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_hermitian_matrix_api_session_hermitian_matrix) — Default context
-- [`hessian`](vector-calculus.md#entry-presentation_wasm_vector_calculus_capability_vector_calculus_hessian_api_analysis_session_hessian) — Default context
-- [`hostCancellationControlAddress`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_host_cancellation_control_address_unresolved) — Default context
-- [`hostCancellationControlByteLength`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_host_cancellation_control_byte_length_unresolved) — Default context
-- [`hostCancellationRequested`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_host_cancellation_requested_unresolved) — Default context
-- [`hostCancellationSlotCount`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_host_cancellation_slot_count_unresolved) — Default context
-- [`hostCancellationSlotTicket`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_host_cancellation_slot_ticket_unresolved) — Default context
-- [`hurwitzZeta`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_hurwitz_zeta_api_session_hurwitz_zeta) — Default context
-- [`hypergeometric0f1`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_hypergeometric_0f1_api_session_hypergeometric_0f1) — Default context
-- [`hypergeometric1f1`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_hypergeometric_1f1_api_session_hypergeometric_1f1) — Default context
-- [`hypergeometric2f1`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_hypergeometric_2f1_api_session_hypergeometric_2f1) — Default context
-- [`hypergeometricPfq`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_hypergeometric_pfq_api_session_hypergeometric_pfq) — Default context
-- [`idealIntersection`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_ideal_intersection_api_algebra_session_ideal_intersection) — Default context
-- [`idealMembership`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_ideal_membership_api_algebra_session_ideal_membership) — Default context
-- [`idealProduct`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_ideal_product_api_algebra_session_ideal_product) — Default context
-- [`idealSum`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_ideal_sum_api_algebra_session_ideal_sum) — Default context
-- [`identityMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_identity_matrix_api_session_identity_matrix) — Default context
-- [`imageSet`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_image_set_api_sets_session_image_set) — Default context
-- [`imaginaryPart`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_imaginary_part_api_session_imaginary_part) — Default context
-- [`imaginaryUnit`](api-reference.md#entry-presentation_wasm_api_reference_capability_constants_imaginary_unit_api_session_imaginary_unit) — Default context
-- [`implicitPartialDifferentialEquationSolution`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_implicit_partial_differential_equation_solution_api_partial_differential_equations_session_implicit_partial_differential_equation_solution) — Default context
-- [`implicitize`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_implicitize_api_algebra_session_implicitize) — Default context
-- [`infiniteAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_infinite_assumption_api_session_infinite_assumption) — Default context
-- [`infinity`](evaluation-and-constants.md#entry-presentation_wasm_evaluation_and_constants_capability_constants_infinity_api_session_infinity) — Default context
-- [`initThreadPoolWithCapability`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_init_thread_pool_with_capability_unresolved) — Default context
-- [`initializeParallelism`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_initialize_parallelism_api_session_initialize_parallelism) — Default context
-- [`integer`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_integer_api_session_integer) — Default context
-- [`integerAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_integer_assumption_api_session_integer_assumption) — Default context
-- [`integerEntries`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_integer_entries_api_session_integer_entries) — Default context
-- [`integerFromString`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string) — Default context
-- [`integerGcd`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_integer_gcd_api_session_integer_gcd) — Default context
-- [`integerLcm`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_integer_lcm_api_session_integer_lcm) — Default context
-- [`integerNthRoot`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_integer_nth_root_api_session_integer_nth_root) — Default context
-- [`integerSet`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_integer_set_api_session_integer_set) — Default context
-- [`integerSquareRoot`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_integer_square_root_api_session_integer_square_root) — Default context
-- [`integral`](deferred-forms.md#entry-presentation_wasm_deferred_forms_capability_construction_integral_api_analysis_session_integral) — Default context
-- [`integrate`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_api_session_integrate) — Default context
-- [`integrateDefinite`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_definite_api_analysis_session_integrate_definite) — Default context
-- [`integrateDefiniteDetailed`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_definite_detailed_api_session_integrate_definite_detailed) — Default context
-- [`integrateDefiniteNumeric`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_definite_numeric_api_analysis_session_integrate_definite_numeric) — Default context
-- [`integrateDefiniteUnderConstraint`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_integrate_definite_under_constraint_api_session_integrate_definite_under_constraint) — Default context
-- [`integrateIterated`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_iterated_api_analysis_session_integrate_iterated) — Default context
-- [`internerLength`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_interner_length_api_session_interner_length) — Default context
-- [`interval`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_interval_api_sets_session_interval) — Default context
-- [`introduceDerivedLogicalConnectives`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_introduce_derived_logical_connectives_api_logic_session_introduce_derived_logical_connectives) — Default context
-- [`inverseFourierTransform`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_inverse_fourier_transform_api_session_inverse_fourier_transform) — Default context
-- [`inverseLaplaceTransform`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_inverse_laplace_transform_api_session_inverse_laplace_transform) — Default context
-- [`invertibleMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_invertible_matrix_api_session_invertible_matrix) — Default context
-- [`irrationalAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_irrational_assumption_api_session_irrational_assumption) — Default context
-- [`isMember`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_is_member_api_sets_session_is_member) — Default context
-- [`isPrime`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_is_prime_api_session_is_prime) — Default context
-- [`isSubset`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_is_subset_api_sets_session_is_subset) — Default context
-- [`isolateRealRoots`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_isolate_real_roots_api_solving_session_isolate_real_roots) — Default context
-- [`jacobiAmplitude`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_jacobi_amplitude_api_session_jacobi_amplitude) — Default context
-- [`jacobiCn`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_jacobi_cn_api_session_jacobi_cn) — Default context
-- [`jacobiDn`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_jacobi_dn_api_session_jacobi_dn) — Default context
-- [`jacobiPolynomial`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_jacobi_polynomial_api_session_jacobi_polynomial) — Default context
-- [`jacobiSn`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_jacobi_sn_api_session_jacobi_sn) — Default context
-- [`jacobiSymbol`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_jacobi_symbol_api_session_jacobi_symbol) — Default context
-- [`jacobiTheta1`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_jacobi_theta_1_api_session_jacobi_theta_1) — Default context
-- [`jacobiTheta2`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_jacobi_theta_2_api_session_jacobi_theta_2) — Default context
-- [`jacobiTheta3`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_jacobi_theta_3_api_session_jacobi_theta_3) — Default context
-- [`jacobiTheta4`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_jacobi_theta_4_api_session_jacobi_theta_4) — Default context
-- [`jacobian`](vector-calculus.md#entry-presentation_wasm_vector_calculus_capability_vector_calculus_jacobian_api_analysis_session_jacobian) — Default context
-- [`karushKuhnTuckerPoints`](optimization.md#entry-presentation_wasm_optimization_capability_equations_karush_kuhn_tucker_points_api_solving_session_karush_kuhn_tucker_points) — Default context
-- [`kroneckerSymbol`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_kronecker_symbol_api_session_kronecker_symbol) — Default context
-- [`lagrangeCriticalPoints`](optimization.md#entry-presentation_wasm_optimization_capability_equations_lagrange_critical_points_api_solving_session_lagrange_critical_points) — Default context
-- [`laguerrePolynomial`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_laguerre_polynomial_api_session_laguerre_polynomial) — Default context
-- [`laplaceTransform`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_laplace_transform_api_session_laplace_transform) — Default context
-- [`laplacian`](vector-calculus.md#entry-presentation_wasm_vector_calculus_capability_vector_calculus_laplacian_api_analysis_session_laplacian) — Default context
-- [`laurentSeries`](series.md#entry-presentation_wasm_series_capability_calculus_laurent_series_api_session_laurent_series) — Default context
-- [`leadingCoefficient`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_leading_coefficient_api_algebra_session_leading_coefficient) — Default context
-- [`leftOperand`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_left_operand_api_assumptionproposition_left_operand) — Default context
-- [`legendrePolynomial`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_legendre_polynomial_api_session_legendre_polynomial) — Default context
-- [`legendreSymbol`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_legendre_symbol_api_session_legendre_symbol) — Default context
-- [`lerchPhi`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_lerch_phi_api_session_lerch_phi) — Default context
-- [`lessAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_less_assumption_api_defaults_session_less_assumption) — Default context
-- [`lessOrEqualAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_less_or_equal_assumption_api_defaults_session_less_or_equal_assumption) — Default context
-- [`lessThan`](relations.md#entry-presentation_wasm_relations_capability_elementary_functions_less_than_api_session_less_than) — Default context
-- [`lessThanOrEqual`](relations.md#entry-presentation_wasm_relations_capability_elementary_functions_less_than_or_equal_api_session_less_than_or_equal) — Default context
-- [`limit`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_limit_api_session_limit) — Default context
-- [`log`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_log_api_session_log) — Default context
-- [`logGamma`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_log_gamma_api_session_log_gamma) — Default context
-- [`logicalFalse`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_logical_false_api_session_logical_false) — Default context
-- [`logicalTrue`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_logical_true_api_session_logical_true) — Default context
-- [`lowerTriangularMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_lower_triangular_matrix_api_session_lower_triangular_matrix) — Default context
-- [`maclaurinSeries`](series.md#entry-presentation_wasm_series_capability_calculus_maclaurin_series_api_analysis_session_maclaurin_series) — Default context
-- [`matrixDiagonal`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_matrix_diagonal_api_session_matrix_diagonal) — Default context
-- [`matrixIdentity`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_matrix_identity_api_session_matrix_identity) — Default context
-- [`matrixShape`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_matrix_shape_api_session_matrix_shape) — Default context
-- [`matrixZero`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_matrix_zero_api_session_matrix_zero) — Default context
-- [`max`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_max_api_session_max) — Default context
-- [`meijerG`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_meijer_g_api_session_meijer_g) — Default context
-- [`memberAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_member_assumption_api_defaults_session_member_assumption) — Default context
-- [`membershipElement`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_membership_element_api_assumptionproposition_membership_element) — Default context
-- [`membershipSet`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_membership_set_api_assumptionproposition_membership_set) — Default context
-- [`min`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_min_api_session_min) — Default context
-- [`minimalPolynomialOf`](solving.md#entry-presentation_wasm_solving_capability_equations_minimal_polynomial_of_api_algebra_session_minimal_polynomial_of) — Default context
-- [`minimizeLogical`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_minimize_logical_api_logic_session_minimize_logical) — Default context
-- [`mobius`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_mobius_api_session_mobius) — Default context
-- [`modularInverse`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_modular_inverse_api_number_theory_session_modular_inverse) — Default context
-- [`modularPower`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_modular_power_api_number_theory_session_modular_power) — Default context
-- [`moment`](statistics.md#entry-presentation_wasm_statistics_capability_probability_moment_api_probability_session_moment) — Default context
-- [`momentGeneratingFunction`](statistics.md#entry-presentation_wasm_statistics_capability_probability_moment_generating_function_api_probability_session_moment_generating_function) — Default context
-- [`multinomial`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_multinomial_api_number_theory_session_multinomial) — Default context
-- [`naturalAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_natural_assumption_api_session_natural_assumption) — Default context
-- [`negativeAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_negative_assumption_api_session_negative_assumption) — Default context
-- [`nonnegativeAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_nonnegative_assumption_api_session_nonnegative_assumption) — Default context
-- [`nonpositiveAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_nonpositive_assumption_api_session_nonpositive_assumption) — Default context
-- [`nonzeroAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_nonzero_assumption_api_session_nonzero_assumption) — Default context
-- [`normalMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_normal_matrix_api_session_normal_matrix) — Default context
-- [`notEqual`](relations.md#entry-presentation_wasm_relations_capability_elementary_functions_not_equal_api_session_not_equal) — Default context
-- [`notEqualAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_not_equal_assumption_api_defaults_session_not_equal_assumption) — Default context
-- [`numerator`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_numerator_api_session_numerator) — Default context
-- [`numeratorDenominator`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_numerator_denominator_api_session_numerator_denominator) — Default context
-- [`oddAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_odd_assumption_api_session_odd_assumption) — Default context
-- [`orthogonalMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_orthogonal_matrix_api_session_orthogonal_matrix) — Default context
-- [`parallelismCapability`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_parallelism_capability_api_session_parallelism_capability) — Default context
-- [`parse`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_parse_api_session_parse) — Default context
-- [`parseLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_parse_latex_api_serialization_session_parse_latex) — Default context
-- [`parseLatexWithEnvironment`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_parse_latex_with_environment_api_serialization_session_parse_latex_with_environment) — Default context
-- [`parseSerializedObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_parse_serialized_object_api_serialization_session_parse_serialized_object) — Default context
-- [`partialDifferentialEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_partial_differential_equation_api_partial_differential_equations_session_partial_differential_equation) — Default context
-- [`partialDifferentialEquationPointSymmetryGenerator`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_partial_differential_equation_point_symmetry_generator_api_partial_differential_equations_session_partial_differential_equation_point_symmetry_generator) — Default context
-- [`partialFractions`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions) — Default context
-- [`partitionCount`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_partition_count_api_session_partition_count) — Default context
-- [`pellSolutions`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_pell_solutions_api_number_theory_session_pell_solutions) — Default context
-- [`pi`](evaluation-and-constants.md#entry-presentation_wasm_evaluation_and_constants_capability_constants_pi_api_session_pi) — Default context
-- [`piecewise`](deferred-forms.md#entry-presentation_wasm_deferred_forms_capability_construction_piecewise_api_solving_session_piecewise) — Default context
-- [`piecewiseFold`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_piecewise_fold_api_solving_session_piecewise_fold) — Default context
-- [`poleOrder`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_pole_order_api_analysis_session_pole_order) — Default context
-- [`polygamma`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_polygamma_api_session_polygamma) — Default context
-- [`polylogarithm`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_polylogarithm_api_session_polylogarithm) — Default context
-- [`polynomialGcd`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_polynomial_gcd_api_algebra_session_polynomial_gcd) — Default context
-- [`polynomialRoot`](solving.md#entry-presentation_wasm_solving_capability_equations_polynomial_root_api_solving_session_polynomial_root) — Default context
-- [`positiveAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_positive_assumption_api_session_positive_assumption) — Default context
-- [`positiveDefiniteMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_positive_definite_matrix_api_session_positive_definite_matrix) — Default context
-- [`positiveIntegerAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_positive_integer_assumption_api_session_positive_integer_assumption) — Default context
-- [`positiveSemidefiniteMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_positive_semidefinite_matrix_api_session_positive_semidefinite_matrix) — Default context
-- [`presentationNormalForm`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_presentation_normal_form_api_algebra_session_presentation_normal_form) — Default context
-- [`primeAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_prime_assumption_api_session_prime_assumption) — Default context
-- [`probability`](statistics.md#entry-presentation_wasm_statistics_capability_probability_probability_api_probability_session_probability) — Default context
-- [`product`](deferred-forms.md#entry-presentation_wasm_deferred_forms_capability_construction_product_api_analysis_session_product) — Default context
-- [`productIndefinite`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_product_indefinite_api_analysis_session_product_indefinite) — Default context
-- [`randomVariable`](statistics.md#entry-presentation_wasm_statistics_capability_probability_random_variable_api_probability_session_random_variable) — Default context
-- [`rational`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_rational_api_session_rational) — Default context
-- [`rationalAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_rational_assumption_api_session_rational_assumption) — Default context
-- [`rationalFromFloat`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float) — Default context
-- [`rationalizeDenominator`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_algebra_session_rationalize_denominator) — Default context
-- [`realAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_real_assumption_api_session_real_assumption) — Default context
-- [`realEntries`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_real_entries_api_session_real_entries) — Default context
-- [`realLine`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_real_line_api_session_real_line) — Default context
-- [`realPart`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_real_part_api_session_real_part) — Default context
-- [`realRootCount`](solving.md#entry-presentation_wasm_solving_capability_equations_real_root_count_api_solving_session_real_root_count) — Default context
-- [`realRootSign`](solving.md#entry-presentation_wasm_solving_capability_equations_real_root_sign_api_solving_session_real_root_sign) — Default context
-- [`refine`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_refine_api_session_refine) — Default context
-- [`relationKind`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_relation_kind_api_assumptionproposition_relation_kind) — Default context
-- [`releaseHostCancellationSlot`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_release_host_cancellation_slot_unresolved) — Default context
-- [`reserveHostCancellationSlot`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_reserve_host_cancellation_slot_unresolved) — Default context
-- [`residue`](series.md#entry-presentation_wasm_series_capability_calculus_residue_api_analysis_session_residue) — Default context
-- [`resultant`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_resultant_api_algebra_session_resultant) — Default context
-- [`rewriteAsExponential`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_as_exponential_api_algebra_session_rewrite_as_exponential) — Default context
-- [`rewriteAsTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_algebra_session_rewrite_as_trigonometric) — Default context
-- [`rewriteInTermsOf`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_in_terms_of_api_algebra_session_rewrite_in_terms_of) — Default context
-- [`rewriteSpecialFunctions`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_special_functions_api_session_rewrite_special_functions) — Default context
-- [`rewriteTrigonometricBasis`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_session_rewrite_trigonometric_basis) — Default context
-- [`rightOperand`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_right_operand_api_assumptionproposition_right_operand) — Default context
-- [`risingFactorial`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_rising_factorial_api_session_rising_factorial) — Default context
-- [`root`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_root_api_session_root) — Default context
-- [`rootsWithMultiplicities`](solving.md#entry-presentation_wasm_solving_capability_equations_roots_with_multiplicities_api_solving_session_roots_with_multiplicities) — Default context
-- [`sec`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_sec_api_session_sec) — Default context
-- [`sech`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_sech_api_session_sech) — Default context
-- [`separatePartialDifferentialEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_separate_partial_differential_equation_api_partial_differential_equations_session_separate_partial_differential_equation) — Default context
-- [`serialize`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_serialize_api_assumptionproposition_serialize) — Default context
-- [`serializeBulk`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_serialize_bulk_api_session_serialize_bulk) — Default context
-- [`setComplement`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_set_complement_api_sets_session_set_complement) — Default context
-- [`setExecutionMode`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_set_execution_mode_api_session_set_execution_mode) — Default context
-- [`setIntersection`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_set_intersection_api_sets_session_set_intersection) — Default context
-- [`setUnion`](sets.md#entry-presentation_wasm_sets_capability_discrete_mathematics_set_union_api_sets_session_set_union) — Default context
-- [`simplify`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_simplify_api_session_simplify) — Default context
-- [`simplifyBulk`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_simplify_bulk_api_session_simplify_bulk) — Default context
-- [`simplifyLogical`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_simplify_logical_api_logic_session_simplify_logical) — Default context
-- [`simplifyTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_session_simplify_trigonometric) — Default context
-- [`simplifyUnderConstraint`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_simplify_under_constraint_api_session_simplify_under_constraint) — Default context
-- [`sin`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_sin_api_session_sin) — Default context
-- [`singularMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_singular_matrix_api_session_singular_matrix) — Default context
-- [`singularities`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_singularities_api_session_singularities) — Default context
-- [`sinh`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_sinh_api_session_sinh) — Default context
-- [`solve`](solving.md#entry-presentation_wasm_solving_capability_equations_solve_api_solving_session_solve) — Default context
-- [`solveLinearDiophantine`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_solve_linear_diophantine_api_number_theory_session_solve_linear_diophantine) — Default context
-- [`solveLinearDiophantineSystem`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_solve_linear_diophantine_system_api_number_theory_session_solve_linear_diophantine_system) — Default context
-- [`solveLinearRecurrence`](differential-equations.md#entry-presentation_wasm_differential_equations_capability_equations_solve_linear_recurrence_api_solving_session_solve_linear_recurrence) — Default context
-- [`solveNegativePell`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_solve_negative_pell_api_number_theory_session_solve_negative_pell) — Default context
-- [`solveOrdinaryDifferentialEquation`](differential-equations.md#entry-presentation_wasm_differential_equations_capability_equations_solve_ordinary_differential_equation_api_solving_session_solve_ordinary_differential_equation) — Default context
-- [`solveOrdinaryDifferentialEquationRequest`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_solve_ordinary_differential_equation_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_request) — Default context
-- [`solveOrdinaryDifferentialEquationSystemRequest`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_solve_ordinary_differential_equation_system_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_system_request) — Default context
-- [`solveOrdinaryDifferentialEquationWithHistory`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_solve_ordinary_differential_equation_with_history_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_with_history) — Default context
-- [`solveOrdinaryDifferentialEquationWithParticularSolution`](differential-equations.md#entry-presentation_wasm_differential_equations_capability_equations_solve_ordinary_differential_equation_with_particular_solution_api_solving_session_solve_ordinary_differential_equation_with_particular_solution) — Default context
-- [`solvePartialDifferentialEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_solve_partial_differential_equation_api_partial_differential_equations_session_solve_partial_differential_equation) — Default context
-- [`solvePartialDifferentialEquationBySimilarityReduction`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_solve_partial_differential_equation_by_similarity_reduction_api_partial_differential_equations_session_solve_partial_differential_equation_by_similarity_reduction) — Default context
-- [`solvePartialDifferentialEquationRequest`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_solve_partial_differential_equation_request_api_partial_differential_equations_session_solve_partial_differential_equation_request) — Default context
-- [`solvePartialDifferentialEquationWithTransformAxisSpecifications`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_solve_partial_differential_equation_with_transform_axis_specifications_api_partial_differential_equations_session_solve_partial_differential_equation_with_transform_axis_specifications) — Default context
-- [`solvePell`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_solve_pell_api_number_theory_session_solve_pell) — Default context
-- [`solvePolynomialSystem`](solving.md#entry-presentation_wasm_solving_capability_equations_solve_polynomial_system_api_solving_session_solve_polynomial_system) — Default context
-- [`solveSemialgebraic`](solving.md#entry-presentation_wasm_solving_capability_equations_solve_semialgebraic_api_logic_session_solve_semialgebraic) — Default context
-- [`solveset`](solving.md#entry-presentation_wasm_solving_capability_equations_solveset_api_solving_session_solveset) — Default context
-- [`solvesetInDomain`](solving.md#entry-presentation_wasm_solving_capability_equations_solveset_in_domain_api_solving_session_solveset_in_domain) — Default context
-- [`sqrt`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_sqrt_api_session_sqrt) — Default context
-- [`squareMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_square_matrix_api_session_square_matrix) — Default context
-- [`stirlingFirstSigned`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_stirling_first_signed_api_session_stirling_first_signed) — Default context
-- [`stirlingSecond`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_stirling_second_api_session_stirling_second) — Default context
-- [`substituteBulk`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_substitute_bulk_api_session_substitute_bulk) — Default context
-- [`summation`](deferred-forms.md#entry-presentation_wasm_deferred_forms_capability_construction_summation_api_analysis_session_summation) — Default context
-- [`summationIndefinite`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_summation_indefinite_api_analysis_session_summation_indefinite) — Default context
-- [`symbol`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_symbol_api_session_symbol) — Default context
-- [`symmetricMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_symmetric_matrix_api_session_symmetric_matrix) — Default context
-- [`tan`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_tan_api_session_tan) — Default context
-- [`tanh`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_tanh_api_session_tanh) — Default context
-- [`taylorSeries`](series.md#entry-presentation_wasm_series_capability_calculus_taylor_series_api_session_taylor_series) — Default context
-- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_session_to_latex) — Default context
-- [`toLatexWithOptions`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_with_options_api_serialization_session_to_latex_with_options) — Default context
-- [`together`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_together_api_session_together) — Default context
-- [`transcendentalAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_transcendental_assumption_api_session_transcendental_assumption) — Default context
-- [`ultrasphericalPolynomial`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_ultraspherical_polynomial_api_session_ultraspherical_polynomial) — Default context
-- [`unconstrainedCriticalPoints`](optimization.md#entry-presentation_wasm_optimization_capability_equations_unconstrained_critical_points_api_solving_session_unconstrained_critical_points) — Default context
-- [`unitaryMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_unitary_matrix_api_session_unitary_matrix) — Default context
-- [`upperTriangularMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_upper_triangular_matrix_api_session_upper_triangular_matrix) — Default context
-- [`variance`](statistics.md#entry-presentation_wasm_statistics_capability_probability_variance_api_probability_session_variance) — Default context
-- [`verifyOrdinaryDifferentialEquationSystemSolution`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_verify_ordinary_differential_equation_system_solution_api_ordinary_differential_equations_session_verify_ordinary_differential_equation_system_solution) — Default context
-- [`verifyPartialDifferentialEquationCoordinateTransformation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_verify_partial_differential_equation_coordinate_transformation_api_partial_differential_equations_session_verify_partial_differential_equation_coordinate_transformation) — Default context
-- [`verifyPartialDifferentialEquationSolution`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_verify_partial_differential_equation_solution_api_partial_differential_equations_session_verify_partial_differential_equation_solution) — Default context
-- [`zeroAssumption`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_zero_assumption_api_session_zero_assumption) — Default context
-- [`zeroEquivalent`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_zero_equivalent_api_session_zero_equivalent) — Default context
-- [`zeroMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_zero_matrix_api_session_zero_matrix) — Default context
-- [`zeta`](special-functions.md#entry-presentation_wasm_special_functions_capability_special_functions_zeta_api_session_zeta) — Default context
-
-## DefiniteIntegrationResult property
-
-- [`declineReason`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_decline_reason_api_results_definiteintegrationresult_decline_reason) — DefiniteIntegrationResult property
-- [`divergenceDirection`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_divergence_direction_api_results_definiteintegrationresult_divergence_direction) — DefiniteIntegrationResult property
-- [`interpretation`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_interpretation_api_results_definiteintegrationresult_interpretation) — DefiniteIntegrationResult property
-- [`value`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_value_api_results_definiteintegrationresult_value) — DefiniteIntegrationResult property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_calculus_verdict_api_results_definiteintegrationresult_verdict) — DefiniteIntegrationResult property
-
-## Eigenpair property
-
-- [`eigenvalue`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_eigenvalue_api_results_eigenpair_eigenvalue) — Eigenpair property
-- [`vectors`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_vectors_api_results_eigenpair_vectors) — Eigenpair property
-
-## Explicit context
-
-- [`absoluteValue`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_absolute_value_api_session_absolute_value) — Explicit context
-- [`addAssumptions`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_add_assumptions_api_session_add_assumptions) — Explicit context
-- [`algebraicAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_algebraic_assumption_api_session_algebraic_assumption) — Explicit context
-- [`ask`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_ask_api_session_ask) — Explicit context
-- [`assuming`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_assuming_api_session_assuming) — Explicit context
-- [`assumptionPropositionFromLogicalExpression`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_assumption_proposition_from_logical_expression_api_session_assumption_proposition_from_logical_expression) — Explicit context
-- [`circle2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_circle_2d_api_session_circle_2d) — Explicit context
-- [`clearAllAssumptions`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_clear_all_assumptions_api_session_clear_all_assumptions) — Explicit context
-- [`complexAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_complex_assumption_api_session_complex_assumption) — Explicit context
-- [`complexEntries`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_complex_entries_api_session_complex_entries) — Explicit context
-- [`compositeAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_composite_assumption_api_session_composite_assumption) — Explicit context
-- [`congruentAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_congruent_assumption_api_defaults_session_congruent_assumption) — Explicit context
-- [`couldHold`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_could_hold_api_session_could_hold) — Explicit context
-- [`definedAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_defined_assumption_api_session_defined_assumption) — Explicit context
-- [`deserializeAssumptionProposition`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_deserialize_assumption_proposition_api_session_deserialize_assumption_proposition) — Explicit context
-- [`diagonalMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_diagonal_matrix_api_session_diagonal_matrix) — Explicit context
-- [`equalAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_equal_assumption_api_defaults_session_equal_assumption) — Explicit context
-- [`evenAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_even_assumption_api_session_even_assumption) — Explicit context
-- [`extendedRealAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_extended_real_assumption_api_session_extended_real_assumption) — Explicit context
-- [`finiteAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_finite_assumption_api_session_finite_assumption) — Explicit context
-- [`fullRankMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_full_rank_matrix_api_session_full_rank_matrix) — Explicit context
-- [`greaterAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_greater_assumption_api_defaults_session_greater_assumption) — Explicit context
-- [`greaterOrEqualAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_greater_or_equal_assumption_api_defaults_session_greater_or_equal_assumption) — Explicit context
-- [`hermitianMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_hermitian_matrix_api_session_hermitian_matrix) — Explicit context
-- [`identityMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_identity_matrix_api_session_identity_matrix) — Explicit context
-- [`infiniteAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_infinite_assumption_api_session_infinite_assumption) — Explicit context
-- [`integerAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_integer_assumption_api_session_integer_assumption) — Explicit context
-- [`integerEntries`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_integer_entries_api_session_integer_entries) — Explicit context
-- [`invertibleMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_invertible_matrix_api_session_invertible_matrix) — Explicit context
-- [`irrationalAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_irrational_assumption_api_session_irrational_assumption) — Explicit context
-- [`lessAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_less_assumption_api_defaults_session_less_assumption) — Explicit context
-- [`lessOrEqualAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_less_or_equal_assumption_api_defaults_session_less_or_equal_assumption) — Explicit context
-- [`lowerTriangularMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_lower_triangular_matrix_api_session_lower_triangular_matrix) — Explicit context
-- [`matrix`](matrix-construction.md#entry-presentation_wasm_matrix_construction_capability_algebra_matrix_api_session_matrix) — Explicit context
-- [`matrixShape`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_matrix_shape_api_session_matrix_shape) — Explicit context
-- [`memberAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_member_assumption_api_defaults_session_member_assumption) — Explicit context
-- [`naturalAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_natural_assumption_api_session_natural_assumption) — Explicit context
-- [`negativeAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_negative_assumption_api_session_negative_assumption) — Explicit context
-- [`nonnegativeAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_nonnegative_assumption_api_session_nonnegative_assumption) — Explicit context
-- [`nonpositiveAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_nonpositive_assumption_api_session_nonpositive_assumption) — Explicit context
-- [`nonzeroAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_nonzero_assumption_api_session_nonzero_assumption) — Explicit context
-- [`normalMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_normal_matrix_api_session_normal_matrix) — Explicit context
-- [`notEqualAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_not_equal_assumption_api_defaults_session_not_equal_assumption) — Explicit context
-- [`oddAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_odd_assumption_api_session_odd_assumption) — Explicit context
-- [`orthogonalMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_orthogonal_matrix_api_session_orthogonal_matrix) — Explicit context
-- [`partialDifferentialEquationArbitraryFunction`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_partial_differential_equation_arbitrary_function_api_partial_differential_equations_session_partial_differential_equation_arbitrary_function) — Explicit context
-- [`point2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_point_2d_api_session_point_2d) — Explicit context
-- [`polygon2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_polygon_2d_api_session_polygon_2d) — Explicit context
-- [`positiveAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_positive_assumption_api_session_positive_assumption) — Explicit context
-- [`positiveDefiniteMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_positive_definite_matrix_api_session_positive_definite_matrix) — Explicit context
-- [`positiveIntegerAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_positive_integer_assumption_api_session_positive_integer_assumption) — Explicit context
-- [`positiveSemidefiniteMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_positive_semidefinite_matrix_api_session_positive_semidefinite_matrix) — Explicit context
-- [`primeAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_prime_assumption_api_session_prime_assumption) — Explicit context
-- [`rationalAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_rational_assumption_api_session_rational_assumption) — Explicit context
-- [`realAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_real_assumption_api_session_real_assumption) — Explicit context
-- [`realEntries`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_real_entries_api_session_real_entries) — Explicit context
-- [`refine`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_refine_api_session_refine) — Explicit context
-- [`resetContext`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_reset_context_api_session_reset_context) — Explicit context
-- [`segment2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_segment_2d_api_session_segment_2d) — Explicit context
-- [`singularMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_singular_matrix_api_session_singular_matrix) — Explicit context
-- [`squareMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_square_matrix_api_session_square_matrix) — Explicit context
-- [`symmetricMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_symmetric_matrix_api_session_symmetric_matrix) — Explicit context
-- [`transcendentalAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_transcendental_assumption_api_session_transcendental_assumption) — Explicit context
-- [`triangle2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_triangle_2d_api_session_triangle_2d) — Explicit context
-- [`undefinedFunction`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_undefined_function_api_session_undefined_function) — Explicit context
-- [`unitaryMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_unitary_matrix_api_session_unitary_matrix) — Explicit context
-- [`upperTriangularMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_upper_triangular_matrix_api_session_upper_triangular_matrix) — Explicit context
-- [`zeroAssumption`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_zero_assumption_api_session_zero_assumption) — Explicit context
-- [`zeroEquivalent`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_zero_equivalent_api_session_zero_equivalent) — Explicit context
-- [`zeroMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_zero_matrix_api_session_zero_matrix) — Explicit context
-
-## Expression method
-
-- [`absoluteValue`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_absolute_value_api_expression_absolute_value) — Expression method
-- [`add`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_add_api_expression_add) — Expression method
-- [`add`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_add_api_expression_add) — Expression method
-- [`cancel`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_cancel_api_expression_cancel) — Expression method
-- [`collect`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_collect_api_expression_operations_expression_collect) — Expression method
-- [`collectRadicals`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_collect_radicals_api_expression_operations_expression_collect_radicals) — Expression method
-- [`combineLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_expression_operations_expression_combine_logarithm) — Expression method
-- [`combinePowers`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_combine_powers_api_expression_operations_expression_combine_powers) — Expression method
-- [`combineTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_expression_combine_trigonometric) — Expression method
-- [`completeTheSquare`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_complete_the_square_api_expression_operations_expression_complete_the_square) — Expression method
-- [`conjunctiveNormalForm`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_conjunctive_normal_form_api_expression_operations_expression_conjunctive_normal_form) — Expression method
-- [`continuousDomain`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_continuous_domain_api_expression_continuous_domain) — Expression method
-- [`cos`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_cos_api_expression_cos) — Expression method
-- [`denestPowers`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_denest_powers_api_expression_operations_expression_denest_powers) — Expression method
-- [`denestRadicals`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_denest_radicals_api_expression_operations_expression_denest_radicals) — Expression method
-- [`denominator`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_denominator_api_expression_denominator) — Expression method
-- [`derivative`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_derivative_api_expression_derivative) — Expression method
-- [`differentiate`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_differentiate_api_expression_differentiate) — Expression method
-- [`disjunctiveNormalForm`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_disjunctive_normal_form_api_expression_operations_expression_disjunctive_normal_form) — Expression method
-- [`divide`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_divide_api_expression_divide) — Expression method
-- [`duplicate`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_duplicate_api_expression_duplicate) — Expression method
-- [`eliminateDerivedLogicalConnectives`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_expression_operations_expression_eliminate_derived_logical_connectives) — Expression method
-- [`equals`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_equals_api_expression_operations_expression_equals) — Expression method
-- [`evaluateLimit`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_evaluate_limit_api_expression_evaluate_limit) — Expression method
-- [`evaluateNumeric`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_evaluate_numeric_api_expression_operations_expression_evaluate_numeric) — Expression method
-- [`evaluateToComplexInexact`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_evaluate_to_complex_inexact_api_expression_operations_expression_evaluate_to_complex_inexact) — Expression method
-- [`evaluateToComplexInexactAtPrecision`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_evaluate_to_complex_inexact_at_precision_api_expression_operations_expression_evaluate_to_complex_inexact_at_precision) — Expression method
-- [`evaluateToFloat`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_evaluate_to_float_api_expression_operations_expression_evaluate_to_float) — Expression method
-- [`evaluateTruth`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_evaluate_truth_api_expression_evaluate_truth) — Expression method
-- [`execute`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_execute_api_expression_execute) — Expression method
-- [`exp`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_exp_api_expression_exp) — Expression method
-- [`expand`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_expand_api_expression_expand) — Expression method
-- [`expandComplex`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_expression_operations_expression_expand_complex) — Expression method
-- [`expandLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_expression_operations_expression_expand_logarithm) — Expression method
-- [`expandPowerBase`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_expand_power_base_api_expression_operations_expression_expand_power_base) — Expression method
-- [`expandTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_expression_expand_trigonometric) — Expression method
-- [`expressionType`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_expression_type_api_expression_operations_expression_expression_type) — Expression method
-- [`factor`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_factor_api_expression_factor) — Expression method
-- [`factorCommonTerms`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_expression_operations_expression_factor_common_terms) — Expression method
-- [`free`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_free_unresolved) — Expression method
-- [`freeVariables`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_free_variables_api_expression_free_variables) — Expression method
-- [`imageSetDomain`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_image_set_domain_api_expression_image_set_domain) — Expression method
-- [`imageSetLambdaExpression`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_image_set_lambda_expression_api_expression_image_set_lambda_expression) — Expression method
-- [`imageSetVariable`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_image_set_variable_api_expression_image_set_variable) — Expression method
-- [`imaginaryPart`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_imaginary_part_api_expression_imaginary_part) — Expression method
-- [`integralIntegrand`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_integrand_api_expression_integral_integrand) — Expression method
-- [`integralLowerBound`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_lower_bound_api_expression_integral_lower_bound) — Expression method
-- [`integralUpperBound`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_upper_bound_api_expression_integral_upper_bound) — Expression method
-- [`integralVariable`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_integral_variable_api_expression_integral_variable) — Expression method
-- [`integrate`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_api_expression_integrate) — Expression method
-- [`integrateDefinite`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_definite_api_expression_operations_expression_integrate_definite) — Expression method
-- [`integrateDefiniteUnderConstraint`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_integrate_definite_under_constraint_api_expression_integrate_definite_under_constraint) — Expression method
-- [`integrateIterated`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_integrate_iterated_api_expression_operations_expression_integrate_iterated) — Expression method
-- [`intervalLower`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_interval_lower_api_expression_interval_lower) — Expression method
-- [`intervalUpper`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_interval_upper_api_expression_interval_upper) — Expression method
-- [`introduceDerivedLogicalConnectives`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_introduce_derived_logical_connectives_api_expression_operations_expression_introduce_derived_logical_connectives) — Expression method
-- [`isAlgebraic`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_algebraic_api_expression_is_algebraic) — Expression method
-- [`isAlgebraic`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_algebraic_api_expression_is_algebraic) — Expression method
-- [`isComplex`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_complex_api_expression_is_complex) — Expression method
-- [`isComplex`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_complex_api_expression_is_complex) — Expression method
-- [`isComposite`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_composite_api_expression_is_composite) — Expression method
-- [`isComposite`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_composite_api_expression_is_composite) — Expression method
-- [`isDefined`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_defined_api_expression_is_defined) — Expression method
-- [`isEquality`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_equality_api_expression_is_equality) — Expression method
-- [`isEven`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_even_api_expression_is_even) — Expression method
-- [`isEven`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_even_api_expression_is_even) — Expression method
-- [`isExtendedReal`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_extended_real_api_expression_is_extended_real) — Expression method
-- [`isExtendedReal`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_extended_real_api_expression_is_extended_real) — Expression method
-- [`isFinite`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_finite_api_expression_is_finite) — Expression method
-- [`isFiniteSet`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_finite_set_api_expression_is_finite_set) — Expression method
-- [`isImageSet`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_image_set_api_expression_is_image_set) — Expression method
-- [`isInfinite`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_infinite_api_expression_is_infinite) — Expression method
-- [`isInfinite`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_infinite_api_expression_is_infinite) — Expression method
-- [`isInteger`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_integer_api_expression_is_integer) — Expression method
-- [`isIntegral`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_integral_api_expression_is_integral) — Expression method
-- [`isInterval`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_interval_api_expression_is_interval) — Expression method
-- [`isIrrational`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_irrational_api_expression_is_irrational) — Expression method
-- [`isIrrational`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_irrational_api_expression_is_irrational) — Expression method
-- [`isMatrix`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_matrix_api_expression_is_matrix) — Expression method
-- [`isNatural`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_natural_api_expression_is_natural) — Expression method
-- [`isNatural`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_natural_api_expression_is_natural) — Expression method
-- [`isNegative`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_negative_api_expression_is_negative) — Expression method
-- [`isNonnegative`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_nonnegative_api_expression_is_nonnegative) — Expression method
-- [`isNonpositive`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_nonpositive_api_expression_is_nonpositive) — Expression method
-- [`isNonpositive`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_nonpositive_api_expression_is_nonpositive) — Expression method
-- [`isNonzero`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_nonzero_api_expression_is_nonzero) — Expression method
-- [`isOdd`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_odd_api_expression_is_odd) — Expression method
-- [`isOdd`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_odd_api_expression_is_odd) — Expression method
-- [`isPositive`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_positive_api_expression_is_positive) — Expression method
-- [`isPositiveInteger`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_positive_integer_api_expression_is_positive_integer) — Expression method
-- [`isPositiveInteger`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_positive_integer_api_expression_is_positive_integer) — Expression method
-- [`isPrime`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_is_prime_api_expression_is_prime) — Expression method
-- [`isRational`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_rational_api_expression_is_rational) — Expression method
-- [`isReal`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_real_api_expression_is_real) — Expression method
-- [`isStale`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_stale_api_expression_is_stale) — Expression method
-- [`isTranscendental`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_transcendental_api_expression_is_transcendental) — Expression method
-- [`isTranscendental`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_transcendental_api_expression_is_transcendental) — Expression method
-- [`isUnion`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_union_api_expression_is_union) — Expression method
-- [`isZero`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_is_zero_api_expression_is_zero) — Expression method
-- [`isZero`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_zero_api_expression_is_zero) — Expression method
-- [`laurentSeries`](series.md#entry-presentation_wasm_series_capability_calculus_laurent_series_api_expression_laurent_series) — Expression method
-- [`length`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_length_api_expression_operations_expression_length) — Expression method
-- [`lessThan`](relations.md#entry-presentation_wasm_relations_capability_elementary_functions_less_than_api_expression_operations_expression_less_than) — Expression method
-- [`limit`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_limit_api_expression_limit) — Expression method
-- [`maclaurinSeries`](series.md#entry-presentation_wasm_series_capability_calculus_maclaurin_series_api_expression_operations_expression_maclaurin_series) — Expression method
-- [`minimizeLogical`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_minimize_logical_api_expression_operations_expression_minimize_logical) — Expression method
-- [`multiply`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_multiply_api_expression_multiply) — Expression method
-- [`multiply`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_multiply_api_expression_multiply) — Expression method
-- [`negate`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_negate_api_expression_negate) — Expression method
-- [`nodeCount`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_node_count_api_expression_node_count) — Expression method
-- [`numerator`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_numerator_api_expression_numerator) — Expression method
-- [`numeratorDenominator`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_numerator_denominator_api_expression_numerator_denominator) — Expression method
-- [`partialFractions`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_partial_fractions_api_expression_operations_expression_partial_fractions) — Expression method
-- [`piecewiseFold`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_piecewise_fold_api_expression_operations_expression_piecewise_fold) — Expression method
-- [`poleOrder`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_pole_order_api_expression_operations_expression_pole_order) — Expression method
-- [`power`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_power_api_expression_power) — Expression method
-- [`presentationNormalForm`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_presentation_normal_form_api_expression_operations_expression_presentation_normal_form) — Expression method
-- [`rationalizeDenominator`](algebraic-transforms.md#entry-presentation_wasm_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_expression_operations_expression_rationalize_denominator) — Expression method
-- [`realPart`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_real_part_api_expression_real_part) — Expression method
-- [`refine`](assumptions.md#entry-presentation_wasm_assumptions_capability_algebra_refine_api_expression_refine) — Expression method
-- [`refine`](assumptions.md#entry-presentation_wasm_assumptions_capability_contexts_refine_api_expression_refine) — Expression method
-- [`residue`](series.md#entry-presentation_wasm_series_capability_calculus_residue_api_expression_operations_expression_residue) — Expression method
-- [`rewriteAsExponential`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_as_exponential_api_expression_operations_expression_rewrite_as_exponential) — Expression method
-- [`rewriteAsTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_expression_operations_expression_rewrite_as_trigonometric) — Expression method
-- [`rewriteInTermsOf`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_in_terms_of_api_expression_operations_expression_rewrite_in_terms_of) — Expression method
-- [`rewriteSpecialFunctions`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_rewrite_special_functions_api_expression_rewrite_special_functions) — Expression method
-- [`rewriteTrigonometricBasis`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_expression_rewrite_trigonometric_basis) — Expression method
-- [`rootsWithMultiplicities`](solving.md#entry-presentation_wasm_solving_capability_equations_roots_with_multiplicities_api_expression_operations_expression_roots_with_multiplicities) — Expression method
-- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_expression_serialize_object) — Expression method
-- [`simplify`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_simplify_api_expression_simplify) — Expression method
-- [`simplifyLogical`](logic.md#entry-presentation_wasm_logic_capability_discrete_mathematics_simplify_logical_api_expression_operations_expression_simplify_logical) — Expression method
-- [`simplifyTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_expression_simplify_trigonometric) — Expression method
-- [`simplifyUnderConstraint`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_simplify_under_constraint_api_expression_simplify_under_constraint) — Expression method
-- [`sin`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_sin_api_expression_sin) — Expression method
-- [`singularities`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_singularities_api_expression_singularities) — Expression method
-- [`solve`](solving.md#entry-presentation_wasm_solving_capability_equations_solve_api_expression_operations_expression_solve) — Expression method
-- [`solveset`](solving.md#entry-presentation_wasm_solving_capability_equations_solveset_api_expression_operations_expression_solveset) — Expression method
-- [`sqrt`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_sqrt_api_expression_sqrt) — Expression method
-- [`substitute`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_substitute_api_expression_substitute) — Expression method
-- [`subtract`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_subtract_api_expression_subtract) — Expression method
-- [`subtract`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_subtract_api_expression_subtract) — Expression method
-- [`summationIndefinite`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_summation_indefinite_api_expression_operations_expression_summation_indefinite) — Expression method
-- [`symbolName`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_symbol_name_api_expression_symbol_name) — Expression method
-- [`taylorSeries`](series.md#entry-presentation_wasm_series_capability_calculus_taylor_series_api_expression_taylor_series) — Expression method
-- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_expression_to_latex) — Expression method
-- [`toLatexWithOptions`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_with_options_api_serialization_expression_to_latex_with_options) — Expression method
-- [`toList`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_to_list_api_expression_to_list) — Expression method
-- [`toString`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_tostring_api_expression_to_string) — Expression method
-- [`toString`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_to_string_api_expression_to_string) — Expression method
-- [`together`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_together_api_expression_together) — Expression method
-- [`unionComponents`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_union_components_api_expression_union_components) — Expression method
-- [`zeroEquivalent`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_zero_equivalent_api_expression_zero_equivalent) — Expression method
-- [`zeroEquivalent`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_zero_equivalent_api_expression_zero_equivalent) — Expression method
-
-## HermiteNormalFormDecomposition property
-
-- [`hermite`](matrix-canonical-forms.md#entry-presentation_wasm_matrix_canonical_forms_capability_algebra_hermite_api_results_hermitenormalformdecomposition_hermite) — HermiteNormalFormDecomposition property
-- [`pivotColumns`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_pivot_columns_api_results_hermitenormalformdecomposition_pivot_columns) — HermiteNormalFormDecomposition property
-- [`rank`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_rank_api_results_hermitenormalformdecomposition_rank) — HermiteNormalFormDecomposition property
-- [`transformation`](matrix-canonical-forms.md#entry-presentation_wasm_matrix_canonical_forms_capability_algebra_transformation_api_results_hermitenormalformdecomposition_transformation) — HermiteNormalFormDecomposition property
-
-## IntegerCokernelData property
-
-- [`freeRank`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_free_rank_api_results_integercokerneldata_free_rank) — IntegerCokernelData property
-- [`torsionInvariantFactors`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_torsion_invariant_factors_api_results_integercokerneldata_torsion_invariant_factors) — IntegerCokernelData property
-
-## IsolatingInterval property
-
-- [`lower`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_lower_api_results_isolatinginterval_lower) — IsolatingInterval property
-- [`upper`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_upper_api_results_isolatinginterval_upper) — IsolatingInterval property
-
-## JordanBlock property
-
-- [`eigenvalue`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_eigenvalue_api_results_jordanblock_eigenvalue) — JordanBlock property
-- [`size`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_size_api_results_jordanblock_size) — JordanBlock property
-
-## JordanDecomposition property
-
-- [`blocks`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_blocks_api_results_jordandecomposition_blocks) — JordanDecomposition property
-- [`jordanForm`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_jordan_form_api_results_jordandecomposition_jordan_form) — JordanDecomposition property
-- [`similarity`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_similarity_api_results_jordandecomposition_similarity) — JordanDecomposition property
-
-## Matrix constructor
-
-- [`Matrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_matrix_api_matrix) — Matrix constructor
-
-## Matrix method
-
-- [`add`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_add_api_matrix_add) — Matrix method
-- [`add`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_add_api_matrix_add) — Matrix method
-- [`adjugate`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_adjugate_api_matrix_adjugate) — Matrix method
-- [`characteristicPolynomial`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_characteristic_polynomial_api_matrix_operations_matrix_characteristic_polynomial) — Matrix method
-- [`cofactorMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_cofactor_matrix_api_matrix_cofactor_matrix) — Matrix method
-- [`columnHermiteNormalForm`](matrix-canonical-forms.md#entry-presentation_wasm_matrix_canonical_forms_capability_algebra_column_hermite_normal_form_api_matrix_operations_matrix_column_hermite_normal_form) — Matrix method
-- [`cosine`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_cosine_api_matrix_operations_matrix_cosine) — Matrix method
-- [`determinant`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_determinant_api_matrix_determinant) — Matrix method
-- [`eigenvalues`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_eigenvalues_api_matrix_eigenvalues) — Matrix method
-- [`eigenvectors`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_eigenvectors_api_matrix_operations_matrix_eigenvectors) — Matrix method
-- [`entry`](matrix-construction.md#entry-presentation_wasm_matrix_construction_capability_algebra_entry_api_matrix_entry) — Matrix method
-- [`execute`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_execute_api_matrix_execute) — Matrix method
-- [`exponential`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_exponential_api_matrix_operations_matrix_exponential) — Matrix method
-- [`hasComplexEntries`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_has_complex_entries_api_matrix_has_complex_entries) — Matrix method
-- [`hasComplexEntries`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_has_complex_entries_api_matrix_has_complex_entries) — Matrix method
-- [`hasIntegerEntries`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_has_integer_entries_api_matrix_has_integer_entries) — Matrix method
-- [`hasIntegerEntries`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_has_integer_entries_api_matrix_has_integer_entries) — Matrix method
-- [`hasRealEntries`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_has_real_entries_api_matrix_has_real_entries) — Matrix method
-- [`hasRealEntries`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_has_real_entries_api_matrix_has_real_entries) — Matrix method
-- [`hermiteNormalForm`](matrix-canonical-forms.md#entry-presentation_wasm_matrix_canonical_forms_capability_algebra_hermite_normal_form_api_matrix_operations_matrix_hermite_normal_form) — Matrix method
-- [`hyperbolicCosine`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_hyperbolic_cosine_api_matrix_operations_matrix_hyperbolic_cosine) — Matrix method
-- [`hyperbolicSine`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_hyperbolic_sine_api_matrix_operations_matrix_hyperbolic_sine) — Matrix method
-- [`integerCokernelStructure`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_integer_cokernel_structure_api_matrix_operations_matrix_integer_cokernel_structure) — Matrix method
-- [`integerImageLatticeBasis`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_integer_image_lattice_basis_api_matrix_operations_matrix_integer_image_lattice_basis) — Matrix method
-- [`integerKernelBasis`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_integer_kernel_basis_api_matrix_operations_matrix_integer_kernel_basis) — Matrix method
-- [`integerRowLatticeBasis`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_integer_row_lattice_basis_api_matrix_operations_matrix_integer_row_lattice_basis) — Matrix method
-- [`inverse`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_inverse_api_matrix_inverse) — Matrix method
-- [`isDiagonalMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_diagonal_matrix_api_matrix_is_diagonal_matrix) — Matrix method
-- [`isDiagonalMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_diagonal_matrix_api_matrix_is_diagonal_matrix) — Matrix method
-- [`isEquality`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_equality_api_matrix_operations_matrix_is_equality) — Matrix method
-- [`isFiniteSet`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_finite_set_api_matrix_operations_matrix_is_finite_set) — Matrix method
-- [`isFullRankMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_full_rank_matrix_api_matrix_is_full_rank_matrix) — Matrix method
-- [`isFullRankMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_full_rank_matrix_api_matrix_is_full_rank_matrix) — Matrix method
-- [`isHermitianMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_hermitian_matrix_api_matrix_is_hermitian_matrix) — Matrix method
-- [`isHermitianMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_hermitian_matrix_api_matrix_is_hermitian_matrix) — Matrix method
-- [`isIdentityMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_identity_matrix_api_matrix_is_identity_matrix) — Matrix method
-- [`isIdentityMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_identity_matrix_api_matrix_is_identity_matrix) — Matrix method
-- [`isImageSet`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_image_set_api_matrix_operations_matrix_is_image_set) — Matrix method
-- [`isIntegral`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_integral_api_matrix_operations_matrix_is_integral) — Matrix method
-- [`isInvertibleMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_invertible_matrix_api_matrix_is_invertible_matrix) — Matrix method
-- [`isInvertibleMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_invertible_matrix_api_matrix_is_invertible_matrix) — Matrix method
-- [`isNormalMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_normal_matrix_api_matrix_is_normal_matrix) — Matrix method
-- [`isNormalMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_normal_matrix_api_matrix_is_normal_matrix) — Matrix method
-- [`isOrthogonalMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_orthogonal_matrix_api_matrix_is_orthogonal_matrix) — Matrix method
-- [`isOrthogonalMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_orthogonal_matrix_api_matrix_is_orthogonal_matrix) — Matrix method
-- [`isPositive`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_positive_api_matrix_operations_matrix_is_positive) — Matrix method
-- [`isPositiveDefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_positive_definite_matrix_api_matrix_is_positive_definite_matrix) — Matrix method
-- [`isPositiveDefiniteMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_positive_definite_matrix_api_matrix_is_positive_definite_matrix) — Matrix method
-- [`isPositiveSemidefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_positive_semidefinite_matrix_api_matrix_is_positive_semidefinite_matrix) — Matrix method
-- [`isPositiveSemidefiniteMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_positive_semidefinite_matrix_api_matrix_is_positive_semidefinite_matrix) — Matrix method
-- [`isReal`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_real_api_matrix_operations_matrix_is_real) — Matrix method
-- [`isSingularMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_singular_matrix_api_matrix_is_singular_matrix) — Matrix method
-- [`isSingularMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_singular_matrix_api_matrix_is_singular_matrix) — Matrix method
-- [`isSquare`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_square_api_matrix_is_square) — Matrix method
-- [`isSquare`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_square_api_matrix_is_square) — Matrix method
-- [`isSymmetricMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_symmetric_matrix_api_matrix_is_symmetric_matrix) — Matrix method
-- [`isSymmetricMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_symmetric_matrix_api_matrix_is_symmetric_matrix) — Matrix method
-- [`isUnion`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_union_api_matrix_operations_matrix_is_union) — Matrix method
-- [`isUnitaryMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_unitary_matrix_api_matrix_is_unitary_matrix) — Matrix method
-- [`isUnitaryMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_unitary_matrix_api_matrix_is_unitary_matrix) — Matrix method
-- [`isZeroMatrix`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_is_zero_matrix_api_matrix_is_zero_matrix) — Matrix method
-- [`isZeroMatrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_is_zero_matrix_api_matrix_is_zero_matrix) — Matrix method
-- [`jordanDecomposition`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_jordan_decomposition_api_matrix_operations_matrix_jordan_decomposition) — Matrix method
-- [`logarithm`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_logarithm_api_matrix_operations_matrix_logarithm) — Matrix method
-- [`lowerUpperDecomposition`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_lower_upper_decomposition_api_matrix_operations_matrix_lower_upper_decomposition) — Matrix method
-- [`minimalPolynomial`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_minimal_polynomial_api_matrix_operations_matrix_minimal_polynomial) — Matrix method
-- [`multiply`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_multiply_api_matrix_multiply) — Matrix method
-- [`multiply`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_multiply_api_matrix_multiply) — Matrix method
-- [`nullspaceBasis`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_nullspace_basis_api_matrix_operations_matrix_nullspace_basis) — Matrix method
-- [`rank`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_rank_api_matrix_rank) — Matrix method
-- [`rationalCanonicalForm`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_rational_canonical_form_api_matrix_operations_matrix_rational_canonical_form) — Matrix method
-- [`rowReduce`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_row_reduce_api_matrix_row_reduce) — Matrix method
-- [`scalarMultiply`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_scalar_multiply_api_matrix_scalar_multiply) — Matrix method
-- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_matrix_serialize_object) — Matrix method
-- [`sine`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_sine_api_matrix_operations_matrix_sine) — Matrix method
-- [`smithNormalForm`](matrix-canonical-forms.md#entry-presentation_wasm_matrix_canonical_forms_capability_algebra_smith_normal_form_api_matrix_operations_matrix_smith_normal_form) — Matrix method
-- [`squareRoot`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_square_root_api_matrix_operations_matrix_square_root) — Matrix method
-- [`subtract`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_subtract_api_matrix_subtract) — Matrix method
-- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_serialization_matrix_to_latex) — Matrix method
-- [`toString`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_to_js_string_unresolved) — Matrix method
-- [`toString`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_tostring_unresolved) — Matrix method
-- [`trace`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_trace_api_matrix_trace) — Matrix method
-- [`transpose`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_transpose_api_matrix_transpose) — Matrix method
-
-## Matrix property
-
-- [`columns`](matrix-construction.md#entry-presentation_wasm_matrix_construction_capability_algebra_columns_api_matrix_columns) — Matrix property
-- [`isMatrix`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_is_matrix_api_matrix_operations_matrix_is_matrix) — Matrix property
-- [`rows`](matrix-construction.md#entry-presentation_wasm_matrix_construction_capability_algebra_rows_api_matrix_rows) — Matrix property
-
-## NumeratorDenominator property
-
-- [`denominator`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_denominator_api_results_numeratordenominator_denominator) — NumeratorDenominator property
-- [`numerator`](expressions.md#entry-presentation_wasm_expressions_capability_expression_transformations_numerator_api_results_numeratordenominator_numerator) — NumeratorDenominator property
-
-## NumericDefiniteIntegrationResult property
-
-- [`estimatedAbsoluteError`](api-reference.md#entry-presentation_wasm_api_reference_capability_numeric_definite_integration_estimated_absolute_error_api_results_numericdefiniteintegrationresult_estimated_absolute_error) — NumericDefiniteIntegrationResult property
-- [`nodeCount`](api-reference.md#entry-presentation_wasm_api_reference_capability_numeric_definite_integration_node_count_api_results_numericdefiniteintegrationresult_node_count) — NumericDefiniteIntegrationResult property
-- [`precisionBits`](api-reference.md#entry-presentation_wasm_api_reference_capability_numeric_definite_integration_precision_bits_api_results_numericdefiniteintegrationresult_precision_bits) — NumericDefiniteIntegrationResult property
-- [`value`](api-reference.md#entry-presentation_wasm_api_reference_capability_numeric_definite_integration_value_api_results_numericdefiniteintegrationresult_value) — NumericDefiniteIntegrationResult property
-
-## OptimizationOutcome property
-
-- [`complete`](solving.md#entry-presentation_wasm_solving_capability_equations_complete_api_results_optimizationoutcome_complete) — OptimizationOutcome property
-- [`points`](optimization.md#entry-presentation_wasm_optimization_capability_equations_points_api_results_optimizationoutcome_points) — OptimizationOutcome property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_results_optimizationoutcome_verdict) — OptimizationOutcome property
-
-## OrdinaryDifferentialEquationSolveResult property
-
-- [`decline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_decline_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_decline) — OrdinaryDifferentialEquationSolveResult property
-- [`form`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_form_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_form) — OrdinaryDifferentialEquationSolveResult property
-- [`frequencyDomainEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_frequency_domain_equation_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_frequency_domain_equation) — OrdinaryDifferentialEquationSolveResult property
-- [`generality`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_generality_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_generality) — OrdinaryDifferentialEquationSolveResult property
-- [`generatedConstants`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_generated_constants_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_generated_constants) — OrdinaryDifferentialEquationSolveResult property
-- [`image`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_image_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_image) — OrdinaryDifferentialEquationSolveResult property
-- [`method`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_method_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_method) — OrdinaryDifferentialEquationSolveResult property
-- [`solution`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_solution_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_solution) — OrdinaryDifferentialEquationSolveResult property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verdict) — OrdinaryDifferentialEquationSolveResult property
-- [`verification`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_verification_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verification) — OrdinaryDifferentialEquationSolveResult property
-
-## OrdinaryDifferentialEquationSystemSolveResult property
-
-- [`components`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_components_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_components) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`decline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_decline_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_decline) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`generality`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_generality_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_generality) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`generatedConstants`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_generated_constants_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_generated_constants) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`method`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_method_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_method) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`route`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_route_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_route) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verdict) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`verification`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_verification_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verification) — OrdinaryDifferentialEquationSystemSolveResult property
-
-## OrdinaryDifferentialEquationSystemVerificationReport property
-
-- [`generality`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_generality_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_generality) — OrdinaryDifferentialEquationSystemVerificationReport property
-- [`requiredRank`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_required_rank_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_required_rank) — OrdinaryDifferentialEquationSystemVerificationReport property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_verdict) — OrdinaryDifferentialEquationSystemVerificationReport property
-
-## ParallelismCapability property
-
-- [`active`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_active_api_parallelism_parallelismcapability_active) — ParallelismCapability property
-- [`backend`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_backend_api_parallelism_parallelismcapability_backend) — ParallelismCapability property
-- [`compiled`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_compiled_api_parallelism_parallelismcapability_compiled) — ParallelismCapability property
-- [`initialized`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_initialized_api_parallelism_parallelismcapability_initialized) — ParallelismCapability property
-- [`maximumOperationConcurrency`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_maximumoperationconcurrency_api_parallelism_parallelismcapability_maximum_operation_concurrency) — ParallelismCapability property
-- [`selectedMode`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_selectedmode_api_parallelism_parallelismcapability_selected_mode) — ParallelismCapability property
-- [`unavailableReason`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_unavailablereason_api_parallelism_parallelismcapability_unavailable_reason) — ParallelismCapability property
-- [`workerCount`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_workercount_api_parallelism_parallelismcapability_worker_count) — ParallelismCapability property
-
-## PartialDifferentialEquationArbitraryFunction property
-
-- [`arity`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_arity_api_partial_differential_equations_partialdifferentialequationarbitraryfunction_arity) — PartialDifferentialEquationArbitraryFunction property
-- [`name`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_name_api_partial_differential_equations_partialdifferentialequationarbitraryfunction_name) — PartialDifferentialEquationArbitraryFunction property
-
-## PartialDifferentialEquationCanonicalizationResult property
-
-- [`canonicalized`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_canonicalized_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_canonicalized) — PartialDifferentialEquationCanonicalizationResult property
-- [`decline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_decline) — PartialDifferentialEquationCanonicalizationResult property
-- [`principalForm`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_principal_form_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_principal_form) — PartialDifferentialEquationCanonicalizationResult property
-- [`transformation`](matrix-canonical-forms.md#entry-presentation_wasm_matrix_canonical_forms_capability_algebra_transformation_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_transformation) — PartialDifferentialEquationCanonicalizationResult property
-- [`transformationDecline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_transformation_decline_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_transformation_decline) — PartialDifferentialEquationCanonicalizationResult property
-
-## PartialDifferentialEquationClassification property
-
-- [`coefficientData`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_coefficient_data_api_partial_differential_equations_partialdifferentialequationclassification_coefficient_data) — PartialDifferentialEquationClassification property
-- [`linearity`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_linearity_api_partial_differential_equations_partialdifferentialequationclassification_linearity) — PartialDifferentialEquationClassification property
-- [`methodCandidates`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_method_candidates_api_partial_differential_equations_partialdifferentialequationclassification_method_candidates) — PartialDifferentialEquationClassification property
-- [`order`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_order_api_partial_differential_equations_partialdifferentialequationclassification_order) — PartialDifferentialEquationClassification property
-- [`secondOrderPrincipalPart`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_second_order_principal_part_api_partial_differential_equations_partialdifferentialequationclassification_second_order_principal_part) — PartialDifferentialEquationClassification property
-
-## PartialDifferentialEquationCoefficientData property
-
-- [`fullCoefficients`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_full_coefficients_api_partial_differential_equations_partialdifferentialequationcoefficientdata_full_coefficients) — PartialDifferentialEquationCoefficientData property
-- [`highestOrderCoefficients`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_highest_order_coefficients_api_partial_differential_equations_partialdifferentialequationcoefficientdata_highest_order_coefficients) — PartialDifferentialEquationCoefficientData property
-- [`homogeneous`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_homogeneous_api_partial_differential_equations_partialdifferentialequationcoefficientdata_homogeneous) — PartialDifferentialEquationCoefficientData property
-- [`remainder`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_remainder_api_partial_differential_equations_partialdifferentialequationcoefficientdata_remainder) — PartialDifferentialEquationCoefficientData property
-
-## PartialDifferentialEquationCoordinateChange method
-
-- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_partial_differential_equations_partialdifferentialequationcoordinatechange_serialize_object) — PartialDifferentialEquationCoordinateChange method
-- [`toString`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_to_js_string_unresolved) — PartialDifferentialEquationCoordinateChange method
-
-## PartialDifferentialEquationCoordinateChange property
-
-- [`forwardCoordinates`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_forward_coordinates_api_partial_differential_equations_partialdifferentialequationcoordinatechange_forward_coordinates) — PartialDifferentialEquationCoordinateChange property
-- [`inverseCoordinates`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_inverse_coordinates_api_partial_differential_equations_partialdifferentialequationcoordinatechange_inverse_coordinates) — PartialDifferentialEquationCoordinateChange property
-- [`jacobian`](vector-calculus.md#entry-presentation_wasm_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationcoordinatechange_jacobian) — PartialDifferentialEquationCoordinateChange property
-- [`sourceVariables`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_source_variables_api_partial_differential_equations_partialdifferentialequationcoordinatechange_source_variables) — PartialDifferentialEquationCoordinateChange property
-- [`targetDependentFunction`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_target_dependent_function_api_partial_differential_equations_partialdifferentialequationcoordinatechange_target_dependent_function) — PartialDifferentialEquationCoordinateChange property
-- [`targetVariables`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_target_variables_api_partial_differential_equations_partialdifferentialequationcoordinatechange_target_variables) — PartialDifferentialEquationCoordinateChange property
-
-## PartialDifferentialEquationJetCoefficient property
-
-- [`coefficient`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_coefficient_api_partial_differential_equations_partialdifferentialequationjetcoefficient_coefficient) — PartialDifferentialEquationJetCoefficient property
-- [`derivativeOrders`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_derivative_orders_unresolved) — PartialDifferentialEquationJetCoefficient property
-
-## PartialDifferentialEquationMethodCandidate property
-
-- [`method`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_method_api_partial_differential_equations_partialdifferentialequationmethodcandidate_method) — PartialDifferentialEquationMethodCandidate property
-- [`proofObligations`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_proof_obligations_api_partial_differential_equations_partialdifferentialequationmethodcandidate_proof_obligations) — PartialDifferentialEquationMethodCandidate property
-
-## PartialDifferentialEquationPointSymmetryAction method
-
-- [`appliedToSeed`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_applied_to_seed_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_applied_to_seed) — PartialDifferentialEquationPointSymmetryAction method
-- [`appliedToSeedWithAdditiveSolution`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_applied_to_seed_with_additive_solution_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_applied_to_seed_with_additive_solution) — PartialDifferentialEquationPointSymmetryAction method
-
-## PartialDifferentialEquationPointSymmetryAction property
-
-- [`admitsAdditiveSolutionSymmetry`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_admits_additive_solution_symmetry_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_admits_additive_solution_symmetry) — PartialDifferentialEquationPointSymmetryAction property
-- [`amplitude`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_amplitude_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_amplitude) — PartialDifferentialEquationPointSymmetryAction property
-- [`decline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_decline) — PartialDifferentialEquationPointSymmetryAction property
-- [`intertwining`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_intertwining_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_intertwining) — PartialDifferentialEquationPointSymmetryAction property
-- [`invertibility`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_invertibility_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_invertibility) — PartialDifferentialEquationPointSymmetryAction property
-- [`multiplier`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_multiplier_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_multiplier) — PartialDifferentialEquationPointSymmetryAction property
-- [`outstandingObligations`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_outstanding_obligations_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_outstanding_obligations) — PartialDifferentialEquationPointSymmetryAction property
-- [`parameters`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_parameters_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_parameters) — PartialDifferentialEquationPointSymmetryAction property
-- [`pointSymmetryDecline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_point_symmetry_decline_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_point_symmetry_decline) — PartialDifferentialEquationPointSymmetryAction property
-- [`transformedCoordinates`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_transformed_coordinates_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_transformed_coordinates) — PartialDifferentialEquationPointSymmetryAction property
-
-## PartialDifferentialEquationPointSymmetryAlgebra property
-
-- [`admitsAdditiveSolutionSymmetry`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_admits_additive_solution_symmetry_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_admits_additive_solution_symmetry) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`basis`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_basis_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_basis) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`decline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_decline) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`determiningEquations`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_determining_equations_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_determining_equations) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`generalGenerator`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_general_generator_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_general_generator) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`outstandingObligations`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_outstanding_obligations_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_outstanding_obligations) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`parameters`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_parameters_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_parameters) — PartialDifferentialEquationPointSymmetryAlgebra property
-
-## PartialDifferentialEquationPointSymmetryGenerator property
-
-- [`coordinateInfinitesimals`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_coordinate_infinitesimals_api_partial_differential_equations_partialdifferentialequationpointsymmetrygenerator_coordinate_infinitesimals) — PartialDifferentialEquationPointSymmetryGenerator property
-- [`dependentInfinitesimal`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_dependent_infinitesimal_api_partial_differential_equations_partialdifferentialequationpointsymmetrygenerator_dependent_infinitesimal) — PartialDifferentialEquationPointSymmetryGenerator property
-
-## PartialDifferentialEquationPrincipalCoefficient property
-
-- [`coefficient`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_coefficient_api_partial_differential_equations_partialdifferentialequationprincipalcoefficient_coefficient) — PartialDifferentialEquationPrincipalCoefficient property
-
-## PartialDifferentialEquationPrincipalPart property
-
-- [`derivativeCoefficients`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_derivative_coefficients_api_partial_differential_equations_partialdifferentialequationprincipalpart_derivative_coefficients) — PartialDifferentialEquationPrincipalPart property
-- [`matrix`](matrix-construction.md#entry-presentation_wasm_matrix_construction_capability_algebra_matrix_api_partial_differential_equations_partialdifferentialequationprincipalpart_matrix) — PartialDifferentialEquationPrincipalPart property
-
-## PartialDifferentialEquationProblem method
-
-- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_partial_differential_equations_partialdifferentialequationproblem_serialize_object) — PartialDifferentialEquationProblem method
-- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_partial_differential_equations_partialdifferentialequationproblem_to_latex) — PartialDifferentialEquationProblem method
-
-## PartialDifferentialEquationProblem property
-
-- [`boundaryConditions`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_boundary_conditions_api_partial_differential_equations_partialdifferentialequationproblem_boundary_conditions) — PartialDifferentialEquationProblem property
-- [`dependentFunction`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_dependent_function_api_partial_differential_equations_partialdifferentialequationproblem_dependent_function) — PartialDifferentialEquationProblem property
-- [`equation`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_equation_api_partial_differential_equations_partialdifferentialequationproblem_equation) — PartialDifferentialEquationProblem property
-- [`independentVariables`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_independent_variables_api_partial_differential_equations_partialdifferentialequationproblem_independent_variables) — PartialDifferentialEquationProblem property
-- [`initialConditions`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_initial_conditions_api_partial_differential_equations_partialdifferentialequationproblem_initial_conditions) — PartialDifferentialEquationProblem property
-
-## PartialDifferentialEquationSecondOrderClassification property
-
-- [`cases`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_cases_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_cases) — PartialDifferentialEquationSecondOrderClassification property
-- [`decline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_decline) — PartialDifferentialEquationSecondOrderClassification property
-- [`discriminant`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_discriminant_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_discriminant) — PartialDifferentialEquationSecondOrderClassification property
-- [`equationType`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_equation_type_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_equation_type) — PartialDifferentialEquationSecondOrderClassification property
-- [`principalMatrix`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_principal_matrix_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_principal_matrix) — PartialDifferentialEquationSecondOrderClassification property
-- [`proofObligations`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_proof_obligations_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_proof_obligations) — PartialDifferentialEquationSecondOrderClassification property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_verdict) — PartialDifferentialEquationSecondOrderClassification property
-
-## PartialDifferentialEquationSecondOrderTypeCase property
-
-- [`condition`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_condition_api_partial_differential_equations_partialdifferentialequationsecondordertypecase_condition) — PartialDifferentialEquationSecondOrderTypeCase property
-- [`equationType`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_equation_type_api_partial_differential_equations_partialdifferentialequationsecondordertypecase_equation_type) — PartialDifferentialEquationSecondOrderTypeCase property
-
-## PartialDifferentialEquationSeparatedEquation property
-
-- [`independentVariableName`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_independent_variable_name_api_partial_differential_equations_partialdifferentialequationseparatedequation_independent_variable_name) — PartialDifferentialEquationSeparatedEquation property
-- [`residual`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_residual_api_partial_differential_equations_partialdifferentialequationseparatedequation_residual) — PartialDifferentialEquationSeparatedEquation property
-
-## PartialDifferentialEquationSeparationResult property
-
-- [`firstEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_first_equation_api_partial_differential_equations_partialdifferentialequationseparationresult_first_equation) — PartialDifferentialEquationSeparationResult property
-- [`reconstruction`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_reconstruction_api_partial_differential_equations_partialdifferentialequationseparationresult_reconstruction) — PartialDifferentialEquationSeparationResult property
-- [`secondEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_second_equation_api_partial_differential_equations_partialdifferentialequationseparationresult_second_equation) — PartialDifferentialEquationSeparationResult property
-- [`separationConstant`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_separation_constant_api_partial_differential_equations_partialdifferentialequationseparationresult_separation_constant) — PartialDifferentialEquationSeparationResult property
-- [`strategy`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_strategy_api_partial_differential_equations_partialdifferentialequationseparationresult_strategy) — PartialDifferentialEquationSeparationResult property
-- [`verification`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_verification_api_partial_differential_equations_partialdifferentialequationseparationresult_verification) — PartialDifferentialEquationSeparationResult property
-
-## PartialDifferentialEquationSimilaritySolution property
-
-- [`decline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_decline) — PartialDifferentialEquationSimilaritySolution property
-- [`invariant`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_invariant_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_invariant) — PartialDifferentialEquationSimilaritySolution property
-- [`liftedConstants`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_lifted_constants_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_lifted_constants) — PartialDifferentialEquationSimilaritySolution property
-- [`liftedFamily`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_lifted_family_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_lifted_family) — PartialDifferentialEquationSimilaritySolution property
-- [`liftedFamilyVerification`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_lifted_family_verification_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_lifted_family_verification) — PartialDifferentialEquationSimilaritySolution property
-- [`multiplier`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_multiplier_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_multiplier) — PartialDifferentialEquationSimilaritySolution property
-- [`outstandingObligations`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_outstanding_obligations_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_outstanding_obligations) — PartialDifferentialEquationSimilaritySolution property
-- [`reducedEquation`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_reduced_equation_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_reduced_equation) — PartialDifferentialEquationSimilaritySolution property
-- [`similarityVariable`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_similarity_variable_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_similarity_variable) — PartialDifferentialEquationSimilaritySolution property
-- [`weight`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_weight_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_weight) — PartialDifferentialEquationSimilaritySolution property
-
-## PartialDifferentialEquationSolutionFamily property
-
-- [`arbitraryFunctions`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_arbitrary_functions_api_partial_differential_equations_partialdifferentialequationsolutionfamily_arbitrary_functions) — PartialDifferentialEquationSolutionFamily property
-- [`establishesCompleteness`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_establishes_completeness_api_partial_differential_equations_partialdifferentialequationsolutionfamily_establishes_completeness) — PartialDifferentialEquationSolutionFamily property
-- [`expression`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_expression_unresolved) — PartialDifferentialEquationSolutionFamily property
-- [`form`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_form_api_partial_differential_equations_partialdifferentialequationsolutionfamily_form) — PartialDifferentialEquationSolutionFamily property
-- [`proofObligations`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_proof_obligations_api_partial_differential_equations_partialdifferentialequationsolutionfamily_proof_obligations) — PartialDifferentialEquationSolutionFamily property
-
-## PartialDifferentialEquationSolutionProvenance property
-
-- [`dischargedObligations`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_discharged_obligations_api_partial_differential_equations_partialdifferentialequationsolutionprovenance_discharged_obligations) — PartialDifferentialEquationSolutionProvenance property
-- [`linearity`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_linearity_api_partial_differential_equations_partialdifferentialequationsolutionprovenance_linearity) — PartialDifferentialEquationSolutionProvenance property
-- [`method`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_method_api_partial_differential_equations_partialdifferentialequationsolutionprovenance_method) — PartialDifferentialEquationSolutionProvenance property
-- [`order`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_order_api_partial_differential_equations_partialdifferentialequationsolutionprovenance_order) — PartialDifferentialEquationSolutionProvenance property
-
-## PartialDifferentialEquationSolveResult property
-
-- [`classification`](optimization.md#entry-presentation_wasm_optimization_capability_equations_classification_api_partial_differential_equations_partialdifferentialequationsolveresult_classification) — PartialDifferentialEquationSolveResult property
-- [`decline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationsolveresult_decline) — PartialDifferentialEquationSolveResult property
-- [`method`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_method_api_partial_differential_equations_partialdifferentialequationsolveresult_method) — PartialDifferentialEquationSolveResult property
-- [`provenance`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_provenance_api_partial_differential_equations_partialdifferentialequationsolveresult_provenance) — PartialDifferentialEquationSolveResult property
-- [`solution`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_solution_api_partial_differential_equations_partialdifferentialequationsolveresult_solution) — PartialDifferentialEquationSolveResult property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsolveresult_verdict) — PartialDifferentialEquationSolveResult property
-- [`verification`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_verification_api_partial_differential_equations_partialdifferentialequationsolveresult_verification) — PartialDifferentialEquationSolveResult property
-
-## PartialDifferentialEquationTransformationResult property
-
-- [`coordinateChange`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_coordinate_change_api_partial_differential_equations_partialdifferentialequationtransformationresult_coordinate_change) — PartialDifferentialEquationTransformationResult property
-- [`decline`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationtransformationresult_decline) — PartialDifferentialEquationTransformationResult property
-- [`normalizationMultiplier`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_normalization_multiplier_api_partial_differential_equations_partialdifferentialequationtransformationresult_normalization_multiplier) — PartialDifferentialEquationTransformationResult property
-- [`targetProblem`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_target_problem_api_partial_differential_equations_partialdifferentialequationtransformationresult_target_problem) — PartialDifferentialEquationTransformationResult property
-- [`transformed`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_transformed_api_partial_differential_equations_partialdifferentialequationtransformationresult_transformed) — PartialDifferentialEquationTransformationResult property
-
-## PartialDifferentialEquationTransformationVerificationReport property
-
-- [`claimedGoverningResidual`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_claimed_governing_residual_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_claimed_governing_residual) — PartialDifferentialEquationTransformationVerificationReport property
-- [`compositionResiduals`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_composition_residuals_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_composition_residuals) — PartialDifferentialEquationTransformationVerificationReport property
-- [`jacobian`](vector-calculus.md#entry-presentation_wasm_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_jacobian) — PartialDifferentialEquationTransformationVerificationReport property
-- [`principalCongruenceResiduals`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_principal_congruence_residuals_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_principal_congruence_residuals) — PartialDifferentialEquationTransformationVerificationReport property
-- [`transformedGoverningResidual`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_transformed_governing_residual_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_transformed_governing_residual) — PartialDifferentialEquationTransformationVerificationReport property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_verdict) — PartialDifferentialEquationTransformationVerificationReport property
-
-## PartialDifferentialEquationVerificationReport property
-
-- [`boundaryConditionResiduals`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_boundary_condition_residuals_api_partial_differential_equations_partialdifferentialequationverificationreport_boundary_condition_residuals) — PartialDifferentialEquationVerificationReport property
-- [`explicitBranch`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_explicit_branch_api_partial_differential_equations_partialdifferentialequationverificationreport_explicit_branch) — PartialDifferentialEquationVerificationReport property
-- [`governingResidual`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_governing_residual_api_partial_differential_equations_partialdifferentialequationverificationreport_governing_residual) — PartialDifferentialEquationVerificationReport property
-- [`inconclusiveReason`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_inconclusive_reason_api_partial_differential_equations_partialdifferentialequationverificationreport_inconclusive_reason) — PartialDifferentialEquationVerificationReport property
-- [`initialConditionResiduals`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_initial_condition_residuals_api_partial_differential_equations_partialdifferentialequationverificationreport_initial_condition_residuals) — PartialDifferentialEquationVerificationReport property
-- [`proofObligations`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_proof_obligations_api_partial_differential_equations_partialdifferentialequationverificationreport_proof_obligations) — PartialDifferentialEquationVerificationReport property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationreport_verdict) — PartialDifferentialEquationVerificationReport property
-
-## PartialDifferentialEquationVerificationResidual property
-
-- [`residual`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_residual_api_partial_differential_equations_partialdifferentialequationverificationresidual_residual) — PartialDifferentialEquationVerificationResidual property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationresidual_verdict) — PartialDifferentialEquationVerificationResidual property
-
-## PiecewiseBranch property
-
-- [`condition`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_condition_api_results_piecewisebranch_condition) — PiecewiseBranch property
-- [`value`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_value_api_results_piecewisebranch_value) — PiecewiseBranch property
-
-## Point2d constructor
-
-- [`Point2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_point_2d_api_point2d) — Point2d constructor
-
-## Point2d method
-
-- [`coordinates`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_coordinates_api_point2d_coordinates) — Point2d method
-- [`distanceTo`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_distance_to_api_point2d_distance_to) — Point2d method
-- [`intersection`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_intersection_api_point2d_intersection) — Point2d method
-- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_point2d_serialize_object) — Point2d method
-- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_point2d_to_latex) — Point2d method
-
-## Point2d property
-
-- [`x`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_x_api_point2d_x) — Point2d property
-- [`y`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_y_api_point2d_y) — Point2d property
-
-## Polygon2d constructor
-
-- [`Polygon2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_polygon_2d_api_polygon2d) — Polygon2d constructor
-
-## Polygon2d method
-
-- [`area`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_area_api_polygon2d_area) — Polygon2d method
-- [`centroid`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_centroid_api_polygon2d_centroid) — Polygon2d method
-- [`interiorAngles`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_interior_angles_api_geometry_operations_polygon2d_interior_angles) — Polygon2d method
-- [`intersection`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_intersection_api_polygon2d_intersection) — Polygon2d method
-- [`perimeter`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_perimeter_api_polygon2d_perimeter) — Polygon2d method
-- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_polygon2d_serialize_object) — Polygon2d method
-- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_polygon2d_to_latex) — Polygon2d method
-
-## PolynomialSystemSolution property
-
-- [`complete`](solving.md#entry-presentation_wasm_solving_capability_equations_complete_api_results_polynomialsystemsolution_complete) — PolynomialSystemSolution property
-- [`solutions`](solving.md#entry-presentation_wasm_solving_capability_equations_solutions_api_results_polynomialsystemsolution_solutions) — PolynomialSystemSolution property
-- [`verdict`](solving.md#entry-presentation_wasm_solving_capability_equations_verdict_api_results_polynomialsystemsolution_verdict) — PolynomialSystemSolution property
-
-## PrimeFactor property
-
-- [`multiplicity`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_multiplicity_api_results_primefactor_multiplicity) — PrimeFactor property
-- [`prime`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_prime_api_results_primefactor_prime) — PrimeFactor property
-
-## QuadraticContinuedFractionExpansion property
-
-- [`initialTerms`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_initial_terms_api_results_quadraticcontinuedfractionexpansion_initial_terms) — QuadraticContinuedFractionExpansion property
-- [`periodicTerms`](combinatorics.md#entry-presentation_wasm_combinatorics_capability_discrete_mathematics_periodic_terms_api_results_quadraticcontinuedfractionexpansion_periodic_terms) — QuadraticContinuedFractionExpansion property
-
-## RationalCanonicalForm property
-
-- [`canonicalForm`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_canonical_form_api_results_rationalcanonicalform_canonical_form) — RationalCanonicalForm property
-- [`characteristicPolynomial`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_characteristic_polynomial_api_results_rationalcanonicalform_characteristic_polynomial) — RationalCanonicalForm property
-- [`invariantFactors`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_invariant_factors_api_results_rationalcanonicalform_invariant_factors) — RationalCanonicalForm property
-- [`minimalPolynomial`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_minimal_polynomial_api_results_rationalcanonicalform_minimal_polynomial) — RationalCanonicalForm property
-- [`similarity`](matrix-functions.md#entry-presentation_wasm_matrix_functions_capability_algebra_similarity_api_results_rationalcanonicalform_similarity) — RationalCanonicalForm property
-
-## RootMultiplicity property
-
-- [`multiplicity`](number-theory.md#entry-presentation_wasm_number_theory_capability_discrete_mathematics_multiplicity_api_results_rootmultiplicity_multiplicity) — RootMultiplicity property
-- [`root`](elementary-functions.md#entry-presentation_wasm_elementary_functions_capability_elementary_functions_root_api_results_rootmultiplicity_root) — RootMultiplicity property
-
-## Segment2d constructor
-
-- [`Segment2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_segment_2d_api_segment2d) — Segment2d constructor
-
-## Segment2d method
-
-- [`intersection`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_intersection_api_segment2d_intersection) — Segment2d method
-- [`length`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_length_api_segment2d_length) — Segment2d method
-- [`midpoint`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_midpoint_api_segment2d_midpoint) — Segment2d method
-- [`perpendicularBisectorEquation`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_perpendicular_bisector_equation_api_geometry_operations_segment2d_perpendicular_bisector_equation) — Segment2d method
-- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_segment2d_serialize_object) — Segment2d method
-- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_segment2d_to_latex) — Segment2d method
-
-## SetEnumeration property
-
-- [`elements`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_elements_api_results_setenumeration_elements) — SetEnumeration property
-- [`outcome`](object-model.md#entry-presentation_wasm_object_model_capability_contexts_outcome_api_results_setenumeration_outcome) — SetEnumeration property
-
-## SmithNormalFormDecomposition property
-
-- [`columnTransformation`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_column_transformation_api_results_smithnormalformdecomposition_column_transformation) — SmithNormalFormDecomposition property
-- [`invariantFactors`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_invariant_factors_api_results_smithnormalformdecomposition_invariant_factors) — SmithNormalFormDecomposition property
-- [`rank`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_rank_api_results_smithnormalformdecomposition_rank) — SmithNormalFormDecomposition property
-- [`rowTransformation`](linear-algebra.md#entry-presentation_wasm_linear_algebra_capability_algebra_row_transformation_api_results_smithnormalformdecomposition_row_transformation) — SmithNormalFormDecomposition property
-- [`smith`](matrix-canonical-forms.md#entry-presentation_wasm_matrix_canonical_forms_capability_algebra_smith_api_results_smithnormalformdecomposition_smith) — SmithNormalFormDecomposition property
-
-## SymiError property
-
-- [`category`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_category_unresolved) — SymiError property
-- [`code`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_code_unresolved) — SymiError property
-- [`expected`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_expected_unresolved) — SymiError property
-- [`hint`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_hint_unresolved) — SymiError property
-- [`operation`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_operation_unresolved) — SymiError property
-- [`parameterPath`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_parameter_path_unresolved) — SymiError property
-- [`received`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_received_unresolved) — SymiError property
-
-## SymiFacade property
-
-- [`Context`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_context_unresolved) — SymiFacade property
-- [`Expression`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_expression_unresolved) — SymiFacade property
-- [`Matrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_matrix_type_unresolved) — SymiFacade property
-- [`raw`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_raw_unresolved) — SymiFacade property
-
-## SystemAssignment property
-
-- [`values`](solving.md#entry-presentation_wasm_solving_capability_equations_values_api_results_systemassignment_values) — SystemAssignment property
-- [`variables`](solving.md#entry-presentation_wasm_solving_capability_equations_variables_api_results_systemassignment_variables) — SystemAssignment property
-
-## Triangle2d constructor
-
-- [`Triangle2d`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_triangle_2d_api_triangle2d) — Triangle2d constructor
-
-## Triangle2d method
-
-- [`area`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_area_api_triangle2d_area) — Triangle2d method
-- [`centroid`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_centroid_api_geometry_operations_triangle2d_centroid) — Triangle2d method
-- [`interiorAngles`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_interior_angles_api_geometry_operations_triangle2d_interior_angles) — Triangle2d method
-- [`intersection`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_intersection_api_triangle2d_intersection) — Triangle2d method
-- [`perimeter`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_perimeter_api_triangle2d_perimeter) — Triangle2d method
-- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_serialize_object_api_serialization_triangle2d_serialize_object) — Triangle2d method
-- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_serialization_and_output_capability_construction_to_latex_api_geometry_operations_triangle2d_to_latex) — Triangle2d method
-
-## Type
-
-- [`AssumptionProposition`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_assumption_proposition_api_assumptionproposition) — Type
-- [`AssumptionScope`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_assumption_scope_api_assumptionscope) — Type
-- [`Context`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_context_api_session) — Type
-- [`ContextConstructor`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_context_constructor_api_session) — Type
-- [`Expression`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_expression_api_expression) — Type
-- [`Matrix`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_matrix_api_matrix) — Type
-- [`NumeratorDenominator`](simplification-general.md#entry-presentation_wasm_simplification_general_capability_expression_transformations_numerator_denominator_api_results_numeratordenominator) — Type
-- [`PiecewiseBranch`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_piecewise_branch_api_results_piecewisebranch) — Type
-- [`SymiContextError`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_symicontexterror_unresolved) — Type
-- [`SymiDomainError`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_symidomainerror_unresolved) — Type
-- [`SymiError`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_symierror_unresolved) — Type
-- [`SymiFacade`](cad.md#entry-presentation_wasm_cad_capability_algebra_symi_facade_unresolved) — Type
-- [`SymiInternalError`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_symiinternalerror_unresolved) — Type
-- [`SymiResourceError`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_symiresourceerror_unresolved) — Type
-- [`SymiTypeError`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_symitypeerror_unresolved) — Type
-
-## UndefinedFunction method
-
-- [`call`](construction-and-parsing.md#entry-presentation_wasm_construction_and_parsing_capability_construction_call_api_undefinedfunction_call) — UndefinedFunction method
-- [`derivative`](calculus.md#entry-presentation_wasm_calculus_capability_calculus_derivative_api_undefinedfunction_derivative) — UndefinedFunction method
-
-## VertexAngle property
-
-- [`angle`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_angle_api_results_vertexangle_angle) — VertexAngle property
-- [`vertex`](geometry.md#entry-presentation_wasm_geometry_capability_geometry_vertex_api_results_vertexangle_vertex) — VertexAngle property
-
-## new constructor
-
-- [`new`](polynomials.md#entry-presentation_wasm_polynomials_capability_algebra_new_unresolved) — new constructor
+Entries grouped by the object that receives them. An operation appears under every receiver of its calling forms, so an expression lookup finds an operation led by a module function.
+
+## AssumptionProposition
+
+- [`AssumptionProposition`](assumptions.md#entry-presentation_wasm_api_assumptionproposition) — Type
+- [`AssumptionProposition.and`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_and) — AssumptionProposition method
+- [`AssumptionProposition.congruenceModulus`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_congruence_modulus) — Default context
+- [`AssumptionProposition.free`](assumptions.md#entry-presentation_wasm_host_wasm_assumptionproposition_free) — AssumptionProposition method
+- [`AssumptionProposition.leftOperand`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_left_operand) — Default context
+- [`AssumptionProposition.membershipElement`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_membership_element) — Default context
+- [`AssumptionProposition.membershipSet`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_membership_set) — Default context
+- [`AssumptionProposition.not`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_not) — AssumptionProposition method
+- [`AssumptionProposition.or`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_or) — AssumptionProposition method
+- [`AssumptionProposition.relationKind`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_relation_kind) — Default context
+- [`AssumptionProposition.rightOperand`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_right_operand) — Default context
+- [`AssumptionProposition.serialize`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_serialize) — Default context
+- [`AssumptionProposition.toString`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_to_string) — AssumptionProposition method
+
+## AssumptionScope
+
+- [`ask`](assumptions.md#entry-presentation_wasm_api_session_ask) — Default context
+- [`assuming`](assumptions.md#entry-presentation_wasm_api_session_assuming) — Default context
+- [`AssumptionScope`](assumptions.md#entry-presentation_wasm_api_assumptionscope) — Type
+- [`AssumptionScope.free`](assumptions.md#entry-presentation_wasm_host_wasm_assumptionscope_free) — AssumptionScope method
+- [`continuousDomain`](calculus.md#entry-presentation_wasm_api_session_continuous_domain) — Default context
+- [`couldHold`](assumptions.md#entry-presentation_wasm_api_session_could_hold) — Default context
+- [`evaluateLimit`](calculus.md#entry-presentation_wasm_api_session_evaluate_limit) — Default context
+- [`fourierTransform`](integral-transforms.md#entry-presentation_wasm_api_session_fourier_transform) — Default context
+- [`integrate`](calculus.md#entry-presentation_wasm_api_session_integrate) — Default context
+- [`integrateDefinite`](calculus.md#entry-presentation_wasm_api_session_integrate_definite) — Default context
+- [`laplaceTransform`](integral-transforms.md#entry-presentation_wasm_api_session_laplace_transform) — Default context
+- [`refine`](assumptions.md#entry-presentation_wasm_api_session_refine) — Default context
+- [`simplify`](simplification-general.md#entry-presentation_wasm_api_session_simplify) — Default context
+- [`singularities`](calculus.md#entry-presentation_wasm_api_session_singularities) — Default context
+- [`taylorSeries`](series.md#entry-presentation_wasm_api_session_taylor_series) — Default context
+
+## BulkExpressionOutcome
+
+- [`BulkExpressionOutcome.diagnostic`](context-safety.md#entry-presentation_wasm_api_bulkexpressionoutcome_diagnostic) — BulkExpressionOutcome property
+- [`BulkExpressionOutcome.index`](context-safety.md#entry-presentation_wasm_api_bulkexpressionoutcome_index) — BulkExpressionOutcome property
+- [`BulkExpressionOutcome.value`](context-safety.md#entry-presentation_wasm_api_bulkexpressionoutcome_value) — BulkExpressionOutcome property
+
+## BulkTextOutcome
+
+- [`BulkTextOutcome.diagnostic`](context-safety.md#entry-presentation_wasm_api_bulktextoutcome_diagnostic) — BulkTextOutcome property
+- [`BulkTextOutcome.index`](context-safety.md#entry-presentation_wasm_api_bulktextoutcome_index) — BulkTextOutcome property
+- [`BulkTextOutcome.value`](context-safety.md#entry-presentation_wasm_api_bulktextoutcome_value) — BulkTextOutcome property
+
+## Circle2d
+
+- [`Circle2d`](geometry.md#entry-presentation_wasm_api_circle2d) — Circle2d constructor
+- [`Circle2d.area`](geometry.md#entry-presentation_wasm_api_circle2d_area) — Circle2d method
+- [`Circle2d.center`](geometry.md#entry-presentation_wasm_api_circle2d_center) — Circle2d property
+- [`Circle2d.circumference`](geometry.md#entry-presentation_wasm_api_circle2d_circumference) — Circle2d method
+- [`Circle2d.equation`](geometry.md#entry-presentation_wasm_api_circle2d_equation) — Circle2d method
+- [`Circle2d.radius`](geometry.md#entry-presentation_wasm_api_circle2d_radius) — Circle2d property
+- [`Circle2d.toString`](geometry.md#entry-presentation_wasm_host_wasm_circle2d_tostring) — Circle2d method
+- [`Point2d.intersection`](geometry.md#entry-presentation_wasm_api_point2d_intersection) — Point2d method
+- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_api_session_serialize_object) — Expression method
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+
+## Context
+
+- [`abs`](elementary-functions.md#entry-presentation_wasm_api_session_abs) — Default context
+- [`absoluteValue`](elementary-functions.md#entry-presentation_wasm_api_session_absolute_value) — Explicit context
+- [`addAssumptions`](assumptions.md#entry-presentation_wasm_api_session_add_assumptions) — Default context
+- [`algebraicAssumption`](assumptions.md#entry-presentation_wasm_api_session_algebraic_assumption) — Default context
+- [`arccos`](elementary-functions.md#entry-presentation_wasm_api_session_arccos) — Default context
+- [`arccosh`](elementary-functions.md#entry-presentation_wasm_api_session_arccosh) — Default context
+- [`arccot`](elementary-functions.md#entry-presentation_wasm_api_session_arccot) — Default context
+- [`arccoth`](elementary-functions.md#entry-presentation_wasm_api_session_arccoth) — Default context
+- [`arccsc`](elementary-functions.md#entry-presentation_wasm_api_session_arccsc) — Default context
+- [`arccsch`](elementary-functions.md#entry-presentation_wasm_api_session_arccsch) — Default context
+- [`arcsec`](elementary-functions.md#entry-presentation_wasm_api_session_arcsec) — Default context
+- [`arcsech`](elementary-functions.md#entry-presentation_wasm_api_session_arcsech) — Default context
+- [`arcsin`](elementary-functions.md#entry-presentation_wasm_api_session_arcsin) — Default context
+- [`arcsinh`](elementary-functions.md#entry-presentation_wasm_api_session_arcsinh) — Default context
+- [`arctan`](elementary-functions.md#entry-presentation_wasm_api_session_arctan) — Default context
+- [`arctanh`](elementary-functions.md#entry-presentation_wasm_api_session_arctanh) — Default context
+- [`ask`](assumptions.md#entry-presentation_wasm_api_session_ask) — Default context
+- [`assuming`](assumptions.md#entry-presentation_wasm_api_session_assuming) — Default context
+- [`assumptionPropositionFromLogicalExpression`](assumptions.md#entry-presentation_wasm_api_session_assumption_proposition_from_logical_expression) — Default context
+- [`assumptionsOf`](default-context.md#entry-presentation_wasm_api_session_assumptions_of) — Default context
+- [`bellNumber`](combinatorics.md#entry-presentation_wasm_api_session_bell_number) — Default context
+- [`beta`](special-functions.md#entry-presentation_wasm_api_session_beta) — Default context
+- [`binomial`](elementary-functions.md#entry-presentation_wasm_api_session_binomial) — Default context
+- [`cancel`](simplification-general.md#entry-presentation_wasm_api_session_cancel) — Default context
+- [`canonicalizePartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_canonicalize_partial_differential_equation) — Default context
+- [`carlsonRc`](special-functions.md#entry-presentation_wasm_api_session_carlson_rc) — Default context
+- [`carlsonRd`](special-functions.md#entry-presentation_wasm_api_session_carlson_rd) — Default context
+- [`carlsonRf`](special-functions.md#entry-presentation_wasm_api_session_carlson_rf) — Default context
+- [`carlsonRj`](special-functions.md#entry-presentation_wasm_api_session_carlson_rj) — Default context
+- [`catalanNumber`](combinatorics.md#entry-presentation_wasm_api_session_catalan_number) — Default context
+- [`ceiling`](elementary-functions.md#entry-presentation_wasm_api_session_ceiling) — Default context
+- [`changeMonomialOrder`](polynomials.md#entry-presentation_wasm_api_session_change_monomial_order) — Default context
+- [`changePartialDifferentialEquationVariables`](partial-differential-equations.md#entry-presentation_wasm_api_session_change_partial_differential_equation_variables) — Default context
+- [`characteristicFunction`](statistics.md#entry-presentation_wasm_api_session_characteristic_function) — Default context
+- [`chebyshevPolynomialFirstKind`](special-functions.md#entry-presentation_wasm_api_session_chebyshev_polynomial_first_kind) — Default context
+- [`chebyshevPolynomialSecondKind`](special-functions.md#entry-presentation_wasm_api_session_chebyshev_polynomial_second_kind) — Default context
+- [`chineseRemainder`](number-theory.md#entry-presentation_wasm_api_session_chinese_remainder) — Default context
+- [`circle2d`](geometry.md#entry-presentation_wasm_api_session_circle_2d) — Explicit context
+- [`classifyPartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_classify_partial_differential_equation) — Default context
+- [`classifySecondOrderPartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_classify_second_order_partial_differential_equation) — Default context
+- [`classifyUnconstrained`](optimization.md#entry-presentation_wasm_api_session_classify_unconstrained) — Default context
+- [`clearAllAssumptions`](assumptions.md#entry-presentation_wasm_api_session_clear_all_assumptions) — Default context
+- [`clearAssumptions`](default-context.md#entry-presentation_wasm_api_session_clear_assumptions) — Default context
+- [`coefficient`](polynomials.md#entry-presentation_wasm_api_session_coefficient) — Default context
+- [`collect`](algebraic-transforms.md#entry-presentation_wasm_api_session_collect) — Default context
+- [`collectRadicals`](algebraic-transforms.md#entry-presentation_wasm_api_session_collect_radicals) — Default context
+- [`combineLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_logarithm) — Default context
+- [`combinePowers`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_powers) — Default context
+- [`combineTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_trigonometric) — Default context
+- [`compareRealRoots`](solving.md#entry-presentation_wasm_api_session_compare_real_roots) — Default context
+- [`completeTheSquare`](algebraic-transforms.md#entry-presentation_wasm_api_session_complete_the_square) — Default context
+- [`complexAssumption`](assumptions.md#entry-presentation_wasm_api_session_complex_assumption) — Default context
+- [`complexEntries`](linear-algebra.md#entry-presentation_wasm_api_session_complex_entries) — Default context
+- [`complexPlane`](sets.md#entry-presentation_wasm_api_session_complex_plane) — Default context
+- [`compositeAssumption`](assumptions.md#entry-presentation_wasm_api_session_composite_assumption) — Default context
+- [`conditionSet`](sets.md#entry-presentation_wasm_api_session_condition_set) — Default context
+- [`congruentAssumption`](assumptions.md#entry-presentation_wasm_api_session_congruent_assumption) — Default context
+- [`conjugate`](elementary-functions.md#entry-presentation_wasm_api_session_conjugate) — Default context
+- [`conjunctiveNormalForm`](logical-transforms.md#entry-presentation_wasm_api_session_conjunctive_normal_form) — Default context
+- [`constructPartialDifferentialEquationPointSymmetryAction`](partial-differential-equations.md#entry-presentation_wasm_api_session_construct_partial_differential_equation_point_symmetry_action) — Default context
+- [`Context`](object-model.md#entry-presentation_wasm_api_session) — Type
+- [`continuedFractionQuadraticIrrational`](number-theory.md#entry-presentation_wasm_api_session_continued_fraction_quadratic_irrational) — Default context
+- [`continuedFractionRational`](number-theory.md#entry-presentation_wasm_api_session_continued_fraction_rational) — Default context
+- [`continuousDomain`](calculus.md#entry-presentation_wasm_api_session_continuous_domain) — Default context
+- [`cos`](elementary-functions.md#entry-presentation_wasm_api_session_cos) — Default context
+- [`cosh`](elementary-functions.md#entry-presentation_wasm_api_session_cosh) — Default context
+- [`cot`](elementary-functions.md#entry-presentation_wasm_api_session_cot) — Default context
+- [`coth`](elementary-functions.md#entry-presentation_wasm_api_session_coth) — Default context
+- [`couldHold`](assumptions.md#entry-presentation_wasm_api_session_could_hold) — Default context
+- [`countDistinctRealRoots`](solving.md#entry-presentation_wasm_api_session_count_distinct_real_roots) — Default context
+- [`covariance`](statistics.md#entry-presentation_wasm_api_session_covariance) — Default context
+- [`csc`](elementary-functions.md#entry-presentation_wasm_api_session_csc) — Default context
+- [`csch`](elementary-functions.md#entry-presentation_wasm_api_session_csch) — Default context
+- [`cumulant`](statistics.md#entry-presentation_wasm_api_session_cumulant) — Default context
+- [`cumulativeDistribution`](statistics.md#entry-presentation_wasm_api_session_cumulative_distribution) — Default context
+- [`curl`](vector-calculus.md#entry-presentation_wasm_api_session_curl) — Default context
+- [`definedAssumption`](assumptions.md#entry-presentation_wasm_api_session_defined_assumption) — Default context
+- [`degree`](polynomials.md#entry-presentation_wasm_api_session_degree) — Default context
+- [`denestPowers`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_denest_powers) — Default context
+- [`denestRadicals`](algebraic-transforms.md#entry-presentation_wasm_api_session_denest_radicals) — Default context
+- [`denominator`](expressions.md#entry-presentation_wasm_api_session_denominator) — Default context
+- [`density`](statistics.md#entry-presentation_wasm_api_session_density) — Default context
+- [`derivative`](deferred-forms.md#entry-presentation_wasm_api_session_derivative) — Default context
+- [`derivePartialDifferentialEquationPointSymmetries`](partial-differential-equations.md#entry-presentation_wasm_api_session_derive_partial_differential_equation_point_symmetries) — Default context
+- [`deserializeAssumptionProposition`](assumptions.md#entry-presentation_wasm_api_session_deserialize_assumption_proposition) — Default context
+- [`diagonalMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_diagonal_matrix) — Default context
+- [`differentiate`](calculus.md#entry-presentation_wasm_api_session_differentiate) — Default context
+- [`differentiateBulk`](context-safety.md#entry-presentation_wasm_api_session_differentiate_bulk) — Default context
+- [`digamma`](special-functions.md#entry-presentation_wasm_api_session_digamma) — Default context
+- [`discoverPartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_discover_partial_differential_equation) — Default context
+- [`disjunctiveNormalForm`](logical-transforms.md#entry-presentation_wasm_api_session_disjunctive_normal_form) — Default context
+- [`distribution`](statistics.md#entry-presentation_wasm_api_session_distribution) — Default context
+- [`divergence`](vector-calculus.md#entry-presentation_wasm_api_session_divergence) — Default context
+- [`divisorCount`](number-theory.md#entry-presentation_wasm_api_session_divisor_count) — Default context
+- [`divisorSigma`](number-theory.md#entry-presentation_wasm_api_session_divisor_sigma) — Default context
+- [`e`](evaluation-and-constants.md#entry-presentation_wasm_api_session_e) — Default context
+- [`eliminateDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_eliminate_derived_logical_connectives) — Default context
+- [`eliminateQuantifiers`](solving.md#entry-presentation_wasm_api_session_eliminate_quantifiers) — Default context
+- [`eliminationIdeal`](polynomials.md#entry-presentation_wasm_api_session_elimination_ideal) — Default context
+- [`ellipticE`](special-functions.md#entry-presentation_wasm_api_session_elliptic_e) — Default context
+- [`ellipticEIncomplete`](special-functions.md#entry-presentation_wasm_api_session_elliptic_e_incomplete) — Default context
+- [`ellipticF`](special-functions.md#entry-presentation_wasm_api_session_elliptic_f) — Default context
+- [`ellipticK`](special-functions.md#entry-presentation_wasm_api_session_elliptic_k) — Default context
+- [`ellipticPi`](special-functions.md#entry-presentation_wasm_api_session_elliptic_pi) — Default context
+- [`ellipticPiIncomplete`](special-functions.md#entry-presentation_wasm_api_session_elliptic_pi_incomplete) — Default context
+- [`emptySet`](sets.md#entry-presentation_wasm_api_session_empty_set) — Default context
+- [`enumerateSetInInterval`](sets.md#entry-presentation_wasm_api_session_enumerate_set_in_interval) — Default context
+- [`equal`](relations.md#entry-presentation_wasm_api_session_equal) — Default context
+- [`equalAssumption`](assumptions.md#entry-presentation_wasm_api_session_equal_assumption) — Default context
+- [`eulerGamma`](evaluation-and-constants.md#entry-presentation_wasm_api_session_euler_gamma) — Default context
+- [`eulerTotient`](number-theory.md#entry-presentation_wasm_api_session_euler_totient) — Default context
+- [`evaluateLimit`](calculus.md#entry-presentation_wasm_api_session_evaluate_limit) — Default context
+- [`evaluateNumeric`](calculus.md#entry-presentation_wasm_api_session_evaluate_numeric) — Default context
+- [`evaluateNumericBulk`](context-safety.md#entry-presentation_wasm_api_session_evaluate_numeric_bulk) — Default context
+- [`evaluateOnGrid`](calculus.md#entry-presentation_wasm_api_session_evaluate_on_grid) — Default context
+- [`evaluateOnGridPoints`](calculus.md#entry-presentation_wasm_api_session_evaluate_on_grid_points) — Default context
+- [`evaluateTruth`](logic.md#entry-presentation_wasm_api_session_evaluate_truth) — Default context
+- [`evenAssumption`](assumptions.md#entry-presentation_wasm_api_session_even_assumption) — Default context
+- [`execute`](calculus.md#entry-presentation_wasm_api_session_execute) — Default context
+- [`executionMode`](context-safety.md#entry-presentation_wasm_api_session_execution_mode) — Default context
+- [`exp`](elementary-functions.md#entry-presentation_wasm_api_session_exp) — Default context
+- [`expand`](algebraic-transforms.md#entry-presentation_wasm_api_session_expand) — Default context
+- [`expandBulk`](context-safety.md#entry-presentation_wasm_api_session_expand_bulk) — Default context
+- [`expandComplex`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_complex) — Default context
+- [`expandLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_logarithm) — Default context
+- [`expandPowerBase`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_power_base) — Default context
+- [`expandTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_trigonometric) — Default context
+- [`expectation`](statistics.md#entry-presentation_wasm_api_session_expectation) — Default context
+- [`explicitPartialDifferentialEquationSolution`](partial-differential-equations.md#entry-presentation_wasm_api_session_explicit_partial_differential_equation_solution) — Default context
+- [`extendedEuclidean`](number-theory.md#entry-presentation_wasm_api_session_extended_euclidean) — Default context
+- [`extendedRealAssumption`](assumptions.md#entry-presentation_wasm_api_session_extended_real_assumption) — Default context
+- [`factor`](algebraic-transforms.md#entry-presentation_wasm_api_session_factor) — Default context
+- [`factorCommonTerms`](algebraic-transforms.md#entry-presentation_wasm_api_session_factor_common_terms) — Default context
+- [`factorial`](elementary-functions.md#entry-presentation_wasm_api_session_factorial) — Default context
+- [`factorInteger`](number-theory.md#entry-presentation_wasm_api_session_factor_integer) — Default context
+- [`fallingFactorial`](combinatorics.md#entry-presentation_wasm_api_session_falling_factorial) — Default context
+- [`fibonacciNumber`](combinatorics.md#entry-presentation_wasm_api_session_fibonacci_number) — Default context
+- [`finiteAssumption`](assumptions.md#entry-presentation_wasm_api_session_finite_assumption) — Default context
+- [`finiteSet`](sets.md#entry-presentation_wasm_api_session_finite_set) — Default context
+- [`floor`](elementary-functions.md#entry-presentation_wasm_api_session_floor) — Default context
+- [`fourierTransform`](integral-transforms.md#entry-presentation_wasm_api_session_fourier_transform) — Default context
+- [`fullRankMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_full_rank_matrix) — Default context
+- [`gamma`](special-functions.md#entry-presentation_wasm_api_session_gamma) — Default context
+- [`gegenbauerPolynomial`](special-functions.md#entry-presentation_wasm_api_session_gegenbauer_polynomial) — Default context
+- [`generalizedLaguerrePolynomial`](special-functions.md#entry-presentation_wasm_api_session_generalized_laguerre_polynomial) — Default context
+- [`globalOptimumOnSemialgebraic`](optimization.md#entry-presentation_wasm_api_session_global_optimum_on_semialgebraic) — Default context
+- [`gradient`](vector-calculus.md#entry-presentation_wasm_api_session_gradient) — Default context
+- [`greaterAssumption`](assumptions.md#entry-presentation_wasm_api_session_greater_assumption) — Default context
+- [`greaterOrEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_greater_or_equal_assumption) — Default context
+- [`greaterThan`](relations.md#entry-presentation_wasm_api_session_greater_than) — Default context
+- [`greaterThanOrEqual`](relations.md#entry-presentation_wasm_api_session_greater_than_or_equal) — Default context
+- [`groebnerBasis`](polynomials.md#entry-presentation_wasm_api_session_groebner_basis) — Default context
+- [`hermitePolynomial`](special-functions.md#entry-presentation_wasm_api_session_hermite_polynomial) — Default context
+- [`hermitianMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_hermitian_matrix) — Default context
+- [`hessian`](vector-calculus.md#entry-presentation_wasm_api_session_hessian) — Default context
+- [`hurwitzZeta`](special-functions.md#entry-presentation_wasm_api_session_hurwitz_zeta) — Default context
+- [`hypergeometric0f1`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_0f1) — Default context
+- [`hypergeometric1f1`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_1f1) — Default context
+- [`hypergeometric2f1`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_2f1) — Default context
+- [`hypergeometricPfq`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_pfq) — Default context
+- [`idealIntersection`](polynomials.md#entry-presentation_wasm_api_session_ideal_intersection) — Default context
+- [`idealMembership`](polynomials.md#entry-presentation_wasm_api_session_ideal_membership) — Default context
+- [`idealProduct`](polynomials.md#entry-presentation_wasm_api_session_ideal_product) — Default context
+- [`idealSum`](polynomials.md#entry-presentation_wasm_api_session_ideal_sum) — Default context
+- [`identityMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_identity_matrix) — Default context
+- [`imageSet`](sets.md#entry-presentation_wasm_api_session_image_set) — Default context
+- [`imaginaryPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_imaginary_part) — Default context
+- [`imaginaryUnit`](evaluation-and-constants.md#entry-presentation_wasm_api_session_imaginary_unit) — Default context
+- [`implicitize`](polynomials.md#entry-presentation_wasm_api_session_implicitize) — Default context
+- [`implicitPartialDifferentialEquationSolution`](partial-differential-equations.md#entry-presentation_wasm_api_session_implicit_partial_differential_equation_solution) — Default context
+- [`infiniteAssumption`](assumptions.md#entry-presentation_wasm_api_session_infinite_assumption) — Default context
+- [`infinity`](evaluation-and-constants.md#entry-presentation_wasm_api_session_infinity) — Default context
+- [`initializeParallelism`](context-safety.md#entry-presentation_wasm_api_session_initialize_parallelism) — Default context
+- [`integer`](construction-and-parsing.md#entry-presentation_wasm_api_session_integer) — Default context
+- [`integerAssumption`](assumptions.md#entry-presentation_wasm_api_session_integer_assumption) — Default context
+- [`integerEntries`](linear-algebra.md#entry-presentation_wasm_api_session_integer_entries) — Default context
+- [`integerFromString`](construction-and-parsing.md#entry-presentation_wasm_api_session_integer_from_string) — Default context
+- [`integerGcd`](number-theory.md#entry-presentation_wasm_api_session_integer_gcd) — Default context
+- [`integerLcm`](number-theory.md#entry-presentation_wasm_api_session_integer_lcm) — Default context
+- [`integerNthRoot`](number-theory.md#entry-presentation_wasm_api_session_integer_nth_root) — Default context
+- [`integerSet`](sets.md#entry-presentation_wasm_api_session_integer_set) — Default context
+- [`integerSquareRoot`](number-theory.md#entry-presentation_wasm_api_session_integer_square_root) — Default context
+- [`integral`](deferred-forms.md#entry-presentation_wasm_api_session_integral) — Default context
+- [`integrate`](calculus.md#entry-presentation_wasm_api_session_integrate) — Default context
+- [`integrateDefinite`](calculus.md#entry-presentation_wasm_api_session_integrate_definite) — Default context
+- [`integrateDefiniteDetailed`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_detailed) — Default context
+- [`integrateDefiniteNumeric`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_numeric) — Default context
+- [`integrateDefiniteUnderConstraint`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_under_constraint) — Default context
+- [`integrateIterated`](calculus.md#entry-presentation_wasm_api_session_integrate_iterated) — Default context
+- [`internerLength`](default-context.md#entry-presentation_wasm_api_session_interner_length) — Default context
+- [`interval`](sets.md#entry-presentation_wasm_api_session_interval) — Default context
+- [`introduceDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_introduce_derived_logical_connectives) — Default context
+- [`inverseFourierTransform`](integral-transforms.md#entry-presentation_wasm_api_session_inverse_fourier_transform) — Default context
+- [`inverseLaplaceTransform`](integral-transforms.md#entry-presentation_wasm_api_session_inverse_laplace_transform) — Default context
+- [`invertibleMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_invertible_matrix) — Default context
+- [`irrationalAssumption`](assumptions.md#entry-presentation_wasm_api_session_irrational_assumption) — Default context
+- [`isMember`](sets.md#entry-presentation_wasm_api_session_is_member) — Default context
+- [`isolateRealRoots`](polynomials.md#entry-presentation_wasm_api_session_isolate_real_roots) — Default context
+- [`isPrime`](number-theory.md#entry-presentation_wasm_api_session_is_prime) — Default context
+- [`isSubset`](sets.md#entry-presentation_wasm_api_session_is_subset) — Default context
+- [`jacobiAmplitude`](special-functions.md#entry-presentation_wasm_api_session_jacobi_amplitude) — Default context
+- [`jacobian`](vector-calculus.md#entry-presentation_wasm_api_session_jacobian) — Default context
+- [`jacobiCn`](special-functions.md#entry-presentation_wasm_api_session_jacobi_cn) — Default context
+- [`jacobiDn`](special-functions.md#entry-presentation_wasm_api_session_jacobi_dn) — Default context
+- [`jacobiPolynomial`](special-functions.md#entry-presentation_wasm_api_session_jacobi_polynomial) — Default context
+- [`jacobiSn`](special-functions.md#entry-presentation_wasm_api_session_jacobi_sn) — Default context
+- [`jacobiSymbol`](number-theory.md#entry-presentation_wasm_api_session_jacobi_symbol) — Default context
+- [`jacobiTheta1`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_1) — Default context
+- [`jacobiTheta2`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_2) — Default context
+- [`jacobiTheta3`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_3) — Default context
+- [`jacobiTheta4`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_4) — Default context
+- [`karushKuhnTuckerPoints`](optimization.md#entry-presentation_wasm_api_session_karush_kuhn_tucker_points) — Default context
+- [`kroneckerSymbol`](number-theory.md#entry-presentation_wasm_api_session_kronecker_symbol) — Default context
+- [`lagrangeCriticalPoints`](optimization.md#entry-presentation_wasm_api_session_lagrange_critical_points) — Default context
+- [`laguerrePolynomial`](special-functions.md#entry-presentation_wasm_api_session_laguerre_polynomial) — Default context
+- [`laplaceTransform`](integral-transforms.md#entry-presentation_wasm_api_session_laplace_transform) — Default context
+- [`laplacian`](vector-calculus.md#entry-presentation_wasm_api_session_laplacian) — Default context
+- [`laurentSeries`](series.md#entry-presentation_wasm_api_session_laurent_series) — Default context
+- [`leadingCoefficient`](polynomials.md#entry-presentation_wasm_api_session_leading_coefficient) — Default context
+- [`legendrePolynomial`](special-functions.md#entry-presentation_wasm_api_session_legendre_polynomial) — Default context
+- [`legendreSymbol`](number-theory.md#entry-presentation_wasm_api_session_legendre_symbol) — Default context
+- [`lerchPhi`](special-functions.md#entry-presentation_wasm_api_session_lerch_phi) — Default context
+- [`lessAssumption`](assumptions.md#entry-presentation_wasm_api_session_less_assumption) — Default context
+- [`lessOrEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_less_or_equal_assumption) — Default context
+- [`lessThan`](relations.md#entry-presentation_wasm_api_session_less_than) — Default context
+- [`lessThanOrEqual`](relations.md#entry-presentation_wasm_api_session_less_than_or_equal) — Default context
+- [`limit`](calculus.md#entry-presentation_wasm_api_session_limit) — Default context
+- [`log`](elementary-functions.md#entry-presentation_wasm_api_session_log) — Default context
+- [`logGamma`](special-functions.md#entry-presentation_wasm_api_session_log_gamma) — Default context
+- [`logicalFalse`](logic.md#entry-presentation_wasm_api_session_logical_false) — Default context
+- [`logicalTrue`](logic.md#entry-presentation_wasm_api_session_logical_true) — Default context
+- [`lowerTriangularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_lower_triangular_matrix) — Default context
+- [`maclaurinSeries`](series.md#entry-presentation_wasm_api_session_maclaurin_series) — Default context
+- [`matrix`](matrix-construction.md#entry-presentation_wasm_api_session_matrix) — Explicit context
+- [`matrixDiagonal`](matrix-construction.md#entry-presentation_wasm_api_session_matrix_diagonal) — Default context
+- [`matrixIdentity`](matrix-construction.md#entry-presentation_wasm_api_session_matrix_identity) — Default context
+- [`matrixShape`](linear-algebra.md#entry-presentation_wasm_api_session_matrix_shape) — Default context
+- [`matrixZero`](matrix-construction.md#entry-presentation_wasm_api_session_matrix_zero) — Default context
+- [`max`](elementary-functions.md#entry-presentation_wasm_api_session_max) — Default context
+- [`meijerG`](special-functions.md#entry-presentation_wasm_api_session_meijer_g) — Default context
+- [`memberAssumption`](assumptions.md#entry-presentation_wasm_api_session_member_assumption) — Default context
+- [`min`](elementary-functions.md#entry-presentation_wasm_api_session_min) — Default context
+- [`minimalPolynomialOf`](solving.md#entry-presentation_wasm_api_session_minimal_polynomial_of) — Default context
+- [`minimizeLogical`](logical-transforms.md#entry-presentation_wasm_api_session_minimize_logical) — Default context
+- [`mobius`](number-theory.md#entry-presentation_wasm_api_session_mobius) — Default context
+- [`modularInverse`](number-theory.md#entry-presentation_wasm_api_session_modular_inverse) — Default context
+- [`modularPower`](number-theory.md#entry-presentation_wasm_api_session_modular_power) — Default context
+- [`moment`](statistics.md#entry-presentation_wasm_api_session_moment) — Default context
+- [`momentGeneratingFunction`](statistics.md#entry-presentation_wasm_api_session_moment_generating_function) — Default context
+- [`multinomial`](combinatorics.md#entry-presentation_wasm_api_session_multinomial) — Default context
+- [`naturalAssumption`](assumptions.md#entry-presentation_wasm_api_session_natural_assumption) — Default context
+- [`negativeAssumption`](assumptions.md#entry-presentation_wasm_api_session_negative_assumption) — Default context
+- [`nonnegativeAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonnegative_assumption) — Default context
+- [`nonpositiveAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonpositive_assumption) — Default context
+- [`nonzeroAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonzero_assumption) — Default context
+- [`normalMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_normal_matrix) — Default context
+- [`notEqual`](relations.md#entry-presentation_wasm_api_session_not_equal) — Default context
+- [`notEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_not_equal_assumption) — Default context
+- [`numerator`](expressions.md#entry-presentation_wasm_api_session_numerator) — Default context
+- [`numeratorDenominator`](expressions.md#entry-presentation_wasm_api_session_numerator_denominator) — Default context
+- [`oddAssumption`](assumptions.md#entry-presentation_wasm_api_session_odd_assumption) — Default context
+- [`orthogonalMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_orthogonal_matrix) — Default context
+- [`parallelismCapability`](context-safety.md#entry-presentation_wasm_api_session_parallelism_capability) — Default context
+- [`parse`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse) — Default context
+- [`parseLatex`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse_latex) — Default context
+- [`parseLatexWithEnvironment`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse_latex_with_environment) — Default context
+- [`parseSerializedObject`](serialization-and-output.md#entry-presentation_wasm_api_session_parse_serialized_object) — Default context
+- [`partialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_partial_differential_equation) — Default context
+- [`partialDifferentialEquationArbitraryFunction`](partial-differential-equations.md#entry-presentation_wasm_api_session_partial_differential_equation_arbitrary_function) — Explicit context
+- [`partialDifferentialEquationPointSymmetryGenerator`](partial-differential-equations.md#entry-presentation_wasm_api_session_partial_differential_equation_point_symmetry_generator) — Default context
+- [`partialFractions`](algebraic-transforms.md#entry-presentation_wasm_api_session_partial_fractions) — Default context
+- [`partitionCount`](combinatorics.md#entry-presentation_wasm_api_session_partition_count) — Default context
+- [`pellSolutions`](number-theory.md#entry-presentation_wasm_api_session_pell_solutions) — Default context
+- [`pi`](evaluation-and-constants.md#entry-presentation_wasm_api_session_pi) — Default context
+- [`piecewise`](deferred-forms.md#entry-presentation_wasm_api_session_piecewise) — Default context
+- [`piecewiseFold`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_piecewise_fold) — Default context
+- [`point2d`](geometry.md#entry-presentation_wasm_api_session_point_2d) — Explicit context
+- [`poleOrder`](series.md#entry-presentation_wasm_api_session_pole_order) — Default context
+- [`polygamma`](special-functions.md#entry-presentation_wasm_api_session_polygamma) — Default context
+- [`polygon2d`](geometry.md#entry-presentation_wasm_api_session_polygon_2d) — Explicit context
+- [`polylogarithm`](special-functions.md#entry-presentation_wasm_api_session_polylogarithm) — Default context
+- [`polynomialGcd`](polynomials.md#entry-presentation_wasm_api_session_polynomial_gcd) — Default context
+- [`polynomialRoot`](solving.md#entry-presentation_wasm_api_session_polynomial_root) — Default context
+- [`positiveAssumption`](assumptions.md#entry-presentation_wasm_api_session_positive_assumption) — Default context
+- [`positiveDefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_positive_definite_matrix) — Default context
+- [`positiveIntegerAssumption`](assumptions.md#entry-presentation_wasm_api_session_positive_integer_assumption) — Default context
+- [`positiveSemidefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_positive_semidefinite_matrix) — Default context
+- [`presentationNormalForm`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_presentation_normal_form) — Default context
+- [`primeAssumption`](assumptions.md#entry-presentation_wasm_api_session_prime_assumption) — Default context
+- [`probability`](statistics.md#entry-presentation_wasm_api_session_probability) — Default context
+- [`product`](deferred-forms.md#entry-presentation_wasm_api_session_product) — Default context
+- [`productIndefinite`](deferred-forms.md#entry-presentation_wasm_api_session_product_indefinite) — Default context
+- [`randomVariable`](statistics.md#entry-presentation_wasm_api_session_random_variable) — Default context
+- [`rational`](construction-and-parsing.md#entry-presentation_wasm_api_session_rational) — Default context
+- [`rationalAssumption`](assumptions.md#entry-presentation_wasm_api_session_rational_assumption) — Default context
+- [`rationalFromFloat`](construction-and-parsing.md#entry-presentation_wasm_api_session_rational_from_float) — Default context
+- [`rationalizeDenominator`](algebraic-transforms.md#entry-presentation_wasm_api_session_rationalize_denominator) — Default context
+- [`realAssumption`](assumptions.md#entry-presentation_wasm_api_session_real_assumption) — Default context
+- [`realEntries`](linear-algebra.md#entry-presentation_wasm_api_session_real_entries) — Default context
+- [`realLine`](sets.md#entry-presentation_wasm_api_session_real_line) — Default context
+- [`realPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_real_part) — Default context
+- [`realRootCount`](solving.md#entry-presentation_wasm_api_session_real_root_count) — Default context
+- [`realRootSign`](solving.md#entry-presentation_wasm_api_session_real_root_sign) — Default context
+- [`refine`](assumptions.md#entry-presentation_wasm_api_session_refine) — Default context
+- [`resetContext`](construction-and-parsing.md#entry-presentation_wasm_api_session_reset_context) — Explicit context
+- [`residue`](series.md#entry-presentation_wasm_api_session_residue) — Default context
+- [`resultant`](polynomials.md#entry-presentation_wasm_api_session_resultant) — Default context
+- [`rewriteAsExponential`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_as_exponential) — Default context
+- [`rewriteAsTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_as_trigonometric) — Default context
+- [`rewriteInTermsOf`](expressions.md#entry-presentation_wasm_api_session_rewrite_in_terms_of) — Default context
+- [`rewriteSpecialFunctions`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_rewrite_special_functions) — Default context
+- [`rewriteTrigonometricBasis`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_trigonometric_basis) — Default context
+- [`risingFactorial`](combinatorics.md#entry-presentation_wasm_api_session_rising_factorial) — Default context
+- [`root`](elementary-functions.md#entry-presentation_wasm_api_session_root) — Default context
+- [`rootsWithMultiplicities`](solving.md#entry-presentation_wasm_api_session_roots_with_multiplicities) — Default context
+- [`sec`](elementary-functions.md#entry-presentation_wasm_api_session_sec) — Default context
+- [`sech`](elementary-functions.md#entry-presentation_wasm_api_session_sech) — Default context
+- [`segment2d`](geometry.md#entry-presentation_wasm_api_session_segment_2d) — Explicit context
+- [`separatePartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_separate_partial_differential_equation) — Default context
+- [`serializeBulk`](context-safety.md#entry-presentation_wasm_api_session_serialize_bulk) — Default context
+- [`setComplement`](sets.md#entry-presentation_wasm_api_session_set_complement) — Default context
+- [`setExecutionMode`](context-safety.md#entry-presentation_wasm_api_session_set_execution_mode) — Default context
+- [`setIntersection`](sets.md#entry-presentation_wasm_api_session_set_intersection) — Default context
+- [`setUnion`](sets.md#entry-presentation_wasm_api_session_set_union) — Default context
+- [`simplify`](simplification-general.md#entry-presentation_wasm_api_session_simplify) — Default context
+- [`simplifyBulk`](context-safety.md#entry-presentation_wasm_api_session_simplify_bulk) — Default context
+- [`simplifyLogical`](logical-transforms.md#entry-presentation_wasm_api_session_simplify_logical) — Default context
+- [`simplifyTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_simplify_trigonometric) — Default context
+- [`simplifyUnderConstraint`](simplification-general.md#entry-presentation_wasm_api_session_simplify_under_constraint) — Default context
+- [`sin`](elementary-functions.md#entry-presentation_wasm_api_session_sin) — Default context
+- [`singularities`](calculus.md#entry-presentation_wasm_api_session_singularities) — Default context
+- [`singularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_singular_matrix) — Default context
+- [`sinh`](elementary-functions.md#entry-presentation_wasm_api_session_sinh) — Default context
+- [`solve`](solving.md#entry-presentation_wasm_api_session_solve) — Default context
+- [`solveLinearDiophantine`](number-theory.md#entry-presentation_wasm_api_session_solve_linear_diophantine) — Default context
+- [`solveLinearDiophantineSystem`](number-theory.md#entry-presentation_wasm_api_session_solve_linear_diophantine_system) — Default context
+- [`solveLinearRecurrence`](recurrence-equations.md#entry-presentation_wasm_api_session_solve_linear_recurrence) — Default context
+- [`solveNegativePell`](number-theory.md#entry-presentation_wasm_api_session_solve_negative_pell) — Default context
+- [`solveOrdinaryDifferentialEquation`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation) — Default context
+- [`solveOrdinaryDifferentialEquationRequest`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_request) — Default context
+- [`solveOrdinaryDifferentialEquationSystemRequest`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_system_request) — Default context
+- [`solveOrdinaryDifferentialEquationWithHistory`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_with_history) — Default context
+- [`solveOrdinaryDifferentialEquationWithParticularSolution`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_with_particular_solution) — Default context
+- [`solvePartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation) — Default context
+- [`solvePartialDifferentialEquationBySimilarityReduction`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation_by_similarity_reduction) — Default context
+- [`solvePartialDifferentialEquationRequest`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation_request) — Default context
+- [`solvePartialDifferentialEquationWithTransformAxisSpecifications`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation_with_transform_axis_specifications) — Default context
+- [`solvePell`](number-theory.md#entry-presentation_wasm_api_session_solve_pell) — Default context
+- [`solvePolynomialSystem`](solving.md#entry-presentation_wasm_api_session_solve_polynomial_system) — Default context
+- [`solveSemialgebraic`](solving.md#entry-presentation_wasm_api_session_solve_semialgebraic) — Default context
+- [`solveset`](solving.md#entry-presentation_wasm_api_session_solveset) — Default context
+- [`solvesetInDomain`](solving.md#entry-presentation_wasm_api_session_solveset_in_domain) — Default context
+- [`sqrt`](elementary-functions.md#entry-presentation_wasm_api_session_sqrt) — Default context
+- [`squareMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_square_matrix) — Default context
+- [`stirlingFirstSigned`](combinatorics.md#entry-presentation_wasm_api_session_stirling_first_signed) — Default context
+- [`stirlingSecond`](combinatorics.md#entry-presentation_wasm_api_session_stirling_second) — Default context
+- [`substituteBulk`](context-safety.md#entry-presentation_wasm_api_session_substitute_bulk) — Default context
+- [`summation`](deferred-forms.md#entry-presentation_wasm_api_session_summation) — Default context
+- [`summationIndefinite`](deferred-forms.md#entry-presentation_wasm_api_session_summation_indefinite) — Default context
+- [`symbol`](construction-and-parsing.md#entry-presentation_wasm_api_session_symbol) — Default context
+- [`symmetricMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_symmetric_matrix) — Default context
+- [`tan`](elementary-functions.md#entry-presentation_wasm_api_session_tan) — Default context
+- [`tanh`](elementary-functions.md#entry-presentation_wasm_api_session_tanh) — Default context
+- [`taylorSeries`](series.md#entry-presentation_wasm_api_session_taylor_series) — Default context
+- [`together`](simplification-general.md#entry-presentation_wasm_api_session_together) — Default context
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+- [`toLatexWithOptions`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex_with_options) — Default context
+- [`transcendentalAssumption`](assumptions.md#entry-presentation_wasm_api_session_transcendental_assumption) — Default context
+- [`triangle2d`](geometry.md#entry-presentation_wasm_api_session_triangle_2d) — Explicit context
+- [`ultrasphericalPolynomial`](special-functions.md#entry-presentation_wasm_api_session_ultraspherical_polynomial) — Default context
+- [`unconstrainedCriticalPoints`](optimization.md#entry-presentation_wasm_api_session_unconstrained_critical_points) — Default context
+- [`undefinedFunction`](undefined-functions.md#entry-presentation_wasm_api_session_undefined_function) — Explicit context
+- [`unitaryMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_unitary_matrix) — Default context
+- [`upperTriangularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_upper_triangular_matrix) — Default context
+- [`variance`](statistics.md#entry-presentation_wasm_api_session_variance) — Default context
+- [`verifyOrdinaryDifferentialEquationSystemSolution`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_verify_ordinary_differential_equation_system_solution) — Default context
+- [`verifyPartialDifferentialEquationCoordinateTransformation`](partial-differential-equations.md#entry-presentation_wasm_api_session_verify_partial_differential_equation_coordinate_transformation) — Default context
+- [`verifyPartialDifferentialEquationSolution`](partial-differential-equations.md#entry-presentation_wasm_api_session_verify_partial_differential_equation_solution) — Default context
+- [`zeroAssumption`](assumptions.md#entry-presentation_wasm_api_session_zero_assumption) — Default context
+- [`zeroEquivalent`](zero-equivalence.md#entry-presentation_wasm_api_session_zero_equivalent) — Default context
+- [`zeroMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_zero_matrix) — Default context
+- [`zeta`](special-functions.md#entry-presentation_wasm_api_session_zeta) — Default context
+
+## ContextConstructor
+
+- [`ContextConstructor.new`](cad.md#entry-presentation_wasm_host_wasm_contextconstructor_new) — new constructor
+
+## CriticalPoint
+
+- [`CriticalPoint.classification`](optimization.md#entry-presentation_wasm_api_criticalpoint_classification) — CriticalPoint property
+- [`CriticalPoint.multiplierValues`](optimization.md#entry-presentation_wasm_api_criticalpoint_multiplier_values) — CriticalPoint property
+- [`CriticalPoint.multiplierVariables`](optimization.md#entry-presentation_wasm_api_criticalpoint_multiplier_variables) — CriticalPoint property
+- [`CriticalPoint.values`](optimization.md#entry-presentation_wasm_api_criticalpoint_values) — CriticalPoint property
+- [`CriticalPoint.variables`](optimization.md#entry-presentation_wasm_api_criticalpoint_variables) — CriticalPoint property
+
+## CylindricalAlgebraicDecomposition
+
+- [`CylindricalAlgebraicDecomposition`](cad.md#entry-presentation_wasm_api_cylindricalalgebraicdecomposition) — CylindricalAlgebraicDecomposition constructor
+- [`CylindricalAlgebraicDecomposition.cellCount`](cad.md#entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_count) — CylindricalAlgebraicDecomposition method
+- [`CylindricalAlgebraicDecomposition.cellDimension`](cad.md#entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_dimension) — CylindricalAlgebraicDecomposition method
+- [`CylindricalAlgebraicDecomposition.cellKind`](cad.md#entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_kind) — CylindricalAlgebraicDecomposition method
+- [`CylindricalAlgebraicDecomposition.cellSamplePoint`](cad.md#entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_sample_point) — CylindricalAlgebraicDecomposition method
+- [`CylindricalAlgebraicDecomposition.cellSignVector`](cad.md#entry-presentation_wasm_api_cylindricalalgebraicdecomposition_cell_sign_vector) — CylindricalAlgebraicDecomposition method
+- [`CylindricalAlgebraicDecomposition.projectionOperatorUsed`](cad.md#entry-presentation_wasm_api_cylindricalalgebraicdecomposition_projection_operator_used) — CylindricalAlgebraicDecomposition method
+
+## DefiniteIntegrationResult
+
+- [`DefiniteIntegrationResult.declineReason`](calculus.md#entry-presentation_wasm_api_definiteintegrationresult_decline_reason) — DefiniteIntegrationResult property
+- [`DefiniteIntegrationResult.divergenceDirection`](calculus.md#entry-presentation_wasm_api_definiteintegrationresult_divergence_direction) — DefiniteIntegrationResult property
+- [`DefiniteIntegrationResult.interpretation`](calculus.md#entry-presentation_wasm_api_definiteintegrationresult_interpretation) — DefiniteIntegrationResult property
+- [`DefiniteIntegrationResult.value`](calculus.md#entry-presentation_wasm_api_definiteintegrationresult_value) — DefiniteIntegrationResult property
+- [`DefiniteIntegrationResult.verdict`](calculus.md#entry-presentation_wasm_api_definiteintegrationresult_verdict) — DefiniteIntegrationResult property
+
+## Eigenpair
+
+- [`Eigenpair.eigenvalue`](linear-algebra.md#entry-presentation_wasm_api_eigenpair_eigenvalue) — Eigenpair property
+- [`Eigenpair.vectors`](linear-algebra.md#entry-presentation_wasm_api_eigenpair_vectors) — Eigenpair property
+
+## Expression
+
+- [`absoluteValue`](elementary-functions.md#entry-presentation_wasm_api_session_absolute_value) — Explicit context
+- [`add`](expressions.md#entry-presentation_wasm_api_session_add) — Expression method
+- [`cancel`](simplification-general.md#entry-presentation_wasm_api_session_cancel) — Default context
+- [`collect`](algebraic-transforms.md#entry-presentation_wasm_api_session_collect) — Default context
+- [`collectRadicals`](algebraic-transforms.md#entry-presentation_wasm_api_session_collect_radicals) — Default context
+- [`combineLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_logarithm) — Default context
+- [`combinePowers`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_powers) — Default context
+- [`combineTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_trigonometric) — Default context
+- [`completeTheSquare`](algebraic-transforms.md#entry-presentation_wasm_api_session_complete_the_square) — Default context
+- [`conjunctiveNormalForm`](logical-transforms.md#entry-presentation_wasm_api_session_conjunctive_normal_form) — Default context
+- [`continuousDomain`](calculus.md#entry-presentation_wasm_api_session_continuous_domain) — Default context
+- [`cos`](elementary-functions.md#entry-presentation_wasm_api_session_cos) — Default context
+- [`denestPowers`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_denest_powers) — Default context
+- [`denestRadicals`](algebraic-transforms.md#entry-presentation_wasm_api_session_denest_radicals) — Default context
+- [`denominator`](expressions.md#entry-presentation_wasm_api_session_denominator) — Default context
+- [`derivative`](deferred-forms.md#entry-presentation_wasm_api_session_derivative) — Default context
+- [`differentiate`](calculus.md#entry-presentation_wasm_api_session_differentiate) — Default context
+- [`disjunctiveNormalForm`](logical-transforms.md#entry-presentation_wasm_api_session_disjunctive_normal_form) — Default context
+- [`divide`](expressions.md#entry-presentation_wasm_api_session_divide) — Expression method
+- [`duplicate`](expressions.md#entry-presentation_wasm_api_expression_duplicate) — Expression method
+- [`eliminateDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_eliminate_derived_logical_connectives) — Default context
+- [`equals`](expressions.md#entry-presentation_wasm_api_expression_equals) — Expression method
+- [`evaluateLimit`](calculus.md#entry-presentation_wasm_api_session_evaluate_limit) — Default context
+- [`evaluateNumeric`](calculus.md#entry-presentation_wasm_api_session_evaluate_numeric) — Default context
+- [`evaluateToComplexInexact`](expressions.md#entry-presentation_wasm_api_session_evaluate_to_complex_inexact) — Expression method
+- [`evaluateToComplexInexactAtPrecision`](expressions.md#entry-presentation_wasm_api_session_evaluate_to_complex_inexact_at_precision) — Expression method
+- [`evaluateToFloat`](expressions.md#entry-presentation_wasm_api_session_evaluate_to_float) — Expression method
+- [`evaluateTruth`](logic.md#entry-presentation_wasm_api_session_evaluate_truth) — Default context
+- [`execute`](calculus.md#entry-presentation_wasm_api_session_execute) — Default context
+- [`exp`](elementary-functions.md#entry-presentation_wasm_api_session_exp) — Default context
+- [`expand`](algebraic-transforms.md#entry-presentation_wasm_api_session_expand) — Default context
+- [`expandComplex`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_complex) — Default context
+- [`expandLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_logarithm) — Default context
+- [`expandPowerBase`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_power_base) — Default context
+- [`expandTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_trigonometric) — Default context
+- [`Expression`](expressions.md#entry-presentation_wasm_api_expression) — Type
+- [`expressionType`](expressions.md#entry-presentation_wasm_api_expression_expression_type) — Expression method
+- [`factor`](algebraic-transforms.md#entry-presentation_wasm_api_session_factor) — Default context
+- [`factorCommonTerms`](algebraic-transforms.md#entry-presentation_wasm_api_session_factor_common_terms) — Default context
+- [`free`](polynomials.md#entry-presentation_wasm_host_wasm_expression_free) — Expression method
+- [`freeVariables`](expressions.md#entry-presentation_wasm_api_expression_free_variables) — Expression method
+- [`imageSetDomain`](expressions.md#entry-presentation_wasm_api_expression_image_set_domain) — Expression method
+- [`imageSetLambdaExpression`](expressions.md#entry-presentation_wasm_api_expression_image_set_lambda_expression) — Expression method
+- [`imageSetVariable`](expressions.md#entry-presentation_wasm_api_expression_image_set_variable) — Expression method
+- [`imaginaryPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_imaginary_part) — Default context
+- [`integralIntegrand`](expressions.md#entry-presentation_wasm_api_expression_integral_integrand) — Expression method
+- [`integralLowerBound`](expressions.md#entry-presentation_wasm_api_expression_integral_lower_bound) — Expression method
+- [`integralUpperBound`](expressions.md#entry-presentation_wasm_api_expression_integral_upper_bound) — Expression method
+- [`integralVariable`](expressions.md#entry-presentation_wasm_api_expression_integral_variable) — Expression method
+- [`integrate`](calculus.md#entry-presentation_wasm_api_session_integrate) — Default context
+- [`integrateDefinite`](calculus.md#entry-presentation_wasm_api_session_integrate_definite) — Default context
+- [`integrateDefiniteUnderConstraint`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_under_constraint) — Default context
+- [`integrateIterated`](calculus.md#entry-presentation_wasm_api_session_integrate_iterated) — Default context
+- [`intervalLower`](expressions.md#entry-presentation_wasm_api_expression_interval_lower) — Expression method
+- [`intervalUpper`](expressions.md#entry-presentation_wasm_api_expression_interval_upper) — Expression method
+- [`introduceDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_introduce_derived_logical_connectives) — Default context
+- [`isAlgebraic`](expressions.md#entry-presentation_wasm_api_expression_is_algebraic) — Expression method
+- [`isComplex`](expressions.md#entry-presentation_wasm_api_expression_is_complex) — Expression method
+- [`isComposite`](expressions.md#entry-presentation_wasm_api_expression_is_composite) — Expression method
+- [`isDefined`](expressions.md#entry-presentation_wasm_api_expression_is_defined) — Expression method
+- [`isEquality`](expressions.md#entry-presentation_wasm_api_expression_is_equality) — Expression method
+- [`isEven`](expressions.md#entry-presentation_wasm_api_expression_is_even) — Expression method
+- [`isExtendedReal`](expressions.md#entry-presentation_wasm_api_expression_is_extended_real) — Expression method
+- [`isFinite`](expressions.md#entry-presentation_wasm_api_expression_is_finite) — Expression method
+- [`isFiniteSet`](expressions.md#entry-presentation_wasm_api_expression_is_finite_set) — Expression method
+- [`isImageSet`](expressions.md#entry-presentation_wasm_api_expression_is_image_set) — Expression method
+- [`isInfinite`](expressions.md#entry-presentation_wasm_api_expression_is_infinite) — Expression method
+- [`isInteger`](expressions.md#entry-presentation_wasm_api_expression_is_integer) — Expression method
+- [`isIntegral`](expressions.md#entry-presentation_wasm_api_expression_is_integral) — Expression method
+- [`isInterval`](expressions.md#entry-presentation_wasm_api_expression_is_interval) — Expression method
+- [`isIrrational`](expressions.md#entry-presentation_wasm_api_expression_is_irrational) — Expression method
+- [`isMatrix`](expressions.md#entry-presentation_wasm_api_expression_is_matrix) — Expression method
+- [`isNatural`](expressions.md#entry-presentation_wasm_api_expression_is_natural) — Expression method
+- [`isNegative`](expressions.md#entry-presentation_wasm_api_expression_is_negative) — Expression method
+- [`isNonnegative`](expressions.md#entry-presentation_wasm_api_session_is_nonnegative) — Expression method
+- [`isNonpositive`](expressions.md#entry-presentation_wasm_api_session_is_nonpositive) — Expression method
+- [`isNonzero`](expressions.md#entry-presentation_wasm_api_expression_is_nonzero) — Expression method
+- [`isOdd`](expressions.md#entry-presentation_wasm_api_expression_is_odd) — Expression method
+- [`isPositive`](expressions.md#entry-presentation_wasm_api_expression_is_positive) — Expression method
+- [`isPositiveInteger`](expressions.md#entry-presentation_wasm_api_expression_is_positive_integer) — Expression method
+- [`isPrime`](number-theory.md#entry-presentation_wasm_api_session_is_prime) — Default context
+- [`isRational`](expressions.md#entry-presentation_wasm_api_expression_is_rational) — Expression method
+- [`isReal`](expressions.md#entry-presentation_wasm_api_expression_is_real) — Expression method
+- [`isStale`](expressions.md#entry-presentation_wasm_api_expression_is_stale) — Expression method
+- [`isTranscendental`](expressions.md#entry-presentation_wasm_api_expression_is_transcendental) — Expression method
+- [`isUnion`](expressions.md#entry-presentation_wasm_api_expression_is_union) — Expression method
+- [`isZero`](expressions.md#entry-presentation_wasm_api_expression_is_zero) — Expression method
+- [`laurentSeries`](series.md#entry-presentation_wasm_api_session_laurent_series) — Default context
+- [`length`](sets.md#entry-presentation_wasm_api_expression_length) — Expression method
+- [`lessThan`](relations.md#entry-presentation_wasm_api_session_less_than) — Default context
+- [`limit`](calculus.md#entry-presentation_wasm_api_session_limit) — Default context
+- [`maclaurinSeries`](series.md#entry-presentation_wasm_api_session_maclaurin_series) — Default context
+- [`minimizeLogical`](logical-transforms.md#entry-presentation_wasm_api_session_minimize_logical) — Default context
+- [`multiply`](expressions.md#entry-presentation_wasm_api_session_multiply) — Expression method
+- [`negate`](expressions.md#entry-presentation_wasm_api_expression_negate) — Expression method
+- [`nodeCount`](expressions.md#entry-presentation_wasm_api_expression_node_count) — Expression method
+- [`numerator`](expressions.md#entry-presentation_wasm_api_session_numerator) — Default context
+- [`numeratorDenominator`](expressions.md#entry-presentation_wasm_api_session_numerator_denominator) — Default context
+- [`partialFractions`](algebraic-transforms.md#entry-presentation_wasm_api_session_partial_fractions) — Default context
+- [`piecewiseFold`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_piecewise_fold) — Default context
+- [`poleOrder`](series.md#entry-presentation_wasm_api_session_pole_order) — Default context
+- [`power`](expressions.md#entry-presentation_wasm_api_session_power) — Expression method
+- [`presentationNormalForm`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_presentation_normal_form) — Default context
+- [`rationalizeDenominator`](algebraic-transforms.md#entry-presentation_wasm_api_session_rationalize_denominator) — Default context
+- [`realPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_real_part) — Default context
+- [`refine`](assumptions.md#entry-presentation_wasm_api_session_refine) — Default context
+- [`residue`](series.md#entry-presentation_wasm_api_session_residue) — Default context
+- [`rewriteAsExponential`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_as_exponential) — Default context
+- [`rewriteAsTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_as_trigonometric) — Default context
+- [`rewriteInTermsOf`](expressions.md#entry-presentation_wasm_api_session_rewrite_in_terms_of) — Default context
+- [`rewriteSpecialFunctions`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_rewrite_special_functions) — Default context
+- [`rewriteTrigonometricBasis`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_trigonometric_basis) — Default context
+- [`rootsWithMultiplicities`](solving.md#entry-presentation_wasm_api_session_roots_with_multiplicities) — Default context
+- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_api_session_serialize_object) — Expression method
+- [`simplify`](simplification-general.md#entry-presentation_wasm_api_session_simplify) — Default context
+- [`simplifyLogical`](logical-transforms.md#entry-presentation_wasm_api_session_simplify_logical) — Default context
+- [`simplifyTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_simplify_trigonometric) — Default context
+- [`simplifyUnderConstraint`](simplification-general.md#entry-presentation_wasm_api_session_simplify_under_constraint) — Default context
+- [`sin`](elementary-functions.md#entry-presentation_wasm_api_session_sin) — Default context
+- [`singularities`](calculus.md#entry-presentation_wasm_api_session_singularities) — Default context
+- [`solve`](solving.md#entry-presentation_wasm_api_session_solve) — Default context
+- [`solveset`](solving.md#entry-presentation_wasm_api_session_solveset) — Default context
+- [`sqrt`](elementary-functions.md#entry-presentation_wasm_api_session_sqrt) — Default context
+- [`substitute`](expressions.md#entry-presentation_wasm_api_session_substitute) — Expression method
+- [`subtract`](expressions.md#entry-presentation_wasm_api_session_subtract) — Expression method
+- [`summationIndefinite`](deferred-forms.md#entry-presentation_wasm_api_session_summation_indefinite) — Default context
+- [`symbolName`](expressions.md#entry-presentation_wasm_api_expression_symbol_name) — Expression method
+- [`taylorSeries`](series.md#entry-presentation_wasm_api_session_taylor_series) — Default context
+- [`together`](simplification-general.md#entry-presentation_wasm_api_session_together) — Default context
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+- [`toLatexWithOptions`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex_with_options) — Default context
+- [`toList`](expressions.md#entry-presentation_wasm_api_expression_to_list) — Expression method
+- [`toString`](polynomials.md#entry-presentation_wasm_api_expression_to_string) — Expression method
+- [`unionComponents`](expressions.md#entry-presentation_wasm_api_expression_union_components) — Expression method
+- [`zeroEquivalent`](zero-equivalence.md#entry-presentation_wasm_api_session_zero_equivalent) — Default context
+
+## HermiteNormalFormDecomposition
+
+- [`HermiteNormalFormDecomposition.hermite`](matrix-canonical-forms.md#entry-presentation_wasm_api_hermitenormalformdecomposition_hermite) — HermiteNormalFormDecomposition property
+- [`HermiteNormalFormDecomposition.pivotColumns`](matrix-canonical-forms.md#entry-presentation_wasm_api_hermitenormalformdecomposition_pivot_columns) — HermiteNormalFormDecomposition property
+- [`HermiteNormalFormDecomposition.rank`](matrix-canonical-forms.md#entry-presentation_wasm_api_hermitenormalformdecomposition_rank) — HermiteNormalFormDecomposition property
+- [`HermiteNormalFormDecomposition.transformation`](matrix-canonical-forms.md#entry-presentation_wasm_api_hermitenormalformdecomposition_transformation) — HermiteNormalFormDecomposition property
+
+## IntegerCokernelData
+
+- [`IntegerCokernelData.freeRank`](linear-algebra.md#entry-presentation_wasm_api_integercokerneldata_free_rank) — IntegerCokernelData property
+- [`IntegerCokernelData.torsionInvariantFactors`](linear-algebra.md#entry-presentation_wasm_api_integercokerneldata_torsion_invariant_factors) — IntegerCokernelData property
+
+## IsolatingInterval
+
+- [`IsolatingInterval.lower`](polynomials.md#entry-presentation_wasm_api_isolatinginterval_lower) — IsolatingInterval property
+- [`IsolatingInterval.upper`](polynomials.md#entry-presentation_wasm_api_isolatinginterval_upper) — IsolatingInterval property
+
+## JordanBlock
+
+- [`JordanBlock.eigenvalue`](matrix-functions.md#entry-presentation_wasm_api_jordanblock_eigenvalue) — JordanBlock property
+- [`JordanBlock.size`](matrix-functions.md#entry-presentation_wasm_api_jordanblock_size) — JordanBlock property
+
+## JordanDecomposition
+
+- [`JordanDecomposition.blocks`](matrix-functions.md#entry-presentation_wasm_api_jordandecomposition_blocks) — JordanDecomposition property
+- [`JordanDecomposition.jordanForm`](matrix-functions.md#entry-presentation_wasm_api_jordandecomposition_jordan_form) — JordanDecomposition property
+- [`JordanDecomposition.similarity`](matrix-functions.md#entry-presentation_wasm_api_jordandecomposition_similarity) — JordanDecomposition property
+
+## Matrix
+
+- [`Matrix`](linear-algebra.md#entry-presentation_wasm_api_matrix) — Type
+- [`Matrix.add`](linear-algebra.md#entry-presentation_wasm_api_matrix_add) — Matrix method
+- [`Matrix.adjugate`](linear-algebra.md#entry-presentation_wasm_api_matrix_adjugate) — Matrix method
+- [`Matrix.characteristicPolynomial`](linear-algebra.md#entry-presentation_wasm_api_matrix_characteristic_polynomial) — Matrix method
+- [`Matrix.cofactorMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_cofactor_matrix) — Matrix method
+- [`Matrix.columnHermiteNormalForm`](matrix-canonical-forms.md#entry-presentation_wasm_api_matrix_column_hermite_normal_form) — Matrix method
+- [`Matrix.columns`](matrix-construction.md#entry-presentation_wasm_api_matrix_columns) — Matrix property
+- [`Matrix.cosine`](matrix-functions.md#entry-presentation_wasm_api_matrix_cosine) — Matrix method
+- [`Matrix.determinant`](linear-algebra.md#entry-presentation_wasm_api_matrix_determinant) — Matrix method
+- [`Matrix.eigenvalues`](linear-algebra.md#entry-presentation_wasm_api_matrix_eigenvalues) — Matrix method
+- [`Matrix.eigenvectors`](linear-algebra.md#entry-presentation_wasm_api_matrix_eigenvectors) — Matrix method
+- [`Matrix.entry`](matrix-construction.md#entry-presentation_wasm_api_matrix_entry) — Matrix method
+- [`Matrix.execute`](linear-algebra.md#entry-presentation_wasm_api_matrix_execute) — Matrix method
+- [`Matrix.exponential`](matrix-functions.md#entry-presentation_wasm_api_matrix_exponential) — Matrix method
+- [`Matrix.free`](linear-algebra.md#entry-presentation_wasm_host_wasm_matrix_free) — Matrix method
+- [`Matrix.hasComplexEntries`](linear-algebra.md#entry-presentation_wasm_api_matrix_has_complex_entries) — Matrix method
+- [`Matrix.hasIntegerEntries`](linear-algebra.md#entry-presentation_wasm_api_matrix_has_integer_entries) — Matrix method
+- [`Matrix.hasRealEntries`](linear-algebra.md#entry-presentation_wasm_api_matrix_has_real_entries) — Matrix method
+- [`Matrix.hermiteNormalForm`](matrix-canonical-forms.md#entry-presentation_wasm_api_matrix_hermite_normal_form) — Matrix method
+- [`Matrix.hyperbolicCosine`](matrix-functions.md#entry-presentation_wasm_api_matrix_hyperbolic_cosine) — Matrix method
+- [`Matrix.hyperbolicSine`](matrix-functions.md#entry-presentation_wasm_api_matrix_hyperbolic_sine) — Matrix method
+- [`Matrix.integerCokernelStructure`](matrix-canonical-forms.md#entry-presentation_wasm_api_matrix_integer_cokernel_structure) — Matrix method
+- [`Matrix.integerImageLatticeBasis`](matrix-canonical-forms.md#entry-presentation_wasm_api_matrix_integer_image_lattice_basis) — Matrix method
+- [`Matrix.integerKernelBasis`](matrix-canonical-forms.md#entry-presentation_wasm_api_matrix_integer_kernel_basis) — Matrix method
+- [`Matrix.integerRowLatticeBasis`](matrix-canonical-forms.md#entry-presentation_wasm_api_matrix_integer_row_lattice_basis) — Matrix method
+- [`Matrix.inverse`](linear-algebra.md#entry-presentation_wasm_api_matrix_inverse) — Matrix method
+- [`Matrix.isDiagonalMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_diagonal_matrix) — Matrix method
+- [`Matrix.isEquality`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_equality) — Matrix method
+- [`Matrix.isFiniteSet`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_finite_set) — Matrix method
+- [`Matrix.isFullRankMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_full_rank_matrix) — Matrix method
+- [`Matrix.isHermitianMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_hermitian_matrix) — Matrix method
+- [`Matrix.isIdentityMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_identity_matrix) — Matrix method
+- [`Matrix.isImageSet`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_image_set) — Matrix method
+- [`Matrix.isIntegral`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_integral) — Matrix method
+- [`Matrix.isInvertibleMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_invertible_matrix) — Matrix method
+- [`Matrix.isMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_matrix) — Matrix property
+- [`Matrix.isNormalMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_normal_matrix) — Matrix method
+- [`Matrix.isOrthogonalMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_orthogonal_matrix) — Matrix method
+- [`Matrix.isPositive`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_positive) — Matrix method
+- [`Matrix.isPositiveDefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_positive_definite_matrix) — Matrix method
+- [`Matrix.isPositiveSemidefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_positive_semidefinite_matrix) — Matrix method
+- [`Matrix.isReal`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_real) — Matrix method
+- [`Matrix.isSingularMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_singular_matrix) — Matrix method
+- [`Matrix.isSquare`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_square) — Matrix method
+- [`Matrix.isSymmetricMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_symmetric_matrix) — Matrix method
+- [`Matrix.isUnion`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_union) — Matrix method
+- [`Matrix.isUnitaryMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_unitary_matrix) — Matrix method
+- [`Matrix.isZeroMatrix`](linear-algebra.md#entry-presentation_wasm_api_matrix_is_zero_matrix) — Matrix method
+- [`Matrix.jordanDecomposition`](matrix-functions.md#entry-presentation_wasm_api_matrix_jordan_decomposition) — Matrix method
+- [`Matrix.logarithm`](matrix-functions.md#entry-presentation_wasm_api_matrix_logarithm) — Matrix method
+- [`Matrix.lowerUpperDecomposition`](linear-algebra.md#entry-presentation_wasm_api_matrix_lower_upper_decomposition) — Matrix method
+- [`Matrix.minimalPolynomial`](linear-algebra.md#entry-presentation_wasm_api_matrix_minimal_polynomial) — Matrix method
+- [`Matrix.multiply`](linear-algebra.md#entry-presentation_wasm_api_matrix_multiply) — Matrix method
+- [`Matrix.nullspaceBasis`](linear-algebra.md#entry-presentation_wasm_api_matrix_nullspace_basis) — Matrix method
+- [`Matrix.rank`](linear-algebra.md#entry-presentation_wasm_api_matrix_rank) — Matrix method
+- [`Matrix.rationalCanonicalForm`](matrix-canonical-forms.md#entry-presentation_wasm_api_matrix_rational_canonical_form) — Matrix method
+- [`Matrix.rowReduce`](linear-algebra.md#entry-presentation_wasm_api_matrix_row_reduce) — Matrix method
+- [`Matrix.rows`](matrix-construction.md#entry-presentation_wasm_api_matrix_rows) — Matrix property
+- [`Matrix.scalarMultiply`](linear-algebra.md#entry-presentation_wasm_api_matrix_scalar_multiply) — Matrix method
+- [`Matrix.sine`](matrix-functions.md#entry-presentation_wasm_api_matrix_sine) — Matrix method
+- [`Matrix.smithNormalForm`](matrix-canonical-forms.md#entry-presentation_wasm_api_matrix_smith_normal_form) — Matrix method
+- [`Matrix.squareRoot`](matrix-functions.md#entry-presentation_wasm_api_matrix_square_root) — Matrix method
+- [`Matrix.subtract`](linear-algebra.md#entry-presentation_wasm_api_matrix_subtract) — Matrix method
+- [`Matrix.toString`](linear-algebra.md#entry-presentation_wasm_host_wasm_matrix_tostring) — Matrix method
+- [`Matrix.trace`](linear-algebra.md#entry-presentation_wasm_api_matrix_trace) — Matrix method
+- [`Matrix.transpose`](linear-algebra.md#entry-presentation_wasm_api_matrix_transpose) — Matrix method
+- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_api_session_serialize_object) — Expression method
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+
+## NumeratorDenominator
+
+- [`NumeratorDenominator`](expressions.md#entry-presentation_wasm_api_numeratordenominator) — Type
+- [`NumeratorDenominator.denominator`](expressions.md#entry-presentation_wasm_api_numeratordenominator_denominator) — NumeratorDenominator property
+- [`NumeratorDenominator.numerator`](expressions.md#entry-presentation_wasm_api_numeratordenominator_numerator) — NumeratorDenominator property
+
+## NumericDefiniteIntegrationResult
+
+- [`NumericDefiniteIntegrationResult.estimatedAbsoluteError`](calculus.md#entry-presentation_wasm_api_numericdefiniteintegrationresult_estimated_absolute_error) — NumericDefiniteIntegrationResult property
+- [`NumericDefiniteIntegrationResult.nodeCount`](calculus.md#entry-presentation_wasm_api_numericdefiniteintegrationresult_node_count) — NumericDefiniteIntegrationResult property
+- [`NumericDefiniteIntegrationResult.precisionBits`](calculus.md#entry-presentation_wasm_api_numericdefiniteintegrationresult_precision_bits) — NumericDefiniteIntegrationResult property
+- [`NumericDefiniteIntegrationResult.value`](calculus.md#entry-presentation_wasm_api_numericdefiniteintegrationresult_value) — NumericDefiniteIntegrationResult property
+
+## OptimizationOutcome
+
+- [`OptimizationOutcome.complete`](optimization.md#entry-presentation_wasm_api_optimizationoutcome_complete) — OptimizationOutcome property
+- [`OptimizationOutcome.points`](optimization.md#entry-presentation_wasm_api_optimizationoutcome_points) — OptimizationOutcome property
+- [`OptimizationOutcome.verdict`](optimization.md#entry-presentation_wasm_api_optimizationoutcome_verdict) — OptimizationOutcome property
+
+## OrdinaryDifferentialEquationSolveResult
+
+- [`OrdinaryDifferentialEquationSolveResult.decline`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_decline) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.form`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_form) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.frequencyDomainEquation`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_frequency_domain_equation) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.generality`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_generality) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.generatedConstants`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_generated_constants) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.image`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_image) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.method`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_method) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.solution`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_solution) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.verdict`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_verdict) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.verification`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsolveresult_verification) — OrdinaryDifferentialEquationSolveResult property
+
+## OrdinaryDifferentialEquationSystemSolveResult
+
+- [`OrdinaryDifferentialEquationSystemSolveResult.components`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemsolveresult_components) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.decline`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemsolveresult_decline) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.generality`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemsolveresult_generality) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.generatedConstants`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemsolveresult_generated_constants) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.method`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemsolveresult_method) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.route`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemsolveresult_route) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.verdict`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemsolveresult_verdict) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.verification`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemsolveresult_verification) — OrdinaryDifferentialEquationSystemSolveResult property
+
+## OrdinaryDifferentialEquationSystemVerificationReport
+
+- [`OrdinaryDifferentialEquationSystemVerificationReport.generality`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemverificationreport_generality) — OrdinaryDifferentialEquationSystemVerificationReport property
+- [`OrdinaryDifferentialEquationSystemVerificationReport.requiredRank`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemverificationreport_required_rank) — OrdinaryDifferentialEquationSystemVerificationReport property
+- [`OrdinaryDifferentialEquationSystemVerificationReport.verdict`](ordinary-differential-equations.md#entry-presentation_wasm_api_ordinarydifferentialequationsystemverificationreport_verdict) — OrdinaryDifferentialEquationSystemVerificationReport property
+
+## ParallelismCapability
+
+- [`ParallelismCapability.active`](context-safety.md#entry-presentation_wasm_api_parallelismcapability_active) — ParallelismCapability property
+- [`ParallelismCapability.backend`](context-safety.md#entry-presentation_wasm_api_parallelismcapability_backend) — ParallelismCapability property
+- [`ParallelismCapability.compiled`](context-safety.md#entry-presentation_wasm_api_parallelismcapability_compiled) — ParallelismCapability property
+- [`ParallelismCapability.initialized`](context-safety.md#entry-presentation_wasm_api_parallelismcapability_initialized) — ParallelismCapability property
+- [`ParallelismCapability.maximumOperationConcurrency`](context-safety.md#entry-presentation_wasm_api_parallelismcapability_maximum_operation_concurrency) — ParallelismCapability property
+- [`ParallelismCapability.selectedMode`](context-safety.md#entry-presentation_wasm_api_parallelismcapability_selected_mode) — ParallelismCapability property
+- [`ParallelismCapability.unavailableReason`](context-safety.md#entry-presentation_wasm_api_parallelismcapability_unavailable_reason) — ParallelismCapability property
+- [`ParallelismCapability.workerCount`](context-safety.md#entry-presentation_wasm_api_parallelismcapability_worker_count) — ParallelismCapability property
+
+## PartialDifferentialEquationArbitraryFunction
+
+- [`PartialDifferentialEquationArbitraryFunction.arity`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationarbitraryfunction_arity) — PartialDifferentialEquationArbitraryFunction property
+- [`PartialDifferentialEquationArbitraryFunction.name`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationarbitraryfunction_name) — PartialDifferentialEquationArbitraryFunction property
+
+## PartialDifferentialEquationCanonicalizationResult
+
+- [`PartialDifferentialEquationCanonicalizationResult.canonicalized`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcanonicalizationresult_canonicalized) — PartialDifferentialEquationCanonicalizationResult property
+- [`PartialDifferentialEquationCanonicalizationResult.decline`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcanonicalizationresult_decline) — PartialDifferentialEquationCanonicalizationResult property
+- [`PartialDifferentialEquationCanonicalizationResult.principalForm`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcanonicalizationresult_principal_form) — PartialDifferentialEquationCanonicalizationResult property
+- [`PartialDifferentialEquationCanonicalizationResult.transformation`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcanonicalizationresult_transformation) — PartialDifferentialEquationCanonicalizationResult property
+- [`PartialDifferentialEquationCanonicalizationResult.transformationDecline`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcanonicalizationresult_transformation_decline) — PartialDifferentialEquationCanonicalizationResult property
+
+## PartialDifferentialEquationClassification
+
+- [`PartialDifferentialEquationClassification.coefficientData`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationclassification_coefficient_data) — PartialDifferentialEquationClassification property
+- [`PartialDifferentialEquationClassification.linearity`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationclassification_linearity) — PartialDifferentialEquationClassification property
+- [`PartialDifferentialEquationClassification.methodCandidates`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationclassification_method_candidates) — PartialDifferentialEquationClassification property
+- [`PartialDifferentialEquationClassification.order`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationclassification_order) — PartialDifferentialEquationClassification property
+- [`PartialDifferentialEquationClassification.secondOrderPrincipalPart`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationclassification_second_order_principal_part) — PartialDifferentialEquationClassification property
+
+## PartialDifferentialEquationCoefficientData
+
+- [`PartialDifferentialEquationCoefficientData.fullCoefficients`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoefficientdata_full_coefficients) — PartialDifferentialEquationCoefficientData property
+- [`PartialDifferentialEquationCoefficientData.highestOrderCoefficients`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoefficientdata_highest_order_coefficients) — PartialDifferentialEquationCoefficientData property
+- [`PartialDifferentialEquationCoefficientData.homogeneous`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoefficientdata_homogeneous) — PartialDifferentialEquationCoefficientData property
+- [`PartialDifferentialEquationCoefficientData.remainder`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoefficientdata_remainder) — PartialDifferentialEquationCoefficientData property
+
+## PartialDifferentialEquationCoordinateChange
+
+- [`PartialDifferentialEquationCoordinateChange.forwardCoordinates`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoordinatechange_forward_coordinates) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationCoordinateChange.inverseCoordinates`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoordinatechange_inverse_coordinates) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationCoordinateChange.jacobian`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoordinatechange_jacobian) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationCoordinateChange.serializeObject`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoordinatechange_serialize_object) — PartialDifferentialEquationCoordinateChange method
+- [`PartialDifferentialEquationCoordinateChange.sourceVariables`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoordinatechange_source_variables) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationCoordinateChange.targetDependentFunction`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoordinatechange_target_dependent_function) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationCoordinateChange.targetVariables`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationcoordinatechange_target_variables) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationCoordinateChange.toString`](partial-differential-equation-results.md#entry-presentation_wasm_host_wasm_partialdifferentialequationcoordinatechange_tostring) — PartialDifferentialEquationCoordinateChange method
+
+## PartialDifferentialEquationJetCoefficient
+
+- [`PartialDifferentialEquationJetCoefficient.coefficient`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationjetcoefficient_coefficient) — PartialDifferentialEquationJetCoefficient property
+- [`PartialDifferentialEquationJetCoefficient.derivativeOrders`](partial-differential-equation-results.md#entry-presentation_wasm_host_wasm_partialdifferentialequationjetcoefficient_derivativeorders) — PartialDifferentialEquationJetCoefficient property
+
+## PartialDifferentialEquationMethodCandidate
+
+- [`PartialDifferentialEquationMethodCandidate.method`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationmethodcandidate_method) — PartialDifferentialEquationMethodCandidate property
+- [`PartialDifferentialEquationMethodCandidate.proofObligations`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationmethodcandidate_proof_obligations) — PartialDifferentialEquationMethodCandidate property
+
+## PartialDifferentialEquationPointSymmetryAction
+
+- [`PartialDifferentialEquationPointSymmetryAction.admitsAdditiveSolutionSymmetry`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_admits_additive_solution_symmetry) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.amplitude`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_amplitude) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.appliedToSeed`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_applied_to_seed) — PartialDifferentialEquationPointSymmetryAction method
+- [`PartialDifferentialEquationPointSymmetryAction.appliedToSeedWithAdditiveSolution`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_applied_to_seed_with_additive_solution) — PartialDifferentialEquationPointSymmetryAction method
+- [`PartialDifferentialEquationPointSymmetryAction.decline`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_decline) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.intertwining`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_intertwining) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.invertibility`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_invertibility) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.multiplier`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_multiplier) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.outstandingObligations`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_outstanding_obligations) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.parameters`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_parameters) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.pointSymmetryDecline`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_point_symmetry_decline) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.transformedCoordinates`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryaction_transformed_coordinates) — PartialDifferentialEquationPointSymmetryAction property
+
+## PartialDifferentialEquationPointSymmetryAlgebra
+
+- [`PartialDifferentialEquationPointSymmetryAlgebra.admitsAdditiveSolutionSymmetry`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryalgebra_admits_additive_solution_symmetry) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.basis`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryalgebra_basis) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.decline`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryalgebra_decline) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.determiningEquations`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryalgebra_determining_equations) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.generalGenerator`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryalgebra_general_generator) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.outstandingObligations`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryalgebra_outstanding_obligations) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.parameters`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetryalgebra_parameters) — PartialDifferentialEquationPointSymmetryAlgebra property
+
+## PartialDifferentialEquationPointSymmetryGenerator
+
+- [`PartialDifferentialEquationPointSymmetryGenerator.coordinateInfinitesimals`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetrygenerator_coordinate_infinitesimals) — PartialDifferentialEquationPointSymmetryGenerator property
+- [`PartialDifferentialEquationPointSymmetryGenerator.dependentInfinitesimal`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationpointsymmetrygenerator_dependent_infinitesimal) — PartialDifferentialEquationPointSymmetryGenerator property
+
+## PartialDifferentialEquationPrincipalCoefficient
+
+- [`PartialDifferentialEquationPrincipalCoefficient.coefficient`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationprincipalcoefficient_coefficient) — PartialDifferentialEquationPrincipalCoefficient property
+- [`PartialDifferentialEquationPrincipalCoefficient.derivativeOrders`](partial-differential-equation-results.md#entry-presentation_wasm_host_wasm_partialdifferentialequationprincipalcoefficient_derivativeorders) — PartialDifferentialEquationPrincipalCoefficient property
+
+## PartialDifferentialEquationPrincipalPart
+
+- [`PartialDifferentialEquationPrincipalPart.derivativeCoefficients`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationprincipalpart_derivative_coefficients) — PartialDifferentialEquationPrincipalPart property
+- [`PartialDifferentialEquationPrincipalPart.matrix`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationprincipalpart_matrix) — PartialDifferentialEquationPrincipalPart property
+
+## PartialDifferentialEquationProblem
+
+- [`PartialDifferentialEquationProblem.boundaryConditions`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationproblem_boundary_conditions) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationProblem.dependentFunction`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationproblem_dependent_function) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationProblem.equation`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationproblem_equation) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationProblem.independentVariables`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationproblem_independent_variables) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationProblem.initialConditions`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationproblem_initial_conditions) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationProblem.serializeObject`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationproblem_serialize_object) — PartialDifferentialEquationProblem method
+- [`PartialDifferentialEquationProblem.toLatex`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationproblem_to_latex) — PartialDifferentialEquationProblem method
+- [`PartialDifferentialEquationProblem.toString`](partial-differential-equation-results.md#entry-presentation_wasm_host_wasm_partialdifferentialequationproblem_tostring) — PartialDifferentialEquationProblem method
+
+## PartialDifferentialEquationSecondOrderClassification
+
+- [`PartialDifferentialEquationSecondOrderClassification.cases`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsecondorderclassification_cases) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderClassification.decline`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsecondorderclassification_decline) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderClassification.discriminant`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsecondorderclassification_discriminant) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderClassification.equationType`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsecondorderclassification_equation_type) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderClassification.principalMatrix`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsecondorderclassification_principal_matrix) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderClassification.proofObligations`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsecondorderclassification_proof_obligations) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderClassification.verdict`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsecondorderclassification_verdict) — PartialDifferentialEquationSecondOrderClassification property
+
+## PartialDifferentialEquationSecondOrderTypeCase
+
+- [`PartialDifferentialEquationSecondOrderTypeCase.condition`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsecondordertypecase_condition) — PartialDifferentialEquationSecondOrderTypeCase property
+- [`PartialDifferentialEquationSecondOrderTypeCase.equationType`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsecondordertypecase_equation_type) — PartialDifferentialEquationSecondOrderTypeCase property
+
+## PartialDifferentialEquationSeparatedEquation
+
+- [`PartialDifferentialEquationSeparatedEquation.independentVariableName`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationseparatedequation_independent_variable_name) — PartialDifferentialEquationSeparatedEquation property
+- [`PartialDifferentialEquationSeparatedEquation.residual`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationseparatedequation_residual) — PartialDifferentialEquationSeparatedEquation property
+
+## PartialDifferentialEquationSeparationResult
+
+- [`PartialDifferentialEquationSeparationResult.firstEquation`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationseparationresult_first_equation) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSeparationResult.reconstruction`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationseparationresult_reconstruction) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSeparationResult.secondEquation`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationseparationresult_second_equation) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSeparationResult.separationConstant`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationseparationresult_separation_constant) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSeparationResult.strategy`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationseparationresult_strategy) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSeparationResult.verification`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationseparationresult_verification) — PartialDifferentialEquationSeparationResult property
+
+## PartialDifferentialEquationSimilaritySolution
+
+- [`PartialDifferentialEquationSimilaritySolution.decline`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_decline) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.invariant`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_invariant) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.liftedConstants`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_lifted_constants) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.liftedFamily`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_lifted_family) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.liftedFamilyVerification`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_lifted_family_verification) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.multiplier`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_multiplier) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.outstandingObligations`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_outstanding_obligations) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.reducedEquation`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_reduced_equation) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.similarityVariable`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_similarity_variable) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.weight`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsimilaritysolution_weight) — PartialDifferentialEquationSimilaritySolution property
+
+## PartialDifferentialEquationSolutionFamily
+
+- [`PartialDifferentialEquationSolutionFamily.arbitraryFunctions`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolutionfamily_arbitrary_functions) — PartialDifferentialEquationSolutionFamily property
+- [`PartialDifferentialEquationSolutionFamily.establishesCompleteness`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolutionfamily_establishes_completeness) — PartialDifferentialEquationSolutionFamily property
+- [`PartialDifferentialEquationSolutionFamily.expression`](partial-differential-equation-results.md#entry-presentation_wasm_host_wasm_partialdifferentialequationsolutionfamily_expression) — PartialDifferentialEquationSolutionFamily property
+- [`PartialDifferentialEquationSolutionFamily.form`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolutionfamily_form) — PartialDifferentialEquationSolutionFamily property
+- [`PartialDifferentialEquationSolutionFamily.proofObligations`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolutionfamily_proof_obligations) — PartialDifferentialEquationSolutionFamily property
+
+## PartialDifferentialEquationSolutionProvenance
+
+- [`PartialDifferentialEquationSolutionProvenance.dischargedObligations`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolutionprovenance_discharged_obligations) — PartialDifferentialEquationSolutionProvenance property
+- [`PartialDifferentialEquationSolutionProvenance.linearity`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolutionprovenance_linearity) — PartialDifferentialEquationSolutionProvenance property
+- [`PartialDifferentialEquationSolutionProvenance.method`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolutionprovenance_method) — PartialDifferentialEquationSolutionProvenance property
+- [`PartialDifferentialEquationSolutionProvenance.order`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolutionprovenance_order) — PartialDifferentialEquationSolutionProvenance property
+
+## PartialDifferentialEquationSolveResult
+
+- [`PartialDifferentialEquationSolveResult.classification`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolveresult_classification) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationSolveResult.decline`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolveresult_decline) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationSolveResult.method`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolveresult_method) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationSolveResult.provenance`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolveresult_provenance) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationSolveResult.solution`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolveresult_solution) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationSolveResult.verdict`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolveresult_verdict) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationSolveResult.verification`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationsolveresult_verification) — PartialDifferentialEquationSolveResult property
+
+## PartialDifferentialEquationTransformationResult
+
+- [`PartialDifferentialEquationTransformationResult.coordinateChange`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationresult_coordinate_change) — PartialDifferentialEquationTransformationResult property
+- [`PartialDifferentialEquationTransformationResult.decline`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationresult_decline) — PartialDifferentialEquationTransformationResult property
+- [`PartialDifferentialEquationTransformationResult.normalizationMultiplier`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationresult_normalization_multiplier) — PartialDifferentialEquationTransformationResult property
+- [`PartialDifferentialEquationTransformationResult.targetProblem`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationresult_target_problem) — PartialDifferentialEquationTransformationResult property
+- [`PartialDifferentialEquationTransformationResult.transformed`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationresult_transformed) — PartialDifferentialEquationTransformationResult property
+
+## PartialDifferentialEquationTransformationVerificationReport
+
+- [`PartialDifferentialEquationTransformationVerificationReport.claimedGoverningResidual`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationverificationreport_claimed_governing_residual) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationTransformationVerificationReport.compositionResiduals`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationverificationreport_composition_residuals) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationTransformationVerificationReport.jacobian`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationverificationreport_jacobian) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationTransformationVerificationReport.principalCongruenceResiduals`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationverificationreport_principal_congruence_residuals) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationTransformationVerificationReport.transformedGoverningResidual`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationverificationreport_transformed_governing_residual) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationTransformationVerificationReport.verdict`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationtransformationverificationreport_verdict) — PartialDifferentialEquationTransformationVerificationReport property
+
+## PartialDifferentialEquationVerificationReport
+
+- [`PartialDifferentialEquationVerificationReport.boundaryConditionResiduals`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationverificationreport_boundary_condition_residuals) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.explicitBranch`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationverificationreport_explicit_branch) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.governingResidual`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationverificationreport_governing_residual) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.inconclusiveReason`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationverificationreport_inconclusive_reason) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.initialConditionResiduals`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationverificationreport_initial_condition_residuals) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.proofObligations`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationverificationreport_proof_obligations) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.verdict`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationverificationreport_verdict) — PartialDifferentialEquationVerificationReport property
+
+## PartialDifferentialEquationVerificationResidual
+
+- [`PartialDifferentialEquationVerificationResidual.residual`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationverificationresidual_residual) — PartialDifferentialEquationVerificationResidual property
+- [`PartialDifferentialEquationVerificationResidual.verdict`](partial-differential-equation-results.md#entry-presentation_wasm_api_partialdifferentialequationverificationresidual_verdict) — PartialDifferentialEquationVerificationResidual property
+
+## PiecewiseBranch
+
+- [`PiecewiseBranch`](polynomials.md#entry-presentation_wasm_api_piecewisebranch) — Type
+- [`PiecewiseBranch.condition`](polynomials.md#entry-presentation_wasm_api_piecewisebranch_condition) — PiecewiseBranch property
+- [`PiecewiseBranch.value`](polynomials.md#entry-presentation_wasm_api_piecewisebranch_value) — PiecewiseBranch property
+
+## Point2d
+
+- [`Point2d`](geometry.md#entry-presentation_wasm_api_point2d) — Point2d constructor
+- [`Point2d.coordinates`](geometry.md#entry-presentation_wasm_api_point2d_coordinates) — Point2d method
+- [`Point2d.distanceTo`](geometry.md#entry-presentation_wasm_api_point2d_distance_to) — Point2d method
+- [`Point2d.intersection`](geometry.md#entry-presentation_wasm_api_point2d_intersection) — Point2d method
+- [`Point2d.toString`](geometry.md#entry-presentation_wasm_host_wasm_point2d_tostring) — Point2d method
+- [`Point2d.x`](geometry.md#entry-presentation_wasm_api_point2d_x) — Point2d property
+- [`Point2d.y`](geometry.md#entry-presentation_wasm_api_point2d_y) — Point2d property
+- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_api_session_serialize_object) — Expression method
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+
+## Polygon2d
+
+- [`Point2d.intersection`](geometry.md#entry-presentation_wasm_api_point2d_intersection) — Point2d method
+- [`Polygon2d`](geometry.md#entry-presentation_wasm_api_polygon2d) — Polygon2d constructor
+- [`Polygon2d.area`](geometry.md#entry-presentation_wasm_api_polygon2d_area) — Polygon2d method
+- [`Polygon2d.centroid`](geometry.md#entry-presentation_wasm_api_polygon2d_centroid) — Polygon2d method
+- [`Polygon2d.interiorAngles`](geometry.md#entry-presentation_wasm_api_polygon2d_interior_angles) — Polygon2d method
+- [`Polygon2d.perimeter`](geometry.md#entry-presentation_wasm_api_polygon2d_perimeter) — Polygon2d method
+- [`Polygon2d.toString`](geometry.md#entry-presentation_wasm_host_wasm_polygon2d_tostring) — Polygon2d method
+- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_api_session_serialize_object) — Expression method
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+
+## PolynomialSystemSolution
+
+- [`PolynomialSystemSolution.complete`](solving.md#entry-presentation_wasm_api_polynomialsystemsolution_complete) — PolynomialSystemSolution property
+- [`PolynomialSystemSolution.solutions`](solving.md#entry-presentation_wasm_api_polynomialsystemsolution_solutions) — PolynomialSystemSolution property
+- [`PolynomialSystemSolution.verdict`](solving.md#entry-presentation_wasm_api_polynomialsystemsolution_verdict) — PolynomialSystemSolution property
+
+## PrimeFactor
+
+- [`PrimeFactor.multiplicity`](number-theory.md#entry-presentation_wasm_api_primefactor_multiplicity) — PrimeFactor property
+- [`PrimeFactor.prime`](number-theory.md#entry-presentation_wasm_api_primefactor_prime) — PrimeFactor property
+
+## QuadraticContinuedFractionExpansion
+
+- [`QuadraticContinuedFractionExpansion.initialTerms`](number-theory.md#entry-presentation_wasm_api_quadraticcontinuedfractionexpansion_initial_terms) — QuadraticContinuedFractionExpansion property
+- [`QuadraticContinuedFractionExpansion.periodicTerms`](number-theory.md#entry-presentation_wasm_api_quadraticcontinuedfractionexpansion_periodic_terms) — QuadraticContinuedFractionExpansion property
+
+## RationalCanonicalForm
+
+- [`RationalCanonicalForm.canonicalForm`](matrix-canonical-forms.md#entry-presentation_wasm_api_rationalcanonicalform_canonical_form) — RationalCanonicalForm property
+- [`RationalCanonicalForm.characteristicPolynomial`](matrix-canonical-forms.md#entry-presentation_wasm_api_rationalcanonicalform_characteristic_polynomial) — RationalCanonicalForm property
+- [`RationalCanonicalForm.invariantFactors`](matrix-canonical-forms.md#entry-presentation_wasm_api_rationalcanonicalform_invariant_factors) — RationalCanonicalForm property
+- [`RationalCanonicalForm.minimalPolynomial`](matrix-canonical-forms.md#entry-presentation_wasm_api_rationalcanonicalform_minimal_polynomial) — RationalCanonicalForm property
+- [`RationalCanonicalForm.similarity`](matrix-canonical-forms.md#entry-presentation_wasm_api_rationalcanonicalform_similarity) — RationalCanonicalForm property
+
+## RootMultiplicity
+
+- [`PrimeFactor.multiplicity`](number-theory.md#entry-presentation_wasm_api_primefactor_multiplicity) — PrimeFactor property
+- [`RootMultiplicity.root`](number-theory.md#entry-presentation_wasm_api_rootmultiplicity_root) — RootMultiplicity property
+
+## Segment2d
+
+- [`Point2d.intersection`](geometry.md#entry-presentation_wasm_api_point2d_intersection) — Point2d method
+- [`Segment2d`](geometry.md#entry-presentation_wasm_api_segment2d) — Segment2d constructor
+- [`Segment2d.length`](geometry.md#entry-presentation_wasm_api_segment2d_length) — Segment2d method
+- [`Segment2d.midpoint`](geometry.md#entry-presentation_wasm_api_segment2d_midpoint) — Segment2d method
+- [`Segment2d.perpendicularBisectorEquation`](geometry.md#entry-presentation_wasm_api_segment2d_perpendicular_bisector_equation) — Segment2d method
+- [`Segment2d.toString`](geometry.md#entry-presentation_wasm_host_wasm_segment2d_tostring) — Segment2d method
+- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_api_session_serialize_object) — Expression method
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+
+## Session
+
+- [`abs`](elementary-functions.md#entry-presentation_wasm_api_session_abs) — Default context
+- [`absoluteValue`](elementary-functions.md#entry-presentation_wasm_api_session_absolute_value) — Explicit context
+- [`add`](expressions.md#entry-presentation_wasm_api_session_add) — Expression method
+- [`addAssumptions`](assumptions.md#entry-presentation_wasm_api_session_add_assumptions) — Default context
+- [`algebraicAssumption`](assumptions.md#entry-presentation_wasm_api_session_algebraic_assumption) — Default context
+- [`arccos`](elementary-functions.md#entry-presentation_wasm_api_session_arccos) — Default context
+- [`arccosh`](elementary-functions.md#entry-presentation_wasm_api_session_arccosh) — Default context
+- [`arccot`](elementary-functions.md#entry-presentation_wasm_api_session_arccot) — Default context
+- [`arccoth`](elementary-functions.md#entry-presentation_wasm_api_session_arccoth) — Default context
+- [`arccsc`](elementary-functions.md#entry-presentation_wasm_api_session_arccsc) — Default context
+- [`arccsch`](elementary-functions.md#entry-presentation_wasm_api_session_arccsch) — Default context
+- [`arcsec`](elementary-functions.md#entry-presentation_wasm_api_session_arcsec) — Default context
+- [`arcsech`](elementary-functions.md#entry-presentation_wasm_api_session_arcsech) — Default context
+- [`arcsin`](elementary-functions.md#entry-presentation_wasm_api_session_arcsin) — Default context
+- [`arcsinh`](elementary-functions.md#entry-presentation_wasm_api_session_arcsinh) — Default context
+- [`arctan`](elementary-functions.md#entry-presentation_wasm_api_session_arctan) — Default context
+- [`arctanh`](elementary-functions.md#entry-presentation_wasm_api_session_arctanh) — Default context
+- [`ask`](assumptions.md#entry-presentation_wasm_api_session_ask) — Default context
+- [`assuming`](assumptions.md#entry-presentation_wasm_api_session_assuming) — Default context
+- [`assumptionPropositionFromLogicalExpression`](assumptions.md#entry-presentation_wasm_api_session_assumption_proposition_from_logical_expression) — Default context
+- [`assumptionsOf`](default-context.md#entry-presentation_wasm_api_session_assumptions_of) — Default context
+- [`bellNumber`](combinatorics.md#entry-presentation_wasm_api_session_bell_number) — Default context
+- [`beta`](special-functions.md#entry-presentation_wasm_api_session_beta) — Default context
+- [`binomial`](elementary-functions.md#entry-presentation_wasm_api_session_binomial) — Default context
+- [`cancel`](simplification-general.md#entry-presentation_wasm_api_session_cancel) — Default context
+- [`canonicalizePartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_canonicalize_partial_differential_equation) — Default context
+- [`carlsonRc`](special-functions.md#entry-presentation_wasm_api_session_carlson_rc) — Default context
+- [`carlsonRd`](special-functions.md#entry-presentation_wasm_api_session_carlson_rd) — Default context
+- [`carlsonRf`](special-functions.md#entry-presentation_wasm_api_session_carlson_rf) — Default context
+- [`carlsonRj`](special-functions.md#entry-presentation_wasm_api_session_carlson_rj) — Default context
+- [`catalanNumber`](combinatorics.md#entry-presentation_wasm_api_session_catalan_number) — Default context
+- [`ceiling`](elementary-functions.md#entry-presentation_wasm_api_session_ceiling) — Default context
+- [`changeMonomialOrder`](polynomials.md#entry-presentation_wasm_api_session_change_monomial_order) — Default context
+- [`changePartialDifferentialEquationVariables`](partial-differential-equations.md#entry-presentation_wasm_api_session_change_partial_differential_equation_variables) — Default context
+- [`characteristicFunction`](statistics.md#entry-presentation_wasm_api_session_characteristic_function) — Default context
+- [`chebyshevPolynomialFirstKind`](special-functions.md#entry-presentation_wasm_api_session_chebyshev_polynomial_first_kind) — Default context
+- [`chebyshevPolynomialSecondKind`](special-functions.md#entry-presentation_wasm_api_session_chebyshev_polynomial_second_kind) — Default context
+- [`chineseRemainder`](number-theory.md#entry-presentation_wasm_api_session_chinese_remainder) — Default context
+- [`circle2d`](geometry.md#entry-presentation_wasm_api_session_circle_2d) — Explicit context
+- [`classifyPartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_classify_partial_differential_equation) — Default context
+- [`classifySecondOrderPartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_classify_second_order_partial_differential_equation) — Default context
+- [`classifyUnconstrained`](optimization.md#entry-presentation_wasm_api_session_classify_unconstrained) — Default context
+- [`clearAllAssumptions`](assumptions.md#entry-presentation_wasm_api_session_clear_all_assumptions) — Default context
+- [`clearAssumptions`](default-context.md#entry-presentation_wasm_api_session_clear_assumptions) — Default context
+- [`coefficient`](polynomials.md#entry-presentation_wasm_api_session_coefficient) — Default context
+- [`collect`](algebraic-transforms.md#entry-presentation_wasm_api_session_collect) — Default context
+- [`collectRadicals`](algebraic-transforms.md#entry-presentation_wasm_api_session_collect_radicals) — Default context
+- [`combineLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_logarithm) — Default context
+- [`combinePowers`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_powers) — Default context
+- [`combineTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_trigonometric) — Default context
+- [`compareRealRoots`](solving.md#entry-presentation_wasm_api_session_compare_real_roots) — Default context
+- [`completeTheSquare`](algebraic-transforms.md#entry-presentation_wasm_api_session_complete_the_square) — Default context
+- [`complexAssumption`](assumptions.md#entry-presentation_wasm_api_session_complex_assumption) — Default context
+- [`complexEntries`](linear-algebra.md#entry-presentation_wasm_api_session_complex_entries) — Default context
+- [`complexPlane`](sets.md#entry-presentation_wasm_api_session_complex_plane) — Default context
+- [`compositeAssumption`](assumptions.md#entry-presentation_wasm_api_session_composite_assumption) — Default context
+- [`conditionSet`](sets.md#entry-presentation_wasm_api_session_condition_set) — Default context
+- [`congruentAssumption`](assumptions.md#entry-presentation_wasm_api_session_congruent_assumption) — Default context
+- [`conjugate`](elementary-functions.md#entry-presentation_wasm_api_session_conjugate) — Default context
+- [`conjunctiveNormalForm`](logical-transforms.md#entry-presentation_wasm_api_session_conjunctive_normal_form) — Default context
+- [`constructPartialDifferentialEquationPointSymmetryAction`](partial-differential-equations.md#entry-presentation_wasm_api_session_construct_partial_differential_equation_point_symmetry_action) — Default context
+- [`Context`](object-model.md#entry-presentation_wasm_api_session) — Type
+- [`continuedFractionQuadraticIrrational`](number-theory.md#entry-presentation_wasm_api_session_continued_fraction_quadratic_irrational) — Default context
+- [`continuedFractionRational`](number-theory.md#entry-presentation_wasm_api_session_continued_fraction_rational) — Default context
+- [`continuousDomain`](calculus.md#entry-presentation_wasm_api_session_continuous_domain) — Default context
+- [`cos`](elementary-functions.md#entry-presentation_wasm_api_session_cos) — Default context
+- [`cosh`](elementary-functions.md#entry-presentation_wasm_api_session_cosh) — Default context
+- [`cot`](elementary-functions.md#entry-presentation_wasm_api_session_cot) — Default context
+- [`coth`](elementary-functions.md#entry-presentation_wasm_api_session_coth) — Default context
+- [`couldHold`](assumptions.md#entry-presentation_wasm_api_session_could_hold) — Default context
+- [`countDistinctRealRoots`](solving.md#entry-presentation_wasm_api_session_count_distinct_real_roots) — Default context
+- [`covariance`](statistics.md#entry-presentation_wasm_api_session_covariance) — Default context
+- [`csc`](elementary-functions.md#entry-presentation_wasm_api_session_csc) — Default context
+- [`csch`](elementary-functions.md#entry-presentation_wasm_api_session_csch) — Default context
+- [`cumulant`](statistics.md#entry-presentation_wasm_api_session_cumulant) — Default context
+- [`cumulativeDistribution`](statistics.md#entry-presentation_wasm_api_session_cumulative_distribution) — Default context
+- [`curl`](vector-calculus.md#entry-presentation_wasm_api_session_curl) — Default context
+- [`defaultContext`](default-context.md#entry-presentation_wasm_api_session_default_context) — Default context
+- [`definedAssumption`](assumptions.md#entry-presentation_wasm_api_session_defined_assumption) — Default context
+- [`degree`](polynomials.md#entry-presentation_wasm_api_session_degree) — Default context
+- [`denestPowers`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_denest_powers) — Default context
+- [`denestRadicals`](algebraic-transforms.md#entry-presentation_wasm_api_session_denest_radicals) — Default context
+- [`denominator`](expressions.md#entry-presentation_wasm_api_session_denominator) — Default context
+- [`density`](statistics.md#entry-presentation_wasm_api_session_density) — Default context
+- [`derivative`](deferred-forms.md#entry-presentation_wasm_api_session_derivative) — Default context
+- [`derivePartialDifferentialEquationPointSymmetries`](partial-differential-equations.md#entry-presentation_wasm_api_session_derive_partial_differential_equation_point_symmetries) — Default context
+- [`deserializeAssumptionProposition`](assumptions.md#entry-presentation_wasm_api_session_deserialize_assumption_proposition) — Default context
+- [`diagonalMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_diagonal_matrix) — Default context
+- [`differentiate`](calculus.md#entry-presentation_wasm_api_session_differentiate) — Default context
+- [`differentiateBulk`](context-safety.md#entry-presentation_wasm_api_session_differentiate_bulk) — Default context
+- [`digamma`](special-functions.md#entry-presentation_wasm_api_session_digamma) — Default context
+- [`discoverPartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_discover_partial_differential_equation) — Default context
+- [`disjunctiveNormalForm`](logical-transforms.md#entry-presentation_wasm_api_session_disjunctive_normal_form) — Default context
+- [`distribution`](statistics.md#entry-presentation_wasm_api_session_distribution) — Default context
+- [`divergence`](vector-calculus.md#entry-presentation_wasm_api_session_divergence) — Default context
+- [`divide`](expressions.md#entry-presentation_wasm_api_session_divide) — Expression method
+- [`divisorCount`](number-theory.md#entry-presentation_wasm_api_session_divisor_count) — Default context
+- [`divisorSigma`](number-theory.md#entry-presentation_wasm_api_session_divisor_sigma) — Default context
+- [`e`](evaluation-and-constants.md#entry-presentation_wasm_api_session_e) — Default context
+- [`eliminateDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_eliminate_derived_logical_connectives) — Default context
+- [`eliminateQuantifiers`](solving.md#entry-presentation_wasm_api_session_eliminate_quantifiers) — Default context
+- [`eliminationIdeal`](polynomials.md#entry-presentation_wasm_api_session_elimination_ideal) — Default context
+- [`ellipticE`](special-functions.md#entry-presentation_wasm_api_session_elliptic_e) — Default context
+- [`ellipticEIncomplete`](special-functions.md#entry-presentation_wasm_api_session_elliptic_e_incomplete) — Default context
+- [`ellipticF`](special-functions.md#entry-presentation_wasm_api_session_elliptic_f) — Default context
+- [`ellipticK`](special-functions.md#entry-presentation_wasm_api_session_elliptic_k) — Default context
+- [`ellipticPi`](special-functions.md#entry-presentation_wasm_api_session_elliptic_pi) — Default context
+- [`ellipticPiIncomplete`](special-functions.md#entry-presentation_wasm_api_session_elliptic_pi_incomplete) — Default context
+- [`emptySet`](sets.md#entry-presentation_wasm_api_session_empty_set) — Default context
+- [`enumerateSetInInterval`](sets.md#entry-presentation_wasm_api_session_enumerate_set_in_interval) — Default context
+- [`equal`](relations.md#entry-presentation_wasm_api_session_equal) — Default context
+- [`equalAssumption`](assumptions.md#entry-presentation_wasm_api_session_equal_assumption) — Default context
+- [`eulerGamma`](evaluation-and-constants.md#entry-presentation_wasm_api_session_euler_gamma) — Default context
+- [`eulerTotient`](number-theory.md#entry-presentation_wasm_api_session_euler_totient) — Default context
+- [`evaluateLimit`](calculus.md#entry-presentation_wasm_api_session_evaluate_limit) — Default context
+- [`evaluateNumeric`](calculus.md#entry-presentation_wasm_api_session_evaluate_numeric) — Default context
+- [`evaluateNumericBulk`](context-safety.md#entry-presentation_wasm_api_session_evaluate_numeric_bulk) — Default context
+- [`evaluateOnGrid`](calculus.md#entry-presentation_wasm_api_session_evaluate_on_grid) — Default context
+- [`evaluateOnGridPoints`](calculus.md#entry-presentation_wasm_api_session_evaluate_on_grid_points) — Default context
+- [`evaluateToComplexInexact`](expressions.md#entry-presentation_wasm_api_session_evaluate_to_complex_inexact) — Expression method
+- [`evaluateToComplexInexactAtPrecision`](expressions.md#entry-presentation_wasm_api_session_evaluate_to_complex_inexact_at_precision) — Expression method
+- [`evaluateToFloat`](expressions.md#entry-presentation_wasm_api_session_evaluate_to_float) — Expression method
+- [`evaluateTruth`](logic.md#entry-presentation_wasm_api_session_evaluate_truth) — Default context
+- [`evenAssumption`](assumptions.md#entry-presentation_wasm_api_session_even_assumption) — Default context
+- [`execute`](calculus.md#entry-presentation_wasm_api_session_execute) — Default context
+- [`executionMode`](context-safety.md#entry-presentation_wasm_api_session_execution_mode) — Default context
+- [`exp`](elementary-functions.md#entry-presentation_wasm_api_session_exp) — Default context
+- [`expand`](algebraic-transforms.md#entry-presentation_wasm_api_session_expand) — Default context
+- [`expandBulk`](context-safety.md#entry-presentation_wasm_api_session_expand_bulk) — Default context
+- [`expandComplex`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_complex) — Default context
+- [`expandLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_logarithm) — Default context
+- [`expandPowerBase`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_power_base) — Default context
+- [`expandTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_trigonometric) — Default context
+- [`expectation`](statistics.md#entry-presentation_wasm_api_session_expectation) — Default context
+- [`explicitPartialDifferentialEquationSolution`](partial-differential-equations.md#entry-presentation_wasm_api_session_explicit_partial_differential_equation_solution) — Default context
+- [`extendedEuclidean`](number-theory.md#entry-presentation_wasm_api_session_extended_euclidean) — Default context
+- [`extendedRealAssumption`](assumptions.md#entry-presentation_wasm_api_session_extended_real_assumption) — Default context
+- [`factor`](algebraic-transforms.md#entry-presentation_wasm_api_session_factor) — Default context
+- [`factorCommonTerms`](algebraic-transforms.md#entry-presentation_wasm_api_session_factor_common_terms) — Default context
+- [`factorial`](elementary-functions.md#entry-presentation_wasm_api_session_factorial) — Default context
+- [`factorInteger`](number-theory.md#entry-presentation_wasm_api_session_factor_integer) — Default context
+- [`fallingFactorial`](combinatorics.md#entry-presentation_wasm_api_session_falling_factorial) — Default context
+- [`fibonacciNumber`](combinatorics.md#entry-presentation_wasm_api_session_fibonacci_number) — Default context
+- [`finiteAssumption`](assumptions.md#entry-presentation_wasm_api_session_finite_assumption) — Default context
+- [`finiteSet`](sets.md#entry-presentation_wasm_api_session_finite_set) — Default context
+- [`floor`](elementary-functions.md#entry-presentation_wasm_api_session_floor) — Default context
+- [`fourierTransform`](integral-transforms.md#entry-presentation_wasm_api_session_fourier_transform) — Default context
+- [`fullRankMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_full_rank_matrix) — Default context
+- [`gamma`](special-functions.md#entry-presentation_wasm_api_session_gamma) — Default context
+- [`gegenbauerPolynomial`](special-functions.md#entry-presentation_wasm_api_session_gegenbauer_polynomial) — Default context
+- [`generalizedLaguerrePolynomial`](special-functions.md#entry-presentation_wasm_api_session_generalized_laguerre_polynomial) — Default context
+- [`globalOptimumOnSemialgebraic`](optimization.md#entry-presentation_wasm_api_session_global_optimum_on_semialgebraic) — Default context
+- [`gradient`](vector-calculus.md#entry-presentation_wasm_api_session_gradient) — Default context
+- [`greaterAssumption`](assumptions.md#entry-presentation_wasm_api_session_greater_assumption) — Default context
+- [`greaterOrEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_greater_or_equal_assumption) — Default context
+- [`greaterThan`](relations.md#entry-presentation_wasm_api_session_greater_than) — Default context
+- [`greaterThanOrEqual`](relations.md#entry-presentation_wasm_api_session_greater_than_or_equal) — Default context
+- [`groebnerBasis`](polynomials.md#entry-presentation_wasm_api_session_groebner_basis) — Default context
+- [`hermitePolynomial`](special-functions.md#entry-presentation_wasm_api_session_hermite_polynomial) — Default context
+- [`hermitianMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_hermitian_matrix) — Default context
+- [`hessian`](vector-calculus.md#entry-presentation_wasm_api_session_hessian) — Default context
+- [`hurwitzZeta`](special-functions.md#entry-presentation_wasm_api_session_hurwitz_zeta) — Default context
+- [`hypergeometric0f1`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_0f1) — Default context
+- [`hypergeometric1f1`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_1f1) — Default context
+- [`hypergeometric2f1`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_2f1) — Default context
+- [`hypergeometricPfq`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_pfq) — Default context
+- [`idealIntersection`](polynomials.md#entry-presentation_wasm_api_session_ideal_intersection) — Default context
+- [`idealMembership`](polynomials.md#entry-presentation_wasm_api_session_ideal_membership) — Default context
+- [`idealProduct`](polynomials.md#entry-presentation_wasm_api_session_ideal_product) — Default context
+- [`idealSum`](polynomials.md#entry-presentation_wasm_api_session_ideal_sum) — Default context
+- [`identityMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_identity_matrix) — Default context
+- [`imageSet`](sets.md#entry-presentation_wasm_api_session_image_set) — Default context
+- [`imaginaryPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_imaginary_part) — Default context
+- [`imaginaryUnit`](evaluation-and-constants.md#entry-presentation_wasm_api_session_imaginary_unit) — Default context
+- [`implicitize`](polynomials.md#entry-presentation_wasm_api_session_implicitize) — Default context
+- [`implicitPartialDifferentialEquationSolution`](partial-differential-equations.md#entry-presentation_wasm_api_session_implicit_partial_differential_equation_solution) — Default context
+- [`infiniteAssumption`](assumptions.md#entry-presentation_wasm_api_session_infinite_assumption) — Default context
+- [`infinity`](evaluation-and-constants.md#entry-presentation_wasm_api_session_infinity) — Default context
+- [`initializeParallelism`](context-safety.md#entry-presentation_wasm_api_session_initialize_parallelism) — Default context
+- [`integer`](construction-and-parsing.md#entry-presentation_wasm_api_session_integer) — Default context
+- [`integerAssumption`](assumptions.md#entry-presentation_wasm_api_session_integer_assumption) — Default context
+- [`integerEntries`](linear-algebra.md#entry-presentation_wasm_api_session_integer_entries) — Default context
+- [`integerFromString`](construction-and-parsing.md#entry-presentation_wasm_api_session_integer_from_string) — Default context
+- [`integerGcd`](number-theory.md#entry-presentation_wasm_api_session_integer_gcd) — Default context
+- [`integerLcm`](number-theory.md#entry-presentation_wasm_api_session_integer_lcm) — Default context
+- [`integerNthRoot`](number-theory.md#entry-presentation_wasm_api_session_integer_nth_root) — Default context
+- [`integerSet`](sets.md#entry-presentation_wasm_api_session_integer_set) — Default context
+- [`integerSquareRoot`](number-theory.md#entry-presentation_wasm_api_session_integer_square_root) — Default context
+- [`integral`](deferred-forms.md#entry-presentation_wasm_api_session_integral) — Default context
+- [`integrate`](calculus.md#entry-presentation_wasm_api_session_integrate) — Default context
+- [`integrateDefinite`](calculus.md#entry-presentation_wasm_api_session_integrate_definite) — Default context
+- [`integrateDefiniteDetailed`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_detailed) — Default context
+- [`integrateDefiniteNumeric`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_numeric) — Default context
+- [`integrateDefiniteUnderConstraint`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_under_constraint) — Default context
+- [`integrateIterated`](calculus.md#entry-presentation_wasm_api_session_integrate_iterated) — Default context
+- [`internerLength`](default-context.md#entry-presentation_wasm_api_session_interner_length) — Default context
+- [`interval`](sets.md#entry-presentation_wasm_api_session_interval) — Default context
+- [`introduceDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_introduce_derived_logical_connectives) — Default context
+- [`inverseFourierTransform`](integral-transforms.md#entry-presentation_wasm_api_session_inverse_fourier_transform) — Default context
+- [`inverseLaplaceTransform`](integral-transforms.md#entry-presentation_wasm_api_session_inverse_laplace_transform) — Default context
+- [`invertibleMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_invertible_matrix) — Default context
+- [`irrationalAssumption`](assumptions.md#entry-presentation_wasm_api_session_irrational_assumption) — Default context
+- [`isMember`](sets.md#entry-presentation_wasm_api_session_is_member) — Default context
+- [`isNonnegative`](expressions.md#entry-presentation_wasm_api_session_is_nonnegative) — Expression method
+- [`isNonpositive`](expressions.md#entry-presentation_wasm_api_session_is_nonpositive) — Expression method
+- [`isolateRealRoots`](polynomials.md#entry-presentation_wasm_api_session_isolate_real_roots) — Default context
+- [`isPrime`](number-theory.md#entry-presentation_wasm_api_session_is_prime) — Default context
+- [`isSubset`](sets.md#entry-presentation_wasm_api_session_is_subset) — Default context
+- [`jacobiAmplitude`](special-functions.md#entry-presentation_wasm_api_session_jacobi_amplitude) — Default context
+- [`jacobian`](vector-calculus.md#entry-presentation_wasm_api_session_jacobian) — Default context
+- [`jacobiCn`](special-functions.md#entry-presentation_wasm_api_session_jacobi_cn) — Default context
+- [`jacobiDn`](special-functions.md#entry-presentation_wasm_api_session_jacobi_dn) — Default context
+- [`jacobiPolynomial`](special-functions.md#entry-presentation_wasm_api_session_jacobi_polynomial) — Default context
+- [`jacobiSn`](special-functions.md#entry-presentation_wasm_api_session_jacobi_sn) — Default context
+- [`jacobiSymbol`](number-theory.md#entry-presentation_wasm_api_session_jacobi_symbol) — Default context
+- [`jacobiTheta1`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_1) — Default context
+- [`jacobiTheta2`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_2) — Default context
+- [`jacobiTheta3`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_3) — Default context
+- [`jacobiTheta4`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_4) — Default context
+- [`karushKuhnTuckerPoints`](optimization.md#entry-presentation_wasm_api_session_karush_kuhn_tucker_points) — Default context
+- [`kroneckerSymbol`](number-theory.md#entry-presentation_wasm_api_session_kronecker_symbol) — Default context
+- [`lagrangeCriticalPoints`](optimization.md#entry-presentation_wasm_api_session_lagrange_critical_points) — Default context
+- [`laguerrePolynomial`](special-functions.md#entry-presentation_wasm_api_session_laguerre_polynomial) — Default context
+- [`laplaceTransform`](integral-transforms.md#entry-presentation_wasm_api_session_laplace_transform) — Default context
+- [`laplacian`](vector-calculus.md#entry-presentation_wasm_api_session_laplacian) — Default context
+- [`laurentSeries`](series.md#entry-presentation_wasm_api_session_laurent_series) — Default context
+- [`leadingCoefficient`](polynomials.md#entry-presentation_wasm_api_session_leading_coefficient) — Default context
+- [`legendrePolynomial`](special-functions.md#entry-presentation_wasm_api_session_legendre_polynomial) — Default context
+- [`legendreSymbol`](number-theory.md#entry-presentation_wasm_api_session_legendre_symbol) — Default context
+- [`lerchPhi`](special-functions.md#entry-presentation_wasm_api_session_lerch_phi) — Default context
+- [`lessAssumption`](assumptions.md#entry-presentation_wasm_api_session_less_assumption) — Default context
+- [`lessOrEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_less_or_equal_assumption) — Default context
+- [`lessThan`](relations.md#entry-presentation_wasm_api_session_less_than) — Default context
+- [`lessThanOrEqual`](relations.md#entry-presentation_wasm_api_session_less_than_or_equal) — Default context
+- [`limit`](calculus.md#entry-presentation_wasm_api_session_limit) — Default context
+- [`log`](elementary-functions.md#entry-presentation_wasm_api_session_log) — Default context
+- [`logGamma`](special-functions.md#entry-presentation_wasm_api_session_log_gamma) — Default context
+- [`logicalFalse`](logic.md#entry-presentation_wasm_api_session_logical_false) — Default context
+- [`logicalTrue`](logic.md#entry-presentation_wasm_api_session_logical_true) — Default context
+- [`lowerTriangularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_lower_triangular_matrix) — Default context
+- [`maclaurinSeries`](series.md#entry-presentation_wasm_api_session_maclaurin_series) — Default context
+- [`matrix`](matrix-construction.md#entry-presentation_wasm_api_session_matrix) — Explicit context
+- [`matrixDiagonal`](matrix-construction.md#entry-presentation_wasm_api_session_matrix_diagonal) — Default context
+- [`matrixIdentity`](matrix-construction.md#entry-presentation_wasm_api_session_matrix_identity) — Default context
+- [`matrixShape`](linear-algebra.md#entry-presentation_wasm_api_session_matrix_shape) — Default context
+- [`matrixZero`](matrix-construction.md#entry-presentation_wasm_api_session_matrix_zero) — Default context
+- [`max`](elementary-functions.md#entry-presentation_wasm_api_session_max) — Default context
+- [`meijerG`](special-functions.md#entry-presentation_wasm_api_session_meijer_g) — Default context
+- [`memberAssumption`](assumptions.md#entry-presentation_wasm_api_session_member_assumption) — Default context
+- [`min`](elementary-functions.md#entry-presentation_wasm_api_session_min) — Default context
+- [`minimalPolynomialOf`](solving.md#entry-presentation_wasm_api_session_minimal_polynomial_of) — Default context
+- [`minimizeLogical`](logical-transforms.md#entry-presentation_wasm_api_session_minimize_logical) — Default context
+- [`mobius`](number-theory.md#entry-presentation_wasm_api_session_mobius) — Default context
+- [`modularInverse`](number-theory.md#entry-presentation_wasm_api_session_modular_inverse) — Default context
+- [`modularPower`](number-theory.md#entry-presentation_wasm_api_session_modular_power) — Default context
+- [`moment`](statistics.md#entry-presentation_wasm_api_session_moment) — Default context
+- [`momentGeneratingFunction`](statistics.md#entry-presentation_wasm_api_session_moment_generating_function) — Default context
+- [`multinomial`](combinatorics.md#entry-presentation_wasm_api_session_multinomial) — Default context
+- [`multiply`](expressions.md#entry-presentation_wasm_api_session_multiply) — Expression method
+- [`naturalAssumption`](assumptions.md#entry-presentation_wasm_api_session_natural_assumption) — Default context
+- [`negativeAssumption`](assumptions.md#entry-presentation_wasm_api_session_negative_assumption) — Default context
+- [`nonnegativeAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonnegative_assumption) — Default context
+- [`nonpositiveAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonpositive_assumption) — Default context
+- [`nonzeroAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonzero_assumption) — Default context
+- [`normalMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_normal_matrix) — Default context
+- [`notEqual`](relations.md#entry-presentation_wasm_api_session_not_equal) — Default context
+- [`notEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_not_equal_assumption) — Default context
+- [`numerator`](expressions.md#entry-presentation_wasm_api_session_numerator) — Default context
+- [`numeratorDenominator`](expressions.md#entry-presentation_wasm_api_session_numerator_denominator) — Default context
+- [`oddAssumption`](assumptions.md#entry-presentation_wasm_api_session_odd_assumption) — Default context
+- [`orthogonalMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_orthogonal_matrix) — Default context
+- [`parallelismCapability`](context-safety.md#entry-presentation_wasm_api_session_parallelism_capability) — Default context
+- [`parse`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse) — Default context
+- [`parseLatex`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse_latex) — Default context
+- [`parseLatexWithEnvironment`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse_latex_with_environment) — Default context
+- [`parseSerializedObject`](serialization-and-output.md#entry-presentation_wasm_api_session_parse_serialized_object) — Default context
+- [`partialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_partial_differential_equation) — Default context
+- [`partialDifferentialEquationArbitraryFunction`](partial-differential-equations.md#entry-presentation_wasm_api_session_partial_differential_equation_arbitrary_function) — Explicit context
+- [`partialDifferentialEquationPointSymmetryGenerator`](partial-differential-equations.md#entry-presentation_wasm_api_session_partial_differential_equation_point_symmetry_generator) — Default context
+- [`partialFractions`](algebraic-transforms.md#entry-presentation_wasm_api_session_partial_fractions) — Default context
+- [`partitionCount`](combinatorics.md#entry-presentation_wasm_api_session_partition_count) — Default context
+- [`pellSolutions`](number-theory.md#entry-presentation_wasm_api_session_pell_solutions) — Default context
+- [`pi`](evaluation-and-constants.md#entry-presentation_wasm_api_session_pi) — Default context
+- [`piecewise`](deferred-forms.md#entry-presentation_wasm_api_session_piecewise) — Default context
+- [`piecewiseFold`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_piecewise_fold) — Default context
+- [`point2d`](geometry.md#entry-presentation_wasm_api_session_point_2d) — Explicit context
+- [`poleOrder`](series.md#entry-presentation_wasm_api_session_pole_order) — Default context
+- [`polygamma`](special-functions.md#entry-presentation_wasm_api_session_polygamma) — Default context
+- [`polygon2d`](geometry.md#entry-presentation_wasm_api_session_polygon_2d) — Explicit context
+- [`polylogarithm`](special-functions.md#entry-presentation_wasm_api_session_polylogarithm) — Default context
+- [`polynomialGcd`](polynomials.md#entry-presentation_wasm_api_session_polynomial_gcd) — Default context
+- [`polynomialRoot`](solving.md#entry-presentation_wasm_api_session_polynomial_root) — Default context
+- [`positiveAssumption`](assumptions.md#entry-presentation_wasm_api_session_positive_assumption) — Default context
+- [`positiveDefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_positive_definite_matrix) — Default context
+- [`positiveIntegerAssumption`](assumptions.md#entry-presentation_wasm_api_session_positive_integer_assumption) — Default context
+- [`positiveSemidefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_positive_semidefinite_matrix) — Default context
+- [`power`](expressions.md#entry-presentation_wasm_api_session_power) — Expression method
+- [`presentationNormalForm`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_presentation_normal_form) — Default context
+- [`primeAssumption`](assumptions.md#entry-presentation_wasm_api_session_prime_assumption) — Default context
+- [`probability`](statistics.md#entry-presentation_wasm_api_session_probability) — Default context
+- [`product`](deferred-forms.md#entry-presentation_wasm_api_session_product) — Default context
+- [`productIndefinite`](deferred-forms.md#entry-presentation_wasm_api_session_product_indefinite) — Default context
+- [`randomVariable`](statistics.md#entry-presentation_wasm_api_session_random_variable) — Default context
+- [`rational`](construction-and-parsing.md#entry-presentation_wasm_api_session_rational) — Default context
+- [`rationalAssumption`](assumptions.md#entry-presentation_wasm_api_session_rational_assumption) — Default context
+- [`rationalFromFloat`](construction-and-parsing.md#entry-presentation_wasm_api_session_rational_from_float) — Default context
+- [`rationalizeDenominator`](algebraic-transforms.md#entry-presentation_wasm_api_session_rationalize_denominator) — Default context
+- [`realAssumption`](assumptions.md#entry-presentation_wasm_api_session_real_assumption) — Default context
+- [`realEntries`](linear-algebra.md#entry-presentation_wasm_api_session_real_entries) — Default context
+- [`realLine`](sets.md#entry-presentation_wasm_api_session_real_line) — Default context
+- [`realPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_real_part) — Default context
+- [`realRootCount`](solving.md#entry-presentation_wasm_api_session_real_root_count) — Default context
+- [`realRootSign`](solving.md#entry-presentation_wasm_api_session_real_root_sign) — Default context
+- [`refine`](assumptions.md#entry-presentation_wasm_api_session_refine) — Default context
+- [`resetContext`](construction-and-parsing.md#entry-presentation_wasm_api_session_reset_context) — Explicit context
+- [`residue`](series.md#entry-presentation_wasm_api_session_residue) — Default context
+- [`resultant`](polynomials.md#entry-presentation_wasm_api_session_resultant) — Default context
+- [`rewriteAsExponential`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_as_exponential) — Default context
+- [`rewriteAsTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_as_trigonometric) — Default context
+- [`rewriteInTermsOf`](expressions.md#entry-presentation_wasm_api_session_rewrite_in_terms_of) — Default context
+- [`rewriteSpecialFunctions`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_rewrite_special_functions) — Default context
+- [`rewriteTrigonometricBasis`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_trigonometric_basis) — Default context
+- [`risingFactorial`](combinatorics.md#entry-presentation_wasm_api_session_rising_factorial) — Default context
+- [`root`](elementary-functions.md#entry-presentation_wasm_api_session_root) — Default context
+- [`rootsWithMultiplicities`](solving.md#entry-presentation_wasm_api_session_roots_with_multiplicities) — Default context
+- [`sec`](elementary-functions.md#entry-presentation_wasm_api_session_sec) — Default context
+- [`sech`](elementary-functions.md#entry-presentation_wasm_api_session_sech) — Default context
+- [`segment2d`](geometry.md#entry-presentation_wasm_api_session_segment_2d) — Explicit context
+- [`separatePartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_separate_partial_differential_equation) — Default context
+- [`serializeBulk`](context-safety.md#entry-presentation_wasm_api_session_serialize_bulk) — Default context
+- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_api_session_serialize_object) — Expression method
+- [`setComplement`](sets.md#entry-presentation_wasm_api_session_set_complement) — Default context
+- [`setExecutionMode`](context-safety.md#entry-presentation_wasm_api_session_set_execution_mode) — Default context
+- [`setIntersection`](sets.md#entry-presentation_wasm_api_session_set_intersection) — Default context
+- [`setUnion`](sets.md#entry-presentation_wasm_api_session_set_union) — Default context
+- [`simplify`](simplification-general.md#entry-presentation_wasm_api_session_simplify) — Default context
+- [`simplifyBulk`](context-safety.md#entry-presentation_wasm_api_session_simplify_bulk) — Default context
+- [`simplifyLogical`](logical-transforms.md#entry-presentation_wasm_api_session_simplify_logical) — Default context
+- [`simplifyTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_simplify_trigonometric) — Default context
+- [`simplifyUnderConstraint`](simplification-general.md#entry-presentation_wasm_api_session_simplify_under_constraint) — Default context
+- [`sin`](elementary-functions.md#entry-presentation_wasm_api_session_sin) — Default context
+- [`singularities`](calculus.md#entry-presentation_wasm_api_session_singularities) — Default context
+- [`singularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_singular_matrix) — Default context
+- [`sinh`](elementary-functions.md#entry-presentation_wasm_api_session_sinh) — Default context
+- [`solve`](solving.md#entry-presentation_wasm_api_session_solve) — Default context
+- [`solveLinearDiophantine`](number-theory.md#entry-presentation_wasm_api_session_solve_linear_diophantine) — Default context
+- [`solveLinearDiophantineSystem`](number-theory.md#entry-presentation_wasm_api_session_solve_linear_diophantine_system) — Default context
+- [`solveLinearRecurrence`](recurrence-equations.md#entry-presentation_wasm_api_session_solve_linear_recurrence) — Default context
+- [`solveNegativePell`](number-theory.md#entry-presentation_wasm_api_session_solve_negative_pell) — Default context
+- [`solveOrdinaryDifferentialEquation`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation) — Default context
+- [`solveOrdinaryDifferentialEquationRequest`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_request) — Default context
+- [`solveOrdinaryDifferentialEquationSystemRequest`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_system_request) — Default context
+- [`solveOrdinaryDifferentialEquationWithHistory`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_with_history) — Default context
+- [`solveOrdinaryDifferentialEquationWithParticularSolution`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_with_particular_solution) — Default context
+- [`solvePartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation) — Default context
+- [`solvePartialDifferentialEquationBySimilarityReduction`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation_by_similarity_reduction) — Default context
+- [`solvePartialDifferentialEquationRequest`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation_request) — Default context
+- [`solvePartialDifferentialEquationWithTransformAxisSpecifications`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation_with_transform_axis_specifications) — Default context
+- [`solvePell`](number-theory.md#entry-presentation_wasm_api_session_solve_pell) — Default context
+- [`solvePolynomialSystem`](solving.md#entry-presentation_wasm_api_session_solve_polynomial_system) — Default context
+- [`solveSemialgebraic`](solving.md#entry-presentation_wasm_api_session_solve_semialgebraic) — Default context
+- [`solveset`](solving.md#entry-presentation_wasm_api_session_solveset) — Default context
+- [`solvesetInDomain`](solving.md#entry-presentation_wasm_api_session_solveset_in_domain) — Default context
+- [`sqrt`](elementary-functions.md#entry-presentation_wasm_api_session_sqrt) — Default context
+- [`squareMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_square_matrix) — Default context
+- [`stirlingFirstSigned`](combinatorics.md#entry-presentation_wasm_api_session_stirling_first_signed) — Default context
+- [`stirlingSecond`](combinatorics.md#entry-presentation_wasm_api_session_stirling_second) — Default context
+- [`substitute`](expressions.md#entry-presentation_wasm_api_session_substitute) — Expression method
+- [`substituteBulk`](context-safety.md#entry-presentation_wasm_api_session_substitute_bulk) — Default context
+- [`subtract`](expressions.md#entry-presentation_wasm_api_session_subtract) — Expression method
+- [`summation`](deferred-forms.md#entry-presentation_wasm_api_session_summation) — Default context
+- [`summationIndefinite`](deferred-forms.md#entry-presentation_wasm_api_session_summation_indefinite) — Default context
+- [`symbol`](construction-and-parsing.md#entry-presentation_wasm_api_session_symbol) — Default context
+- [`symmetricMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_symmetric_matrix) — Default context
+- [`tan`](elementary-functions.md#entry-presentation_wasm_api_session_tan) — Default context
+- [`tanh`](elementary-functions.md#entry-presentation_wasm_api_session_tanh) — Default context
+- [`taylorSeries`](series.md#entry-presentation_wasm_api_session_taylor_series) — Default context
+- [`together`](simplification-general.md#entry-presentation_wasm_api_session_together) — Default context
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+- [`toLatexWithOptions`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex_with_options) — Default context
+- [`transcendentalAssumption`](assumptions.md#entry-presentation_wasm_api_session_transcendental_assumption) — Default context
+- [`triangle2d`](geometry.md#entry-presentation_wasm_api_session_triangle_2d) — Explicit context
+- [`ultrasphericalPolynomial`](special-functions.md#entry-presentation_wasm_api_session_ultraspherical_polynomial) — Default context
+- [`unconstrainedCriticalPoints`](optimization.md#entry-presentation_wasm_api_session_unconstrained_critical_points) — Default context
+- [`undefinedFunction`](undefined-functions.md#entry-presentation_wasm_api_session_undefined_function) — Explicit context
+- [`unitaryMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_unitary_matrix) — Default context
+- [`upperTriangularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_upper_triangular_matrix) — Default context
+- [`variance`](statistics.md#entry-presentation_wasm_api_session_variance) — Default context
+- [`verifyOrdinaryDifferentialEquationSystemSolution`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_verify_ordinary_differential_equation_system_solution) — Default context
+- [`verifyPartialDifferentialEquationCoordinateTransformation`](partial-differential-equations.md#entry-presentation_wasm_api_session_verify_partial_differential_equation_coordinate_transformation) — Default context
+- [`verifyPartialDifferentialEquationSolution`](partial-differential-equations.md#entry-presentation_wasm_api_session_verify_partial_differential_equation_solution) — Default context
+- [`zeroAssumption`](assumptions.md#entry-presentation_wasm_api_session_zero_assumption) — Default context
+- [`zeroEquivalent`](zero-equivalence.md#entry-presentation_wasm_api_session_zero_equivalent) — Default context
+- [`zeroMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_zero_matrix) — Default context
+- [`zeta`](special-functions.md#entry-presentation_wasm_api_session_zeta) — Default context
+
+## SetEnumeration
+
+- [`SetEnumeration.elements`](sets.md#entry-presentation_wasm_api_setenumeration_elements) — SetEnumeration property
+- [`SetEnumeration.outcome`](sets.md#entry-presentation_wasm_api_setenumeration_outcome) — SetEnumeration property
+
+## SmithNormalFormDecomposition
+
+- [`SmithNormalFormDecomposition.columnTransformation`](matrix-canonical-forms.md#entry-presentation_wasm_api_smithnormalformdecomposition_column_transformation) — SmithNormalFormDecomposition property
+- [`SmithNormalFormDecomposition.invariantFactors`](matrix-canonical-forms.md#entry-presentation_wasm_api_smithnormalformdecomposition_invariant_factors) — SmithNormalFormDecomposition property
+- [`SmithNormalFormDecomposition.rank`](matrix-canonical-forms.md#entry-presentation_wasm_api_smithnormalformdecomposition_rank) — SmithNormalFormDecomposition property
+- [`SmithNormalFormDecomposition.rowTransformation`](matrix-canonical-forms.md#entry-presentation_wasm_api_smithnormalformdecomposition_row_transformation) — SmithNormalFormDecomposition property
+- [`SmithNormalFormDecomposition.smith`](matrix-canonical-forms.md#entry-presentation_wasm_api_smithnormalformdecomposition_smith) — SmithNormalFormDecomposition property
+
+## SymiError
+
+- [`SymiError.category`](diagnostics.md#entry-presentation_wasm_host_wasm_symierror_category) — SymiError property
+- [`SymiError.code`](diagnostics.md#entry-presentation_wasm_host_wasm_symierror_code) — SymiError property
+- [`SymiError.expected`](diagnostics.md#entry-presentation_wasm_host_wasm_symierror_expected) — SymiError property
+- [`SymiError.hint`](diagnostics.md#entry-presentation_wasm_host_wasm_symierror_hint) — SymiError property
+- [`SymiError.operation`](diagnostics.md#entry-presentation_wasm_host_wasm_symierror_operation) — SymiError property
+- [`SymiError.parameterPath`](diagnostics.md#entry-presentation_wasm_host_wasm_symierror_parameterpath) — SymiError property
+- [`SymiError.received`](diagnostics.md#entry-presentation_wasm_host_wasm_symierror_received) — SymiError property
+
+## SymiFacade
+
+- [`absoluteValue`](elementary-functions.md#entry-presentation_wasm_api_session_absolute_value) — Explicit context
+- [`addAssumptions`](assumptions.md#entry-presentation_wasm_api_session_add_assumptions) — Default context
+- [`algebraicAssumption`](assumptions.md#entry-presentation_wasm_api_session_algebraic_assumption) — Default context
+- [`ask`](assumptions.md#entry-presentation_wasm_api_session_ask) — Default context
+- [`assuming`](assumptions.md#entry-presentation_wasm_api_session_assuming) — Default context
+- [`AssumptionProposition.congruenceModulus`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_congruence_modulus) — Default context
+- [`AssumptionProposition.leftOperand`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_left_operand) — Default context
+- [`AssumptionProposition.membershipElement`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_membership_element) — Default context
+- [`AssumptionProposition.membershipSet`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_membership_set) — Default context
+- [`AssumptionProposition.relationKind`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_relation_kind) — Default context
+- [`AssumptionProposition.rightOperand`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_right_operand) — Default context
+- [`AssumptionProposition.serialize`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_serialize) — Default context
+- [`assumptionPropositionFromLogicalExpression`](assumptions.md#entry-presentation_wasm_api_session_assumption_proposition_from_logical_expression) — Default context
+- [`assumptionsOf`](default-context.md#entry-presentation_wasm_api_session_assumptions_of) — Default context
+- [`clearAllAssumptions`](assumptions.md#entry-presentation_wasm_api_session_clear_all_assumptions) — Default context
+- [`complexAssumption`](assumptions.md#entry-presentation_wasm_api_session_complex_assumption) — Default context
+- [`complexEntries`](linear-algebra.md#entry-presentation_wasm_api_session_complex_entries) — Default context
+- [`complexPlane`](sets.md#entry-presentation_wasm_api_session_complex_plane) — Default context
+- [`compositeAssumption`](assumptions.md#entry-presentation_wasm_api_session_composite_assumption) — Default context
+- [`congruentAssumption`](assumptions.md#entry-presentation_wasm_api_session_congruent_assumption) — Default context
+- [`Context`](polynomials.md#entry-presentation_wasm_host_wasm_symifacade_context) — SymiFacade property
+- [`cos`](elementary-functions.md#entry-presentation_wasm_api_session_cos) — Default context
+- [`couldHold`](assumptions.md#entry-presentation_wasm_api_session_could_hold) — Default context
+- [`defaultContext`](default-context.md#entry-presentation_wasm_api_session_default_context) — Default context
+- [`definedAssumption`](assumptions.md#entry-presentation_wasm_api_session_defined_assumption) — Default context
+- [`deserializeAssumptionProposition`](assumptions.md#entry-presentation_wasm_api_session_deserialize_assumption_proposition) — Default context
+- [`diagonalMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_diagonal_matrix) — Default context
+- [`differentiate`](calculus.md#entry-presentation_wasm_api_session_differentiate) — Default context
+- [`e`](evaluation-and-constants.md#entry-presentation_wasm_api_session_e) — Default context
+- [`eliminateDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_eliminate_derived_logical_connectives) — Default context
+- [`emptySet`](sets.md#entry-presentation_wasm_api_session_empty_set) — Default context
+- [`equalAssumption`](assumptions.md#entry-presentation_wasm_api_session_equal_assumption) — Default context
+- [`eulerGamma`](evaluation-and-constants.md#entry-presentation_wasm_api_session_euler_gamma) — Default context
+- [`evaluateTruth`](logic.md#entry-presentation_wasm_api_session_evaluate_truth) — Default context
+- [`evenAssumption`](assumptions.md#entry-presentation_wasm_api_session_even_assumption) — Default context
+- [`execute`](calculus.md#entry-presentation_wasm_api_session_execute) — Default context
+- [`exp`](elementary-functions.md#entry-presentation_wasm_api_session_exp) — Default context
+- [`Expression`](polynomials.md#entry-presentation_wasm_host_wasm_symifacade_expression) — SymiFacade property
+- [`extendedRealAssumption`](assumptions.md#entry-presentation_wasm_api_session_extended_real_assumption) — Default context
+- [`finiteAssumption`](assumptions.md#entry-presentation_wasm_api_session_finite_assumption) — Default context
+- [`finiteSet`](sets.md#entry-presentation_wasm_api_session_finite_set) — Default context
+- [`fullRankMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_full_rank_matrix) — Default context
+- [`greaterAssumption`](assumptions.md#entry-presentation_wasm_api_session_greater_assumption) — Default context
+- [`greaterOrEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_greater_or_equal_assumption) — Default context
+- [`hermitianMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_hermitian_matrix) — Default context
+- [`identityMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_identity_matrix) — Default context
+- [`imaginaryPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_imaginary_part) — Default context
+- [`imaginaryUnit`](evaluation-and-constants.md#entry-presentation_wasm_api_session_imaginary_unit) — Default context
+- [`infiniteAssumption`](assumptions.md#entry-presentation_wasm_api_session_infinite_assumption) — Default context
+- [`infinity`](evaluation-and-constants.md#entry-presentation_wasm_api_session_infinity) — Default context
+- [`integer`](construction-and-parsing.md#entry-presentation_wasm_api_session_integer) — Default context
+- [`integerAssumption`](assumptions.md#entry-presentation_wasm_api_session_integer_assumption) — Default context
+- [`integerEntries`](linear-algebra.md#entry-presentation_wasm_api_session_integer_entries) — Default context
+- [`integerSet`](sets.md#entry-presentation_wasm_api_session_integer_set) — Default context
+- [`integrate`](calculus.md#entry-presentation_wasm_api_session_integrate) — Default context
+- [`introduceDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_introduce_derived_logical_connectives) — Default context
+- [`invertibleMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_invertible_matrix) — Default context
+- [`irrationalAssumption`](assumptions.md#entry-presentation_wasm_api_session_irrational_assumption) — Default context
+- [`lessAssumption`](assumptions.md#entry-presentation_wasm_api_session_less_assumption) — Default context
+- [`lessOrEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_less_or_equal_assumption) — Default context
+- [`lessThan`](relations.md#entry-presentation_wasm_api_session_less_than) — Default context
+- [`logicalFalse`](logic.md#entry-presentation_wasm_api_session_logical_false) — Default context
+- [`logicalTrue`](logic.md#entry-presentation_wasm_api_session_logical_true) — Default context
+- [`lowerTriangularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_lower_triangular_matrix) — Default context
+- [`matrix`](matrix-construction.md#entry-presentation_wasm_api_session_matrix) — Explicit context
+- [`Matrix`](polynomials.md#entry-presentation_wasm_host_wasm_symifacade_matrix) — SymiFacade property
+- [`matrixShape`](linear-algebra.md#entry-presentation_wasm_api_session_matrix_shape) — Default context
+- [`memberAssumption`](assumptions.md#entry-presentation_wasm_api_session_member_assumption) — Default context
+- [`naturalAssumption`](assumptions.md#entry-presentation_wasm_api_session_natural_assumption) — Default context
+- [`negativeAssumption`](assumptions.md#entry-presentation_wasm_api_session_negative_assumption) — Default context
+- [`nonnegativeAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonnegative_assumption) — Default context
+- [`nonpositiveAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonpositive_assumption) — Default context
+- [`nonzeroAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonzero_assumption) — Default context
+- [`normalMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_normal_matrix) — Default context
+- [`notEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_not_equal_assumption) — Default context
+- [`numeratorDenominator`](expressions.md#entry-presentation_wasm_api_session_numerator_denominator) — Default context
+- [`oddAssumption`](assumptions.md#entry-presentation_wasm_api_session_odd_assumption) — Default context
+- [`orthogonalMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_orthogonal_matrix) — Default context
+- [`parse`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse) — Default context
+- [`pi`](evaluation-and-constants.md#entry-presentation_wasm_api_session_pi) — Default context
+- [`piecewise`](deferred-forms.md#entry-presentation_wasm_api_session_piecewise) — Default context
+- [`positiveAssumption`](assumptions.md#entry-presentation_wasm_api_session_positive_assumption) — Default context
+- [`positiveDefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_positive_definite_matrix) — Default context
+- [`positiveIntegerAssumption`](assumptions.md#entry-presentation_wasm_api_session_positive_integer_assumption) — Default context
+- [`positiveSemidefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_positive_semidefinite_matrix) — Default context
+- [`primeAssumption`](assumptions.md#entry-presentation_wasm_api_session_prime_assumption) — Default context
+- [`rational`](construction-and-parsing.md#entry-presentation_wasm_api_session_rational) — Default context
+- [`rationalAssumption`](assumptions.md#entry-presentation_wasm_api_session_rational_assumption) — Default context
+- [`raw`](polynomials.md#entry-presentation_wasm_host_wasm_symifacade_raw) — SymiFacade property
+- [`realAssumption`](assumptions.md#entry-presentation_wasm_api_session_real_assumption) — Default context
+- [`realEntries`](linear-algebra.md#entry-presentation_wasm_api_session_real_entries) — Default context
+- [`realLine`](sets.md#entry-presentation_wasm_api_session_real_line) — Default context
+- [`realPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_real_part) — Default context
+- [`refine`](assumptions.md#entry-presentation_wasm_api_session_refine) — Default context
+- [`simplifyLogical`](logical-transforms.md#entry-presentation_wasm_api_session_simplify_logical) — Default context
+- [`sin`](elementary-functions.md#entry-presentation_wasm_api_session_sin) — Default context
+- [`singularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_singular_matrix) — Default context
+- [`sqrt`](elementary-functions.md#entry-presentation_wasm_api_session_sqrt) — Default context
+- [`squareMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_square_matrix) — Default context
+- [`symbol`](construction-and-parsing.md#entry-presentation_wasm_api_session_symbol) — Default context
+- [`symmetricMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_symmetric_matrix) — Default context
+- [`together`](simplification-general.md#entry-presentation_wasm_api_session_together) — Default context
+- [`transcendentalAssumption`](assumptions.md#entry-presentation_wasm_api_session_transcendental_assumption) — Default context
+- [`unitaryMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_unitary_matrix) — Default context
+- [`upperTriangularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_upper_triangular_matrix) — Default context
+- [`zeroAssumption`](assumptions.md#entry-presentation_wasm_api_session_zero_assumption) — Default context
+- [`zeroEquivalent`](zero-equivalence.md#entry-presentation_wasm_api_session_zero_equivalent) — Default context
+- [`zeroMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_zero_matrix) — Default context
+
+## SystemAssignment
+
+- [`SystemAssignment.values`](solving.md#entry-presentation_wasm_api_systemassignment_values) — SystemAssignment property
+- [`SystemAssignment.variables`](solving.md#entry-presentation_wasm_api_systemassignment_variables) — SystemAssignment property
+
+## Triangle2d
+
+- [`Point2d.intersection`](geometry.md#entry-presentation_wasm_api_point2d_intersection) — Point2d method
+- [`Polygon2d.area`](geometry.md#entry-presentation_wasm_api_polygon2d_area) — Polygon2d method
+- [`Polygon2d.centroid`](geometry.md#entry-presentation_wasm_api_polygon2d_centroid) — Polygon2d method
+- [`Polygon2d.interiorAngles`](geometry.md#entry-presentation_wasm_api_polygon2d_interior_angles) — Polygon2d method
+- [`Polygon2d.perimeter`](geometry.md#entry-presentation_wasm_api_polygon2d_perimeter) — Polygon2d method
+- [`serializeObject`](serialization-and-output.md#entry-presentation_wasm_api_session_serialize_object) — Expression method
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+- [`Triangle2d`](geometry.md#entry-presentation_wasm_api_triangle2d) — Triangle2d constructor
+- [`Triangle2d.toString`](geometry.md#entry-presentation_wasm_host_wasm_triangle2d_tostring) — Triangle2d method
+
+## UndefinedFunction
+
+- [`UndefinedFunction.call`](undefined-functions.md#entry-presentation_wasm_api_undefinedfunction_call) — UndefinedFunction method
+- [`UndefinedFunction.derivative`](undefined-functions.md#entry-presentation_wasm_api_undefinedfunction_derivative) — UndefinedFunction method
+- [`UndefinedFunction.toString`](undefined-functions.md#entry-presentation_wasm_host_wasm_undefinedfunction_tostring) — UndefinedFunction method
+
+## VertexAngle
+
+- [`VertexAngle.angle`](geometry.md#entry-presentation_wasm_api_vertexangle_angle) — VertexAngle property
+- [`VertexAngle.vertex`](geometry.md#entry-presentation_wasm_api_vertexangle_vertex) — VertexAngle property
+
+## module
+
+- [`abs`](elementary-functions.md#entry-presentation_wasm_api_session_abs) — Default context
+- [`addAssumptions`](assumptions.md#entry-presentation_wasm_api_session_add_assumptions) — Default context
+- [`algebraicAssumption`](assumptions.md#entry-presentation_wasm_api_session_algebraic_assumption) — Default context
+- [`arccos`](elementary-functions.md#entry-presentation_wasm_api_session_arccos) — Default context
+- [`arccosh`](elementary-functions.md#entry-presentation_wasm_api_session_arccosh) — Default context
+- [`arccot`](elementary-functions.md#entry-presentation_wasm_api_session_arccot) — Default context
+- [`arccoth`](elementary-functions.md#entry-presentation_wasm_api_session_arccoth) — Default context
+- [`arccsc`](elementary-functions.md#entry-presentation_wasm_api_session_arccsc) — Default context
+- [`arccsch`](elementary-functions.md#entry-presentation_wasm_api_session_arccsch) — Default context
+- [`arcsec`](elementary-functions.md#entry-presentation_wasm_api_session_arcsec) — Default context
+- [`arcsech`](elementary-functions.md#entry-presentation_wasm_api_session_arcsech) — Default context
+- [`arcsin`](elementary-functions.md#entry-presentation_wasm_api_session_arcsin) — Default context
+- [`arcsinh`](elementary-functions.md#entry-presentation_wasm_api_session_arcsinh) — Default context
+- [`arctan`](elementary-functions.md#entry-presentation_wasm_api_session_arctan) — Default context
+- [`arctanh`](elementary-functions.md#entry-presentation_wasm_api_session_arctanh) — Default context
+- [`ask`](assumptions.md#entry-presentation_wasm_api_session_ask) — Default context
+- [`assuming`](assumptions.md#entry-presentation_wasm_api_session_assuming) — Default context
+- [`AssumptionProposition`](assumptions.md#entry-presentation_wasm_api_assumptionproposition) — Type
+- [`AssumptionProposition.congruenceModulus`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_congruence_modulus) — Default context
+- [`AssumptionProposition.leftOperand`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_left_operand) — Default context
+- [`AssumptionProposition.membershipElement`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_membership_element) — Default context
+- [`AssumptionProposition.membershipSet`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_membership_set) — Default context
+- [`AssumptionProposition.relationKind`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_relation_kind) — Default context
+- [`AssumptionProposition.rightOperand`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_right_operand) — Default context
+- [`AssumptionProposition.serialize`](assumptions.md#entry-presentation_wasm_api_assumptionproposition_serialize) — Default context
+- [`assumptionPropositionFromLogicalExpression`](assumptions.md#entry-presentation_wasm_api_session_assumption_proposition_from_logical_expression) — Default context
+- [`AssumptionScope`](assumptions.md#entry-presentation_wasm_api_assumptionscope) — Type
+- [`assumptionsOf`](default-context.md#entry-presentation_wasm_api_session_assumptions_of) — Default context
+- [`bellNumber`](combinatorics.md#entry-presentation_wasm_api_session_bell_number) — Default context
+- [`beta`](special-functions.md#entry-presentation_wasm_api_session_beta) — Default context
+- [`binomial`](elementary-functions.md#entry-presentation_wasm_api_session_binomial) — Default context
+- [`cancel`](simplification-general.md#entry-presentation_wasm_api_session_cancel) — Default context
+- [`canonicalizePartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_canonicalize_partial_differential_equation) — Default context
+- [`carlsonRc`](special-functions.md#entry-presentation_wasm_api_session_carlson_rc) — Default context
+- [`carlsonRd`](special-functions.md#entry-presentation_wasm_api_session_carlson_rd) — Default context
+- [`carlsonRf`](special-functions.md#entry-presentation_wasm_api_session_carlson_rf) — Default context
+- [`carlsonRj`](special-functions.md#entry-presentation_wasm_api_session_carlson_rj) — Default context
+- [`catalanNumber`](combinatorics.md#entry-presentation_wasm_api_session_catalan_number) — Default context
+- [`ceiling`](elementary-functions.md#entry-presentation_wasm_api_session_ceiling) — Default context
+- [`changeMonomialOrder`](polynomials.md#entry-presentation_wasm_api_session_change_monomial_order) — Default context
+- [`changePartialDifferentialEquationVariables`](partial-differential-equations.md#entry-presentation_wasm_api_session_change_partial_differential_equation_variables) — Default context
+- [`characteristicFunction`](statistics.md#entry-presentation_wasm_api_session_characteristic_function) — Default context
+- [`chebyshevPolynomialFirstKind`](special-functions.md#entry-presentation_wasm_api_session_chebyshev_polynomial_first_kind) — Default context
+- [`chebyshevPolynomialSecondKind`](special-functions.md#entry-presentation_wasm_api_session_chebyshev_polynomial_second_kind) — Default context
+- [`chineseRemainder`](number-theory.md#entry-presentation_wasm_api_session_chinese_remainder) — Default context
+- [`classifyPartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_classify_partial_differential_equation) — Default context
+- [`classifySecondOrderPartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_classify_second_order_partial_differential_equation) — Default context
+- [`classifyUnconstrained`](optimization.md#entry-presentation_wasm_api_session_classify_unconstrained) — Default context
+- [`clearAllAssumptions`](assumptions.md#entry-presentation_wasm_api_session_clear_all_assumptions) — Default context
+- [`clearAssumptions`](default-context.md#entry-presentation_wasm_api_session_clear_assumptions) — Default context
+- [`coefficient`](polynomials.md#entry-presentation_wasm_api_session_coefficient) — Default context
+- [`collect`](algebraic-transforms.md#entry-presentation_wasm_api_session_collect) — Default context
+- [`collectRadicals`](algebraic-transforms.md#entry-presentation_wasm_api_session_collect_radicals) — Default context
+- [`combineLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_logarithm) — Default context
+- [`combinePowers`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_powers) — Default context
+- [`combineTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_combine_trigonometric) — Default context
+- [`compareRealRoots`](solving.md#entry-presentation_wasm_api_session_compare_real_roots) — Default context
+- [`completeTheSquare`](algebraic-transforms.md#entry-presentation_wasm_api_session_complete_the_square) — Default context
+- [`complexAssumption`](assumptions.md#entry-presentation_wasm_api_session_complex_assumption) — Default context
+- [`complexEntries`](linear-algebra.md#entry-presentation_wasm_api_session_complex_entries) — Default context
+- [`complexPlane`](sets.md#entry-presentation_wasm_api_session_complex_plane) — Default context
+- [`compositeAssumption`](assumptions.md#entry-presentation_wasm_api_session_composite_assumption) — Default context
+- [`conditionSet`](sets.md#entry-presentation_wasm_api_session_condition_set) — Default context
+- [`congruentAssumption`](assumptions.md#entry-presentation_wasm_api_session_congruent_assumption) — Default context
+- [`conjugate`](elementary-functions.md#entry-presentation_wasm_api_session_conjugate) — Default context
+- [`conjunctiveNormalForm`](logical-transforms.md#entry-presentation_wasm_api_session_conjunctive_normal_form) — Default context
+- [`constructPartialDifferentialEquationPointSymmetryAction`](partial-differential-equations.md#entry-presentation_wasm_api_session_construct_partial_differential_equation_point_symmetry_action) — Default context
+- [`Context`](object-model.md#entry-presentation_wasm_api_session) — Type
+- [`continuedFractionQuadraticIrrational`](number-theory.md#entry-presentation_wasm_api_session_continued_fraction_quadratic_irrational) — Default context
+- [`continuedFractionRational`](number-theory.md#entry-presentation_wasm_api_session_continued_fraction_rational) — Default context
+- [`continuousDomain`](calculus.md#entry-presentation_wasm_api_session_continuous_domain) — Default context
+- [`cos`](elementary-functions.md#entry-presentation_wasm_api_session_cos) — Default context
+- [`cosh`](elementary-functions.md#entry-presentation_wasm_api_session_cosh) — Default context
+- [`cot`](elementary-functions.md#entry-presentation_wasm_api_session_cot) — Default context
+- [`coth`](elementary-functions.md#entry-presentation_wasm_api_session_coth) — Default context
+- [`couldHold`](assumptions.md#entry-presentation_wasm_api_session_could_hold) — Default context
+- [`countDistinctRealRoots`](solving.md#entry-presentation_wasm_api_session_count_distinct_real_roots) — Default context
+- [`covariance`](statistics.md#entry-presentation_wasm_api_session_covariance) — Default context
+- [`createFacade`](cad.md#entry-presentation_wasm_host_wasm_module_createfacade) — Default context
+- [`csc`](elementary-functions.md#entry-presentation_wasm_api_session_csc) — Default context
+- [`csch`](elementary-functions.md#entry-presentation_wasm_api_session_csch) — Default context
+- [`cumulant`](statistics.md#entry-presentation_wasm_api_session_cumulant) — Default context
+- [`cumulativeDistribution`](statistics.md#entry-presentation_wasm_api_session_cumulative_distribution) — Default context
+- [`curl`](vector-calculus.md#entry-presentation_wasm_api_session_curl) — Default context
+- [`defaultContext`](default-context.md#entry-presentation_wasm_api_session_default_context) — Default context
+- [`definedAssumption`](assumptions.md#entry-presentation_wasm_api_session_defined_assumption) — Default context
+- [`degree`](polynomials.md#entry-presentation_wasm_api_session_degree) — Default context
+- [`denestPowers`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_denest_powers) — Default context
+- [`denestRadicals`](algebraic-transforms.md#entry-presentation_wasm_api_session_denest_radicals) — Default context
+- [`denominator`](expressions.md#entry-presentation_wasm_api_session_denominator) — Default context
+- [`density`](statistics.md#entry-presentation_wasm_api_session_density) — Default context
+- [`derivative`](deferred-forms.md#entry-presentation_wasm_api_session_derivative) — Default context
+- [`derivePartialDifferentialEquationPointSymmetries`](partial-differential-equations.md#entry-presentation_wasm_api_session_derive_partial_differential_equation_point_symmetries) — Default context
+- [`deserializeAssumptionProposition`](assumptions.md#entry-presentation_wasm_api_session_deserialize_assumption_proposition) — Default context
+- [`diagonalMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_diagonal_matrix) — Default context
+- [`differentiate`](calculus.md#entry-presentation_wasm_api_session_differentiate) — Default context
+- [`differentiateBulk`](context-safety.md#entry-presentation_wasm_api_session_differentiate_bulk) — Default context
+- [`digamma`](special-functions.md#entry-presentation_wasm_api_session_digamma) — Default context
+- [`discoverPartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_discover_partial_differential_equation) — Default context
+- [`disjunctiveNormalForm`](logical-transforms.md#entry-presentation_wasm_api_session_disjunctive_normal_form) — Default context
+- [`distribution`](statistics.md#entry-presentation_wasm_api_session_distribution) — Default context
+- [`divergence`](vector-calculus.md#entry-presentation_wasm_api_session_divergence) — Default context
+- [`divisorCount`](number-theory.md#entry-presentation_wasm_api_session_divisor_count) — Default context
+- [`divisorSigma`](number-theory.md#entry-presentation_wasm_api_session_divisor_sigma) — Default context
+- [`e`](evaluation-and-constants.md#entry-presentation_wasm_api_session_e) — Default context
+- [`eliminateDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_eliminate_derived_logical_connectives) — Default context
+- [`eliminateQuantifiers`](solving.md#entry-presentation_wasm_api_session_eliminate_quantifiers) — Default context
+- [`eliminationIdeal`](polynomials.md#entry-presentation_wasm_api_session_elimination_ideal) — Default context
+- [`ellipticE`](special-functions.md#entry-presentation_wasm_api_session_elliptic_e) — Default context
+- [`ellipticEIncomplete`](special-functions.md#entry-presentation_wasm_api_session_elliptic_e_incomplete) — Default context
+- [`ellipticF`](special-functions.md#entry-presentation_wasm_api_session_elliptic_f) — Default context
+- [`ellipticK`](special-functions.md#entry-presentation_wasm_api_session_elliptic_k) — Default context
+- [`ellipticPi`](special-functions.md#entry-presentation_wasm_api_session_elliptic_pi) — Default context
+- [`ellipticPiIncomplete`](special-functions.md#entry-presentation_wasm_api_session_elliptic_pi_incomplete) — Default context
+- [`emptySet`](sets.md#entry-presentation_wasm_api_session_empty_set) — Default context
+- [`enumerateSetInInterval`](sets.md#entry-presentation_wasm_api_session_enumerate_set_in_interval) — Default context
+- [`equal`](relations.md#entry-presentation_wasm_api_session_equal) — Default context
+- [`equalAssumption`](assumptions.md#entry-presentation_wasm_api_session_equal_assumption) — Default context
+- [`eulerGamma`](evaluation-and-constants.md#entry-presentation_wasm_api_session_euler_gamma) — Default context
+- [`eulerTotient`](number-theory.md#entry-presentation_wasm_api_session_euler_totient) — Default context
+- [`evaluateLimit`](calculus.md#entry-presentation_wasm_api_session_evaluate_limit) — Default context
+- [`evaluateNumeric`](calculus.md#entry-presentation_wasm_api_session_evaluate_numeric) — Default context
+- [`evaluateNumericBulk`](context-safety.md#entry-presentation_wasm_api_session_evaluate_numeric_bulk) — Default context
+- [`evaluateOnGrid`](calculus.md#entry-presentation_wasm_api_session_evaluate_on_grid) — Default context
+- [`evaluateOnGridPoints`](calculus.md#entry-presentation_wasm_api_session_evaluate_on_grid_points) — Default context
+- [`evaluateTruth`](logic.md#entry-presentation_wasm_api_session_evaluate_truth) — Default context
+- [`evenAssumption`](assumptions.md#entry-presentation_wasm_api_session_even_assumption) — Default context
+- [`execute`](calculus.md#entry-presentation_wasm_api_session_execute) — Default context
+- [`executionMode`](context-safety.md#entry-presentation_wasm_api_session_execution_mode) — Default context
+- [`exp`](elementary-functions.md#entry-presentation_wasm_api_session_exp) — Default context
+- [`expand`](algebraic-transforms.md#entry-presentation_wasm_api_session_expand) — Default context
+- [`expandBulk`](context-safety.md#entry-presentation_wasm_api_session_expand_bulk) — Default context
+- [`expandComplex`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_complex) — Default context
+- [`expandLogarithm`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_logarithm) — Default context
+- [`expandPowerBase`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_power_base) — Default context
+- [`expandTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_expand_trigonometric) — Default context
+- [`expectation`](statistics.md#entry-presentation_wasm_api_session_expectation) — Default context
+- [`explicitPartialDifferentialEquationSolution`](partial-differential-equations.md#entry-presentation_wasm_api_session_explicit_partial_differential_equation_solution) — Default context
+- [`Expression`](expressions.md#entry-presentation_wasm_api_expression) — Type
+- [`extendedEuclidean`](number-theory.md#entry-presentation_wasm_api_session_extended_euclidean) — Default context
+- [`extendedRealAssumption`](assumptions.md#entry-presentation_wasm_api_session_extended_real_assumption) — Default context
+- [`factor`](algebraic-transforms.md#entry-presentation_wasm_api_session_factor) — Default context
+- [`factorCommonTerms`](algebraic-transforms.md#entry-presentation_wasm_api_session_factor_common_terms) — Default context
+- [`factorial`](elementary-functions.md#entry-presentation_wasm_api_session_factorial) — Default context
+- [`factorInteger`](number-theory.md#entry-presentation_wasm_api_session_factor_integer) — Default context
+- [`fallingFactorial`](combinatorics.md#entry-presentation_wasm_api_session_falling_factorial) — Default context
+- [`fibonacciNumber`](combinatorics.md#entry-presentation_wasm_api_session_fibonacci_number) — Default context
+- [`finiteAssumption`](assumptions.md#entry-presentation_wasm_api_session_finite_assumption) — Default context
+- [`finiteSet`](sets.md#entry-presentation_wasm_api_session_finite_set) — Default context
+- [`floor`](elementary-functions.md#entry-presentation_wasm_api_session_floor) — Default context
+- [`fourierTransform`](integral-transforms.md#entry-presentation_wasm_api_session_fourier_transform) — Default context
+- [`fullRankMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_full_rank_matrix) — Default context
+- [`gamma`](special-functions.md#entry-presentation_wasm_api_session_gamma) — Default context
+- [`gegenbauerPolynomial`](special-functions.md#entry-presentation_wasm_api_session_gegenbauer_polynomial) — Default context
+- [`generalizedLaguerrePolynomial`](special-functions.md#entry-presentation_wasm_api_session_generalized_laguerre_polynomial) — Default context
+- [`globalOptimumOnSemialgebraic`](optimization.md#entry-presentation_wasm_api_session_global_optimum_on_semialgebraic) — Default context
+- [`gradient`](vector-calculus.md#entry-presentation_wasm_api_session_gradient) — Default context
+- [`greaterAssumption`](assumptions.md#entry-presentation_wasm_api_session_greater_assumption) — Default context
+- [`greaterOrEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_greater_or_equal_assumption) — Default context
+- [`greaterThan`](relations.md#entry-presentation_wasm_api_session_greater_than) — Default context
+- [`greaterThanOrEqual`](relations.md#entry-presentation_wasm_api_session_greater_than_or_equal) — Default context
+- [`groebnerBasis`](polynomials.md#entry-presentation_wasm_api_session_groebner_basis) — Default context
+- [`hermitePolynomial`](special-functions.md#entry-presentation_wasm_api_session_hermite_polynomial) — Default context
+- [`hermitianMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_hermitian_matrix) — Default context
+- [`hessian`](vector-calculus.md#entry-presentation_wasm_api_session_hessian) — Default context
+- [`hostCancellationControlAddress`](context-safety.md#entry-presentation_wasm_host_wasm_module_hostcancellationcontroladdress) — Default context
+- [`hostCancellationControlByteLength`](context-safety.md#entry-presentation_wasm_host_wasm_module_hostcancellationcontrolbytelength) — Default context
+- [`hostCancellationRequested`](context-safety.md#entry-presentation_wasm_host_wasm_module_hostcancellationrequested) — Default context
+- [`hostCancellationSlotCount`](context-safety.md#entry-presentation_wasm_host_wasm_module_hostcancellationslotcount) — Default context
+- [`hostCancellationSlotTicket`](context-safety.md#entry-presentation_wasm_host_wasm_module_hostcancellationslotticket) — Default context
+- [`hurwitzZeta`](special-functions.md#entry-presentation_wasm_api_session_hurwitz_zeta) — Default context
+- [`hypergeometric0f1`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_0f1) — Default context
+- [`hypergeometric1f1`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_1f1) — Default context
+- [`hypergeometric2f1`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_2f1) — Default context
+- [`hypergeometricPfq`](special-functions.md#entry-presentation_wasm_api_session_hypergeometric_pfq) — Default context
+- [`idealIntersection`](polynomials.md#entry-presentation_wasm_api_session_ideal_intersection) — Default context
+- [`idealMembership`](polynomials.md#entry-presentation_wasm_api_session_ideal_membership) — Default context
+- [`idealProduct`](polynomials.md#entry-presentation_wasm_api_session_ideal_product) — Default context
+- [`idealSum`](polynomials.md#entry-presentation_wasm_api_session_ideal_sum) — Default context
+- [`identityMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_identity_matrix) — Default context
+- [`imageSet`](sets.md#entry-presentation_wasm_api_session_image_set) — Default context
+- [`imaginaryPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_imaginary_part) — Default context
+- [`imaginaryUnit`](evaluation-and-constants.md#entry-presentation_wasm_api_session_imaginary_unit) — Default context
+- [`implicitize`](polynomials.md#entry-presentation_wasm_api_session_implicitize) — Default context
+- [`implicitPartialDifferentialEquationSolution`](partial-differential-equations.md#entry-presentation_wasm_api_session_implicit_partial_differential_equation_solution) — Default context
+- [`infiniteAssumption`](assumptions.md#entry-presentation_wasm_api_session_infinite_assumption) — Default context
+- [`infinity`](evaluation-and-constants.md#entry-presentation_wasm_api_session_infinity) — Default context
+- [`initializeParallelism`](context-safety.md#entry-presentation_wasm_api_session_initialize_parallelism) — Default context
+- [`initThreadPoolWithCapability`](context-safety.md#entry-presentation_wasm_host_wasm_module_initthreadpoolwithcapability) — Default context
+- [`integer`](construction-and-parsing.md#entry-presentation_wasm_api_session_integer) — Default context
+- [`integerAssumption`](assumptions.md#entry-presentation_wasm_api_session_integer_assumption) — Default context
+- [`integerEntries`](linear-algebra.md#entry-presentation_wasm_api_session_integer_entries) — Default context
+- [`integerFromString`](construction-and-parsing.md#entry-presentation_wasm_api_session_integer_from_string) — Default context
+- [`integerGcd`](number-theory.md#entry-presentation_wasm_api_session_integer_gcd) — Default context
+- [`integerLcm`](number-theory.md#entry-presentation_wasm_api_session_integer_lcm) — Default context
+- [`integerNthRoot`](number-theory.md#entry-presentation_wasm_api_session_integer_nth_root) — Default context
+- [`integerSet`](sets.md#entry-presentation_wasm_api_session_integer_set) — Default context
+- [`integerSquareRoot`](number-theory.md#entry-presentation_wasm_api_session_integer_square_root) — Default context
+- [`integral`](deferred-forms.md#entry-presentation_wasm_api_session_integral) — Default context
+- [`integrate`](calculus.md#entry-presentation_wasm_api_session_integrate) — Default context
+- [`integrateDefinite`](calculus.md#entry-presentation_wasm_api_session_integrate_definite) — Default context
+- [`integrateDefiniteDetailed`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_detailed) — Default context
+- [`integrateDefiniteNumeric`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_numeric) — Default context
+- [`integrateDefiniteUnderConstraint`](calculus.md#entry-presentation_wasm_api_session_integrate_definite_under_constraint) — Default context
+- [`integrateIterated`](calculus.md#entry-presentation_wasm_api_session_integrate_iterated) — Default context
+- [`internerLength`](default-context.md#entry-presentation_wasm_api_session_interner_length) — Default context
+- [`interval`](sets.md#entry-presentation_wasm_api_session_interval) — Default context
+- [`introduceDerivedLogicalConnectives`](logical-transforms.md#entry-presentation_wasm_api_session_introduce_derived_logical_connectives) — Default context
+- [`inverseFourierTransform`](integral-transforms.md#entry-presentation_wasm_api_session_inverse_fourier_transform) — Default context
+- [`inverseLaplaceTransform`](integral-transforms.md#entry-presentation_wasm_api_session_inverse_laplace_transform) — Default context
+- [`invertibleMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_invertible_matrix) — Default context
+- [`irrationalAssumption`](assumptions.md#entry-presentation_wasm_api_session_irrational_assumption) — Default context
+- [`isMember`](sets.md#entry-presentation_wasm_api_session_is_member) — Default context
+- [`isolateRealRoots`](polynomials.md#entry-presentation_wasm_api_session_isolate_real_roots) — Default context
+- [`isPrime`](number-theory.md#entry-presentation_wasm_api_session_is_prime) — Default context
+- [`isSubset`](sets.md#entry-presentation_wasm_api_session_is_subset) — Default context
+- [`jacobiAmplitude`](special-functions.md#entry-presentation_wasm_api_session_jacobi_amplitude) — Default context
+- [`jacobian`](vector-calculus.md#entry-presentation_wasm_api_session_jacobian) — Default context
+- [`jacobiCn`](special-functions.md#entry-presentation_wasm_api_session_jacobi_cn) — Default context
+- [`jacobiDn`](special-functions.md#entry-presentation_wasm_api_session_jacobi_dn) — Default context
+- [`jacobiPolynomial`](special-functions.md#entry-presentation_wasm_api_session_jacobi_polynomial) — Default context
+- [`jacobiSn`](special-functions.md#entry-presentation_wasm_api_session_jacobi_sn) — Default context
+- [`jacobiSymbol`](number-theory.md#entry-presentation_wasm_api_session_jacobi_symbol) — Default context
+- [`jacobiTheta1`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_1) — Default context
+- [`jacobiTheta2`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_2) — Default context
+- [`jacobiTheta3`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_3) — Default context
+- [`jacobiTheta4`](special-functions.md#entry-presentation_wasm_api_session_jacobi_theta_4) — Default context
+- [`karushKuhnTuckerPoints`](optimization.md#entry-presentation_wasm_api_session_karush_kuhn_tucker_points) — Default context
+- [`kroneckerSymbol`](number-theory.md#entry-presentation_wasm_api_session_kronecker_symbol) — Default context
+- [`lagrangeCriticalPoints`](optimization.md#entry-presentation_wasm_api_session_lagrange_critical_points) — Default context
+- [`laguerrePolynomial`](special-functions.md#entry-presentation_wasm_api_session_laguerre_polynomial) — Default context
+- [`laplaceTransform`](integral-transforms.md#entry-presentation_wasm_api_session_laplace_transform) — Default context
+- [`laplacian`](vector-calculus.md#entry-presentation_wasm_api_session_laplacian) — Default context
+- [`laurentSeries`](series.md#entry-presentation_wasm_api_session_laurent_series) — Default context
+- [`leadingCoefficient`](polynomials.md#entry-presentation_wasm_api_session_leading_coefficient) — Default context
+- [`legendrePolynomial`](special-functions.md#entry-presentation_wasm_api_session_legendre_polynomial) — Default context
+- [`legendreSymbol`](number-theory.md#entry-presentation_wasm_api_session_legendre_symbol) — Default context
+- [`lerchPhi`](special-functions.md#entry-presentation_wasm_api_session_lerch_phi) — Default context
+- [`lessAssumption`](assumptions.md#entry-presentation_wasm_api_session_less_assumption) — Default context
+- [`lessOrEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_less_or_equal_assumption) — Default context
+- [`lessThan`](relations.md#entry-presentation_wasm_api_session_less_than) — Default context
+- [`lessThanOrEqual`](relations.md#entry-presentation_wasm_api_session_less_than_or_equal) — Default context
+- [`limit`](calculus.md#entry-presentation_wasm_api_session_limit) — Default context
+- [`log`](elementary-functions.md#entry-presentation_wasm_api_session_log) — Default context
+- [`logGamma`](special-functions.md#entry-presentation_wasm_api_session_log_gamma) — Default context
+- [`logicalFalse`](logic.md#entry-presentation_wasm_api_session_logical_false) — Default context
+- [`logicalTrue`](logic.md#entry-presentation_wasm_api_session_logical_true) — Default context
+- [`lowerTriangularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_lower_triangular_matrix) — Default context
+- [`maclaurinSeries`](series.md#entry-presentation_wasm_api_session_maclaurin_series) — Default context
+- [`Matrix`](linear-algebra.md#entry-presentation_wasm_api_matrix) — Type
+- [`matrixDiagonal`](matrix-construction.md#entry-presentation_wasm_api_session_matrix_diagonal) — Default context
+- [`matrixIdentity`](matrix-construction.md#entry-presentation_wasm_api_session_matrix_identity) — Default context
+- [`matrixShape`](linear-algebra.md#entry-presentation_wasm_api_session_matrix_shape) — Default context
+- [`matrixZero`](matrix-construction.md#entry-presentation_wasm_api_session_matrix_zero) — Default context
+- [`max`](elementary-functions.md#entry-presentation_wasm_api_session_max) — Default context
+- [`meijerG`](special-functions.md#entry-presentation_wasm_api_session_meijer_g) — Default context
+- [`memberAssumption`](assumptions.md#entry-presentation_wasm_api_session_member_assumption) — Default context
+- [`min`](elementary-functions.md#entry-presentation_wasm_api_session_min) — Default context
+- [`minimalPolynomialOf`](solving.md#entry-presentation_wasm_api_session_minimal_polynomial_of) — Default context
+- [`minimizeLogical`](logical-transforms.md#entry-presentation_wasm_api_session_minimize_logical) — Default context
+- [`mobius`](number-theory.md#entry-presentation_wasm_api_session_mobius) — Default context
+- [`modularInverse`](number-theory.md#entry-presentation_wasm_api_session_modular_inverse) — Default context
+- [`modularPower`](number-theory.md#entry-presentation_wasm_api_session_modular_power) — Default context
+- [`moment`](statistics.md#entry-presentation_wasm_api_session_moment) — Default context
+- [`momentGeneratingFunction`](statistics.md#entry-presentation_wasm_api_session_moment_generating_function) — Default context
+- [`multinomial`](combinatorics.md#entry-presentation_wasm_api_session_multinomial) — Default context
+- [`naturalAssumption`](assumptions.md#entry-presentation_wasm_api_session_natural_assumption) — Default context
+- [`negativeAssumption`](assumptions.md#entry-presentation_wasm_api_session_negative_assumption) — Default context
+- [`nonnegativeAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonnegative_assumption) — Default context
+- [`nonpositiveAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonpositive_assumption) — Default context
+- [`nonzeroAssumption`](assumptions.md#entry-presentation_wasm_api_session_nonzero_assumption) — Default context
+- [`normalMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_normal_matrix) — Default context
+- [`notEqual`](relations.md#entry-presentation_wasm_api_session_not_equal) — Default context
+- [`notEqualAssumption`](assumptions.md#entry-presentation_wasm_api_session_not_equal_assumption) — Default context
+- [`numerator`](expressions.md#entry-presentation_wasm_api_session_numerator) — Default context
+- [`NumeratorDenominator`](expressions.md#entry-presentation_wasm_api_numeratordenominator) — Type
+- [`numeratorDenominator`](expressions.md#entry-presentation_wasm_api_session_numerator_denominator) — Default context
+- [`oddAssumption`](assumptions.md#entry-presentation_wasm_api_session_odd_assumption) — Default context
+- [`orthogonalMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_orthogonal_matrix) — Default context
+- [`parallelismCapability`](context-safety.md#entry-presentation_wasm_api_session_parallelism_capability) — Default context
+- [`parse`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse) — Default context
+- [`parseLatex`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse_latex) — Default context
+- [`parseLatexWithEnvironment`](construction-and-parsing.md#entry-presentation_wasm_api_session_parse_latex_with_environment) — Default context
+- [`parseSerializedObject`](serialization-and-output.md#entry-presentation_wasm_api_session_parse_serialized_object) — Default context
+- [`partialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_partial_differential_equation) — Default context
+- [`partialDifferentialEquationPointSymmetryGenerator`](partial-differential-equations.md#entry-presentation_wasm_api_session_partial_differential_equation_point_symmetry_generator) — Default context
+- [`partialFractions`](algebraic-transforms.md#entry-presentation_wasm_api_session_partial_fractions) — Default context
+- [`partitionCount`](combinatorics.md#entry-presentation_wasm_api_session_partition_count) — Default context
+- [`pellSolutions`](number-theory.md#entry-presentation_wasm_api_session_pell_solutions) — Default context
+- [`pi`](evaluation-and-constants.md#entry-presentation_wasm_api_session_pi) — Default context
+- [`piecewise`](deferred-forms.md#entry-presentation_wasm_api_session_piecewise) — Default context
+- [`PiecewiseBranch`](polynomials.md#entry-presentation_wasm_api_piecewisebranch) — Type
+- [`piecewiseFold`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_piecewise_fold) — Default context
+- [`poleOrder`](series.md#entry-presentation_wasm_api_session_pole_order) — Default context
+- [`polygamma`](special-functions.md#entry-presentation_wasm_api_session_polygamma) — Default context
+- [`polylogarithm`](special-functions.md#entry-presentation_wasm_api_session_polylogarithm) — Default context
+- [`polynomialGcd`](polynomials.md#entry-presentation_wasm_api_session_polynomial_gcd) — Default context
+- [`polynomialRoot`](solving.md#entry-presentation_wasm_api_session_polynomial_root) — Default context
+- [`positiveAssumption`](assumptions.md#entry-presentation_wasm_api_session_positive_assumption) — Default context
+- [`positiveDefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_positive_definite_matrix) — Default context
+- [`positiveIntegerAssumption`](assumptions.md#entry-presentation_wasm_api_session_positive_integer_assumption) — Default context
+- [`positiveSemidefiniteMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_positive_semidefinite_matrix) — Default context
+- [`presentationNormalForm`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_presentation_normal_form) — Default context
+- [`primeAssumption`](assumptions.md#entry-presentation_wasm_api_session_prime_assumption) — Default context
+- [`probability`](statistics.md#entry-presentation_wasm_api_session_probability) — Default context
+- [`product`](deferred-forms.md#entry-presentation_wasm_api_session_product) — Default context
+- [`productIndefinite`](deferred-forms.md#entry-presentation_wasm_api_session_product_indefinite) — Default context
+- [`randomVariable`](statistics.md#entry-presentation_wasm_api_session_random_variable) — Default context
+- [`rational`](construction-and-parsing.md#entry-presentation_wasm_api_session_rational) — Default context
+- [`rationalAssumption`](assumptions.md#entry-presentation_wasm_api_session_rational_assumption) — Default context
+- [`rationalFromFloat`](construction-and-parsing.md#entry-presentation_wasm_api_session_rational_from_float) — Default context
+- [`rationalizeDenominator`](algebraic-transforms.md#entry-presentation_wasm_api_session_rationalize_denominator) — Default context
+- [`realAssumption`](assumptions.md#entry-presentation_wasm_api_session_real_assumption) — Default context
+- [`realEntries`](linear-algebra.md#entry-presentation_wasm_api_session_real_entries) — Default context
+- [`realLine`](sets.md#entry-presentation_wasm_api_session_real_line) — Default context
+- [`realPart`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_real_part) — Default context
+- [`realRootCount`](solving.md#entry-presentation_wasm_api_session_real_root_count) — Default context
+- [`realRootSign`](solving.md#entry-presentation_wasm_api_session_real_root_sign) — Default context
+- [`refine`](assumptions.md#entry-presentation_wasm_api_session_refine) — Default context
+- [`releaseHostCancellationSlot`](context-safety.md#entry-presentation_wasm_host_wasm_module_releasehostcancellationslot) — Default context
+- [`reserveHostCancellationSlot`](context-safety.md#entry-presentation_wasm_host_wasm_module_reservehostcancellationslot) — Default context
+- [`residue`](series.md#entry-presentation_wasm_api_session_residue) — Default context
+- [`resultant`](polynomials.md#entry-presentation_wasm_api_session_resultant) — Default context
+- [`rewriteAsExponential`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_as_exponential) — Default context
+- [`rewriteAsTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_as_trigonometric) — Default context
+- [`rewriteInTermsOf`](expressions.md#entry-presentation_wasm_api_session_rewrite_in_terms_of) — Default context
+- [`rewriteSpecialFunctions`](specialized-canonical-forms.md#entry-presentation_wasm_api_session_rewrite_special_functions) — Default context
+- [`rewriteTrigonometricBasis`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_rewrite_trigonometric_basis) — Default context
+- [`risingFactorial`](combinatorics.md#entry-presentation_wasm_api_session_rising_factorial) — Default context
+- [`root`](elementary-functions.md#entry-presentation_wasm_api_session_root) — Default context
+- [`rootsWithMultiplicities`](solving.md#entry-presentation_wasm_api_session_roots_with_multiplicities) — Default context
+- [`sec`](elementary-functions.md#entry-presentation_wasm_api_session_sec) — Default context
+- [`sech`](elementary-functions.md#entry-presentation_wasm_api_session_sech) — Default context
+- [`separatePartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_separate_partial_differential_equation) — Default context
+- [`serializeBulk`](context-safety.md#entry-presentation_wasm_api_session_serialize_bulk) — Default context
+- [`setComplement`](sets.md#entry-presentation_wasm_api_session_set_complement) — Default context
+- [`setExecutionMode`](context-safety.md#entry-presentation_wasm_api_session_set_execution_mode) — Default context
+- [`setIntersection`](sets.md#entry-presentation_wasm_api_session_set_intersection) — Default context
+- [`setUnion`](sets.md#entry-presentation_wasm_api_session_set_union) — Default context
+- [`simplify`](simplification-general.md#entry-presentation_wasm_api_session_simplify) — Default context
+- [`simplifyBulk`](context-safety.md#entry-presentation_wasm_api_session_simplify_bulk) — Default context
+- [`simplifyLogical`](logical-transforms.md#entry-presentation_wasm_api_session_simplify_logical) — Default context
+- [`simplifyTrigonometric`](trigonometric-complex-rewrites.md#entry-presentation_wasm_api_session_simplify_trigonometric) — Default context
+- [`simplifyUnderConstraint`](simplification-general.md#entry-presentation_wasm_api_session_simplify_under_constraint) — Default context
+- [`sin`](elementary-functions.md#entry-presentation_wasm_api_session_sin) — Default context
+- [`singularities`](calculus.md#entry-presentation_wasm_api_session_singularities) — Default context
+- [`singularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_singular_matrix) — Default context
+- [`sinh`](elementary-functions.md#entry-presentation_wasm_api_session_sinh) — Default context
+- [`solve`](solving.md#entry-presentation_wasm_api_session_solve) — Default context
+- [`solveLinearDiophantine`](number-theory.md#entry-presentation_wasm_api_session_solve_linear_diophantine) — Default context
+- [`solveLinearDiophantineSystem`](number-theory.md#entry-presentation_wasm_api_session_solve_linear_diophantine_system) — Default context
+- [`solveLinearRecurrence`](recurrence-equations.md#entry-presentation_wasm_api_session_solve_linear_recurrence) — Default context
+- [`solveNegativePell`](number-theory.md#entry-presentation_wasm_api_session_solve_negative_pell) — Default context
+- [`solveOrdinaryDifferentialEquation`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation) — Default context
+- [`solveOrdinaryDifferentialEquationRequest`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_request) — Default context
+- [`solveOrdinaryDifferentialEquationSystemRequest`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_system_request) — Default context
+- [`solveOrdinaryDifferentialEquationWithHistory`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_with_history) — Default context
+- [`solveOrdinaryDifferentialEquationWithParticularSolution`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_solve_ordinary_differential_equation_with_particular_solution) — Default context
+- [`solvePartialDifferentialEquation`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation) — Default context
+- [`solvePartialDifferentialEquationBySimilarityReduction`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation_by_similarity_reduction) — Default context
+- [`solvePartialDifferentialEquationRequest`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation_request) — Default context
+- [`solvePartialDifferentialEquationWithTransformAxisSpecifications`](partial-differential-equations.md#entry-presentation_wasm_api_session_solve_partial_differential_equation_with_transform_axis_specifications) — Default context
+- [`solvePell`](number-theory.md#entry-presentation_wasm_api_session_solve_pell) — Default context
+- [`solvePolynomialSystem`](solving.md#entry-presentation_wasm_api_session_solve_polynomial_system) — Default context
+- [`solveSemialgebraic`](solving.md#entry-presentation_wasm_api_session_solve_semialgebraic) — Default context
+- [`solveset`](solving.md#entry-presentation_wasm_api_session_solveset) — Default context
+- [`solvesetInDomain`](solving.md#entry-presentation_wasm_api_session_solveset_in_domain) — Default context
+- [`sqrt`](elementary-functions.md#entry-presentation_wasm_api_session_sqrt) — Default context
+- [`squareMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_square_matrix) — Default context
+- [`stirlingFirstSigned`](combinatorics.md#entry-presentation_wasm_api_session_stirling_first_signed) — Default context
+- [`stirlingSecond`](combinatorics.md#entry-presentation_wasm_api_session_stirling_second) — Default context
+- [`substituteBulk`](context-safety.md#entry-presentation_wasm_api_session_substitute_bulk) — Default context
+- [`summation`](deferred-forms.md#entry-presentation_wasm_api_session_summation) — Default context
+- [`summationIndefinite`](deferred-forms.md#entry-presentation_wasm_api_session_summation_indefinite) — Default context
+- [`symbol`](construction-and-parsing.md#entry-presentation_wasm_api_session_symbol) — Default context
+- [`SymiContextError`](polynomials.md#entry-presentation_wasm_host_wasm_module_symicontexterror) — Type
+- [`SymiDomainError`](polynomials.md#entry-presentation_wasm_host_wasm_module_symidomainerror) — Type
+- [`SymiError`](polynomials.md#entry-presentation_wasm_host_wasm_module_symierror) — Type
+- [`SymiFacade`](cad.md#entry-presentation_wasm_host_wasm_module_symifacade) — Type
+- [`SymiInternalError`](polynomials.md#entry-presentation_wasm_host_wasm_module_symiinternalerror) — Type
+- [`SymiResourceError`](polynomials.md#entry-presentation_wasm_host_wasm_module_symiresourceerror) — Type
+- [`SymiTypeError`](polynomials.md#entry-presentation_wasm_host_wasm_module_symitypeerror) — Type
+- [`symmetricMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_symmetric_matrix) — Default context
+- [`tan`](elementary-functions.md#entry-presentation_wasm_api_session_tan) — Default context
+- [`tanh`](elementary-functions.md#entry-presentation_wasm_api_session_tanh) — Default context
+- [`taylorSeries`](series.md#entry-presentation_wasm_api_session_taylor_series) — Default context
+- [`together`](simplification-general.md#entry-presentation_wasm_api_session_together) — Default context
+- [`toLatex`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex) — Default context
+- [`toLatexWithOptions`](serialization-and-output.md#entry-presentation_wasm_api_session_to_latex_with_options) — Default context
+- [`transcendentalAssumption`](assumptions.md#entry-presentation_wasm_api_session_transcendental_assumption) — Default context
+- [`ultrasphericalPolynomial`](special-functions.md#entry-presentation_wasm_api_session_ultraspherical_polynomial) — Default context
+- [`unconstrainedCriticalPoints`](optimization.md#entry-presentation_wasm_api_session_unconstrained_critical_points) — Default context
+- [`unitaryMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_unitary_matrix) — Default context
+- [`upperTriangularMatrix`](linear-algebra.md#entry-presentation_wasm_api_session_upper_triangular_matrix) — Default context
+- [`variance`](statistics.md#entry-presentation_wasm_api_session_variance) — Default context
+- [`verifyOrdinaryDifferentialEquationSystemSolution`](ordinary-differential-equations.md#entry-presentation_wasm_api_session_verify_ordinary_differential_equation_system_solution) — Default context
+- [`verifyPartialDifferentialEquationCoordinateTransformation`](partial-differential-equations.md#entry-presentation_wasm_api_session_verify_partial_differential_equation_coordinate_transformation) — Default context
+- [`verifyPartialDifferentialEquationSolution`](partial-differential-equations.md#entry-presentation_wasm_api_session_verify_partial_differential_equation_solution) — Default context
+- [`zeroAssumption`](assumptions.md#entry-presentation_wasm_api_session_zero_assumption) — Default context
+- [`zeroEquivalent`](zero-equivalence.md#entry-presentation_wasm_api_session_zero_equivalent) — Default context
+- [`zeroMatrix`](matrix-construction.md#entry-presentation_wasm_api_session_zero_matrix) — Default context
+- [`zeta`](special-functions.md#entry-presentation_wasm_api_session_zeta) — Default context

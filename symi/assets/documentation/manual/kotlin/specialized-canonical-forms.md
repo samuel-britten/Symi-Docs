@@ -12,7 +12,7 @@ Related rewrites are on [algebraic transforms](algebraic-transforms.md) and
 
 ### piecewise_fold
 
-<a id="entry-presentation_kotlin_specialized_canonical_forms_capability_expression_transformations_piecewise_fold_api_solving_session_piecewise_fold"></a>
+<a id="entry-presentation_kotlin_api_session_piecewise_fold"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_piecewisefold.dd5d41bd2b10"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -20,13 +20,17 @@ Related rewrites are on [algebraic transforms](algebraic-transforms.md) and
 fun piecewiseFold(inputExpression: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_specialized_canonical_forms_capability_expression_transformations_piecewise_fold_api_expression_operations_expression_piecewise_fold"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_piecewisefold.99129bb9e1f7"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.piecewiseFold</code></p>
 
 ```kotlin signature
 fun piecewiseFold(): UniffiExpression
 ```
+
+</details>
 
 
 
@@ -44,7 +48,7 @@ equality-preserving expression and may therefore return the input unchanged.
 
 ### rewrite_special_functions
 
-<a id="entry-presentation_kotlin_specialized_canonical_forms_capability_expression_transformations_rewrite_special_functions_api_session_rewrite_special_functions"></a>
+<a id="entry-presentation_kotlin_api_session_rewrite_special_functions"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_rewritespecialfunctions.278685e20fa5"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -55,13 +59,17 @@ fun rewriteSpecialFunctions(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_specialized_canonical_forms_capability_expression_transformations_rewrite_special_functions_api_expression_rewrite_special_functions"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_rewritespecialfunctions.37c595784f18"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rewriteSpecialFunctions</code></p>
 
 ```kotlin signature
 fun rewriteSpecialFunctions(basis: UniffiSpecialFunctionBasis): UniffiExpression
 ```
+
+</details>
 
 
 
@@ -82,7 +90,7 @@ force mode.
 
 ### presentation_normal_form
 
-<a id="entry-presentation_kotlin_specialized_canonical_forms_capability_expression_transformations_presentation_normal_form_api_algebra_session_presentation_normal_form"></a>
+<a id="entry-presentation_kotlin_api_session_presentation_normal_form"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_presentationnormalform.405cc35d0bcc"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -90,13 +98,17 @@ force mode.
 fun presentationNormalForm(inputExpression: UniffiExpression): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_specialized_canonical_forms_capability_expression_transformations_presentation_normal_form_api_expression_operations_expression_presentation_normal_form"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_presentationnormalform.4e3a978a98d1"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.presentationNormalForm</code></p>
 
 ```kotlin signature
 fun presentationNormalForm(): UniffiExpression
 ```
+
+</details>
 
 
 

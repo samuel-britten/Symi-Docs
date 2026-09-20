@@ -26,6 +26,9 @@ numeric *view*, never a decision.
 
 ### new
 
+*Not part of the recommended `symi::api` facade; the operation is reachable from the complete native crate in the [native Rust API reference](/symi/rust/api/symi/). Available as [`ContextConstructor.new`](/symi/wasm/cad#new) in WASM / JavaScript.*
+
+
 Construct the CAD of the polynomials in the given variable order \(x_1,\ldots,x_n\);
 projection eliminates \(x_n\) first). With an empty `equational_constraints` list this
 is the full sign-invariant CAD (Brown fast path with Lazard fallback); listing
@@ -39,7 +42,9 @@ variables: string[], equational_constraints?: number[])`.
 
 ### cell_count
 
-<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_count_unnamed"></a>
+The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition_cell_count"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_count.fc916286f288"></a>
 <p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
 
@@ -47,12 +52,14 @@ variables: string[], equational_constraints?: number[])`.
 pub fn cell_count(&self) -> Result<usize, ApiError>
 ```
 
-
-The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
+Provides the `cell_count` operation on this native type.
 
 ### cell_sample_point
 
-<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_sample_point_unnamed"></a>
+The coordinates of the full cell's sample point as floats — a numeric view via
+the multi-precision evaluator, not a decision.
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition_cell_sample_point"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_sample_point.1e6a248ad82d"></a>
 <p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
 
@@ -63,13 +70,14 @@ pub fn cell_sample_point(
 ) -> Result<Vec<f64>, ApiError>
 ```
 
-
-The coordinates of the full cell's sample point as floats — a numeric view via
-the multi-precision evaluator, not a decision.
+Provides the `cell_sample_point` operation on this native type.
 
 ### cell_sign_vector
 
-<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_sign_vector_unnamed"></a>
+The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in
+input order.
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition_cell_sign_vector"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_sign_vector.aa269a747174"></a>
 <p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
 
@@ -80,13 +88,14 @@ pub fn cell_sign_vector(
 ) -> Result<Vec<i32>, ApiError>
 ```
 
-
-The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in
-input order.
+Provides the `cell_sign_vector` operation on this native type.
 
 ### cell_kind
 
-<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_kind_unnamed"></a>
+`"section"` or `"sector"` — whether the cell is a root section or an open
+interval in its top variable.
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition_cell_kind"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_kind.e3cde7428203"></a>
 <p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
 
@@ -94,13 +103,14 @@ input order.
 pub fn cell_kind(&self, index: usize) -> Result<CadCellKind, ApiError>
 ```
 
-
-`"section"` or `"sector"` — whether the cell is a root section or an open
-interval in its top variable.
+Provides the `cell_kind` operation on this native type.
 
 ### cell_dimension
 
-<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_cell_dimension_unnamed"></a>
+The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of
+sector coordinates along its cylindrical stack).
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition_cell_dimension"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_cell_dimension.e800a2b5e7b0"></a>
 <p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
 
@@ -108,13 +118,16 @@ interval in its top variable.
 pub fn cell_dimension(&self, index: usize) -> Result<usize, ApiError>
 ```
 
-
-The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of
-sector coordinates along its cylindrical stack).
+Provides the `cell_dimension` operation on this native type.
 
 ### projection_operator_used
 
-<a id="entry-presentation_rust_cad_capability_rust_native_rust_api_cylindricalalgebraicdecomposition_projection_operator_used_unnamed"></a>
+The projection operator the decomposition was built with:
+`"brown"` for the well-oriented fast path, `"lazard"` when the well-orientedness
+guard forced the complete fallback, `"equational_constraint"` for an
+equational-constraint CAD.
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition_projection_operator_used"></a>
 <a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_projection_operator_used.641e4df2cc8f"></a>
 <p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
 
@@ -122,11 +135,7 @@ sector coordinates along its cylindrical stack).
 pub fn projection_operator_used(&self) -> Result<&str, ApiError>
 ```
 
-
-The projection operator the decomposition was built with:
-`"brown"` for the well-oriented fast path, `"lazard"` when the well-orientedness
-guard forced the complete fallback, `"equational_constraint"` for an
-equational-constraint CAD.
+Provides the `projection_operator_used` operation on this native type.
 
 ## Example
 
@@ -146,4 +155,103 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+
+## Additional API
+
+### CadCellKind
+
+<a id="entry-presentation_rust_api_cadcellkind"></a>
+<a id="placement-placement.rust.native_rust.api_cadcellkind.aba94638427b"></a>
+<p class="symi-entry-owner">Type</p>
+
+```rust signature
+pub enum CadCellKind
+```
+
+Public native enumeration named `cad_cell_kind`.
+
+#### CadCellKind.Section
+
+<a id="entry-presentation_rust_api_cadcellkind_section"></a>
+<a id="placement-placement.rust.native_rust.api_cadcellkind_section.f226207df5fa"></a>
+<p class="symi-entry-owner">api::CadCellKind variant</p>
+
+```rust signature
+Section,
+```
+
+Represents the `section` case.
+
+#### CadCellKind.Sector
+
+<a id="entry-presentation_rust_api_cadcellkind_sector"></a>
+<a id="placement-placement.rust.native_rust.api_cadcellkind_sector.a091725c055c"></a>
+<p class="symi-entry-owner">api::CadCellKind variant</p>
+
+```rust signature
+Sector,
+```
+
+Represents the `sector` case.
+
+#### CadCellKind.name
+
+<a id="entry-presentation_rust_api_cadcellkind_name"></a>
+<a id="placement-placement.rust.native_rust.api_cadcellkind_name.467c0e2363d3"></a>
+<p class="symi-entry-owner">api::CadCellKind method</p>
+
+```rust signature
+pub fn name(&self) -> &'static str
+```
+
+The stable binding spelling of this cell kind.
+
+### CylindricalAlgebraicDecomposition
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition"></a>
+<a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition.50354ca1971a"></a>
+<p class="symi-entry-owner">Type</p>
+
+```rust signature
+pub struct CylindricalAlgebraicDecomposition
+```
+
+Public native data structure named `cylindrical_algebraic_decomposition`.
+
+#### CylindricalAlgebraicDecomposition.generation
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition_generation"></a>
+<a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_generation.7077173700ad"></a>
+<p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
+
+```rust signature
+pub fn generation(&self) -> u64
+```
+
+The session generation this object was created in.
+
+#### CylindricalAlgebraicDecomposition.is_stale
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition_is_stale"></a>
+<a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_is_stale.57ceaf990523"></a>
+<p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
+
+```rust signature
+pub fn is_stale(&self) -> bool
+```
+
+Whether this object predates its session's most recent reset.
+
+#### CylindricalAlgebraicDecomposition.session
+
+<a id="entry-presentation_rust_api_cylindricalalgebraicdecomposition_session"></a>
+<a id="placement-placement.rust.native_rust.api_cylindricalalgebraicdecomposition_session.feb66305bd29"></a>
+<p class="symi-entry-owner">api::CylindricalAlgebraicDecomposition method</p>
+
+```rust signature
+pub fn session(&self) -> Session
+```
+
+The session that owns this object, for host adapters that carry the owner alongside it.
 

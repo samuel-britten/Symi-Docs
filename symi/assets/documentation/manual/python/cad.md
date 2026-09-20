@@ -26,6 +26,9 @@ numeric *view*, never a decision.
 
 ### new
 
+*Not exposed by the Python bindings. Available as [`ContextConstructor.new`](/symi/wasm/cad#new) in WASM / JavaScript.*
+
+
 Construct the CAD of the polynomials in the given variable order \(x_1,\ldots,x_n\);
 projection eliminates \(x_n\) first). With an empty `equational_constraints` list this
 is the full sign-invariant CAD (Brown fast path with Lazard fallback); listing
@@ -39,7 +42,9 @@ variables: string[], equational_constraints?: number[])`.
 
 ### cell_count
 
-<a id="entry-presentation_python_cad_capability_algebra_cell_count_api_cylindricalalgebraicdecomposition_cell_count"></a>
+The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
+
+<a id="entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_count"></a>
 <a id="placement-placement.python.python_class.cylindricalalgebraicdecomposition_cell_count.ce7f976fc884"></a>
 <p class="symi-entry-owner">CylindricalAlgebraicDecomposition method</p>
 
@@ -47,12 +52,14 @@ variables: string[], equational_constraints?: number[])`.
 cell_count() -> int
 ```
 
-
 The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
 
 ### cell_sample_point
 
-<a id="entry-presentation_python_cad_capability_algebra_cell_sample_point_api_cylindricalalgebraicdecomposition_cell_sample_point"></a>
+The coordinates of the full cell's sample point as floats — a numeric view via
+the multi-precision evaluator, not a decision.
+
+<a id="entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_sample_point"></a>
 <a id="placement-placement.python.python_class.cylindricalalgebraicdecomposition_cell_sample_point.3dbe888269b7"></a>
 <p class="symi-entry-owner">CylindricalAlgebraicDecomposition method</p>
 
@@ -60,13 +67,14 @@ The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
 cell_sample_point(index: int) -> list[float]
 ```
 
-
-The coordinates of the full cell's sample point as floats — a numeric view via
-the multi-precision evaluator, not a decision.
+The coordinates of the full cell's sample point as floats — a numeric view via the multi-precision evaluator, not a decision.
 
 ### cell_sign_vector
 
-<a id="entry-presentation_python_cad_capability_algebra_cell_sign_vector_api_cylindricalalgebraicdecomposition_cell_sign_vector"></a>
+The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in
+input order.
+
+<a id="entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_sign_vector"></a>
 <a id="placement-placement.python.python_class.cylindricalalgebraicdecomposition_cell_sign_vector.ef6a2c072c0f"></a>
 <p class="symi-entry-owner">CylindricalAlgebraicDecomposition method</p>
 
@@ -74,13 +82,14 @@ the multi-precision evaluator, not a decision.
 cell_sign_vector(index: int) -> list[int]
 ```
 
-
-The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in
-input order.
+The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in input order.
 
 ### cell_kind
 
-<a id="entry-presentation_python_cad_capability_algebra_cell_kind_api_cylindricalalgebraicdecomposition_cell_kind"></a>
+`"section"` or `"sector"` — whether the cell is a root section or an open
+interval in its top variable.
+
+<a id="entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_kind"></a>
 <a id="placement-placement.python.python_class.cylindricalalgebraicdecomposition_cell_kind.afe9210a3869"></a>
 <p class="symi-entry-owner">CylindricalAlgebraicDecomposition method</p>
 
@@ -88,13 +97,14 @@ input order.
 cell_kind(index: int) -> str
 ```
 
-
-`"section"` or `"sector"` — whether the cell is a root section or an open
-interval in its top variable.
+`"section"` or `"sector"` — whether the cell is a root section or an open interval in its top variable.
 
 ### cell_dimension
 
-<a id="entry-presentation_python_cad_capability_algebra_cell_dimension_api_cylindricalalgebraicdecomposition_cell_dimension"></a>
+The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of
+sector coordinates along its cylindrical stack).
+
+<a id="entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_dimension"></a>
 <a id="placement-placement.python.python_class.cylindricalalgebraicdecomposition_cell_dimension.e876ea130017"></a>
 <p class="symi-entry-owner">CylindricalAlgebraicDecomposition method</p>
 
@@ -102,13 +112,16 @@ interval in its top variable.
 cell_dimension(index: int) -> int
 ```
 
-
-The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of
-sector coordinates along its cylindrical stack).
+The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of sector coordinates along its cylindrical stack).
 
 ### projection_operator_used
 
-<a id="entry-presentation_python_cad_capability_algebra_projection_operator_used_api_cylindricalalgebraicdecomposition_projection_operator_used"></a>
+The projection operator the decomposition was built with:
+`"brown"` for the well-oriented fast path, `"lazard"` when the well-orientedness
+guard forced the complete fallback, `"equational_constraint"` for an
+equational-constraint CAD.
+
+<a id="entry-presentation_python_api_cylindricalalgebraicdecomposition_projection_operator_used"></a>
 <a id="placement-placement.python.python_class.cylindricalalgebraicdecomposition_projection_operator_used.fd0ecd398fb8"></a>
 <p class="symi-entry-owner">CylindricalAlgebraicDecomposition method</p>
 
@@ -116,11 +129,7 @@ sector coordinates along its cylindrical stack).
 projection_operator_used() -> str
 ```
 
-
-The projection operator the decomposition was built with:
-`"brown"` for the well-oriented fast path, `"lazard"` when the well-orientedness
-guard forced the complete fallback, `"equational_constraint"` for an
-equational-constraint CAD.
+The projection operator the decomposition was built with: `"brown"` for the well-oriented fast path, `"lazard"` when the well-orientedness guard forced the complete fallback, `"equational_constraint"` for an equational-constraint CAD.
 
 ## Example
 
@@ -139,4 +148,23 @@ print(decomposition.cell_count())
 print(decomposition.cell_kind(0))
 print(decomposition.cell_sample_point(0))
 ```
+
+
+## Additional API
+
+### CylindricalAlgebraicDecomposition
+
+<a id="entry-presentation_python_api_cylindricalalgebraicdecomposition"></a>
+<a id="placement-placement.python.python_class.cylindricalalgebraicdecomposition.6f69ff9d363f"></a>
+<p class="symi-entry-owner">CylindricalAlgebraicDecomposition constructor</p>
+
+```python signature
+CylindricalAlgebraicDecomposition(
+    expressions: Iterable[ExpressionLike],
+    variables: Iterable[VariableLike],
+    equational_constraints: list[int] = [],
+)
+```
+
+Decompose real space into sign-invariant cells for the given polynomials, in the given variable order.
 

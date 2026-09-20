@@ -6,7 +6,7 @@ outside each function's domain (negative counts, …).
 
 ### falling_factorial
 
-<a id="entry-presentation_kotlin_combinatorics_capability_discrete_mathematics_falling_factorial_api_session_falling_factorial"></a>
+<a id="entry-presentation_kotlin_api_session_falling_factorial"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_fallingfactorial.1c7fd218ebea"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -23,7 +23,7 @@ fun fallingFactorial(
 
 ### rising_factorial
 
-<a id="entry-presentation_kotlin_combinatorics_capability_discrete_mathematics_rising_factorial_api_session_rising_factorial"></a>
+<a id="entry-presentation_kotlin_api_session_rising_factorial"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_risingfactorial.f25335cc2f8a"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -39,7 +39,7 @@ fun risingFactorial(
 
 ### stirling_first_signed
 
-<a id="entry-presentation_kotlin_combinatorics_capability_discrete_mathematics_stirling_first_signed_api_session_stirling_first_signed"></a>
+<a id="entry-presentation_kotlin_api_session_stirling_first_signed"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_stirlingfirstsigned.027966283e96"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -55,7 +55,7 @@ Signed Stirling number of the first kind s(n, k).
 
 ### stirling_second
 
-<a id="entry-presentation_kotlin_combinatorics_capability_discrete_mathematics_stirling_second_api_session_stirling_second"></a>
+<a id="entry-presentation_kotlin_api_session_stirling_second"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_stirlingsecond.7408ddaedee1"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -71,7 +71,7 @@ Stirling number of the second kind S(n, k).
 
 ### bell_number
 
-<a id="entry-presentation_kotlin_combinatorics_capability_discrete_mathematics_bell_number_api_session_bell_number"></a>
+<a id="entry-presentation_kotlin_api_session_bell_number"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_bellnumber.8577ae30e037"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -84,7 +84,7 @@ The n-th Bell number.
 
 ### catalan_number
 
-<a id="entry-presentation_kotlin_combinatorics_capability_discrete_mathematics_catalan_number_api_session_catalan_number"></a>
+<a id="entry-presentation_kotlin_api_session_catalan_number"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_catalannumber.a2962d5f8f80"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -97,7 +97,7 @@ The n-th Catalan number.
 
 ### fibonacci_number
 
-<a id="entry-presentation_kotlin_combinatorics_capability_discrete_mathematics_fibonacci_number_api_session_fibonacci_number"></a>
+<a id="entry-presentation_kotlin_api_session_fibonacci_number"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_fibonaccinumber.f6f8de78bebe"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -110,7 +110,7 @@ The n-th Fibonacci number (F(0) = 0, F(1) = 1).
 
 ### partition_count
 
-<a id="entry-presentation_kotlin_combinatorics_capability_discrete_mathematics_partition_count_api_session_partition_count"></a>
+<a id="entry-presentation_kotlin_api_session_partition_count"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_partitioncount.ab73cbebe9f0"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -123,7 +123,7 @@ Number of integer partitions p(n).
 
 ### multinomial
 
-<a id="entry-presentation_kotlin_combinatorics_capability_discrete_mathematics_multinomial_api_number_theory_session_multinomial"></a>
+<a id="entry-presentation_kotlin_api_session_multinomial"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_multinomial.e948c0b56eaa"></a>
 <p class="symi-entry-owner">Explicit context</p>
 

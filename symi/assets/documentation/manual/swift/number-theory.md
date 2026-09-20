@@ -8,7 +8,7 @@ machine integers.)
 
 ### is_prime
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_is_prime_api_session_is_prime"></a>
+<a id="entry-presentation_swift_api_session_is_prime"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_isprime.c4146f51c4d3"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -16,13 +16,17 @@ machine integers.)
 func isPrime(argument: UniffiExpression) -> Bool?
 ```
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_is_prime_api_expression_is_prime"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_isprime.c6375de91a36"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.isPrime</code></p>
 
 ```swift signature
 func isPrime() -> UniffiTruthValue
 ```
+
+</details>
 
 
 Deterministic primality verdict; `None` when the input is outside the
@@ -31,7 +35,7 @@ handles).
 
 ### factor_integer
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_factor_integer_api_session_factor_integer"></a>
+<a id="entry-presentation_swift_api_session_factor_integer"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_factorinteger.350bd0565b6d"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -54,9 +58,18 @@ as a leading `(-1, 1)` factor exactly as the core reports it.
 
 ### multiplicity
 
+<a id="entry-presentation_swift_api_primefactor_multiplicity"></a>
+<a id="placement-placement.swift.swift_object.uniffirootmultiplicity_multiplicity.fe1b2d03c27f"></a>
+<p class="symi-entry-owner">UniffiRootMultiplicity method</p>
+
+```swift signature
+func multiplicity() -> UInt64
+```
+
+
 ### integer_gcd
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_integer_gcd_api_session_integer_gcd"></a>
+<a id="entry-presentation_swift_api_session_integer_gcd"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integergcd.61aee7337f17"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -72,7 +85,7 @@ Greatest common divisor (non-negative).
 
 ### integer_lcm
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_integer_lcm_api_session_integer_lcm"></a>
+<a id="entry-presentation_swift_api_session_integer_lcm"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integerlcm.51d36249f078"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -88,7 +101,7 @@ Least common multiple.
 
 ### extended_euclidean
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_extended_euclidean_api_number_theory_session_extended_euclidean"></a>
+<a id="entry-presentation_swift_api_session_extended_euclidean"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_extendedeuclidean.b6bf9a4d4512"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -105,7 +118,7 @@ array `[gcd, x, y]`.
 
 ### modular_power
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_modular_power_api_number_theory_session_modular_power"></a>
+<a id="entry-presentation_swift_api_session_modular_power"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_modularpower.08ac4da6105b"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -123,7 +136,7 @@ modulus and non-negative exponent.
 
 ### modular_inverse
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_modular_inverse_api_number_theory_session_modular_inverse"></a>
+<a id="entry-presentation_swift_api_session_modular_inverse"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_modularinverse.e7b51d17375e"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -140,7 +153,7 @@ Multiplicative inverse of `value` modulo `modulus`; errors when
 
 ### chinese_remainder
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_chinese_remainder_api_number_theory_session_chinese_remainder"></a>
+<a id="entry-presentation_swift_api_session_chinese_remainder"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_chineseremainder.a648470927fe"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -156,7 +169,7 @@ raise. **Notes:** WASM passes a flat interleaved array
 
 ### euler_totient
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_euler_totient_api_number_theory_session_euler_totient"></a>
+<a id="entry-presentation_swift_api_session_euler_totient"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_eulertotient.df6ed38a0dc1"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -169,7 +182,7 @@ Euler's \(\varphi(n)\); requires a positive integer.
 
 ### mobius
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_mobius_api_session_mobius"></a>
+<a id="entry-presentation_swift_api_session_mobius"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_mobius.519a8065b3b0"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -182,7 +195,7 @@ Möbius \(\mu(n) \in \{-1, 0, 1\}\); requires a positive integer.
 
 ### divisor_count
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_divisor_count_api_session_divisor_count"></a>
+<a id="entry-presentation_swift_api_session_divisor_count"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_divisorcount.d6068cea368d"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -195,7 +208,7 @@ Number of positive divisors \(\tau(n)\).
 
 ### divisor_sigma
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_divisor_sigma_api_session_divisor_sigma"></a>
+<a id="entry-presentation_swift_api_session_divisor_sigma"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_divisorsigma.087ab5d723f0"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -212,7 +225,7 @@ Sum of the `power`-th powers of the positive divisors \(\sigma_{\mathit{power}}(
 
 ### jacobi_symbol
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_jacobi_symbol_api_session_jacobi_symbol"></a>
+<a id="entry-presentation_swift_api_session_jacobi_symbol"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_jacobisymbol.9ded1d210a74"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -229,7 +242,7 @@ integer.
 
 ### legendre_symbol
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_legendre_symbol_api_session_legendre_symbol"></a>
+<a id="entry-presentation_swift_api_session_legendre_symbol"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_legendresymbol.f04c28794125"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -245,7 +258,7 @@ The Legendre symbol; the second argument must be an odd prime.
 
 ### kronecker_symbol
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_kronecker_symbol_api_session_kronecker_symbol"></a>
+<a id="entry-presentation_swift_api_session_kronecker_symbol"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_kroneckersymbol.6f559281ec6b"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -261,7 +274,7 @@ The Kronecker extension of the Jacobi symbol to all integer denominators.
 
 ### integer_square_root
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_integer_square_root_api_session_integer_square_root"></a>
+<a id="entry-presentation_swift_api_session_integer_square_root"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integersquareroot.abe6004ca75a"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -274,7 +287,7 @@ func integerSquareRoot(argument: UniffiExpression) -> UniffiExpression
 
 ### integer_nth_root
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_integer_nth_root_api_session_integer_nth_root"></a>
+<a id="entry-presentation_swift_api_session_integer_nth_root"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integernthroot.3a7e6e833dee"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -291,7 +304,7 @@ exists (even index, negative n).
 
 ### continued_fraction_rational
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_continued_fraction_rational_api_number_theory_session_continued_fraction_rational"></a>
+<a id="entry-presentation_swift_api_session_continued_fraction_rational"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_continuedfractionrational.9db7bb0f1f4a"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -305,7 +318,7 @@ or rational expression leaf.
 
 ### continued_fraction_quadratic_irrational
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_continued_fraction_quadratic_irrational_api_number_theory_session_continued_fraction_quadratic_irrational"></a>
+<a id="entry-presentation_swift_api_session_continued_fraction_quadratic_irrational"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_continuedfractionquadraticirrational.f6d018a4694a"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -324,7 +337,7 @@ initial part and an empty period. **Notes:** WASM returns a
 
 ### initial_terms
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_initial_terms_api_results_quadraticcontinuedfractionexpansion_initial_terms"></a>
+<a id="entry-presentation_swift_api_quadraticcontinuedfractionexpansion_initial_terms"></a>
 <a id="placement-placement.swift.swift_object.uniffiquadraticcontinuedfractionexpansion_initialterms.43bd40428d8f"></a>
 <p class="symi-entry-owner">UniffiQuadraticContinuedFractionExpansion method</p>
 
@@ -332,10 +345,11 @@ initial part and an empty period. **Notes:** WASM returns a
 func initialTerms() -> [UniffiExpression]
 ```
 
+The terms preceding the periodic part of the expansion.
 
 ### periodic_terms
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_periodic_terms_api_results_quadraticcontinuedfractionexpansion_periodic_terms"></a>
+<a id="entry-presentation_swift_api_quadraticcontinuedfractionexpansion_periodic_terms"></a>
 <a id="placement-placement.swift.swift_object.uniffiquadraticcontinuedfractionexpansion_periodicterms.c2a273f9ba2e"></a>
 <p class="symi-entry-owner">UniffiQuadraticContinuedFractionExpansion method</p>
 
@@ -343,6 +357,7 @@ func initialTerms() -> [UniffiExpression]
 func periodicTerms() -> [UniffiExpression]
 ```
 
+The repeating terms of the expansion.
 
 ## Diophantine equations
 
@@ -354,7 +369,7 @@ exact integers and never guess.
 
 ### solve_linear_diophantine
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_solve_linear_diophantine_api_number_theory_session_solve_linear_diophantine"></a>
+<a id="entry-presentation_swift_api_session_solve_linear_diophantine"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_solvelineardiophantine.4b7729095ddf"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -375,7 +390,7 @@ coefficients and the constant must be integer expression leaves.
 
 ### solve_linear_diophantine_system
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_solve_linear_diophantine_system_api_number_theory_session_solve_linear_diophantine_system"></a>
+<a id="entry-presentation_swift_api_session_solve_linear_diophantine_system"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_solvelineardiophantinesystem.7d6df1747441"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -395,7 +410,7 @@ not an integer expression leaf, or the dimensions do not agree.
 
 ### solve_pell
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_solve_pell_api_number_theory_session_solve_pell"></a>
+<a id="entry-presentation_swift_api_session_solve_pell"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_solvepell.57d589d1c5fd"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -412,7 +427,7 @@ solution).
 
 ### solve_negative_pell
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_solve_negative_pell_api_number_theory_session_solve_negative_pell"></a>
+<a id="entry-presentation_swift_api_session_solve_negative_pell"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_solvenegativepell.4ecb2cae5323"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -427,7 +442,7 @@ and an empty list otherwise.
 
 ### pell_solutions
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_pell_solutions_api_number_theory_session_pell_solutions"></a>
+<a id="entry-presentation_swift_api_session_pell_solutions"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_pellsolutions.934a2bc20441"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -448,15 +463,17 @@ fundamental solution by the Pell recurrence and returned as a flat list
 
 ## Additional API
 
-### multiplicity
+### RootMultiplicity
 
-<a id="entry-presentation_swift_number_theory_capability_discrete_mathematics_multiplicity_api_results_rootmultiplicity_multiplicity"></a>
-<a id="placement-placement.swift.swift_object.uniffirootmultiplicity_multiplicity.fe1b2d03c27f"></a>
+#### RootMultiplicity.root
+
+<a id="entry-presentation_swift_api_rootmultiplicity_root"></a>
+<a id="placement-placement.swift.swift_object.uniffirootmultiplicity_root.9988be4aaad7"></a>
 <p class="symi-entry-owner">UniffiRootMultiplicity method</p>
 
 ```swift signature
-func multiplicity() -> UInt64
+func root() -> UniffiExpression
 ```
 
-The multiplicity of the root.
+Principal n-th root, stored as `x^(1/n)`.
 

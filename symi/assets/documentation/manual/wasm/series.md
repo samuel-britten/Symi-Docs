@@ -2,7 +2,58 @@
 
 ### taylor_series
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`AssumptionScope.taylor_series`](/symi/python/series#taylor_series) in Python, [`UniffiAssumptionScope.taylorSeries`](/symi/kotlin/series#taylor_series) in Kotlin, [`UniffiAssumptionScope.taylorSeries`](/symi/swift/series#taylor_series) in Swift, [`api::AssumptionScope::taylor_series`](/symi/rust/series#taylor_series) in Rust.*
+<a id="entry-presentation_wasm_api_session_taylor_series"></a>
+<a id="placement-placement.wasm.wasm_module.module_taylorseries.e1b8fff7e6aa"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+taylorSeries(
+    input_expression: Expression,
+    variable: string,
+    expansion_point: Expression,
+    order: number,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms and variants</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_taylorseries.2224e0e71344"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.taylorSeries</code></p>
+
+```typescript signature
+taylorSeries(
+    input_expression: Expression,
+    variable: string,
+    expansion_point: Expression,
+    order: number,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_taylorseries.34401ae1c495"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.taylorSeries</code></p>
+
+```typescript signature
+taylorSeries(
+    variable: string,
+    expansion_point: Expression,
+    order: number,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.assumptionscope_taylorseries.c3cad65c2ce1"></a>
+<p class="symi-entry-owner">Variant using local assumptions — Raw WebAssembly: AssumptionScope method: <code>AssumptionScope.taylorSeries</code></p>
+
+```typescript signature
+taylorSeries(
+    input_expression: Expression,
+    variable: string,
+    expansion_point: Expression,
+    truncation_order: number,
+): Expression
+```
+
+</details>
 
 
 Truncated Taylor expansion about `expansion_point`, keeping terms of degree
@@ -13,14 +64,86 @@ symbolic differentiation.
 
 ### maclaurin_series
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.maclaurin_series`](/symi/python/series#maclaurin_series) in Python, [`UniffiExpression.maclaurinSeries`](/symi/kotlin/series#maclaurin_series) in Kotlin, [`UniffiExpression.maclaurinSeries`](/symi/swift/series#maclaurin_series) in Swift, [`api::analysis::Session::maclaurin_series`](/symi/rust/series#maclaurin_series) in Rust.*
+<a id="entry-presentation_wasm_api_session_maclaurin_series"></a>
+<a id="placement-placement.wasm.wasm_module.module_maclaurinseries.607a15898ae4"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+maclaurinSeries(
+    input_expression: Expression,
+    variable: string,
+    order: number,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_maclaurinseries.9c0c4610a21a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.maclaurinSeries</code></p>
+
+```typescript signature
+maclaurinSeries(
+    input_expression: Expression,
+    variable: string,
+    order: number,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_maclaurinseries.61e0610232f5"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.maclaurinSeries</code></p>
+
+```typescript signature
+maclaurinSeries(variable: string, order: number): Expression
+```
+
+</details>
 
 
 `taylor_series` specialised to expansion point 0.
 
 ### laurent_series
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.laurent_series`](/symi/python/series#laurent_series) in Python, [`UniffiExpression.laurentSeries`](/symi/kotlin/series#laurent_series) in Kotlin, [`UniffiExpression.laurentSeries`](/symi/swift/series#laurent_series) in Swift, [`api::Expression::laurent_series`](/symi/rust/series#laurent_series) in Rust.*
+<a id="entry-presentation_wasm_api_session_laurent_series"></a>
+<a id="placement-placement.wasm.wasm_module.module_laurentseries.0b961aee8cd4"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+laurentSeries(
+    input_expression: Expression,
+    variable: string,
+    center: Expression,
+    order: number,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_laurentseries.e8316922ebf6"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.laurentSeries</code></p>
+
+```typescript signature
+laurentSeries(
+    input_expression: Expression,
+    variable: string,
+    center: Expression,
+    order: number,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_laurentseries.d0f2974aa39d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.laurentSeries</code></p>
+
+```typescript signature
+laurentSeries(
+    variable: string,
+    center: Expression,
+    order: number,
+): Expression
+```
+
+</details>
 
 
 Truncated Laurent expansion at `center`: every \((\operatorname{variable} - \operatorname{center})^k\) term
@@ -31,9 +154,9 @@ because no finite truncation of the principal part is correct.
 
 ### residue
 
-<a id="entry-presentation_wasm_series_capability_calculus_residue_api_analysis_session_residue"></a>
+<a id="entry-presentation_wasm_api_session_residue"></a>
 <a id="placement-placement.wasm.wasm_module.module_residue.7086b98f8e0d"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 residue(
@@ -47,7 +170,7 @@ residue(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_residue.d125c14f4192"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.residue</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.residue</code></p>
 
 ```typescript signature
 residue(
@@ -57,15 +180,14 @@ residue(
 ): Expression
 ```
 
-</details>
-
-<a id="entry-presentation_wasm_series_capability_calculus_residue_api_expression_operations_expression_residue"></a>
 <a id="placement-placement.wasm.wasm_class.expression_residue.8d5e9c55a6de"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.residue</code></p>
 
 ```typescript signature
 residue(variable: string, center: Expression): Expression
 ```
+
+</details>
 
 
 Coefficient of \((\operatorname{variable} - \operatorname{center})^{-1}\) in the Laurent expansion at
@@ -77,7 +199,40 @@ explicit algebraic centers do not need to occur as structural factors.
 
 ### pole_order
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.pole_order`](/symi/python/series#pole_order) in Python, [`UniffiExpression.poleOrder`](/symi/kotlin/series#pole_order) in Kotlin, [`UniffiExpression.poleOrder`](/symi/swift/series#pole_order) in Swift, [`api::analysis::Session::pole_order`](/symi/rust/series#pole_order) in Rust.*
+<a id="entry-presentation_wasm_api_session_pole_order"></a>
+<a id="placement-placement.wasm.wasm_module.module_poleorder.13e4b7d7d589"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+poleOrder(
+    input_expression: Expression,
+    variable: string,
+    center: Expression,
+): bigint | undefined
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_poleorder.588f17fd3f20"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.poleOrder</code></p>
+
+```typescript signature
+poleOrder(
+    input_expression: Expression,
+    variable: string,
+    center: Expression,
+): bigint | undefined
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_poleorder.b10295b45362"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.poleOrder</code></p>
+
+```typescript signature
+poleOrder(variable: string, center: Expression): bigint | undefined
+```
+
+</details>
 
 
 Order of the singularity at `center`: `0` for analytic/removable points,
@@ -91,168 +246,4 @@ the square-free multiplicities of its numerator and denominator.
 ## Example
 
 This family is not part of the recommended JavaScript facade in this release. Call it through the generated `symi.raw` layer, whose entries are listed with their wasm-bindgen signatures above, and read [Migration](migration.md) for the ownership rules that apply there.
-
-
-## Additional API
-
-### laurentSeries
-
-<a id="entry-presentation_wasm_series_capability_calculus_laurent_series_api_session_laurent_series"></a>
-<a id="placement-placement.wasm.wasm_module.module_laurentseries.0b961aee8cd4"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-laurentSeries(
-    input_expression: Expression,
-    variable: string,
-    center: Expression,
-    order: number,
-): Expression
-```
-
-Truncated Laurent expansion at `center`: every \((\operatorname{variable} - \operatorname{center})^k\) term with \(-m \le k < \operatorname{order}\), where `m` is the pole order. Analytic points degrade to the Taylor expansion. At an essential singularity (where `pole_order` declines) the result is an unevaluated `series_unevaluated(...)` placeholder, because no finite truncation of the principal part is correct.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_laurentseries.e8316922ebf6"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.laurentSeries</code></p>
-
-```typescript signature
-laurentSeries(
-    input_expression: Expression,
-    variable: string,
-    center: Expression,
-    order: number,
-): Expression
-```
-
-</details>
-
-### laurentSeries
-
-<a id="entry-presentation_wasm_series_capability_calculus_laurent_series_api_expression_laurent_series"></a>
-<a id="placement-placement.wasm.wasm_class.expression_laurentseries.d0f2974aa39d"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-laurentSeries(
-    variable: string,
-    center: Expression,
-    order: number,
-): Expression
-```
-
-Truncated Laurent expansion at `center`: every \((\operatorname{variable} - \operatorname{center})^k\) term with \(-m \le k < \operatorname{order}\), where `m` is the pole order. Analytic points degrade to the Taylor expansion. At an essential singularity (where `pole_order` declines) the result is an unevaluated `series_unevaluated(...)` placeholder, because no finite truncation of the principal part is correct.
-
-### maclaurinSeries
-
-<a id="entry-presentation_wasm_series_capability_calculus_maclaurin_series_api_analysis_session_maclaurin_series"></a>
-<a id="placement-placement.wasm.wasm_module.module_maclaurinseries.607a15898ae4"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-maclaurinSeries(
-    input_expression: Expression,
-    variable: string,
-    order: number,
-): Expression
-```
-
-`taylor_series` specialised to expansion point 0.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_maclaurinseries.9c0c4610a21a"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.maclaurinSeries</code></p>
-
-```typescript signature
-maclaurinSeries(
-    input_expression: Expression,
-    variable: string,
-    order: number,
-): Expression
-```
-
-</details>
-
-### maclaurinSeries
-
-<a id="entry-presentation_wasm_series_capability_calculus_maclaurin_series_api_expression_operations_expression_maclaurin_series"></a>
-<a id="placement-placement.wasm.wasm_class.expression_maclaurinseries.61e0610232f5"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-maclaurinSeries(variable: string, order: number): Expression
-```
-
-`taylor_series` specialised to expansion point 0.
-
-### taylorSeries
-
-<a id="entry-presentation_wasm_series_capability_calculus_taylor_series_api_assumptionscope_taylor_series"></a>
-<a id="placement-placement.wasm.wasm_class.assumptionscope_taylorseries.c3cad65c2ce1"></a>
-<p class="symi-entry-owner">AssumptionScope method</p>
-
-```typescript signature
-taylorSeries(
-    input_expression: Expression,
-    variable: string,
-    expansion_point: Expression,
-    truncation_order: number,
-): Expression
-```
-
-Compute a Taylor polynomial using the scope's immutable assumptions.
-
-### taylorSeries
-
-<a id="entry-presentation_wasm_series_capability_calculus_taylor_series_api_session_taylor_series"></a>
-<a id="placement-placement.wasm.wasm_module.module_taylorseries.e1b8fff7e6aa"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-taylorSeries(
-    input_expression: Expression,
-    variable: string,
-    expansion_point: Expression,
-    order: number,
-): Expression
-```
-
-Truncated Taylor expansion about `expansion_point`, keeping terms of degree strictly less than `order` (the remainder is \(O((x-a)^{\operatorname{order}})\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_taylorseries.2224e0e71344"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.taylorSeries</code></p>
-
-```typescript signature
-taylorSeries(
-    input_expression: Expression,
-    variable: string,
-    expansion_point: Expression,
-    order: number,
-): Expression
-```
-
-</details>
-
-### taylorSeries
-
-<a id="entry-presentation_wasm_series_capability_calculus_taylor_series_api_expression_taylor_series"></a>
-<a id="placement-placement.wasm.wasm_class.expression_taylorseries.34401ae1c495"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-taylorSeries(
-    variable: string,
-    expansion_point: Expression,
-    order: number,
-): Expression
-```
-
-Truncated Taylor expansion about `expansion_point`, keeping terms of degree strictly less than `order` (the remainder is \(O((x-a)^{\operatorname{order}})\).
 

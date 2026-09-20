@@ -5,7 +5,7 @@ Matrix exponential, logarithm, trigonometric, hyperbolic, and Jordan operations 
 
 ### exponential
 
-<a id="entry-presentation_python_matrix_functions_capability_algebra_exponential_api_matrix_operations_matrix_exponential"></a>
+<a id="entry-presentation_python_api_matrix_exponential"></a>
 <a id="placement-placement.python.python_class.matrix_exponential.7d6e158a0a7b"></a>
 <p class="symi-entry-owner">Matrix method</p>
 
@@ -20,7 +20,7 @@ exactly.
 
 ### logarithm
 
-<a id="entry-presentation_python_matrix_functions_capability_algebra_logarithm_api_matrix_operations_matrix_logarithm"></a>
+<a id="entry-presentation_python_api_matrix_logarithm"></a>
 <a id="placement-placement.python.python_class.matrix_logarithm.a05822635c14"></a>
 <p class="symi-entry-owner">Matrix method</p>
 
@@ -34,7 +34,7 @@ eigenvalue (principal branch cut).
 
 ### square_root
 
-<a id="entry-presentation_python_matrix_functions_capability_algebra_square_root_api_matrix_operations_matrix_square_root"></a>
+<a id="entry-presentation_python_api_matrix_square_root"></a>
 <a id="placement-placement.python.python_class.matrix_square_root.2ee200ff9ec2"></a>
 <p class="symi-entry-owner">Matrix method</p>
 
@@ -49,7 +49,7 @@ eigenblock (non-analytic).
 
 ### sine
 
-<a id="entry-presentation_python_matrix_functions_capability_algebra_sine_api_matrix_operations_matrix_sine"></a>
+<a id="entry-presentation_python_api_matrix_sine"></a>
 <a id="placement-placement.python.python_class.matrix_sine.0de13f4135d8"></a>
 <p class="symi-entry-owner">Matrix method</p>
 
@@ -64,7 +64,7 @@ by `sin(M)^2 + cos(M)^2 = I`.
 
 ### cosine
 
-<a id="entry-presentation_python_matrix_functions_capability_algebra_cosine_api_matrix_operations_matrix_cosine"></a>
+<a id="entry-presentation_python_api_matrix_cosine"></a>
 <a id="placement-placement.python.python_class.matrix_cosine.5dc77fea11d2"></a>
 <p class="symi-entry-owner">Matrix method</p>
 
@@ -78,7 +78,7 @@ Jordan decomposition and the trigonometric identity certificate.
 
 ### hyperbolic_sine
 
-<a id="entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_sine_api_matrix_operations_matrix_hyperbolic_sine"></a>
+<a id="entry-presentation_python_api_matrix_hyperbolic_sine"></a>
 <a id="placement-placement.python.python_class.matrix_hyperbolic_sine.85e1bc19a042"></a>
 <p class="symi-entry-owner">Matrix method</p>
 
@@ -93,7 +93,7 @@ hyperbolic matrix cosine by `cosh(M)^2 - sinh(M)^2 = I`.
 
 ### hyperbolic_cosine
 
-<a id="entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_cosine_api_matrix_operations_matrix_hyperbolic_cosine"></a>
+<a id="entry-presentation_python_api_matrix_hyperbolic_cosine"></a>
 <a id="placement-placement.python.python_class.matrix_hyperbolic_cosine.00c37ee8827b"></a>
 <p class="symi-entry-owner">Matrix method</p>
 
@@ -107,7 +107,7 @@ certified Jordan decomposition and the hyperbolic identity certificate.
 
 ### jordan_decomposition
 
-<a id="entry-presentation_python_matrix_functions_capability_algebra_jordan_decomposition_api_matrix_operations_matrix_jordan_decomposition"></a>
+<a id="entry-presentation_python_api_matrix_jordan_decomposition"></a>
 <a id="placement-placement.python.python_class.matrix_jordan_decomposition.53a3aeac78c1"></a>
 <p class="symi-entry-owner">Matrix method</p>
 
@@ -125,7 +125,7 @@ result class with `similarity`/`jordan_form`/`blocks` getters, each block a
 
 ### jordan_decomposition (WASM result class)
 
-<a id="entry-presentation_python_matrix_functions_capability_algebra_jordan_decomposition_api_matrix_operations_matrix_jordan_decomposition"></a>
+<a id="entry-presentation_python_api_matrix_jordan_decomposition"></a>
 <a id="placement-placement.python.python_class.matrix_jordan_decomposition.53a3aeac78c1"></a>
 <p class="symi-entry-owner">Matrix method</p>
 
@@ -135,6 +135,9 @@ jordan_decomposition() -> tuple[Matrix, Matrix, list[tuple[Expression, int]]]
 
 
 ### similarity
+
+*Not exposed by the Python bindings. Available as [`UniffiJordanDecomposition.similarity`](/symi/kotlin/matrix-functions#similarity) in Kotlin, [`UniffiJordanDecomposition.similarity`](/symi/swift/matrix-functions#similarity) in Swift, [`api::results::JordanDecomposition::similarity`](/symi/rust/matrix-functions#similarity) in Rust.*
+
 
 ### jordan_form
 
@@ -171,19 +174,4 @@ print(matrix.eigenvalues())
 print(matrix.characteristic_polynomial("x"))
 print(blocks)
 ```
-
-
-## Additional API
-
-### similarity
-
-<a id="entry-presentation_python_matrix_functions_capability_algebra_similarity_api_results_rationalcanonicalform_similarity"></a>
-<a id="placement-placement.python.python_class.rationalcanonicalform_similarity.40c9ac5f68c3"></a>
-<p class="symi-entry-owner">RationalCanonicalForm property</p>
-
-```python signature
-similarity: Matrix
-```
-
-The certified change of basis `S`, satisfying `matrix * S == S * canonical_form`.
 

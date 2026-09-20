@@ -2,7 +2,7 @@
 
 ### solve
 
-<a id="entry-presentation_kotlin_solving_capability_equations_solve_api_solving_session_solve"></a>
+<a id="entry-presentation_kotlin_api_session_solve"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solve.6f896305e47e"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -13,13 +13,17 @@ fun solve(
 ): List<UniffiExpression>
 ```
 
-<a id="entry-presentation_kotlin_solving_capability_equations_solve_api_expression_operations_expression_solve"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_solve.a09ec4f065d9"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.solve</code></p>
 
 ```kotlin signature
 fun solve(variable: kotlin.String): List<UniffiExpression>
 ```
+
+</details>
 
 
 Solve an equation (an `equal` node, or an expression implicitly equated to
@@ -29,7 +33,7 @@ solver's reach are simply absent — prefer `solveset` when you need an honest
 
 ### solveset
 
-<a id="entry-presentation_kotlin_solving_capability_equations_solveset_api_solving_session_solveset"></a>
+<a id="entry-presentation_kotlin_api_session_solveset"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solveset.03d4bfbf04f7"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -40,13 +44,17 @@ fun solveset(
 ): UniffiExpression
 ```
 
-<a id="entry-presentation_kotlin_solving_capability_equations_solveset_api_expression_operations_expression_solveset"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_solveset.d8e8e661cefd"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.solveset</code></p>
 
 ```kotlin signature
 fun solveset(variable: kotlin.String): UniffiExpression
 ```
+
+</details>
 
 
 Solution **set** of the equation or inequality: a finite set, interval,
@@ -167,7 +175,7 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### solveset_in_domain
 
-<a id="entry-presentation_kotlin_solving_capability_equations_solveset_in_domain_api_solving_session_solveset_in_domain"></a>
+<a id="entry-presentation_kotlin_api_session_solveset_in_domain"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvesetindomain.75a22b19ab27"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -185,7 +193,7 @@ fun solvesetInDomain(
 
 ### roots_with_multiplicities
 
-<a id="entry-presentation_kotlin_solving_capability_equations_roots_with_multiplicities_api_solving_session_roots_with_multiplicities"></a>
+<a id="entry-presentation_kotlin_api_session_roots_with_multiplicities"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_rootswithmultiplicities.851ee65113f9"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -196,13 +204,17 @@ fun rootsWithMultiplicities(
 ): List<UniffiRootMultiplicity>
 ```
 
-<a id="entry-presentation_kotlin_solving_capability_equations_roots_with_multiplicities_api_expression_operations_expression_roots_with_multiplicities"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_rootswithmultiplicities.a9c69445f1dc"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rootsWithMultiplicities</code></p>
 
 ```kotlin signature
 fun rootsWithMultiplicities(variable: kotlin.String): List<UniffiRootMultiplicity>
 ```
+
+</details>
 
 
 Roots of a polynomial with their multiplicities. **Notes:** Python returns a
@@ -210,7 +222,7 @@ dict keyed by root; WASM returns an array of `RootMultiplicity` objects.
 
 ### polynomial_root
 
-<a id="entry-presentation_kotlin_solving_capability_equations_polynomial_root_api_solving_session_polynomial_root"></a>
+<a id="entry-presentation_kotlin_api_session_polynomial_root"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_polynomialroot.28a1d3f80945"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -237,7 +249,7 @@ explicit, separate operation.
 
 ### minimal_polynomial_of
 
-<a id="entry-presentation_kotlin_solving_capability_equations_minimal_polynomial_of_api_algebra_session_minimal_polynomial_of"></a>
+<a id="entry-presentation_kotlin_api_session_minimal_polynomial_of"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_minimalpolynomialof.73c4186d1d09"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -259,7 +271,7 @@ Has `root` and `multiplicity` getters; see object model.
 
 ### solve_polynomial_system
 
-<a id="entry-presentation_kotlin_solving_capability_equations_solve_polynomial_system_api_solving_session_solve_polynomial_system"></a>
+<a id="entry-presentation_kotlin_api_session_solve_polynomial_system"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvepolynomialsystem.e15e3e3f80ff"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -292,7 +304,7 @@ place.
 
 ### verdict
 
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_results_polynomialsystemsolution_verdict"></a>
+<a id="entry-presentation_kotlin_api_polynomialsystemsolution_verdict"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_verdict.0006e878b626"></a>
 <p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
 
@@ -304,12 +316,23 @@ Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`,
 `"empty"`, `"positive_dimensional"`, or `"declined"`.
 
 ### complete
+
+<a id="entry-presentation_kotlin_api_polynomialsystemsolution_complete"></a>
+<a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_complete.f70c3c1d9eb9"></a>
+<p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
+
+```kotlin signature
+fun complete(): kotlin.Boolean
+```
+
 Getter on `PolynomialSystemSolution`: whether the solver certified it found
 every solution.
 
 ### solutions
+Getter on `PolynomialSystemSolution`: the array of `SystemAssignment` tuples
+(empty for the non-finite verdicts).
 
-<a id="entry-presentation_kotlin_solving_capability_equations_solutions_api_results_polynomialsystemsolution_solutions"></a>
+<a id="entry-presentation_kotlin_api_polynomialsystemsolution_solutions"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_solutions.a689a872e0cd"></a>
 <p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
 
@@ -317,8 +340,7 @@ every solution.
 fun solutions(): List<UniffiSystemAssignment>
 ```
 
-Getter on `PolynomialSystemSolution`: the array of `SystemAssignment` tuples
-(empty for the non-finite verdicts).
+Getter on `polynomial_system_solution`: the array of `system_assignment` tuples (empty for the non-finite verdicts).
 
 ### system_assignment (WASM result class)
 
@@ -326,7 +348,7 @@ One solution tuple of a polynomial system, pairing each unknown with its value.
 
 ### variables
 
-<a id="entry-presentation_kotlin_solving_capability_equations_variables_api_results_systemassignment_variables"></a>
+<a id="entry-presentation_kotlin_api_systemassignment_variables"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisystemassignment_variables.14a2fe9b3e80"></a>
 <p class="symi-entry-owner">UniffiSystemAssignment method</p>
 
@@ -338,7 +360,7 @@ Getter on `SystemAssignment`: the unknown names, in order.
 
 ### values
 
-<a id="entry-presentation_kotlin_solving_capability_equations_values_api_results_systemassignment_values"></a>
+<a id="entry-presentation_kotlin_api_systemassignment_values"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisystemassignment_values.1aff50b38568"></a>
 <p class="symi-entry-owner">UniffiSystemAssignment method</p>
 
@@ -351,7 +373,7 @@ Getter on `SystemAssignment`: the assigned value expressions, aligned with
 
 ### real_root_count
 
-<a id="entry-presentation_kotlin_solving_capability_equations_real_root_count_api_solving_session_real_root_count"></a>
+<a id="entry-presentation_kotlin_api_session_real_root_count"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_realrootcount.5662ae54196a"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -371,7 +393,7 @@ univariate polynomial over the rationals.
 
 ### count_distinct_real_roots
 
-<a id="entry-presentation_kotlin_solving_capability_equations_count_distinct_real_roots_api_solving_session_count_distinct_real_roots"></a>
+<a id="entry-presentation_kotlin_api_session_count_distinct_real_roots"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_countdistinctrealroots.6ba1de8ecf81"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -388,7 +410,7 @@ Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions
 
 ### real_root_sign
 
-<a id="entry-presentation_kotlin_solving_capability_equations_real_root_sign_api_solving_session_real_root_sign"></a>
+<a id="entry-presentation_kotlin_api_session_real_root_sign"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_realrootsign.d4d8626c99cb"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -409,7 +431,7 @@ is out of range.
 
 ### compare_real_roots
 
-<a id="entry-presentation_kotlin_solving_capability_equations_compare_real_roots_api_solving_session_compare_real_roots"></a>
+<a id="entry-presentation_kotlin_api_session_compare_real_roots"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_comparerealroots.a4792011d011"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -436,7 +458,7 @@ polynomial over the rationals or an index is out of range.
 
 ### eliminate_quantifiers
 
-<a id="entry-presentation_kotlin_solving_capability_equations_eliminate_quantifiers_api_logic_session_eliminate_quantifiers"></a>
+<a id="entry-presentation_kotlin_api_session_eliminate_quantifiers"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_eliminatequantifiers.130b76207fde"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -463,7 +485,7 @@ decline, or when the solution formula cannot be certified.
 
 ### solve_semialgebraic
 
-<a id="entry-presentation_kotlin_solving_capability_equations_solve_semialgebraic_api_logic_session_solve_semialgebraic"></a>
+<a id="entry-presentation_kotlin_api_session_solve_semialgebraic"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvesemialgebraic.0ee8355fa7b2"></a>
 <p class="symi-entry-owner">Explicit context</p>
 
@@ -487,173 +509,13 @@ case (for example, \(\{(x, y) : x^2 - 1 < 0 \land y^2 - 1 < 0\}\) is the open sq
 ## Example
 
 
-## Additional API
+### solve_as_set
 
-### complete
+*Not exposed by the Kotlin bindings. Available as [`api::Expression::solve_as_set`](/symi/rust/solving#solve_as_set) in Rust.*
 
-<a id="entry-presentation_kotlin_solving_capability_equations_complete_api_results_optimizationoutcome_complete"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffioptimizationoutcome_complete.e62e6866c7ec"></a>
-<p class="symi-entry-owner">UniffiOptimizationOutcome method</p>
 
-```kotlin signature
-fun complete(): kotlin.Boolean
-```
-
-Getter on `polynomial_system_solution`: whether the solver certified it found every solution.
-
-### complete
-
-<a id="entry-presentation_kotlin_solving_capability_equations_complete_api_results_polynomialsystemsolution_complete"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_complete.f70c3c1d9eb9"></a>
-<p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
-
-```kotlin signature
-fun complete(): kotlin.Boolean
-```
-
-Getter on `polynomial_system_solution`: whether the solver certified it found every solution.
-
-### values
-
-<a id="entry-presentation_kotlin_solving_capability_equations_values_api_results_criticalpoint_values"></a>
-<a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_values.3dbc6f02bd77"></a>
-<p class="symi-entry-owner">UniffiCriticalPoint method</p>
-
-```kotlin signature
-fun values(): List<UniffiExpression>
-```
-
-Getter on `system_assignment`: the assigned value expressions, aligned with `variables`.
-
-### variables
-
-<a id="entry-presentation_kotlin_solving_capability_equations_variables_api_results_criticalpoint_variables"></a>
-<a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_variables.533ae8b1b140"></a>
-<p class="symi-entry-owner">UniffiCriticalPoint method</p>
-
-```kotlin signature
-fun variables(): List<kotlin.String>
-```
-
-Getter on `system_assignment`: the unknown names, in order.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_calculus_verdict_api_results_definiteintegrationresult_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_verdict.bc7ac20ebf03"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
-
-```kotlin signature
-fun verdict(): UniffiDefiniteIntegrationVerdict
-```
-
-Whether the request was evaluated, proved divergent, or declined.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_results_optimizationoutcome_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffioptimizationoutcome_verdict.9c78434af28a"></a>
-<p class="symi-entry-owner">UniffiOptimizationOutcome method</p>
-
-```kotlin signature
-fun verdict(): UniffiOptimizationVerdict
-```
-
-The optimization result classification.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffiordinarydifferentialequationsolveresult_verdict.0d23ba9d0f60"></a>
-<p class="symi-entry-owner">UniffiOrdinaryDifferentialEquationSolveResult method</p>
-
-```kotlin signature
-fun verdict(): UniffiOrdinaryDifferentialEquationSolveVerdict
-```
-
-Whether the request was solved or declined.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffiordinarydifferentialequationsystemsolveresult_verdict.2c67b3f08685"></a>
-<p class="symi-entry-owner">UniffiOrdinaryDifferentialEquationSystemSolveResult method</p>
-
-```kotlin signature
-fun verdict(): UniffiOrdinaryDifferentialEquationSolveVerdict
-```
-
-Whether the system was solved or declined.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffiordinarydifferentialequationsystemverificationreport_verdict.abcdeef14376"></a>
-<p class="symi-entry-owner">UniffiOrdinaryDifferentialEquationSystemVerificationReport method</p>
-
-```kotlin signature
-fun verdict(): UniffiOrdinaryDifferentialEquationVerificationVerdict
-```
-
-The decision on every equation residual and every datum of the supplied assignment.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationsecondorderclassification_verdict.71cdcf74ce9b"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationSecondOrderClassification method</p>
-
-```kotlin signature
-fun verdict(): UniffiPartialDifferentialEquationSecondOrderTypeVerdict
-```
-
-Whether one type, a complete case table, or neither was proved.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsolveresult_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationsolveresult_verdict.dd4ffb3f5665"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationSolveResult method</p>
-
-```kotlin signature
-fun verdict(): UniffiPartialDifferentialEquationSolveVerdict
-```
-
-Whether the dispatcher solved or honestly declined.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationtransformationverificationreport_verdict.59700689f2b8"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationTransformationVerificationReport method</p>
-
-```kotlin signature
-fun verdict(): UniffiPartialDifferentialEquationVerificationVerdict
-```
-
-The aggregate exact verification verdict.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationreport_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationverificationreport_verdict.dfa129499b75"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationVerificationReport method</p>
-
-```kotlin signature
-fun verdict(): UniffiPartialDifferentialEquationVerificationVerdict
-```
-
-The aggregate exact verification verdict.
-
-### verdict
-
-<a id="entry-presentation_kotlin_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationresidual_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationverificationresidual_verdict.870b43826104"></a>
-<p class="symi-entry-owner">UniffiPartialDifferentialEquationVerificationResidual method</p>
-
-```kotlin signature
-fun verdict(): UniffiPartialDifferentialEquationVerificationVerdict
-```
-
-The exact verdict proved about this one residual.
-
+The solution set of an equation as a set-valued expression, rather than the
+list of solutions [`solve`](#solve) returns. A set answer can express solution
+families a list cannot — an image set over the integers, or a union of several
+families — so it is the right entry when the solution set may be infinite.
+See [Sets](sets.md) for what can be done with the result.

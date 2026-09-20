@@ -66,18 +66,28 @@ On WASM the outcome and its points are objects with the following getters; on
 Python the same data is returned as plain dicts.
 
 ### points
+The list of `CriticalPoint` objects in an `OptimizationOutcome` (WASM).
 
-<a id="entry-presentation_wasm_optimization_capability_equations_points_api_results_optimizationoutcome_points"></a>
+<a id="entry-presentation_wasm_api_optimizationoutcome_points"></a>
 <a id="placement-placement.wasm.wasm_class.optimizationoutcome_points.3545def4598f"></a>
-<p class="symi-entry-owner">OptimizationOutcome property</p>
+<p class="symi-entry-owner">Raw WebAssembly: OptimizationOutcome property</p>
 
 ```typescript signature
 readonly points: CriticalPoint[]
 ```
 
-The list of `CriticalPoint` objects in an `OptimizationOutcome` (WASM).
+The list of `critical_point` objects in an `optimization_outcome` (WASM).
 
 ### classification
+
+<a id="entry-presentation_wasm_api_criticalpoint_classification"></a>
+<a id="placement-placement.wasm.wasm_class.criticalpoint_classification.978862e13473"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CriticalPoint property</p>
+
+```typescript signature
+readonly classification: string
+```
+
 The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`,
 `"saddle_point"`, or `"inconclusive"`.
 
@@ -121,35 +131,45 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
-### classification
+### classifyUnconstrained
 
-<a id="entry-presentation_wasm_optimization_capability_equations_classification_api_results_criticalpoint_classification"></a>
-<a id="placement-placement.wasm.wasm_class.criticalpoint_classification.978862e13473"></a>
-<p class="symi-entry-owner">CriticalPoint property</p>
-
-```typescript signature
-readonly classification: string
-```
-
-The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`, `"saddle_point"`, or `"inconclusive"`.
-
-### classification
-
-<a id="entry-presentation_wasm_optimization_capability_equations_classification_api_partial_differential_equations_partialdifferentialequationsolveresult_classification"></a>
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationsolveresult_classification.2086e21405ea"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationSolveResult property</p>
+<a id="entry-presentation_wasm_api_session_classify_unconstrained"></a>
+<a id="placement-placement.wasm.wasm_module.module_classifyunconstrained.016594913f0d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
-readonly classification: PartialDifferentialEquationClassification | undefined
+classifyUnconstrained(
+    objective: Expression,
+    variables: string[],
+    point_variables: string[],
+    point_values: Expression[],
+): string
 ```
 
-The exact classification the dispatcher established, when it reached one.
+Classify one given interior point — supplied as the parallel `point_variables` / `point_values` lists — by Hessian definiteness, returning the verdict string.
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_classifyunconstrained.5099f86e57ff"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.classifyUnconstrained</code></p>
+
+```typescript signature
+classifyUnconstrained(
+    objective: Expression,
+    variables: string[],
+    point_variables: string[],
+    point_values: Expression[],
+): string
+```
+
+</details>
 
 ### globalOptimumOnSemialgebraic
 
-<a id="entry-presentation_wasm_optimization_capability_equations_global_optimum_on_semialgebraic_api_solving_session_global_optimum_on_semialgebraic"></a>
+<a id="entry-presentation_wasm_api_session_global_optimum_on_semialgebraic"></a>
 <a id="placement-placement.wasm.wasm_module.module_globaloptimumonsemialgebraic.22ed79a5f317"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 globalOptimumOnSemialgebraic(
@@ -166,7 +186,7 @@ globalOptimumOnSemialgebraic(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_globaloptimumonsemialgebraic.479ea3494935"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.globalOptimumOnSemialgebraic</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.globalOptimumOnSemialgebraic</code></p>
 
 ```typescript signature
 globalOptimumOnSemialgebraic(
@@ -181,9 +201,9 @@ globalOptimumOnSemialgebraic(
 
 ### karushKuhnTuckerPoints
 
-<a id="entry-presentation_wasm_optimization_capability_equations_karush_kuhn_tucker_points_api_solving_session_karush_kuhn_tucker_points"></a>
+<a id="entry-presentation_wasm_api_session_karush_kuhn_tucker_points"></a>
 <a id="placement-placement.wasm.wasm_module.module_karushkuhntuckerpoints.a8ef1c2fbad2"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 karushKuhnTuckerPoints(
@@ -200,7 +220,7 @@ The Karush–Kuhn–Tucker points found by active-set enumeration. Each inequali
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_karushkuhntuckerpoints.fa6b84d46fc0"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.karushKuhnTuckerPoints</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.karushKuhnTuckerPoints</code></p>
 
 ```typescript signature
 karushKuhnTuckerPoints(
@@ -215,9 +235,9 @@ karushKuhnTuckerPoints(
 
 ### lagrangeCriticalPoints
 
-<a id="entry-presentation_wasm_optimization_capability_equations_lagrange_critical_points_api_solving_session_lagrange_critical_points"></a>
+<a id="entry-presentation_wasm_api_session_lagrange_critical_points"></a>
 <a id="placement-placement.wasm.wasm_module.module_lagrangecriticalpoints.bc240aa51629"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 lagrangeCriticalPoints(
@@ -233,7 +253,7 @@ The equality-constrained critical points via Lagrange multipliers: stationarity 
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_lagrangecriticalpoints.e80a858e03b0"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.lagrangeCriticalPoints</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.lagrangeCriticalPoints</code></p>
 
 ```typescript signature
 lagrangeCriticalPoints(
@@ -247,9 +267,9 @@ lagrangeCriticalPoints(
 
 ### unconstrainedCriticalPoints
 
-<a id="entry-presentation_wasm_optimization_capability_equations_unconstrained_critical_points_api_solving_session_unconstrained_critical_points"></a>
+<a id="entry-presentation_wasm_api_session_unconstrained_critical_points"></a>
 <a id="placement-placement.wasm.wasm_module.module_unconstrainedcriticalpoints.73c270b9471a"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 unconstrainedCriticalPoints(
@@ -264,7 +284,7 @@ The critical points of `objective` as the solutions of \(\nabla f = 0\), each cl
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_unconstrainedcriticalpoints.40bf18e8ff10"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.unconstrainedCriticalPoints</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.unconstrainedCriticalPoints</code></p>
 
 ```typescript signature
 unconstrainedCriticalPoints(
@@ -274,4 +294,80 @@ unconstrainedCriticalPoints(
 ```
 
 </details>
+
+### CriticalPoint
+
+#### CriticalPoint.multiplierValues
+
+<a id="entry-presentation_wasm_api_criticalpoint_multiplier_values"></a>
+<a id="placement-placement.wasm.wasm_class.criticalpoint_multipliervalues.7e963e9a8ba9"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CriticalPoint property</p>
+
+```typescript signature
+readonly multiplierValues: Expression[]
+```
+
+The solved values of those multipliers, in the same order as `multiplier_variables`.
+
+#### CriticalPoint.multiplierVariables
+
+<a id="entry-presentation_wasm_api_criticalpoint_multiplier_variables"></a>
+<a id="placement-placement.wasm.wasm_class.criticalpoint_multipliervariables.ec621ff22453"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CriticalPoint property</p>
+
+```typescript signature
+readonly multiplierVariables: string[]
+```
+
+The names of the introduced Lagrange / KKT multipliers at a constrained critical point (empty for the unconstrained case).
+
+#### CriticalPoint.values
+
+<a id="entry-presentation_wasm_api_criticalpoint_values"></a>
+<a id="placement-placement.wasm.wasm_class.criticalpoint_values.6894bda84e82"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CriticalPoint property</p>
+
+```typescript signature
+readonly values: Expression[]
+```
+
+Getter on `system_assignment`: the assigned value expressions, aligned with `variables`.
+
+#### CriticalPoint.variables
+
+<a id="entry-presentation_wasm_api_criticalpoint_variables"></a>
+<a id="placement-placement.wasm.wasm_class.criticalpoint_variables.daa72a0ef83f"></a>
+<p class="symi-entry-owner">Raw WebAssembly: CriticalPoint property</p>
+
+```typescript signature
+readonly variables: string[]
+```
+
+Getter on `system_assignment`: the unknown names, in order.
+
+### OptimizationOutcome
+
+#### OptimizationOutcome.complete
+
+<a id="entry-presentation_wasm_api_optimizationoutcome_complete"></a>
+<a id="placement-placement.wasm.wasm_class.optimizationoutcome_complete.21af5824d96d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: OptimizationOutcome property</p>
+
+```typescript signature
+readonly complete: boolean
+```
+
+Getter on `polynomial_system_solution`: whether the solver certified it found every solution.
+
+#### OptimizationOutcome.verdict
+
+<a id="entry-presentation_wasm_api_optimizationoutcome_verdict"></a>
+<a id="placement-placement.wasm.wasm_class.optimizationoutcome_verdict.a8e3195ed418"></a>
+<p class="symi-entry-owner">Raw WebAssembly: OptimizationOutcome property</p>
+
+```typescript signature
+readonly verdict: string
+```
+
+The optimization result classification.
 

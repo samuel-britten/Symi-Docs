@@ -1,1489 +1,1115 @@
 # Result-type index
 
+Entries grouped by the shape they return. A host that returns a tuple where another returns a record keeps its own shape here.
+
 ## &'static str
 
-- [`expression_type`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_expression_type_api_expression_operations_expression_expression_type) — Expression method
+- [`expression_type`](expressions.md#entry-presentation_python_api_expression_expression_type) — Expression method
 
 ## ( python_matrix, python_matrix, Vec<(python_expression, usize)>, )
 
-- [`jordan_decomposition`](matrix-functions.md#entry-presentation_python_matrix_functions_capability_algebra_jordan_decomposition_api_matrix_operations_matrix_jordan_decomposition) — Matrix method
+- [`Matrix.jordan_decomposition`](matrix-functions.md#entry-presentation_python_api_matrix_jordan_decomposition) — Matrix method
 
 ## ( python_matrix, python_matrix, python_matrix, usize, Vec<python_expression>, )
 
-- [`smith_normal_form`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_smith_normal_form_api_matrix_operations_matrix_smith_normal_form) — Matrix method
+- [`Matrix.smith_normal_form`](matrix-canonical-forms.md#entry-presentation_python_api_matrix_smith_normal_form) — Matrix method
 
 ## (Vec<python_expression>, Vec<python_expression>)
 
-- [`continued_fraction_quadratic_irrational`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_continued_fraction_quadratic_irrational_api_number_theory_session_continued_fraction_quadratic_irrational) — Default context
-- [`continued_fraction_quadratic_irrational`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_continued_fraction_quadratic_irrational_api_number_theory_session_continued_fraction_quadratic_irrational) — Default context
+- [`continued_fraction_quadratic_irrational`](number-theory.md#entry-presentation_python_api_session_continued_fraction_quadratic_irrational) — Default context
 
 ## (f64, f64)
 
-- [`evaluate_to_complex_inexact`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_evaluate_to_complex_inexact_api_expression_operations_expression_evaluate_to_complex_inexact) — Expression method
-- [`evaluate_to_complex_inexact_at_precision`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_evaluate_to_complex_inexact_at_precision_api_expression_operations_expression_evaluate_to_complex_inexact_at_precision) — Expression method
-- [`value`](api-reference.md#entry-presentation_python_api_reference_capability_numeric_definite_integration_value_api_results_numericdefiniteintegrationresult_value) — NumericDefiniteIntegrationResult property
+- [`evaluate_to_complex_inexact`](expressions.md#entry-presentation_python_api_session_evaluate_to_complex_inexact) — Expression method
+- [`evaluate_to_complex_inexact_at_precision`](expressions.md#entry-presentation_python_api_session_evaluate_to_complex_inexact_at_precision) — Expression method
+- [`NumericDefiniteIntegrationResult.value`](calculus.md#entry-presentation_python_api_numericdefiniteintegrationresult_value) — NumericDefiniteIntegrationResult property
 
 ## (python_expression, python_expression)
 
-- [`coordinates`](geometry.md#entry-presentation_python_geometry_capability_geometry_coordinates_api_point2d_coordinates) — Point2d method
-- [`numerator_denominator`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_numerator_denominator_api_session_numerator_denominator) — Default context
-- [`numerator_denominator`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_numerator_denominator_api_session_numerator_denominator) — Default context
-- [`numerator_denominator`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_numerator_denominator_api_expression_numerator_denominator) — Expression method
+- [`numerator_denominator`](expressions.md#entry-presentation_python_api_session_numerator_denominator) — Default context
+- [`Point2d.coordinates`](geometry.md#entry-presentation_python_api_point2d_coordinates) — Point2d method
 
 ## (python_expression, python_expression, python_expression)
 
-- [`extended_euclidean`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_extended_euclidean_api_number_theory_session_extended_euclidean) — Default context
-- [`extended_euclidean`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_extended_euclidean_api_number_theory_session_extended_euclidean) — Default context
+- [`extended_euclidean`](number-theory.md#entry-presentation_python_api_session_extended_euclidean) — Default context
 
 ## (python_matrix, python_matrix, python_matrix)
 
-- [`lower_upper_decomposition`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_lower_upper_decomposition_api_matrix_operations_matrix_lower_upper_decomposition) — Matrix method
+- [`Matrix.lower_upper_decomposition`](linear-algebra.md#entry-presentation_python_api_matrix_lower_upper_decomposition) — Matrix method
 
 ## (python_matrix, python_matrix, usize, Vec<usize>)
 
-- [`column_hermite_normal_form`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_column_hermite_normal_form_api_matrix_operations_matrix_column_hermite_normal_form) — Matrix method
-- [`hermite_normal_form`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_hermite_normal_form_api_matrix_operations_matrix_hermite_normal_form) — Matrix method
+- [`Matrix.column_hermite_normal_form`](matrix-canonical-forms.md#entry-presentation_python_api_matrix_column_hermite_normal_form) — Matrix method
+- [`Matrix.hermite_normal_form`](matrix-canonical-forms.md#entry-presentation_python_api_matrix_hermite_normal_form) — Matrix method
 
 ## (usize, Vec<python_expression>)
 
-- [`integer_cokernel_structure`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_integer_cokernel_structure_api_matrix_operations_matrix_integer_cokernel_structure) — Matrix method
+- [`Matrix.integer_cokernel_structure`](matrix-canonical-forms.md#entry-presentation_python_api_matrix_integer_cokernel_structure) — Matrix method
 
 ## None
 
-- [`add_assumptions`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_add_assumptions_api_session_add_assumptions) — Default context
-- [`add_assumptions`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_add_assumptions_api_session_add_assumptions) — Default context
-- [`clear_all_assumptions`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_clear_all_assumptions_api_session_clear_all_assumptions) — Default context
-- [`clear_all_assumptions`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_clear_all_assumptions_api_session_clear_all_assumptions) — Default context
-- [`clear_assumptions`](default-context.md#entry-presentation_python_default_context_capability_contexts_clear_assumptions_api_session_clear_assumptions) — Default context
-- [`clear_assumptions`](default-context.md#entry-presentation_python_default_context_capability_contexts_clear_assumptions_api_session_clear_assumptions) — Default context
-- [`reset_context`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_reset_context_api_session_reset_context) — Explicit context
-- [`set_execution_mode`](object-model.md#entry-presentation_python_object_model_capability_contexts_set_execution_mode_api_session_set_execution_mode) — Default context
-- [`set_execution_mode`](object-model.md#entry-presentation_python_object_model_capability_contexts_set_execution_mode_api_session_set_execution_mode) — Default context
+- [`add_assumptions`](assumptions.md#entry-presentation_python_api_session_add_assumptions) — Default context
+- [`clear_all_assumptions`](assumptions.md#entry-presentation_python_api_session_clear_all_assumptions) — Default context
+- [`clear_assumptions`](default-context.md#entry-presentation_python_api_session_clear_assumptions) — Default context
+- [`reset_context`](construction-and-parsing.md#entry-presentation_python_api_session_reset_context) — Explicit context
+- [`set_execution_mode`](context-safety.md#entry-presentation_python_api_session_set_execution_mode) — Default context
 
 ## NumericDefiniteIntegrationResult
 
-- [`NumericDefiniteIntegrationResult`](calculus.md#entry-presentation_python_calculus_capability_numeric_definite_integration_numericdefiniteintegrationresult_api_results_numericdefiniteintegrationresult) — Type
+Described under [`NumericDefiniteIntegrationResult`](calculus.md#numericdefiniteintegrationresult).
+
+- [`NumericDefiniteIntegrationResult`](calculus.md#entry-presentation_python_api_numericdefiniteintegrationresult) — Type
 
 ## PyAny
 
-- [`__getattribute__`](geometry.md#entry-presentation_python_geometry_capability_geometry_getattribute_unresolved) — Circle2d method
-- [`__getattribute__`](geometry.md#entry-presentation_python_geometry_capability_geometry_getattribute_unresolved) — Circle2d method
-- [`__getattribute__`](geometry.md#entry-presentation_python_geometry_capability_geometry_getattribute_unresolved) — Circle2d method
-- [`__getattribute__`](geometry.md#entry-presentation_python_geometry_capability_geometry_getattribute_unresolved) — Circle2d method
-- [`__getattribute__`](geometry.md#entry-presentation_python_geometry_capability_geometry_getattribute_unresolved) — Circle2d method
-- [`__getattribute__`](object-model.md#entry-presentation_python_object_model_capability_contexts_getattribute_unresolved) — Expression method
-- [`__getattribute__`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_getattribute_unresolved) — Matrix method
-- [`__iter__`](object-model.md#entry-presentation_python_object_model_capability_contexts_iter_unresolved) — Expression method
-- [`differentiate_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_differentiate_bulk_api_session_differentiate_bulk) — Default context
-- [`differentiate_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_differentiate_bulk_api_session_differentiate_bulk) — Default context
-- [`enumerate_set_in_interval`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_enumerate_set_in_interval_api_sets_session_enumerate_set_in_interval) — Default context
-- [`enumerate_set_in_interval`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_enumerate_set_in_interval_api_sets_session_enumerate_set_in_interval) — Default context
-- [`evaluate_numeric_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_evaluate_numeric_bulk_api_session_evaluate_numeric_bulk) — Default context
-- [`evaluate_numeric_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_evaluate_numeric_bulk_api_session_evaluate_numeric_bulk) — Default context
-- [`expand_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_expand_bulk_api_session_expand_bulk) — Default context
-- [`expand_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_expand_bulk_api_session_expand_bulk) — Default context
-- [`form`](object-model.md#entry-presentation_python_object_model_capability_contexts_form_api_partial_differential_equations_partialdifferentialequationsolutionfamily_form) — PartialDifferentialEquationSolutionFamily property
-- [`global_optimum_on_semialgebraic`](optimization.md#entry-presentation_python_optimization_capability_equations_global_optimum_on_semialgebraic_api_solving_session_global_optimum_on_semialgebraic) — Default context
-- [`global_optimum_on_semialgebraic`](optimization.md#entry-presentation_python_optimization_capability_equations_global_optimum_on_semialgebraic_api_solving_session_global_optimum_on_semialgebraic) — Default context
-- [`governing_residual`](object-model.md#entry-presentation_python_object_model_capability_contexts_governing_residual_api_partial_differential_equations_partialdifferentialequationverificationreport_governing_residual) — PartialDifferentialEquationVerificationReport property
-- [`karush_kuhn_tucker_points`](optimization.md#entry-presentation_python_optimization_capability_equations_karush_kuhn_tucker_points_api_solving_session_karush_kuhn_tucker_points) — Default context
-- [`karush_kuhn_tucker_points`](optimization.md#entry-presentation_python_optimization_capability_equations_karush_kuhn_tucker_points_api_solving_session_karush_kuhn_tucker_points) — Default context
-- [`lagrange_critical_points`](optimization.md#entry-presentation_python_optimization_capability_equations_lagrange_critical_points_api_solving_session_lagrange_critical_points) — Default context
-- [`lagrange_critical_points`](optimization.md#entry-presentation_python_optimization_capability_equations_lagrange_critical_points_api_solving_session_lagrange_critical_points) — Default context
-- [`method_candidates`](object-model.md#entry-presentation_python_object_model_capability_contexts_method_candidates_api_partial_differential_equations_partialdifferentialequationclassification_method_candidates) — PartialDifferentialEquationClassification property
-- [`parallelism_capability`](object-model.md#entry-presentation_python_object_model_capability_contexts_parallelism_capability_api_session_parallelism_capability) — Default context
-- [`parallelism_capability`](object-model.md#entry-presentation_python_object_model_capability_contexts_parallelism_capability_api_session_parallelism_capability) — Default context
-- [`parse_latex`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_parse_latex_api_serialization_session_parse_latex) — Default context
-- [`parse_latex`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_parse_latex_api_serialization_session_parse_latex) — Default context
-- [`parse_latex_with_environment`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_parse_latex_with_environment_api_serialization_session_parse_latex_with_environment) — Default context
-- [`parse_latex_with_environment`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_parse_latex_with_environment_api_serialization_session_parse_latex_with_environment) — Default context
-- [`parse_serialized_object`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_parse_serialized_object_api_serialization_session_parse_serialized_object) — Default context
-- [`parse_serialized_object`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_parse_serialized_object_api_serialization_session_parse_serialized_object) — Default context
-- [`roots_with_multiplicities`](solving.md#entry-presentation_python_solving_capability_equations_roots_with_multiplicities_api_solving_session_roots_with_multiplicities) — Default context
-- [`roots_with_multiplicities`](solving.md#entry-presentation_python_solving_capability_equations_roots_with_multiplicities_api_solving_session_roots_with_multiplicities) — Default context
-- [`roots_with_multiplicities`](solving.md#entry-presentation_python_solving_capability_equations_roots_with_multiplicities_api_expression_operations_expression_roots_with_multiplicities) — Expression method
-- [`serialize_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_serialize_bulk_api_session_serialize_bulk) — Default context
-- [`serialize_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_serialize_bulk_api_session_serialize_bulk) — Default context
-- [`simplify_bulk`](context-safety.md#entry-presentation_python_context_safety_capability_contexts_simplify_bulk_api_session_simplify_bulk) — Default context
-- [`simplify_bulk`](context-safety.md#entry-presentation_python_context_safety_capability_contexts_simplify_bulk_api_session_simplify_bulk) — Default context
-- [`solve_polynomial_system`](solving.md#entry-presentation_python_solving_capability_equations_solve_polynomial_system_api_solving_session_solve_polynomial_system) — Default context
-- [`solve_polynomial_system`](solving.md#entry-presentation_python_solving_capability_equations_solve_polynomial_system_api_solving_session_solve_polynomial_system) — Default context
-- [`substitute_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_substitute_bulk_api_session_substitute_bulk) — Default context
-- [`substitute_bulk`](object-model.md#entry-presentation_python_object_model_capability_contexts_substitute_bulk_api_session_substitute_bulk) — Default context
-- [`unconstrained_critical_points`](optimization.md#entry-presentation_python_optimization_capability_equations_unconstrained_critical_points_api_solving_session_unconstrained_critical_points) — Default context
-- [`unconstrained_critical_points`](optimization.md#entry-presentation_python_optimization_capability_equations_unconstrained_critical_points_api_solving_session_unconstrained_critical_points) — Default context
+- [`__getattribute__`](expressions.md#entry-presentation_python_host_python_expression_getattribute) — Expression method
+- [`__iter__`](sets.md#entry-presentation_python_host_python_expression_iter) — Expression method
+- [`Circle2d.__getattribute__`](geometry.md#entry-presentation_python_host_python_circle2d_getattribute) — Circle2d method
+- [`differentiate_bulk`](context-safety.md#entry-presentation_python_api_session_differentiate_bulk) — Default context
+- [`enumerate_set_in_interval`](sets.md#entry-presentation_python_api_session_enumerate_set_in_interval) — Default context
+- [`evaluate_numeric_bulk`](context-safety.md#entry-presentation_python_api_session_evaluate_numeric_bulk) — Default context
+- [`expand_bulk`](context-safety.md#entry-presentation_python_api_session_expand_bulk) — Default context
+- [`global_optimum_on_semialgebraic`](optimization.md#entry-presentation_python_api_session_global_optimum_on_semialgebraic) — Default context
+- [`karush_kuhn_tucker_points`](optimization.md#entry-presentation_python_api_session_karush_kuhn_tucker_points) — Default context
+- [`lagrange_critical_points`](optimization.md#entry-presentation_python_api_session_lagrange_critical_points) — Default context
+- [`Matrix.__getattribute__`](linear-algebra.md#entry-presentation_python_host_python_matrix_getattribute) — Matrix method
+- [`parallelism_capability`](context-safety.md#entry-presentation_python_api_session_parallelism_capability) — Default context
+- [`parse_latex`](construction-and-parsing.md#entry-presentation_python_api_session_parse_latex) — Default context
+- [`parse_latex_with_environment`](construction-and-parsing.md#entry-presentation_python_api_session_parse_latex_with_environment) — Default context
+- [`parse_serialized_object`](serialization-and-output.md#entry-presentation_python_api_session_parse_serialized_object) — Default context
+- [`PartialDifferentialEquationClassification.method_candidates`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationclassification_method_candidates) — PartialDifferentialEquationClassification property
+- [`PartialDifferentialEquationSolutionFamily.form`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolutionfamily_form) — PartialDifferentialEquationSolutionFamily property
+- [`PartialDifferentialEquationVerificationReport.governing_residual`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationreport_governing_residual) — PartialDifferentialEquationVerificationReport property
+- [`Point2d.__getattribute__`](geometry.md#entry-presentation_python_host_python_point2d_getattribute) — Point2d method
+- [`Polygon2d.__getattribute__`](geometry.md#entry-presentation_python_host_python_polygon2d_getattribute) — Polygon2d method
+- [`roots_with_multiplicities`](solving.md#entry-presentation_python_api_session_roots_with_multiplicities) — Default context
+- [`Segment2d.__getattribute__`](geometry.md#entry-presentation_python_host_python_segment2d_getattribute) — Segment2d method
+- [`serialize_bulk`](context-safety.md#entry-presentation_python_api_session_serialize_bulk) — Default context
+- [`simplify_bulk`](context-safety.md#entry-presentation_python_api_session_simplify_bulk) — Default context
+- [`solve_polynomial_system`](solving.md#entry-presentation_python_api_session_solve_polynomial_system) — Default context
+- [`substitute_bulk`](context-safety.md#entry-presentation_python_api_session_substitute_bulk) — Default context
+- [`Triangle2d.__getattribute__`](geometry.md#entry-presentation_python_host_python_triangle2d_getattribute) — Triangle2d method
+- [`unconstrained_critical_points`](optimization.md#entry-presentation_python_api_session_unconstrained_critical_points) — Default context
 
 ## PyList
 
-- [`to_list`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_to_list_api_expression_to_list) — Expression method
-- [`union_components`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_union_components_api_expression_union_components) — Expression method
+- [`to_list`](expressions.md#entry-presentation_python_api_expression_to_list) — Expression method
+- [`union_components`](expressions.md#entry-presentation_python_api_expression_union_components) — Expression method
 
 ## PythonNumericDefiniteIntegrationResult
 
-- [`integrate_definite_numeric`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_definite_numeric_api_analysis_session_integrate_definite_numeric) — Default context
-- [`integrate_definite_numeric`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_definite_numeric_api_analysis_session_integrate_definite_numeric) — Default context
+- [`integrate_definite_numeric`](calculus.md#entry-presentation_python_api_session_integrate_definite_numeric) — Default context
 
 ## Self
 
-- [`Context`](object-model.md#entry-presentation_python_object_model_capability_contexts_context_api_session) — Context constructor
-- [`CylindricalAlgebraicDecomposition`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_cylindrical_algebraic_decomposition_api_cylindricalalgebraicdecomposition) — CylindricalAlgebraicDecomposition constructor
+- [`Context`](object-model.md#entry-presentation_python_api_session) — Context constructor
+- [`CylindricalAlgebraicDecomposition`](cad.md#entry-presentation_python_api_cylindricalalgebraicdecomposition) — CylindricalAlgebraicDecomposition constructor
 
 ## assumption_proposition
 
-- [`AssumptionProposition`](object-model.md#entry-presentation_python_object_model_capability_contexts_assumption_proposition_api_assumptionproposition) — Type
-- [`algebraic_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_algebraic_assumption_api_session_algebraic_assumption) — Default context
-- [`algebraic_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_algebraic_assumption_api_session_algebraic_assumption) — Default context
-- [`and`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_and_api_assumptionproposition_and) — AssumptionProposition method
-- [`assumption_proposition_from_logical_expression`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_assumption_proposition_from_logical_expression_api_session_assumption_proposition_from_logical_expression) — Default context
-- [`assumption_proposition_from_logical_expression`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_assumption_proposition_from_logical_expression_api_session_assumption_proposition_from_logical_expression) — Default context
-- [`complex_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_complex_assumption_api_session_complex_assumption) — Default context
-- [`complex_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_complex_assumption_api_session_complex_assumption) — Default context
-- [`complex_entries`](object-model.md#entry-presentation_python_object_model_capability_contexts_complex_entries_api_session_complex_entries) — Default context
-- [`complex_entries`](object-model.md#entry-presentation_python_object_model_capability_contexts_complex_entries_api_session_complex_entries) — Default context
-- [`composite_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_composite_assumption_api_session_composite_assumption) — Default context
-- [`composite_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_composite_assumption_api_session_composite_assumption) — Default context
-- [`condition`](object-model.md#entry-presentation_python_object_model_capability_contexts_condition_api_partial_differential_equations_partialdifferentialequationsecondordertypecase_condition) — PartialDifferentialEquationSecondOrderTypeCase property
-- [`congruent_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_congruent_assumption_api_defaults_session_congruent_assumption) — Default context
-- [`congruent_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_congruent_assumption_api_defaults_session_congruent_assumption) — Default context
-- [`defined_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_defined_assumption_api_session_defined_assumption) — Default context
-- [`defined_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_defined_assumption_api_session_defined_assumption) — Default context
-- [`deserialize_assumption_proposition`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_deserialize_assumption_proposition_api_session_deserialize_assumption_proposition) — Default context
-- [`deserialize_assumption_proposition`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_deserialize_assumption_proposition_api_session_deserialize_assumption_proposition) — Default context
-- [`diagonal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_diagonal_matrix_api_session_diagonal_matrix) — Default context
-- [`diagonal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_diagonal_matrix_api_session_diagonal_matrix) — Default context
-- [`equal_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_equal_assumption_api_defaults_session_equal_assumption) — Default context
-- [`equal_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_equal_assumption_api_defaults_session_equal_assumption) — Default context
-- [`even_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_even_assumption_api_session_even_assumption) — Default context
-- [`even_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_even_assumption_api_session_even_assumption) — Default context
-- [`extended_real_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_extended_real_assumption_api_session_extended_real_assumption) — Default context
-- [`extended_real_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_extended_real_assumption_api_session_extended_real_assumption) — Default context
-- [`finite_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_finite_assumption_api_session_finite_assumption) — Default context
-- [`finite_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_finite_assumption_api_session_finite_assumption) — Default context
-- [`full_rank_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_full_rank_matrix_api_session_full_rank_matrix) — Default context
-- [`full_rank_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_full_rank_matrix_api_session_full_rank_matrix) — Default context
-- [`greater_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_greater_assumption_api_defaults_session_greater_assumption) — Default context
-- [`greater_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_greater_assumption_api_defaults_session_greater_assumption) — Default context
-- [`greater_or_equal_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_greater_or_equal_assumption_api_defaults_session_greater_or_equal_assumption) — Default context
-- [`greater_or_equal_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_greater_or_equal_assumption_api_defaults_session_greater_or_equal_assumption) — Default context
-- [`hermitian_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_hermitian_matrix_api_session_hermitian_matrix) — Default context
-- [`hermitian_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_hermitian_matrix_api_session_hermitian_matrix) — Default context
-- [`identity_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_identity_matrix_api_session_identity_matrix) — Default context
-- [`identity_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_identity_matrix_api_session_identity_matrix) — Default context
-- [`infinite_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_infinite_assumption_api_session_infinite_assumption) — Default context
-- [`infinite_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_infinite_assumption_api_session_infinite_assumption) — Default context
-- [`integer_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_integer_assumption_api_session_integer_assumption) — Default context
-- [`integer_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_integer_assumption_api_session_integer_assumption) — Default context
-- [`integer_entries`](object-model.md#entry-presentation_python_object_model_capability_contexts_integer_entries_api_session_integer_entries) — Default context
-- [`integer_entries`](object-model.md#entry-presentation_python_object_model_capability_contexts_integer_entries_api_session_integer_entries) — Default context
-- [`invertible_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_invertible_matrix_api_session_invertible_matrix) — Default context
-- [`invertible_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_invertible_matrix_api_session_invertible_matrix) — Default context
-- [`irrational_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_irrational_assumption_api_session_irrational_assumption) — Default context
-- [`irrational_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_irrational_assumption_api_session_irrational_assumption) — Default context
-- [`less_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_less_assumption_api_defaults_session_less_assumption) — Default context
-- [`less_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_less_assumption_api_defaults_session_less_assumption) — Default context
-- [`less_or_equal_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_less_or_equal_assumption_api_defaults_session_less_or_equal_assumption) — Default context
-- [`less_or_equal_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_less_or_equal_assumption_api_defaults_session_less_or_equal_assumption) — Default context
-- [`lower_triangular_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_lower_triangular_matrix_api_session_lower_triangular_matrix) — Default context
-- [`lower_triangular_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_lower_triangular_matrix_api_session_lower_triangular_matrix) — Default context
-- [`matrix_shape`](object-model.md#entry-presentation_python_object_model_capability_contexts_matrix_shape_api_session_matrix_shape) — Default context
-- [`matrix_shape`](object-model.md#entry-presentation_python_object_model_capability_contexts_matrix_shape_api_session_matrix_shape) — Default context
-- [`member_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_member_assumption_api_defaults_session_member_assumption) — Default context
-- [`member_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_member_assumption_api_defaults_session_member_assumption) — Default context
-- [`natural_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_natural_assumption_api_session_natural_assumption) — Default context
-- [`natural_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_natural_assumption_api_session_natural_assumption) — Default context
-- [`negative_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_negative_assumption_api_session_negative_assumption) — Default context
-- [`negative_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_negative_assumption_api_session_negative_assumption) — Default context
-- [`nonnegative_assumption`](object-model.md#entry-presentation_python_object_model_capability_contexts_nonnegative_assumption_api_session_nonnegative_assumption) — Default context
-- [`nonnegative_assumption`](object-model.md#entry-presentation_python_object_model_capability_contexts_nonnegative_assumption_api_session_nonnegative_assumption) — Default context
-- [`nonpositive_assumption`](object-model.md#entry-presentation_python_object_model_capability_contexts_nonpositive_assumption_api_session_nonpositive_assumption) — Default context
-- [`nonpositive_assumption`](object-model.md#entry-presentation_python_object_model_capability_contexts_nonpositive_assumption_api_session_nonpositive_assumption) — Default context
-- [`nonzero_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_nonzero_assumption_api_session_nonzero_assumption) — Default context
-- [`nonzero_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_nonzero_assumption_api_session_nonzero_assumption) — Default context
-- [`normal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_normal_matrix_api_session_normal_matrix) — Default context
-- [`normal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_normal_matrix_api_session_normal_matrix) — Default context
-- [`not`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_not_api_assumptionproposition_not) — AssumptionProposition method
-- [`not_equal_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_not_equal_assumption_api_defaults_session_not_equal_assumption) — Default context
-- [`not_equal_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_not_equal_assumption_api_defaults_session_not_equal_assumption) — Default context
-- [`odd_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_odd_assumption_api_session_odd_assumption) — Default context
-- [`odd_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_odd_assumption_api_session_odd_assumption) — Default context
-- [`or`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_or_api_assumptionproposition_or) — AssumptionProposition method
-- [`orthogonal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_orthogonal_matrix_api_session_orthogonal_matrix) — Default context
-- [`orthogonal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_orthogonal_matrix_api_session_orthogonal_matrix) — Default context
-- [`positive_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_positive_assumption_api_session_positive_assumption) — Default context
-- [`positive_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_positive_assumption_api_session_positive_assumption) — Default context
-- [`positive_definite_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_positive_definite_matrix_api_session_positive_definite_matrix) — Default context
-- [`positive_definite_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_positive_definite_matrix_api_session_positive_definite_matrix) — Default context
-- [`positive_integer_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_positive_integer_assumption_api_session_positive_integer_assumption) — Default context
-- [`positive_integer_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_positive_integer_assumption_api_session_positive_integer_assumption) — Default context
-- [`positive_semidefinite_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_positive_semidefinite_matrix_api_session_positive_semidefinite_matrix) — Default context
-- [`positive_semidefinite_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_positive_semidefinite_matrix_api_session_positive_semidefinite_matrix) — Default context
-- [`prime_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_prime_assumption_api_session_prime_assumption) — Default context
-- [`prime_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_prime_assumption_api_session_prime_assumption) — Default context
-- [`rational_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_rational_assumption_api_session_rational_assumption) — Default context
-- [`rational_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_rational_assumption_api_session_rational_assumption) — Default context
-- [`real_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_real_assumption_api_session_real_assumption) — Default context
-- [`real_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_real_assumption_api_session_real_assumption) — Default context
-- [`real_entries`](object-model.md#entry-presentation_python_object_model_capability_contexts_real_entries_api_session_real_entries) — Default context
-- [`real_entries`](object-model.md#entry-presentation_python_object_model_capability_contexts_real_entries_api_session_real_entries) — Default context
-- [`singular_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_singular_matrix_api_session_singular_matrix) — Default context
-- [`singular_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_singular_matrix_api_session_singular_matrix) — Default context
-- [`square_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_square_matrix_api_session_square_matrix) — Default context
-- [`square_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_square_matrix_api_session_square_matrix) — Default context
-- [`symmetric_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_symmetric_matrix_api_session_symmetric_matrix) — Default context
-- [`symmetric_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_symmetric_matrix_api_session_symmetric_matrix) — Default context
-- [`transcendental_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_transcendental_assumption_api_session_transcendental_assumption) — Default context
-- [`transcendental_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_transcendental_assumption_api_session_transcendental_assumption) — Default context
-- [`unitary_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_unitary_matrix_api_session_unitary_matrix) — Default context
-- [`unitary_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_unitary_matrix_api_session_unitary_matrix) — Default context
-- [`upper_triangular_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_upper_triangular_matrix_api_session_upper_triangular_matrix) — Default context
-- [`upper_triangular_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_upper_triangular_matrix_api_session_upper_triangular_matrix) — Default context
-- [`zero_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_zero_assumption_api_session_zero_assumption) — Default context
-- [`zero_assumption`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_zero_assumption_api_session_zero_assumption) — Default context
-- [`zero_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_zero_matrix_api_session_zero_matrix) — Default context
-- [`zero_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_zero_matrix_api_session_zero_matrix) — Default context
+- [`algebraic_assumption`](assumptions.md#entry-presentation_python_api_session_algebraic_assumption) — Default context
+- [`assumption_proposition_from_logical_expression`](assumptions.md#entry-presentation_python_api_session_assumption_proposition_from_logical_expression) — Default context
+- [`AssumptionProposition`](assumptions.md#entry-presentation_python_api_assumptionproposition) — Type
+- [`AssumptionProposition.and`](assumptions.md#entry-presentation_python_api_assumptionproposition_and) — AssumptionProposition method
+- [`AssumptionProposition.not`](assumptions.md#entry-presentation_python_api_assumptionproposition_not) — AssumptionProposition method
+- [`AssumptionProposition.or`](assumptions.md#entry-presentation_python_api_assumptionproposition_or) — AssumptionProposition method
+- [`complex_assumption`](assumptions.md#entry-presentation_python_api_session_complex_assumption) — Default context
+- [`complex_entries`](linear-algebra.md#entry-presentation_python_api_session_complex_entries) — Default context
+- [`composite_assumption`](assumptions.md#entry-presentation_python_api_session_composite_assumption) — Default context
+- [`congruent_assumption`](assumptions.md#entry-presentation_python_api_session_congruent_assumption) — Default context
+- [`defined_assumption`](assumptions.md#entry-presentation_python_api_session_defined_assumption) — Default context
+- [`deserialize_assumption_proposition`](assumptions.md#entry-presentation_python_api_session_deserialize_assumption_proposition) — Default context
+- [`diagonal_matrix`](matrix-construction.md#entry-presentation_python_api_session_diagonal_matrix) — Default context
+- [`equal_assumption`](assumptions.md#entry-presentation_python_api_session_equal_assumption) — Default context
+- [`even_assumption`](assumptions.md#entry-presentation_python_api_session_even_assumption) — Default context
+- [`extended_real_assumption`](assumptions.md#entry-presentation_python_api_session_extended_real_assumption) — Default context
+- [`finite_assumption`](assumptions.md#entry-presentation_python_api_session_finite_assumption) — Default context
+- [`full_rank_matrix`](linear-algebra.md#entry-presentation_python_api_session_full_rank_matrix) — Default context
+- [`greater_assumption`](assumptions.md#entry-presentation_python_api_session_greater_assumption) — Default context
+- [`greater_or_equal_assumption`](assumptions.md#entry-presentation_python_api_session_greater_or_equal_assumption) — Default context
+- [`hermitian_matrix`](linear-algebra.md#entry-presentation_python_api_session_hermitian_matrix) — Default context
+- [`identity_matrix`](matrix-construction.md#entry-presentation_python_api_session_identity_matrix) — Default context
+- [`infinite_assumption`](assumptions.md#entry-presentation_python_api_session_infinite_assumption) — Default context
+- [`integer_assumption`](assumptions.md#entry-presentation_python_api_session_integer_assumption) — Default context
+- [`integer_entries`](linear-algebra.md#entry-presentation_python_api_session_integer_entries) — Default context
+- [`invertible_matrix`](linear-algebra.md#entry-presentation_python_api_session_invertible_matrix) — Default context
+- [`irrational_assumption`](assumptions.md#entry-presentation_python_api_session_irrational_assumption) — Default context
+- [`less_assumption`](assumptions.md#entry-presentation_python_api_session_less_assumption) — Default context
+- [`less_or_equal_assumption`](assumptions.md#entry-presentation_python_api_session_less_or_equal_assumption) — Default context
+- [`lower_triangular_matrix`](linear-algebra.md#entry-presentation_python_api_session_lower_triangular_matrix) — Default context
+- [`matrix_shape`](linear-algebra.md#entry-presentation_python_api_session_matrix_shape) — Default context
+- [`member_assumption`](assumptions.md#entry-presentation_python_api_session_member_assumption) — Default context
+- [`natural_assumption`](assumptions.md#entry-presentation_python_api_session_natural_assumption) — Default context
+- [`negative_assumption`](assumptions.md#entry-presentation_python_api_session_negative_assumption) — Default context
+- [`nonnegative_assumption`](assumptions.md#entry-presentation_python_api_session_nonnegative_assumption) — Default context
+- [`nonpositive_assumption`](assumptions.md#entry-presentation_python_api_session_nonpositive_assumption) — Default context
+- [`nonzero_assumption`](assumptions.md#entry-presentation_python_api_session_nonzero_assumption) — Default context
+- [`normal_matrix`](linear-algebra.md#entry-presentation_python_api_session_normal_matrix) — Default context
+- [`not_equal_assumption`](assumptions.md#entry-presentation_python_api_session_not_equal_assumption) — Default context
+- [`odd_assumption`](assumptions.md#entry-presentation_python_api_session_odd_assumption) — Default context
+- [`orthogonal_matrix`](linear-algebra.md#entry-presentation_python_api_session_orthogonal_matrix) — Default context
+- [`PartialDifferentialEquationSecondOrderTypeCase.condition`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondordertypecase_condition) — PartialDifferentialEquationSecondOrderTypeCase property
+- [`positive_assumption`](assumptions.md#entry-presentation_python_api_session_positive_assumption) — Default context
+- [`positive_definite_matrix`](linear-algebra.md#entry-presentation_python_api_session_positive_definite_matrix) — Default context
+- [`positive_integer_assumption`](assumptions.md#entry-presentation_python_api_session_positive_integer_assumption) — Default context
+- [`positive_semidefinite_matrix`](linear-algebra.md#entry-presentation_python_api_session_positive_semidefinite_matrix) — Default context
+- [`prime_assumption`](assumptions.md#entry-presentation_python_api_session_prime_assumption) — Default context
+- [`rational_assumption`](assumptions.md#entry-presentation_python_api_session_rational_assumption) — Default context
+- [`real_assumption`](assumptions.md#entry-presentation_python_api_session_real_assumption) — Default context
+- [`real_entries`](linear-algebra.md#entry-presentation_python_api_session_real_entries) — Default context
+- [`singular_matrix`](linear-algebra.md#entry-presentation_python_api_session_singular_matrix) — Default context
+- [`square_matrix`](linear-algebra.md#entry-presentation_python_api_session_square_matrix) — Default context
+- [`symmetric_matrix`](linear-algebra.md#entry-presentation_python_api_session_symmetric_matrix) — Default context
+- [`transcendental_assumption`](assumptions.md#entry-presentation_python_api_session_transcendental_assumption) — Default context
+- [`unitary_matrix`](linear-algebra.md#entry-presentation_python_api_session_unitary_matrix) — Default context
+- [`upper_triangular_matrix`](linear-algebra.md#entry-presentation_python_api_session_upper_triangular_matrix) — Default context
+- [`zero_assumption`](assumptions.md#entry-presentation_python_api_session_zero_assumption) — Default context
+- [`zero_matrix`](matrix-construction.md#entry-presentation_python_api_session_zero_matrix) — Default context
 
 ## assumption_scope
 
-- [`AssumptionScope`](object-model.md#entry-presentation_python_object_model_capability_contexts_assumption_scope_api_assumptionscope) — Type
-- [`assuming`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_assuming_api_assumptionscope_assuming) — AssumptionScope method
-- [`assuming`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_assuming_api_session_assuming) — Default context
-- [`assuming`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_assuming_api_session_assuming) — Default context
+Described under [`AssumptionScope`](assumptions.md#ask).
+
+- [`assuming`](assumptions.md#entry-presentation_python_api_session_assuming) — Default context
+- [`AssumptionScope`](assumptions.md#entry-presentation_python_api_assumptionscope) — Type
 
 ## bool
 
-- [`__bool__`](object-model.md#entry-presentation_python_object_model_capability_contexts_bool_unresolved) — Expression method
-- [`__eq__`](object-model.md#entry-presentation_python_object_model_capability_contexts_eq_unresolved) — Expression method
-- [`__ne__`](object-model.md#entry-presentation_python_object_model_capability_contexts_ne_unresolved) — Expression method
-- [`admits_additive_solution_symmetry`](object-model.md#entry-presentation_python_object_model_capability_contexts_admits_additive_solution_symmetry_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_admits_additive_solution_symmetry) — PartialDifferentialEquationPointSymmetryAction property
-- [`admits_additive_solution_symmetry`](object-model.md#entry-presentation_python_object_model_capability_contexts_admits_additive_solution_symmetry_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_admits_additive_solution_symmetry) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`ask`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_ask_api_assumptionscope_ask) — AssumptionScope method
-- [`ask`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_ask_api_session_ask) — Default context
-- [`ask`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_ask_api_session_ask) — Default context
-- [`canonicalized`](object-model.md#entry-presentation_python_object_model_capability_contexts_canonicalized_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_canonicalized) — PartialDifferentialEquationCanonicalizationResult property
-- [`could_hold`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_could_hold_api_assumptionscope_could_hold) — AssumptionScope method
-- [`could_hold`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_could_hold_api_session_could_hold) — Default context
-- [`could_hold`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_could_hold_api_session_could_hold) — Default context
-- [`equals`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_equals_api_expression_operations_expression_equals) — Expression method
-- [`establishes_completeness`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_establishes_completeness_api_partial_differential_equations_partialdifferentialequationsolutionfamily_establishes_completeness) — PartialDifferentialEquationSolutionFamily property
-- [`evaluate_truth`](logic.md#entry-presentation_python_logic_capability_discrete_mathematics_evaluate_truth_api_session_evaluate_truth) — Default context
-- [`evaluate_truth`](logic.md#entry-presentation_python_logic_capability_discrete_mathematics_evaluate_truth_api_session_evaluate_truth) — Default context
-- [`evaluate_truth`](logic.md#entry-presentation_python_logic_capability_discrete_mathematics_evaluate_truth_api_expression_evaluate_truth) — Expression method
-- [`has_complex_entries`](object-model.md#entry-presentation_python_object_model_capability_contexts_has_complex_entries_api_matrix_has_complex_entries) — Matrix method
-- [`has_integer_entries`](object-model.md#entry-presentation_python_object_model_capability_contexts_has_integer_entries_api_matrix_has_integer_entries) — Matrix method
-- [`has_real_entries`](object-model.md#entry-presentation_python_object_model_capability_contexts_has_real_entries_api_matrix_has_real_entries) — Matrix method
-- [`homogeneous`](object-model.md#entry-presentation_python_object_model_capability_contexts_homogeneous_api_partial_differential_equations_partialdifferentialequationcoefficientdata_homogeneous) — PartialDifferentialEquationCoefficientData property
-- [`ideal_membership`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_ideal_membership_api_algebra_session_ideal_membership) — Default context
-- [`ideal_membership`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_ideal_membership_api_algebra_session_ideal_membership) — Default context
-- [`is_algebraic`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_algebraic_api_expression_is_algebraic) — Expression method
-- [`is_complex`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_complex_api_expression_is_complex) — Expression method
-- [`is_composite`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_composite_api_expression_is_composite) — Expression method
-- [`is_defined`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_defined_api_expression_is_defined) — Expression method
-- [`is_diagonal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_diagonal_matrix_api_matrix_is_diagonal_matrix) — Matrix method
-- [`is_equality`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_equality_api_expression_is_equality) — Expression method
-- [`is_equality`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_equality_api_matrix_operations_matrix_is_equality) — Matrix method
-- [`is_even`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_even_api_expression_is_even) — Expression method
-- [`is_extended_real`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_extended_real_api_expression_is_extended_real) — Expression method
-- [`is_finite`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_finite_api_expression_is_finite) — Expression method
-- [`is_finite_set`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_finite_set_api_expression_is_finite_set) — Expression method
-- [`is_finite_set`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_finite_set_api_matrix_operations_matrix_is_finite_set) — Matrix method
-- [`is_full_rank_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_full_rank_matrix_api_matrix_is_full_rank_matrix) — Matrix method
-- [`is_hermitian_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_hermitian_matrix_api_matrix_is_hermitian_matrix) — Matrix method
-- [`is_identity_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_identity_matrix_api_matrix_is_identity_matrix) — Matrix method
-- [`is_image_set`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_image_set_api_expression_is_image_set) — Expression method
-- [`is_image_set`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_image_set_api_matrix_operations_matrix_is_image_set) — Matrix method
-- [`is_infinite`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_infinite_api_expression_is_infinite) — Expression method
-- [`is_integer`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_integer_api_expression_is_integer) — Expression method
-- [`is_integral`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_integral_api_expression_is_integral) — Expression method
-- [`is_integral`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_integral_api_matrix_operations_matrix_is_integral) — Matrix method
-- [`is_interval`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_interval_api_expression_is_interval) — Expression method
-- [`is_invertible_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_invertible_matrix_api_matrix_is_invertible_matrix) — Matrix method
-- [`is_irrational`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_irrational_api_expression_is_irrational) — Expression method
-- [`is_matrix`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_matrix_api_expression_is_matrix) — Expression method
-- [`is_matrix`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_matrix_api_matrix_operations_matrix_is_matrix) — Matrix property
-- [`is_member`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_is_member_api_sets_session_is_member) — Default context
-- [`is_member`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_is_member_api_sets_session_is_member) — Default context
-- [`is_natural`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_natural_api_expression_is_natural) — Expression method
-- [`is_negative`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_negative_api_expression_is_negative) — Expression method
-- [`is_nonnegative`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_nonnegative_api_expression_is_nonnegative) — Expression method
-- [`is_nonpositive`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_nonpositive_api_expression_is_nonpositive) — Expression method
-- [`is_nonzero`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_nonzero_api_expression_is_nonzero) — Expression method
-- [`is_normal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_normal_matrix_api_matrix_is_normal_matrix) — Matrix method
-- [`is_odd`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_odd_api_expression_is_odd) — Expression method
-- [`is_orthogonal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_orthogonal_matrix_api_matrix_is_orthogonal_matrix) — Matrix method
-- [`is_positive`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_positive_api_expression_is_positive) — Expression method
-- [`is_positive`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_positive_api_matrix_operations_matrix_is_positive) — Matrix method
-- [`is_positive_definite_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_positive_definite_matrix_api_matrix_is_positive_definite_matrix) — Matrix method
-- [`is_positive_integer`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_positive_integer_api_expression_is_positive_integer) — Expression method
-- [`is_positive_semidefinite_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_positive_semidefinite_matrix_api_matrix_is_positive_semidefinite_matrix) — Matrix method
-- [`is_prime`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_is_prime_api_session_is_prime) — Default context
-- [`is_prime`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_is_prime_api_session_is_prime) — Default context
-- [`is_prime`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_is_prime_api_expression_is_prime) — Expression method
-- [`is_rational`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_rational_api_expression_is_rational) — Expression method
-- [`is_real`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_real_api_expression_is_real) — Expression method
-- [`is_real`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_real_api_matrix_operations_matrix_is_real) — Matrix method
-- [`is_singular_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_singular_matrix_api_matrix_is_singular_matrix) — Matrix method
-- [`is_square`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_square_api_matrix_is_square) — Matrix method
-- [`is_stale`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_geometry_operations_circle2d_is_stale) — Circle2d property
-- [`is_stale`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_expression_is_stale) — Expression method
-- [`is_stale`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_matrix_is_stale) — Matrix property
-- [`is_stale`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_point2d_is_stale) — Point2d property
-- [`is_stale`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_geometry_operations_polygon2d_is_stale) — Polygon2d property
-- [`is_stale`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_geometry_operations_segment2d_is_stale) — Segment2d property
-- [`is_stale`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_stale_api_geometry_operations_triangle2d_is_stale) — Triangle2d property
-- [`is_subset`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_is_subset_api_sets_session_is_subset) — Default context
-- [`is_subset`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_is_subset_api_sets_session_is_subset) — Default context
-- [`is_symmetric_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_symmetric_matrix_api_matrix_is_symmetric_matrix) — Matrix method
-- [`is_transcendental`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_transcendental_api_expression_is_transcendental) — Expression method
-- [`is_union`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_union_api_expression_is_union) — Expression method
-- [`is_union`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_is_union_api_matrix_operations_matrix_is_union) — Matrix method
-- [`is_unitary_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_unitary_matrix_api_matrix_is_unitary_matrix) — Matrix method
-- [`is_zero`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_zero_api_expression_is_zero) — Expression method
-- [`is_zero_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_is_zero_matrix_api_matrix_is_zero_matrix) — Matrix method
-- [`transformed`](object-model.md#entry-presentation_python_object_model_capability_contexts_transformed_api_partial_differential_equations_partialdifferentialequationtransformationresult_transformed) — PartialDifferentialEquationTransformationResult property
+- [`__bool__`](expressions.md#entry-presentation_python_host_python_expression_bool) — Expression method
+- [`__eq__`](expressions.md#entry-presentation_python_host_python_expression_eq) — Expression method
+- [`__ne__`](expressions.md#entry-presentation_python_host_python_expression_ne) — Expression method
+- [`ask`](assumptions.md#entry-presentation_python_api_session_ask) — Default context
+- [`Circle2d.is_stale`](geometry.md#entry-presentation_python_api_circle2d_is_stale) — Circle2d property
+- [`could_hold`](assumptions.md#entry-presentation_python_api_session_could_hold) — Default context
+- [`equals`](expressions.md#entry-presentation_python_api_expression_equals) — Expression method
+- [`evaluate_truth`](logic.md#entry-presentation_python_api_session_evaluate_truth) — Default context
+- [`ideal_membership`](polynomials.md#entry-presentation_python_api_session_ideal_membership) — Default context
+- [`is_algebraic`](expressions.md#entry-presentation_python_api_expression_is_algebraic) — Expression method
+- [`is_complex`](expressions.md#entry-presentation_python_api_expression_is_complex) — Expression method
+- [`is_composite`](expressions.md#entry-presentation_python_api_expression_is_composite) — Expression method
+- [`is_defined`](expressions.md#entry-presentation_python_api_expression_is_defined) — Expression method
+- [`is_equality`](expressions.md#entry-presentation_python_api_expression_is_equality) — Expression method
+- [`is_even`](expressions.md#entry-presentation_python_api_expression_is_even) — Expression method
+- [`is_extended_real`](expressions.md#entry-presentation_python_api_expression_is_extended_real) — Expression method
+- [`is_finite`](expressions.md#entry-presentation_python_api_expression_is_finite) — Expression method
+- [`is_finite_set`](expressions.md#entry-presentation_python_api_expression_is_finite_set) — Expression method
+- [`is_image_set`](expressions.md#entry-presentation_python_api_expression_is_image_set) — Expression method
+- [`is_infinite`](expressions.md#entry-presentation_python_api_expression_is_infinite) — Expression method
+- [`is_integer`](expressions.md#entry-presentation_python_api_expression_is_integer) — Expression method
+- [`is_integral`](expressions.md#entry-presentation_python_api_expression_is_integral) — Expression method
+- [`is_interval`](expressions.md#entry-presentation_python_api_expression_is_interval) — Expression method
+- [`is_irrational`](expressions.md#entry-presentation_python_api_expression_is_irrational) — Expression method
+- [`is_matrix`](expressions.md#entry-presentation_python_api_expression_is_matrix) — Expression method
+- [`is_member`](sets.md#entry-presentation_python_api_session_is_member) — Default context
+- [`is_natural`](expressions.md#entry-presentation_python_api_expression_is_natural) — Expression method
+- [`is_negative`](expressions.md#entry-presentation_python_api_expression_is_negative) — Expression method
+- [`is_nonnegative`](expressions.md#entry-presentation_python_api_session_is_nonnegative) — Expression method
+- [`is_nonpositive`](expressions.md#entry-presentation_python_api_session_is_nonpositive) — Expression method
+- [`is_nonzero`](expressions.md#entry-presentation_python_api_expression_is_nonzero) — Expression method
+- [`is_odd`](expressions.md#entry-presentation_python_api_expression_is_odd) — Expression method
+- [`is_positive`](expressions.md#entry-presentation_python_api_expression_is_positive) — Expression method
+- [`is_positive_integer`](expressions.md#entry-presentation_python_api_expression_is_positive_integer) — Expression method
+- [`is_prime`](number-theory.md#entry-presentation_python_api_session_is_prime) — Default context
+- [`is_rational`](expressions.md#entry-presentation_python_api_expression_is_rational) — Expression method
+- [`is_real`](expressions.md#entry-presentation_python_api_expression_is_real) — Expression method
+- [`is_stale`](expressions.md#entry-presentation_python_api_expression_is_stale) — Expression method
+- [`is_subset`](sets.md#entry-presentation_python_api_session_is_subset) — Default context
+- [`is_transcendental`](expressions.md#entry-presentation_python_api_expression_is_transcendental) — Expression method
+- [`is_union`](expressions.md#entry-presentation_python_api_expression_is_union) — Expression method
+- [`is_zero`](expressions.md#entry-presentation_python_api_expression_is_zero) — Expression method
+- [`Matrix.has_complex_entries`](linear-algebra.md#entry-presentation_python_api_matrix_has_complex_entries) — Matrix method
+- [`Matrix.has_integer_entries`](linear-algebra.md#entry-presentation_python_api_matrix_has_integer_entries) — Matrix method
+- [`Matrix.has_real_entries`](linear-algebra.md#entry-presentation_python_api_matrix_has_real_entries) — Matrix method
+- [`Matrix.is_diagonal_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_diagonal_matrix) — Matrix method
+- [`Matrix.is_equality`](linear-algebra.md#entry-presentation_python_api_matrix_is_equality) — Matrix method
+- [`Matrix.is_finite_set`](linear-algebra.md#entry-presentation_python_api_matrix_is_finite_set) — Matrix method
+- [`Matrix.is_full_rank_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_full_rank_matrix) — Matrix method
+- [`Matrix.is_hermitian_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_hermitian_matrix) — Matrix method
+- [`Matrix.is_identity_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_identity_matrix) — Matrix method
+- [`Matrix.is_image_set`](linear-algebra.md#entry-presentation_python_api_matrix_is_image_set) — Matrix method
+- [`Matrix.is_integral`](linear-algebra.md#entry-presentation_python_api_matrix_is_integral) — Matrix method
+- [`Matrix.is_invertible_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_invertible_matrix) — Matrix method
+- [`Matrix.is_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_matrix) — Matrix property
+- [`Matrix.is_normal_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_normal_matrix) — Matrix method
+- [`Matrix.is_orthogonal_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_orthogonal_matrix) — Matrix method
+- [`Matrix.is_positive`](linear-algebra.md#entry-presentation_python_api_matrix_is_positive) — Matrix method
+- [`Matrix.is_positive_definite_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_positive_definite_matrix) — Matrix method
+- [`Matrix.is_positive_semidefinite_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_positive_semidefinite_matrix) — Matrix method
+- [`Matrix.is_real`](linear-algebra.md#entry-presentation_python_api_matrix_is_real) — Matrix method
+- [`Matrix.is_singular_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_singular_matrix) — Matrix method
+- [`Matrix.is_square`](linear-algebra.md#entry-presentation_python_api_matrix_is_square) — Matrix method
+- [`Matrix.is_stale`](linear-algebra.md#entry-presentation_python_api_matrix_is_stale) — Matrix property
+- [`Matrix.is_symmetric_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_symmetric_matrix) — Matrix method
+- [`Matrix.is_union`](linear-algebra.md#entry-presentation_python_api_matrix_is_union) — Matrix method
+- [`Matrix.is_unitary_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_unitary_matrix) — Matrix method
+- [`Matrix.is_zero_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_is_zero_matrix) — Matrix method
+- [`PartialDifferentialEquationCanonicalizationResult.canonicalized`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_canonicalized) — PartialDifferentialEquationCanonicalizationResult property
+- [`PartialDifferentialEquationCoefficientData.homogeneous`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoefficientdata_homogeneous) — PartialDifferentialEquationCoefficientData property
+- [`PartialDifferentialEquationPointSymmetryAction.admits_additive_solution_symmetry`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_admits_additive_solution_symmetry) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.admits_additive_solution_symmetry`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_admits_additive_solution_symmetry) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationSolutionFamily.establishes_completeness`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolutionfamily_establishes_completeness) — PartialDifferentialEquationSolutionFamily property
+- [`PartialDifferentialEquationTransformationResult.transformed`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationresult_transformed) — PartialDifferentialEquationTransformationResult property
+- [`Point2d.is_stale`](geometry.md#entry-presentation_python_api_point2d_is_stale) — Point2d property
+- [`Polygon2d.is_stale`](geometry.md#entry-presentation_python_api_polygon2d_is_stale) — Polygon2d property
+- [`Segment2d.is_stale`](geometry.md#entry-presentation_python_api_segment2d_is_stale) — Segment2d property
+- [`Triangle2d.is_stale`](geometry.md#entry-presentation_python_api_triangle2d_is_stale) — Triangle2d property
 
 ## circle_2d
 
-- [`Circle2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_circle_2d_api_circle2d) — Circle2d constructor
-- [`circle_2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_circle_2d_api_session_circle_2d) — Explicit context
+Described under [`Circle2d`](geometry.md#circle2d_area).
+
+- [`Circle2d`](geometry.md#entry-presentation_python_api_circle2d) — Circle2d constructor
+- [`circle_2d`](geometry.md#entry-presentation_python_api_session_circle_2d) — Explicit context
 
 ## context
 
-- [`default_context`](default-context.md#entry-presentation_python_default_context_capability_contexts_default_context_api_defaults_session_default_context) — Default context
+Described under [`Context`](elementary-functions.md#abs).
+
+- [`default_context`](default-context.md#entry-presentation_python_api_session_default_context) — Default context
 
 ## definite_integration_result
 
-- [`DefiniteIntegrationResult`](calculus.md#entry-presentation_python_calculus_capability_calculus_definiteintegrationresult_api_results_definiteintegrationresult) — Type
-- [`integrate_definite_detailed`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_definite_detailed_api_session_integrate_definite_detailed) — Default context
-- [`integrate_definite_detailed`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_definite_detailed_api_session_integrate_definite_detailed) — Default context
+Described under [`DefiniteIntegrationResult`](calculus.md#definiteintegrationresult).
+
+- [`DefiniteIntegrationResult`](calculus.md#entry-presentation_python_api_definiteintegrationresult) — Type
+- [`integrate_definite_detailed`](calculus.md#entry-presentation_python_api_session_integrate_definite_detailed) — Default context
 
 ## expression
 
-- [`Expression`](object-model.md#entry-presentation_python_object_model_capability_contexts_expression_api_expression) — Type
-- [`__add__`](object-model.md#entry-presentation_python_object_model_capability_contexts_add_unresolved) — Expression method
-- [`__call__`](object-model.md#entry-presentation_python_object_model_capability_contexts_call_unresolved) — UndefinedFunction method
-- [`__getitem__`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_getitem_unresolved) — Matrix method
-- [`__mul__`](object-model.md#entry-presentation_python_object_model_capability_contexts_mul_unresolved) — Expression method
-- [`__neg__`](object-model.md#entry-presentation_python_object_model_capability_contexts_neg_unresolved) — Expression method
-- [`__pow__`](object-model.md#entry-presentation_python_object_model_capability_contexts_pow_unresolved) — Expression method
-- [`__radd__`](object-model.md#entry-presentation_python_object_model_capability_contexts_radd_unresolved) — Expression method
-- [`__rmul__`](object-model.md#entry-presentation_python_object_model_capability_contexts_rmul_unresolved) — Expression method
-- [`__rpow__`](object-model.md#entry-presentation_python_object_model_capability_contexts_rpow_unresolved) — Expression method
-- [`__rsub__`](object-model.md#entry-presentation_python_object_model_capability_contexts_rsub_unresolved) — Expression method
-- [`__rtruediv__`](object-model.md#entry-presentation_python_object_model_capability_contexts_rtruediv_unresolved) — Expression method
-- [`__sub__`](object-model.md#entry-presentation_python_object_model_capability_contexts_sub_unresolved) — Expression method
-- [`__truediv__`](object-model.md#entry-presentation_python_object_model_capability_contexts_truediv_unresolved) — Expression method
-- [`abs`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_abs_api_session_abs) — Default context
-- [`abs`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_abs_api_session_abs) — Default context
-- [`amplitude`](object-model.md#entry-presentation_python_object_model_capability_contexts_amplitude_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_amplitude) — PartialDifferentialEquationPointSymmetryAction property
-- [`applied_to_seed`](object-model.md#entry-presentation_python_object_model_capability_contexts_applied_to_seed_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_applied_to_seed) — PartialDifferentialEquationPointSymmetryAction method
-- [`applied_to_seed_with_additive_solution`](object-model.md#entry-presentation_python_object_model_capability_contexts_applied_to_seed_with_additive_solution_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_applied_to_seed_with_additive_solution) — PartialDifferentialEquationPointSymmetryAction method
-- [`arccos`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccos_api_session_arccos) — Default context
-- [`arccos`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccos_api_session_arccos) — Default context
-- [`arccosh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccosh_api_session_arccosh) — Default context
-- [`arccosh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccosh_api_session_arccosh) — Default context
-- [`arccot`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccot_api_session_arccot) — Default context
-- [`arccot`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccot_api_session_arccot) — Default context
-- [`arccoth`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccoth_api_session_arccoth) — Default context
-- [`arccoth`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccoth_api_session_arccoth) — Default context
-- [`arccsc`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccsc_api_session_arccsc) — Default context
-- [`arccsc`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccsc_api_session_arccsc) — Default context
-- [`arccsch`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccsch_api_session_arccsch) — Default context
-- [`arccsch`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arccsch_api_session_arccsch) — Default context
-- [`arcsec`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arcsec_api_session_arcsec) — Default context
-- [`arcsec`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arcsec_api_session_arcsec) — Default context
-- [`arcsech`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arcsech_api_session_arcsech) — Default context
-- [`arcsech`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arcsech_api_session_arcsech) — Default context
-- [`arcsin`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arcsin_api_session_arcsin) — Default context
-- [`arcsin`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arcsin_api_session_arcsin) — Default context
-- [`arcsinh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arcsinh_api_session_arcsinh) — Default context
-- [`arcsinh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arcsinh_api_session_arcsinh) — Default context
-- [`arctan`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arctan_api_session_arctan) — Default context
-- [`arctan`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arctan_api_session_arctan) — Default context
-- [`arctanh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arctanh_api_session_arctanh) — Default context
-- [`arctanh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_arctanh_api_session_arctanh) — Default context
-- [`area`](geometry.md#entry-presentation_python_geometry_capability_geometry_area_api_circle2d_area) — Circle2d method
-- [`area`](geometry.md#entry-presentation_python_geometry_capability_geometry_area_api_polygon2d_area) — Polygon2d method
-- [`area`](geometry.md#entry-presentation_python_geometry_capability_geometry_area_api_triangle2d_area) — Triangle2d method
-- [`bell_number`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_bell_number_api_session_bell_number) — Default context
-- [`bell_number`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_bell_number_api_session_bell_number) — Default context
-- [`beta`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_beta_api_session_beta) — Default context
-- [`beta`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_beta_api_session_beta) — Default context
-- [`binomial`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_binomial_api_session_binomial) — Default context
-- [`binomial`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_binomial_api_session_binomial) — Default context
-- [`cancel`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_cancel_api_session_cancel) — Default context
-- [`cancel`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_cancel_api_session_cancel) — Default context
-- [`cancel`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_cancel_api_expression_cancel) — Expression method
-- [`carlson_rc`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_carlson_rc_api_session_carlson_rc) — Default context
-- [`carlson_rc`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_carlson_rc_api_session_carlson_rc) — Default context
-- [`carlson_rd`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_carlson_rd_api_session_carlson_rd) — Default context
-- [`carlson_rd`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_carlson_rd_api_session_carlson_rd) — Default context
-- [`carlson_rf`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_carlson_rf_api_session_carlson_rf) — Default context
-- [`carlson_rf`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_carlson_rf_api_session_carlson_rf) — Default context
-- [`carlson_rj`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_carlson_rj_api_session_carlson_rj) — Default context
-- [`carlson_rj`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_carlson_rj_api_session_carlson_rj) — Default context
-- [`catalan_number`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_catalan_number_api_session_catalan_number) — Default context
-- [`catalan_number`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_catalan_number_api_session_catalan_number) — Default context
-- [`ceiling`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_ceiling_api_session_ceiling) — Default context
-- [`ceiling`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_ceiling_api_session_ceiling) — Default context
-- [`characteristic_function`](statistics.md#entry-presentation_python_statistics_capability_probability_characteristic_function_api_probability_session_characteristic_function) — Default context
-- [`characteristic_function`](statistics.md#entry-presentation_python_statistics_capability_probability_characteristic_function_api_probability_session_characteristic_function) — Default context
-- [`characteristic_polynomial`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_characteristic_polynomial_api_matrix_operations_matrix_characteristic_polynomial) — Matrix method
-- [`characteristic_polynomial`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_characteristic_polynomial_api_results_rationalcanonicalform_characteristic_polynomial) — RationalCanonicalForm property
-- [`chebyshev_polynomial_first_kind`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_chebyshev_polynomial_first_kind_api_session_chebyshev_polynomial_first_kind) — Default context
-- [`chebyshev_polynomial_first_kind`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_chebyshev_polynomial_first_kind_api_session_chebyshev_polynomial_first_kind) — Default context
-- [`chebyshev_polynomial_second_kind`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_chebyshev_polynomial_second_kind_api_session_chebyshev_polynomial_second_kind) — Default context
-- [`chebyshev_polynomial_second_kind`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_chebyshev_polynomial_second_kind_api_session_chebyshev_polynomial_second_kind) — Default context
-- [`chinese_remainder`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_chinese_remainder_api_number_theory_session_chinese_remainder) — Default context
-- [`chinese_remainder`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_chinese_remainder_api_number_theory_session_chinese_remainder) — Default context
-- [`circumference`](geometry.md#entry-presentation_python_geometry_capability_geometry_circumference_api_circle2d_circumference) — Circle2d method
-- [`claimed_governing_residual`](object-model.md#entry-presentation_python_object_model_capability_contexts_claimed_governing_residual_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_claimed_governing_residual) — PartialDifferentialEquationTransformationVerificationReport property
-- [`coefficient`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_coefficient_api_algebra_session_coefficient) — Default context
-- [`coefficient`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_coefficient_api_algebra_session_coefficient) — Default context
-- [`coefficient`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_coefficient_api_partial_differential_equations_partialdifferentialequationjetcoefficient_coefficient) — PartialDifferentialEquationJetCoefficient property
-- [`coefficient`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_coefficient_api_partial_differential_equations_partialdifferentialequationprincipalcoefficient_coefficient) — PartialDifferentialEquationPrincipalCoefficient property
-- [`collect`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_api_algebra_session_collect) — Default context
-- [`collect`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_api_algebra_session_collect) — Default context
-- [`collect`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_api_expression_operations_expression_collect) — Expression method
-- [`collect_radicals`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_radicals_api_algebra_session_collect_radicals) — Default context
-- [`collect_radicals`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_radicals_api_algebra_session_collect_radicals) — Default context
-- [`collect_radicals`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_collect_radicals_api_expression_operations_expression_collect_radicals) — Expression method
-- [`combine_logarithm`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_algebra_session_combine_logarithm) — Default context
-- [`combine_logarithm`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_algebra_session_combine_logarithm) — Default context
-- [`combine_logarithm`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_logarithm_api_expression_operations_expression_combine_logarithm) — Expression method
-- [`combine_powers`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_powers_api_algebra_session_combine_powers) — Default context
-- [`combine_powers`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_powers_api_algebra_session_combine_powers) — Default context
-- [`combine_powers`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_powers_api_expression_operations_expression_combine_powers) — Expression method
-- [`combine_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_session_combine_trigonometric) — Default context
-- [`combine_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_session_combine_trigonometric) — Default context
-- [`combine_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_combine_trigonometric_api_expression_combine_trigonometric) — Expression method
-- [`complete_the_square`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square) — Default context
-- [`complete_the_square`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_complete_the_square_api_algebra_session_complete_the_square) — Default context
-- [`complete_the_square`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_complete_the_square_api_expression_operations_expression_complete_the_square) — Expression method
-- [`complex_plane`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_complex_plane_api_session_complex_plane) — Default context
-- [`complex_plane`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_complex_plane_api_session_complex_plane) — Default context
-- [`condition_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_condition_set_api_sets_session_condition_set) — Default context
-- [`condition_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_condition_set_api_sets_session_condition_set) — Default context
-- [`congruence_modulus`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_congruence_modulus_api_assumptionproposition_congruence_modulus) — Default context
-- [`congruence_modulus`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_congruence_modulus_api_assumptionproposition_congruence_modulus) — Default context
-- [`conjugate`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_conjugate_api_session_conjugate) — Default context
-- [`conjugate`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_conjugate_api_session_conjugate) — Default context
-- [`conjunctive_normal_form`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_conjunctive_normal_form_api_logic_session_conjunctive_normal_form) — Default context
-- [`conjunctive_normal_form`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_conjunctive_normal_form_api_logic_session_conjunctive_normal_form) — Default context
-- [`conjunctive_normal_form`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_conjunctive_normal_form_api_expression_operations_expression_conjunctive_normal_form) — Expression method
-- [`continuous_domain`](calculus.md#entry-presentation_python_calculus_capability_calculus_continuous_domain_api_assumptionscope_continuous_domain) — AssumptionScope method
-- [`continuous_domain`](calculus.md#entry-presentation_python_calculus_capability_calculus_continuous_domain_api_session_continuous_domain) — Default context
-- [`continuous_domain`](calculus.md#entry-presentation_python_calculus_capability_calculus_continuous_domain_api_session_continuous_domain) — Default context
-- [`continuous_domain`](calculus.md#entry-presentation_python_calculus_capability_calculus_continuous_domain_api_expression_continuous_domain) — Expression method
-- [`cos`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_cos_api_session_cos) — Default context
-- [`cos`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_cos_api_session_cos) — Default context
-- [`cosh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_cosh_api_session_cosh) — Default context
-- [`cosh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_cosh_api_session_cosh) — Default context
-- [`cot`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_cot_api_session_cot) — Default context
-- [`cot`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_cot_api_session_cot) — Default context
-- [`coth`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_coth_api_session_coth) — Default context
-- [`coth`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_coth_api_session_coth) — Default context
-- [`covariance`](statistics.md#entry-presentation_python_statistics_capability_probability_covariance_api_probability_session_covariance) — Default context
-- [`covariance`](statistics.md#entry-presentation_python_statistics_capability_probability_covariance_api_probability_session_covariance) — Default context
-- [`csc`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_csc_api_session_csc) — Default context
-- [`csc`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_csc_api_session_csc) — Default context
-- [`csch`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_csch_api_session_csch) — Default context
-- [`csch`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_csch_api_session_csch) — Default context
-- [`cumulant`](statistics.md#entry-presentation_python_statistics_capability_probability_cumulant_api_probability_session_cumulant) — Default context
-- [`cumulant`](statistics.md#entry-presentation_python_statistics_capability_probability_cumulant_api_probability_session_cumulant) — Default context
-- [`cumulative_distribution`](statistics.md#entry-presentation_python_statistics_capability_probability_cumulative_distribution_api_probability_session_cumulative_distribution) — Default context
-- [`cumulative_distribution`](statistics.md#entry-presentation_python_statistics_capability_probability_cumulative_distribution_api_probability_session_cumulative_distribution) — Default context
-- [`denest_powers`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_denest_powers_api_algebra_session_denest_powers) — Default context
-- [`denest_powers`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_denest_powers_api_algebra_session_denest_powers) — Default context
-- [`denest_powers`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_denest_powers_api_expression_operations_expression_denest_powers) — Expression method
-- [`denest_radicals`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_denest_radicals_api_algebra_session_denest_radicals) — Default context
-- [`denest_radicals`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_denest_radicals_api_algebra_session_denest_radicals) — Default context
-- [`denest_radicals`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_denest_radicals_api_expression_operations_expression_denest_radicals) — Expression method
-- [`denominator`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_denominator_api_session_denominator) — Default context
-- [`denominator`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_denominator_api_session_denominator) — Default context
-- [`denominator`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_denominator_api_expression_denominator) — Expression method
-- [`density`](statistics.md#entry-presentation_python_statistics_capability_probability_density_api_probability_session_density) — Default context
-- [`density`](statistics.md#entry-presentation_python_statistics_capability_probability_density_api_probability_session_density) — Default context
-- [`dependent_infinitesimal`](object-model.md#entry-presentation_python_object_model_capability_contexts_dependent_infinitesimal_api_partial_differential_equations_partialdifferentialequationpointsymmetrygenerator_dependent_infinitesimal) — PartialDifferentialEquationPointSymmetryGenerator property
-- [`derivative`](calculus.md#entry-presentation_python_calculus_capability_calculus_derivative_api_session_derivative) — Default context
-- [`derivative`](calculus.md#entry-presentation_python_calculus_capability_calculus_derivative_api_session_derivative) — Default context
-- [`derivative`](calculus.md#entry-presentation_python_calculus_capability_calculus_derivative_api_expression_derivative) — Expression method
-- [`derivative`](calculus.md#entry-presentation_python_calculus_capability_calculus_derivative_api_undefinedfunction_derivative) — UndefinedFunction method
-- [`determinant`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_determinant_api_matrix_determinant) — Matrix method
-- [`differentiate`](calculus.md#entry-presentation_python_calculus_capability_calculus_differentiate_api_session_differentiate) — Default context
-- [`differentiate`](calculus.md#entry-presentation_python_calculus_capability_calculus_differentiate_api_session_differentiate) — Default context
-- [`differentiate`](calculus.md#entry-presentation_python_calculus_capability_calculus_differentiate_api_expression_differentiate) — Expression method
-- [`digamma`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_digamma_api_session_digamma) — Default context
-- [`digamma`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_digamma_api_session_digamma) — Default context
-- [`discriminant`](object-model.md#entry-presentation_python_object_model_capability_contexts_discriminant_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_discriminant) — PartialDifferentialEquationSecondOrderClassification property
-- [`disjunctive_normal_form`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_disjunctive_normal_form_api_logic_session_disjunctive_normal_form) — Default context
-- [`disjunctive_normal_form`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_disjunctive_normal_form_api_logic_session_disjunctive_normal_form) — Default context
-- [`disjunctive_normal_form`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_disjunctive_normal_form_api_expression_operations_expression_disjunctive_normal_form) — Expression method
-- [`distance_to`](geometry.md#entry-presentation_python_geometry_capability_geometry_distance_to_api_point2d_distance_to) — Point2d method
-- [`distribution`](statistics.md#entry-presentation_python_statistics_capability_probability_distribution_api_probability_session_distribution) — Default context
-- [`distribution`](statistics.md#entry-presentation_python_statistics_capability_probability_distribution_api_probability_session_distribution) — Default context
-- [`divergence`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_divergence_api_analysis_session_divergence) — Default context
-- [`divergence`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_divergence_api_analysis_session_divergence) — Default context
-- [`divisor_count`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_divisor_count_api_session_divisor_count) — Default context
-- [`divisor_count`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_divisor_count_api_session_divisor_count) — Default context
-- [`divisor_sigma`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_divisor_sigma_api_session_divisor_sigma) — Default context
-- [`divisor_sigma`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_divisor_sigma_api_session_divisor_sigma) — Default context
-- [`duplicate`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_duplicate_api_expression_duplicate) — Expression method
-- [`e`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_e_api_session_e) — Default context
-- [`e`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_e_api_session_e) — Default context
-- [`eliminate_derived_logical_connectives`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_logic_session_eliminate_derived_logical_connectives) — Default context
-- [`eliminate_derived_logical_connectives`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_logic_session_eliminate_derived_logical_connectives) — Default context
-- [`eliminate_derived_logical_connectives`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_eliminate_derived_logical_connectives_api_expression_operations_expression_eliminate_derived_logical_connectives) — Expression method
-- [`eliminate_quantifiers`](solving.md#entry-presentation_python_solving_capability_equations_eliminate_quantifiers_api_logic_session_eliminate_quantifiers) — Default context
-- [`eliminate_quantifiers`](solving.md#entry-presentation_python_solving_capability_equations_eliminate_quantifiers_api_logic_session_eliminate_quantifiers) — Default context
-- [`elliptic_e`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_e_api_session_elliptic_e) — Default context
-- [`elliptic_e`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_e_api_session_elliptic_e) — Default context
-- [`elliptic_e_incomplete`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_e_incomplete_api_session_elliptic_e_incomplete) — Default context
-- [`elliptic_e_incomplete`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_e_incomplete_api_session_elliptic_e_incomplete) — Default context
-- [`elliptic_f`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_f_api_session_elliptic_f) — Default context
-- [`elliptic_f`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_f_api_session_elliptic_f) — Default context
-- [`elliptic_k`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_k_api_session_elliptic_k) — Default context
-- [`elliptic_k`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_k_api_session_elliptic_k) — Default context
-- [`elliptic_pi`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_pi_api_session_elliptic_pi) — Default context
-- [`elliptic_pi`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_pi_api_session_elliptic_pi) — Default context
-- [`elliptic_pi_incomplete`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_pi_incomplete_api_session_elliptic_pi_incomplete) — Default context
-- [`elliptic_pi_incomplete`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_elliptic_pi_incomplete_api_session_elliptic_pi_incomplete) — Default context
-- [`empty_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_empty_set_api_session_empty_set) — Default context
-- [`empty_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_empty_set_api_session_empty_set) — Default context
-- [`equal`](relations.md#entry-presentation_python_relations_capability_elementary_functions_equal_api_session_equal) — Default context
-- [`equal`](relations.md#entry-presentation_python_relations_capability_elementary_functions_equal_api_session_equal) — Default context
-- [`equation`](geometry.md#entry-presentation_python_geometry_capability_geometry_equation_api_geometry_operations_circle2d_equation) — Circle2d method
-- [`equation`](geometry.md#entry-presentation_python_geometry_capability_geometry_equation_api_partial_differential_equations_partialdifferentialequationproblem_equation) — PartialDifferentialEquationProblem property
-- [`euler_gamma`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_euler_gamma_api_session_euler_gamma) — Default context
-- [`euler_gamma`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_euler_gamma_api_session_euler_gamma) — Default context
-- [`euler_totient`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_euler_totient_api_number_theory_session_euler_totient) — Default context
-- [`euler_totient`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_euler_totient_api_number_theory_session_euler_totient) — Default context
-- [`evaluate_limit`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_limit_api_assumptionscope_evaluate_limit) — AssumptionScope method
-- [`evaluate_limit`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_limit_api_session_evaluate_limit) — Default context
-- [`evaluate_limit`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_limit_api_session_evaluate_limit) — Default context
-- [`evaluate_limit`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_limit_api_expression_evaluate_limit) — Expression method
-- [`evaluate_numeric`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_numeric_api_analysis_session_evaluate_numeric) — Default context
-- [`evaluate_numeric`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_numeric_api_analysis_session_evaluate_numeric) — Default context
-- [`evaluate_numeric`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_numeric_api_expression_operations_expression_evaluate_numeric) — Expression method
-- [`execute`](calculus.md#entry-presentation_python_calculus_capability_calculus_execute_api_session_execute) — Default context
-- [`execute`](calculus.md#entry-presentation_python_calculus_capability_calculus_execute_api_session_execute) — Default context
-- [`execute`](calculus.md#entry-presentation_python_calculus_capability_calculus_execute_api_expression_execute) — Expression method
-- [`exp`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_exp_api_session_exp) — Default context
-- [`exp`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_exp_api_session_exp) — Default context
-- [`expand`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_expand_api_session_expand) — Default context
-- [`expand`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_expand_api_session_expand) — Default context
-- [`expand`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_expand_api_expression_expand) — Expression method
-- [`expand_complex`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_algebra_session_expand_complex) — Default context
-- [`expand_complex`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_algebra_session_expand_complex) — Default context
-- [`expand_complex`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_complex_api_expression_operations_expression_expand_complex) — Expression method
-- [`expand_logarithm`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_algebra_session_expand_logarithm) — Default context
-- [`expand_logarithm`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_algebra_session_expand_logarithm) — Default context
-- [`expand_logarithm`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_logarithm_api_expression_operations_expression_expand_logarithm) — Expression method
-- [`expand_power_base`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_power_base_api_algebra_session_expand_power_base) — Default context
-- [`expand_power_base`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_power_base_api_algebra_session_expand_power_base) — Default context
-- [`expand_power_base`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_power_base_api_expression_operations_expression_expand_power_base) — Expression method
-- [`expand_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_session_expand_trigonometric) — Default context
-- [`expand_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_session_expand_trigonometric) — Default context
-- [`expand_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_expand_trigonometric_api_expression_expand_trigonometric) — Expression method
-- [`expectation`](statistics.md#entry-presentation_python_statistics_capability_probability_expectation_api_probability_session_expectation) — Default context
-- [`expectation`](statistics.md#entry-presentation_python_statistics_capability_probability_expectation_api_probability_session_expectation) — Default context
-- [`explicit_branch`](object-model.md#entry-presentation_python_object_model_capability_contexts_explicit_branch_api_partial_differential_equations_partialdifferentialequationverificationreport_explicit_branch) — PartialDifferentialEquationVerificationReport property
-- [`expression`](object-model.md#entry-presentation_python_object_model_capability_contexts_expression_unresolved) — PartialDifferentialEquationSolutionFamily property
-- [`factor`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_api_session_factor) — Default context
-- [`factor`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_api_session_factor) — Default context
-- [`factor`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_api_expression_factor) — Expression method
-- [`factor_common_terms`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_algebra_session_factor_common_terms) — Default context
-- [`factor_common_terms`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_algebra_session_factor_common_terms) — Default context
-- [`factor_common_terms`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_factor_common_terms_api_expression_operations_expression_factor_common_terms) — Expression method
-- [`factorial`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_factorial_api_session_factorial) — Default context
-- [`factorial`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_factorial_api_session_factorial) — Default context
-- [`falling_factorial`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_falling_factorial_api_session_falling_factorial) — Default context
-- [`falling_factorial`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_falling_factorial_api_session_falling_factorial) — Default context
-- [`fibonacci_number`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_fibonacci_number_api_session_fibonacci_number) — Default context
-- [`fibonacci_number`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_fibonacci_number_api_session_fibonacci_number) — Default context
-- [`finite_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_finite_set_api_session_finite_set) — Default context
-- [`finite_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_finite_set_api_session_finite_set) — Default context
-- [`floor`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_floor_api_session_floor) — Default context
-- [`floor`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_floor_api_session_floor) — Default context
-- [`fourier_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_fourier_transform_api_assumptionscope_fourier_transform) — AssumptionScope method
-- [`fourier_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_fourier_transform_api_session_fourier_transform) — Default context
-- [`fourier_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_fourier_transform_api_session_fourier_transform) — Default context
-- [`frequency_domain_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_frequency_domain_equation_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_frequency_domain_equation) — OrdinaryDifferentialEquationSolveResult property
-- [`gamma`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_gamma_api_session_gamma) — Default context
-- [`gamma`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_gamma_api_session_gamma) — Default context
-- [`gegenbauer_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_gegenbauer_polynomial_api_session_gegenbauer_polynomial) — Default context
-- [`gegenbauer_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_gegenbauer_polynomial_api_session_gegenbauer_polynomial) — Default context
-- [`generalized_laguerre_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_generalized_laguerre_polynomial_api_session_generalized_laguerre_polynomial) — Default context
-- [`generalized_laguerre_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_generalized_laguerre_polynomial_api_session_generalized_laguerre_polynomial) — Default context
-- [`greater_than`](relations.md#entry-presentation_python_relations_capability_elementary_functions_greater_than_api_session_greater_than) — Default context
-- [`greater_than`](relations.md#entry-presentation_python_relations_capability_elementary_functions_greater_than_api_session_greater_than) — Default context
-- [`greater_than_or_equal`](relations.md#entry-presentation_python_relations_capability_elementary_functions_greater_than_or_equal_api_session_greater_than_or_equal) — Default context
-- [`greater_than_or_equal`](relations.md#entry-presentation_python_relations_capability_elementary_functions_greater_than_or_equal_api_session_greater_than_or_equal) — Default context
-- [`hermite_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hermite_polynomial_api_session_hermite_polynomial) — Default context
-- [`hermite_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hermite_polynomial_api_session_hermite_polynomial) — Default context
-- [`hurwitz_zeta`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hurwitz_zeta_api_session_hurwitz_zeta) — Default context
-- [`hurwitz_zeta`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hurwitz_zeta_api_session_hurwitz_zeta) — Default context
-- [`hypergeometric_0f1`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hypergeometric_0f1_api_session_hypergeometric_0f1) — Default context
-- [`hypergeometric_0f1`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hypergeometric_0f1_api_session_hypergeometric_0f1) — Default context
-- [`hypergeometric_1f1`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hypergeometric_1f1_api_session_hypergeometric_1f1) — Default context
-- [`hypergeometric_1f1`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hypergeometric_1f1_api_session_hypergeometric_1f1) — Default context
-- [`hypergeometric_2f1`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hypergeometric_2f1_api_session_hypergeometric_2f1) — Default context
-- [`hypergeometric_2f1`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hypergeometric_2f1_api_session_hypergeometric_2f1) — Default context
-- [`hypergeometric_pfq`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hypergeometric_pfq_api_session_hypergeometric_pfq) — Default context
-- [`hypergeometric_pfq`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_hypergeometric_pfq_api_session_hypergeometric_pfq) — Default context
-- [`image`](object-model.md#entry-presentation_python_object_model_capability_contexts_image_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_image) — OrdinaryDifferentialEquationSolveResult property
-- [`image_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_image_set_api_sets_session_image_set) — Default context
-- [`image_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_image_set_api_sets_session_image_set) — Default context
-- [`image_set_domain`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_image_set_domain_api_expression_image_set_domain) — Expression method
-- [`image_set_lambda_expression`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_image_set_lambda_expression_api_expression_image_set_lambda_expression) — Expression method
-- [`imaginary_part`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_imaginary_part_api_session_imaginary_part) — Default context
-- [`imaginary_part`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_imaginary_part_api_session_imaginary_part) — Default context
-- [`imaginary_part`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_imaginary_part_api_expression_imaginary_part) — Expression method
-- [`imaginary_unit`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_imaginary_unit_api_session_imaginary_unit) — Default context
-- [`imaginary_unit`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_imaginary_unit_api_session_imaginary_unit) — Default context
-- [`infinity`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_infinity_api_session_infinity) — Default context
-- [`infinity`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_infinity_api_session_infinity) — Default context
-- [`integer`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_integer_api_session_integer) — Default context
-- [`integer`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_integer_api_session_integer) — Default context
-- [`integer_from_string`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string) — Default context
-- [`integer_from_string`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_integer_from_string_api_session_integer_from_string) — Default context
-- [`integer_gcd`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_integer_gcd_api_session_integer_gcd) — Default context
-- [`integer_gcd`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_integer_gcd_api_session_integer_gcd) — Default context
-- [`integer_lcm`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_integer_lcm_api_session_integer_lcm) — Default context
-- [`integer_lcm`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_integer_lcm_api_session_integer_lcm) — Default context
-- [`integer_nth_root`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_integer_nth_root_api_session_integer_nth_root) — Default context
-- [`integer_nth_root`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_integer_nth_root_api_session_integer_nth_root) — Default context
-- [`integer_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_integer_set_api_session_integer_set) — Default context
-- [`integer_set`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_integer_set_api_session_integer_set) — Default context
-- [`integer_square_root`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_integer_square_root_api_session_integer_square_root) — Default context
-- [`integer_square_root`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_integer_square_root_api_session_integer_square_root) — Default context
-- [`integral`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_integral_api_analysis_session_integral) — Default context
-- [`integral`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_integral_api_analysis_session_integral) — Default context
-- [`integral_integrand`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_integral_integrand_api_expression_integral_integrand) — Expression method
-- [`integral_lower_bound`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_integral_lower_bound_api_expression_integral_lower_bound) — Expression method
-- [`integral_upper_bound`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_integral_upper_bound_api_expression_integral_upper_bound) — Expression method
-- [`integrate`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_api_assumptionscope_integrate) — AssumptionScope method
-- [`integrate`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_api_session_integrate) — Default context
-- [`integrate`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_api_session_integrate) — Default context
-- [`integrate`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_api_expression_integrate) — Expression method
-- [`integrate_definite`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_definite_api_assumptionscope_integrate_definite) — AssumptionScope method
-- [`integrate_definite`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_definite_api_analysis_session_integrate_definite) — Default context
-- [`integrate_definite`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_definite_api_analysis_session_integrate_definite) — Default context
-- [`integrate_definite`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_definite_api_expression_operations_expression_integrate_definite) — Expression method
-- [`integrate_definite_under_constraint`](object-model.md#entry-presentation_python_object_model_capability_contexts_integrate_definite_under_constraint_api_session_integrate_definite_under_constraint) — Default context
-- [`integrate_definite_under_constraint`](object-model.md#entry-presentation_python_object_model_capability_contexts_integrate_definite_under_constraint_api_session_integrate_definite_under_constraint) — Default context
-- [`integrate_definite_under_constraint`](object-model.md#entry-presentation_python_object_model_capability_contexts_integrate_definite_under_constraint_api_expression_integrate_definite_under_constraint) — Expression method
-- [`integrate_iterated`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_iterated_api_analysis_session_integrate_iterated) — Default context
-- [`integrate_iterated`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_iterated_api_analysis_session_integrate_iterated) — Default context
-- [`integrate_iterated`](calculus.md#entry-presentation_python_calculus_capability_calculus_integrate_iterated_api_expression_operations_expression_integrate_iterated) — Expression method
-- [`interval`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_interval_api_sets_session_interval) — Default context
-- [`interval`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_interval_api_sets_session_interval) — Default context
-- [`interval_lower`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_interval_lower_api_expression_interval_lower) — Expression method
-- [`interval_upper`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_interval_upper_api_expression_interval_upper) — Expression method
-- [`introduce_derived_logical_connectives`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_introduce_derived_logical_connectives_api_logic_session_introduce_derived_logical_connectives) — Default context
-- [`introduce_derived_logical_connectives`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_introduce_derived_logical_connectives_api_logic_session_introduce_derived_logical_connectives) — Default context
-- [`introduce_derived_logical_connectives`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_introduce_derived_logical_connectives_api_expression_operations_expression_introduce_derived_logical_connectives) — Expression method
-- [`invariant`](object-model.md#entry-presentation_python_object_model_capability_contexts_invariant_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_invariant) — PartialDifferentialEquationSimilaritySolution property
-- [`inverse_fourier_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_inverse_fourier_transform_api_session_inverse_fourier_transform) — Default context
-- [`inverse_fourier_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_inverse_fourier_transform_api_session_inverse_fourier_transform) — Default context
-- [`inverse_laplace_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_inverse_laplace_transform_api_session_inverse_laplace_transform) — Default context
-- [`inverse_laplace_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_inverse_laplace_transform_api_session_inverse_laplace_transform) — Default context
-- [`jacobi_amplitude`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_amplitude_api_session_jacobi_amplitude) — Default context
-- [`jacobi_amplitude`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_amplitude_api_session_jacobi_amplitude) — Default context
-- [`jacobi_cn`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_cn_api_session_jacobi_cn) — Default context
-- [`jacobi_cn`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_cn_api_session_jacobi_cn) — Default context
-- [`jacobi_dn`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_dn_api_session_jacobi_dn) — Default context
-- [`jacobi_dn`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_dn_api_session_jacobi_dn) — Default context
-- [`jacobi_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_polynomial_api_session_jacobi_polynomial) — Default context
-- [`jacobi_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_polynomial_api_session_jacobi_polynomial) — Default context
-- [`jacobi_sn`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_sn_api_session_jacobi_sn) — Default context
-- [`jacobi_sn`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_sn_api_session_jacobi_sn) — Default context
-- [`jacobi_theta_1`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_1_api_session_jacobi_theta_1) — Default context
-- [`jacobi_theta_1`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_1_api_session_jacobi_theta_1) — Default context
-- [`jacobi_theta_2`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_2_api_session_jacobi_theta_2) — Default context
-- [`jacobi_theta_2`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_2_api_session_jacobi_theta_2) — Default context
-- [`jacobi_theta_3`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_3_api_session_jacobi_theta_3) — Default context
-- [`jacobi_theta_3`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_3_api_session_jacobi_theta_3) — Default context
-- [`jacobi_theta_4`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_4_api_session_jacobi_theta_4) — Default context
-- [`jacobi_theta_4`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_jacobi_theta_4_api_session_jacobi_theta_4) — Default context
-- [`jacobian`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationcoordinatechange_jacobian) — PartialDifferentialEquationCoordinateChange property
-- [`jacobian`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_jacobian_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_jacobian) — PartialDifferentialEquationTransformationVerificationReport property
-- [`laguerre_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_laguerre_polynomial_api_session_laguerre_polynomial) — Default context
-- [`laguerre_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_laguerre_polynomial_api_session_laguerre_polynomial) — Default context
-- [`laplace_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_laplace_transform_api_assumptionscope_laplace_transform) — AssumptionScope method
-- [`laplace_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_laplace_transform_api_session_laplace_transform) — Default context
-- [`laplace_transform`](integral-transforms.md#entry-presentation_python_integral_transforms_capability_calculus_laplace_transform_api_session_laplace_transform) — Default context
-- [`laplacian`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_laplacian_api_analysis_session_laplacian) — Default context
-- [`laplacian`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_laplacian_api_analysis_session_laplacian) — Default context
-- [`laurent_series`](series.md#entry-presentation_python_series_capability_calculus_laurent_series_api_session_laurent_series) — Default context
-- [`laurent_series`](series.md#entry-presentation_python_series_capability_calculus_laurent_series_api_session_laurent_series) — Default context
-- [`laurent_series`](series.md#entry-presentation_python_series_capability_calculus_laurent_series_api_expression_laurent_series) — Expression method
-- [`leading_coefficient`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_leading_coefficient_api_algebra_session_leading_coefficient) — Default context
-- [`leading_coefficient`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_leading_coefficient_api_algebra_session_leading_coefficient) — Default context
-- [`left_operand`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_left_operand_api_assumptionproposition_left_operand) — Default context
-- [`left_operand`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_left_operand_api_assumptionproposition_left_operand) — Default context
-- [`legendre_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_legendre_polynomial_api_session_legendre_polynomial) — Default context
-- [`legendre_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_legendre_polynomial_api_session_legendre_polynomial) — Default context
-- [`length`](object-model.md#entry-presentation_python_object_model_capability_contexts_length_api_segment2d_length) — Segment2d method
-- [`lerch_phi`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_lerch_phi_api_session_lerch_phi) — Default context
-- [`lerch_phi`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_lerch_phi_api_session_lerch_phi) — Default context
-- [`less_than`](relations.md#entry-presentation_python_relations_capability_elementary_functions_less_than_api_session_less_than) — Default context
-- [`less_than`](relations.md#entry-presentation_python_relations_capability_elementary_functions_less_than_api_session_less_than) — Default context
-- [`less_than_or_equal`](relations.md#entry-presentation_python_relations_capability_elementary_functions_less_than_or_equal_api_session_less_than_or_equal) — Default context
-- [`less_than_or_equal`](relations.md#entry-presentation_python_relations_capability_elementary_functions_less_than_or_equal_api_session_less_than_or_equal) — Default context
-- [`limit`](calculus.md#entry-presentation_python_calculus_capability_calculus_limit_api_session_limit) — Default context
-- [`limit`](calculus.md#entry-presentation_python_calculus_capability_calculus_limit_api_session_limit) — Default context
-- [`limit`](calculus.md#entry-presentation_python_calculus_capability_calculus_limit_api_expression_limit) — Expression method
-- [`log`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_log_api_session_log) — Default context
-- [`log`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_log_api_session_log) — Default context
-- [`log_gamma`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_log_gamma_api_session_log_gamma) — Default context
-- [`log_gamma`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_log_gamma_api_session_log_gamma) — Default context
-- [`logical_false`](logic.md#entry-presentation_python_logic_capability_discrete_mathematics_logical_false_api_session_logical_false) — Default context
-- [`logical_false`](logic.md#entry-presentation_python_logic_capability_discrete_mathematics_logical_false_api_session_logical_false) — Default context
-- [`logical_true`](logic.md#entry-presentation_python_logic_capability_discrete_mathematics_logical_true_api_session_logical_true) — Default context
-- [`logical_true`](logic.md#entry-presentation_python_logic_capability_discrete_mathematics_logical_true_api_session_logical_true) — Default context
-- [`maclaurin_series`](series.md#entry-presentation_python_series_capability_calculus_maclaurin_series_api_analysis_session_maclaurin_series) — Default context
-- [`maclaurin_series`](series.md#entry-presentation_python_series_capability_calculus_maclaurin_series_api_analysis_session_maclaurin_series) — Default context
-- [`maclaurin_series`](series.md#entry-presentation_python_series_capability_calculus_maclaurin_series_api_expression_operations_expression_maclaurin_series) — Expression method
-- [`max`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_max_api_session_max) — Default context
-- [`max`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_max_api_session_max) — Default context
-- [`meijer_g`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_meijer_g_api_session_meijer_g) — Default context
-- [`meijer_g`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_meijer_g_api_session_meijer_g) — Default context
-- [`membership_element`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_membership_element_api_assumptionproposition_membership_element) — Default context
-- [`membership_element`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_membership_element_api_assumptionproposition_membership_element) — Default context
-- [`membership_set`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_membership_set_api_assumptionproposition_membership_set) — Default context
-- [`membership_set`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_membership_set_api_assumptionproposition_membership_set) — Default context
-- [`min`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_min_api_session_min) — Default context
-- [`min`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_min_api_session_min) — Default context
-- [`minimal_polynomial`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_minimal_polynomial_api_matrix_operations_matrix_minimal_polynomial) — Matrix method
-- [`minimal_polynomial`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_minimal_polynomial_api_results_rationalcanonicalform_minimal_polynomial) — RationalCanonicalForm property
-- [`minimal_polynomial_of`](solving.md#entry-presentation_python_solving_capability_equations_minimal_polynomial_of_api_algebra_session_minimal_polynomial_of) — Default context
-- [`minimal_polynomial_of`](solving.md#entry-presentation_python_solving_capability_equations_minimal_polynomial_of_api_algebra_session_minimal_polynomial_of) — Default context
-- [`minimize_logical`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_minimize_logical_api_logic_session_minimize_logical) — Default context
-- [`minimize_logical`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_minimize_logical_api_logic_session_minimize_logical) — Default context
-- [`minimize_logical`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_minimize_logical_api_expression_operations_expression_minimize_logical) — Expression method
-- [`mobius`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_mobius_api_session_mobius) — Default context
-- [`mobius`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_mobius_api_session_mobius) — Default context
-- [`modular_inverse`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_modular_inverse_api_number_theory_session_modular_inverse) — Default context
-- [`modular_inverse`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_modular_inverse_api_number_theory_session_modular_inverse) — Default context
-- [`modular_power`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_modular_power_api_number_theory_session_modular_power) — Default context
-- [`modular_power`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_modular_power_api_number_theory_session_modular_power) — Default context
-- [`moment`](statistics.md#entry-presentation_python_statistics_capability_probability_moment_api_probability_session_moment) — Default context
-- [`moment`](statistics.md#entry-presentation_python_statistics_capability_probability_moment_api_probability_session_moment) — Default context
-- [`moment_generating_function`](statistics.md#entry-presentation_python_statistics_capability_probability_moment_generating_function_api_probability_session_moment_generating_function) — Default context
-- [`moment_generating_function`](statistics.md#entry-presentation_python_statistics_capability_probability_moment_generating_function_api_probability_session_moment_generating_function) — Default context
-- [`multinomial`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_multinomial_api_number_theory_session_multinomial) — Default context
-- [`multinomial`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_multinomial_api_number_theory_session_multinomial) — Default context
-- [`multiplier`](object-model.md#entry-presentation_python_object_model_capability_contexts_multiplier_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_multiplier) — PartialDifferentialEquationPointSymmetryAction property
-- [`multiplier`](object-model.md#entry-presentation_python_object_model_capability_contexts_multiplier_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_multiplier) — PartialDifferentialEquationSimilaritySolution property
-- [`normalization_multiplier`](object-model.md#entry-presentation_python_object_model_capability_contexts_normalization_multiplier_api_partial_differential_equations_partialdifferentialequationtransformationresult_normalization_multiplier) — PartialDifferentialEquationTransformationResult property
-- [`not_equal`](relations.md#entry-presentation_python_relations_capability_elementary_functions_not_equal_api_session_not_equal) — Default context
-- [`not_equal`](relations.md#entry-presentation_python_relations_capability_elementary_functions_not_equal_api_session_not_equal) — Default context
-- [`numerator`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_numerator_api_session_numerator) — Default context
-- [`numerator`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_numerator_api_session_numerator) — Default context
-- [`numerator`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_numerator_api_expression_numerator) — Expression method
-- [`parse`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_parse_api_session_parse) — Default context
-- [`parse`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_parse_api_session_parse) — Default context
-- [`partial_fractions`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions) — Default context
-- [`partial_fractions`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_partial_fractions_api_algebra_session_partial_fractions) — Default context
-- [`partial_fractions`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_partial_fractions_api_expression_operations_expression_partial_fractions) — Expression method
-- [`partition_count`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_partition_count_api_session_partition_count) — Default context
-- [`partition_count`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_partition_count_api_session_partition_count) — Default context
-- [`perimeter`](geometry.md#entry-presentation_python_geometry_capability_geometry_perimeter_api_polygon2d_perimeter) — Polygon2d method
-- [`perimeter`](geometry.md#entry-presentation_python_geometry_capability_geometry_perimeter_api_triangle2d_perimeter) — Triangle2d method
-- [`perpendicular_bisector_equation`](geometry.md#entry-presentation_python_geometry_capability_geometry_perpendicular_bisector_equation_api_geometry_operations_segment2d_perpendicular_bisector_equation) — Segment2d method
-- [`pi`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_pi_api_session_pi) — Default context
-- [`pi`](evaluation-and-constants.md#entry-presentation_python_evaluation_and_constants_capability_constants_pi_api_session_pi) — Default context
-- [`piecewise`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_piecewise_api_solving_session_piecewise) — Default context
-- [`piecewise`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_piecewise_api_solving_session_piecewise) — Default context
-- [`piecewise_fold`](specialized-canonical-forms.md#entry-presentation_python_specialized_canonical_forms_capability_expression_transformations_piecewise_fold_api_solving_session_piecewise_fold) — Default context
-- [`piecewise_fold`](specialized-canonical-forms.md#entry-presentation_python_specialized_canonical_forms_capability_expression_transformations_piecewise_fold_api_solving_session_piecewise_fold) — Default context
-- [`piecewise_fold`](specialized-canonical-forms.md#entry-presentation_python_specialized_canonical_forms_capability_expression_transformations_piecewise_fold_api_expression_operations_expression_piecewise_fold) — Expression method
-- [`polygamma`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_polygamma_api_session_polygamma) — Default context
-- [`polygamma`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_polygamma_api_session_polygamma) — Default context
-- [`polylogarithm`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_polylogarithm_api_session_polylogarithm) — Default context
-- [`polylogarithm`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_polylogarithm_api_session_polylogarithm) — Default context
-- [`polynomial_gcd`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_polynomial_gcd_api_algebra_session_polynomial_gcd) — Default context
-- [`polynomial_gcd`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_polynomial_gcd_api_algebra_session_polynomial_gcd) — Default context
-- [`polynomial_root`](solving.md#entry-presentation_python_solving_capability_equations_polynomial_root_api_solving_session_polynomial_root) — Default context
-- [`polynomial_root`](solving.md#entry-presentation_python_solving_capability_equations_polynomial_root_api_solving_session_polynomial_root) — Default context
-- [`presentation_normal_form`](specialized-canonical-forms.md#entry-presentation_python_specialized_canonical_forms_capability_expression_transformations_presentation_normal_form_api_algebra_session_presentation_normal_form) — Default context
-- [`presentation_normal_form`](specialized-canonical-forms.md#entry-presentation_python_specialized_canonical_forms_capability_expression_transformations_presentation_normal_form_api_algebra_session_presentation_normal_form) — Default context
-- [`presentation_normal_form`](specialized-canonical-forms.md#entry-presentation_python_specialized_canonical_forms_capability_expression_transformations_presentation_normal_form_api_expression_operations_expression_presentation_normal_form) — Expression method
-- [`probability`](statistics.md#entry-presentation_python_statistics_capability_probability_probability_api_probability_session_probability) — Default context
-- [`probability`](statistics.md#entry-presentation_python_statistics_capability_probability_probability_api_probability_session_probability) — Default context
-- [`product`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_product_api_analysis_session_product) — Default context
-- [`product`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_product_api_analysis_session_product) — Default context
-- [`product_indefinite`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_product_indefinite_api_analysis_session_product_indefinite) — Default context
-- [`product_indefinite`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_product_indefinite_api_analysis_session_product_indefinite) — Default context
-- [`radius`](geometry.md#entry-presentation_python_geometry_capability_geometry_radius_api_circle2d_radius) — Circle2d property
-- [`random_variable`](statistics.md#entry-presentation_python_statistics_capability_probability_random_variable_api_probability_session_random_variable) — Default context
-- [`random_variable`](statistics.md#entry-presentation_python_statistics_capability_probability_random_variable_api_probability_session_random_variable) — Default context
-- [`rational`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_rational_api_session_rational) — Default context
-- [`rational`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_rational_api_session_rational) — Default context
-- [`rational_from_float`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float) — Default context
-- [`rational_from_float`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_rational_from_float_api_analysis_session_rational_from_float) — Default context
-- [`rationalize_denominator`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_algebra_session_rationalize_denominator) — Default context
-- [`rationalize_denominator`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_algebra_session_rationalize_denominator) — Default context
-- [`rationalize_denominator`](algebraic-transforms.md#entry-presentation_python_algebraic_transforms_capability_expression_transformations_rationalize_denominator_api_expression_operations_expression_rationalize_denominator) — Expression method
-- [`real_line`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_real_line_api_session_real_line) — Default context
-- [`real_line`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_real_line_api_session_real_line) — Default context
-- [`real_part`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_real_part_api_session_real_part) — Default context
-- [`real_part`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_real_part_api_session_real_part) — Default context
-- [`real_part`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_real_part_api_expression_real_part) — Expression method
-- [`reconstruction`](object-model.md#entry-presentation_python_object_model_capability_contexts_reconstruction_api_partial_differential_equations_partialdifferentialequationseparationresult_reconstruction) — PartialDifferentialEquationSeparationResult property
-- [`reduced_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_reduced_equation_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_reduced_equation) — PartialDifferentialEquationSimilaritySolution property
-- [`refine`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_refine_api_assumptionscope_refine) — AssumptionScope method
-- [`refine`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_refine_api_session_refine) — Default context
-- [`refine`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_refine_api_session_refine) — Default context
-- [`refine`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_refine_api_expression_refine) — Expression method
-- [`remainder`](object-model.md#entry-presentation_python_object_model_capability_contexts_remainder_api_partial_differential_equations_partialdifferentialequationcoefficientdata_remainder) — PartialDifferentialEquationCoefficientData property
-- [`residual`](object-model.md#entry-presentation_python_object_model_capability_contexts_residual_api_partial_differential_equations_partialdifferentialequationseparatedequation_residual) — PartialDifferentialEquationSeparatedEquation property
-- [`residual`](object-model.md#entry-presentation_python_object_model_capability_contexts_residual_api_partial_differential_equations_partialdifferentialequationverificationresidual_residual) — PartialDifferentialEquationVerificationResidual property
-- [`residue`](series.md#entry-presentation_python_series_capability_calculus_residue_api_analysis_session_residue) — Default context
-- [`residue`](series.md#entry-presentation_python_series_capability_calculus_residue_api_analysis_session_residue) — Default context
-- [`residue`](series.md#entry-presentation_python_series_capability_calculus_residue_api_expression_operations_expression_residue) — Expression method
-- [`resultant`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_resultant_api_algebra_session_resultant) — Default context
-- [`resultant`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_resultant_api_algebra_session_resultant) — Default context
-- [`rewrite_as_exponential`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_exponential_api_algebra_session_rewrite_as_exponential) — Default context
-- [`rewrite_as_exponential`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_exponential_api_algebra_session_rewrite_as_exponential) — Default context
-- [`rewrite_as_exponential`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_exponential_api_expression_operations_expression_rewrite_as_exponential) — Expression method
-- [`rewrite_as_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_algebra_session_rewrite_as_trigonometric) — Default context
-- [`rewrite_as_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_algebra_session_rewrite_as_trigonometric) — Default context
-- [`rewrite_as_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_as_trigonometric_api_expression_operations_expression_rewrite_as_trigonometric) — Expression method
-- [`rewrite_in_terms_of`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_rewrite_in_terms_of_api_algebra_session_rewrite_in_terms_of) — Default context
-- [`rewrite_in_terms_of`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_rewrite_in_terms_of_api_algebra_session_rewrite_in_terms_of) — Default context
-- [`rewrite_in_terms_of`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_rewrite_in_terms_of_api_expression_operations_expression_rewrite_in_terms_of) — Expression method
-- [`rewrite_special_functions`](specialized-canonical-forms.md#entry-presentation_python_specialized_canonical_forms_capability_expression_transformations_rewrite_special_functions_api_session_rewrite_special_functions) — Default context
-- [`rewrite_special_functions`](specialized-canonical-forms.md#entry-presentation_python_specialized_canonical_forms_capability_expression_transformations_rewrite_special_functions_api_session_rewrite_special_functions) — Default context
-- [`rewrite_special_functions`](specialized-canonical-forms.md#entry-presentation_python_specialized_canonical_forms_capability_expression_transformations_rewrite_special_functions_api_expression_rewrite_special_functions) — Expression method
-- [`rewrite_trigonometric_basis`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_session_rewrite_trigonometric_basis) — Default context
-- [`rewrite_trigonometric_basis`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_session_rewrite_trigonometric_basis) — Default context
-- [`rewrite_trigonometric_basis`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_rewrite_trigonometric_basis_api_expression_rewrite_trigonometric_basis) — Expression method
-- [`right_operand`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_right_operand_api_assumptionproposition_right_operand) — Default context
-- [`right_operand`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_right_operand_api_assumptionproposition_right_operand) — Default context
-- [`rising_factorial`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_rising_factorial_api_session_rising_factorial) — Default context
-- [`rising_factorial`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_rising_factorial_api_session_rising_factorial) — Default context
-- [`root`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_root_api_session_root) — Default context
-- [`root`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_root_api_session_root) — Default context
-- [`sec`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sec_api_session_sec) — Default context
-- [`sec`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sec_api_session_sec) — Default context
-- [`sech`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sech_api_session_sech) — Default context
-- [`sech`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sech_api_session_sech) — Default context
-- [`separation_constant`](object-model.md#entry-presentation_python_object_model_capability_contexts_separation_constant_api_partial_differential_equations_partialdifferentialequationseparationresult_separation_constant) — PartialDifferentialEquationSeparationResult property
-- [`set_complement`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_set_complement_api_sets_session_set_complement) — Default context
-- [`set_complement`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_set_complement_api_sets_session_set_complement) — Default context
-- [`set_intersection`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_set_intersection_api_sets_session_set_intersection) — Default context
-- [`set_intersection`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_set_intersection_api_sets_session_set_intersection) — Default context
-- [`set_union`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_set_union_api_sets_session_set_union) — Default context
-- [`set_union`](sets.md#entry-presentation_python_sets_capability_discrete_mathematics_set_union_api_sets_session_set_union) — Default context
-- [`similarity_variable`](object-model.md#entry-presentation_python_object_model_capability_contexts_similarity_variable_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_similarity_variable) — PartialDifferentialEquationSimilaritySolution property
-- [`simplify`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_simplify_api_assumptionscope_simplify) — AssumptionScope method
-- [`simplify`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_simplify_api_session_simplify) — Default context
-- [`simplify`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_simplify_api_session_simplify) — Default context
-- [`simplify`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_simplify_api_expression_simplify) — Expression method
-- [`simplify_logical`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_simplify_logical_api_logic_session_simplify_logical) — Default context
-- [`simplify_logical`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_simplify_logical_api_logic_session_simplify_logical) — Default context
-- [`simplify_logical`](logical-transforms.md#entry-presentation_python_logical_transforms_capability_discrete_mathematics_simplify_logical_api_expression_operations_expression_simplify_logical) — Expression method
-- [`simplify_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_session_simplify_trigonometric) — Default context
-- [`simplify_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_session_simplify_trigonometric) — Default context
-- [`simplify_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_trigonometric_complex_rewrites_capability_expression_transformations_simplify_trigonometric_api_expression_simplify_trigonometric) — Expression method
-- [`simplify_under_constraint`](object-model.md#entry-presentation_python_object_model_capability_contexts_simplify_under_constraint_api_session_simplify_under_constraint) — Default context
-- [`simplify_under_constraint`](object-model.md#entry-presentation_python_object_model_capability_contexts_simplify_under_constraint_api_session_simplify_under_constraint) — Default context
-- [`simplify_under_constraint`](object-model.md#entry-presentation_python_object_model_capability_contexts_simplify_under_constraint_api_expression_simplify_under_constraint) — Expression method
-- [`sin`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sin_api_session_sin) — Default context
-- [`sin`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sin_api_session_sin) — Default context
-- [`singularities`](calculus.md#entry-presentation_python_calculus_capability_calculus_singularities_api_assumptionscope_singularities) — AssumptionScope method
-- [`singularities`](calculus.md#entry-presentation_python_calculus_capability_calculus_singularities_api_session_singularities) — Default context
-- [`singularities`](calculus.md#entry-presentation_python_calculus_capability_calculus_singularities_api_session_singularities) — Default context
-- [`singularities`](calculus.md#entry-presentation_python_calculus_capability_calculus_singularities_api_expression_singularities) — Expression method
-- [`sinh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sinh_api_session_sinh) — Default context
-- [`sinh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sinh_api_session_sinh) — Default context
-- [`solution`](object-model.md#entry-presentation_python_object_model_capability_contexts_solution_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_solution) — OrdinaryDifferentialEquationSolveResult property
-- [`solve_linear_recurrence`](differential-equations.md#entry-presentation_python_differential_equations_capability_equations_solve_linear_recurrence_api_solving_session_solve_linear_recurrence) — Default context
-- [`solve_linear_recurrence`](differential-equations.md#entry-presentation_python_differential_equations_capability_equations_solve_linear_recurrence_api_solving_session_solve_linear_recurrence) — Default context
-- [`solve_ordinary_differential_equation`](differential-equations.md#entry-presentation_python_differential_equations_capability_equations_solve_ordinary_differential_equation_api_solving_session_solve_ordinary_differential_equation) — Default context
-- [`solve_ordinary_differential_equation`](differential-equations.md#entry-presentation_python_differential_equations_capability_equations_solve_ordinary_differential_equation_api_solving_session_solve_ordinary_differential_equation) — Default context
-- [`solve_ordinary_differential_equation_with_particular_solution`](differential-equations.md#entry-presentation_python_differential_equations_capability_equations_solve_ordinary_differential_equation_with_particular_solution_api_solving_session_solve_ordinary_differential_equation_with_particular_solution) — Default context
-- [`solve_ordinary_differential_equation_with_particular_solution`](differential-equations.md#entry-presentation_python_differential_equations_capability_equations_solve_ordinary_differential_equation_with_particular_solution_api_solving_session_solve_ordinary_differential_equation_with_particular_solution) — Default context
-- [`solve_semialgebraic`](solving.md#entry-presentation_python_solving_capability_equations_solve_semialgebraic_api_logic_session_solve_semialgebraic) — Default context
-- [`solve_semialgebraic`](solving.md#entry-presentation_python_solving_capability_equations_solve_semialgebraic_api_logic_session_solve_semialgebraic) — Default context
-- [`solveset`](solving.md#entry-presentation_python_solving_capability_equations_solveset_api_solving_session_solveset) — Default context
-- [`solveset`](solving.md#entry-presentation_python_solving_capability_equations_solveset_api_solving_session_solveset) — Default context
-- [`solveset`](solving.md#entry-presentation_python_solving_capability_equations_solveset_api_expression_operations_expression_solveset) — Expression method
-- [`solveset_in_domain`](solving.md#entry-presentation_python_solving_capability_equations_solveset_in_domain_api_solving_session_solveset_in_domain) — Default context
-- [`solveset_in_domain`](solving.md#entry-presentation_python_solving_capability_equations_solveset_in_domain_api_solving_session_solveset_in_domain) — Default context
-- [`sqrt`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sqrt_api_session_sqrt) — Default context
-- [`sqrt`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_sqrt_api_session_sqrt) — Default context
-- [`stirling_first_signed`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_stirling_first_signed_api_session_stirling_first_signed) — Default context
-- [`stirling_first_signed`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_stirling_first_signed_api_session_stirling_first_signed) — Default context
-- [`stirling_second`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_stirling_second_api_session_stirling_second) — Default context
-- [`stirling_second`](combinatorics.md#entry-presentation_python_combinatorics_capability_discrete_mathematics_stirling_second_api_session_stirling_second) — Default context
-- [`substitute`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_substitute_api_expression_substitute) — Expression method
-- [`summation`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_summation_api_analysis_session_summation) — Default context
-- [`summation`](deferred-forms.md#entry-presentation_python_deferred_forms_capability_construction_summation_api_analysis_session_summation) — Default context
-- [`summation_indefinite`](calculus.md#entry-presentation_python_calculus_capability_calculus_summation_indefinite_api_analysis_session_summation_indefinite) — Default context
-- [`summation_indefinite`](calculus.md#entry-presentation_python_calculus_capability_calculus_summation_indefinite_api_analysis_session_summation_indefinite) — Default context
-- [`summation_indefinite`](calculus.md#entry-presentation_python_calculus_capability_calculus_summation_indefinite_api_expression_operations_expression_summation_indefinite) — Expression method
-- [`symbol`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_symbol_api_session_symbol) — Default context
-- [`symbol`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_symbol_api_session_symbol) — Default context
-- [`tan`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_tan_api_session_tan) — Default context
-- [`tan`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_tan_api_session_tan) — Default context
-- [`tanh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_tanh_api_session_tanh) — Default context
-- [`tanh`](elementary-functions.md#entry-presentation_python_elementary_functions_capability_elementary_functions_tanh_api_session_tanh) — Default context
-- [`taylor_series`](series.md#entry-presentation_python_series_capability_calculus_taylor_series_api_assumptionscope_taylor_series) — AssumptionScope method
-- [`taylor_series`](series.md#entry-presentation_python_series_capability_calculus_taylor_series_api_session_taylor_series) — Default context
-- [`taylor_series`](series.md#entry-presentation_python_series_capability_calculus_taylor_series_api_session_taylor_series) — Default context
-- [`taylor_series`](series.md#entry-presentation_python_series_capability_calculus_taylor_series_api_expression_taylor_series) — Expression method
-- [`together`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_together_api_session_together) — Default context
-- [`together`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_together_api_session_together) — Default context
-- [`together`](simplification-general.md#entry-presentation_python_simplification_general_capability_expression_transformations_together_api_expression_together) — Expression method
-- [`trace`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_trace_api_matrix_trace) — Matrix method
-- [`transformed_governing_residual`](object-model.md#entry-presentation_python_object_model_capability_contexts_transformed_governing_residual_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_transformed_governing_residual) — PartialDifferentialEquationTransformationVerificationReport property
-- [`ultraspherical_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_ultraspherical_polynomial_api_session_ultraspherical_polynomial) — Default context
-- [`ultraspherical_polynomial`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_ultraspherical_polynomial_api_session_ultraspherical_polynomial) — Default context
-- [`value`](calculus.md#entry-presentation_python_calculus_capability_calculus_value_api_results_definiteintegrationresult_value) — DefiniteIntegrationResult property
-- [`variance`](statistics.md#entry-presentation_python_statistics_capability_probability_variance_api_probability_session_variance) — Default context
-- [`variance`](statistics.md#entry-presentation_python_statistics_capability_probability_variance_api_probability_session_variance) — Default context
-- [`weight`](object-model.md#entry-presentation_python_object_model_capability_contexts_weight_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_weight) — PartialDifferentialEquationSimilaritySolution property
-- [`x`](geometry.md#entry-presentation_python_geometry_capability_geometry_x_api_point2d_x) — Point2d property
-- [`y`](geometry.md#entry-presentation_python_geometry_capability_geometry_y_api_point2d_y) — Point2d property
-- [`zeta`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_zeta_api_session_zeta) — Default context
-- [`zeta`](special-functions.md#entry-presentation_python_special_functions_capability_special_functions_zeta_api_session_zeta) — Default context
+Described under [`Expression`](elementary-functions.md#absolute_value).
+
+- [`__add__`](expressions.md#entry-presentation_python_host_python_expression_add) — Expression method
+- [`__mul__`](expressions.md#entry-presentation_python_host_python_expression_mul) — Expression method
+- [`__neg__`](expressions.md#entry-presentation_python_host_python_expression_neg) — Expression method
+- [`__pow__`](expressions.md#entry-presentation_python_host_python_expression_pow) — Expression method
+- [`__radd__`](expressions.md#entry-presentation_python_host_python_expression_radd) — Expression method
+- [`__rmul__`](expressions.md#entry-presentation_python_host_python_expression_rmul) — Expression method
+- [`__rpow__`](expressions.md#entry-presentation_python_host_python_expression_rpow) — Expression method
+- [`__rsub__`](expressions.md#entry-presentation_python_host_python_expression_rsub) — Expression method
+- [`__rtruediv__`](expressions.md#entry-presentation_python_host_python_expression_rtruediv) — Expression method
+- [`__sub__`](expressions.md#entry-presentation_python_host_python_expression_sub) — Expression method
+- [`__truediv__`](expressions.md#entry-presentation_python_host_python_expression_truediv) — Expression method
+- [`abs`](elementary-functions.md#entry-presentation_python_api_session_abs) — Default context
+- [`arccos`](elementary-functions.md#entry-presentation_python_api_session_arccos) — Default context
+- [`arccosh`](elementary-functions.md#entry-presentation_python_api_session_arccosh) — Default context
+- [`arccot`](elementary-functions.md#entry-presentation_python_api_session_arccot) — Default context
+- [`arccoth`](elementary-functions.md#entry-presentation_python_api_session_arccoth) — Default context
+- [`arccsc`](elementary-functions.md#entry-presentation_python_api_session_arccsc) — Default context
+- [`arccsch`](elementary-functions.md#entry-presentation_python_api_session_arccsch) — Default context
+- [`arcsec`](elementary-functions.md#entry-presentation_python_api_session_arcsec) — Default context
+- [`arcsech`](elementary-functions.md#entry-presentation_python_api_session_arcsech) — Default context
+- [`arcsin`](elementary-functions.md#entry-presentation_python_api_session_arcsin) — Default context
+- [`arcsinh`](elementary-functions.md#entry-presentation_python_api_session_arcsinh) — Default context
+- [`arctan`](elementary-functions.md#entry-presentation_python_api_session_arctan) — Default context
+- [`arctanh`](elementary-functions.md#entry-presentation_python_api_session_arctanh) — Default context
+- [`AssumptionProposition.congruence_modulus`](assumptions.md#entry-presentation_python_api_assumptionproposition_congruence_modulus) — Default context
+- [`AssumptionProposition.left_operand`](assumptions.md#entry-presentation_python_api_assumptionproposition_left_operand) — Default context
+- [`AssumptionProposition.membership_element`](assumptions.md#entry-presentation_python_api_assumptionproposition_membership_element) — Default context
+- [`AssumptionProposition.membership_set`](assumptions.md#entry-presentation_python_api_assumptionproposition_membership_set) — Default context
+- [`AssumptionProposition.right_operand`](assumptions.md#entry-presentation_python_api_assumptionproposition_right_operand) — Default context
+- [`bell_number`](combinatorics.md#entry-presentation_python_api_session_bell_number) — Default context
+- [`beta`](special-functions.md#entry-presentation_python_api_session_beta) — Default context
+- [`binomial`](elementary-functions.md#entry-presentation_python_api_session_binomial) — Default context
+- [`cancel`](simplification-general.md#entry-presentation_python_api_session_cancel) — Default context
+- [`carlson_rc`](special-functions.md#entry-presentation_python_api_session_carlson_rc) — Default context
+- [`carlson_rd`](special-functions.md#entry-presentation_python_api_session_carlson_rd) — Default context
+- [`carlson_rf`](special-functions.md#entry-presentation_python_api_session_carlson_rf) — Default context
+- [`carlson_rj`](special-functions.md#entry-presentation_python_api_session_carlson_rj) — Default context
+- [`catalan_number`](combinatorics.md#entry-presentation_python_api_session_catalan_number) — Default context
+- [`ceiling`](elementary-functions.md#entry-presentation_python_api_session_ceiling) — Default context
+- [`characteristic_function`](statistics.md#entry-presentation_python_api_session_characteristic_function) — Default context
+- [`chebyshev_polynomial_first_kind`](special-functions.md#entry-presentation_python_api_session_chebyshev_polynomial_first_kind) — Default context
+- [`chebyshev_polynomial_second_kind`](special-functions.md#entry-presentation_python_api_session_chebyshev_polynomial_second_kind) — Default context
+- [`chinese_remainder`](number-theory.md#entry-presentation_python_api_session_chinese_remainder) — Default context
+- [`Circle2d.area`](geometry.md#entry-presentation_python_api_circle2d_area) — Circle2d method
+- [`Circle2d.circumference`](geometry.md#entry-presentation_python_api_circle2d_circumference) — Circle2d method
+- [`Circle2d.equation`](geometry.md#entry-presentation_python_api_circle2d_equation) — Circle2d method
+- [`Circle2d.radius`](geometry.md#entry-presentation_python_api_circle2d_radius) — Circle2d property
+- [`coefficient`](polynomials.md#entry-presentation_python_api_session_coefficient) — Default context
+- [`collect`](algebraic-transforms.md#entry-presentation_python_api_session_collect) — Default context
+- [`collect_radicals`](algebraic-transforms.md#entry-presentation_python_api_session_collect_radicals) — Default context
+- [`combine_logarithm`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_combine_logarithm) — Default context
+- [`combine_powers`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_combine_powers) — Default context
+- [`combine_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_combine_trigonometric) — Default context
+- [`complete_the_square`](algebraic-transforms.md#entry-presentation_python_api_session_complete_the_square) — Default context
+- [`complex_plane`](sets.md#entry-presentation_python_api_session_complex_plane) — Default context
+- [`condition_set`](sets.md#entry-presentation_python_api_session_condition_set) — Default context
+- [`conjugate`](elementary-functions.md#entry-presentation_python_api_session_conjugate) — Default context
+- [`conjunctive_normal_form`](logical-transforms.md#entry-presentation_python_api_session_conjunctive_normal_form) — Default context
+- [`continuous_domain`](calculus.md#entry-presentation_python_api_session_continuous_domain) — Default context
+- [`cos`](elementary-functions.md#entry-presentation_python_api_session_cos) — Default context
+- [`cosh`](elementary-functions.md#entry-presentation_python_api_session_cosh) — Default context
+- [`cot`](elementary-functions.md#entry-presentation_python_api_session_cot) — Default context
+- [`coth`](elementary-functions.md#entry-presentation_python_api_session_coth) — Default context
+- [`covariance`](statistics.md#entry-presentation_python_api_session_covariance) — Default context
+- [`csc`](elementary-functions.md#entry-presentation_python_api_session_csc) — Default context
+- [`csch`](elementary-functions.md#entry-presentation_python_api_session_csch) — Default context
+- [`cumulant`](statistics.md#entry-presentation_python_api_session_cumulant) — Default context
+- [`cumulative_distribution`](statistics.md#entry-presentation_python_api_session_cumulative_distribution) — Default context
+- [`DefiniteIntegrationResult.value`](calculus.md#entry-presentation_python_api_definiteintegrationresult_value) — DefiniteIntegrationResult property
+- [`denest_powers`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_denest_powers) — Default context
+- [`denest_radicals`](algebraic-transforms.md#entry-presentation_python_api_session_denest_radicals) — Default context
+- [`denominator`](expressions.md#entry-presentation_python_api_session_denominator) — Default context
+- [`density`](statistics.md#entry-presentation_python_api_session_density) — Default context
+- [`derivative`](deferred-forms.md#entry-presentation_python_api_session_derivative) — Default context
+- [`differentiate`](calculus.md#entry-presentation_python_api_session_differentiate) — Default context
+- [`digamma`](special-functions.md#entry-presentation_python_api_session_digamma) — Default context
+- [`disjunctive_normal_form`](logical-transforms.md#entry-presentation_python_api_session_disjunctive_normal_form) — Default context
+- [`distribution`](statistics.md#entry-presentation_python_api_session_distribution) — Default context
+- [`divergence`](vector-calculus.md#entry-presentation_python_api_session_divergence) — Default context
+- [`divisor_count`](number-theory.md#entry-presentation_python_api_session_divisor_count) — Default context
+- [`divisor_sigma`](number-theory.md#entry-presentation_python_api_session_divisor_sigma) — Default context
+- [`duplicate`](expressions.md#entry-presentation_python_api_expression_duplicate) — Expression method
+- [`e`](evaluation-and-constants.md#entry-presentation_python_api_session_e) — Default context
+- [`eliminate_derived_logical_connectives`](logical-transforms.md#entry-presentation_python_api_session_eliminate_derived_logical_connectives) — Default context
+- [`eliminate_quantifiers`](solving.md#entry-presentation_python_api_session_eliminate_quantifiers) — Default context
+- [`elliptic_e`](special-functions.md#entry-presentation_python_api_session_elliptic_e) — Default context
+- [`elliptic_e_incomplete`](special-functions.md#entry-presentation_python_api_session_elliptic_e_incomplete) — Default context
+- [`elliptic_f`](special-functions.md#entry-presentation_python_api_session_elliptic_f) — Default context
+- [`elliptic_k`](special-functions.md#entry-presentation_python_api_session_elliptic_k) — Default context
+- [`elliptic_pi`](special-functions.md#entry-presentation_python_api_session_elliptic_pi) — Default context
+- [`elliptic_pi_incomplete`](special-functions.md#entry-presentation_python_api_session_elliptic_pi_incomplete) — Default context
+- [`empty_set`](sets.md#entry-presentation_python_api_session_empty_set) — Default context
+- [`equal`](relations.md#entry-presentation_python_api_session_equal) — Default context
+- [`euler_gamma`](evaluation-and-constants.md#entry-presentation_python_api_session_euler_gamma) — Default context
+- [`euler_totient`](number-theory.md#entry-presentation_python_api_session_euler_totient) — Default context
+- [`evaluate_limit`](calculus.md#entry-presentation_python_api_session_evaluate_limit) — Default context
+- [`evaluate_numeric`](calculus.md#entry-presentation_python_api_session_evaluate_numeric) — Default context
+- [`execute`](calculus.md#entry-presentation_python_api_session_execute) — Default context
+- [`exp`](elementary-functions.md#entry-presentation_python_api_session_exp) — Default context
+- [`expand`](algebraic-transforms.md#entry-presentation_python_api_session_expand) — Default context
+- [`expand_complex`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_expand_complex) — Default context
+- [`expand_logarithm`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_expand_logarithm) — Default context
+- [`expand_power_base`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_expand_power_base) — Default context
+- [`expand_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_expand_trigonometric) — Default context
+- [`expectation`](statistics.md#entry-presentation_python_api_session_expectation) — Default context
+- [`Expression`](expressions.md#entry-presentation_python_api_expression) — Type
+- [`factor`](algebraic-transforms.md#entry-presentation_python_api_session_factor) — Default context
+- [`factor_common_terms`](algebraic-transforms.md#entry-presentation_python_api_session_factor_common_terms) — Default context
+- [`factorial`](elementary-functions.md#entry-presentation_python_api_session_factorial) — Default context
+- [`falling_factorial`](combinatorics.md#entry-presentation_python_api_session_falling_factorial) — Default context
+- [`fibonacci_number`](combinatorics.md#entry-presentation_python_api_session_fibonacci_number) — Default context
+- [`finite_set`](sets.md#entry-presentation_python_api_session_finite_set) — Default context
+- [`floor`](elementary-functions.md#entry-presentation_python_api_session_floor) — Default context
+- [`fourier_transform`](integral-transforms.md#entry-presentation_python_api_session_fourier_transform) — Default context
+- [`gamma`](special-functions.md#entry-presentation_python_api_session_gamma) — Default context
+- [`gegenbauer_polynomial`](special-functions.md#entry-presentation_python_api_session_gegenbauer_polynomial) — Default context
+- [`generalized_laguerre_polynomial`](special-functions.md#entry-presentation_python_api_session_generalized_laguerre_polynomial) — Default context
+- [`greater_than`](relations.md#entry-presentation_python_api_session_greater_than) — Default context
+- [`greater_than_or_equal`](relations.md#entry-presentation_python_api_session_greater_than_or_equal) — Default context
+- [`hermite_polynomial`](special-functions.md#entry-presentation_python_api_session_hermite_polynomial) — Default context
+- [`hurwitz_zeta`](special-functions.md#entry-presentation_python_api_session_hurwitz_zeta) — Default context
+- [`hypergeometric_0f1`](special-functions.md#entry-presentation_python_api_session_hypergeometric_0f1) — Default context
+- [`hypergeometric_1f1`](special-functions.md#entry-presentation_python_api_session_hypergeometric_1f1) — Default context
+- [`hypergeometric_2f1`](special-functions.md#entry-presentation_python_api_session_hypergeometric_2f1) — Default context
+- [`hypergeometric_pfq`](special-functions.md#entry-presentation_python_api_session_hypergeometric_pfq) — Default context
+- [`image_set`](sets.md#entry-presentation_python_api_session_image_set) — Default context
+- [`image_set_domain`](expressions.md#entry-presentation_python_api_expression_image_set_domain) — Expression method
+- [`image_set_lambda_expression`](expressions.md#entry-presentation_python_api_expression_image_set_lambda_expression) — Expression method
+- [`imaginary_part`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_imaginary_part) — Default context
+- [`imaginary_unit`](evaluation-and-constants.md#entry-presentation_python_api_session_imaginary_unit) — Default context
+- [`infinity`](evaluation-and-constants.md#entry-presentation_python_api_session_infinity) — Default context
+- [`integer`](construction-and-parsing.md#entry-presentation_python_api_session_integer) — Default context
+- [`integer_from_string`](construction-and-parsing.md#entry-presentation_python_api_session_integer_from_string) — Default context
+- [`integer_gcd`](number-theory.md#entry-presentation_python_api_session_integer_gcd) — Default context
+- [`integer_lcm`](number-theory.md#entry-presentation_python_api_session_integer_lcm) — Default context
+- [`integer_nth_root`](number-theory.md#entry-presentation_python_api_session_integer_nth_root) — Default context
+- [`integer_set`](sets.md#entry-presentation_python_api_session_integer_set) — Default context
+- [`integer_square_root`](number-theory.md#entry-presentation_python_api_session_integer_square_root) — Default context
+- [`integral`](deferred-forms.md#entry-presentation_python_api_session_integral) — Default context
+- [`integral_integrand`](expressions.md#entry-presentation_python_api_expression_integral_integrand) — Expression method
+- [`integral_lower_bound`](expressions.md#entry-presentation_python_api_expression_integral_lower_bound) — Expression method
+- [`integral_upper_bound`](expressions.md#entry-presentation_python_api_expression_integral_upper_bound) — Expression method
+- [`integrate`](calculus.md#entry-presentation_python_api_session_integrate) — Default context
+- [`integrate_definite`](calculus.md#entry-presentation_python_api_session_integrate_definite) — Default context
+- [`integrate_definite_under_constraint`](calculus.md#entry-presentation_python_api_session_integrate_definite_under_constraint) — Default context
+- [`integrate_iterated`](calculus.md#entry-presentation_python_api_session_integrate_iterated) — Default context
+- [`interval`](sets.md#entry-presentation_python_api_session_interval) — Default context
+- [`interval_lower`](expressions.md#entry-presentation_python_api_expression_interval_lower) — Expression method
+- [`interval_upper`](expressions.md#entry-presentation_python_api_expression_interval_upper) — Expression method
+- [`introduce_derived_logical_connectives`](logical-transforms.md#entry-presentation_python_api_session_introduce_derived_logical_connectives) — Default context
+- [`inverse_fourier_transform`](integral-transforms.md#entry-presentation_python_api_session_inverse_fourier_transform) — Default context
+- [`inverse_laplace_transform`](integral-transforms.md#entry-presentation_python_api_session_inverse_laplace_transform) — Default context
+- [`jacobi_amplitude`](special-functions.md#entry-presentation_python_api_session_jacobi_amplitude) — Default context
+- [`jacobi_cn`](special-functions.md#entry-presentation_python_api_session_jacobi_cn) — Default context
+- [`jacobi_dn`](special-functions.md#entry-presentation_python_api_session_jacobi_dn) — Default context
+- [`jacobi_polynomial`](special-functions.md#entry-presentation_python_api_session_jacobi_polynomial) — Default context
+- [`jacobi_sn`](special-functions.md#entry-presentation_python_api_session_jacobi_sn) — Default context
+- [`jacobi_theta_1`](special-functions.md#entry-presentation_python_api_session_jacobi_theta_1) — Default context
+- [`jacobi_theta_2`](special-functions.md#entry-presentation_python_api_session_jacobi_theta_2) — Default context
+- [`jacobi_theta_3`](special-functions.md#entry-presentation_python_api_session_jacobi_theta_3) — Default context
+- [`jacobi_theta_4`](special-functions.md#entry-presentation_python_api_session_jacobi_theta_4) — Default context
+- [`laguerre_polynomial`](special-functions.md#entry-presentation_python_api_session_laguerre_polynomial) — Default context
+- [`laplace_transform`](integral-transforms.md#entry-presentation_python_api_session_laplace_transform) — Default context
+- [`laplacian`](vector-calculus.md#entry-presentation_python_api_session_laplacian) — Default context
+- [`laurent_series`](series.md#entry-presentation_python_api_session_laurent_series) — Default context
+- [`leading_coefficient`](polynomials.md#entry-presentation_python_api_session_leading_coefficient) — Default context
+- [`legendre_polynomial`](special-functions.md#entry-presentation_python_api_session_legendre_polynomial) — Default context
+- [`lerch_phi`](special-functions.md#entry-presentation_python_api_session_lerch_phi) — Default context
+- [`less_than`](relations.md#entry-presentation_python_api_session_less_than) — Default context
+- [`less_than_or_equal`](relations.md#entry-presentation_python_api_session_less_than_or_equal) — Default context
+- [`limit`](calculus.md#entry-presentation_python_api_session_limit) — Default context
+- [`log`](elementary-functions.md#entry-presentation_python_api_session_log) — Default context
+- [`log_gamma`](special-functions.md#entry-presentation_python_api_session_log_gamma) — Default context
+- [`logical_false`](logic.md#entry-presentation_python_api_session_logical_false) — Default context
+- [`logical_true`](logic.md#entry-presentation_python_api_session_logical_true) — Default context
+- [`maclaurin_series`](series.md#entry-presentation_python_api_session_maclaurin_series) — Default context
+- [`Matrix.__getitem__`](linear-algebra.md#entry-presentation_python_host_python_matrix_getitem) — Matrix method
+- [`Matrix.characteristic_polynomial`](linear-algebra.md#entry-presentation_python_api_matrix_characteristic_polynomial) — Matrix method
+- [`Matrix.determinant`](linear-algebra.md#entry-presentation_python_api_matrix_determinant) — Matrix method
+- [`Matrix.minimal_polynomial`](linear-algebra.md#entry-presentation_python_api_matrix_minimal_polynomial) — Matrix method
+- [`Matrix.trace`](linear-algebra.md#entry-presentation_python_api_matrix_trace) — Matrix method
+- [`max`](elementary-functions.md#entry-presentation_python_api_session_max) — Default context
+- [`meijer_g`](special-functions.md#entry-presentation_python_api_session_meijer_g) — Default context
+- [`min`](elementary-functions.md#entry-presentation_python_api_session_min) — Default context
+- [`minimal_polynomial_of`](solving.md#entry-presentation_python_api_session_minimal_polynomial_of) — Default context
+- [`minimize_logical`](logical-transforms.md#entry-presentation_python_api_session_minimize_logical) — Default context
+- [`mobius`](number-theory.md#entry-presentation_python_api_session_mobius) — Default context
+- [`modular_inverse`](number-theory.md#entry-presentation_python_api_session_modular_inverse) — Default context
+- [`modular_power`](number-theory.md#entry-presentation_python_api_session_modular_power) — Default context
+- [`moment`](statistics.md#entry-presentation_python_api_session_moment) — Default context
+- [`moment_generating_function`](statistics.md#entry-presentation_python_api_session_moment_generating_function) — Default context
+- [`multinomial`](combinatorics.md#entry-presentation_python_api_session_multinomial) — Default context
+- [`not_equal`](relations.md#entry-presentation_python_api_session_not_equal) — Default context
+- [`numerator`](expressions.md#entry-presentation_python_api_session_numerator) — Default context
+- [`OrdinaryDifferentialEquationSolveResult.frequency_domain_equation`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_frequency_domain_equation) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.image`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_image) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.solution`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_solution) — OrdinaryDifferentialEquationSolveResult property
+- [`parse`](construction-and-parsing.md#entry-presentation_python_api_session_parse) — Default context
+- [`partial_fractions`](algebraic-transforms.md#entry-presentation_python_api_session_partial_fractions) — Default context
+- [`PartialDifferentialEquationCoefficientData.remainder`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoefficientdata_remainder) — PartialDifferentialEquationCoefficientData property
+- [`PartialDifferentialEquationCoordinateChange.jacobian`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoordinatechange_jacobian) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationJetCoefficient.coefficient`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationjetcoefficient_coefficient) — PartialDifferentialEquationJetCoefficient property
+- [`PartialDifferentialEquationPointSymmetryAction.amplitude`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_amplitude) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.applied_to_seed`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_applied_to_seed) — PartialDifferentialEquationPointSymmetryAction method
+- [`PartialDifferentialEquationPointSymmetryAction.applied_to_seed_with_additive_solution`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_applied_to_seed_with_additive_solution) — PartialDifferentialEquationPointSymmetryAction method
+- [`PartialDifferentialEquationPointSymmetryAction.multiplier`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_multiplier) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryGenerator.dependent_infinitesimal`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetrygenerator_dependent_infinitesimal) — PartialDifferentialEquationPointSymmetryGenerator property
+- [`PartialDifferentialEquationPrincipalCoefficient.coefficient`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationprincipalcoefficient_coefficient) — PartialDifferentialEquationPrincipalCoefficient property
+- [`PartialDifferentialEquationProblem.equation`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationproblem_equation) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationSecondOrderClassification.discriminant`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_discriminant) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSeparatedEquation.residual`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparatedequation_residual) — PartialDifferentialEquationSeparatedEquation property
+- [`PartialDifferentialEquationSeparationResult.reconstruction`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparationresult_reconstruction) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSeparationResult.separation_constant`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparationresult_separation_constant) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSimilaritySolution.invariant`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_invariant) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.multiplier`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_multiplier) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.reduced_equation`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_reduced_equation) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.similarity_variable`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_similarity_variable) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.weight`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_weight) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSolutionFamily.expression`](partial-differential-equation-results.md#entry-presentation_python_host_python_partialdifferentialequationsolutionfamily_expression) — PartialDifferentialEquationSolutionFamily property
+- [`PartialDifferentialEquationTransformationResult.normalization_multiplier`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationresult_normalization_multiplier) — PartialDifferentialEquationTransformationResult property
+- [`PartialDifferentialEquationTransformationVerificationReport.claimed_governing_residual`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_claimed_governing_residual) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationTransformationVerificationReport.jacobian`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_jacobian) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationTransformationVerificationReport.transformed_governing_residual`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_transformed_governing_residual) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.explicit_branch`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationreport_explicit_branch) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationResidual.residual`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationresidual_residual) — PartialDifferentialEquationVerificationResidual property
+- [`partition_count`](combinatorics.md#entry-presentation_python_api_session_partition_count) — Default context
+- [`pi`](evaluation-and-constants.md#entry-presentation_python_api_session_pi) — Default context
+- [`piecewise`](deferred-forms.md#entry-presentation_python_api_session_piecewise) — Default context
+- [`piecewise_fold`](specialized-canonical-forms.md#entry-presentation_python_api_session_piecewise_fold) — Default context
+- [`Point2d.distance_to`](geometry.md#entry-presentation_python_api_point2d_distance_to) — Point2d method
+- [`Point2d.x`](geometry.md#entry-presentation_python_api_point2d_x) — Point2d property
+- [`Point2d.y`](geometry.md#entry-presentation_python_api_point2d_y) — Point2d property
+- [`polygamma`](special-functions.md#entry-presentation_python_api_session_polygamma) — Default context
+- [`Polygon2d.area`](geometry.md#entry-presentation_python_api_polygon2d_area) — Polygon2d method
+- [`Polygon2d.perimeter`](geometry.md#entry-presentation_python_api_polygon2d_perimeter) — Polygon2d method
+- [`polylogarithm`](special-functions.md#entry-presentation_python_api_session_polylogarithm) — Default context
+- [`polynomial_gcd`](polynomials.md#entry-presentation_python_api_session_polynomial_gcd) — Default context
+- [`polynomial_root`](solving.md#entry-presentation_python_api_session_polynomial_root) — Default context
+- [`presentation_normal_form`](specialized-canonical-forms.md#entry-presentation_python_api_session_presentation_normal_form) — Default context
+- [`probability`](statistics.md#entry-presentation_python_api_session_probability) — Default context
+- [`product`](deferred-forms.md#entry-presentation_python_api_session_product) — Default context
+- [`product_indefinite`](deferred-forms.md#entry-presentation_python_api_session_product_indefinite) — Default context
+- [`random_variable`](statistics.md#entry-presentation_python_api_session_random_variable) — Default context
+- [`rational`](construction-and-parsing.md#entry-presentation_python_api_session_rational) — Default context
+- [`rational_from_float`](construction-and-parsing.md#entry-presentation_python_api_session_rational_from_float) — Default context
+- [`RationalCanonicalForm.characteristic_polynomial`](matrix-canonical-forms.md#entry-presentation_python_api_rationalcanonicalform_characteristic_polynomial) — RationalCanonicalForm property
+- [`RationalCanonicalForm.minimal_polynomial`](matrix-canonical-forms.md#entry-presentation_python_api_rationalcanonicalform_minimal_polynomial) — RationalCanonicalForm property
+- [`rationalize_denominator`](algebraic-transforms.md#entry-presentation_python_api_session_rationalize_denominator) — Default context
+- [`real_line`](sets.md#entry-presentation_python_api_session_real_line) — Default context
+- [`real_part`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_real_part) — Default context
+- [`refine`](assumptions.md#entry-presentation_python_api_session_refine) — Default context
+- [`residue`](series.md#entry-presentation_python_api_session_residue) — Default context
+- [`resultant`](polynomials.md#entry-presentation_python_api_session_resultant) — Default context
+- [`rewrite_as_exponential`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_rewrite_as_exponential) — Default context
+- [`rewrite_as_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_rewrite_as_trigonometric) — Default context
+- [`rewrite_in_terms_of`](expressions.md#entry-presentation_python_api_session_rewrite_in_terms_of) — Default context
+- [`rewrite_special_functions`](specialized-canonical-forms.md#entry-presentation_python_api_session_rewrite_special_functions) — Default context
+- [`rewrite_trigonometric_basis`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_rewrite_trigonometric_basis) — Default context
+- [`rising_factorial`](combinatorics.md#entry-presentation_python_api_session_rising_factorial) — Default context
+- [`root`](elementary-functions.md#entry-presentation_python_api_session_root) — Default context
+- [`sec`](elementary-functions.md#entry-presentation_python_api_session_sec) — Default context
+- [`sech`](elementary-functions.md#entry-presentation_python_api_session_sech) — Default context
+- [`Segment2d.length`](geometry.md#entry-presentation_python_api_segment2d_length) — Segment2d method
+- [`Segment2d.perpendicular_bisector_equation`](geometry.md#entry-presentation_python_api_segment2d_perpendicular_bisector_equation) — Segment2d method
+- [`set_complement`](sets.md#entry-presentation_python_api_session_set_complement) — Default context
+- [`set_intersection`](sets.md#entry-presentation_python_api_session_set_intersection) — Default context
+- [`set_union`](sets.md#entry-presentation_python_api_session_set_union) — Default context
+- [`simplify`](simplification-general.md#entry-presentation_python_api_session_simplify) — Default context
+- [`simplify_logical`](logical-transforms.md#entry-presentation_python_api_session_simplify_logical) — Default context
+- [`simplify_trigonometric`](trigonometric-complex-rewrites.md#entry-presentation_python_api_session_simplify_trigonometric) — Default context
+- [`simplify_under_constraint`](simplification-general.md#entry-presentation_python_api_session_simplify_under_constraint) — Default context
+- [`sin`](elementary-functions.md#entry-presentation_python_api_session_sin) — Default context
+- [`singularities`](calculus.md#entry-presentation_python_api_session_singularities) — Default context
+- [`sinh`](elementary-functions.md#entry-presentation_python_api_session_sinh) — Default context
+- [`solve_linear_recurrence`](recurrence-equations.md#entry-presentation_python_api_session_solve_linear_recurrence) — Default context
+- [`solve_ordinary_differential_equation`](ordinary-differential-equations.md#entry-presentation_python_api_session_solve_ordinary_differential_equation) — Default context
+- [`solve_ordinary_differential_equation_with_particular_solution`](ordinary-differential-equations.md#entry-presentation_python_api_session_solve_ordinary_differential_equation_with_particular_solution) — Default context
+- [`solve_semialgebraic`](solving.md#entry-presentation_python_api_session_solve_semialgebraic) — Default context
+- [`solveset`](solving.md#entry-presentation_python_api_session_solveset) — Default context
+- [`solveset_in_domain`](solving.md#entry-presentation_python_api_session_solveset_in_domain) — Default context
+- [`sqrt`](elementary-functions.md#entry-presentation_python_api_session_sqrt) — Default context
+- [`stirling_first_signed`](combinatorics.md#entry-presentation_python_api_session_stirling_first_signed) — Default context
+- [`stirling_second`](combinatorics.md#entry-presentation_python_api_session_stirling_second) — Default context
+- [`substitute`](expressions.md#entry-presentation_python_api_session_substitute) — Expression method
+- [`summation`](deferred-forms.md#entry-presentation_python_api_session_summation) — Default context
+- [`summation_indefinite`](deferred-forms.md#entry-presentation_python_api_session_summation_indefinite) — Default context
+- [`symbol`](construction-and-parsing.md#entry-presentation_python_api_session_symbol) — Default context
+- [`tan`](elementary-functions.md#entry-presentation_python_api_session_tan) — Default context
+- [`tanh`](elementary-functions.md#entry-presentation_python_api_session_tanh) — Default context
+- [`taylor_series`](series.md#entry-presentation_python_api_session_taylor_series) — Default context
+- [`together`](simplification-general.md#entry-presentation_python_api_session_together) — Default context
+- [`ultraspherical_polynomial`](special-functions.md#entry-presentation_python_api_session_ultraspherical_polynomial) — Default context
+- [`UndefinedFunction.__call__`](undefined-functions.md#entry-presentation_python_api_undefinedfunction_call) — UndefinedFunction method
+- [`UndefinedFunction.derivative`](undefined-functions.md#entry-presentation_python_api_undefinedfunction_derivative) — UndefinedFunction method
+- [`variance`](statistics.md#entry-presentation_python_api_session_variance) — Default context
+- [`zeta`](special-functions.md#entry-presentation_python_api_session_zeta) — Default context
 
 ## float
 
-- [`estimated_absolute_error`](api-reference.md#entry-presentation_python_api_reference_capability_numeric_definite_integration_estimated_absolute_error_api_results_numericdefiniteintegrationresult_estimated_absolute_error) — NumericDefiniteIntegrationResult property
-- [`evaluate_to_float`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_evaluate_to_float_api_expression_operations_expression_evaluate_to_float) — Expression method
+- [`evaluate_to_float`](expressions.md#entry-presentation_python_api_session_evaluate_to_float) — Expression method
+- [`NumericDefiniteIntegrationResult.estimated_absolute_error`](calculus.md#entry-presentation_python_api_numericdefiniteintegrationresult_estimated_absolute_error) — NumericDefiniteIntegrationResult property
 
 ## int
 
-- [`__len__`](object-model.md#entry-presentation_python_object_model_capability_contexts_len_unresolved) — Expression method
-- [`arity`](object-model.md#entry-presentation_python_object_model_capability_contexts_arity_api_partial_differential_equations_partialdifferentialequationarbitraryfunction_arity) — PartialDifferentialEquationArbitraryFunction property
-- [`cell_count`](cad.md#entry-presentation_python_cad_capability_algebra_cell_count_api_cylindricalalgebraicdecomposition_cell_count) — CylindricalAlgebraicDecomposition method
-- [`cell_dimension`](cad.md#entry-presentation_python_cad_capability_algebra_cell_dimension_api_cylindricalalgebraicdecomposition_cell_dimension) — CylindricalAlgebraicDecomposition method
-- [`columns`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_columns_api_matrix_columns) — Matrix property
-- [`compare_real_roots`](solving.md#entry-presentation_python_solving_capability_equations_compare_real_roots_api_solving_session_compare_real_roots) — Default context
-- [`compare_real_roots`](solving.md#entry-presentation_python_solving_capability_equations_compare_real_roots_api_solving_session_compare_real_roots) — Default context
-- [`count_distinct_real_roots`](solving.md#entry-presentation_python_solving_capability_equations_count_distinct_real_roots_api_solving_session_count_distinct_real_roots) — Default context
-- [`count_distinct_real_roots`](solving.md#entry-presentation_python_solving_capability_equations_count_distinct_real_roots_api_solving_session_count_distinct_real_roots) — Default context
-- [`degree`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_degree_api_algebra_session_degree) — Default context
-- [`degree`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_degree_api_algebra_session_degree) — Default context
-- [`interner_length`](default-context.md#entry-presentation_python_default_context_capability_contexts_interner_length_api_session_interner_length) — Default context
-- [`interner_length`](default-context.md#entry-presentation_python_default_context_capability_contexts_interner_length_api_session_interner_length) — Default context
-- [`jacobi_symbol`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_jacobi_symbol_api_session_jacobi_symbol) — Default context
-- [`jacobi_symbol`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_jacobi_symbol_api_session_jacobi_symbol) — Default context
-- [`kronecker_symbol`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_kronecker_symbol_api_session_kronecker_symbol) — Default context
-- [`kronecker_symbol`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_kronecker_symbol_api_session_kronecker_symbol) — Default context
-- [`legendre_symbol`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_legendre_symbol_api_session_legendre_symbol) — Default context
-- [`legendre_symbol`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_legendre_symbol_api_session_legendre_symbol) — Default context
-- [`node_count`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_node_count_api_expression_node_count) — Expression method
-- [`node_count`](expressions.md#entry-presentation_python_expressions_capability_numeric_definite_integration_node_count_api_results_numericdefiniteintegrationresult_node_count) — NumericDefiniteIntegrationResult property
-- [`order`](object-model.md#entry-presentation_python_object_model_capability_contexts_order_api_partial_differential_equations_partialdifferentialequationclassification_order) — PartialDifferentialEquationClassification property
-- [`order`](object-model.md#entry-presentation_python_object_model_capability_contexts_order_api_partial_differential_equations_partialdifferentialequationsolutionprovenance_order) — PartialDifferentialEquationSolutionProvenance property
-- [`pole_order`](series.md#entry-presentation_python_series_capability_calculus_pole_order_api_analysis_session_pole_order) — Default context
-- [`pole_order`](series.md#entry-presentation_python_series_capability_calculus_pole_order_api_analysis_session_pole_order) — Default context
-- [`pole_order`](series.md#entry-presentation_python_series_capability_calculus_pole_order_api_expression_operations_expression_pole_order) — Expression method
-- [`precision_bits`](api-reference.md#entry-presentation_python_api_reference_capability_numeric_definite_integration_precision_bits_api_results_numericdefiniteintegrationresult_precision_bits) — NumericDefiniteIntegrationResult property
-- [`rank`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_rank_api_matrix_rank) — Matrix method
-- [`real_root_count`](solving.md#entry-presentation_python_solving_capability_equations_real_root_count_api_solving_session_real_root_count) — Default context
-- [`real_root_count`](solving.md#entry-presentation_python_solving_capability_equations_real_root_count_api_solving_session_real_root_count) — Default context
-- [`real_root_sign`](solving.md#entry-presentation_python_solving_capability_equations_real_root_sign_api_solving_session_real_root_sign) — Default context
-- [`real_root_sign`](solving.md#entry-presentation_python_solving_capability_equations_real_root_sign_api_solving_session_real_root_sign) — Default context
-- [`required_rank`](object-model.md#entry-presentation_python_object_model_capability_contexts_required_rank_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_required_rank) — OrdinaryDifferentialEquationSystemVerificationReport property
-- [`rows`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_rows_api_matrix_rows) — Matrix property
+- [`__len__`](sets.md#entry-presentation_python_host_python_expression_len) — Expression method
+- [`compare_real_roots`](solving.md#entry-presentation_python_api_session_compare_real_roots) — Default context
+- [`count_distinct_real_roots`](solving.md#entry-presentation_python_api_session_count_distinct_real_roots) — Default context
+- [`CylindricalAlgebraicDecomposition.cell_count`](cad.md#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_count) — CylindricalAlgebraicDecomposition method
+- [`CylindricalAlgebraicDecomposition.cell_dimension`](cad.md#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_dimension) — CylindricalAlgebraicDecomposition method
+- [`degree`](polynomials.md#entry-presentation_python_api_session_degree) — Default context
+- [`interner_length`](default-context.md#entry-presentation_python_api_session_interner_length) — Default context
+- [`jacobi_symbol`](number-theory.md#entry-presentation_python_api_session_jacobi_symbol) — Default context
+- [`kronecker_symbol`](number-theory.md#entry-presentation_python_api_session_kronecker_symbol) — Default context
+- [`legendre_symbol`](number-theory.md#entry-presentation_python_api_session_legendre_symbol) — Default context
+- [`Matrix.columns`](matrix-construction.md#entry-presentation_python_api_matrix_columns) — Matrix property
+- [`Matrix.rank`](linear-algebra.md#entry-presentation_python_api_matrix_rank) — Matrix method
+- [`Matrix.rows`](matrix-construction.md#entry-presentation_python_api_matrix_rows) — Matrix property
+- [`node_count`](expressions.md#entry-presentation_python_api_expression_node_count) — Expression method
+- [`NumericDefiniteIntegrationResult.node_count`](calculus.md#entry-presentation_python_api_numericdefiniteintegrationresult_node_count) — NumericDefiniteIntegrationResult property
+- [`NumericDefiniteIntegrationResult.precision_bits`](calculus.md#entry-presentation_python_api_numericdefiniteintegrationresult_precision_bits) — NumericDefiniteIntegrationResult property
+- [`OrdinaryDifferentialEquationSystemVerificationReport.required_rank`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemverificationreport_required_rank) — OrdinaryDifferentialEquationSystemVerificationReport property
+- [`PartialDifferentialEquationArbitraryFunction.arity`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationarbitraryfunction_arity) — PartialDifferentialEquationArbitraryFunction property
+- [`PartialDifferentialEquationClassification.order`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationclassification_order) — PartialDifferentialEquationClassification property
+- [`PartialDifferentialEquationSolutionProvenance.order`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolutionprovenance_order) — PartialDifferentialEquationSolutionProvenance property
+- [`pole_order`](series.md#entry-presentation_python_api_session_pole_order) — Default context
+- [`real_root_count`](solving.md#entry-presentation_python_api_session_real_root_count) — Default context
+- [`real_root_sign`](solving.md#entry-presentation_python_api_session_real_root_sign) — Default context
 
 ## isize
 
-- [`__hash__`](object-model.md#entry-presentation_python_object_model_capability_contexts_hash_unresolved) — Expression method
+- [`__hash__`](expressions.md#entry-presentation_python_host_python_expression_hash) — Expression method
 
 ## list[(python_expression, Vec<python_matrix>)]
 
-- [`eigenvectors`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_eigenvectors_api_matrix_operations_matrix_eigenvectors) — Matrix method
+- [`Matrix.eigenvectors`](linear-algebra.md#entry-presentation_python_api_matrix_eigenvectors) — Matrix method
 
 ## list[(python_expression, python_expression)]
 
-- [`isolate_real_roots`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_isolate_real_roots_api_solving_session_isolate_real_roots) — Default context
-- [`isolate_real_roots`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_isolate_real_roots_api_solving_session_isolate_real_roots) — Default context
+- [`isolate_real_roots`](polynomials.md#entry-presentation_python_api_session_isolate_real_roots) — Default context
 
 ## list[(python_expression, u32)]
 
-- [`factor_integer`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_factor_integer_api_session_factor_integer) — Default context
-- [`factor_integer`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_factor_integer_api_session_factor_integer) — Default context
+- [`factor_integer`](number-theory.md#entry-presentation_python_api_session_factor_integer) — Default context
 
 ## list[(python_point_2d, python_expression)]
 
-- [`interior_angles`](geometry.md#entry-presentation_python_geometry_capability_geometry_interior_angles_api_geometry_operations_polygon2d_interior_angles) — Polygon2d method
-- [`interior_angles`](geometry.md#entry-presentation_python_geometry_capability_geometry_interior_angles_api_geometry_operations_triangle2d_interior_angles) — Triangle2d method
+- [`Polygon2d.interior_angles`](geometry.md#entry-presentation_python_api_polygon2d_interior_angles) — Polygon2d method
 
 ## list[PyAny]
 
-- [`intersection`](geometry.md#entry-presentation_python_geometry_capability_geometry_intersection_api_circle2d_intersection) — Circle2d method
-- [`intersection`](geometry.md#entry-presentation_python_geometry_capability_geometry_intersection_api_point2d_intersection) — Point2d method
-- [`intersection`](geometry.md#entry-presentation_python_geometry_capability_geometry_intersection_api_polygon2d_intersection) — Polygon2d method
-- [`intersection`](geometry.md#entry-presentation_python_geometry_capability_geometry_intersection_api_segment2d_intersection) — Segment2d method
-- [`intersection`](geometry.md#entry-presentation_python_geometry_capability_geometry_intersection_api_triangle2d_intersection) — Triangle2d method
+- [`Point2d.intersection`](geometry.md#entry-presentation_python_api_point2d_intersection) — Point2d method
 
 ## list[expression]
 
-- [`boundary_conditions`](object-model.md#entry-presentation_python_object_model_capability_contexts_boundary_conditions_api_partial_differential_equations_partialdifferentialequationproblem_boundary_conditions) — PartialDifferentialEquationProblem property
-- [`change_monomial_order`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_change_monomial_order_api_algebra_session_change_monomial_order) — Default context
-- [`change_monomial_order`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_change_monomial_order_api_algebra_session_change_monomial_order) — Default context
-- [`components`](object-model.md#entry-presentation_python_object_model_capability_contexts_components_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_components) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`composition_residuals`](object-model.md#entry-presentation_python_object_model_capability_contexts_composition_residuals_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_composition_residuals) — PartialDifferentialEquationTransformationVerificationReport property
-- [`continued_fraction_rational`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_continued_fraction_rational_api_number_theory_session_continued_fraction_rational) — Default context
-- [`continued_fraction_rational`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_continued_fraction_rational_api_number_theory_session_continued_fraction_rational) — Default context
-- [`coordinate_infinitesimals`](object-model.md#entry-presentation_python_object_model_capability_contexts_coordinate_infinitesimals_api_partial_differential_equations_partialdifferentialequationpointsymmetrygenerator_coordinate_infinitesimals) — PartialDifferentialEquationPointSymmetryGenerator property
-- [`curl`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_curl_api_analysis_session_curl) — Default context
-- [`curl`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_curl_api_analysis_session_curl) — Default context
-- [`determining_equations`](object-model.md#entry-presentation_python_object_model_capability_contexts_determining_equations_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_determining_equations) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`eigenvalues`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_eigenvalues_api_matrix_eigenvalues) — Matrix method
-- [`elimination_ideal`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_elimination_ideal_api_algebra_session_elimination_ideal) — Default context
-- [`elimination_ideal`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_elimination_ideal_api_algebra_session_elimination_ideal) — Default context
-- [`forward_coordinates`](object-model.md#entry-presentation_python_object_model_capability_contexts_forward_coordinates_api_partial_differential_equations_partialdifferentialequationcoordinatechange_forward_coordinates) — PartialDifferentialEquationCoordinateChange property
-- [`generated_constants`](object-model.md#entry-presentation_python_object_model_capability_contexts_generated_constants_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_generated_constants) — OrdinaryDifferentialEquationSolveResult property
-- [`generated_constants`](object-model.md#entry-presentation_python_object_model_capability_contexts_generated_constants_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_generated_constants) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`gradient`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_gradient_api_analysis_session_gradient) — Default context
-- [`gradient`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_gradient_api_analysis_session_gradient) — Default context
-- [`groebner_basis`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_groebner_basis_api_algebra_session_groebner_basis) — Default context
-- [`groebner_basis`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_groebner_basis_api_algebra_session_groebner_basis) — Default context
-- [`ideal_intersection`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_ideal_intersection_api_algebra_session_ideal_intersection) — Default context
-- [`ideal_intersection`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_ideal_intersection_api_algebra_session_ideal_intersection) — Default context
-- [`ideal_product`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_ideal_product_api_algebra_session_ideal_product) — Default context
-- [`ideal_product`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_ideal_product_api_algebra_session_ideal_product) — Default context
-- [`ideal_sum`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_ideal_sum_api_algebra_session_ideal_sum) — Default context
-- [`ideal_sum`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_ideal_sum_api_algebra_session_ideal_sum) — Default context
-- [`implicitize`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_implicitize_api_algebra_session_implicitize) — Default context
-- [`implicitize`](polynomials.md#entry-presentation_python_polynomials_capability_algebra_implicitize_api_algebra_session_implicitize) — Default context
-- [`initial_conditions`](object-model.md#entry-presentation_python_object_model_capability_contexts_initial_conditions_api_partial_differential_equations_partialdifferentialequationproblem_initial_conditions) — PartialDifferentialEquationProblem property
-- [`invariant_factors`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_invariant_factors_api_results_rationalcanonicalform_invariant_factors) — RationalCanonicalForm property
-- [`inverse_coordinates`](object-model.md#entry-presentation_python_object_model_capability_contexts_inverse_coordinates_api_partial_differential_equations_partialdifferentialequationcoordinatechange_inverse_coordinates) — PartialDifferentialEquationCoordinateChange property
-- [`lifted_constants`](object-model.md#entry-presentation_python_object_model_capability_contexts_lifted_constants_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_lifted_constants) — PartialDifferentialEquationSimilaritySolution property
-- [`parameters`](object-model.md#entry-presentation_python_object_model_capability_contexts_parameters_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_parameters) — PartialDifferentialEquationPointSymmetryAction property
-- [`parameters`](object-model.md#entry-presentation_python_object_model_capability_contexts_parameters_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_parameters) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`pell_solutions`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_pell_solutions_api_number_theory_session_pell_solutions) — Default context
-- [`pell_solutions`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_pell_solutions_api_number_theory_session_pell_solutions) — Default context
-- [`principal_congruence_residuals`](object-model.md#entry-presentation_python_object_model_capability_contexts_principal_congruence_residuals_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_principal_congruence_residuals) — PartialDifferentialEquationTransformationVerificationReport property
-- [`solve`](solving.md#entry-presentation_python_solving_capability_equations_solve_api_solving_session_solve) — Default context
-- [`solve`](solving.md#entry-presentation_python_solving_capability_equations_solve_api_solving_session_solve) — Default context
-- [`solve`](solving.md#entry-presentation_python_solving_capability_equations_solve_api_expression_operations_expression_solve) — Expression method
-- [`solve_linear_diophantine`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_solve_linear_diophantine_api_number_theory_session_solve_linear_diophantine) — Default context
-- [`solve_linear_diophantine`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_solve_linear_diophantine_api_number_theory_session_solve_linear_diophantine) — Default context
-- [`solve_linear_diophantine_system`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_solve_linear_diophantine_system_api_number_theory_session_solve_linear_diophantine_system) — Default context
-- [`solve_linear_diophantine_system`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_solve_linear_diophantine_system_api_number_theory_session_solve_linear_diophantine_system) — Default context
-- [`solve_negative_pell`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_solve_negative_pell_api_number_theory_session_solve_negative_pell) — Default context
-- [`solve_negative_pell`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_solve_negative_pell_api_number_theory_session_solve_negative_pell) — Default context
-- [`solve_pell`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_solve_pell_api_number_theory_session_solve_pell) — Default context
-- [`solve_pell`](number-theory.md#entry-presentation_python_number_theory_capability_discrete_mathematics_solve_pell_api_number_theory_session_solve_pell) — Default context
-- [`transformed_coordinates`](object-model.md#entry-presentation_python_object_model_capability_contexts_transformed_coordinates_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_transformed_coordinates) — PartialDifferentialEquationPointSymmetryAction property
+- [`change_monomial_order`](polynomials.md#entry-presentation_python_api_session_change_monomial_order) — Default context
+- [`continued_fraction_rational`](number-theory.md#entry-presentation_python_api_session_continued_fraction_rational) — Default context
+- [`curl`](vector-calculus.md#entry-presentation_python_api_session_curl) — Default context
+- [`elimination_ideal`](polynomials.md#entry-presentation_python_api_session_elimination_ideal) — Default context
+- [`gradient`](vector-calculus.md#entry-presentation_python_api_session_gradient) — Default context
+- [`groebner_basis`](polynomials.md#entry-presentation_python_api_session_groebner_basis) — Default context
+- [`ideal_intersection`](polynomials.md#entry-presentation_python_api_session_ideal_intersection) — Default context
+- [`ideal_product`](polynomials.md#entry-presentation_python_api_session_ideal_product) — Default context
+- [`ideal_sum`](polynomials.md#entry-presentation_python_api_session_ideal_sum) — Default context
+- [`implicitize`](polynomials.md#entry-presentation_python_api_session_implicitize) — Default context
+- [`Matrix.eigenvalues`](linear-algebra.md#entry-presentation_python_api_matrix_eigenvalues) — Matrix method
+- [`OrdinaryDifferentialEquationSolveResult.generated_constants`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_generated_constants) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.components`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_components) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.generated_constants`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_generated_constants) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`PartialDifferentialEquationCoordinateChange.forward_coordinates`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoordinatechange_forward_coordinates) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationCoordinateChange.inverse_coordinates`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoordinatechange_inverse_coordinates) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationPointSymmetryAction.parameters`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_parameters) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.transformed_coordinates`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_transformed_coordinates) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.determining_equations`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_determining_equations) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.parameters`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_parameters) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryGenerator.coordinate_infinitesimals`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetrygenerator_coordinate_infinitesimals) — PartialDifferentialEquationPointSymmetryGenerator property
+- [`PartialDifferentialEquationProblem.boundary_conditions`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationproblem_boundary_conditions) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationProblem.initial_conditions`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationproblem_initial_conditions) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationSimilaritySolution.lifted_constants`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_lifted_constants) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationTransformationVerificationReport.composition_residuals`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_composition_residuals) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationTransformationVerificationReport.principal_congruence_residuals`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_principal_congruence_residuals) — PartialDifferentialEquationTransformationVerificationReport property
+- [`pell_solutions`](number-theory.md#entry-presentation_python_api_session_pell_solutions) — Default context
+- [`RationalCanonicalForm.invariant_factors`](matrix-canonical-forms.md#entry-presentation_python_api_rationalcanonicalform_invariant_factors) — RationalCanonicalForm property
+- [`solve`](solving.md#entry-presentation_python_api_session_solve) — Default context
+- [`solve_linear_diophantine`](number-theory.md#entry-presentation_python_api_session_solve_linear_diophantine) — Default context
+- [`solve_linear_diophantine_system`](number-theory.md#entry-presentation_python_api_session_solve_linear_diophantine_system) — Default context
+- [`solve_negative_pell`](number-theory.md#entry-presentation_python_api_session_solve_negative_pell) — Default context
+- [`solve_pell`](number-theory.md#entry-presentation_python_api_session_solve_pell) — Default context
 
 ## list[float]
 
-- [`cell_sample_point`](cad.md#entry-presentation_python_cad_capability_algebra_cell_sample_point_api_cylindricalalgebraicdecomposition_cell_sample_point) — CylindricalAlgebraicDecomposition method
-- [`evaluate_on_grid`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_on_grid_api_analysis_session_evaluate_on_grid) — Default context
-- [`evaluate_on_grid`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_on_grid_api_analysis_session_evaluate_on_grid) — Default context
-- [`evaluate_on_grid_points`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_on_grid_points_api_analysis_session_evaluate_on_grid_points) — Default context
-- [`evaluate_on_grid_points`](calculus.md#entry-presentation_python_calculus_capability_calculus_evaluate_on_grid_points_api_analysis_session_evaluate_on_grid_points) — Default context
+- [`CylindricalAlgebraicDecomposition.cell_sample_point`](cad.md#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_sample_point) — CylindricalAlgebraicDecomposition method
+- [`evaluate_on_grid`](calculus.md#entry-presentation_python_api_session_evaluate_on_grid) — Default context
+- [`evaluate_on_grid_points`](calculus.md#entry-presentation_python_api_session_evaluate_on_grid_points) — Default context
 
 ## list[int]
 
-- [`cell_sign_vector`](cad.md#entry-presentation_python_cad_capability_algebra_cell_sign_vector_api_cylindricalalgebraicdecomposition_cell_sign_vector) — CylindricalAlgebraicDecomposition method
-- [`derivative_orders`](object-model.md#entry-presentation_python_object_model_capability_contexts_derivative_orders_unresolved) — PartialDifferentialEquationJetCoefficient property
-- [`derivative_orders`](object-model.md#entry-presentation_python_object_model_capability_contexts_derivative_orders_unresolved) — PartialDifferentialEquationJetCoefficient property
+- [`CylindricalAlgebraicDecomposition.cell_sign_vector`](cad.md#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_sign_vector) — CylindricalAlgebraicDecomposition method
+- [`PartialDifferentialEquationJetCoefficient.derivative_orders`](partial-differential-equation-results.md#entry-presentation_python_host_python_partialdifferentialequationjetcoefficient_derivative_orders) — PartialDifferentialEquationJetCoefficient property
+- [`PartialDifferentialEquationPrincipalCoefficient.derivative_orders`](partial-differential-equation-results.md#entry-presentation_python_host_python_partialdifferentialequationprincipalcoefficient_derivative_orders) — PartialDifferentialEquationPrincipalCoefficient property
 
 ## list[matrix]
 
-- [`integer_image_lattice_basis`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_integer_image_lattice_basis_api_matrix_operations_matrix_integer_image_lattice_basis) — Matrix method
-- [`integer_kernel_basis`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_integer_kernel_basis_api_matrix_operations_matrix_integer_kernel_basis) — Matrix method
-- [`integer_row_lattice_basis`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_integer_row_lattice_basis_api_matrix_operations_matrix_integer_row_lattice_basis) — Matrix method
-- [`nullspace_basis`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_nullspace_basis_api_matrix_operations_matrix_nullspace_basis) — Matrix method
+- [`Matrix.integer_image_lattice_basis`](matrix-canonical-forms.md#entry-presentation_python_api_matrix_integer_image_lattice_basis) — Matrix method
+- [`Matrix.integer_kernel_basis`](matrix-canonical-forms.md#entry-presentation_python_api_matrix_integer_kernel_basis) — Matrix method
+- [`Matrix.integer_row_lattice_basis`](matrix-canonical-forms.md#entry-presentation_python_api_matrix_integer_row_lattice_basis) — Matrix method
+- [`Matrix.nullspace_basis`](linear-algebra.md#entry-presentation_python_api_matrix_nullspace_basis) — Matrix method
 
 ## list[partial_differential_equation_arbitrary_function]
 
-- [`arbitrary_functions`](object-model.md#entry-presentation_python_object_model_capability_contexts_arbitrary_functions_api_partial_differential_equations_partialdifferentialequationsolutionfamily_arbitrary_functions) — PartialDifferentialEquationSolutionFamily property
+- [`PartialDifferentialEquationSolutionFamily.arbitrary_functions`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolutionfamily_arbitrary_functions) — PartialDifferentialEquationSolutionFamily property
 
 ## list[partial_differential_equation_jet_coefficient]
 
-- [`full_coefficients`](object-model.md#entry-presentation_python_object_model_capability_contexts_full_coefficients_api_partial_differential_equations_partialdifferentialequationcoefficientdata_full_coefficients) — PartialDifferentialEquationCoefficientData property
-- [`highest_order_coefficients`](object-model.md#entry-presentation_python_object_model_capability_contexts_highest_order_coefficients_api_partial_differential_equations_partialdifferentialequationcoefficientdata_highest_order_coefficients) — PartialDifferentialEquationCoefficientData property
+- [`PartialDifferentialEquationCoefficientData.full_coefficients`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoefficientdata_full_coefficients) — PartialDifferentialEquationCoefficientData property
+- [`PartialDifferentialEquationCoefficientData.highest_order_coefficients`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoefficientdata_highest_order_coefficients) — PartialDifferentialEquationCoefficientData property
 
 ## list[partial_differential_equation_point_symmetry_generator]
 
-- [`basis`](object-model.md#entry-presentation_python_object_model_capability_contexts_basis_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_basis) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.basis`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_basis) — PartialDifferentialEquationPointSymmetryAlgebra property
 
 ## list[partial_differential_equation_principal_coefficient]
 
-- [`derivative_coefficients`](object-model.md#entry-presentation_python_object_model_capability_contexts_derivative_coefficients_api_partial_differential_equations_partialdifferentialequationprincipalpart_derivative_coefficients) — PartialDifferentialEquationPrincipalPart property
+- [`PartialDifferentialEquationPrincipalPart.derivative_coefficients`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationprincipalpart_derivative_coefficients) — PartialDifferentialEquationPrincipalPart property
 
 ## list[partial_differential_equation_second_order_type_case]
 
-- [`cases`](object-model.md#entry-presentation_python_object_model_capability_contexts_cases_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_cases) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderClassification.cases`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_cases) — PartialDifferentialEquationSecondOrderClassification property
 
 ## list[partial_differential_equation_verification_residual]
 
-- [`boundary_condition_residuals`](object-model.md#entry-presentation_python_object_model_capability_contexts_boundary_condition_residuals_api_partial_differential_equations_partialdifferentialequationverificationreport_boundary_condition_residuals) — PartialDifferentialEquationVerificationReport property
-- [`initial_condition_residuals`](object-model.md#entry-presentation_python_object_model_capability_contexts_initial_condition_residuals_api_partial_differential_equations_partialdifferentialequationverificationreport_initial_condition_residuals) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.boundary_condition_residuals`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationreport_boundary_condition_residuals) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.initial_condition_residuals`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationreport_initial_condition_residuals) — PartialDifferentialEquationVerificationReport property
 
 ## list[str]
 
-- [`assumptions_of`](default-context.md#entry-presentation_python_default_context_capability_contexts_assumptions_of_api_session_assumptions_of) — Default context
-- [`assumptions_of`](default-context.md#entry-presentation_python_default_context_capability_contexts_assumptions_of_api_session_assumptions_of) — Default context
-- [`discharged_obligations`](object-model.md#entry-presentation_python_object_model_capability_contexts_discharged_obligations_api_partial_differential_equations_partialdifferentialequationsolutionprovenance_discharged_obligations) — PartialDifferentialEquationSolutionProvenance property
-- [`free_variables`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_free_variables_api_expression_free_variables) — Expression method
-- [`independent_variables`](object-model.md#entry-presentation_python_object_model_capability_contexts_independent_variables_api_partial_differential_equations_partialdifferentialequationproblem_independent_variables) — PartialDifferentialEquationProblem property
-- [`outstanding_obligations`](object-model.md#entry-presentation_python_object_model_capability_contexts_outstanding_obligations_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_outstanding_obligations) — PartialDifferentialEquationPointSymmetryAction property
-- [`outstanding_obligations`](object-model.md#entry-presentation_python_object_model_capability_contexts_outstanding_obligations_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_outstanding_obligations) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`outstanding_obligations`](object-model.md#entry-presentation_python_object_model_capability_contexts_outstanding_obligations_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_outstanding_obligations) — PartialDifferentialEquationSimilaritySolution property
-- [`proof_obligations`](object-model.md#entry-presentation_python_object_model_capability_contexts_proof_obligations_api_partial_differential_equations_partialdifferentialequationmethodcandidate_proof_obligations) — PartialDifferentialEquationMethodCandidate property
-- [`proof_obligations`](object-model.md#entry-presentation_python_object_model_capability_contexts_proof_obligations_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_proof_obligations) — PartialDifferentialEquationSecondOrderClassification property
-- [`proof_obligations`](object-model.md#entry-presentation_python_object_model_capability_contexts_proof_obligations_api_partial_differential_equations_partialdifferentialequationsolutionfamily_proof_obligations) — PartialDifferentialEquationSolutionFamily property
-- [`proof_obligations`](object-model.md#entry-presentation_python_object_model_capability_contexts_proof_obligations_api_partial_differential_equations_partialdifferentialequationverificationreport_proof_obligations) — PartialDifferentialEquationVerificationReport property
-- [`source_variables`](object-model.md#entry-presentation_python_object_model_capability_contexts_source_variables_api_partial_differential_equations_partialdifferentialequationcoordinatechange_source_variables) — PartialDifferentialEquationCoordinateChange property
-- [`target_variables`](object-model.md#entry-presentation_python_object_model_capability_contexts_target_variables_api_partial_differential_equations_partialdifferentialequationcoordinatechange_target_variables) — PartialDifferentialEquationCoordinateChange property
+- [`assumptions_of`](default-context.md#entry-presentation_python_api_session_assumptions_of) — Default context
+- [`free_variables`](expressions.md#entry-presentation_python_api_expression_free_variables) — Expression method
+- [`PartialDifferentialEquationCoordinateChange.source_variables`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoordinatechange_source_variables) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationCoordinateChange.target_variables`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoordinatechange_target_variables) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationMethodCandidate.proof_obligations`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationmethodcandidate_proof_obligations) — PartialDifferentialEquationMethodCandidate property
+- [`PartialDifferentialEquationPointSymmetryAction.outstanding_obligations`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_outstanding_obligations) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.outstanding_obligations`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_outstanding_obligations) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationProblem.independent_variables`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationproblem_independent_variables) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationSecondOrderClassification.proof_obligations`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_proof_obligations) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSimilaritySolution.outstanding_obligations`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_outstanding_obligations) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSolutionFamily.proof_obligations`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolutionfamily_proof_obligations) — PartialDifferentialEquationSolutionFamily property
+- [`PartialDifferentialEquationSolutionProvenance.discharged_obligations`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolutionprovenance_discharged_obligations) — PartialDifferentialEquationSolutionProvenance property
+- [`PartialDifferentialEquationVerificationReport.proof_obligations`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationreport_proof_obligations) — PartialDifferentialEquationVerificationReport property
 
 ## matrix
 
-- [`Matrix`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_matrix_api_matrix) — Matrix constructor
-- [`__add__`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_add_unresolved) — Matrix method
-- [`__mul__`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_mul_unresolved) — Matrix method
-- [`__sub__`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_sub_unresolved) — Matrix method
-- [`add`](object-model.md#entry-presentation_python_object_model_capability_contexts_add_api_matrix_add) — Matrix method
-- [`adjugate`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_adjugate_api_matrix_adjugate) — Matrix method
-- [`canonical_form`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_canonical_form_api_results_rationalcanonicalform_canonical_form) — RationalCanonicalForm property
-- [`cofactor_matrix`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_cofactor_matrix_api_matrix_cofactor_matrix) — Matrix method
-- [`cosine`](matrix-functions.md#entry-presentation_python_matrix_functions_capability_algebra_cosine_api_matrix_operations_matrix_cosine) — Matrix method
-- [`execute`](calculus.md#entry-presentation_python_calculus_capability_calculus_execute_api_matrix_execute) — Matrix method
-- [`exponential`](matrix-functions.md#entry-presentation_python_matrix_functions_capability_algebra_exponential_api_matrix_operations_matrix_exponential) — Matrix method
-- [`hessian`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_hessian_api_analysis_session_hessian) — Default context
-- [`hessian`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_hessian_api_analysis_session_hessian) — Default context
-- [`hyperbolic_cosine`](matrix-functions.md#entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_cosine_api_matrix_operations_matrix_hyperbolic_cosine) — Matrix method
-- [`hyperbolic_sine`](matrix-functions.md#entry-presentation_python_matrix_functions_capability_algebra_hyperbolic_sine_api_matrix_operations_matrix_hyperbolic_sine) — Matrix method
-- [`inverse`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_inverse_api_matrix_inverse) — Matrix method
-- [`jacobian`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_jacobian_api_analysis_session_jacobian) — Default context
-- [`jacobian`](vector-calculus.md#entry-presentation_python_vector_calculus_capability_vector_calculus_jacobian_api_analysis_session_jacobian) — Default context
-- [`logarithm`](matrix-functions.md#entry-presentation_python_matrix_functions_capability_algebra_logarithm_api_matrix_operations_matrix_logarithm) — Matrix method
-- [`matrix`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_matrix_api_session_matrix) — Explicit context
-- [`matrix`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_matrix_api_partial_differential_equations_partialdifferentialequationprincipalpart_matrix) — PartialDifferentialEquationPrincipalPart property
-- [`matrix_diagonal`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_matrix_diagonal_api_session_matrix_diagonal) — Default context
-- [`matrix_diagonal`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_matrix_diagonal_api_session_matrix_diagonal) — Default context
-- [`matrix_identity`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_matrix_identity_api_session_matrix_identity) — Default context
-- [`matrix_identity`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_matrix_identity_api_session_matrix_identity) — Default context
-- [`matrix_zero`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_matrix_zero_api_session_matrix_zero) — Default context
-- [`matrix_zero`](matrix-construction.md#entry-presentation_python_matrix_construction_capability_algebra_matrix_zero_api_session_matrix_zero) — Default context
-- [`multiply`](object-model.md#entry-presentation_python_object_model_capability_contexts_multiply_api_matrix_multiply) — Matrix method
-- [`principal_matrix`](object-model.md#entry-presentation_python_object_model_capability_contexts_principal_matrix_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_principal_matrix) — PartialDifferentialEquationSecondOrderClassification property
-- [`row_reduce`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_row_reduce_api_matrix_row_reduce) — Matrix method
-- [`scalar_multiply`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_scalar_multiply_api_matrix_scalar_multiply) — Matrix method
-- [`similarity`](matrix-functions.md#entry-presentation_python_matrix_functions_capability_algebra_similarity_api_results_rationalcanonicalform_similarity) — RationalCanonicalForm property
-- [`sine`](matrix-functions.md#entry-presentation_python_matrix_functions_capability_algebra_sine_api_matrix_operations_matrix_sine) — Matrix method
-- [`square_root`](matrix-functions.md#entry-presentation_python_matrix_functions_capability_algebra_square_root_api_matrix_operations_matrix_square_root) — Matrix method
-- [`subtract`](object-model.md#entry-presentation_python_object_model_capability_contexts_subtract_api_matrix_subtract) — Matrix method
-- [`transpose`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_transpose_api_matrix_transpose) — Matrix method
+Described under [`Matrix`](linear-algebra.md#characteristic_polynomial).
+
+- [`hessian`](vector-calculus.md#entry-presentation_python_api_session_hessian) — Default context
+- [`jacobian`](vector-calculus.md#entry-presentation_python_api_session_jacobian) — Default context
+- [`Matrix`](linear-algebra.md#entry-presentation_python_api_matrix) — Matrix constructor
+- [`matrix`](matrix-construction.md#entry-presentation_python_api_session_matrix) — Explicit context
+- [`Matrix.__add__`](linear-algebra.md#entry-presentation_python_host_python_matrix_add) — Matrix method
+- [`Matrix.__mul__`](linear-algebra.md#entry-presentation_python_host_python_matrix_mul) — Matrix method
+- [`Matrix.__sub__`](linear-algebra.md#entry-presentation_python_host_python_matrix_sub) — Matrix method
+- [`Matrix.add`](linear-algebra.md#entry-presentation_python_api_matrix_add) — Matrix method
+- [`Matrix.adjugate`](linear-algebra.md#entry-presentation_python_api_matrix_adjugate) — Matrix method
+- [`Matrix.cofactor_matrix`](linear-algebra.md#entry-presentation_python_api_matrix_cofactor_matrix) — Matrix method
+- [`Matrix.cosine`](matrix-functions.md#entry-presentation_python_api_matrix_cosine) — Matrix method
+- [`Matrix.execute`](linear-algebra.md#entry-presentation_python_api_matrix_execute) — Matrix method
+- [`Matrix.exponential`](matrix-functions.md#entry-presentation_python_api_matrix_exponential) — Matrix method
+- [`Matrix.hyperbolic_cosine`](matrix-functions.md#entry-presentation_python_api_matrix_hyperbolic_cosine) — Matrix method
+- [`Matrix.hyperbolic_sine`](matrix-functions.md#entry-presentation_python_api_matrix_hyperbolic_sine) — Matrix method
+- [`Matrix.inverse`](linear-algebra.md#entry-presentation_python_api_matrix_inverse) — Matrix method
+- [`Matrix.logarithm`](matrix-functions.md#entry-presentation_python_api_matrix_logarithm) — Matrix method
+- [`Matrix.multiply`](linear-algebra.md#entry-presentation_python_api_matrix_multiply) — Matrix method
+- [`Matrix.row_reduce`](linear-algebra.md#entry-presentation_python_api_matrix_row_reduce) — Matrix method
+- [`Matrix.scalar_multiply`](linear-algebra.md#entry-presentation_python_api_matrix_scalar_multiply) — Matrix method
+- [`Matrix.sine`](matrix-functions.md#entry-presentation_python_api_matrix_sine) — Matrix method
+- [`Matrix.square_root`](matrix-functions.md#entry-presentation_python_api_matrix_square_root) — Matrix method
+- [`Matrix.subtract`](linear-algebra.md#entry-presentation_python_api_matrix_subtract) — Matrix method
+- [`Matrix.transpose`](linear-algebra.md#entry-presentation_python_api_matrix_transpose) — Matrix method
+- [`matrix_diagonal`](matrix-construction.md#entry-presentation_python_api_session_matrix_diagonal) — Default context
+- [`matrix_identity`](matrix-construction.md#entry-presentation_python_api_session_matrix_identity) — Default context
+- [`matrix_zero`](matrix-construction.md#entry-presentation_python_api_session_matrix_zero) — Default context
+- [`PartialDifferentialEquationPrincipalPart.matrix`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationprincipalpart_matrix) — PartialDifferentialEquationPrincipalPart property
+- [`PartialDifferentialEquationSecondOrderClassification.principal_matrix`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_principal_matrix) — PartialDifferentialEquationSecondOrderClassification property
+- [`RationalCanonicalForm.canonical_form`](matrix-canonical-forms.md#entry-presentation_python_api_rationalcanonicalform_canonical_form) — RationalCanonicalForm property
+- [`RationalCanonicalForm.similarity`](matrix-canonical-forms.md#entry-presentation_python_api_rationalcanonicalform_similarity) — RationalCanonicalForm property
 
 ## ordinary_differential_equation_solve_result
 
-- [`OrdinaryDifferentialEquationSolveResult`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_ordinarydifferentialequationsolveresult_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult) — Type
-- [`solve_ordinary_differential_equation_request`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_ordinary_differential_equation_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_request) — Default context
-- [`solve_ordinary_differential_equation_request`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_ordinary_differential_equation_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_request) — Default context
-- [`solve_ordinary_differential_equation_with_history`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_ordinary_differential_equation_with_history_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_with_history) — Default context
-- [`solve_ordinary_differential_equation_with_history`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_ordinary_differential_equation_with_history_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_with_history) — Default context
+Described under [`OrdinaryDifferentialEquationSolveResult`](ordinary-differential-equations.md#ordinarydifferentialequationsolveresult).
+
+- [`OrdinaryDifferentialEquationSolveResult`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult) — Type
+- [`solve_ordinary_differential_equation_request`](ordinary-differential-equations.md#entry-presentation_python_api_session_solve_ordinary_differential_equation_request) — Default context
+- [`solve_ordinary_differential_equation_with_history`](ordinary-differential-equations.md#entry-presentation_python_api_session_solve_ordinary_differential_equation_with_history) — Default context
 
 ## ordinary_differential_equation_system_solve_result
 
-- [`OrdinaryDifferentialEquationSystemSolveResult`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_ordinarydifferentialequationsystemsolveresult_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult) — Type
-- [`solve_ordinary_differential_equation_system_request`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_ordinary_differential_equation_system_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_system_request) — Default context
-- [`solve_ordinary_differential_equation_system_request`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_ordinary_differential_equation_system_request_api_ordinary_differential_equations_session_solve_ordinary_differential_equation_system_request) — Default context
+Described under [`OrdinaryDifferentialEquationSystemSolveResult`](ordinary-differential-equations.md#ordinarydifferentialequationsystemsolveresult).
+
+- [`OrdinaryDifferentialEquationSystemSolveResult`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult) — Type
+- [`solve_ordinary_differential_equation_system_request`](ordinary-differential-equations.md#entry-presentation_python_api_session_solve_ordinary_differential_equation_system_request) — Default context
 
 ## ordinary_differential_equation_system_verification_report
 
-- [`OrdinaryDifferentialEquationSystemVerificationReport`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_ordinarydifferentialequationsystemverificationreport_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport) — Type
-- [`verify_ordinary_differential_equation_system_solution`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_verify_ordinary_differential_equation_system_solution_api_ordinary_differential_equations_session_verify_ordinary_differential_equation_system_solution) — Default context
-- [`verify_ordinary_differential_equation_system_solution`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_verify_ordinary_differential_equation_system_solution_api_ordinary_differential_equations_session_verify_ordinary_differential_equation_system_solution) — Default context
+Described under [`OrdinaryDifferentialEquationSystemVerificationReport`](ordinary-differential-equations.md#ordinarydifferentialequationsystemverificationreport).
+
+- [`OrdinaryDifferentialEquationSystemVerificationReport`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemverificationreport) — Type
+- [`verify_ordinary_differential_equation_system_solution`](ordinary-differential-equations.md#entry-presentation_python_api_session_verify_ordinary_differential_equation_system_solution) — Default context
 
 ## partial_differential_equation_arbitrary_function
 
-- [`PartialDifferentialEquationArbitraryFunction`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_arbitrary_function_api_partial_differential_equations_partialdifferentialequationarbitraryfunction) — Type
-- [`partial_differential_equation_arbitrary_function`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_arbitrary_function_api_partial_differential_equations_session_partial_differential_equation_arbitrary_function) — Explicit context
+Described under [`PartialDifferentialEquationArbitraryFunction`](partial-differential-equation-results.md#partialdifferentialequationarbitraryfunction).
+
+- [`partial_differential_equation_arbitrary_function`](partial-differential-equations.md#entry-presentation_python_api_session_partial_differential_equation_arbitrary_function) — Explicit context
+- [`PartialDifferentialEquationArbitraryFunction`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationarbitraryfunction) — Type
 
 ## partial_differential_equation_canonicalization_result
 
-- [`PartialDifferentialEquationCanonicalizationResult`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_canonicalization_result_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult) — Type
-- [`canonicalize_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_canonicalize_partial_differential_equation_api_partial_differential_equations_session_canonicalize_partial_differential_equation) — Default context
+Described under [`PartialDifferentialEquationCanonicalizationResult`](partial-differential-equation-results.md#partialdifferentialequationcanonicalizationresult).
+
+- [`canonicalize_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_canonicalize_partial_differential_equation) — Default context
+- [`PartialDifferentialEquationCanonicalizationResult`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult) — Type
 
 ## partial_differential_equation_canonicalization_result,
 
-- [`canonicalize_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_canonicalize_partial_differential_equation_api_partial_differential_equations_session_canonicalize_partial_differential_equation) — Default context
+Described under [`PartialDifferentialEquationCanonicalizationResult`](partial-differential-equation-results.md#partialdifferentialequationcanonicalizationresult).
+
+- [`canonicalize_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_canonicalize_partial_differential_equation) — Default context
 
 ## partial_differential_equation_classification
 
-- [`PartialDifferentialEquationClassification`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_classification_api_partial_differential_equations_partialdifferentialequationclassification) — Type
-- [`classification`](optimization.md#entry-presentation_python_optimization_capability_equations_classification_api_partial_differential_equations_partialdifferentialequationsolveresult_classification) — PartialDifferentialEquationSolveResult property
-- [`classify_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_classify_partial_differential_equation_api_partial_differential_equations_session_classify_partial_differential_equation) — Default context
+Described under [`PartialDifferentialEquationClassification`](partial-differential-equation-results.md#partialdifferentialequationclassification).
+
+- [`classify_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_classify_partial_differential_equation) — Default context
+- [`PartialDifferentialEquationClassification`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationclassification) — Type
+- [`PartialDifferentialEquationSolveResult.classification`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolveresult_classification) — PartialDifferentialEquationSolveResult property
 
 ## partial_differential_equation_classification,
 
-- [`classify_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_classify_partial_differential_equation_api_partial_differential_equations_session_classify_partial_differential_equation) — Default context
+Described under [`PartialDifferentialEquationClassification`](partial-differential-equation-results.md#partialdifferentialequationclassification).
+
+- [`classify_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_classify_partial_differential_equation) — Default context
 
 ## partial_differential_equation_coefficient_data
 
-- [`coefficient_data`](object-model.md#entry-presentation_python_object_model_capability_contexts_coefficient_data_api_partial_differential_equations_partialdifferentialequationclassification_coefficient_data) — PartialDifferentialEquationClassification property
+Described under [`PartialDifferentialEquationCoefficientData`](partial-differential-equation-results.md#partialdifferentialequationcoefficientdata).
+
+- [`PartialDifferentialEquationClassification.coefficient_data`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationclassification_coefficient_data) — PartialDifferentialEquationClassification property
 
 ## partial_differential_equation_coordinate_change
 
-- [`PartialDifferentialEquationCoordinateChange`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_coordinate_change_api_partial_differential_equations_partialdifferentialequationcoordinatechange) — Type
-- [`coordinate_change`](object-model.md#entry-presentation_python_object_model_capability_contexts_coordinate_change_api_partial_differential_equations_partialdifferentialequationtransformationresult_coordinate_change) — PartialDifferentialEquationTransformationResult property
+Described under [`PartialDifferentialEquationCoordinateChange`](partial-differential-equation-results.md#partialdifferentialequationcoordinatechange).
+
+- [`PartialDifferentialEquationCoordinateChange`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoordinatechange) — Type
+- [`PartialDifferentialEquationTransformationResult.coordinate_change`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationresult_coordinate_change) — PartialDifferentialEquationTransformationResult property
 
 ## partial_differential_equation_point_symmetry_action
 
-- [`PartialDifferentialEquationPointSymmetryAction`](object-model.md#entry-presentation_python_object_model_capability_contexts_partialdifferentialequationpointsymmetryaction_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction) — Type
-- [`construct_partial_differential_equation_point_symmetry_action`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_construct_partial_differential_equation_point_symmetry_action_api_partial_differential_equations_session_construct_partial_differential_equation_point_symmetry_action) — Default context
-- [`construct_partial_differential_equation_point_symmetry_action`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_construct_partial_differential_equation_point_symmetry_action_api_partial_differential_equations_session_construct_partial_differential_equation_point_symmetry_action) — Default context
+Described under [`PartialDifferentialEquationPointSymmetryAction`](partial-differential-equation-results.md#partialdifferentialequationpointsymmetryaction).
+
+- [`construct_partial_differential_equation_point_symmetry_action`](partial-differential-equations.md#entry-presentation_python_api_session_construct_partial_differential_equation_point_symmetry_action) — Default context
+- [`PartialDifferentialEquationPointSymmetryAction`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction) — Type
 
 ## partial_differential_equation_point_symmetry_algebra
 
-- [`PartialDifferentialEquationPointSymmetryAlgebra`](object-model.md#entry-presentation_python_object_model_capability_contexts_partialdifferentialequationpointsymmetryalgebra_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra) — Type
-- [`derive_partial_differential_equation_point_symmetries`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_derive_partial_differential_equation_point_symmetries_api_partial_differential_equations_session_derive_partial_differential_equation_point_symmetries) — Default context
-- [`derive_partial_differential_equation_point_symmetries`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_derive_partial_differential_equation_point_symmetries_api_partial_differential_equations_session_derive_partial_differential_equation_point_symmetries) — Default context
+Described under [`PartialDifferentialEquationPointSymmetryAlgebra`](partial-differential-equation-results.md#partialdifferentialequationpointsymmetryalgebra).
+
+- [`derive_partial_differential_equation_point_symmetries`](partial-differential-equations.md#entry-presentation_python_api_session_derive_partial_differential_equation_point_symmetries) — Default context
+- [`PartialDifferentialEquationPointSymmetryAlgebra`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra) — Type
 
 ## partial_differential_equation_point_symmetry_generator
 
-- [`PartialDifferentialEquationPointSymmetryGenerator`](object-model.md#entry-presentation_python_object_model_capability_contexts_partialdifferentialequationpointsymmetrygenerator_api_partial_differential_equations_partialdifferentialequationpointsymmetrygenerator) — Type
-- [`general_generator`](object-model.md#entry-presentation_python_object_model_capability_contexts_general_generator_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_general_generator) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`partial_differential_equation_point_symmetry_generator`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_partial_differential_equation_point_symmetry_generator_api_partial_differential_equations_session_partial_differential_equation_point_symmetry_generator) — Default context
-- [`partial_differential_equation_point_symmetry_generator`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_partial_differential_equation_point_symmetry_generator_api_partial_differential_equations_session_partial_differential_equation_point_symmetry_generator) — Default context
+Described under [`PartialDifferentialEquationPointSymmetryGenerator`](partial-differential-equation-results.md#partialdifferentialequationpointsymmetrygenerator).
+
+- [`partial_differential_equation_point_symmetry_generator`](partial-differential-equations.md#entry-presentation_python_api_session_partial_differential_equation_point_symmetry_generator) — Default context
+- [`PartialDifferentialEquationPointSymmetryAlgebra.general_generator`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_general_generator) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationPointSymmetryGenerator`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetrygenerator) — Type
 
 ## partial_differential_equation_principal_part
 
-- [`second_order_principal_part`](object-model.md#entry-presentation_python_object_model_capability_contexts_second_order_principal_part_api_partial_differential_equations_partialdifferentialequationclassification_second_order_principal_part) — PartialDifferentialEquationClassification property
+Described under [`PartialDifferentialEquationPrincipalPart`](partial-differential-equation-results.md#partialdifferentialequationprincipalpart).
+
+- [`PartialDifferentialEquationClassification.second_order_principal_part`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationclassification_second_order_principal_part) — PartialDifferentialEquationClassification property
 
 ## partial_differential_equation_problem
 
-- [`PartialDifferentialEquationProblem`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_problem_api_partial_differential_equations_partialdifferentialequationproblem) — Type
-- [`discover_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_discover_partial_differential_equation_api_partial_differential_equations_session_discover_partial_differential_equation) — Default context
-- [`discover_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_discover_partial_differential_equation_api_partial_differential_equations_session_discover_partial_differential_equation) — Default context
-- [`partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_api_partial_differential_equations_session_partial_differential_equation) — Default context
-- [`partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_api_partial_differential_equations_session_partial_differential_equation) — Default context
-- [`target_problem`](object-model.md#entry-presentation_python_object_model_capability_contexts_target_problem_api_partial_differential_equations_partialdifferentialequationtransformationresult_target_problem) — PartialDifferentialEquationTransformationResult property
+Described under [`PartialDifferentialEquationProblem`](partial-differential-equation-results.md#partialdifferentialequationproblem).
+
+- [`discover_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_discover_partial_differential_equation) — Default context
+- [`partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_partial_differential_equation) — Default context
+- [`PartialDifferentialEquationProblem`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationproblem) — Type
+- [`PartialDifferentialEquationTransformationResult.target_problem`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationresult_target_problem) — PartialDifferentialEquationTransformationResult property
 
 ## partial_differential_equation_second_order_classification
 
-- [`PartialDifferentialEquationSecondOrderClassification`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_second_order_classification_api_partial_differential_equations_partialdifferentialequationsecondorderclassification) — Type
-- [`classify_second_order_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_classify_second_order_partial_differential_equation_api_partial_differential_equations_session_classify_second_order_partial_differential_equation) — Default context
+Described under [`PartialDifferentialEquationSecondOrderClassification`](partial-differential-equation-results.md#partialdifferentialequationsecondorderclassification).
+
+- [`classify_second_order_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_classify_second_order_partial_differential_equation) — Default context
+- [`PartialDifferentialEquationSecondOrderClassification`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondorderclassification) — Type
 
 ## partial_differential_equation_second_order_classification,
 
-- [`classify_second_order_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_classify_second_order_partial_differential_equation_api_partial_differential_equations_session_classify_second_order_partial_differential_equation) — Default context
+Described under [`PartialDifferentialEquationSecondOrderClassification`](partial-differential-equation-results.md#partialdifferentialequationsecondorderclassification).
+
+- [`classify_second_order_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_classify_second_order_partial_differential_equation) — Default context
 
 ## partial_differential_equation_second_order_type_case
 
-- [`PartialDifferentialEquationSecondOrderTypeCase`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_second_order_type_case_api_partial_differential_equations_partialdifferentialequationsecondordertypecase) — Type
+Described under [`PartialDifferentialEquationSecondOrderTypeCase`](partial-differential-equation-results.md#partialdifferentialequationsecondordertypecase).
+
+- [`PartialDifferentialEquationSecondOrderTypeCase`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondordertypecase) — Type
 
 ## partial_differential_equation_separated_equation
 
-- [`PartialDifferentialEquationSeparatedEquation`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_separated_equation_api_partial_differential_equations_partialdifferentialequationseparatedequation) — Type
-- [`first_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_first_equation_api_partial_differential_equations_partialdifferentialequationseparationresult_first_equation) — PartialDifferentialEquationSeparationResult property
-- [`second_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_second_equation_api_partial_differential_equations_partialdifferentialequationseparationresult_second_equation) — PartialDifferentialEquationSeparationResult property
+Described under [`PartialDifferentialEquationSeparatedEquation`](partial-differential-equation-results.md#partialdifferentialequationseparatedequation).
+
+- [`PartialDifferentialEquationSeparatedEquation`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparatedequation) — Type
+- [`PartialDifferentialEquationSeparationResult.first_equation`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparationresult_first_equation) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSeparationResult.second_equation`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparationresult_second_equation) — PartialDifferentialEquationSeparationResult property
 
 ## partial_differential_equation_separation_result
 
-- [`PartialDifferentialEquationSeparationResult`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_separation_result_api_partial_differential_equations_partialdifferentialequationseparationresult) — Type
-- [`separate_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_separate_partial_differential_equation_api_partial_differential_equations_session_separate_partial_differential_equation) — Default context
-- [`separate_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_separate_partial_differential_equation_api_partial_differential_equations_session_separate_partial_differential_equation) — Default context
+Described under [`PartialDifferentialEquationSeparationResult`](partial-differential-equation-results.md#partialdifferentialequationseparationresult).
+
+- [`PartialDifferentialEquationSeparationResult`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparationresult) — Type
+- [`separate_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_separate_partial_differential_equation) — Default context
 
 ## partial_differential_equation_similarity_solution
 
-- [`PartialDifferentialEquationSimilaritySolution`](object-model.md#entry-presentation_python_object_model_capability_contexts_partialdifferentialequationsimilaritysolution_api_partial_differential_equations_partialdifferentialequationsimilaritysolution) — Type
-- [`solve_partial_differential_equation_by_similarity_reduction`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_partial_differential_equation_by_similarity_reduction_api_partial_differential_equations_session_solve_partial_differential_equation_by_similarity_reduction) — Default context
-- [`solve_partial_differential_equation_by_similarity_reduction`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_partial_differential_equation_by_similarity_reduction_api_partial_differential_equations_session_solve_partial_differential_equation_by_similarity_reduction) — Default context
+Described under [`PartialDifferentialEquationSimilaritySolution`](partial-differential-equation-results.md#partialdifferentialequationsimilaritysolution).
+
+- [`PartialDifferentialEquationSimilaritySolution`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution) — Type
+- [`solve_partial_differential_equation_by_similarity_reduction`](partial-differential-equations.md#entry-presentation_python_api_session_solve_partial_differential_equation_by_similarity_reduction) — Default context
 
 ## partial_differential_equation_solution_family
 
-- [`PartialDifferentialEquationSolutionFamily`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_solution_family_api_partial_differential_equations_partialdifferentialequationsolutionfamily) — Type
-- [`explicit_partial_differential_equation_solution`](object-model.md#entry-presentation_python_object_model_capability_contexts_explicit_partial_differential_equation_solution_api_partial_differential_equations_session_explicit_partial_differential_equation_solution) — Default context
-- [`implicit_partial_differential_equation_solution`](object-model.md#entry-presentation_python_object_model_capability_contexts_implicit_partial_differential_equation_solution_api_partial_differential_equations_session_implicit_partial_differential_equation_solution) — Default context
-- [`lifted_family`](object-model.md#entry-presentation_python_object_model_capability_contexts_lifted_family_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_lifted_family) — PartialDifferentialEquationSimilaritySolution property
-- [`solution`](object-model.md#entry-presentation_python_object_model_capability_contexts_solution_api_partial_differential_equations_partialdifferentialequationsolveresult_solution) — PartialDifferentialEquationSolveResult property
+Described under [`PartialDifferentialEquationSolutionFamily`](partial-differential-equation-results.md#partialdifferentialequationsolutionfamily).
+
+- [`explicit_partial_differential_equation_solution`](partial-differential-equations.md#entry-presentation_python_api_session_explicit_partial_differential_equation_solution) — Default context
+- [`implicit_partial_differential_equation_solution`](partial-differential-equations.md#entry-presentation_python_api_session_implicit_partial_differential_equation_solution) — Default context
+- [`PartialDifferentialEquationSimilaritySolution.lifted_family`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_lifted_family) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSolutionFamily`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolutionfamily) — Type
+- [`PartialDifferentialEquationSolveResult.solution`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolveresult_solution) — PartialDifferentialEquationSolveResult property
 
 ## partial_differential_equation_solution_family,
 
-- [`explicit_partial_differential_equation_solution`](object-model.md#entry-presentation_python_object_model_capability_contexts_explicit_partial_differential_equation_solution_api_partial_differential_equations_session_explicit_partial_differential_equation_solution) — Default context
-- [`implicit_partial_differential_equation_solution`](object-model.md#entry-presentation_python_object_model_capability_contexts_implicit_partial_differential_equation_solution_api_partial_differential_equations_session_implicit_partial_differential_equation_solution) — Default context
+Described under [`PartialDifferentialEquationSolutionFamily`](partial-differential-equation-results.md#partialdifferentialequationsolutionfamily).
+
+- [`explicit_partial_differential_equation_solution`](partial-differential-equations.md#entry-presentation_python_api_session_explicit_partial_differential_equation_solution) — Default context
+- [`implicit_partial_differential_equation_solution`](partial-differential-equations.md#entry-presentation_python_api_session_implicit_partial_differential_equation_solution) — Default context
 
 ## partial_differential_equation_solution_provenance
 
-- [`provenance`](object-model.md#entry-presentation_python_object_model_capability_contexts_provenance_api_partial_differential_equations_partialdifferentialequationsolveresult_provenance) — PartialDifferentialEquationSolveResult property
+Described under [`PartialDifferentialEquationSolutionProvenance`](partial-differential-equation-results.md#partialdifferentialequationsolutionprovenance).
+
+- [`PartialDifferentialEquationSolveResult.provenance`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolveresult_provenance) — PartialDifferentialEquationSolveResult property
 
 ## partial_differential_equation_solve_result
 
-- [`PartialDifferentialEquationSolveResult`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_solve_result_api_partial_differential_equations_partialdifferentialequationsolveresult) — Type
-- [`solve_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_solve_partial_differential_equation_api_partial_differential_equations_session_solve_partial_differential_equation) — Default context
-- [`solve_partial_differential_equation_request`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_partial_differential_equation_request_api_partial_differential_equations_session_solve_partial_differential_equation_request) — Default context
-- [`solve_partial_differential_equation_request`](differential-equations.md#entry-presentation_python_differential_equations_capability_contexts_solve_partial_differential_equation_request_api_partial_differential_equations_session_solve_partial_differential_equation_request) — Default context
-- [`solve_partial_differential_equation_with_transform_axis_specifications`](object-model.md#entry-presentation_python_object_model_capability_contexts_solve_partial_differential_equation_with_transform_axis_specifications_api_partial_differential_equations_session_solve_partial_differential_equation_with_transform_axis_specifications) — Default context
-- [`solve_partial_differential_equation_with_transform_axis_specifications`](object-model.md#entry-presentation_python_object_model_capability_contexts_solve_partial_differential_equation_with_transform_axis_specifications_api_partial_differential_equations_session_solve_partial_differential_equation_with_transform_axis_specifications) — Default context
+Described under [`PartialDifferentialEquationSolveResult`](partial-differential-equation-results.md#partialdifferentialequationsolveresult).
+
+- [`PartialDifferentialEquationSolveResult`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolveresult) — Type
+- [`solve_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_solve_partial_differential_equation) — Default context
+- [`solve_partial_differential_equation_request`](partial-differential-equations.md#entry-presentation_python_api_session_solve_partial_differential_equation_request) — Default context
+- [`solve_partial_differential_equation_with_transform_axis_specifications`](partial-differential-equations.md#entry-presentation_python_api_session_solve_partial_differential_equation_with_transform_axis_specifications) — Default context
 
 ## partial_differential_equation_solve_result,
 
-- [`solve_partial_differential_equation`](object-model.md#entry-presentation_python_object_model_capability_contexts_solve_partial_differential_equation_api_partial_differential_equations_session_solve_partial_differential_equation) — Default context
+Described under [`PartialDifferentialEquationSolveResult`](partial-differential-equation-results.md#partialdifferentialequationsolveresult).
+
+- [`solve_partial_differential_equation`](partial-differential-equations.md#entry-presentation_python_api_session_solve_partial_differential_equation) — Default context
 
 ## partial_differential_equation_transformation_result
 
-- [`PartialDifferentialEquationTransformationResult`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_transformation_result_api_partial_differential_equations_partialdifferentialequationtransformationresult) — Type
-- [`change_partial_differential_equation_variables`](object-model.md#entry-presentation_python_object_model_capability_contexts_change_partial_differential_equation_variables_api_partial_differential_equations_session_change_partial_differential_equation_variables) — Default context
-- [`transformation`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_transformation_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_transformation) — PartialDifferentialEquationCanonicalizationResult property
+Described under [`PartialDifferentialEquationTransformationResult`](partial-differential-equation-results.md#partialdifferentialequationtransformationresult).
+
+- [`change_partial_differential_equation_variables`](partial-differential-equations.md#entry-presentation_python_api_session_change_partial_differential_equation_variables) — Default context
+- [`PartialDifferentialEquationCanonicalizationResult.transformation`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_transformation) — PartialDifferentialEquationCanonicalizationResult property
+- [`PartialDifferentialEquationTransformationResult`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationresult) — Type
 
 ## partial_differential_equation_transformation_result,
 
-- [`change_partial_differential_equation_variables`](object-model.md#entry-presentation_python_object_model_capability_contexts_change_partial_differential_equation_variables_api_partial_differential_equations_session_change_partial_differential_equation_variables) — Default context
+Described under [`PartialDifferentialEquationTransformationResult`](partial-differential-equation-results.md#partialdifferentialequationtransformationresult).
+
+- [`change_partial_differential_equation_variables`](partial-differential-equations.md#entry-presentation_python_api_session_change_partial_differential_equation_variables) — Default context
 
 ## partial_differential_equation_transformation_verification_report
 
-- [`PartialDifferentialEquationTransformationVerificationReport`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_transformation_verification_report_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport) — Type
-- [`verify_partial_differential_equation_coordinate_transformation`](object-model.md#entry-presentation_python_object_model_capability_contexts_verify_partial_differential_equation_coordinate_transformation_api_partial_differential_equations_session_verify_partial_differential_equation_coordinate_transformation) — Default context
+Described under [`PartialDifferentialEquationTransformationVerificationReport`](partial-differential-equation-results.md#partialdifferentialequationtransformationverificationreport).
+
+- [`PartialDifferentialEquationTransformationVerificationReport`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport) — Type
+- [`verify_partial_differential_equation_coordinate_transformation`](partial-differential-equations.md#entry-presentation_python_api_session_verify_partial_differential_equation_coordinate_transformation) — Default context
 
 ## partial_differential_equation_transformation_verification_report,
 
-- [`verify_partial_differential_equation_coordinate_transformation`](object-model.md#entry-presentation_python_object_model_capability_contexts_verify_partial_differential_equation_coordinate_transformation_api_partial_differential_equations_session_verify_partial_differential_equation_coordinate_transformation) — Default context
+Described under [`PartialDifferentialEquationTransformationVerificationReport`](partial-differential-equation-results.md#partialdifferentialequationtransformationverificationreport).
+
+- [`verify_partial_differential_equation_coordinate_transformation`](partial-differential-equations.md#entry-presentation_python_api_session_verify_partial_differential_equation_coordinate_transformation) — Default context
 
 ## partial_differential_equation_verification_report
 
-- [`PartialDifferentialEquationVerificationReport`](object-model.md#entry-presentation_python_object_model_capability_contexts_partial_differential_equation_verification_report_api_partial_differential_equations_partialdifferentialequationverificationreport) — Type
-- [`verification`](object-model.md#entry-presentation_python_object_model_capability_contexts_verification_api_partial_differential_equations_partialdifferentialequationsolveresult_verification) — PartialDifferentialEquationSolveResult property
-- [`verify_partial_differential_equation_solution`](object-model.md#entry-presentation_python_object_model_capability_contexts_verify_partial_differential_equation_solution_api_partial_differential_equations_session_verify_partial_differential_equation_solution) — Default context
+Described under [`PartialDifferentialEquationVerificationReport`](partial-differential-equation-results.md#partialdifferentialequationverificationreport).
+
+- [`PartialDifferentialEquationSolveResult.verification`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolveresult_verification) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationVerificationReport`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationreport) — Type
+- [`verify_partial_differential_equation_solution`](partial-differential-equations.md#entry-presentation_python_api_session_verify_partial_differential_equation_solution) — Default context
 
 ## partial_differential_equation_verification_report,
 
-- [`verify_partial_differential_equation_solution`](object-model.md#entry-presentation_python_object_model_capability_contexts_verify_partial_differential_equation_solution_api_partial_differential_equations_session_verify_partial_differential_equation_solution) — Default context
+Described under [`PartialDifferentialEquationVerificationReport`](partial-differential-equation-results.md#partialdifferentialequationverificationreport).
+
+- [`verify_partial_differential_equation_solution`](partial-differential-equations.md#entry-presentation_python_api_session_verify_partial_differential_equation_solution) — Default context
 
 ## point_2d
 
-- [`Point2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_point_2d_api_point2d) — Point2d constructor
-- [`center`](geometry.md#entry-presentation_python_geometry_capability_geometry_center_api_circle2d_center) — Circle2d property
-- [`centroid`](geometry.md#entry-presentation_python_geometry_capability_geometry_centroid_api_polygon2d_centroid) — Polygon2d method
-- [`centroid`](geometry.md#entry-presentation_python_geometry_capability_geometry_centroid_api_geometry_operations_triangle2d_centroid) — Triangle2d method
-- [`midpoint`](geometry.md#entry-presentation_python_geometry_capability_geometry_midpoint_api_segment2d_midpoint) — Segment2d method
-- [`point_2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_point_2d_api_session_point_2d) — Explicit context
+Described under [`Point2d`](geometry.md#intersection).
+
+- [`Circle2d.center`](geometry.md#entry-presentation_python_api_circle2d_center) — Circle2d property
+- [`Point2d`](geometry.md#entry-presentation_python_api_point2d) — Point2d constructor
+- [`point_2d`](geometry.md#entry-presentation_python_api_session_point_2d) — Explicit context
+- [`Polygon2d.centroid`](geometry.md#entry-presentation_python_api_polygon2d_centroid) — Polygon2d method
+- [`Segment2d.midpoint`](geometry.md#entry-presentation_python_api_segment2d_midpoint) — Segment2d method
 
 ## polygon_2d
 
-- [`Polygon2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_polygon_2d_api_polygon2d) — Polygon2d constructor
-- [`polygon_2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_polygon_2d_api_session_polygon_2d) — Explicit context
+Described under [`Polygon2d`](geometry.md#area).
+
+- [`Polygon2d`](geometry.md#entry-presentation_python_api_polygon2d) — Polygon2d constructor
+- [`polygon_2d`](geometry.md#entry-presentation_python_api_session_polygon_2d) — Explicit context
 
 ## rational_canonical_form
 
-- [`RationalCanonicalForm`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_rational_canonical_form_api_results_rationalcanonicalform) — Type
-- [`rational_canonical_form`](matrix-canonical-forms.md#entry-presentation_python_matrix_canonical_forms_capability_algebra_rational_canonical_form_api_matrix_operations_matrix_rational_canonical_form) — Matrix method
+- [`Matrix.rational_canonical_form`](matrix-canonical-forms.md#entry-presentation_python_api_matrix_rational_canonical_form) — Matrix method
+- [`RationalCanonicalForm`](matrix-canonical-forms.md#entry-presentation_python_api_rationalcanonicalform) — Type
 
 ## segment_2d
 
-- [`Segment2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_segment_2d_api_segment2d) — Segment2d constructor
-- [`segment_2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_segment_2d_api_session_segment_2d) — Explicit context
+Described under [`Segment2d`](geometry.md#intersection).
+
+- [`Segment2d`](geometry.md#entry-presentation_python_api_segment2d) — Segment2d constructor
+- [`segment_2d`](geometry.md#entry-presentation_python_api_session_segment_2d) — Explicit context
 
 ## str
 
-- [`__repr__`](geometry.md#entry-presentation_python_geometry_capability_geometry_repr_unresolved) — Circle2d method
-- [`__repr__`](geometry.md#entry-presentation_python_geometry_capability_geometry_repr_unresolved) — Circle2d method
-- [`__repr__`](geometry.md#entry-presentation_python_geometry_capability_geometry_repr_unresolved) — Circle2d method
-- [`__repr__`](geometry.md#entry-presentation_python_geometry_capability_geometry_repr_unresolved) — Circle2d method
-- [`__repr__`](geometry.md#entry-presentation_python_geometry_capability_geometry_repr_unresolved) — Circle2d method
-- [`__repr__`](object-model.md#entry-presentation_python_object_model_capability_contexts_repr_unresolved) — Expression method
-- [`__repr__`](object-model.md#entry-presentation_python_object_model_capability_contexts_repr_unresolved) — Expression method
-- [`__repr__`](object-model.md#entry-presentation_python_object_model_capability_contexts_repr_unresolved) — Expression method
-- [`__repr__`](linear-algebra.md#entry-presentation_python_linear_algebra_capability_algebra_repr_unresolved) — Matrix method
-- [`__str__`](object-model.md#entry-presentation_python_object_model_capability_contexts_str_unresolved) — Expression method
-- [`__str__`](object-model.md#entry-presentation_python_object_model_capability_contexts_str_unresolved) — Expression method
-- [`__str__`](object-model.md#entry-presentation_python_object_model_capability_contexts_str_unresolved) — Expression method
-- [`cell_kind`](cad.md#entry-presentation_python_cad_capability_algebra_cell_kind_api_cylindricalalgebraicdecomposition_cell_kind) — CylindricalAlgebraicDecomposition method
-- [`classify_unconstrained`](optimization.md#entry-presentation_python_optimization_capability_equations_classify_unconstrained_api_solving_session_classify_unconstrained) — Default context
-- [`classify_unconstrained`](optimization.md#entry-presentation_python_optimization_capability_equations_classify_unconstrained_api_solving_session_classify_unconstrained) — Default context
-- [`decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_decline_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_decline) — OrdinaryDifferentialEquationSolveResult property
-- [`decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_decline_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_decline) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_decline) — PartialDifferentialEquationCanonicalizationResult property
-- [`decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_decline) — PartialDifferentialEquationPointSymmetryAction property
-- [`decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationpointsymmetryalgebra_decline) — PartialDifferentialEquationPointSymmetryAlgebra property
-- [`decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_decline) — PartialDifferentialEquationSecondOrderClassification property
-- [`decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_decline) — PartialDifferentialEquationSimilaritySolution property
-- [`decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationsolveresult_decline) — PartialDifferentialEquationSolveResult property
-- [`decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_decline_api_partial_differential_equations_partialdifferentialequationtransformationresult_decline) — PartialDifferentialEquationTransformationResult property
-- [`decline_reason`](calculus.md#entry-presentation_python_calculus_capability_calculus_decline_reason_api_results_definiteintegrationresult_decline_reason) — DefiniteIntegrationResult property
-- [`dependent_function`](object-model.md#entry-presentation_python_object_model_capability_contexts_dependent_function_api_partial_differential_equations_partialdifferentialequationproblem_dependent_function) — PartialDifferentialEquationProblem property
-- [`divergence_direction`](calculus.md#entry-presentation_python_calculus_capability_calculus_divergence_direction_api_results_definiteintegrationresult_divergence_direction) — DefiniteIntegrationResult property
-- [`equation_type`](object-model.md#entry-presentation_python_object_model_capability_contexts_equation_type_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_equation_type) — PartialDifferentialEquationSecondOrderClassification property
-- [`equation_type`](object-model.md#entry-presentation_python_object_model_capability_contexts_equation_type_api_partial_differential_equations_partialdifferentialequationsecondordertypecase_equation_type) — PartialDifferentialEquationSecondOrderTypeCase property
-- [`execution_mode`](context-safety.md#entry-presentation_python_context_safety_capability_contexts_execution_mode_api_session_execution_mode) — Default context
-- [`execution_mode`](context-safety.md#entry-presentation_python_context_safety_capability_contexts_execution_mode_api_session_execution_mode) — Default context
-- [`form`](object-model.md#entry-presentation_python_object_model_capability_contexts_form_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_form) — OrdinaryDifferentialEquationSolveResult property
-- [`generality`](object-model.md#entry-presentation_python_object_model_capability_contexts_generality_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_generality) — OrdinaryDifferentialEquationSolveResult property
-- [`generality`](object-model.md#entry-presentation_python_object_model_capability_contexts_generality_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_generality) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`generality`](object-model.md#entry-presentation_python_object_model_capability_contexts_generality_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_generality) — OrdinaryDifferentialEquationSystemVerificationReport property
-- [`image_set_variable`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_image_set_variable_api_expression_image_set_variable) — Expression method
-- [`inconclusive_reason`](object-model.md#entry-presentation_python_object_model_capability_contexts_inconclusive_reason_api_partial_differential_equations_partialdifferentialequationverificationreport_inconclusive_reason) — PartialDifferentialEquationVerificationReport property
-- [`independent_variable_name`](object-model.md#entry-presentation_python_object_model_capability_contexts_independent_variable_name_api_partial_differential_equations_partialdifferentialequationseparatedequation_independent_variable_name) — PartialDifferentialEquationSeparatedEquation property
-- [`initialize_parallelism`](object-model.md#entry-presentation_python_object_model_capability_contexts_initialize_parallelism_api_session_initialize_parallelism) — Default context
-- [`initialize_parallelism`](object-model.md#entry-presentation_python_object_model_capability_contexts_initialize_parallelism_api_session_initialize_parallelism) — Default context
-- [`integral_variable`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_integral_variable_api_expression_integral_variable) — Expression method
-- [`interpretation`](calculus.md#entry-presentation_python_calculus_capability_calculus_interpretation_api_results_definiteintegrationresult_interpretation) — DefiniteIntegrationResult property
-- [`intertwining`](object-model.md#entry-presentation_python_object_model_capability_contexts_intertwining_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_intertwining) — PartialDifferentialEquationPointSymmetryAction property
-- [`invertibility`](object-model.md#entry-presentation_python_object_model_capability_contexts_invertibility_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_invertibility) — PartialDifferentialEquationPointSymmetryAction property
-- [`lifted_family_verification`](object-model.md#entry-presentation_python_object_model_capability_contexts_lifted_family_verification_api_partial_differential_equations_partialdifferentialequationsimilaritysolution_lifted_family_verification) — PartialDifferentialEquationSimilaritySolution property
-- [`linearity`](object-model.md#entry-presentation_python_object_model_capability_contexts_linearity_api_partial_differential_equations_partialdifferentialequationclassification_linearity) — PartialDifferentialEquationClassification property
-- [`linearity`](object-model.md#entry-presentation_python_object_model_capability_contexts_linearity_api_partial_differential_equations_partialdifferentialequationsolutionprovenance_linearity) — PartialDifferentialEquationSolutionProvenance property
-- [`method`](object-model.md#entry-presentation_python_object_model_capability_contexts_method_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_method) — OrdinaryDifferentialEquationSolveResult property
-- [`method`](object-model.md#entry-presentation_python_object_model_capability_contexts_method_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_method) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`method`](object-model.md#entry-presentation_python_object_model_capability_contexts_method_api_partial_differential_equations_partialdifferentialequationmethodcandidate_method) — PartialDifferentialEquationMethodCandidate property
-- [`method`](object-model.md#entry-presentation_python_object_model_capability_contexts_method_api_partial_differential_equations_partialdifferentialequationsolutionprovenance_method) — PartialDifferentialEquationSolutionProvenance property
-- [`method`](object-model.md#entry-presentation_python_object_model_capability_contexts_method_api_partial_differential_equations_partialdifferentialequationsolveresult_method) — PartialDifferentialEquationSolveResult property
-- [`name`](object-model.md#entry-presentation_python_object_model_capability_contexts_name_api_partial_differential_equations_partialdifferentialequationarbitraryfunction_name) — PartialDifferentialEquationArbitraryFunction property
-- [`point_symmetry_decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_point_symmetry_decline_api_partial_differential_equations_partialdifferentialequationpointsymmetryaction_point_symmetry_decline) — PartialDifferentialEquationPointSymmetryAction property
-- [`principal_form`](object-model.md#entry-presentation_python_object_model_capability_contexts_principal_form_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_principal_form) — PartialDifferentialEquationCanonicalizationResult property
-- [`projection_operator_used`](cad.md#entry-presentation_python_cad_capability_algebra_projection_operator_used_api_cylindricalalgebraicdecomposition_projection_operator_used) — CylindricalAlgebraicDecomposition method
-- [`relation_kind`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_relation_kind_api_assumptionproposition_relation_kind) — Default context
-- [`relation_kind`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_relation_kind_api_assumptionproposition_relation_kind) — Default context
-- [`route`](object-model.md#entry-presentation_python_object_model_capability_contexts_route_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_route) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`serialize`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_serialize_api_assumptionproposition_serialize) — Default context
-- [`serialize`](assumptions.md#entry-presentation_python_assumptions_capability_contexts_serialize_api_assumptionproposition_serialize) — Default context
-- [`serialize_object`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_serialize_object_api_serialization_session_serialize_object) — Default context
-- [`serialize_object`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_serialize_object_api_serialization_session_serialize_object) — Default context
-- [`serialize_object`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_serialize_object_api_partial_differential_equations_partialdifferentialequationcoordinatechange_serialize_object) — PartialDifferentialEquationCoordinateChange method
-- [`serialize_object`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_serialize_object_api_partial_differential_equations_partialdifferentialequationproblem_serialize_object) — PartialDifferentialEquationProblem method
-- [`strategy`](object-model.md#entry-presentation_python_object_model_capability_contexts_strategy_api_partial_differential_equations_partialdifferentialequationseparationresult_strategy) — PartialDifferentialEquationSeparationResult property
-- [`symbol_name`](expressions.md#entry-presentation_python_expressions_capability_expression_transformations_symbol_name_api_expression_symbol_name) — Expression method
-- [`target_dependent_function`](object-model.md#entry-presentation_python_object_model_capability_contexts_target_dependent_function_api_partial_differential_equations_partialdifferentialequationcoordinatechange_target_dependent_function) — PartialDifferentialEquationCoordinateChange property
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_circle2d_to_latex) — Circle2d method
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_session_to_latex) — Default context
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_session_to_latex) — Default context
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_expression_to_latex) — Expression method
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_serialization_matrix_to_latex) — Matrix method
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_partial_differential_equations_partialdifferentialequationproblem_to_latex) — PartialDifferentialEquationProblem method
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_point2d_to_latex) — Point2d method
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_polygon2d_to_latex) — Polygon2d method
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_segment2d_to_latex) — Segment2d method
-- [`to_latex`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_api_geometry_operations_triangle2d_to_latex) — Triangle2d method
-- [`to_latex_with_options`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_with_options_api_serialization_session_to_latex_with_options) — Default context
-- [`to_latex_with_options`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_with_options_api_serialization_session_to_latex_with_options) — Default context
-- [`to_latex_with_options`](serialization-and-output.md#entry-presentation_python_serialization_and_output_capability_construction_to_latex_with_options_api_serialization_expression_to_latex_with_options) — Expression method
-- [`transformation_decline`](object-model.md#entry-presentation_python_object_model_capability_contexts_transformation_decline_api_partial_differential_equations_partialdifferentialequationcanonicalizationresult_transformation_decline) — PartialDifferentialEquationCanonicalizationResult property
-- [`verdict`](solving.md#entry-presentation_python_solving_capability_calculus_verdict_api_results_definiteintegrationresult_verdict) — DefiniteIntegrationResult property
-- [`verdict`](solving.md#entry-presentation_python_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verdict) — OrdinaryDifferentialEquationSolveResult property
-- [`verdict`](solving.md#entry-presentation_python_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verdict) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`verdict`](solving.md#entry-presentation_python_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_verdict) — OrdinaryDifferentialEquationSystemVerificationReport property
-- [`verdict`](solving.md#entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_verdict) — PartialDifferentialEquationSecondOrderClassification property
-- [`verdict`](solving.md#entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsolveresult_verdict) — PartialDifferentialEquationSolveResult property
-- [`verdict`](solving.md#entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_verdict) — PartialDifferentialEquationTransformationVerificationReport property
-- [`verdict`](solving.md#entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationreport_verdict) — PartialDifferentialEquationVerificationReport property
-- [`verdict`](solving.md#entry-presentation_python_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationresidual_verdict) — PartialDifferentialEquationVerificationResidual property
-- [`verification`](object-model.md#entry-presentation_python_object_model_capability_contexts_verification_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verification) — OrdinaryDifferentialEquationSolveResult property
-- [`verification`](object-model.md#entry-presentation_python_object_model_capability_contexts_verification_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verification) — OrdinaryDifferentialEquationSystemSolveResult property
-- [`verification`](object-model.md#entry-presentation_python_object_model_capability_contexts_verification_api_partial_differential_equations_partialdifferentialequationseparationresult_verification) — PartialDifferentialEquationSeparationResult property
-- [`zero_equivalent`](zero-equivalence.md#entry-presentation_python_zero_equivalence_capability_contexts_zero_equivalent_api_session_zero_equivalent) — Default context
-- [`zero_equivalent`](zero-equivalence.md#entry-presentation_python_zero_equivalence_capability_contexts_zero_equivalent_api_session_zero_equivalent) — Default context
-- [`zero_equivalent`](zero-equivalence.md#entry-presentation_python_zero_equivalence_capability_contexts_zero_equivalent_api_expression_zero_equivalent) — Expression method
+- [`__repr__`](expressions.md#entry-presentation_python_host_python_expression_repr) — Expression method
+- [`__str__`](expressions.md#entry-presentation_python_host_python_expression_str) — Expression method
+- [`AssumptionProposition.__str__`](assumptions.md#entry-presentation_python_host_python_assumptionproposition_str) — AssumptionProposition method
+- [`AssumptionProposition.relation_kind`](assumptions.md#entry-presentation_python_api_assumptionproposition_relation_kind) — Default context
+- [`AssumptionProposition.serialize`](assumptions.md#entry-presentation_python_api_assumptionproposition_serialize) — Default context
+- [`Circle2d.__repr__`](geometry.md#entry-presentation_python_host_python_circle2d_repr) — Circle2d method
+- [`classify_unconstrained`](optimization.md#entry-presentation_python_api_session_classify_unconstrained) — Default context
+- [`CylindricalAlgebraicDecomposition.cell_kind`](cad.md#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_kind) — CylindricalAlgebraicDecomposition method
+- [`CylindricalAlgebraicDecomposition.projection_operator_used`](cad.md#entry-presentation_python_api_cylindricalalgebraicdecomposition_projection_operator_used) — CylindricalAlgebraicDecomposition method
+- [`DefiniteIntegrationResult.decline_reason`](calculus.md#entry-presentation_python_api_definiteintegrationresult_decline_reason) — DefiniteIntegrationResult property
+- [`DefiniteIntegrationResult.divergence_direction`](calculus.md#entry-presentation_python_api_definiteintegrationresult_divergence_direction) — DefiniteIntegrationResult property
+- [`DefiniteIntegrationResult.interpretation`](calculus.md#entry-presentation_python_api_definiteintegrationresult_interpretation) — DefiniteIntegrationResult property
+- [`DefiniteIntegrationResult.verdict`](calculus.md#entry-presentation_python_api_definiteintegrationresult_verdict) — DefiniteIntegrationResult property
+- [`execution_mode`](context-safety.md#entry-presentation_python_api_session_execution_mode) — Default context
+- [`image_set_variable`](expressions.md#entry-presentation_python_api_expression_image_set_variable) — Expression method
+- [`initialize_parallelism`](context-safety.md#entry-presentation_python_api_session_initialize_parallelism) — Default context
+- [`integral_variable`](expressions.md#entry-presentation_python_api_expression_integral_variable) — Expression method
+- [`Matrix.__repr__`](linear-algebra.md#entry-presentation_python_host_python_matrix_repr) — Matrix method
+- [`OrdinaryDifferentialEquationSolveResult.decline`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_decline) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.form`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_form) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.generality`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_generality) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.method`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_method) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.verdict`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_verdict) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSolveResult.verification`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsolveresult_verification) — OrdinaryDifferentialEquationSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.decline`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_decline) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.generality`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_generality) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.method`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_method) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.route`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_route) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.verdict`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_verdict) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemSolveResult.verification`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_verification) — OrdinaryDifferentialEquationSystemSolveResult property
+- [`OrdinaryDifferentialEquationSystemVerificationReport.generality`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemverificationreport_generality) — OrdinaryDifferentialEquationSystemVerificationReport property
+- [`OrdinaryDifferentialEquationSystemVerificationReport.verdict`](ordinary-differential-equations.md#entry-presentation_python_api_ordinarydifferentialequationsystemverificationreport_verdict) — OrdinaryDifferentialEquationSystemVerificationReport property
+- [`PartialDifferentialEquationArbitraryFunction.name`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationarbitraryfunction_name) — PartialDifferentialEquationArbitraryFunction property
+- [`PartialDifferentialEquationCanonicalizationResult.decline`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_decline) — PartialDifferentialEquationCanonicalizationResult property
+- [`PartialDifferentialEquationCanonicalizationResult.principal_form`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_principal_form) — PartialDifferentialEquationCanonicalizationResult property
+- [`PartialDifferentialEquationCanonicalizationResult.transformation_decline`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_transformation_decline) — PartialDifferentialEquationCanonicalizationResult property
+- [`PartialDifferentialEquationClassification.linearity`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationclassification_linearity) — PartialDifferentialEquationClassification property
+- [`PartialDifferentialEquationCoordinateChange.serialize_object`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoordinatechange_serialize_object) — PartialDifferentialEquationCoordinateChange method
+- [`PartialDifferentialEquationCoordinateChange.target_dependent_function`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationcoordinatechange_target_dependent_function) — PartialDifferentialEquationCoordinateChange property
+- [`PartialDifferentialEquationMethodCandidate.method`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationmethodcandidate_method) — PartialDifferentialEquationMethodCandidate property
+- [`PartialDifferentialEquationPointSymmetryAction.decline`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_decline) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.intertwining`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_intertwining) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.invertibility`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_invertibility) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAction.point_symmetry_decline`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_point_symmetry_decline) — PartialDifferentialEquationPointSymmetryAction property
+- [`PartialDifferentialEquationPointSymmetryAlgebra.decline`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_decline) — PartialDifferentialEquationPointSymmetryAlgebra property
+- [`PartialDifferentialEquationProblem.__repr__`](partial-differential-equation-results.md#entry-presentation_python_host_python_partialdifferentialequationproblem_repr) — PartialDifferentialEquationProblem method
+- [`PartialDifferentialEquationProblem.__str__`](partial-differential-equation-results.md#entry-presentation_python_host_python_partialdifferentialequationproblem_str) — PartialDifferentialEquationProblem method
+- [`PartialDifferentialEquationProblem.dependent_function`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationproblem_dependent_function) — PartialDifferentialEquationProblem property
+- [`PartialDifferentialEquationProblem.serialize_object`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationproblem_serialize_object) — PartialDifferentialEquationProblem method
+- [`PartialDifferentialEquationProblem.to_latex`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationproblem_to_latex) — PartialDifferentialEquationProblem method
+- [`PartialDifferentialEquationSecondOrderClassification.decline`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_decline) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderClassification.equation_type`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_equation_type) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderClassification.verdict`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_verdict) — PartialDifferentialEquationSecondOrderClassification property
+- [`PartialDifferentialEquationSecondOrderTypeCase.equation_type`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsecondordertypecase_equation_type) — PartialDifferentialEquationSecondOrderTypeCase property
+- [`PartialDifferentialEquationSeparatedEquation.independent_variable_name`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparatedequation_independent_variable_name) — PartialDifferentialEquationSeparatedEquation property
+- [`PartialDifferentialEquationSeparationResult.strategy`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparationresult_strategy) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSeparationResult.verification`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationseparationresult_verification) — PartialDifferentialEquationSeparationResult property
+- [`PartialDifferentialEquationSimilaritySolution.decline`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_decline) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSimilaritySolution.lifted_family_verification`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_lifted_family_verification) — PartialDifferentialEquationSimilaritySolution property
+- [`PartialDifferentialEquationSolutionProvenance.linearity`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolutionprovenance_linearity) — PartialDifferentialEquationSolutionProvenance property
+- [`PartialDifferentialEquationSolutionProvenance.method`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolutionprovenance_method) — PartialDifferentialEquationSolutionProvenance property
+- [`PartialDifferentialEquationSolveResult.decline`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolveresult_decline) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationSolveResult.method`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolveresult_method) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationSolveResult.verdict`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationsolveresult_verdict) — PartialDifferentialEquationSolveResult property
+- [`PartialDifferentialEquationTransformationResult.decline`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationresult_decline) — PartialDifferentialEquationTransformationResult property
+- [`PartialDifferentialEquationTransformationVerificationReport.verdict`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_verdict) — PartialDifferentialEquationTransformationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.inconclusive_reason`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationreport_inconclusive_reason) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationReport.verdict`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationreport_verdict) — PartialDifferentialEquationVerificationReport property
+- [`PartialDifferentialEquationVerificationResidual.verdict`](partial-differential-equation-results.md#entry-presentation_python_api_partialdifferentialequationverificationresidual_verdict) — PartialDifferentialEquationVerificationResidual property
+- [`Point2d.__repr__`](geometry.md#entry-presentation_python_host_python_point2d_repr) — Point2d method
+- [`Polygon2d.__repr__`](geometry.md#entry-presentation_python_host_python_polygon2d_repr) — Polygon2d method
+- [`Segment2d.__repr__`](geometry.md#entry-presentation_python_host_python_segment2d_repr) — Segment2d method
+- [`serialize_object`](serialization-and-output.md#entry-presentation_python_api_session_serialize_object) — Default context
+- [`symbol_name`](expressions.md#entry-presentation_python_api_expression_symbol_name) — Expression method
+- [`to_latex`](serialization-and-output.md#entry-presentation_python_api_session_to_latex) — Default context
+- [`to_latex_with_options`](serialization-and-output.md#entry-presentation_python_api_session_to_latex_with_options) — Default context
+- [`Triangle2d.__repr__`](geometry.md#entry-presentation_python_host_python_triangle2d_repr) — Triangle2d method
+- [`UndefinedFunction.__repr__`](undefined-functions.md#entry-presentation_python_host_python_undefinedfunction_repr) — UndefinedFunction method
+- [`zero_equivalent`](zero-equivalence.md#entry-presentation_python_api_session_zero_equivalent) — Default context
 
 ## triangle_2d
 
-- [`Triangle2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_triangle_2d_api_triangle2d) — Triangle2d constructor
-- [`triangle_2d`](geometry.md#entry-presentation_python_geometry_capability_geometry_triangle_2d_api_session_triangle_2d) — Explicit context
+Described under [`Triangle2d`](geometry.md#area).
+
+- [`Triangle2d`](geometry.md#entry-presentation_python_api_triangle2d) — Triangle2d constructor
+- [`triangle_2d`](geometry.md#entry-presentation_python_api_session_triangle_2d) — Explicit context
 
 ## undefined_function
 
-- [`UndefinedFunction`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_undefined_function_api_undefinedfunction) — Type
-- [`undefined_function`](construction-and-parsing.md#entry-presentation_python_construction_and_parsing_capability_construction_undefined_function_api_session_undefined_function) — Explicit context
+Described under [`UndefinedFunction`](undefined-functions.md#call).
+
+- [`undefined_function`](undefined-functions.md#entry-presentation_python_api_session_undefined_function) — Explicit context
+- [`UndefinedFunction`](undefined-functions.md#entry-presentation_python_api_undefinedfunction) — Type

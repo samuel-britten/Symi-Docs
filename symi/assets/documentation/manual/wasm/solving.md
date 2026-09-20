@@ -2,9 +2,9 @@
 
 ### solve
 
-<a id="entry-presentation_wasm_solving_capability_equations_solve_api_solving_session_solve"></a>
+<a id="entry-presentation_wasm_api_session_solve"></a>
 <a id="placement-placement.wasm.wasm_module.module_solve.3fdf003ed9a5"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 solve(input_expression: Expression, variable: string): Expression[]
@@ -14,21 +14,20 @@ solve(input_expression: Expression, variable: string): Expression[]
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_solve.eb0bbb7e6086"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solve</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.solve</code></p>
 
 ```typescript signature
 solve(input_expression: Expression, variable: string): Expression[]
 ```
 
-</details>
-
-<a id="entry-presentation_wasm_solving_capability_equations_solve_api_expression_operations_expression_solve"></a>
 <a id="placement-placement.wasm.wasm_class.expression_solve.e98546cf948d"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.solve</code></p>
 
 ```typescript signature
 solve(variable: string): Expression[]
 ```
+
+</details>
 
 
 Solve an equation (an `equal` node, or an expression implicitly equated to
@@ -38,9 +37,9 @@ solver's reach are simply absent — prefer `solveset` when you need an honest
 
 ### solveset
 
-<a id="entry-presentation_wasm_solving_capability_equations_solveset_api_solving_session_solveset"></a>
+<a id="entry-presentation_wasm_api_session_solveset"></a>
 <a id="placement-placement.wasm.wasm_module.module_solveset.c4d048ff1df8"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 solveset(
@@ -54,7 +53,7 @@ solveset(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_solveset.a0c5b9375be1"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solveset</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.solveset</code></p>
 
 ```typescript signature
 solveset(
@@ -64,15 +63,14 @@ solveset(
 ): Expression
 ```
 
-</details>
-
-<a id="entry-presentation_wasm_solving_capability_equations_solveset_api_expression_operations_expression_solveset"></a>
 <a id="placement-placement.wasm.wasm_class.expression_solveset.24afaaf366dc"></a>
-<p class="symi-entry-owner">Expression method</p>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.solveset</code></p>
 
 ```typescript signature
 solveset(variable: string, domain?: Expression | null): Expression
 ```
+
+</details>
 
 
 Solution **set** of the equation or inequality: a finite set, interval,
@@ -193,7 +191,33 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### solveset_in_domain
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.solveset_in_domain`](/symi/python/solving#solveset_in_domain) in Python, [`UniffiSession.solvesetInDomain`](/symi/kotlin/solving#solveset_in_domain) in Kotlin, [`UniffiSession.solvesetInDomain`](/symi/swift/solving#solveset_in_domain) in Swift, [`api::expression_operations::Expression::solveset_in_domain`](/symi/rust/solving#solveset_in_domain) in Rust.*
+<a id="entry-presentation_wasm_api_session_solveset_in_domain"></a>
+<a id="placement-placement.wasm.wasm_module.module_solvesetindomain.d47c4f18f7ba"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+solvesetInDomain(
+    equation: Expression,
+    variable: string,
+    domain: Expression,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_solvesetindomain.1a3d09ece50e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.solvesetInDomain</code></p>
+
+```typescript signature
+solvesetInDomain(
+    equation: Expression,
+    variable: string,
+    domain: Expression,
+): Expression
+```
+
+</details>
 
 
 `solveset` restricted to an explicit domain set (e.g. `real_line()`,
@@ -201,7 +225,38 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### roots_with_multiplicities
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.roots_with_multiplicities`](/symi/python/solving#roots_with_multiplicities) in Python, [`UniffiExpression.rootsWithMultiplicities`](/symi/kotlin/solving#roots_with_multiplicities) in Kotlin, [`UniffiExpression.rootsWithMultiplicities`](/symi/swift/solving#roots_with_multiplicities) in Swift, [`api::expression_operations::Expression::roots_with_multiplicities`](/symi/rust/solving#roots_with_multiplicities) in Rust.*
+<a id="entry-presentation_wasm_api_session_roots_with_multiplicities"></a>
+<a id="placement-placement.wasm.wasm_module.module_rootswithmultiplicities.64f20afdbaa6"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+rootsWithMultiplicities(
+    input_expression: Expression,
+    variable: string,
+): RootMultiplicity[]
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_rootswithmultiplicities.1685afb5181e"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.rootsWithMultiplicities</code></p>
+
+```typescript signature
+rootsWithMultiplicities(
+    input_expression: Expression,
+    variable: string,
+): RootMultiplicity[]
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_rootswithmultiplicities.e1d29f981fe3"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.rootsWithMultiplicities</code></p>
+
+```typescript signature
+rootsWithMultiplicities(variable: string): RootMultiplicity[]
+```
+
+</details>
 
 
 Roots of a polynomial with their multiplicities. **Notes:** Python returns a
@@ -263,9 +318,9 @@ place.
 
 ### verdict
 
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_results_polynomialsystemsolution_verdict"></a>
+<a id="entry-presentation_wasm_api_polynomialsystemsolution_verdict"></a>
 <a id="placement-placement.wasm.wasm_class.polynomialsystemsolution_verdict.b9cd1af2a7ce"></a>
-<p class="symi-entry-owner">PolynomialSystemSolution property</p>
+<p class="symi-entry-owner">Raw WebAssembly: PolynomialSystemSolution property</p>
 
 ```typescript signature
 readonly verdict: string
@@ -275,21 +330,31 @@ Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`,
 `"empty"`, `"positive_dimensional"`, or `"declined"`.
 
 ### complete
+
+<a id="entry-presentation_wasm_api_polynomialsystemsolution_complete"></a>
+<a id="placement-placement.wasm.wasm_class.polynomialsystemsolution_complete.106326740c8a"></a>
+<p class="symi-entry-owner">Raw WebAssembly: PolynomialSystemSolution property</p>
+
+```typescript signature
+readonly complete: boolean
+```
+
 Getter on `PolynomialSystemSolution`: whether the solver certified it found
 every solution.
 
 ### solutions
+Getter on `PolynomialSystemSolution`: the array of `SystemAssignment` tuples
+(empty for the non-finite verdicts).
 
-<a id="entry-presentation_wasm_solving_capability_equations_solutions_api_results_polynomialsystemsolution_solutions"></a>
+<a id="entry-presentation_wasm_api_polynomialsystemsolution_solutions"></a>
 <a id="placement-placement.wasm.wasm_class.polynomialsystemsolution_solutions.5cd1b9755b44"></a>
-<p class="symi-entry-owner">PolynomialSystemSolution property</p>
+<p class="symi-entry-owner">Raw WebAssembly: PolynomialSystemSolution property</p>
 
 ```typescript signature
 readonly solutions: SystemAssignment[]
 ```
 
-Getter on `PolynomialSystemSolution`: the array of `SystemAssignment` tuples
-(empty for the non-finite verdicts).
+Getter on `polynomial_system_solution`: the array of `system_assignment` tuples (empty for the non-finite verdicts).
 
 ### system_assignment (WASM result class)
 
@@ -297,9 +362,9 @@ One solution tuple of a polynomial system, pairing each unknown with its value.
 
 ### variables
 
-<a id="entry-presentation_wasm_solving_capability_equations_variables_api_results_systemassignment_variables"></a>
+<a id="entry-presentation_wasm_api_systemassignment_variables"></a>
 <a id="placement-placement.wasm.wasm_class.systemassignment_variables.b13c40d79d8c"></a>
-<p class="symi-entry-owner">SystemAssignment property</p>
+<p class="symi-entry-owner">Raw WebAssembly: SystemAssignment property</p>
 
 ```typescript signature
 readonly variables: string[]
@@ -309,9 +374,9 @@ Getter on `SystemAssignment`: the unknown names, in order.
 
 ### values
 
-<a id="entry-presentation_wasm_solving_capability_equations_values_api_results_systemassignment_values"></a>
+<a id="entry-presentation_wasm_api_systemassignment_values"></a>
 <a id="placement-placement.wasm.wasm_class.systemassignment_values.6def767a335c"></a>
-<p class="symi-entry-owner">SystemAssignment property</p>
+<p class="symi-entry-owner">Raw WebAssembly: SystemAssignment property</p>
 
 ```typescript signature
 readonly values: Expression[]
@@ -398,47 +463,24 @@ case (for example, \(\{(x, y) : x^2 - 1 < 0 \land y^2 - 1 < 0\}\) is the open sq
 This family is not part of the recommended JavaScript facade in this release. Call it through the generated `symi.raw` layer, whose entries are listed with their wasm-bindgen signatures above, and read [Migration](migration.md) for the ownership rules that apply there.
 
 
+### solve_as_set
+
+*Not exposed by the WASM / JavaScript bindings. Available as [`api::Expression::solve_as_set`](/symi/rust/solving#solve_as_set) in Rust.*
+
+
+The solution set of an equation as a set-valued expression, rather than the
+list of solutions [`solve`](#solve) returns. A set answer can express solution
+families a list cannot — an image set over the integers, or a union of several
+families — so it is the right entry when the solution set may be infinite.
+See [Sets](sets.md) for what can be done with the result.
+
 ## Additional API
-
-### classifyUnconstrained
-
-<a id="entry-presentation_wasm_solving_capability_equations_classify_unconstrained_api_solving_session_classify_unconstrained"></a>
-<a id="placement-placement.wasm.wasm_module.module_classifyunconstrained.016594913f0d"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-classifyUnconstrained(
-    objective: Expression,
-    variables: string[],
-    point_variables: string[],
-    point_values: Expression[],
-): string
-```
-
-Classify one given interior point — supplied as the parallel `point_variables` / `point_values` lists — by Hessian definiteness, returning the verdict string.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_classifyunconstrained.5099f86e57ff"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.classifyUnconstrained</code></p>
-
-```typescript signature
-classifyUnconstrained(
-    objective: Expression,
-    variables: string[],
-    point_variables: string[],
-    point_values: Expression[],
-): string
-```
-
-</details>
 
 ### compareRealRoots
 
-<a id="entry-presentation_wasm_solving_capability_equations_compare_real_roots_api_solving_session_compare_real_roots"></a>
+<a id="entry-presentation_wasm_api_session_compare_real_roots"></a>
 <a id="placement-placement.wasm.wasm_module.module_comparerealroots.f56fb469e237"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 compareRealRoots(
@@ -457,7 +499,7 @@ Compare two real algebraic numbers exactly, each given as the `index`-th smalles
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_comparerealroots.fb4df4838464"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.compareRealRoots</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.compareRealRoots</code></p>
 
 ```typescript signature
 compareRealRoots(
@@ -472,35 +514,11 @@ compareRealRoots(
 
 </details>
 
-### complete
-
-<a id="entry-presentation_wasm_solving_capability_equations_complete_api_results_optimizationoutcome_complete"></a>
-<a id="placement-placement.wasm.wasm_class.optimizationoutcome_complete.21af5824d96d"></a>
-<p class="symi-entry-owner">OptimizationOutcome property</p>
-
-```typescript signature
-readonly complete: boolean
-```
-
-Getter on `polynomial_system_solution`: whether the solver certified it found every solution.
-
-### complete
-
-<a id="entry-presentation_wasm_solving_capability_equations_complete_api_results_polynomialsystemsolution_complete"></a>
-<a id="placement-placement.wasm.wasm_class.polynomialsystemsolution_complete.106326740c8a"></a>
-<p class="symi-entry-owner">PolynomialSystemSolution property</p>
-
-```typescript signature
-readonly complete: boolean
-```
-
-Getter on `polynomial_system_solution`: whether the solver certified it found every solution.
-
 ### countDistinctRealRoots
 
-<a id="entry-presentation_wasm_solving_capability_equations_count_distinct_real_roots_api_solving_session_count_distinct_real_roots"></a>
+<a id="entry-presentation_wasm_api_session_count_distinct_real_roots"></a>
 <a id="placement-placement.wasm.wasm_module.module_countdistinctrealroots.ea05a875dba1"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 countDistinctRealRoots(
@@ -515,7 +533,7 @@ Number of distinct real roots over all of \(\mathbb{R}\).
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_countdistinctrealroots.7ee1d266c9eb"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.countDistinctRealRoots</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.countDistinctRealRoots</code></p>
 
 ```typescript signature
 countDistinctRealRoots(
@@ -528,9 +546,9 @@ countDistinctRealRoots(
 
 ### eliminateQuantifiers
 
-<a id="entry-presentation_wasm_solving_capability_equations_eliminate_quantifiers_api_logic_session_eliminate_quantifiers"></a>
+<a id="entry-presentation_wasm_api_session_eliminate_quantifiers"></a>
 <a id="placement-placement.wasm.wasm_module.module_eliminatequantifiers.7b682b252104"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 eliminateQuantifiers(
@@ -546,7 +564,7 @@ eliminateQuantifiers(
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_eliminatequantifiers.943addcee9cd"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.eliminateQuantifiers</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.eliminateQuantifiers</code></p>
 
 ```typescript signature
 eliminateQuantifiers(
@@ -560,9 +578,9 @@ eliminateQuantifiers(
 
 ### minimalPolynomialOf
 
-<a id="entry-presentation_wasm_solving_capability_equations_minimal_polynomial_of_api_algebra_session_minimal_polynomial_of"></a>
+<a id="entry-presentation_wasm_api_session_minimal_polynomial_of"></a>
 <a id="placement-placement.wasm.wasm_module.module_minimalpolynomialof.79c2bb8f41d9"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 minimalPolynomialOf(
@@ -577,7 +595,7 @@ Return an exact polynomial in the requested variable for a first-class polynomia
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_minimalpolynomialof.c8632b82c23c"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.minimalPolynomialOf</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.minimalPolynomialOf</code></p>
 
 ```typescript signature
 minimalPolynomialOf(
@@ -588,35 +606,11 @@ minimalPolynomialOf(
 
 </details>
 
-### multiplierValues
-
-<a id="entry-presentation_wasm_solving_capability_equations_multiplier_values_api_results_criticalpoint_multiplier_values"></a>
-<a id="placement-placement.wasm.wasm_class.criticalpoint_multipliervalues.7e963e9a8ba9"></a>
-<p class="symi-entry-owner">CriticalPoint property</p>
-
-```typescript signature
-readonly multiplierValues: Expression[]
-```
-
-The solved values of those multipliers, in the same order as `multiplier_variables`.
-
-### multiplierVariables
-
-<a id="entry-presentation_wasm_solving_capability_equations_multiplier_variables_api_results_criticalpoint_multiplier_variables"></a>
-<a id="placement-placement.wasm.wasm_class.criticalpoint_multipliervariables.ec621ff22453"></a>
-<p class="symi-entry-owner">CriticalPoint property</p>
-
-```typescript signature
-readonly multiplierVariables: string[]
-```
-
-The names of the introduced Lagrange / KKT multipliers at a constrained critical point (empty for the unconstrained case).
-
 ### polynomialRoot
 
-<a id="entry-presentation_wasm_solving_capability_equations_polynomial_root_api_solving_session_polynomial_root"></a>
+<a id="entry-presentation_wasm_api_session_polynomial_root"></a>
 <a id="placement-placement.wasm.wasm_module.module_polynomialroot.72fc790efc20"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 polynomialRoot(
@@ -632,7 +626,7 @@ Construct the zero-based `index`-th exact root of a univariate rational polynomi
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_polynomialroot.3cf9a61c8318"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.polynomialRoot</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.polynomialRoot</code></p>
 
 ```typescript signature
 polynomialRoot(
@@ -646,9 +640,9 @@ polynomialRoot(
 
 ### realRootCount
 
-<a id="entry-presentation_wasm_solving_capability_equations_real_root_count_api_solving_session_real_root_count"></a>
+<a id="entry-presentation_wasm_api_session_real_root_count"></a>
 <a id="placement-placement.wasm.wasm_module.module_realrootcount.73ae1dfc30f1"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 realRootCount(
@@ -665,7 +659,7 @@ Number of distinct real roots of a univariate polynomial in the interval `(lower
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_realrootcount.0c2cc95c5fce"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.realRootCount</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.realRootCount</code></p>
 
 ```typescript signature
 realRootCount(
@@ -680,9 +674,9 @@ realRootCount(
 
 ### realRootSign
 
-<a id="entry-presentation_wasm_solving_capability_equations_real_root_sign_api_solving_session_real_root_sign"></a>
+<a id="entry-presentation_wasm_api_session_real_root_sign"></a>
 <a id="placement-placement.wasm.wasm_module.module_realrootsign.0daf97e8a58c"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 realRootSign(
@@ -698,7 +692,7 @@ The exact sign (`-1`, `0`, or `1`) of the `index`-th smallest real root of a uni
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_realrootsign.ce30c7914074"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.realRootSign</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.realRootSign</code></p>
 
 ```typescript signature
 realRootSign(
@@ -710,53 +704,11 @@ realRootSign(
 
 </details>
 
-### rootsWithMultiplicities
-
-<a id="entry-presentation_wasm_solving_capability_equations_roots_with_multiplicities_api_solving_session_roots_with_multiplicities"></a>
-<a id="placement-placement.wasm.wasm_module.module_rootswithmultiplicities.64f20afdbaa6"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-rootsWithMultiplicities(
-    input_expression: Expression,
-    variable: string,
-): RootMultiplicity[]
-```
-
-Roots of a polynomial with their multiplicities. Notes: Python returns a dict keyed by root; WASM returns an array of `root_multiplicity` objects.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_rootswithmultiplicities.1685afb5181e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.rootsWithMultiplicities</code></p>
-
-```typescript signature
-rootsWithMultiplicities(
-    input_expression: Expression,
-    variable: string,
-): RootMultiplicity[]
-```
-
-</details>
-
-### rootsWithMultiplicities
-
-<a id="entry-presentation_wasm_solving_capability_equations_roots_with_multiplicities_api_expression_operations_expression_roots_with_multiplicities"></a>
-<a id="placement-placement.wasm.wasm_class.expression_rootswithmultiplicities.e1d29f981fe3"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-rootsWithMultiplicities(variable: string): RootMultiplicity[]
-```
-
-Roots of a polynomial with their multiplicities. Notes: Python returns a dict keyed by root; WASM returns an array of `root_multiplicity` objects.
-
 ### solvePolynomialSystem
 
-<a id="entry-presentation_wasm_solving_capability_equations_solve_polynomial_system_api_solving_session_solve_polynomial_system"></a>
+<a id="entry-presentation_wasm_api_session_solve_polynomial_system"></a>
 <a id="placement-placement.wasm.wasm_module.module_solvepolynomialsystem.e6845dfe5212"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 solvePolynomialSystem(
@@ -771,7 +723,7 @@ Solve a multivariate polynomial system `{ equation_i = 0 }` for the named unknow
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_solvepolynomialsystem.1a9a483b3105"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solvePolynomialSystem</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.solvePolynomialSystem</code></p>
 
 ```typescript signature
 solvePolynomialSystem(
@@ -784,9 +736,9 @@ solvePolynomialSystem(
 
 ### solveSemialgebraic
 
-<a id="entry-presentation_wasm_solving_capability_equations_solve_semialgebraic_api_logic_session_solve_semialgebraic"></a>
+<a id="entry-presentation_wasm_api_session_solve_semialgebraic"></a>
 <a id="placement-placement.wasm.wasm_module.module_solvesemialgebraic.bc85f1234db9"></a>
-<p class="symi-entry-owner">Default context</p>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
 ```typescript signature
 solveSemialgebraic(matrix: Expression, variables: string[]): Expression
@@ -798,187 +750,11 @@ solveSemialgebraic(matrix: Expression, variables: string[]): Expression
 <summary>Calling forms</summary>
 
 <a id="placement-placement.wasm.wasm_class.context_solvesemialgebraic.d516cccae289"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solveSemialgebraic</code></p>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.solveSemialgebraic</code></p>
 
 ```typescript signature
 solveSemialgebraic(matrix: Expression, variables: string[]): Expression
 ```
 
 </details>
-
-### solvesetInDomain
-
-<a id="entry-presentation_wasm_solving_capability_equations_solveset_in_domain_api_solving_session_solveset_in_domain"></a>
-<a id="placement-placement.wasm.wasm_module.module_solvesetindomain.d47c4f18f7ba"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```typescript signature
-solvesetInDomain(
-    equation: Expression,
-    variable: string,
-    domain: Expression,
-): Expression
-```
-
-`solveset` restricted to an explicit domain set (e.g. `real_line()`, `integer_set()`, an interval).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_solvesetindomain.1a3d09ece50e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solvesetInDomain</code></p>
-
-```typescript signature
-solvesetInDomain(
-    equation: Expression,
-    variable: string,
-    domain: Expression,
-): Expression
-```
-
-</details>
-
-### values
-
-<a id="entry-presentation_wasm_solving_capability_equations_values_api_results_criticalpoint_values"></a>
-<a id="placement-placement.wasm.wasm_class.criticalpoint_values.6894bda84e82"></a>
-<p class="symi-entry-owner">CriticalPoint property</p>
-
-```typescript signature
-readonly values: Expression[]
-```
-
-Getter on `system_assignment`: the assigned value expressions, aligned with `variables`.
-
-### variables
-
-<a id="entry-presentation_wasm_solving_capability_equations_variables_api_results_criticalpoint_variables"></a>
-<a id="placement-placement.wasm.wasm_class.criticalpoint_variables.daa72a0ef83f"></a>
-<p class="symi-entry-owner">CriticalPoint property</p>
-
-```typescript signature
-readonly variables: string[]
-```
-
-Getter on `system_assignment`: the unknown names, in order.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_calculus_verdict_api_results_definiteintegrationresult_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.definiteintegrationresult_verdict.ef5d425f12c2"></a>
-<p class="symi-entry-owner">DefiniteIntegrationResult property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-Whether the request was evaluated, proved divergent, or declined.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_results_optimizationoutcome_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.optimizationoutcome_verdict.a8e3195ed418"></a>
-<p class="symi-entry-owner">OptimizationOutcome property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-The optimization result classification.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsolveresult_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.ordinarydifferentialequationsolveresult_verdict.be6fec5ffae5"></a>
-<p class="symi-entry-owner">OrdinaryDifferentialEquationSolveResult property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-Whether the request was solved or declined.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemsolveresult_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.ordinarydifferentialequationsystemsolveresult_verdict.cc0fd5062ade"></a>
-<p class="symi-entry-owner">OrdinaryDifferentialEquationSystemSolveResult property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-Whether the system was solved or declined.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_ordinary_differential_equations_ordinarydifferentialequationsystemverificationreport_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.ordinarydifferentialequationsystemverificationreport_verdict.ee29fc9bbe84"></a>
-<p class="symi-entry-owner">OrdinaryDifferentialEquationSystemVerificationReport property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-The decision on every equation residual and every datum of the supplied assignment.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsecondorderclassification_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationsecondorderclassification_verdict.46c046f2c01d"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationSecondOrderClassification property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-Whether one type, a complete case table, or neither was proved.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationsolveresult_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationsolveresult_verdict.ddbb1f7390b2"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationSolveResult property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-Whether the dispatcher solved or honestly declined.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationtransformationverificationreport_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationtransformationverificationreport_verdict.b1e430c993fe"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationTransformationVerificationReport property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-The aggregate exact verification verdict.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationreport_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationverificationreport_verdict.2c5adb81b6f5"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationVerificationReport property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-The aggregate exact verification verdict.
-
-### verdict
-
-<a id="entry-presentation_wasm_solving_capability_equations_verdict_api_partial_differential_equations_partialdifferentialequationverificationresidual_verdict"></a>
-<a id="placement-placement.wasm.wasm_class.partialdifferentialequationverificationresidual_verdict.f1c9965647a6"></a>
-<p class="symi-entry-owner">PartialDifferentialEquationVerificationResidual property</p>
-
-```typescript signature
-readonly verdict: string
-```
-
-The exact verdict proved about this one residual.
 

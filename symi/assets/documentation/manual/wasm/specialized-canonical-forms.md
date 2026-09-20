@@ -12,7 +12,32 @@ Related rewrites are on [algebraic transforms](algebraic-transforms.md) and
 
 ### piecewise_fold
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.piecewise_fold`](/symi/python/specialized-canonical-forms#piecewise_fold) in Python, [`UniffiExpression.piecewiseFold`](/symi/kotlin/specialized-canonical-forms#piecewise_fold) in Kotlin, [`UniffiExpression.piecewiseFold`](/symi/swift/specialized-canonical-forms#piecewise_fold) in Swift, [`api::expression_operations::Expression::piecewise_fold`](/symi/rust/specialized-canonical-forms#piecewise_fold) in Rust.*
+<a id="entry-presentation_wasm_api_session_piecewise_fold"></a>
+<a id="placement-placement.wasm.wasm_module.module_piecewisefold.e933070f4d72"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+piecewiseFold(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_piecewisefold.d8dc6b0c9df5"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.piecewiseFold</code></p>
+
+```typescript signature
+piecewiseFold(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_piecewisefold.3d9ec0c834c8"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.piecewiseFold</code></p>
+
+```typescript signature
+piecewiseFold(): Expression
+```
+
+</details>
 
 
 
@@ -30,7 +55,38 @@ equality-preserving expression and may therefore return the input unchanged.
 
 ### rewrite_special_functions
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.rewrite_special_functions`](/symi/python/specialized-canonical-forms#rewrite_special_functions) in Python, [`UniffiExpression.rewriteSpecialFunctions`](/symi/kotlin/specialized-canonical-forms#rewrite_special_functions) in Kotlin, [`UniffiExpression.rewriteSpecialFunctions`](/symi/swift/specialized-canonical-forms#rewrite_special_functions) in Swift, [`api::Expression::rewrite_special_functions`](/symi/rust/specialized-canonical-forms#rewrite_special_functions) in Rust.*
+<a id="entry-presentation_wasm_api_session_rewrite_special_functions"></a>
+<a id="placement-placement.wasm.wasm_module.module_rewritespecialfunctions.dc570b354656"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+rewriteSpecialFunctions(
+    input_expression: Expression,
+    basis: string,
+): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_rewritespecialfunctions.9a756b368915"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.rewriteSpecialFunctions</code></p>
+
+```typescript signature
+rewriteSpecialFunctions(
+    input_expression: Expression,
+    basis: string,
+): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_rewritespecialfunctions.590d4aee2a54"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.rewriteSpecialFunctions</code></p>
+
+```typescript signature
+rewriteSpecialFunctions(basis: string): Expression
+```
+
+</details>
 
 
 
@@ -51,7 +107,32 @@ force mode.
 
 ### presentation_normal_form
 
-*Not exposed by the WASM / JavaScript bindings. Available as [`Context.presentation_normal_form`](/symi/python/specialized-canonical-forms#presentation_normal_form) in Python, [`UniffiExpression.presentationNormalForm`](/symi/kotlin/specialized-canonical-forms#presentation_normal_form) in Kotlin, [`UniffiExpression.presentationNormalForm`](/symi/swift/specialized-canonical-forms#presentation_normal_form) in Swift, [`api::algebra::Session::presentation_normal_form`](/symi/rust/specialized-canonical-forms#presentation_normal_form) in Rust.*
+<a id="entry-presentation_wasm_api_session_presentation_normal_form"></a>
+<a id="placement-placement.wasm.wasm_module.module_presentationnormalform.53908ce4871d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+
+```typescript signature
+presentationNormalForm(input_expression: Expression): Expression
+```
+
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.wasm.wasm_class.context_presentationnormalform.265113e13a9d"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.presentationNormalForm</code></p>
+
+```typescript signature
+presentationNormalForm(input_expression: Expression): Expression
+```
+
+<a id="placement-placement.wasm.wasm_class.expression_presentationnormalform.af5e499aeb25"></a>
+<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.presentationNormalForm</code></p>
+
+```typescript signature
+presentationNormalForm(): Expression
+```
+
+</details>
 
 
 

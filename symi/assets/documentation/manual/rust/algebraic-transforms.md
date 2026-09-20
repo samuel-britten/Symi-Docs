@@ -8,15 +8,7 @@ the search-based ladder see
 
 ### expand
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_expression_expand_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_expand.59ef333b8608"></a>
-<p class="symi-entry-owner">api::Expression method</p>
-
-```rust signature
-pub fn expand(&self) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_session_expand_unnamed"></a>
+<a id="entry-presentation_rust_api_session_expand"></a>
 <a id="placement-placement.rust.native_rust.api_session_expand.c0a87f8d8c5c"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -27,13 +19,25 @@ pub fn expand(
 ) -> Result<Expression, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_expand.59ef333b8608"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::expand</code></p>
+
+```rust signature
+pub fn expand(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
 
 
 Expand products, integer powers, and supported algebraic forms.
 
 ### partial_fractions
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_algebra_session_partial_fractions_unnamed"></a>
+<a id="entry-presentation_rust_api_session_partial_fractions"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_partial_fractions.3aa98bfa9d6e"></a>
 <p class="symi-entry-owner">api::algebra::Session method</p>
 
@@ -47,9 +51,11 @@ where
     VariableType: Into<VariableLike<'a>>,
 ```
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_expression_operations_expression_partial_fractions_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_partial_fractions.6c562c4edac4"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::partial_fractions</code></p>
 
 ```rust signature
 pub fn partial_fractions<'a, VariableType>(
@@ -59,6 +65,8 @@ pub fn partial_fractions<'a, VariableType>(
 where
     VariableType: Into<VariableLike<'a>>,
 ```
+
+</details>
 
 
 
@@ -72,15 +80,7 @@ For factorization, cancellation, collection, and radical operations, use
 
 ### factor
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_expression_factor_unnamed"></a>
-<a id="placement-placement.rust.native_rust.api_expression_factor.f21d2977170b"></a>
-<p class="symi-entry-owner">api::Expression method</p>
-
-```rust signature
-pub fn factor(&self) -> Result<Expression, ApiError>
-```
-
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_session_factor_unnamed"></a>
+<a id="entry-presentation_rust_api_session_factor"></a>
 <a id="placement-placement.rust.native_rust.api_session_factor.7215d3dd9b87"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -91,6 +91,18 @@ pub fn factor(
 ) -> Result<Expression, ApiError>
 ```
 
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
+<a id="placement-placement.rust.native_rust.api_expression_factor.f21d2977170b"></a>
+<p class="symi-entry-owner">api::Expression method: <code>api::Expression::factor</code></p>
+
+```rust signature
+pub fn factor(&self) -> Result<Expression, ApiError>
+```
+
+</details>
+
 
 
 Polynomial factorization over the rationals (full multivariate). With
@@ -99,7 +111,7 @@ Polynomial factorization over the rationals (full multivariate). With
 
 ### collect
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_algebra_session_collect_unnamed"></a>
+<a id="entry-presentation_rust_api_session_collect"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_collect.8c7e43f82446"></a>
 <p class="symi-entry-owner">api::algebra::Session method</p>
 
@@ -111,9 +123,11 @@ pub fn collect(
 ) -> Result<Expression, ApiError>
 ```
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_expression_operations_expression_collect_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_collect.85f633352c37"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::collect</code></p>
 
 ```rust signature
 pub fn collect(
@@ -121,6 +135,8 @@ pub fn collect(
     generator: &Expression,
 ) -> Result<Expression, ApiError>
 ```
+
+</details>
 
 
 
@@ -134,7 +150,7 @@ generator that appears with only a single power, returns the input unchanged.
 
 ### complete_the_square
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_algebra_session_complete_the_square_unnamed"></a>
+<a id="entry-presentation_rust_api_session_complete_the_square"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_complete_the_square.a80a31ff9175"></a>
 <p class="symi-entry-owner">api::algebra::Session method</p>
 
@@ -146,9 +162,11 @@ pub fn complete_the_square(
 ) -> Result<Expression, ApiError>
 ```
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_expression_operations_expression_complete_the_square_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_complete_the_square.bba36967df9a"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::complete_the_square</code></p>
 
 ```rust signature
 pub fn complete_the_square(
@@ -156,6 +174,8 @@ pub fn complete_the_square(
     variable: &Expression,
 ) -> Result<Expression, ApiError>
 ```
+
+</details>
 
 
 
@@ -183,7 +203,7 @@ unrestricted `a` and completes when `a` is assumed positive.
 
 ### factor_common_terms
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_algebra_session_factor_common_terms_unnamed"></a>
+<a id="entry-presentation_rust_api_session_factor_common_terms"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_factor_common_terms.d6d507bd8455"></a>
 <p class="symi-entry-owner">api::algebra::Session method</p>
 
@@ -194,13 +214,17 @@ pub fn factor_common_terms(
 ) -> Result<Expression, ApiError>
 ```
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_expression_operations_expression_factor_common_terms_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_factor_common_terms.8fa0904f8ef3"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::factor_common_terms</code></p>
 
 ```rust signature
 pub fn factor_common_terms(&self) -> Result<Expression, ApiError>
 ```
+
+</details>
 
 
 
@@ -221,7 +245,7 @@ further — that is `factor`'s job.
 
 ### rationalize_denominator
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_algebra_session_rationalize_denominator_unnamed"></a>
+<a id="entry-presentation_rust_api_session_rationalize_denominator"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_rationalize_denominator.42781f5b509e"></a>
 <p class="symi-entry-owner">api::algebra::Session method</p>
 
@@ -232,13 +256,17 @@ pub fn rationalize_denominator(
 ) -> Result<Expression, ApiError>
 ```
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_expression_operations_expression_rationalize_denominator_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_rationalize_denominator.8b805219b61c"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::rationalize_denominator</code></p>
 
 ```rust signature
 pub fn rationalize_denominator(&self) -> Result<Expression, ApiError>
 ```
+
+</details>
 
 
 
@@ -251,7 +279,7 @@ bounded supported radical class or the exact remultiplication check fails.
 
 ### collect_radicals
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_algebra_session_collect_radicals_unnamed"></a>
+<a id="entry-presentation_rust_api_session_collect_radicals"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_collect_radicals.e112f56cb640"></a>
 <p class="symi-entry-owner">api::algebra::Session method</p>
 
@@ -262,13 +290,17 @@ pub fn collect_radicals(
 ) -> Result<Expression, ApiError>
 ```
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_expression_operations_expression_collect_radicals_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_collect_radicals.b798e1d391d9"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::collect_radicals</code></p>
 
 ```rust signature
 pub fn collect_radicals(&self) -> Result<Expression, ApiError>
 ```
+
+</details>
 
 
 
@@ -278,7 +310,7 @@ distinct kernels are considered; inputs beyond that bound return unchanged.
 
 ### denest_radicals
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_algebra_session_denest_radicals_unnamed"></a>
+<a id="entry-presentation_rust_api_session_denest_radicals"></a>
 <a id="placement-placement.rust.native_rust.api_algebra_session_denest_radicals.5c2c44def0fb"></a>
 <p class="symi-entry-owner">api::algebra::Session method</p>
 
@@ -289,13 +321,17 @@ pub fn denest_radicals(
 ) -> Result<Expression, ApiError>
 ```
 
-<a id="entry-presentation_rust_algebraic_transforms_capability_rust_native_rust_api_expression_operations_expression_denest_radicals_unnamed"></a>
+<details class="symi-calling-forms">
+<summary>Calling forms</summary>
+
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_denest_radicals.a66dae3b13a2"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method</p>
+<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::denest_radicals</code></p>
 
 ```rust signature
 pub fn denest_radicals(&self) -> Result<Expression, ApiError>
 ```
+
+</details>
 
 
 

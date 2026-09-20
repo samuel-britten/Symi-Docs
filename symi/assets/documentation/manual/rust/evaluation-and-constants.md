@@ -43,7 +43,7 @@ other former module calls must remove the parentheses.
 
 ### pi
 
-<a id="entry-presentation_rust_evaluation_and_constants_capability_rust_native_rust_api_session_pi_unnamed"></a>
+<a id="entry-presentation_rust_api_session_pi"></a>
 <a id="placement-placement.rust.native_rust.api_session_pi.02cbb18c2379"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -58,7 +58,7 @@ decimal value.
 
 ### e
 
-<a id="entry-presentation_rust_evaluation_and_constants_capability_rust_native_rust_api_session_e_unnamed"></a>
+<a id="entry-presentation_rust_api_session_e"></a>
 <a id="placement-placement.rust.native_rust.api_session_e.b04b7e5a352f"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -72,7 +72,7 @@ constant are the same expression.
 
 ### euler_gamma
 
-<a id="entry-presentation_rust_evaluation_and_constants_capability_rust_native_rust_api_session_euler_gamma_unnamed"></a>
+<a id="entry-presentation_rust_api_session_euler_gamma"></a>
 <a id="placement-placement.rust.native_rust.api_session_euler_gamma.08f463463607"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -86,7 +86,7 @@ The Euler–Mascheroni constant \(\gamma\). It appears in closed forms produced 
 
 ### imaginary_unit
 
-<a id="entry-presentation_rust_evaluation_and_constants_capability_rust_native_rust_api_session_imaginary_unit_unnamed"></a>
+<a id="entry-presentation_rust_api_session_imaginary_unit"></a>
 <a id="placement-placement.rust.native_rust.api_session_imaginary_unit.881d435c4ff5"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -102,7 +102,7 @@ decompose a complex expression.
 
 ### infinity
 
-<a id="entry-presentation_rust_evaluation_and_constants_capability_rust_native_rust_api_session_infinity_unnamed"></a>
+<a id="entry-presentation_rust_api_session_infinity"></a>
 <a id="placement-placement.rust.native_rust.api_session_infinity.f236decb2758"></a>
 <p class="symi-entry-owner">api::Session method</p>
 
@@ -144,4 +144,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+
+## Additional API
+
+### DEFAULT_PRECISION_BITS
+
+<a id="entry-presentation_rust_api_default_precision_bits"></a>
+<a id="placement-placement.rust.native_rust.api_analysis_default_precision_bits.cfb131343a71"></a>
+<p class="symi-entry-owner">api::analysis constant</p>
+
+```rust signature
+pub const DEFAULT_PRECISION_BITS: u32 = numeric::DEFAULT_PRECISION_BITS;
+```
+
+The default working precision, in bits, of the inexact numeric evaluator.
 
