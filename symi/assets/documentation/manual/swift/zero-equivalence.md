@@ -2,28 +2,11 @@
 
 ### zero_equivalent
 
-<a id="entry-presentation_swift_api_session_zero_equivalent"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_zeroequivalent.15dad0925fdd"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func zeroEquivalent(
-    target: UniffiExpression,
-    constraint: UniffiExpression?,
-) -> UniffiZeroEquivalenceVerdict
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_zeroequivalent.742441c0a4e3"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.zeroEquivalent</code></p>
+`UniffiExpression.zeroEquivalent(constraint: UniffiExpression?) -> UniffiZeroEquivalenceVerdict`
 
-```swift signature
-func zeroEquivalent(constraint: UniffiExpression?) -> UniffiZeroEquivalenceVerdict
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_zeroequivalent.15dad0925fdd"></a>
+`UniffiSession.zeroEquivalent(target: UniffiExpression, constraint: UniffiExpression?) -> UniffiZeroEquivalenceVerdict`
 
 
 

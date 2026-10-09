@@ -8,16 +8,8 @@ makes the query decline — `None` for `degree`, an error for the others.
 
 ### degree
 
-<a id="entry-presentation_kotlin_api_session_degree"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_degree.1eca64a7ebc5"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun degree(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-): kotlin.ULong?
-```
+`UniffiSession.degree(inputExpression: UniffiExpression, variable: kotlin.String): kotlin.ULong?`
 
 
 Degree in `variable`. `None` when the expression is not polynomial in
@@ -26,16 +18,8 @@ under the core convention).
 
 ### leading_coefficient
 
-<a id="entry-presentation_kotlin_api_session_leading_coefficient"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_leadingcoefficient.e9dfe4aeb2af"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun leadingCoefficient(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-): UniffiExpression
-```
+`UniffiSession.leadingCoefficient(inputExpression: UniffiExpression, variable: kotlin.String): UniffiExpression`
 
 
 Coefficient of the highest power of `variable`; may contain the other free
@@ -43,17 +27,14 @@ variables. Errors on non-polynomial or zero input.
 
 ### coefficient
 
-<a id="entry-presentation_kotlin_api_session_coefficient"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_coefficient.60d73d3f8e8f"></a>
-<p class="symi-entry-owner">Explicit context</p>
+<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationjetcoefficient_coefficient.804d7d84b549"></a>
+`UniffiPartialDifferentialEquationJetCoefficient.coefficient(): UniffiExpression`
 
-```kotlin signature
-fun coefficient(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-    power: kotlin.ULong,
-): UniffiExpression
-```
+<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationprincipalcoefficient_coefficient.38d9336ec650"></a>
+`UniffiPartialDifferentialEquationPrincipalCoefficient.coefficient(): UniffiExpression`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_coefficient.60d73d3f8e8f"></a>
+`UniffiSession.coefficient(inputExpression: UniffiExpression, variable: kotlin.String, power: kotlin.ULong): UniffiExpression`
 
 
 Coefficient of `variable^power`; integer 0 when the term is absent. Errors
@@ -61,17 +42,8 @@ on non-polynomial input.
 
 ### polynomial_gcd
 
-<a id="entry-presentation_kotlin_api_session_polynomial_gcd"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_polynomialgcd.5b17fffe0faf"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun polynomialGcd(
-    left: UniffiExpression,
-    right: UniffiExpression,
-    variable: kotlin.String,
-): UniffiExpression
-```
+`UniffiSession.polynomialGcd(left: UniffiExpression, right: UniffiExpression, variable: kotlin.String): UniffiExpression`
 
 
 Greatest common divisor of the two expressions as polynomials in `variable`
@@ -80,17 +52,8 @@ not polynomial in `variable`.
 
 ### resultant
 
-<a id="entry-presentation_kotlin_api_session_resultant"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_resultant.cb67aabd72fd"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun resultant(
-    left: UniffiExpression,
-    right: UniffiExpression,
-    variable: kotlin.String,
-): UniffiExpression
-```
+`UniffiSession.resultant(left: UniffiExpression, right: UniffiExpression, variable: kotlin.String): UniffiExpression`
 
 
 Resultant with respect to `variable`; zero exactly when the two polynomials
@@ -98,16 +61,8 @@ share a root (over the algebraic closure). Errors on non-polynomial input.
 
 ### isolate_real_roots
 
-<a id="entry-presentation_kotlin_api_session_isolate_real_roots"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_isolaterealroots.70445057ba8a"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun isolateRealRoots(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-): List<UniffiIsolatingInterval>
-```
+`UniffiSession.isolateRealRoots(inputExpression: UniffiExpression, variable: kotlin.String): List<UniffiIsolatingInterval>`
 
 
 One `(lower, upper)` rational isolating interval per distinct real root,
@@ -120,27 +75,15 @@ getters.
 
 ### lower
 
-<a id="entry-presentation_kotlin_api_isolatinginterval_lower"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiisolatinginterval_lower.cf5b4e1d548f"></a>
-<p class="symi-entry-owner">UniffiIsolatingInterval method</p>
+`UniffiIsolatingInterval.lower(): UniffiExpression`
 
-```kotlin signature
-fun lower(): UniffiExpression
-```
-
-Lower endpoint of the isolating interval.
 
 ### upper
 
-<a id="entry-presentation_kotlin_api_isolatinginterval_upper"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiisolatinginterval_upper.a7b5035db9e4"></a>
-<p class="symi-entry-owner">UniffiIsolatingInterval method</p>
+`UniffiIsolatingInterval.upper(): UniffiExpression`
 
-```kotlin signature
-fun upper(): UniffiExpression
-```
-
-Upper endpoint of the isolating interval.
 
 ## Gröbner bases and ideals
 
@@ -167,17 +110,8 @@ no new method to call.
 
 ### groebner_basis
 
-<a id="entry-presentation_kotlin_api_session_groebner_basis"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_groebnerbasis.0649413af112"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun groebnerBasis(
-    generators: List<UniffiExpression>,
-    variables: List<kotlin.String>,
-    order: UniffiMonomialOrdering,
-): List<UniffiExpression>?
-```
+`UniffiSession.groebnerBasis(generators: List<UniffiExpression>, variables: List<kotlin.String>, order: UniffiMonomialOrdering): List<UniffiExpression>?`
 
 
 The canonical reduced Gröbner basis of the ideal `<generators>` under the named
@@ -186,18 +120,8 @@ monomial order — monic, autoreduced, and sorted, so it is unique for the
 
 ### ideal_membership
 
-<a id="entry-presentation_kotlin_api_session_ideal_membership"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_idealmembership.cc0474e382fd"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun idealMembership(
-    element: UniffiExpression,
-    generators: List<UniffiExpression>,
-    variables: List<kotlin.String>,
-    order: UniffiMonomialOrdering,
-): kotlin.Boolean?
-```
+`UniffiSession.idealMembership(element: UniffiExpression, generators: List<UniffiExpression>, variables: List<kotlin.String>, order: UniffiMonomialOrdering): kotlin.Boolean?`
 
 
 Whether `element` lies in the ideal `<generators>`, decided by reducing it to
@@ -207,18 +131,8 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### ideal_sum
 
-<a id="entry-presentation_kotlin_api_session_ideal_sum"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_idealsum.80c8c34aa7b9"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun idealSum(
-    generatorsLeft: List<UniffiExpression>,
-    generatorsRight: List<UniffiExpression>,
-    variables: List<kotlin.String>,
-    order: UniffiMonomialOrdering,
-): List<UniffiExpression>?
-```
+`UniffiSession.idealSum(generatorsLeft: List<UniffiExpression>, generatorsRight: List<UniffiExpression>, variables: List<kotlin.String>, order: UniffiMonomialOrdering): List<UniffiExpression>?`
 
 
 A Gröbner basis of the ideal sum `I + J`, the ideal generated by the two
@@ -226,18 +140,8 @@ generator lists together. `None` on a non-\(\mathbb{Q}[\text{variables}]\) gener
 
 ### ideal_product
 
-<a id="entry-presentation_kotlin_api_session_ideal_product"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_idealproduct.ddd223f728ab"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun idealProduct(
-    generatorsLeft: List<UniffiExpression>,
-    generatorsRight: List<UniffiExpression>,
-    variables: List<kotlin.String>,
-    order: UniffiMonomialOrdering,
-): List<UniffiExpression>?
-```
+`UniffiSession.idealProduct(generatorsLeft: List<UniffiExpression>, generatorsRight: List<UniffiExpression>, variables: List<kotlin.String>, order: UniffiMonomialOrdering): List<UniffiExpression>?`
 
 
 A Gröbner basis of the ideal product \(I J\), generated by all pairwise
@@ -245,18 +149,8 @@ products of the two generator lists. `None` on a non-\(\mathbb{Q}[\text{variable
 
 ### ideal_intersection
 
-<a id="entry-presentation_kotlin_api_session_ideal_intersection"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_idealintersection.026f4a5cc424"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun idealIntersection(
-    generatorsLeft: List<UniffiExpression>,
-    generatorsRight: List<UniffiExpression>,
-    variables: List<kotlin.String>,
-    order: UniffiMonomialOrdering,
-): List<UniffiExpression>?
-```
+`UniffiSession.idealIntersection(generatorsLeft: List<UniffiExpression>, generatorsRight: List<UniffiExpression>, variables: List<kotlin.String>, order: UniffiMonomialOrdering): List<UniffiExpression>?`
 
 
 A generating set of the ideal intersection \(I \cap J\), computed by the standard
@@ -265,17 +159,8 @@ non-\(\mathbb{Q}[\text{variables}]\) generator.
 
 ### elimination_ideal
 
-<a id="entry-presentation_kotlin_api_session_elimination_ideal"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_eliminationideal.8b6f1337e0dd"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun eliminationIdeal(
-    generators: List<UniffiExpression>,
-    variables: List<kotlin.String>,
-    eliminate: List<kotlin.String>,
-): List<UniffiExpression>?
-```
+`UniffiSession.eliminationIdeal(generators: List<UniffiExpression>, variables: List<kotlin.String>, eliminate: List<kotlin.String>): List<UniffiExpression>?`
 
 
 A Gröbner basis of the elimination ideal \(\langle\operatorname{generators}\rangle \cap
@@ -293,18 +178,8 @@ elimination with the rational-parametrisation saturation wired in.
 
 ### change_monomial_order
 
-<a id="entry-presentation_kotlin_api_session_change_monomial_order"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_changemonomialorder.79f1c2356ee4"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun changeMonomialOrder(
-    basis: List<UniffiExpression>,
-    variables: List<kotlin.String>,
-    sourceOrder: UniffiMonomialOrdering,
-    targetOrder: UniffiMonomialOrdering,
-): List<UniffiExpression>?
-```
+`UniffiSession.changeMonomialOrder(basis: List<UniffiExpression>, variables: List<kotlin.String>, sourceOrder: UniffiMonomialOrdering, targetOrder: UniffiMonomialOrdering): List<UniffiExpression>?`
 
 
 Convert a Gröbner basis of a **zero-dimensional** ideal from `source_order` to
@@ -319,17 +194,8 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### implicitize
 
-<a id="entry-presentation_kotlin_api_session_implicitize"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_implicitize.a298d789c7d4"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun implicitize(
-    coordinates: List<kotlin.String>,
-    parameters: List<kotlin.String>,
-    parametricExpressions: List<UniffiExpression>,
-): List<UniffiExpression>?
-```
+`UniffiSession.implicitize(coordinates: List<kotlin.String>, parameters: List<kotlin.String>, parametricExpressions: List<UniffiExpression>): List<UniffiExpression>?`
 
 
 The implicit ideal of a parametric curve or surface \(x_i = f_i(\operatorname{parameters})\) (the
@@ -348,31 +214,444 @@ there are no parameters. Examples: \(\{x = t^2, y = t^3\}\) returns \(y^2 - x^3\
 
 ## Additional API
 
-### cylindrical_algebraic_decomposition
+<a id="placement-placement.kotlin.kotlin_object.uniffiassumptionproposition_plaintext.33b41e02b205"></a>
+### UniffiAssumptionProposition.plainText
 
-<a id="entry-presentation_kotlin_api_session_cylindrical_algebraic_decomposition"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_cylindricalalgebraicdecomposition.1a00effba0b1"></a>
-<p class="symi-entry-owner">Explicit context</p>
+`UniffiAssumptionProposition.plainText(): kotlin.String`
 
-```kotlin signature
-fun cylindricalAlgebraicDecomposition(
-    expressions: List<UniffiExpression>,
-    variables: List<kotlin.String>,
-    equationalConstraints: List<kotlin.ULong>,
-): UniffiCylindricalAlgebraicDecomposition
-```
+Returns `kotlin.String`.
 
-Construct the CAD of the polynomials in the given variable order \(x_1,\ldots,x_n\); projection eliminates \(x_n\) first).
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_absolutevalue.38c661010079"></a>
+### UniffiExpression.absoluteValue
 
-### plain_text
+`UniffiExpression.absoluteValue(): UniffiExpression`
 
-<a id="entry-presentation_kotlin_api_expression_to_string"></a>
+Returns `UniffiExpression`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_add.f11dd11a2684"></a>
+### UniffiExpression.add
+
+`UniffiExpression.add(other: UniffiExpression): UniffiExpression`
+
+Returns `UniffiExpression`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_isalgebraic.0d1e8911a82a"></a>
+### UniffiExpression.isAlgebraic
+
+`UniffiExpression.isAlgebraic(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_iscomplex.5be00393deb6"></a>
+### UniffiExpression.isComplex
+
+`UniffiExpression.isComplex(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_iscomposite.d2a612ec2fdb"></a>
+### UniffiExpression.isComposite
+
+`UniffiExpression.isComposite(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_iseven.305212864d97"></a>
+### UniffiExpression.isEven
+
+`UniffiExpression.isEven(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_isextendedreal.c940074fb614"></a>
+### UniffiExpression.isExtendedReal
+
+`UniffiExpression.isExtendedReal(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_isinfinite.84eeca60a66f"></a>
+### UniffiExpression.isInfinite
+
+`UniffiExpression.isInfinite(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_isirrational.b2a65654a1e2"></a>
+### UniffiExpression.isIrrational
+
+`UniffiExpression.isIrrational(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_isnatural.8bb527677cb6"></a>
+### UniffiExpression.isNatural
+
+`UniffiExpression.isNatural(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_isnonpositive.d4bf0d2584d9"></a>
+### UniffiExpression.isNonpositive
+
+`UniffiExpression.isNonpositive(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_isodd.ebefaade489f"></a>
+### UniffiExpression.isOdd
+
+`UniffiExpression.isOdd(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_ispositiveinteger.6dc5ac646d1b"></a>
+### UniffiExpression.isPositiveInteger
+
+`UniffiExpression.isPositiveInteger(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_istranscendental.97faaec1993d"></a>
+### UniffiExpression.isTranscendental
+
+`UniffiExpression.isTranscendental(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_iszero.4bb774ded5e1"></a>
+### UniffiExpression.isZero
+
+`UniffiExpression.isZero(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_multiply.33f708624746"></a>
+### UniffiExpression.multiply
+
+`UniffiExpression.multiply(other: UniffiExpression): UniffiExpression`
+
+Returns `UniffiExpression`.
+
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_plaintext.c5a75d34dbdb"></a>
-<p class="symi-entry-owner">Expression method</p>
+### UniffiExpression.plainText
 
-```kotlin signature
-fun plainText(): kotlin.String
-```
+`UniffiExpression.plainText(): kotlin.String`
 
-The canonical plain-text form of this expression.
+Returns `kotlin.String`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_subtract.628c23aea491"></a>
+### UniffiExpression.subtract
+
+`UniffiExpression.subtract(other: UniffiExpression): UniffiExpression`
+
+Returns `UniffiExpression`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_add.e9918d9e5882"></a>
+### UniffiMatrix.add
+
+`UniffiMatrix.add(other: UniffiMatrix): UniffiMatrix`
+
+Returns `UniffiMatrix`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_hascomplexentries.c984660638dc"></a>
+### UniffiMatrix.hasComplexEntries
+
+`UniffiMatrix.hasComplexEntries(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_hasintegerentries.d9873706d9da"></a>
+### UniffiMatrix.hasIntegerEntries
+
+`UniffiMatrix.hasIntegerEntries(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_hasrealentries.a1264d659f9f"></a>
+### UniffiMatrix.hasRealEntries
+
+`UniffiMatrix.hasRealEntries(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_isdiagonalmatrix.5f102572ea2b"></a>
+### UniffiMatrix.isDiagonalMatrix
+
+`UniffiMatrix.isDiagonalMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_isfullrankmatrix.c82ad44621d3"></a>
+### UniffiMatrix.isFullRankMatrix
+
+`UniffiMatrix.isFullRankMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_ishermitianmatrix.26e7583f27f0"></a>
+### UniffiMatrix.isHermitianMatrix
+
+`UniffiMatrix.isHermitianMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_isidentitymatrix.304acfe1e92d"></a>
+### UniffiMatrix.isIdentityMatrix
+
+`UniffiMatrix.isIdentityMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_isinvertiblematrix.e6a08c287242"></a>
+### UniffiMatrix.isInvertibleMatrix
+
+`UniffiMatrix.isInvertibleMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_isnormalmatrix.119809d161b9"></a>
+### UniffiMatrix.isNormalMatrix
+
+`UniffiMatrix.isNormalMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_isorthogonalmatrix.5cf3f4c7b232"></a>
+### UniffiMatrix.isOrthogonalMatrix
+
+`UniffiMatrix.isOrthogonalMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_ispositivedefinitematrix.00d4b7e8012c"></a>
+### UniffiMatrix.isPositiveDefiniteMatrix
+
+`UniffiMatrix.isPositiveDefiniteMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_ispositivesemidefinitematrix.3612a5b3d33c"></a>
+### UniffiMatrix.isPositiveSemidefiniteMatrix
+
+`UniffiMatrix.isPositiveSemidefiniteMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_issingularmatrix.ce5cab5926c7"></a>
+### UniffiMatrix.isSingularMatrix
+
+`UniffiMatrix.isSingularMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_issquare.dd0c18be9363"></a>
+### UniffiMatrix.isSquare
+
+`UniffiMatrix.isSquare(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_issymmetricmatrix.0b0caf050e55"></a>
+### UniffiMatrix.isSymmetricMatrix
+
+`UniffiMatrix.isSymmetricMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_isunitarymatrix.002672d38688"></a>
+### UniffiMatrix.isUnitaryMatrix
+
+`UniffiMatrix.isUnitaryMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_iszeromatrix.41be88536ed0"></a>
+### UniffiMatrix.isZeroMatrix
+
+`UniffiMatrix.isZeroMatrix(): UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_multiply.228c6f858664"></a>
+### UniffiMatrix.multiply
+
+`UniffiMatrix.multiply(other: UniffiMatrix): UniffiMatrix`
+
+Returns `UniffiMatrix`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffimatrix_subtract.9057cc530a0c"></a>
+### UniffiMatrix.subtract
+
+`UniffiMatrix.subtract(other: UniffiMatrix): UniffiMatrix`
+
+Returns `UniffiMatrix`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_absolutevalue.93275bfef33a"></a>
+### UniffiSession.absoluteValue
+
+`UniffiSession.absoluteValue(argument: UniffiExpression): UniffiExpression`
+
+Returns `UniffiExpression`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_complexentries.fe5c0641bf45"></a>
+### UniffiSession.complexEntries
+
+`UniffiSession.complexEntries(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_cylindricalalgebraicdecomposition.1a00effba0b1"></a>
+### UniffiSession.cylindricalAlgebraicDecomposition
+
+`UniffiSession.cylindricalAlgebraicDecomposition(expressions: List<UniffiExpression>, variables: List<kotlin.String>, equationalConstraints: List<kotlin.ULong>): UniffiCylindricalAlgebraicDecomposition`
+
+Returns `UniffiCylindricalAlgebraicDecomposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_diagonalmatrix.9bff826f0672"></a>
+### UniffiSession.diagonalMatrix
+
+`UniffiSession.diagonalMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_fullrankmatrix.7c90405d0df0"></a>
+### UniffiSession.fullRankMatrix
+
+`UniffiSession.fullRankMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_hermitianmatrix.e161f2877462"></a>
+### UniffiSession.hermitianMatrix
+
+`UniffiSession.hermitianMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_identitymatrix.20d506bce27b"></a>
+### UniffiSession.identityMatrix
+
+`UniffiSession.identityMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_integerentries.701f4dd04462"></a>
+### UniffiSession.integerEntries
+
+`UniffiSession.integerEntries(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_invertiblematrix.14c1a3d8463c"></a>
+### UniffiSession.invertibleMatrix
+
+`UniffiSession.invertibleMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_lowertriangularmatrix.bc508203257f"></a>
+### UniffiSession.lowerTriangularMatrix
+
+`UniffiSession.lowerTriangularMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_matrixshape.c94e86cfc602"></a>
+### UniffiSession.matrixShape
+
+`UniffiSession.matrixShape(subject: UniffiMatrix, rows: kotlin.ULong, columns: kotlin.ULong): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_nonnegativeassumption.8ddd4b3597f8"></a>
+### UniffiSession.nonnegativeAssumption
+
+`UniffiSession.nonnegativeAssumption(subject: UniffiExpression): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_nonpositiveassumption.60a3fb1bcce9"></a>
+### UniffiSession.nonpositiveAssumption
+
+`UniffiSession.nonpositiveAssumption(subject: UniffiExpression): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_normalmatrix.06e6e1e76254"></a>
+### UniffiSession.normalMatrix
+
+`UniffiSession.normalMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_orthogonalmatrix.8106dc9178d6"></a>
+### UniffiSession.orthogonalMatrix
+
+`UniffiSession.orthogonalMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_positivedefinitematrix.2042265f2628"></a>
+### UniffiSession.positiveDefiniteMatrix
+
+`UniffiSession.positiveDefiniteMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_positivesemidefinitematrix.56570518213e"></a>
+### UniffiSession.positiveSemidefiniteMatrix
+
+`UniffiSession.positiveSemidefiniteMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_realentries.498a75b3322f"></a>
+### UniffiSession.realEntries
+
+`UniffiSession.realEntries(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_singularmatrix.ffcf9f898aee"></a>
+### UniffiSession.singularMatrix
+
+`UniffiSession.singularMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_squarematrix.a4df2b5531ed"></a>
+### UniffiSession.squareMatrix
+
+`UniffiSession.squareMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_symmetricmatrix.997a978d221e"></a>
+### UniffiSession.symmetricMatrix
+
+`UniffiSession.symmetricMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_unitarymatrix.0aa1e4df9fc1"></a>
+### UniffiSession.unitaryMatrix
+
+`UniffiSession.unitaryMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_uppertriangularmatrix.cadbbfb1365e"></a>
+### UniffiSession.upperTriangularMatrix
+
+`UniffiSession.upperTriangularMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_zeromatrix.724b4ed94261"></a>
+### UniffiSession.zeroMatrix
+
+`UniffiSession.zeroMatrix(subject: UniffiMatrix): UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
 

@@ -8,31 +8,11 @@ makes the query decline — `None` for `degree`, an error for the others.
 
 ### degree
 
-<a id="entry-presentation_python_api_session_degree"></a>
-<a id="placement-placement.python.python_module.module_degree.255ff853162b"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-degree(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Optional[int]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_degree.bb4b6eca0c20"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.degree</code></p>
+`Context.degree(input_expression, variable)`
 
-```python signature
-degree(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Optional[int]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_degree.255ff853162b"></a>
+`symi.degree(input_expression, variable)`
 
 
 Degree in `variable`. `None` when the expression is not polynomial in
@@ -41,31 +21,11 @@ under the core convention).
 
 ### leading_coefficient
 
-<a id="entry-presentation_python_api_session_leading_coefficient"></a>
-<a id="placement-placement.python.python_module.module_leading_coefficient.30ccbe4ce993"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-leading_coefficient(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_leading_coefficient.41a3fe2ba55f"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.leading_coefficient</code></p>
+`Context.leading_coefficient(input_expression, variable)`
 
-```python signature
-leading_coefficient(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_leading_coefficient.30ccbe4ce993"></a>
+`symi.leading_coefficient(input_expression, variable)`
 
 
 Coefficient of the highest power of `variable`; may contain the other free
@@ -73,33 +33,17 @@ variables. Errors on non-polynomial or zero input.
 
 ### coefficient
 
-<a id="entry-presentation_python_api_session_coefficient"></a>
-<a id="placement-placement.python.python_module.module_coefficient.c4dd39a9eb50"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-coefficient(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    power: int,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_coefficient.40e75eb53350"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.coefficient</code></p>
+`Context.coefficient(input_expression, variable, power)`
 
-```python signature
-coefficient(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    power: int,
-) -> Expression
-```
+<a id="placement-placement.python.python_class.partialdifferentialequationjetcoefficient_coefficient.8e9e167c35d1"></a>
+`PartialDifferentialEquationJetCoefficient.coefficient`
 
-</details>
+<a id="placement-placement.python.python_class.partialdifferentialequationprincipalcoefficient_coefficient.2b29c8576cbc"></a>
+`PartialDifferentialEquationPrincipalCoefficient.coefficient`
+
+<a id="placement-placement.python.python_module.module_coefficient.c4dd39a9eb50"></a>
+`symi.coefficient(input_expression, variable, power)`
 
 
 Coefficient of `variable^power`; integer 0 when the term is absent. Errors
@@ -107,33 +51,11 @@ on non-polynomial input.
 
 ### polynomial_gcd
 
-<a id="entry-presentation_python_api_session_polynomial_gcd"></a>
-<a id="placement-placement.python.python_module.module_polynomial_gcd.39fa5994e834"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-polynomial_gcd(
-    a: ExpressionLike,
-    b: ExpressionLike,
-    variable: VariableLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_polynomial_gcd.30ceebd4dcdb"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.polynomial_gcd</code></p>
+`Context.polynomial_gcd(a, b, variable)`
 
-```python signature
-polynomial_gcd(
-    a: ExpressionLike,
-    b: ExpressionLike,
-    variable: VariableLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_polynomial_gcd.39fa5994e834"></a>
+`symi.polynomial_gcd(a, b, variable)`
 
 
 Greatest common divisor of the two expressions as polynomials in `variable`
@@ -142,33 +64,11 @@ not polynomial in `variable`.
 
 ### resultant
 
-<a id="entry-presentation_python_api_session_resultant"></a>
-<a id="placement-placement.python.python_module.module_resultant.e405fc22394a"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-resultant(
-    a: ExpressionLike,
-    b: ExpressionLike,
-    variable: VariableLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_resultant.ee06f245060a"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.resultant</code></p>
+`Context.resultant(a, b, variable)`
 
-```python signature
-resultant(
-    a: ExpressionLike,
-    b: ExpressionLike,
-    variable: VariableLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_resultant.e405fc22394a"></a>
+`symi.resultant(a, b, variable)`
 
 
 Resultant with respect to `variable`; zero exactly when the two polynomials
@@ -176,31 +76,11 @@ share a root (over the algebraic closure). Errors on non-polynomial input.
 
 ### isolate_real_roots
 
-<a id="entry-presentation_python_api_session_isolate_real_roots"></a>
-<a id="placement-placement.python.python_module.module_isolate_real_roots.685131c37adf"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-isolate_real_roots(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> list[tuple[Expression, Expression]]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_isolate_real_roots.e790d9fc2a3c"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.isolate_real_roots</code></p>
+`Context.isolate_real_roots(input_expression, variable)`
 
-```python signature
-isolate_real_roots(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> list[tuple[Expression, Expression]]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_isolate_real_roots.685131c37adf"></a>
+`symi.isolate_real_roots(input_expression, variable)`
 
 
 One `(lower, upper)` rational isolating interval per distinct real root,
@@ -246,33 +126,11 @@ no new method to call.
 
 ### groebner_basis
 
-<a id="entry-presentation_python_api_session_groebner_basis"></a>
-<a id="placement-placement.python.python_module.module_groebner_basis.4a0b56aabfeb"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-groebner_basis(
-    generators: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[list[Expression]]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_groebner_basis.4684f56c6f16"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.groebner_basis</code></p>
+`Context.groebner_basis(generators, variables, order=None)`
 
-```python signature
-groebner_basis(
-    generators: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[list[Expression]]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_groebner_basis.4a0b56aabfeb"></a>
+`symi.groebner_basis(generators, variables, order=None)`
 
 
 The canonical reduced Gröbner basis of the ideal `<generators>` under the named
@@ -281,35 +139,11 @@ monomial order — monic, autoreduced, and sorted, so it is unique for the
 
 ### ideal_membership
 
-<a id="entry-presentation_python_api_session_ideal_membership"></a>
-<a id="placement-placement.python.python_module.module_ideal_membership.69c4c3618634"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-ideal_membership(
-    element: ExpressionLike,
-    generators: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[bool]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_ideal_membership.4dd014fcdee3"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ideal_membership</code></p>
+`Context.ideal_membership(element, generators, variables, order=None)`
 
-```python signature
-ideal_membership(
-    element: ExpressionLike,
-    generators: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[bool]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_ideal_membership.69c4c3618634"></a>
+`symi.ideal_membership(element, generators, variables, order=None)`
 
 
 Whether `element` lies in the ideal `<generators>`, decided by reducing it to
@@ -319,35 +153,11 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### ideal_sum
 
-<a id="entry-presentation_python_api_session_ideal_sum"></a>
-<a id="placement-placement.python.python_module.module_ideal_sum.c9e7495dc415"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-ideal_sum(
-    generators_left: Iterable[ExpressionLike],
-    generators_right: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[list[Expression]]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_ideal_sum.a325e677c420"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ideal_sum</code></p>
+`Context.ideal_sum(generators_left, generators_right, variables, order=None)`
 
-```python signature
-ideal_sum(
-    generators_left: Iterable[ExpressionLike],
-    generators_right: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[list[Expression]]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_ideal_sum.c9e7495dc415"></a>
+`symi.ideal_sum(generators_left, generators_right, variables, order=None)`
 
 
 A Gröbner basis of the ideal sum `I + J`, the ideal generated by the two
@@ -355,35 +165,11 @@ generator lists together. `None` on a non-\(\mathbb{Q}[\text{variables}]\) gener
 
 ### ideal_product
 
-<a id="entry-presentation_python_api_session_ideal_product"></a>
-<a id="placement-placement.python.python_module.module_ideal_product.975bfdbced05"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-ideal_product(
-    generators_left: Iterable[ExpressionLike],
-    generators_right: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[list[Expression]]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_ideal_product.398939b3253f"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ideal_product</code></p>
+`Context.ideal_product(generators_left, generators_right, variables, order=None)`
 
-```python signature
-ideal_product(
-    generators_left: Iterable[ExpressionLike],
-    generators_right: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[list[Expression]]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_ideal_product.975bfdbced05"></a>
+`symi.ideal_product(generators_left, generators_right, variables, order=None)`
 
 
 A Gröbner basis of the ideal product \(I J\), generated by all pairwise
@@ -391,35 +177,11 @@ products of the two generator lists. `None` on a non-\(\mathbb{Q}[\text{variable
 
 ### ideal_intersection
 
-<a id="entry-presentation_python_api_session_ideal_intersection"></a>
-<a id="placement-placement.python.python_module.module_ideal_intersection.2d3eef499cec"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-ideal_intersection(
-    generators_left: Iterable[ExpressionLike],
-    generators_right: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[list[Expression]]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_ideal_intersection.b6fbace27013"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.ideal_intersection</code></p>
+`Context.ideal_intersection(generators_left, generators_right, variables, order=None)`
 
-```python signature
-ideal_intersection(
-    generators_left: Iterable[ExpressionLike],
-    generators_right: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    order: Optional[str] = None,
-) -> Optional[list[Expression]]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_ideal_intersection.2d3eef499cec"></a>
+`symi.ideal_intersection(generators_left, generators_right, variables, order=None)`
 
 
 A generating set of the ideal intersection \(I \cap J\), computed by the standard
@@ -428,33 +190,11 @@ non-\(\mathbb{Q}[\text{variables}]\) generator.
 
 ### elimination_ideal
 
-<a id="entry-presentation_python_api_session_elimination_ideal"></a>
-<a id="placement-placement.python.python_module.module_elimination_ideal.2e1c0485c830"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-elimination_ideal(
-    generators: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    eliminate: Iterable[VariableLike],
-) -> Optional[list[Expression]]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_elimination_ideal.bf56d3bbbcfa"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.elimination_ideal</code></p>
+`Context.elimination_ideal(generators, variables, eliminate)`
 
-```python signature
-elimination_ideal(
-    generators: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    eliminate: Iterable[VariableLike],
-) -> Optional[list[Expression]]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_elimination_ideal.2e1c0485c830"></a>
+`symi.elimination_ideal(generators, variables, eliminate)`
 
 
 A Gröbner basis of the elimination ideal \(\langle\operatorname{generators}\rangle \cap
@@ -472,35 +212,11 @@ elimination with the rational-parametrisation saturation wired in.
 
 ### change_monomial_order
 
-<a id="entry-presentation_python_api_session_change_monomial_order"></a>
-<a id="placement-placement.python.python_module.module_change_monomial_order.25caa642bc5b"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-change_monomial_order(
-    basis: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    source_order: str,
-    target_order: str,
-) -> Optional[list[Expression]]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_change_monomial_order.ba2a72818a67"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.change_monomial_order</code></p>
+`Context.change_monomial_order(basis, variables, source_order, target_order)`
 
-```python signature
-change_monomial_order(
-    basis: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-    source_order: str,
-    target_order: str,
-) -> Optional[list[Expression]]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_change_monomial_order.25caa642bc5b"></a>
+`symi.change_monomial_order(basis, variables, source_order, target_order)`
 
 
 Convert a Gröbner basis of a **zero-dimensional** ideal from `source_order` to
@@ -515,33 +231,11 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### implicitize
 
-<a id="entry-presentation_python_api_session_implicitize"></a>
-<a id="placement-placement.python.python_module.module_implicitize.5dc8d52f5239"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-implicitize(
-    coordinates: Iterable[VariableLike],
-    parameters: Iterable[VariableLike],
-    parametric_expressions: Iterable[ExpressionLike],
-) -> Optional[list[Expression]]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_implicitize.3f4088cb5f55"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.implicitize</code></p>
+`Context.implicitize(coordinates, parameters, parametric_expressions)`
 
-```python signature
-implicitize(
-    coordinates: Iterable[VariableLike],
-    parameters: Iterable[VariableLike],
-    parametric_expressions: Iterable[ExpressionLike],
-) -> Optional[list[Expression]]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_implicitize.5dc8d52f5239"></a>
+`symi.implicitize(coordinates, parameters, parametric_expressions)`
 
 
 The implicit ideal of a parametric curve or surface \(x_i = f_i(\operatorname{parameters})\) (the
@@ -571,4 +265,14 @@ print(symi.coefficient(polynomial, "x", 1))
 print(symi.polynomial_gcd(x**2 - 1, x - 1, "x"))
 print(symi.resultant(x**2 - 1, x - 1, "x"))
 ```
+
+
+## Additional API
+
+<a id="placement-placement.python.python_class.cylindricalalgebraicdecomposition.6f69ff9d363f"></a>
+### CylindricalAlgebraicDecomposition
+
+`CylindricalAlgebraicDecomposition(expressions, variables, equational_constraints = [])`
+
+Returns `Self`.
 

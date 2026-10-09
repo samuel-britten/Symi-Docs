@@ -26,9 +26,6 @@ numeric *view*, never a decision.
 
 ### new
 
-*Not exposed by the Kotlin bindings. Available as [`ContextConstructor.new`](/symi/wasm/cad#new) in WASM / JavaScript.*
-
-
 Construct the CAD of the polynomials in the given variable order \(x_1,\ldots,x_n\);
 projection eliminates \(x_n\) first). With an empty `equational_constraints` list this
 is the full sign-invariant CAD (Brown fast path with Lazard fallback); listing
@@ -42,94 +39,58 @@ variables: string[], equational_constraints?: number[])`.
 
 ### cell_count
 
-The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
-
-<a id="entry-presentation_kotlin_api_cylindricalalgebraicdecomposition_cell_count"></a>
 <a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_cellcount.14b05e95579b"></a>
-<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
+`UniffiCylindricalAlgebraicDecomposition.cellCount(): kotlin.ULong`
 
-```kotlin signature
-fun cellCount(): kotlin.ULong
-```
 
 The number of full-dimensional cells partitioning \(\mathbb{R}^n\).
 
 ### cell_sample_point
 
+<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_cellsamplepoint.c82fc558efe6"></a>
+`UniffiCylindricalAlgebraicDecomposition.cellSamplePoint(index: kotlin.ULong): List<kotlin.Double>`
+
+
 The coordinates of the full cell's sample point as floats — a numeric view via
 the multi-precision evaluator, not a decision.
 
-<a id="entry-presentation_kotlin_api_cylindricalalgebraicdecomposition_cell_sample_point"></a>
-<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_cellsamplepoint.c82fc558efe6"></a>
-<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
-
-```kotlin signature
-fun cellSamplePoint(index: kotlin.ULong): List<kotlin.Double>
-```
-
-The coordinates of the full cell's sample point as floats — a numeric view via the multi-precision evaluator, not a decision.
-
 ### cell_sign_vector
+
+<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_cellsignvector.76fe7f2d0cee"></a>
+`UniffiCylindricalAlgebraicDecomposition.cellSignVector(index: kotlin.ULong): List<kotlin.Long>`
+
 
 The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in
 input order.
 
-<a id="entry-presentation_kotlin_api_cylindricalalgebraicdecomposition_cell_sign_vector"></a>
-<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_cellsignvector.76fe7f2d0cee"></a>
-<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
-
-```kotlin signature
-fun cellSignVector(index: kotlin.ULong): List<kotlin.Long>
-```
-
-The exact sign (\(-1\), \(0\), or \(+1\)) of each input polynomial on the full cell, in input order.
-
 ### cell_kind
+
+<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_cellkind.ac4f5b9ed76f"></a>
+`UniffiCylindricalAlgebraicDecomposition.cellKind(index: kotlin.ULong): UniffiCadCellKind`
+
 
 `"section"` or `"sector"` — whether the cell is a root section or an open
 interval in its top variable.
 
-<a id="entry-presentation_kotlin_api_cylindricalalgebraicdecomposition_cell_kind"></a>
-<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_cellkind.ac4f5b9ed76f"></a>
-<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
-
-```kotlin signature
-fun cellKind(index: kotlin.ULong): UniffiCadCellKind
-```
-
-`"section"` or `"sector"` — whether the cell is a root section or an open interval in its top variable.
-
 ### cell_dimension
+
+<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_celldimension.e9183a21c278"></a>
+`UniffiCylindricalAlgebraicDecomposition.cellDimension(index: kotlin.ULong): kotlin.ULong`
+
 
 The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of
 sector coordinates along its cylindrical stack).
 
-<a id="entry-presentation_kotlin_api_cylindricalalgebraicdecomposition_cell_dimension"></a>
-<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_celldimension.e9183a21c278"></a>
-<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
-
-```kotlin signature
-fun cellDimension(index: kotlin.ULong): kotlin.ULong
-```
-
-The geometric dimension of the full cell as a subset of \(\mathbb{R}^n\) (the number of sector coordinates along its cylindrical stack).
-
 ### projection_operator_used
+
+<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_projectionoperatorused.7d9b03053e23"></a>
+`UniffiCylindricalAlgebraicDecomposition.projectionOperatorUsed(): kotlin.String`
+
 
 The projection operator the decomposition was built with:
 `"brown"` for the well-oriented fast path, `"lazard"` when the well-orientedness
 guard forced the complete fallback, `"equational_constraint"` for an
 equational-constraint CAD.
-
-<a id="entry-presentation_kotlin_api_cylindricalalgebraicdecomposition_projection_operator_used"></a>
-<a id="placement-placement.kotlin.kotlin_object.unifficylindricalalgebraicdecomposition_projectionoperatorused.7d9b03053e23"></a>
-<p class="symi-entry-owner">UniffiCylindricalAlgebraicDecomposition method</p>
-
-```kotlin signature
-fun projectionOperatorUsed(): kotlin.String
-```
-
-The projection operator the decomposition was built with: `"brown"` for the well-oriented fast path, `"lazard"` when the well-orientedness guard forced the complete fallback, `"equational_constraint"` for an equational-constraint CAD.
 
 ## Example
 

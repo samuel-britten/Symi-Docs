@@ -14,13 +14,8 @@ listed in [structured results](structured-results.md) and the generated
 
 ### rational_canonical_form
 
-<a id="entry-presentation_swift_api_matrix_rational_canonical_form"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_rationalcanonicalform.7b4daab24b35"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
-
-```swift signature
-func rationalCanonicalForm(variable: String) -> UniffiRationalCanonicalForm
-```
+`UniffiMatrix.rationalCanonicalForm(variable: String) -> UniffiRationalCanonicalForm`
 
 
 Returns the certified Frobenius canonical form over the rationals. Its invariant factors are
@@ -29,41 +24,32 @@ monic and ordered by divisibility, and `similarity` satisfies
 
 ### rational_canonical_form (result class)
 
-<a id="entry-presentation_swift_api_matrix_rational_canonical_form"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_rationalcanonicalform.7b4daab24b35"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
-
-```swift signature
-func rationalCanonicalForm(variable: String) -> UniffiRationalCanonicalForm
-```
+`UniffiMatrix.rationalCanonicalForm(variable: String) -> UniffiRationalCanonicalForm`
 
 
 ### canonical_form
 
-<a id="entry-presentation_swift_api_rationalcanonicalform_canonical_form"></a>
 <a id="placement-placement.swift.swift_object.uniffirationalcanonicalform_canonicalform.6c5103ed459c"></a>
-<p class="symi-entry-owner">UniffiRationalCanonicalForm method</p>
+`UniffiRationalCanonicalForm.canonicalForm() -> UniffiMatrix`
 
-```swift signature
-func canonicalForm() -> UniffiMatrix
-```
-
-The Frobenius canonical form of the decomposed matrix.
 
 ### invariant_factors
+
+<a id="placement-placement.swift.swift_object.uniffirationalcanonicalform_invariantfactors.b71e616e9a67"></a>
+`UniffiRationalCanonicalForm.invariantFactors() -> [UniffiExpression]`
+
+<a id="placement-placement.swift.swift_object.uniffismithnormalformdecomposition_invariantfactors.f66390cfec57"></a>
+`UniffiSmithNormalFormDecomposition.invariantFactors() -> [UniffiExpression]`
+
 
 The `similarity`, `minimal_polynomial`, and `characteristic_polynomial` getters return the
 corresponding certified fields documented by their shared headings above.
 
 ### hermite_normal_form
 
-<a id="entry-presentation_swift_api_matrix_hermite_normal_form"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_hermitenormalform.16925cab8962"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
-
-```swift signature
-func hermiteNormalForm() -> UniffiHermiteNormalFormDecomposition
-```
+`UniffiMatrix.hermiteNormalForm() -> UniffiHermiteNormalFormDecomposition`
 
 
 Returns the canonical row-oriented Hermite normal form `H`, a unimodular
@@ -75,13 +61,8 @@ getters documented below.
 
 ### column_hermite_normal_form
 
-<a id="entry-presentation_swift_api_matrix_column_hermite_normal_form"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_columnhermitenormalform.45ba72ee7456"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
-
-```swift signature
-func columnHermiteNormalForm() -> UniffiHermiteNormalFormDecomposition
-```
+`UniffiMatrix.columnHermiteNormalForm() -> UniffiHermiteNormalFormDecomposition`
 
 
 The transpose-dual column form, returning `H`, a unimodular `V` satisfying
@@ -90,13 +71,8 @@ The transpose-dual column form, returning `H`, a unimodular `V` satisfying
 
 ### smith_normal_form
 
-<a id="entry-presentation_swift_api_matrix_smith_normal_form"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_smithnormalform.8f12c4b9688e"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
-
-```swift signature
-func smithNormalForm() -> UniffiSmithNormalFormDecomposition
-```
+`UniffiMatrix.smithNormalForm() -> UniffiSmithNormalFormDecomposition`
 
 
 Returns the canonical integer Smith normal form `D`, unimodular transformations
@@ -108,13 +84,8 @@ unimodularity of both transformations before return. **Notes:** WASM returns a
 
 ### integer_cokernel_structure
 
-<a id="entry-presentation_swift_api_matrix_integer_cokernel_structure"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_integercokernelstructure.eedc8e2f2d6d"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
-
-```swift signature
-func integerCokernelStructure() -> UniffiIntegerCokernelData
-```
+`UniffiMatrix.integerCokernelStructure() -> UniffiIntegerCokernelData`
 
 
 Returns the free rank and nontrivial torsion invariant factors of
@@ -122,55 +93,40 @@ Returns the free rank and nontrivial torsion invariant factors of
 
 ### smith
 
-<a id="entry-presentation_swift_api_smithnormalformdecomposition_smith"></a>
 <a id="placement-placement.swift.swift_object.uniffismithnormalformdecomposition_smith.c0a431630649"></a>
-<p class="symi-entry-owner">UniffiSmithNormalFormDecomposition method</p>
+`UniffiSmithNormalFormDecomposition.smith() -> UniffiMatrix`
 
-```swift signature
-func smith() -> UniffiMatrix
-```
-
-The Smith normal form `S`.
 
 ### row_transformation
 
-<a id="entry-presentation_swift_api_smithnormalformdecomposition_row_transformation"></a>
 <a id="placement-placement.swift.swift_object.uniffismithnormalformdecomposition_rowtransformation.fd4d7867eef5"></a>
-<p class="symi-entry-owner">UniffiSmithNormalFormDecomposition method</p>
+`UniffiSmithNormalFormDecomposition.rowTransformation() -> UniffiMatrix`
 
-```swift signature
-func rowTransformation() -> UniffiMatrix
-```
-
-The unimodular row transformation `U` satisfying `U * matrix * V == S`.
 
 ### column_transformation
 
-<a id="entry-presentation_swift_api_smithnormalformdecomposition_column_transformation"></a>
 <a id="placement-placement.swift.swift_object.uniffismithnormalformdecomposition_columntransformation.f57ef026d390"></a>
-<p class="symi-entry-owner">UniffiSmithNormalFormDecomposition method</p>
+`UniffiSmithNormalFormDecomposition.columnTransformation() -> UniffiMatrix`
 
-```swift signature
-func columnTransformation() -> UniffiMatrix
-```
-
-The unimodular column transformation `V` satisfying `U * matrix * V == S`.
 
 ### smith_invariant_factors
 
 ### free_rank
 
+<a id="placement-placement.swift.swift_object.uniffiintegercokerneldata_freerank.55f161ee19c3"></a>
+`UniffiIntegerCokernelData.freeRank() -> UInt64`
+
+
 ### torsion_invariant_factors
+
+<a id="placement-placement.swift.swift_object.uniffiintegercokerneldata_torsioninvariantfactors.5ca19d04444a"></a>
+`UniffiIntegerCokernelData.torsionInvariantFactors() -> [UniffiExpression]`
+
 
 ### integer_kernel_basis
 
-<a id="entry-presentation_swift_api_matrix_integer_kernel_basis"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_integerkernelbasis.e889877e3636"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
-
-```swift signature
-func integerKernelBasis() -> [UniffiMatrix]
-```
+`UniffiMatrix.integerKernelBasis() -> [UniffiMatrix]`
 
 
 A canonical basis of the integer kernel \(\{x \in \mathbb{Z}^n : M x = 0\}\), returned as
@@ -178,13 +134,8 @@ column matrices.
 
 ### integer_row_lattice_basis
 
-<a id="entry-presentation_swift_api_matrix_integer_row_lattice_basis"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_integerrowlatticebasis.6e5b82d21c83"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
-
-```swift signature
-func integerRowLatticeBasis() -> [UniffiMatrix]
-```
+`UniffiMatrix.integerRowLatticeBasis() -> [UniffiMatrix]`
 
 
 The nonzero rows of the row Hermite form, returned as row matrices; these form
@@ -192,13 +143,8 @@ the canonical basis of the integer row lattice.
 
 ### integer_image_lattice_basis
 
-<a id="entry-presentation_swift_api_matrix_integer_image_lattice_basis"></a>
 <a id="placement-placement.swift.swift_object.uniffimatrix_integerimagelatticebasis.d83919f36d6a"></a>
-<p class="symi-entry-owner">UniffiMatrix method</p>
-
-```swift signature
-func integerImageLatticeBasis() -> [UniffiMatrix]
-```
+`UniffiMatrix.integerImageLatticeBasis() -> [UniffiMatrix]`
 
 
 The nonzero columns of the column Hermite form, returned as column matrices;
@@ -206,134 +152,27 @@ these form the canonical basis of `M Z^n`.
 
 ### hermite
 
-<a id="entry-presentation_swift_api_hermitenormalformdecomposition_hermite"></a>
 <a id="placement-placement.swift.swift_object.uniffihermitenormalformdecomposition_hermite.91fdd7e3561d"></a>
-<p class="symi-entry-owner">UniffiHermiteNormalFormDecomposition method</p>
+`UniffiHermiteNormalFormDecomposition.hermite() -> UniffiMatrix`
 
-```swift signature
-func hermite() -> UniffiMatrix
-```
-
-The Hermite normal form `H`.
 
 ### transformation
 
-<a id="entry-presentation_swift_api_hermitenormalformdecomposition_transformation"></a>
 <a id="placement-placement.swift.swift_object.uniffihermitenormalformdecomposition_transformation.5f85a0030596"></a>
-<p class="symi-entry-owner">UniffiHermiteNormalFormDecomposition method</p>
+`UniffiHermiteNormalFormDecomposition.transformation() -> UniffiMatrix`
 
-```swift signature
-func transformation() -> UniffiMatrix
-```
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationcanonicalizationresult_transformation.e6d1a1488442"></a>
+`UniffiPartialDifferentialEquationCanonicalizationResult.transformation() -> UniffiPartialDifferentialEquationTransformationResult?`
 
 
 ### pivot_columns
 
-The `rank` getter reuses the matrix `rank` heading above.
-
-
-<a id="entry-presentation_swift_api_hermitenormalformdecomposition_pivot_columns"></a>
 <a id="placement-placement.swift.swift_object.uniffihermitenormalformdecomposition_pivotcolumns.6515a6f95d4e"></a>
-<p class="symi-entry-owner">UniffiHermiteNormalFormDecomposition method</p>
+`UniffiHermiteNormalFormDecomposition.pivotColumns() -> [UInt64]`
 
-```swift signature
-func pivotColumns() -> [UInt64]
-```
 
 The `rank` getter reuses the matrix `rank` heading above.
+
 
 ## Example
-
-
-## Additional API
-
-### HermiteNormalFormDecomposition
-
-#### HermiteNormalFormDecomposition.rank
-
-<a id="entry-presentation_swift_api_hermitenormalformdecomposition_rank"></a>
-<a id="placement-placement.swift.swift_object.uniffihermitenormalformdecomposition_rank.11ddb031a40e"></a>
-<p class="symi-entry-owner">UniffiHermiteNormalFormDecomposition method</p>
-
-```swift signature
-func rank() -> UInt64
-```
-
-Rank via Bareiss fraction-free elimination.
-
-### RationalCanonicalForm
-
-#### RationalCanonicalForm.characteristic_polynomial
-
-<a id="entry-presentation_swift_api_rationalcanonicalform_characteristic_polynomial"></a>
-<a id="placement-placement.swift.swift_object.uniffirationalcanonicalform_characteristicpolynomial.c12f82010f35"></a>
-<p class="symi-entry-owner">UniffiRationalCanonicalForm method</p>
-
-```swift signature
-func characteristicPolynomial() -> UniffiExpression
-```
-
-\(\det(\lambda I - M)\) as a polynomial in the named variable.
-
-#### RationalCanonicalForm.invariant_factors
-
-<a id="entry-presentation_swift_api_rationalcanonicalform_invariant_factors"></a>
-<a id="placement-placement.swift.swift_object.uniffirationalcanonicalform_invariantfactors.b71e616e9a67"></a>
-<p class="symi-entry-owner">UniffiRationalCanonicalForm method</p>
-
-```swift signature
-func invariantFactors() -> [UniffiExpression]
-```
-
-The certified invariant factors, monic and ordered by divisibility.
-
-#### RationalCanonicalForm.minimal_polynomial
-
-<a id="entry-presentation_swift_api_rationalcanonicalform_minimal_polynomial"></a>
-<a id="placement-placement.swift.swift_object.uniffirationalcanonicalform_minimalpolynomial.4ae4807d758a"></a>
-<p class="symi-entry-owner">UniffiRationalCanonicalForm method</p>
-
-```swift signature
-func minimalPolynomial() -> UniffiExpression
-```
-
-The monic minimal polynomial over the rationals. The matrix must have rational entries.
-
-#### RationalCanonicalForm.similarity
-
-<a id="entry-presentation_swift_api_rationalcanonicalform_similarity"></a>
-<a id="placement-placement.swift.swift_object.uniffirationalcanonicalform_similarity.acd220afd952"></a>
-<p class="symi-entry-owner">UniffiRationalCanonicalForm method</p>
-
-```swift signature
-func similarity() -> UniffiMatrix
-```
-
-The certified change of basis `S`, satisfying `matrix * S == S * canonical_form`.
-
-### SmithNormalFormDecomposition
-
-#### SmithNormalFormDecomposition.invariant_factors
-
-<a id="entry-presentation_swift_api_smithnormalformdecomposition_invariant_factors"></a>
-<a id="placement-placement.swift.swift_object.uniffismithnormalformdecomposition_invariantfactors.f66390cfec57"></a>
-<p class="symi-entry-owner">UniffiSmithNormalFormDecomposition method</p>
-
-```swift signature
-func invariantFactors() -> [UniffiExpression]
-```
-
-The certified invariant factors, monic and ordered by divisibility.
-
-#### SmithNormalFormDecomposition.rank
-
-<a id="entry-presentation_swift_api_smithnormalformdecomposition_rank"></a>
-<a id="placement-placement.swift.swift_object.uniffismithnormalformdecomposition_rank.c8c1faa7c22b"></a>
-<p class="symi-entry-owner">UniffiSmithNormalFormDecomposition method</p>
-
-```swift signature
-func rank() -> UInt64
-```
-
-Rank via Bareiss fraction-free elimination.
 

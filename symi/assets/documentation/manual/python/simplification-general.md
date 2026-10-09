@@ -8,39 +8,17 @@ presentation passes are on
 
 ### simplify
 
-<a id="entry-presentation_python_api_session_simplify"></a>
-<a id="placement-placement.python.python_module.module_simplify.62fac3beaaac"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-simplify(input_expression: ExpressionLike) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
+<a id="placement-placement.python.python_class.assumptionscope_simplify.623d7017e342"></a>
+`AssumptionScope.simplify(input_expression)`
 
 <a id="placement-placement.python.python_class.context_simplify.f7e121b1c5bc"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.simplify</code></p>
-
-```python signature
-simplify(input_expression: ExpressionLike) -> Expression
-```
+`Context.simplify(input_expression)`
 
 <a id="placement-placement.python.python_class.expression_simplify.38b2371c5a4e"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.simplify</code></p>
+`Expression.simplify()`
 
-```python signature
-simplify() -> Expression
-```
-
-<a id="placement-placement.python.python_class.assumptionscope_simplify.623d7017e342"></a>
-<p class="symi-entry-owner">Variant using local assumptions — AssumptionScope method: <code>AssumptionScope.simplify</code></p>
-
-```python signature
-simplify(input_expression: ExpressionLike) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_simplify.62fac3beaaac"></a>
+`symi.simplify(input_expression)`
 
 
 
@@ -94,32 +72,14 @@ guards:
 
 ### cancel
 
-<a id="entry-presentation_python_api_session_cancel"></a>
-<a id="placement-placement.python.python_module.module_cancel.0b37541fa3f5"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-cancel(input_expression: ExpressionLike) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_cancel.3f7f3f6e0396"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.cancel</code></p>
-
-```python signature
-cancel(input_expression: ExpressionLike) -> Expression
-```
+`Context.cancel(input_expression)`
 
 <a id="placement-placement.python.python_class.expression_cancel.2f5d9901ac77"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.cancel</code></p>
+`Expression.cancel()`
 
-```python signature
-cancel() -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_cancel.0b37541fa3f5"></a>
+`symi.cancel(input_expression)`
 
 
 
@@ -128,32 +88,14 @@ polynomial GCD of numerator and denominator.
 
 ### together
 
-<a id="entry-presentation_python_api_session_together"></a>
-<a id="placement-placement.python.python_module.module_together.dff63b559f8f"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-together(input_expression: ExpressionLike) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_together.1765f4684f37"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.together</code></p>
-
-```python signature
-together(input_expression: ExpressionLike) -> Expression
-```
+`Context.together(input_expression)`
 
 <a id="placement-placement.python.python_class.expression_together.94692be30b5a"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.together</code></p>
+`Expression.together()`
 
-```python signature
-together() -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_together.dff63b559f8f"></a>
+`symi.together(input_expression)`
 
 
 
@@ -193,44 +135,3 @@ print((1 + 4 * symi.sqrt(r) + 4 * r) ** symi.rational(-1, 2))
 print(symi.sqrt(1 - 4 * symi.sqrt(r) + 4 * r))
 ```
 
-
-### simplify_under_constraint
-
-<a id="entry-presentation_python_api_session_simplify_under_constraint"></a>
-<a id="placement-placement.python.python_module.module_simplify_under_constraint.24b8db7c930a"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-simplify_under_constraint(
-    input_expression: ExpressionLike,
-    constraint: ExpressionLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.python.python_class.context_simplify_under_constraint.f9667336f9db"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.simplify_under_constraint</code></p>
-
-```python signature
-simplify_under_constraint(
-    input_expression: ExpressionLike,
-    constraint: ExpressionLike,
-) -> Expression
-```
-
-<a id="placement-placement.python.python_class.expression_simplify_under_constraint.2ab59e8546d9"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.simplify_under_constraint</code></p>
-
-```python signature
-simplify_under_constraint(constraint: ExpressionLike) -> Expression
-```
-
-</details>
-
-
-Simplify under a local bounded logical constraint without changing symbol
-assumptions. The constraint is in force for this call alone; nothing about it
-survives into the context, so simplifying `sqrt(x**2)` under `x > 0` does not
-make `x` positive for any later operation.

@@ -8,32 +8,14 @@ the search-based ladder see
 
 ### expand
 
-<a id="entry-presentation_wasm_api_session_expand"></a>
-<a id="placement-placement.wasm.wasm_module.module_expand.debe9b25c914"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-expand(input_expression: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_expand.d98009438d4a"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.expand</code></p>
-
-```typescript signature
-expand(input_expression: Expression): Expression
-```
+Raw WebAssembly: `pub fn expand(&self, input_expression: &Expression) -> Result<Expression, JsError>`
 
 <a id="placement-placement.wasm.wasm_class.expression_expand.3ba03dbd7b00"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.expand</code></p>
+Raw WebAssembly: `pub fn expand(&self) -> Result<Expression, JsError>`
 
-```typescript signature
-expand(): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_expand.debe9b25c914"></a>
+Raw WebAssembly: `fn expand(input_expression: &Expression) -> Result<Expression, JsError>`
 
 
 
@@ -41,38 +23,7 @@ Expand products, integer powers, and supported algebraic forms.
 
 ### partial_fractions
 
-<a id="entry-presentation_wasm_api_session_partial_fractions"></a>
-<a id="placement-placement.wasm.wasm_module.module_partialfractions.35aaeff54bae"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-partialFractions(
-    input_expression: Expression,
-    variable: string,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_partialfractions.c9e0f734b93a"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.partialFractions</code></p>
-
-```typescript signature
-partialFractions(
-    input_expression: Expression,
-    variable: string,
-): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_partialfractions.cd98977fa321"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.partialFractions</code></p>
-
-```typescript signature
-partialFractions(variable: string): Expression
-```
-
-</details>
+*Not exposed by the WASM / JavaScript bindings. Available as [`Context.partial_fractions`](/symi/python/algebraic-transforms#partial_fractions) in Python, [`UniffiExpression.partialFractions`](/symi/kotlin/algebraic-transforms#partial_fractions) in Kotlin, [`UniffiExpression.partialFractions`](/symi/swift/algebraic-transforms#partial_fractions) in Swift, [`api::algebra::Session::partial_fractions`](/symi/rust/algebraic-transforms#partial_fractions) in Rust.*
 
 
 
@@ -86,38 +37,14 @@ For factorization, cancellation, collection, and radical operations, use
 
 ### factor
 
-<a id="entry-presentation_wasm_api_session_factor"></a>
-<a id="placement-placement.wasm.wasm_module.module_factor.1a856a4538bd"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-factor(
-    input_expression: Expression,
-    gaussian?: boolean | null,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_factor.631689a43337"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.factor</code></p>
-
-```typescript signature
-factor(
-    input_expression: Expression,
-    gaussian?: boolean | null,
-): Expression
-```
+Raw WebAssembly: `pub fn factor(&self, input_expression: &Expression, gaussian: Option<bool>) -> Result<Expression, JsError>`
 
 <a id="placement-placement.wasm.wasm_class.expression_factor.86dbcc9c348d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.factor</code></p>
+Raw WebAssembly: `pub fn factor(&self, gaussian: Option<bool>) -> Result<Expression, JsError>`
 
-```typescript signature
-factor(gaussian?: boolean | null): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_factor.1a856a4538bd"></a>
+Raw WebAssembly: `fn factor(input_expression: &Expression, gaussian: Option<bool>) -> Result<Expression, JsError>`
 
 
 
@@ -127,32 +54,14 @@ Polynomial factorization over the rationals (full multivariate). With
 
 ### collect
 
-<a id="entry-presentation_wasm_api_session_collect"></a>
-<a id="placement-placement.wasm.wasm_module.module_collect.891acef02c13"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-collect(input_expression: Expression, generator: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_collect.bdcb1b32b44d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.collect</code></p>
-
-```typescript signature
-collect(input_expression: Expression, generator: Expression): Expression
-```
+Raw WebAssembly: `pub fn collect(&self, input_expression: &Expression, generator: &Expression) -> Result<Expression, JsError>`
 
 <a id="placement-placement.wasm.wasm_class.expression_collect.077961f6224f"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.collect</code></p>
+Raw WebAssembly: `pub fn collect(&self, generator: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-collect(generator: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_collect.891acef02c13"></a>
+Raw WebAssembly: `fn collect(input_expression: &Expression, generator: &Expression) -> Result<Expression, JsError>`
 
 
 
@@ -166,38 +75,7 @@ generator that appears with only a single power, returns the input unchanged.
 
 ### complete_the_square
 
-<a id="entry-presentation_wasm_api_session_complete_the_square"></a>
-<a id="placement-placement.wasm.wasm_module.module_completethesquare.bf40d9a8b764"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-completeTheSquare(
-    input_expression: Expression,
-    variable: Expression,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_completethesquare.7c0eae8e0253"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.completeTheSquare</code></p>
-
-```typescript signature
-completeTheSquare(
-    input_expression: Expression,
-    variable: Expression,
-): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_completethesquare.3d862f31a1ce"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.completeTheSquare</code></p>
-
-```typescript signature
-completeTheSquare(variable: Expression): Expression
-```
-
-</details>
+*Not exposed by the WASM / JavaScript bindings. Available as [`Context.complete_the_square`](/symi/python/algebraic-transforms#complete_the_square) in Python, [`UniffiExpression.completeTheSquare`](/symi/kotlin/algebraic-transforms#complete_the_square) in Kotlin, [`UniffiExpression.completeTheSquare`](/symi/swift/algebraic-transforms#complete_the_square) in Swift, [`api::algebra::Session::complete_the_square`](/symi/rust/algebraic-transforms#complete_the_square) in Rust.*
 
 
 
@@ -225,32 +103,7 @@ unrestricted `a` and completes when `a` is assumed positive.
 
 ### factor_common_terms
 
-<a id="entry-presentation_wasm_api_session_factor_common_terms"></a>
-<a id="placement-placement.wasm.wasm_module.module_factorcommonterms.83f0674fae02"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-factorCommonTerms(input_expression: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_factorcommonterms.1a2013256c21"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.factorCommonTerms</code></p>
-
-```typescript signature
-factorCommonTerms(input_expression: Expression): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_factorcommonterms.b46aa49b5edb"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.factorCommonTerms</code></p>
-
-```typescript signature
-factorCommonTerms(): Expression
-```
-
-</details>
+*Not exposed by the WASM / JavaScript bindings. Available as [`Context.factor_common_terms`](/symi/python/algebraic-transforms#factor_common_terms) in Python, [`UniffiExpression.factorCommonTerms`](/symi/kotlin/algebraic-transforms#factor_common_terms) in Kotlin, [`UniffiExpression.factorCommonTerms`](/symi/swift/algebraic-transforms#factor_common_terms) in Swift, [`api::algebra::Session::factor_common_terms`](/symi/rust/algebraic-transforms#factor_common_terms) in Rust.*
 
 
 
@@ -271,32 +124,7 @@ further — that is `factor`'s job.
 
 ### rationalize_denominator
 
-<a id="entry-presentation_wasm_api_session_rationalize_denominator"></a>
-<a id="placement-placement.wasm.wasm_module.module_rationalizedenominator.ba11f83ec318"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-rationalizeDenominator(input_expression: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_rationalizedenominator.651ecc69ab9f"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.rationalizeDenominator</code></p>
-
-```typescript signature
-rationalizeDenominator(input_expression: Expression): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_rationalizedenominator.9a1f6b3cc535"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.rationalizeDenominator</code></p>
-
-```typescript signature
-rationalizeDenominator(): Expression
-```
-
-</details>
+*Not exposed by the WASM / JavaScript bindings. Available as [`Context.rationalize_denominator`](/symi/python/algebraic-transforms#rationalize_denominator) in Python, [`UniffiExpression.rationalizeDenominator`](/symi/kotlin/algebraic-transforms#rationalize_denominator) in Kotlin, [`UniffiExpression.rationalizeDenominator`](/symi/swift/algebraic-transforms#rationalize_denominator) in Swift, [`api::algebra::Session::rationalize_denominator`](/symi/rust/algebraic-transforms#rationalize_denominator) in Rust.*
 
 
 
@@ -309,32 +137,7 @@ bounded supported radical class or the exact remultiplication check fails.
 
 ### collect_radicals
 
-<a id="entry-presentation_wasm_api_session_collect_radicals"></a>
-<a id="placement-placement.wasm.wasm_module.module_collectradicals.618f2f1f120b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-collectRadicals(input_expression: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_collectradicals.8882f588936f"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.collectRadicals</code></p>
-
-```typescript signature
-collectRadicals(input_expression: Expression): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_collectradicals.c887746fcdff"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.collectRadicals</code></p>
-
-```typescript signature
-collectRadicals(): Expression
-```
-
-</details>
+*Not exposed by the WASM / JavaScript bindings. Available as [`Context.collect_radicals`](/symi/python/algebraic-transforms#collect_radicals) in Python, [`UniffiExpression.collectRadicals`](/symi/kotlin/algebraic-transforms#collect_radicals) in Kotlin, [`UniffiExpression.collectRadicals`](/symi/swift/algebraic-transforms#collect_radicals) in Swift, [`api::algebra::Session::collect_radicals`](/symi/rust/algebraic-transforms#collect_radicals) in Rust.*
 
 
 
@@ -344,32 +147,7 @@ distinct kernels are considered; inputs beyond that bound return unchanged.
 
 ### denest_radicals
 
-<a id="entry-presentation_wasm_api_session_denest_radicals"></a>
-<a id="placement-placement.wasm.wasm_module.module_denestradicals.56dce14cb552"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-denestRadicals(input_expression: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_denestradicals.2a3aa905082a"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.denestRadicals</code></p>
-
-```typescript signature
-denestRadicals(input_expression: Expression): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_denestradicals.d11a0ba4842a"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.denestRadicals</code></p>
-
-```typescript signature
-denestRadicals(): Expression
-```
-
-</details>
+*Not exposed by the WASM / JavaScript bindings. Available as [`Context.denest_radicals`](/symi/python/algebraic-transforms#denest_radicals) in Python, [`UniffiExpression.denestRadicals`](/symi/kotlin/algebraic-transforms#denest_radicals) in Kotlin, [`UniffiExpression.denestRadicals`](/symi/swift/algebraic-transforms#denest_radicals) in Swift, [`api::algebra::Session::denest_radicals`](/symi/rust/algebraic-transforms#denest_radicals) in Rust.*
 
 
 
@@ -383,4 +161,133 @@ candidate is verified by exact repowering and principal-real-sign selection.
 ## Example
 
 This family is not part of the recommended JavaScript facade in this release. Call it through the generated `symi.raw` layer, whose entries are listed with their wasm-bindgen signatures above, and read [Migration](migration.md) for the ownership rules that apply there.
+
+
+## Additional API
+
+<a id="placement-placement.wasm.wasm_class.context_collectradicals.8882f588936f"></a>
+### Context.collectRadicals
+
+`pub fn collect_radicals(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_denestpowers.4c2e62cdb07a"></a>
+### Context.denestPowers
+
+`pub fn denest_powers(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_denestradicals.2a3aa905082a"></a>
+### Context.denestRadicals
+
+`pub fn denest_radicals(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_expandpowerbase.d498d0612d9b"></a>
+### Context.expandPowerBase
+
+`pub fn expand_power_base(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_factorcommonterms.1a2013256c21"></a>
+### Context.factorCommonTerms
+
+`pub fn factor_common_terms(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_rationalizedenominator.651ecc69ab9f"></a>
+### Context.rationalizeDenominator
+
+`pub fn rationalize_denominator(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_collectradicals.c887746fcdff"></a>
+### Expression.collectRadicals
+
+`pub fn collect_radicals(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_denestpowers.9316950a8123"></a>
+### Expression.denestPowers
+
+`pub fn denest_powers(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_denestradicals.d11a0ba4842a"></a>
+### Expression.denestRadicals
+
+`pub fn denest_radicals(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_expandpowerbase.6ea9637348b8"></a>
+### Expression.expandPowerBase
+
+`pub fn expand_power_base(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_factorcommonterms.b46aa49b5edb"></a>
+### Expression.factorCommonTerms
+
+`pub fn factor_common_terms(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_rationalizedenominator.9a1f6b3cc535"></a>
+### Expression.rationalizeDenominator
+
+`pub fn rationalize_denominator(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_collectradicals.618f2f1f120b"></a>
+### module.collectRadicals
+
+`fn collect_radicals(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_denestpowers.73ac4ed785a7"></a>
+### module.denestPowers
+
+`fn denest_powers(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_denestradicals.56dce14cb552"></a>
+### module.denestRadicals
+
+`fn denest_radicals(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_expandpowerbase.b3c245130f9d"></a>
+### module.expandPowerBase
+
+`fn expand_power_base(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_factorcommonterms.83f0674fae02"></a>
+### module.factorCommonTerms
+
+`fn factor_common_terms(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_rationalizedenominator.ba11f83ec318"></a>
+### module.rationalizeDenominator
+
+`fn rationalize_denominator(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
 

@@ -11,13 +11,8 @@ Create a fresh context with an empty symbol table and expression store.
 
 ### reset_context
 
-<a id="entry-presentation_rust_api_session_reset_context"></a>
 <a id="placement-placement.rust.native_rust.api_session_reset_context.a0cb4531009e"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn reset_context(&self) -> Result<(), ApiError>
-```
+`symi::api::Session — pub fn reset_context(&self) -> Result<(), ApiError>`
 
 
 Replace the context's entire symbol table and expression store with fresh
@@ -32,13 +27,8 @@ weak expression store already keeps memory bounded by live objects (see
 
 ### parse
 
-<a id="entry-presentation_rust_api_session_parse"></a>
 <a id="placement-placement.rust.native_rust.api_session_parse.98b4924e2023"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn parse(&self, text: &str) -> Result<Expression, ApiError>
-```
+`symi::api::Session — pub fn parse(&self, text: &str) -> Result<Expression, ApiError>`
 
 
 Parse Symi textual syntax into an expression. Accepts `^` and `**` for
@@ -49,16 +39,8 @@ parameters.
 
 ### parse_latex
 
-<a id="entry-presentation_rust_api_session_parse_latex"></a>
 <a id="placement-placement.rust.native_rust.api_serialization_session_parse_latex.79a92eea5dd7"></a>
-<p class="symi-entry-owner">api::serialization::Session method</p>
-
-```rust signature
-pub fn parse_latex(
-    &self,
-    latex: &str,
-) -> Result<MathematicalObject, ApiError>
-```
+`symi::api::serialization::Session — pub fn parse_latex(&self, latex: &str) -> Result<MathematicalObject, ApiError>`
 
 
 Parse a LaTeX string in Symi's canonical input dialect — the inverse of
@@ -86,17 +68,8 @@ expansion.
 
 ### parse_latex_with_environment
 
-<a id="entry-presentation_rust_api_session_parse_latex_with_environment"></a>
 <a id="placement-placement.rust.native_rust.api_serialization_session_parse_latex_with_environment.05017f9a72f3"></a>
-<p class="symi-entry-owner">api::serialization::Session method</p>
-
-```rust signature
-pub fn parse_latex_with_environment(
-    &self,
-    latex: &str,
-    serialized_definitions: &[String],
-) -> Result<MathematicalObject, ApiError>
-```
+`symi::api::serialization::Session — pub fn parse_latex_with_environment(&self, latex: &str, serialized_definitions: &[String]) -> Result<MathematicalObject, ApiError>`
 
 
 Parse LaTeX after building an ordered definition environment. Each serialized
@@ -111,13 +84,8 @@ as a module-level function.
 
 ### symbol
 
-<a id="entry-presentation_rust_api_session_symbol"></a>
 <a id="placement-placement.rust.native_rust.api_session_symbol.9302d6a9670a"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn symbol(&self, name: &str) -> Expression
-```
+`symi::api::Session — pub fn symbol(&self, name: &str) -> Expression`
 
 
 Intern a symbol and (optionally) attach assumptions used by the assumption
@@ -136,16 +104,11 @@ over.
 
 ### integer
 
-<a id="entry-presentation_rust_api_session_integer"></a>
 <a id="placement-placement.rust.native_rust.api_session_integer.b307d00d6db8"></a>
-<p class="symi-entry-owner">api::Session method</p>
+`symi::api::Session — pub fn integer<IntegerType: ExactIntegerInput>(&self, value: IntegerType) -> Expression`
 
-```rust signature
-pub fn integer<IntegerType: ExactIntegerInput>(
-    &self,
-    value: IntegerType,
-) -> Expression
-```
+<a id="placement-placement.rust.native_rust.api_symboldeclaration_integer.f5df3ac24a91"></a>
+`symi::api::SymbolDeclaration — pub integer:`
 
 
 Build an arbitrary-precision exact integer. Python `bool` values are rejected. JavaScript's
@@ -153,17 +116,11 @@ recommended facade accepts `bigint` and safe integral `number` values.
 
 ### rational
 
-<a id="entry-presentation_rust_api_session_rational"></a>
 <a id="placement-placement.rust.native_rust.api_session_rational.f8635006d2e3"></a>
-<p class="symi-entry-owner">api::Session method</p>
+`symi::api::Session — pub fn rational<NumeratorType: ExactIntegerInput, DenominatorType: ExactIntegerInput>(&self, numerator: NumeratorType, denominator: DenominatorType) -> Result<Expression, ApiError>`
 
-```rust signature
-pub fn rational<NumeratorType: ExactIntegerInput, DenominatorType: ExactIntegerInput>(
-    &self,
-    numerator: NumeratorType,
-    denominator: DenominatorType,
-) -> Result<Expression, ApiError>
-```
+<a id="placement-placement.rust.native_rust.api_symboldeclaration_rational.f7d69b438646"></a>
+`symi::api::SymbolDeclaration — pub rational:`
 
 
 
@@ -173,41 +130,38 @@ integers. A zero denominator is an argument error. Python also accepts
 
 ### integer_from_string
 
-<a id="entry-presentation_rust_api_session_integer_from_string"></a>
 <a id="placement-placement.rust.native_rust.api_session_integer_from_string.4bd26e7f245f"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn integer_from_string(
-    &self,
-    text: &str,
-) -> Result<Expression, ApiError>
-```
+`symi::api::Session — pub fn integer_from_string(&self, text: &str) -> Result<Expression, ApiError>`
 
 
 Build an arbitrary-precision integer literal from its decimal string.
 
 ### rational_from_float
 
-<a id="entry-presentation_rust_api_session_rational_from_float"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_rational_from_float.4700f138745f"></a>
-<p class="symi-entry-owner">api::analysis::Session method</p>
-
-```rust signature
-pub fn rational_from_float(
-    &self,
-    value: f64,
-    maximum_denominator: u64,
-) -> Result<Expression, ApiError>
-```
+`symi::api::analysis::Session — pub fn rational_from_float(&self, value: f64, maximum_denominator: u64) -> Result<Expression, ApiError>`
 
 
 Closest rational with denominator \(\leq\) `max_denominator` (the
 `Fraction.limit_denominator` algorithm). Raises on non-finite input.
 
-Named unknown functions are built with `undefined_function`, whose handle,
-calls, and structural derivatives are documented together in
-[Undefined functions](undefined-functions.md).
+### undefined_function
+
+<a id="placement-placement.rust.native_rust.api_session_undefined_function.b08154793cea"></a>
+`symi::api::Session — pub fn undefined_function(&self, name: impl Into<String>) -> UndefinedFunction`
+
+
+A callable proxy for a user-named function. Calling it with expression
+arguments builds the function-call expression (see the object-model page and
+the worked ODE example).
+
+### call
+
+<a id="placement-placement.rust.native_rust.api_undefinedfunction_call.965b62005306"></a>
+`symi::api::UndefinedFunction — pub fn call<IteratorType>(&self, arguments: IteratorType) -> Result<Expression, ApiError> where IteratorType: IntoIterator<Item = Expression>`
+
+
+WASM spelling of the Python `f(x, …)` call syntax on `UndefinedFunction`.
 
 ## Example
 
@@ -230,183 +184,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Additional API
 
-### api::input
+<a id="placement-placement.rust.native_rust.api_variablelike_symbol.ea108610c8bd"></a>
+### api::VariableLike::Symbol
 
-<a id="entry-presentation_rust_native_module_api_input"></a>
-<a id="placement-placement.rust.native_rust.api_input.8a9e72fb40a6"></a>
-<p class="symi-entry-owner">api module</p>
+`symi::api::VariableLike — Symbol(&'a Expression)`
 
-```rust signature
-pub mod input;
-```
-
-Binding-neutral input types resolved by the native API.
-
-### integer_from_decimal
-
-<a id="entry-presentation_rust_api_session_integer_from_decimal"></a>
-<a id="placement-placement.rust.native_rust.api_session_integer_from_decimal.2d2b8493a55f"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn integer_from_decimal(
-    &self,
-    text: &str,
-) -> Result<Expression, ApiError>
-```
-
-Constructs an exact integer expression from a base-ten literal.
-
-### rational_from_decimal
-
-<a id="entry-presentation_rust_api_session_rational_from_decimal"></a>
-<a id="placement-placement.rust.native_rust.api_session_rational_from_decimal.f6490051ed73"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn rational_from_decimal(
-    &self,
-    text: &str,
-) -> Result<Expression, ApiError>
-```
-
-Constructs an exact rational expression from a base-ten integer or fraction literal.
-
-### rational_value
-
-<a id="entry-presentation_rust_api_session_rational_value"></a>
-<a id="placement-placement.rust.native_rust.api_session_rational_value.3ed6fbe3f4fb"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn rational_value(&self, value: exact_rational) -> Expression
-```
-
-Provides the `rational_value` operation on this native type.
-
-### variable_identifiers
-
-<a id="entry-presentation_rust_api_session_variable_identifiers"></a>
-<a id="placement-placement.rust.native_rust.api_session_variable_identifiers.dcc3cb9dc75f"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn variable_identifiers<'a, IteratorType, VariableType>(
-    &self,
-    variables: IteratorType,
-) -> Result<Vec<crate::symbol::SymbolIdentifier>, ApiError>
-where
-    IteratorType: IntoIterator<Item = VariableType>,
-    VariableType: Into<VariableLike<'a>>,
-```
-
-Resolve a collection of variable operands to interned symbol identifiers.
-
-### SymbolDeclaration
-
-<a id="entry-presentation_rust_api_symboldeclaration"></a>
-<a id="placement-placement.rust.native_rust.api_symboldeclaration.ea1f2e5c2494"></a>
-<p class="symi-entry-owner">Type</p>
-
-```rust signature
-pub struct SymbolDeclaration
-```
-
-Public native trait named `exact_integer_input`. The scalar facts a binding may attach to a symbol at interning time.
-
-#### SymbolDeclaration.finite
-
-<a id="entry-presentation_rust_api_symboldeclaration_finite"></a>
-<a id="placement-placement.rust.native_rust.api_symboldeclaration_finite.ba52d108961e"></a>
-<p class="symi-entry-owner">api::SymbolDeclaration field</p>
-
-```rust signature
-pub finite:
-```
-
-Declares the symbol finite.
-
-#### SymbolDeclaration.integer
-
-<a id="entry-presentation_rust_api_symboldeclaration_integer"></a>
-<a id="placement-placement.rust.native_rust.api_symboldeclaration_integer.f5df3ac24a91"></a>
-<p class="symi-entry-owner">api::SymbolDeclaration field</p>
-
-```rust signature
-pub integer:
-```
-
-Declares the symbol an integer.
-
-#### SymbolDeclaration.natural
-
-<a id="entry-presentation_rust_api_symboldeclaration_natural"></a>
-<a id="placement-placement.rust.native_rust.api_symboldeclaration_natural.455d307046dd"></a>
-<p class="symi-entry-owner">api::SymbolDeclaration field</p>
-
-```rust signature
-pub natural:
-```
-
-Declares the symbol a natural number.
-
-#### SymbolDeclaration.negative
-
-<a id="entry-presentation_rust_api_symboldeclaration_negative"></a>
-<a id="placement-placement.rust.native_rust.api_symboldeclaration_negative.564fad1f2247"></a>
-<p class="symi-entry-owner">api::SymbolDeclaration field</p>
-
-```rust signature
-pub negative:
-```
-
-Declares the symbol negative.
-
-#### SymbolDeclaration.nonzero
-
-<a id="entry-presentation_rust_api_symboldeclaration_nonzero"></a>
-<a id="placement-placement.rust.native_rust.api_symboldeclaration_nonzero.f19a4992ce86"></a>
-<p class="symi-entry-owner">api::SymbolDeclaration field</p>
-
-```rust signature
-pub nonzero:
-```
-
-Declares the symbol nonzero.
-
-#### SymbolDeclaration.positive
-
-<a id="entry-presentation_rust_api_symboldeclaration_positive"></a>
-<a id="placement-placement.rust.native_rust.api_symboldeclaration_positive.a3b681fcf1fc"></a>
-<p class="symi-entry-owner">api::SymbolDeclaration field</p>
-
-```rust signature
-pub positive:
-```
-
-Declares the symbol positive.
-
-#### SymbolDeclaration.rational
-
-<a id="entry-presentation_rust_api_symboldeclaration_rational"></a>
-<a id="placement-placement.rust.native_rust.api_symboldeclaration_rational.f7d69b438646"></a>
-<p class="symi-entry-owner">api::SymbolDeclaration field</p>
-
-```rust signature
-pub rational:
-```
-
-Declares the symbol rational.
-
-#### SymbolDeclaration.real
-
-<a id="entry-presentation_rust_api_symboldeclaration_real"></a>
-<a id="placement-placement.rust.native_rust.api_symboldeclaration_real.a208a60d0b05"></a>
-<p class="symi-entry-owner">api::SymbolDeclaration field</p>
-
-```rust signature
-pub real:
-```
-
-Declares the symbol real.
+Returns `variant`.
 

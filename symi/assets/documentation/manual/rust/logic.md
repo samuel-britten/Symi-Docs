@@ -18,54 +18,27 @@ Normal forms and Boolean simplification are documented in
 
 ### logical_true
 
-<a id="entry-presentation_rust_api_session_logical_true"></a>
 <a id="placement-placement.rust.native_rust.api_session_logical_true.622bf65ac118"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn logical_true(&self) -> Expression
-```
+`symi::api::Session — pub fn logical_true(&self) -> Expression`
 
 
 The Boolean constant true (\(\top\)).
 
 ### logical_false
 
-<a id="entry-presentation_rust_api_session_logical_false"></a>
 <a id="placement-placement.rust.native_rust.api_session_logical_false.73e7fda3fc79"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn logical_false(&self) -> Expression
-```
+`symi::api::Session — pub fn logical_false(&self) -> Expression`
 
 
 The Boolean constant false (\(\bot\)).
 
 ### evaluate_truth
 
-<a id="entry-presentation_rust_api_session_evaluate_truth"></a>
-<a id="placement-placement.rust.native_rust.api_session_evaluate_truth.06c39256d903"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn evaluate_truth(
-    &self,
-    target: &Expression,
-) -> Result<TruthValue, ApiError>
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.rust.native_rust.api_expression_evaluate_truth.175a083346f4"></a>
-<p class="symi-entry-owner">api::Expression method: <code>api::Expression::evaluate_truth</code></p>
+`symi::api::Expression — pub fn evaluate_truth(&self) -> Result<TruthValue, ApiError>`
 
-```rust signature
-pub fn evaluate_truth(&self) -> Result<TruthValue, ApiError>
-```
-
-</details>
+<a id="placement-placement.rust.native_rust.api_session_evaluate_truth.06c39256d903"></a>
+`symi::api::Session — pub fn evaluate_truth(&self, target: &Expression) -> Result<TruthValue, ApiError>`
 
 
 `evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or
@@ -107,19 +80,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
-
-
-## Additional API
-
-### api::logic
-
-<a id="entry-presentation_rust_native_module_api_logic"></a>
-<a id="placement-placement.rust.native_rust.api_logic.6fdadc26a67d"></a>
-<p class="symi-entry-owner">api module</p>
-
-```rust signature
-pub mod logic;
-```
-
-Logical normal-form and quantifier operations of the native API.
 

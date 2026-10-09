@@ -1,521 +1,101 @@
 <!DOCTYPE html>
-<html lang="en" data-language="wasm">
+<html id="doc" class="h-full w-full" lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Context safety — Symi WASM / JavaScript documentation</title>
-        <meta name="description" content="A context owns its symbols, assumptions, interned expressions, and structural objects. Rust calls this owner a Session. Every returned expression, matrix,…" />
-        <link rel="canonical" href="/symi/wasm/context-safety/" />
-        <meta name="color-scheme" content="light dark" />
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
-        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
-        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
-        <script>
-            document.documentElement.classList.add("symi-scripted");
-            try {
-                const stored_theme = localStorage.getItem("symi-documentation-theme");
-                if (stored_theme === "light" || stored_theme === "dark") {
-                    document.documentElement.dataset.theme = stored_theme;
-                }
-            } catch (error) {}
-        </script>
-        <script type="module" src="/symi/assets/site/documentation.js"></script>
-    </head>
-    <body data-page="context-safety" data-default-page="introduction" data-route-kind="page">
-        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
-        <header class="symi-header">
-            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
-            </button>
-            <a class="symi-brand" href="/symi/wasm/introduction/">
-                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
-                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
-            </a>
-            <div class="symi-header-tools">
-                <div class="symi-search" role="search" hidden>
-                    <label class="symi-visually-hidden" for="symi-search-input">Search the WASM / JavaScript documentation</label>
-                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
-                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
-                    <div id="symi-search-panel" class="symi-search-panel" hidden>
-                        <div class="symi-search-toolbar">
-                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
-                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
-                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">WASM / JavaScript</button>
-                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
-                            </div>
-                        </div>
-                        <p class="symi-search-status" role="status" aria-live="polite"></p>
-                        <ul class="symi-search-results"></ul>
-                    </div>
-                </div>
-                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Symi Documentation</title>
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
+        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
+        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
+        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
+        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
+        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
+
+        <template id="documentation-language-selector_">
+            <div class="symi-documentation-language-selector relative">
+                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="symi-documentation-language-label"></span>
+                    <span aria-hidden="true">▾</span>
                 </button>
-                <details class="symi-language-menu">
-                    <summary class="symi-language-summary" aria-label="Language: WASM / JavaScript"><span>WASM / JavaScript</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
-                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/context-safety/" data-language="python" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/context-safety/" data-language="wasm" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/context-safety/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/context-safety/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/context-safety/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
-                </details>
-                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
-                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
-                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
-                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
-                </button>
+                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
             </div>
-        </header>
-        <div class="symi-layout">
-            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
-                <div class="symi-sidebar-header">
-                    <span class="symi-sidebar-title">Topics</span>
-                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
-                    </button>
+        </template>
+
+        <template id="documentation-language-option_">
+            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
+        </template>
+
+        <template id="documentation-search_">
+            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
+                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
+                <div class="flex gap-1">
+                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
+                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
                 </div>
-                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/getting-started-javascript/">Getting started: JavaScript / WASM</a></div></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/default-context/">The default context and module-level functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-default-context" data-page="default-context"><span class="symi-visually-hidden">Show entries in The default context and module-level functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-default-context" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/context-safety/" aria-current="page">Context safety</a><button type="button" class="symi-nav-expand" aria-expanded="true" aria-controls="symi-nav-entries-context-safety" data-page="context-safety"><span class="symi-visually-hidden">Hide entries in Context safety</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-context-safety" data-loaded="true"><li class="symi-nav-entry-group"><span class="symi-nav-entry-type"><code>BulkExpressionOutcome</code></span><ul class="symi-nav-entry-members"><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_bulkexpressionoutcome_diagnostic"><code>diagnostic</code> <span class="symi-nav-entry-owner">BulkExpressionOutcome property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_bulkexpressionoutcome_index"><code>index</code> <span class="symi-nav-entry-owner">BulkExpressionOutcome property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_bulkexpressionoutcome_value"><code>value</code> <span class="symi-nav-entry-owner">BulkExpressionOutcome property</span></a></li></ul></li><li class="symi-nav-entry-group"><span class="symi-nav-entry-type"><code>BulkTextOutcome</code></span><ul class="symi-nav-entry-members"><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_bulktextoutcome_diagnostic"><code>diagnostic</code> <span class="symi-nav-entry-owner">BulkTextOutcome property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_bulktextoutcome_index"><code>index</code> <span class="symi-nav-entry-owner">BulkTextOutcome property</span></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_bulktextoutcome_value"><code>value</code> <span class="symi-nav-entry-owner">BulkTextOutcome property</span></a></li></ul></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_differentiate_bulk"><code>differentiateBulk</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_evaluate_numeric_bulk"><code>evaluateNumericBulk</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_execution_mode"><code>executionMode</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_expand_bulk"><code>expandBulk</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_host_wasm_module_hostcancellationcontroladdress"><code>hostCancellationControlAddress</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_host_wasm_module_hostcancellationcontrolbytelength"><code>hostCancellationControlByteLength</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_host_wasm_module_hostcancellationrequested"><code>hostCancellationRequested</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_host_wasm_module_hostcancellationslotcount"><code>hostCancellationSlotCount</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_host_wasm_module_hostcancellationslotticket"><code>hostCancellationSlotTicket</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_initialize_parallelism"><code>initializeParallelism</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_host_wasm_module_initthreadpoolwithcapability"><code>initThreadPoolWithCapability</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_parallelism_capability"><code>parallelismCapability</code></a></li><li class="symi-nav-entry-group"><span class="symi-nav-entry-type"><code>ParallelismCapability</code></span><ul class="symi-nav-entry-members"><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_parallelismcapability_active"><code>active</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_parallelismcapability_backend"><code>backend</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_parallelismcapability_compiled"><code>compiled</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_parallelismcapability_initialized"><code>initialized</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_parallelismcapability_maximum_operation_concurrency"><code>maximumOperationConcurrency</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_parallelismcapability_selected_mode"><code>selectedMode</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_parallelismcapability_unavailable_reason"><code>unavailableReason</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_parallelismcapability_worker_count"><code>workerCount</code></a></li></ul></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_host_wasm_module_releasehostcancellationslot"><code>releaseHostCancellationSlot</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_host_wasm_module_reservehostcancellationslot"><code>reserveHostCancellationSlot</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_serialize_bulk"><code>serializeBulk</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_set_execution_mode"><code>setExecutionMode</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_simplify_bulk"><code>simplifyBulk</code></a></li><li><a class="symi-nav-entry" href="/symi/wasm/context-safety/#entry-presentation_wasm_api_session_substitute_bulk"><code>substituteBulk</code></a></li></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/diagnostics/">Diagnostics and outcomes</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-diagnostics" data-page="diagnostics"><span class="symi-visually-hidden">Show entries in Diagnostics and outcomes</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-diagnostics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/specialized-canonical-forms/">Specialized canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-specialized-canonical-forms" data-page="specialized-canonical-forms"><span class="symi-visually-hidden">Show entries in Specialized canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-specialized-canonical-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/integral-transforms/">Integral transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-integral-transforms" data-page="integral-transforms"><span class="symi-visually-hidden">Show entries in Integral transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-integral-transforms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/undefined-functions/">Undefined functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-undefined-functions" data-page="undefined-functions"><span class="symi-visually-hidden">Show entries in Undefined functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-undefined-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/differential-equations/">Differential and recurrence equations</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/ordinary-differential-equations/">Ordinary differential equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-ordinary-differential-equations" data-page="ordinary-differential-equations"><span class="symi-visually-hidden">Show entries in Ordinary differential equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-ordinary-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/partial-differential-equations/">Partial differential equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-partial-differential-equations" data-page="partial-differential-equations"><span class="symi-visually-hidden">Show entries in Partial differential equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-partial-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/partial-differential-equation-results/">Partial differential equation results</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-partial-differential-equation-results" data-page="partial-differential-equation-results"><span class="symi-visually-hidden">Show entries in Partial differential equation results</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-partial-differential-equation-results" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/recurrence-equations/">Recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-recurrence-equations" data-page="recurrence-equations"><span class="symi-visually-hidden">Show entries in Recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-recurrence-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/logical-transforms/">Logical transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logical-transforms" data-page="logical-transforms"><span class="symi-visually-hidden">Show entries in Logical transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logical-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/zero-equivalence/">Zero equivalence</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-zero-equivalence" data-page="zero-equivalence"><span class="symi-visually-hidden">Show entries in Zero equivalence</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-zero-equivalence" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/category-index/">Category index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/alphabetical-index/">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/wasm/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
+                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
+                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
+            </section>
+        </template>
+
+        <template id="documentation-search-result_">
+            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
+                <a class="symi-documentation-search-result-link block">
+                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
+                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
+                </a>
+            </li>
+        </template>
+
+        <template id="documentation-navigation-section_">
+            <li class="symi-documentation-section">
+                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
+                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
+                    <span class="symi-documentation-section-label"></span>
+                </button>
+                <ul class="symi-documentation-section-entries hidden"></ul>
+            </li>
+        </template>
+
+        <template id="documentation-navigation-category_">
+            <li class="symi-documentation-category mb-3">
+                <h2 class="mb-1 text-sm font-semibold">
+                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
+                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
+                        <span class="symi-documentation-category-label"></span>
+                    </button>
+                </h2>
+                <ul class="symi-documentation-category-sections space-y-1"></ul>
+            </li>
+        </template>
+
+        <template id="documentation-navigation-entry_">
+            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
+        </template>
+
+        <template id="documentation-navigation-plain_">
+            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
+        </template>
+
+        <template id="documentation-navigation-list_">
+            <ul></ul>
+        </template>
+    </head>
+    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
+        <div id="documentation_layout" class="flex h-full">
+            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
+                <a href="/symi/" class="mb-6 flex items-center gap-3">
+                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
+                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
+                </a>
+                <div id="documentation_language_selector" class="mb-5"></div>
+                <div id="documentation_search"></div>
+                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
             </nav>
-            <div class="symi-drawer-backdrop" hidden></div>
-            <main id="documentation_main" class="symi-main">
-                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/wasm/introduction/">WASM / JavaScript</a></li><li>Contexts and objects</li><li><span aria-current="page">Context safety</span></li></ol></nav>
-                <p class="symi-notice">Signatures in the WASM / JavaScript view are TypeScript. Where the JavaScript facade wraps an operation its form is listed first; the other calling forms are the raw wasm-bindgen exports.</p>
-                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
-                <div id="symi-retired-anchor-notice" class="symi-notice symi-notice-warning" hidden></div>
-                <details class="symi-page-contents">
-                    <summary>On this page</summary>
-                    <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#execution_mode" data-outline-target="execution_mode">execution_mode</a></li><li class="symi-outline-depth-3"><a href="#init_thread_pool_with_capability" data-outline-target="init_thread_pool_with_capability">init_thread_pool_with_capability</a></li><li class="symi-outline-depth-3"><a href="#simplify_bulk" data-outline-target="simplify_bulk">simplify_bulk</a></li><li class="symi-outline-depth-3"><a href="#generation" data-outline-target="generation">generation</a></li><li class="symi-outline-depth-3"><a href="#session" data-outline-target="session">session</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#differentiatebulk" data-outline-target="differentiatebulk">differentiateBulk</a></li><li class="symi-outline-depth-3"><a href="#evaluatenumericbulk" data-outline-target="evaluatenumericbulk">evaluateNumericBulk</a></li><li class="symi-outline-depth-3"><a href="#executionmode" data-outline-target="executionmode">executionMode</a></li><li class="symi-outline-depth-3"><a href="#expandbulk" data-outline-target="expandbulk">expandBulk</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationcontroladdress" data-outline-target="hostcancellationcontroladdress">hostCancellationControlAddress</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationcontrolbytelength" data-outline-target="hostcancellationcontrolbytelength">hostCancellationControlByteLength</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationrequested" data-outline-target="hostcancellationrequested">hostCancellationRequested</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationslotcount" data-outline-target="hostcancellationslotcount">hostCancellationSlotCount</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationslotticket" data-outline-target="hostcancellationslotticket">hostCancellationSlotTicket</a></li><li class="symi-outline-depth-3"><a href="#initthreadpoolwithcapability" data-outline-target="initthreadpoolwithcapability">initThreadPoolWithCapability</a></li><li class="symi-outline-depth-3"><a href="#initializeparallelism" data-outline-target="initializeparallelism">initializeParallelism</a></li><li class="symi-outline-depth-3"><a href="#parallelismcapability" data-outline-target="parallelismcapability">parallelismCapability</a></li><li class="symi-outline-depth-3"><a href="#releasehostcancellationslot" data-outline-target="releasehostcancellationslot">releaseHostCancellationSlot</a></li><li class="symi-outline-depth-3"><a href="#reservehostcancellationslot" data-outline-target="reservehostcancellationslot">reserveHostCancellationSlot</a></li><li class="symi-outline-depth-3"><a href="#serializebulk" data-outline-target="serializebulk">serializeBulk</a></li><li class="symi-outline-depth-3"><a href="#setexecutionmode" data-outline-target="setexecutionmode">setExecutionMode</a></li><li class="symi-outline-depth-3"><a href="#simplifybulk" data-outline-target="simplifybulk">simplifyBulk</a></li><li class="symi-outline-depth-3"><a href="#substitutebulk" data-outline-target="substitutebulk">substituteBulk</a></li><li class="symi-outline-depth-3"><a href="#bulkexpressionoutcome" data-outline-target="bulkexpressionoutcome">BulkExpressionOutcome</a></li><li class="symi-outline-depth-3"><a href="#bulktextoutcome" data-outline-target="bulktextoutcome">BulkTextOutcome</a></li><li class="symi-outline-depth-3"><a href="#parallelismcapability_2" data-outline-target="parallelismcapability_2">ParallelismCapability</a></li></ul>
-                </details>
-                <article id="documentation_content" class="symi-article" tabindex="-1">
-<h1 id="page-title">Context safety</h1>
-<p>A context owns its symbols, assumptions, interned expressions, and structural
-objects. Rust calls this owner a <code>Session</code>. Every returned expression, matrix,
-geometry object, undefined function, and CAD result records both owner identity
-and reset generation.</p>
-<p>The public surfaces validate provenance before reading or mutating
-mathematical state:</p>
-<ul>
-<li>direct operands must have the receiver&#39;s owner;</li>
-<li>variable expressions must be same-owner symbols;</li>
-<li>every nested collection member is checked;</li>
-<li>matrices and geometry values retain their owner;</li>
-<li>callable undefined functions validate every argument;</li>
-<li>reset invalidates all earlier handles.</li>
-</ul>
-<p>Mixing contexts raises <code>context_mismatch</code>. Using an object after
-<code>reset_context()</code> or <code>Session::reset()</code> raises <code>stale_object</code>. Symi never
-reinterprets a foreign symbol identifier through the receiving symbol table.</p>
-<figure class="symi-code symi-code-example" data-code-language="javascript" data-code-kind="example"><figcaption class="symi-code-header"><span class="symi-code-label">JavaScript</span></figcaption><pre class="symi-code-body language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> first <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">symi<span class="token punctuation">.</span>Context</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> second <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">symi<span class="token punctuation">.</span>Context</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> x <span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token function">symbol</span><span class="token punctuation">(</span><span class="token string">"x"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> y <span class="token operator">=</span> second<span class="token punctuation">.</span><span class="token function">symbol</span><span class="token punctuation">(</span><span class="token string">"y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-first<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-first<span class="token punctuation">.</span><span class="token function">resetContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-x<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure>
-<p>Default-context objects and objects from an explicit context also do not mix.
-Use one explicit context throughout an isolated computation. To transfer
-mathematics intentionally, serialize it and parse it in the destination
-context; assumptions are context state and must be established separately.</p>
-<p>Releasing or freeing a JavaScript handle is also terminal for that handle.
-The recommended facade duplicates handles needed by raw iterable calls, so
-passing a value in an array does not unexpectedly free the caller&#39;s value.</p>
-<h3 id="execution_mode">execution_mode<a class="symi-heading-permalink" href="#execution_mode" aria-label="Link to this section: execution_mode">#</a></h3>
-<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/context-safety/#execution_mode"><code>Context.execution_mode</code></a> in Python, <a href="/symi/rust/context-safety/#execution_mode"><code>api::Session::execution_mode</code></a> in Rust.</em></p>
-<p>Sessions expose <code>sequential</code> and <code>automatic</code> execution modes and start in
-<code>sequential</code>. Automatic mode permits the runtime to use its process-wide bounded
-backend; it does not promise a worker count. Initializing the backend does not
-by itself change how any session runs, so a caller wanting internal parallelism
-selects <code>automatic</code> as well. The mode is captured when an operation begins, so a
-mode change affects later operations only.</p>
-<p><code>parallelism_capability()</code> reports whether the target compiled a backend, whether
-it has been initialized, its pool worker count, the maximum concurrency one operation
-may use, and the stable reason for a serial fallback. Explicit contexts and their expressions remain the unit of ownership;
-the capability record is runtime metadata and is not part of a mathematical
-object or its serialization.</p>
-<p>Native Python calls convert host values while the interpreter is attached, then
-detach it for pure Symi work before constructing Python results. An explicit
-<code>Context</code> and its immutable objects may therefore be shared by Python threads;
-module-level defaults remain thread-local. When a Python job system already
-provides outer worker threads, use sequential mode for those jobs or keep the
-outer worker count bounded so it does not multiply the internal Rayon workers.
-The automatic mode is a permission and does not promise a particular worker
-count.</p>
-<h3 id="init_thread_pool_with_capability">init_thread_pool_with_capability<a class="symi-heading-permalink" href="#init_thread_pool_with_capability" aria-label="Link to this section: init_thread_pool_with_capability">#</a></h3>
-<p>The atomic browser package includes the canonical <code>initThreadPool(worker_count)</code> export
-from <code>wasm-bindgen-rayon</code>. Symi also exposes the generated
-<code>initThreadPoolWithCapability(worker_count)</code> adapter; call this adapter when using the
-Symi package so the runtime capability is published only after the shared Rayon workers
-are ready. Capability queries before that point report <code>not_initialized</code> and bulk operations
-use the serial implementation. A rejected bootstrap is recorded as <code>initialization_failed</code>
-and does not enable a fallback thread pool. The universal WASM package does not expose either
-thread bootstrap and reports <code>not_compiled</code>.</p>
-<p>Kotlin and Swift calls retain the dedicated worker bridge for session and object
-ownership. Foreign calls through one mobile session are serialized at that
-bridge, while an operation running there may use the shared internal Rayon
-pool. Keep surrounding dispatch queues bounded and avoid adding a second
-per-operation worker pool; otherwise outer queue width and internal workers
-can oversubscribe the device.</p>
-<h3 id="simplify_bulk">simplify_bulk<a class="symi-heading-permalink" href="#simplify_bulk" aria-label="Link to this section: simplify_bulk">#</a></h3>
-<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/python/context-safety/#simplify_bulk"><code>Context.simplify_bulk</code></a> in Python, <a href="/symi/rust/context-safety/#simplify_bulk"><code>api::Session::simplify_bulk</code></a> in Rust.</em></p>
-<p>The ordered bulk operations <code>simplify_bulk</code>, <code>expand_bulk</code>,
-<code>differentiate_bulk</code>, <code>substitute_bulk</code>, <code>evaluate_numeric_bulk</code>, and
-<code>serialize_bulk</code> validate every input against one context and generation before
-work begins. Results retain input order and use one captured operation
-configuration. A reset during the call rejects publication rather than
-returning a partially completed collection. An item-level decline or
-diagnostic does not reorder or cancel unrelated items.</p>
-<h3 id="generation">generation<a class="symi-heading-permalink" href="#generation" aria-label="Link to this section: generation">#</a></h3>
-<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/rust/context-safety/#generation"><code>api::AssumptionScope::generation</code></a> in Rust.</em></p>
-<p>The generation objects currently produced by this context belong to. Resetting
-a context advances its generation, which is what makes every object made before
-the reset stale. The same accessor exists on the objects themselves, reporting
-the generation the object was created in; comparing the two is exactly what
-<code>is_stale</code> does.</p>
-<h3 id="session">session<a class="symi-heading-permalink" href="#session" aria-label="Link to this section: session">#</a></h3>
-<p><em>Not exposed by the WASM / JavaScript bindings. Available as <a href="/symi/rust/context-safety/#session"><code>api::AssumptionScope::session</code></a> in Rust.</em></p>
-<p>The context that owns this object. Every mathematical object belongs to one
-context for its whole life, and this accessor is how a host adapter carries the
-owner alongside the object. Objects from two different contexts cannot be
-combined; doing so is a context-mismatch error.</p>
-<h2 id="additional_api">Additional API<a class="symi-heading-permalink" href="#additional_api" aria-label="Link to this section: Additional API">#</a></h2>
-<h3 id="differentiatebulk"><span id="differentiateBulk" class="symi-legacy-anchor"></span>differentiateBulk<a class="symi-heading-permalink" href="#differentiatebulk" aria-label="Link to this section: differentiateBulk">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_differentiate_bulk"></a>
-<a id="placement-placement.wasm.wasm_module.module_differentiatebulk.88e9636eaec7"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">differentiateBulk</span><span class="token punctuation">(</span>
-    targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    variable<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
-<span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-<p>Differentiate an ordered collection in the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_differentiatebulk.60c81c04a52a"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.differentiateBulk</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">differentiateBulk</span><span class="token punctuation">(</span>
-    targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    variable<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
-<span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-</details>
-
-<h3 id="evaluatenumericbulk"><span id="evaluateNumericBulk" class="symi-legacy-anchor"></span>evaluateNumericBulk<a class="symi-heading-permalink" href="#evaluatenumericbulk" aria-label="Link to this section: evaluateNumericBulk">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_evaluate_numeric_bulk"></a>
-<a id="placement-placement.wasm.wasm_module.module_evaluatenumericbulk.408fe965e833"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">evaluateNumericBulk</span><span class="token punctuation">(</span>targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-<p>Evaluate an ordered collection numerically in the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_evaluatenumericbulk.1d8e7313ad2a"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.evaluateNumericBulk</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">evaluateNumericBulk</span><span class="token punctuation">(</span>targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-</details>
-
-<h3 id="executionmode"><span id="executionMode" class="symi-legacy-anchor"></span>executionMode<a class="symi-heading-permalink" href="#executionmode" aria-label="Link to this section: executionMode">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_execution_mode"></a>
-<a id="placement-placement.wasm.wasm_module.module_executionmode.d4cea0f8949e"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">executionMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
-<p>Return the execution mode of the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_executionmode.fb37feb3b5e7"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.executionMode</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">executionMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
-</details>
-
-<h3 id="expandbulk"><span id="expandBulk" class="symi-legacy-anchor"></span>expandBulk<a class="symi-heading-permalink" href="#expandbulk" aria-label="Link to this section: expandBulk">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_expand_bulk"></a>
-<a id="placement-placement.wasm.wasm_module.module_expandbulk.9bd6e6330993"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">expandBulk</span><span class="token punctuation">(</span>targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-<p>Expand an ordered collection in the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_expandbulk.ddbf38f0af39"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.expandBulk</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">expandBulk</span><span class="token punctuation">(</span>targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-</details>
-
-<h3 id="hostcancellationcontroladdress"><span id="hostCancellationControlAddress" class="symi-legacy-anchor"></span>hostCancellationControlAddress<a class="symi-heading-permalink" href="#hostcancellationcontroladdress" aria-label="Link to this section: hostCancellationControlAddress">#</a></h3>
-<p><a id="entry-presentation_wasm_host_wasm_module_hostcancellationcontroladdress"></a>
-<a id="placement-placement.wasm.wasm_module.module_hostcancellationcontroladdress.a36df668e7b8"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hostCancellationControlAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
-<p>Return the address in linear memory of the control record an embedder writes to stop a call.</p>
-<h3 id="hostcancellationcontrolbytelength"><span id="hostCancellationControlByteLength" class="symi-legacy-anchor"></span>hostCancellationControlByteLength<a class="symi-heading-permalink" href="#hostcancellationcontrolbytelength" aria-label="Link to this section: hostCancellationControlByteLength">#</a></h3>
-<p><a id="entry-presentation_wasm_host_wasm_module_hostcancellationcontrolbytelength"></a>
-<a id="placement-placement.wasm.wasm_module.module_hostcancellationcontrolbytelength.eedb6cf20393"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hostCancellationControlByteLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
-<p>Return how many bytes of linear memory the host cancellation control record occupies.</p>
-<h3 id="hostcancellationrequested"><span id="hostCancellationRequested" class="symi-legacy-anchor"></span>hostCancellationRequested<a class="symi-heading-permalink" href="#hostcancellationrequested" aria-label="Link to this section: hostCancellationRequested">#</a></h3>
-<p><a id="entry-presentation_wasm_host_wasm_module_hostcancellationrequested"></a>
-<a id="placement-placement.wasm.wasm_module.module_hostcancellationrequested.254657584a52"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hostCancellationRequested</span><span class="token punctuation">(</span>slot_index<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> ticket<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
-<p>Return whether a stop request stands against one control-record reservation.</p>
-<h3 id="hostcancellationslotcount"><span id="hostCancellationSlotCount" class="symi-legacy-anchor"></span>hostCancellationSlotCount<a class="symi-heading-permalink" href="#hostcancellationslotcount" aria-label="Link to this section: hostCancellationSlotCount">#</a></h3>
-<p><a id="entry-presentation_wasm_host_wasm_module_hostcancellationslotcount"></a>
-<a id="placement-placement.wasm.wasm_module.module_hostcancellationslotcount.4101f6d428a3"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hostCancellationSlotCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
-<p>Return how many reservations the host cancellation control record holds.</p>
-<h3 id="hostcancellationslotticket"><span id="hostCancellationSlotTicket" class="symi-legacy-anchor"></span>hostCancellationSlotTicket<a class="symi-heading-permalink" href="#hostcancellationslotticket" aria-label="Link to this section: hostCancellationSlotTicket">#</a></h3>
-<p><a id="entry-presentation_wasm_host_wasm_module_hostcancellationslotticket"></a>
-<a id="placement-placement.wasm.wasm_module.module_hostcancellationslotticket.31ee528c4115"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">hostCancellationSlotTicket</span><span class="token punctuation">(</span>slot_index<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
-<p>Return the ticket a reserved control-record slot answers to, or zero when it is not reserved.</p>
-<h3 id="initthreadpoolwithcapability"><span id="initThreadPoolWithCapability" class="symi-legacy-anchor"></span>initThreadPoolWithCapability<a class="symi-heading-permalink" href="#initthreadpoolwithcapability" aria-label="Link to this section: initThreadPoolWithCapability">#</a></h3>
-<p><a id="entry-presentation_wasm_host_wasm_module_initthreadpoolwithcapability"></a>
-<a id="placement-placement.wasm.wasm_module.module_initthreadpoolwithcapability.356307fe3c6a"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">initThreadPoolWithCapability</span><span class="token punctuation">(</span>worker_count<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span></code></pre></div>
-<p>Start the shared WebAssembly Rayon pool and publish its capability after startup succeeds.</p>
-<h3 id="initializeparallelism"><span id="initializeParallelism" class="symi-legacy-anchor"></span>initializeParallelism<a class="symi-heading-permalink" href="#initializeparallelism" aria-label="Link to this section: initializeParallelism">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_initialize_parallelism"></a>
-<a id="placement-placement.wasm.wasm_module.module_initializeparallelism.cf57f2d301bc"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">initializeParallelism</span><span class="token punctuation">(</span>worker_count<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
-<p>Initialize parallel execution for the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_initializeparallelism.b65737d204fb"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.initializeParallelism</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">initializeParallelism</span><span class="token punctuation">(</span>worker_count<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
-</details>
-
-<h3 id="parallelismcapability"><span id="parallelismCapability" class="symi-legacy-anchor"></span>parallelismCapability<a class="symi-heading-permalink" href="#parallelismcapability" aria-label="Link to this section: parallelismCapability">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_parallelism_capability"></a>
-<a id="placement-placement.wasm.wasm_module.module_parallelismcapability.1e9632969c40"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">parallelismCapability</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> ParallelismCapability</code></pre></div>
-<p>Return the parallel execution capability of the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_parallelismcapability.3ffc3c2aeaf5"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.parallelismCapability</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">parallelismCapability</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> ParallelismCapability</code></pre></div>
-</details>
-
-<h3 id="releasehostcancellationslot"><span id="releaseHostCancellationSlot" class="symi-legacy-anchor"></span>releaseHostCancellationSlot<a class="symi-heading-permalink" href="#releasehostcancellationslot" aria-label="Link to this section: releaseHostCancellationSlot">#</a></h3>
-<p><a id="entry-presentation_wasm_host_wasm_module_releasehostcancellationslot"></a>
-<a id="placement-placement.wasm.wasm_module.module_releasehostcancellationslot.0cdb4a4c9d2b"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">releaseHostCancellationSlot</span><span class="token punctuation">(</span>slot_index<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> ticket<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span></code></pre></div>
-<p>Release one control-record reservation and clear any stop request standing against it.</p>
-<h3 id="reservehostcancellationslot"><span id="reserveHostCancellationSlot" class="symi-legacy-anchor"></span>reserveHostCancellationSlot<a class="symi-heading-permalink" href="#reservehostcancellationslot" aria-label="Link to this section: reserveHostCancellationSlot">#</a></h3>
-<p><a id="entry-presentation_wasm_host_wasm_module_reservehostcancellationslot"></a>
-<a id="placement-placement.wasm.wasm_module.module_reservehostcancellationslot.081bf1bf35ab"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">reserveHostCancellationSlot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
-<p>Reserve one control-record slot for the calls this thread starts next, or -1 when none is free.</p>
-<h3 id="serializebulk"><span id="serializeBulk" class="symi-legacy-anchor"></span>serializeBulk<a class="symi-heading-permalink" href="#serializebulk" aria-label="Link to this section: serializeBulk">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_serialize_bulk"></a>
-<a id="placement-placement.wasm.wasm_module.module_serializebulk.d66dc15ad809"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">serializeBulk</span><span class="token punctuation">(</span>targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> BulkTextOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-<p>Serialize an ordered collection in the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_serializebulk.6da9c7d96404"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.serializeBulk</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">serializeBulk</span><span class="token punctuation">(</span>targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> BulkTextOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-</details>
-
-<h3 id="setexecutionmode"><span id="setExecutionMode" class="symi-legacy-anchor"></span>setExecutionMode<a class="symi-heading-permalink" href="#setexecutionmode" aria-label="Link to this section: setExecutionMode">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_set_execution_mode"></a>
-<a id="placement-placement.wasm.wasm_module.module_setexecutionmode.eb3bb85ec56d"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">setExecutionMode</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span></code></pre></div>
-<p>Select the execution mode of the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_setexecutionmode.8558c817b7d7"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.setExecutionMode</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">setExecutionMode</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span></code></pre></div>
-</details>
-
-<h3 id="simplifybulk"><span id="simplifyBulk" class="symi-legacy-anchor"></span>simplifyBulk<a class="symi-heading-permalink" href="#simplifybulk" aria-label="Link to this section: simplifyBulk">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_simplify_bulk"></a>
-<a id="placement-placement.wasm.wasm_module.module_simplifybulk.410bd7966c46"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplifyBulk</span><span class="token punctuation">(</span>targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-<p>Simplify an ordered collection in the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_simplifybulk.f58e98df3b0c"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.simplifyBulk</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">simplifyBulk</span><span class="token punctuation">(</span>targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-</details>
-
-<h3 id="substitutebulk"><span id="substituteBulk" class="symi-legacy-anchor"></span>substituteBulk<a class="symi-heading-permalink" href="#substitutebulk" aria-label="Link to this section: substituteBulk">#</a></h3>
-<p><a id="entry-presentation_wasm_api_session_substitute_bulk"></a>
-<a id="placement-placement.wasm.wasm_module.module_substitutebulk.80cd62071bc5"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">substituteBulk</span><span class="token punctuation">(</span>
-    targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    variable<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
-    value<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
-<span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-<p>Substitute throughout an ordered collection in the default context.</p>
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<p><a id="placement-placement.wasm.wasm_class.context_substitutebulk.23b4102b48c2"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.substituteBulk</code></p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token function">substituteBulk</span><span class="token punctuation">(</span>
-    targets<span class="token operator">:</span> Expression<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    variable<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
-    value<span class="token operator">:</span> Expression<span class="token punctuation">,</span>
-<span class="token punctuation">)</span><span class="token operator">:</span> BulkExpressionOutcome<span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre></div>
-</details>
-
-<h3 id="bulkexpressionoutcome"><span id="BulkExpressionOutcome" class="symi-legacy-anchor"></span>BulkExpressionOutcome<a class="symi-heading-permalink" href="#bulkexpressionoutcome" aria-label="Link to this section: BulkExpressionOutcome">#</a></h3>
-<h4 id="bulkexpressionoutcome_diagnostic">BulkExpressionOutcome.diagnostic<a class="symi-heading-permalink" href="#bulkexpressionoutcome_diagnostic" aria-label="Link to this section: BulkExpressionOutcome.diagnostic">#</a></h4>
-<p><a id="entry-presentation_wasm_api_bulkexpressionoutcome_diagnostic"></a>
-<a id="placement-placement.wasm.wasm_class.bulkexpressionoutcome_diagnostic.3aff803bd40b"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: BulkExpressionOutcome property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> diagnostic<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
-<p>Return the item diagnostic when the operation declined or failed.</p>
-<h4 id="bulkexpressionoutcome_index">BulkExpressionOutcome.index<a class="symi-heading-permalink" href="#bulkexpressionoutcome_index" aria-label="Link to this section: BulkExpressionOutcome.index">#</a></h4>
-<p><a id="entry-presentation_wasm_api_bulkexpressionoutcome_index"></a>
-<a id="placement-placement.wasm.wasm_class.bulkexpressionoutcome_index.9565b7871b49"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: BulkExpressionOutcome property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> index<span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
-<p>Return the original input position of this outcome.</p>
-<h4 id="bulkexpressionoutcome_value">BulkExpressionOutcome.value<a class="symi-heading-permalink" href="#bulkexpressionoutcome_value" aria-label="Link to this section: BulkExpressionOutcome.value">#</a></h4>
-<p><a id="entry-presentation_wasm_api_bulkexpressionoutcome_value"></a>
-<a id="placement-placement.wasm.wasm_class.bulkexpressionoutcome_value.a88ab5dae37a"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: BulkExpressionOutcome property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> value<span class="token operator">:</span> Expression <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
-<p>Return the expression value when the item succeeded.</p>
-<h3 id="bulktextoutcome"><span id="BulkTextOutcome" class="symi-legacy-anchor"></span>BulkTextOutcome<a class="symi-heading-permalink" href="#bulktextoutcome" aria-label="Link to this section: BulkTextOutcome">#</a></h3>
-<h4 id="bulktextoutcome_diagnostic">BulkTextOutcome.diagnostic<a class="symi-heading-permalink" href="#bulktextoutcome_diagnostic" aria-label="Link to this section: BulkTextOutcome.diagnostic">#</a></h4>
-<p><a id="entry-presentation_wasm_api_bulktextoutcome_diagnostic"></a>
-<a id="placement-placement.wasm.wasm_class.bulktextoutcome_diagnostic.1f99261ae9a5"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: BulkTextOutcome property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> diagnostic<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
-<p>Return the item diagnostic when the operation declined or failed.</p>
-<h4 id="bulktextoutcome_index">BulkTextOutcome.index<a class="symi-heading-permalink" href="#bulktextoutcome_index" aria-label="Link to this section: BulkTextOutcome.index">#</a></h4>
-<p><a id="entry-presentation_wasm_api_bulktextoutcome_index"></a>
-<a id="placement-placement.wasm.wasm_class.bulktextoutcome_index.eb506bca8e60"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: BulkTextOutcome property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> index<span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
-<p>Return the original input position of this outcome.</p>
-<h4 id="bulktextoutcome_value">BulkTextOutcome.value<a class="symi-heading-permalink" href="#bulktextoutcome_value" aria-label="Link to this section: BulkTextOutcome.value">#</a></h4>
-<p><a id="entry-presentation_wasm_api_bulktextoutcome_value"></a>
-<a id="placement-placement.wasm.wasm_class.bulktextoutcome_value.e25bb45ec6a7"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: BulkTextOutcome property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> value<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
-<p>Return the canonical text when the item succeeded.</p>
-<h3 id="parallelismcapability_2"><span id="ParallelismCapability" class="symi-legacy-anchor"></span>ParallelismCapability<a class="symi-heading-permalink" href="#parallelismcapability_2" aria-label="Link to this section: ParallelismCapability">#</a></h3>
-<h4 id="parallelismcapability_active">ParallelismCapability.active<a class="symi-heading-permalink" href="#parallelismcapability_active" aria-label="Link to this section: ParallelismCapability.active">#</a></h4>
-<p><a id="entry-presentation_wasm_api_parallelismcapability_active"></a>
-<a id="placement-placement.wasm.wasm_class.parallelismcapability_active.7a56c9003ea3"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: ParallelismCapability property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> active<span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
-<p>Whether the selected backend can currently execute parallel work.</p>
-<h4 id="parallelismcapability_backend">ParallelismCapability.backend<a class="symi-heading-permalink" href="#parallelismcapability_backend" aria-label="Link to this section: ParallelismCapability.backend">#</a></h4>
-<p><a id="entry-presentation_wasm_api_parallelismcapability_backend"></a>
-<a id="placement-placement.wasm.wasm_class.parallelismcapability_backend.6ace752fbfa8"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: ParallelismCapability property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> backend<span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
-<p>Return the backend selected for this target.</p>
-<h4 id="parallelismcapability_compiled">ParallelismCapability.compiled<a class="symi-heading-permalink" href="#parallelismcapability_compiled" aria-label="Link to this section: ParallelismCapability.compiled">#</a></h4>
-<p><a id="entry-presentation_wasm_api_parallelismcapability_compiled"></a>
-<a id="placement-placement.wasm.wasm_class.parallelismcapability_compiled.cdc011ae2a95"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: ParallelismCapability property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> compiled<span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
-<p>Whether this target was compiled with a parallel backend.</p>
-<h4 id="parallelismcapability_initialized">ParallelismCapability.initialized<a class="symi-heading-permalink" href="#parallelismcapability_initialized" aria-label="Link to this section: ParallelismCapability.initialized">#</a></h4>
-<p><a id="entry-presentation_wasm_api_parallelismcapability_initialized"></a>
-<a id="placement-placement.wasm.wasm_class.parallelismcapability_initialized.4f99d93e07ed"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: ParallelismCapability property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> initialized<span class="token operator">:</span> <span class="token builtin">boolean</span></code></pre></div>
-<p>Whether the process-wide parallel backend has been initialized.</p>
-<h4 id="parallelismcapability_maximumoperationconcurrency">ParallelismCapability.maximumOperationConcurrency<a class="symi-heading-permalink" href="#parallelismcapability_maximumoperationconcurrency" aria-label="Link to this section: ParallelismCapability.maximumOperationConcurrency">#</a></h4>
-<p><a id="entry-presentation_wasm_api_parallelismcapability_maximum_operation_concurrency"></a>
-<a id="placement-placement.wasm.wasm_class.parallelismcapability_maximumoperationconcurrency.0130e4f9bd13"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: ParallelismCapability property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> maximumOperationConcurrency<span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
-<p>Return the largest task batch one operation may admit.</p>
-<h4 id="parallelismcapability_selectedmode">ParallelismCapability.selectedMode<a class="symi-heading-permalink" href="#parallelismcapability_selectedmode" aria-label="Link to this section: ParallelismCapability.selectedMode">#</a></h4>
-<p><a id="entry-presentation_wasm_api_parallelismcapability_selected_mode"></a>
-<a id="placement-placement.wasm.wasm_class.parallelismcapability_selectedmode.42c75b8ac175"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: ParallelismCapability property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> selectedMode<span class="token operator">:</span> <span class="token builtin">string</span></code></pre></div>
-<p>Return the execution mode selected for later operations.</p>
-<h4 id="parallelismcapability_unavailablereason">ParallelismCapability.unavailableReason<a class="symi-heading-permalink" href="#parallelismcapability_unavailablereason" aria-label="Link to this section: ParallelismCapability.unavailableReason">#</a></h4>
-<p><a id="entry-presentation_wasm_api_parallelismcapability_unavailable_reason"></a>
-<a id="placement-placement.wasm.wasm_class.parallelismcapability_unavailablereason.07bb1c3498ad"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: ParallelismCapability property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> unavailableReason<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token keyword">undefined</span></code></pre></div>
-<p>Return the stable reason parallel execution is unavailable, if any.</p>
-<h4 id="parallelismcapability_workercount">ParallelismCapability.workerCount<a class="symi-heading-permalink" href="#parallelismcapability_workercount" aria-label="Link to this section: ParallelismCapability.workerCount">#</a></h4>
-<p><a id="entry-presentation_wasm_api_parallelismcapability_worker_count"></a>
-<a id="placement-placement.wasm.wasm_class.parallelismcapability_workercount.2182d20e0f67"></a></p>
-<p class="symi-entry-owner">Raw WebAssembly: ParallelismCapability property</p>
-
-<div class="symi-signature" data-code-language="typescript"><pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">readonly</span> workerCount<span class="token operator">:</span> <span class="token builtin">number</span></code></pre></div>
-<p>Return the configured worker count.</p>
-
-                </article>
-                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Contexts and objects</h2><ul class="symi-related-list"><li><a href="/symi/wasm/default-context/">The default context and module-level functions</a></li><li><a href="/symi/wasm/object-model/">Object model</a></li><li><a href="/symi/wasm/conversion-rules/">Conversions and collections</a></li><li><a href="/symi/wasm/diagnostics/">Diagnostics and outcomes</a></li><li><a href="/symi/wasm/migration/">Migration</a></li></ul></aside>
-                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/wasm/conversion-rules/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Conversions and collections</span></a><a class="symi-pager-link symi-pager-next" href="/symi/wasm/diagnostics/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Diagnostics and outcomes</span></a></nav>
-                <footer class="symi-footer"><p>Symi documentation · WASM / JavaScript</p></footer>
+            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
+                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
+                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
             </main>
-            <aside class="symi-outline" aria-labelledby="symi-outline-title">
-                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
-                <ul class="symi-outline-list"><li class="symi-outline-depth-3"><a href="#execution_mode" data-outline-target="execution_mode">execution_mode</a></li><li class="symi-outline-depth-3"><a href="#init_thread_pool_with_capability" data-outline-target="init_thread_pool_with_capability">init_thread_pool_with_capability</a></li><li class="symi-outline-depth-3"><a href="#simplify_bulk" data-outline-target="simplify_bulk">simplify_bulk</a></li><li class="symi-outline-depth-3"><a href="#generation" data-outline-target="generation">generation</a></li><li class="symi-outline-depth-3"><a href="#session" data-outline-target="session">session</a></li><li class="symi-outline-depth-2"><a href="#additional_api" data-outline-target="additional_api">Additional API</a></li><li class="symi-outline-depth-3"><a href="#differentiatebulk" data-outline-target="differentiatebulk">differentiateBulk</a></li><li class="symi-outline-depth-3"><a href="#evaluatenumericbulk" data-outline-target="evaluatenumericbulk">evaluateNumericBulk</a></li><li class="symi-outline-depth-3"><a href="#executionmode" data-outline-target="executionmode">executionMode</a></li><li class="symi-outline-depth-3"><a href="#expandbulk" data-outline-target="expandbulk">expandBulk</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationcontroladdress" data-outline-target="hostcancellationcontroladdress">hostCancellationControlAddress</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationcontrolbytelength" data-outline-target="hostcancellationcontrolbytelength">hostCancellationControlByteLength</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationrequested" data-outline-target="hostcancellationrequested">hostCancellationRequested</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationslotcount" data-outline-target="hostcancellationslotcount">hostCancellationSlotCount</a></li><li class="symi-outline-depth-3"><a href="#hostcancellationslotticket" data-outline-target="hostcancellationslotticket">hostCancellationSlotTicket</a></li><li class="symi-outline-depth-3"><a href="#initthreadpoolwithcapability" data-outline-target="initthreadpoolwithcapability">initThreadPoolWithCapability</a></li><li class="symi-outline-depth-3"><a href="#initializeparallelism" data-outline-target="initializeparallelism">initializeParallelism</a></li><li class="symi-outline-depth-3"><a href="#parallelismcapability" data-outline-target="parallelismcapability">parallelismCapability</a></li><li class="symi-outline-depth-3"><a href="#releasehostcancellationslot" data-outline-target="releasehostcancellationslot">releaseHostCancellationSlot</a></li><li class="symi-outline-depth-3"><a href="#reservehostcancellationslot" data-outline-target="reservehostcancellationslot">reserveHostCancellationSlot</a></li><li class="symi-outline-depth-3"><a href="#serializebulk" data-outline-target="serializebulk">serializeBulk</a></li><li class="symi-outline-depth-3"><a href="#setexecutionmode" data-outline-target="setexecutionmode">setExecutionMode</a></li><li class="symi-outline-depth-3"><a href="#simplifybulk" data-outline-target="simplifybulk">simplifyBulk</a></li><li class="symi-outline-depth-3"><a href="#substitutebulk" data-outline-target="substitutebulk">substituteBulk</a></li><li class="symi-outline-depth-3"><a href="#bulkexpressionoutcome" data-outline-target="bulkexpressionoutcome">BulkExpressionOutcome</a></li><li class="symi-outline-depth-3"><a href="#bulktextoutcome" data-outline-target="bulktextoutcome">BulkTextOutcome</a></li><li class="symi-outline-depth-3"><a href="#parallelismcapability_2" data-outline-target="parallelismcapability_2">ParallelismCapability</a></li></ul>
-            </aside>
         </div>
+        <script type="module" src="/symi/assets/site/documentation.js"></script>
     </body>
 </html>

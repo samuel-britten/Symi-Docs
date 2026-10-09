@@ -10,25 +10,11 @@ operations. The canonical names for the gamma and beta families are
 
 ### distribution
 
-<a id="entry-presentation_wasm_api_session_distribution"></a>
-<a id="placement-placement.wasm.wasm_module.module_distribution.a8ab95ab5293"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-distribution(name: string, parameters: Expression[]): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_distribution.8db68bce15d8"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.distribution</code></p>
+Raw WebAssembly: `pub fn distribution(&self, name: &str, parameters: Vec<Expression>) -> Result<Expression, JsError>`
 
-```typescript signature
-distribution(name: string, parameters: Expression[]): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_distribution.a8ab95ab5293"></a>
+Raw WebAssembly: `fn distribution(name: &str, parameters: Vec<Expression>) -> Result<Expression, JsError>`
 
 
 Build a distribution node from a family name and its ordered parameter list
@@ -48,25 +34,11 @@ independent under hash-consing.
 
 ### density
 
-<a id="entry-presentation_wasm_api_session_density"></a>
-<a id="placement-placement.wasm.wasm_module.module_density.cd2642291cfe"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-density(random_variable: Expression, point: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_density.4a13b738d461"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.density</code></p>
+Raw WebAssembly: `pub fn density(&self, random_variable: &Expression, point: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-density(random_variable: Expression, point: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_density.cd2642291cfe"></a>
+Raw WebAssembly: `fn density(random_variable: &Expression, point: &Expression) -> Result<Expression, JsError>`
 
 
 Probability density (continuous families) or probability mass (discrete
@@ -82,31 +54,11 @@ Cumulative distribution function of `random_variable` evaluated at `point`.
 
 ### expectation
 
-<a id="entry-presentation_wasm_api_session_expectation"></a>
-<a id="placement-placement.wasm.wasm_module.module_expectation.4574bc9e8615"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-expectation(
-    target: Expression,
-    random_variables: Expression[],
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_expectation.67e8bae93912"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.expectation</code></p>
+Raw WebAssembly: `pub fn expectation(&self, target: &Expression, random_variables: Vec<Expression>) -> Result<Expression, JsError>`
 
-```typescript signature
-expectation(
-    target: Expression,
-    random_variables: Expression[],
-): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_expectation.4574bc9e8615"></a>
+Raw WebAssembly: `fn expectation(target: &Expression, random_variables: Vec<Expression>) -> Result<Expression, JsError>`
 
 
 Expectation of `target` over the listed independent random variables. Linearity
@@ -115,58 +67,22 @@ leaves consume the distribution's mean and raw moments.
 
 ### variance
 
-<a id="entry-presentation_wasm_api_session_variance"></a>
-<a id="placement-placement.wasm.wasm_module.module_variance.1e88b3e35c6d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-variance(target: Expression, random_variables: Expression[]): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_variance.f8ef1aa2b2f3"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.variance</code></p>
+Raw WebAssembly: `pub fn variance(&self, target: &Expression, random_variables: Vec<Expression>) -> Result<Expression, JsError>`
 
-```typescript signature
-variance(target: Expression, random_variables: Expression[]): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_variance.1e88b3e35c6d"></a>
+Raw WebAssembly: `fn variance(target: &Expression, random_variables: Vec<Expression>) -> Result<Expression, JsError>`
 
 
 Variance of `target` over the listed independent random variables.
 
 ### covariance
 
-<a id="entry-presentation_wasm_api_session_covariance"></a>
-<a id="placement-placement.wasm.wasm_module.module_covariance.7f07c38ba9fc"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-covariance(
-    left: Expression,
-    right: Expression,
-    random_variables: Expression[],
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_covariance.cf6b9f0ac1bf"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.covariance</code></p>
+Raw WebAssembly: `pub fn covariance(&self, left: &Expression, right: &Expression, random_variables: Vec<Expression>) -> Result<Expression, JsError>`
 
-```typescript signature
-covariance(
-    left: Expression,
-    right: Expression,
-    random_variables: Expression[],
-): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_covariance.7f07c38ba9fc"></a>
+Raw WebAssembly: `fn covariance(left: &Expression, right: &Expression, random_variables: Vec<Expression>) -> Result<Expression, JsError>`
 
 
 Covariance of `left` and `right` over the listed independent random variables;
@@ -174,31 +90,11 @@ zero for independent operands.
 
 ### probability
 
-<a id="entry-presentation_wasm_api_session_probability"></a>
-<a id="placement-placement.wasm.wasm_module.module_probability.048a1136670a"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-probability(
-    predicate: Expression,
-    random_variables: Expression[],
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_probability.7ba12c2caf78"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.probability</code></p>
+Raw WebAssembly: `pub fn probability(&self, predicate: &Expression, random_variables: Vec<Expression>) -> Result<Expression, JsError>`
 
-```typescript signature
-probability(
-    predicate: Expression,
-    random_variables: Expression[],
-): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_probability.048a1136670a"></a>
+Raw WebAssembly: `fn probability(predicate: &Expression, random_variables: Vec<Expression>) -> Result<Expression, JsError>`
 
 
 Probability that `predicate` (a tail comparison such as `X > t`) holds over the
@@ -206,50 +102,22 @@ listed independent random variables.
 
 ### moment
 
-<a id="entry-presentation_wasm_api_session_moment"></a>
-<a id="placement-placement.wasm.wasm_module.module_moment.2520aabf6538"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-moment(random_variable: Expression, order: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_moment.39df9a0ae11b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.moment</code></p>
+Raw WebAssembly: `pub fn moment(&self, random_variable: &Expression, order: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-moment(random_variable: Expression, order: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_moment.2520aabf6538"></a>
+Raw WebAssembly: `fn moment(random_variable: &Expression, order: &Expression) -> Result<Expression, JsError>`
 
 
 The `order`-th raw moment `E[X^order]` of `random_variable`.
 
 ### cumulant
 
-<a id="entry-presentation_wasm_api_session_cumulant"></a>
-<a id="placement-placement.wasm.wasm_module.module_cumulant.81f780dfe410"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-cumulant(random_variable: Expression, order: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_cumulant.842dc00f3798"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.cumulant</code></p>
+Raw WebAssembly: `pub fn cumulant(&self, random_variable: &Expression, order: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-cumulant(random_variable: Expression, order: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_cumulant.81f780dfe410"></a>
+Raw WebAssembly: `fn cumulant(random_variable: &Expression, order: &Expression) -> Result<Expression, JsError>`
 
 
 The `order`-th cumulant of `random_variable`.
@@ -278,117 +146,59 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
-### characteristicFunction
-
-<a id="entry-presentation_wasm_api_session_characteristic_function"></a>
-<a id="placement-placement.wasm.wasm_module.module_characteristicfunction.6bcf8578c6fc"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-characteristicFunction(
-    random_variable: Expression,
-    auxiliary_variable: string,
-): Expression
-```
-
-Closed-form characteristic function \(\varphi_X(t)\) of `random_variable` in the named auxiliary variable, when elementary; otherwise an unevaluated structural form.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_characteristicfunction.67fa97a031f0"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.characteristicFunction</code></p>
+### Context.characteristicFunction
 
-```typescript signature
-characteristicFunction(
-    random_variable: Expression,
-    auxiliary_variable: string,
-): Expression
-```
+`pub fn characteristic_function(&self, random_variable: &Expression, auxiliary_variable: &str) -> Result<Expression, JsError>`
 
-</details>
-
-### cumulativeDistribution
-
-<a id="entry-presentation_wasm_api_session_cumulative_distribution"></a>
-<a id="placement-placement.wasm.wasm_module.module_cumulativedistribution.6fed2a150b33"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-cumulativeDistribution(
-    random_variable: Expression,
-    point: Expression,
-): Expression
-```
-
-Cumulative distribution function of `random_variable` evaluated at `point`.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<expression, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_cumulativedistribution.437149c7bc0e"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.cumulativeDistribution</code></p>
+### Context.cumulativeDistribution
 
-```typescript signature
-cumulativeDistribution(
-    random_variable: Expression,
-    point: Expression,
-): Expression
-```
+`pub fn cumulative_distribution(&self, random_variable: &Expression, point: &Expression) -> Result<Expression, JsError>`
 
-</details>
-
-### momentGeneratingFunction
-
-<a id="entry-presentation_wasm_api_session_moment_generating_function"></a>
-<a id="placement-placement.wasm.wasm_module.module_momentgeneratingfunction.7320c47b4aec"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-momentGeneratingFunction(
-    random_variable: Expression,
-    auxiliary_variable: string,
-): Expression
-```
-
-Closed-form moment generating function `M_X(t)` of `random_variable` in the named auxiliary variable, when elementary; otherwise an unevaluated structural form.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<expression, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_momentgeneratingfunction.5c1a2bc41ac9"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.momentGeneratingFunction</code></p>
+### Context.momentGeneratingFunction
 
-```typescript signature
-momentGeneratingFunction(
-    random_variable: Expression,
-    auxiliary_variable: string,
-): Expression
-```
+`pub fn moment_generating_function(&self, random_variable: &Expression, auxiliary_variable: &str) -> Result<Expression, JsError>`
 
-</details>
-
-### randomVariable
-
-<a id="entry-presentation_wasm_api_session_random_variable"></a>
-<a id="placement-placement.wasm.wasm_module.module_randomvariable.88bac8365ef0"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-randomVariable(name: string, distribution: Expression): Expression
-```
-
-Build a random variable named `name` drawn from `distribution`.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<expression, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_randomvariable.2116c1217247"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.randomVariable</code></p>
+### Context.randomVariable
 
-```typescript signature
-randomVariable(name: string, distribution: Expression): Expression
-```
+`pub fn random_variable(&self, name: &str, distribution: &Expression) -> Result<Expression, JsError>`
 
-</details>
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_characteristicfunction.6bcf8578c6fc"></a>
+### module.characteristicFunction
+
+`fn characteristic_function(random_variable: &Expression, auxiliary_variable: &str) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_cumulativedistribution.6fed2a150b33"></a>
+### module.cumulativeDistribution
+
+`fn cumulative_distribution(random_variable: &Expression, point: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_momentgeneratingfunction.7320c47b4aec"></a>
+### module.momentGeneratingFunction
+
+`fn moment_generating_function(random_variable: &Expression, auxiliary_variable: &str) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_randomvariable.88bac8365ef0"></a>
+### module.randomVariable
+
+`fn random_variable(name: &str, distribution: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
 

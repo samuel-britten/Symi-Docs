@@ -2,38 +2,14 @@
 
 ### solve
 
-<a id="entry-presentation_python_api_session_solve"></a>
-<a id="placement-placement.python.python_module.module_solve.644a18093e3a"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-solve(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> list[Expression]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_solve.a86d08ec4a06"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solve</code></p>
-
-```python signature
-solve(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> list[Expression]
-```
+`Context.solve(input_expression, variable)`
 
 <a id="placement-placement.python.python_class.expression_solve.a98fe09639f3"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.solve</code></p>
+`Expression.solve(variable)`
 
-```python signature
-solve(variable: VariableLike) -> list[Expression]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_solve.644a18093e3a"></a>
+`symi.solve(input_expression, variable)`
 
 
 Solve an equation (an `equal` node, or an expression implicitly equated to
@@ -43,43 +19,14 @@ solver's reach are simply absent — prefer `solveset` when you need an honest
 
 ### solveset
 
-<a id="entry-presentation_python_api_session_solveset"></a>
-<a id="placement-placement.python.python_module.module_solveset.d687000dc23c"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-solveset(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    domain: Optional[ExpressionLike] = None,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_solveset.18f6f50c216e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solveset</code></p>
-
-```python signature
-solveset(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    domain: Optional[ExpressionLike] = None,
-) -> Expression
-```
+`Context.solveset(input_expression, variable, domain = None)`
 
 <a id="placement-placement.python.python_class.expression_solveset.e204d9960687"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.solveset</code></p>
+`Expression.solveset(variable, domain = None)`
 
-```python signature
-solveset(
-    variable: VariableLike,
-    domain: Optional[ExpressionLike] = None,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_solveset.d687000dc23c"></a>
+`symi.solveset(input_expression, variable, domain = None)`
 
 
 Solution **set** of the equation or inequality: a finite set, interval,
@@ -200,33 +147,11 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### solveset_in_domain
 
-<a id="entry-presentation_python_api_session_solveset_in_domain"></a>
-<a id="placement-placement.python.python_module.module_solveset_in_domain.5dc47cc84338"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-solveset_in_domain(
-    equation: ExpressionLike,
-    variable: VariableLike,
-    domain: ExpressionLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_solveset_in_domain.8f623844d249"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solveset_in_domain</code></p>
+`Context.solveset_in_domain(equation, variable, domain)`
 
-```python signature
-solveset_in_domain(
-    equation: ExpressionLike,
-    variable: VariableLike,
-    domain: ExpressionLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_solveset_in_domain.5dc47cc84338"></a>
+`symi.solveset_in_domain(equation, variable, domain)`
 
 
 `solveset` restricted to an explicit domain set (e.g. `real_line()`,
@@ -234,38 +159,14 @@ solveset_in_domain(
 
 ### roots_with_multiplicities
 
-<a id="entry-presentation_python_api_session_roots_with_multiplicities"></a>
-<a id="placement-placement.python.python_module.module_roots_with_multiplicities.a15c88775319"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-roots_with_multiplicities(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Any
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_roots_with_multiplicities.9ad8376a40ce"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.roots_with_multiplicities</code></p>
-
-```python signature
-roots_with_multiplicities(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Any
-```
+`Context.roots_with_multiplicities(input_expression, variable)`
 
 <a id="placement-placement.python.python_class.expression_roots_with_multiplicities.30879349c706"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.roots_with_multiplicities</code></p>
+`Expression.roots_with_multiplicities(variable)`
 
-```python signature
-roots_with_multiplicities(variable: VariableLike) -> Any
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_roots_with_multiplicities.a15c88775319"></a>
+`symi.roots_with_multiplicities(input_expression, variable)`
 
 
 Roots of a polynomial with their multiplicities. **Notes:** Python returns a
@@ -273,33 +174,11 @@ dict keyed by root; WASM returns an array of `RootMultiplicity` objects.
 
 ### polynomial_root
 
-<a id="entry-presentation_python_api_session_polynomial_root"></a>
-<a id="placement-placement.python.python_module.module_polynomial_root.078947de5378"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-polynomial_root(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    index: int,
-) -> Optional[Expression]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_polynomial_root.5cdc7cff6490"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.polynomial_root</code></p>
+`Context.polynomial_root(input_expression, variable, index)`
 
-```python signature
-polynomial_root(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    index: int,
-) -> Optional[Expression]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_polynomial_root.078947de5378"></a>
+`symi.polynomial_root(input_expression, variable, index)`
 
 
 Construct the zero-based `index`-th exact root of a univariate rational
@@ -316,31 +195,11 @@ explicit, separate operation.
 
 ### minimal_polynomial_of
 
-<a id="entry-presentation_python_api_session_minimal_polynomial_of"></a>
-<a id="placement-placement.python.python_module.module_minimal_polynomial_of.55b3ebd83e25"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-minimal_polynomial_of(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Optional[Expression]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_minimal_polynomial_of.0f4e1c41aa2a"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.minimal_polynomial_of</code></p>
+`Context.minimal_polynomial_of(input_expression, variable)`
 
-```python signature
-minimal_polynomial_of(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Optional[Expression]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_minimal_polynomial_of.55b3ebd83e25"></a>
+`symi.minimal_polynomial_of(input_expression, variable)`
 
 
 Return an exact polynomial in the requested variable for a first-class
@@ -353,31 +212,11 @@ Has `root` and `multiplicity` getters; see object model.
 
 ### solve_polynomial_system
 
-<a id="entry-presentation_python_api_session_solve_polynomial_system"></a>
-<a id="placement-placement.python.python_module.module_solve_polynomial_system.2a04d647f98e"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-solve_polynomial_system(
-    equations: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> Any
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_solve_polynomial_system.2f65455835ec"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solve_polynomial_system</code></p>
+`Context.solve_polynomial_system(equations, variables)`
 
-```python signature
-solve_polynomial_system(
-    equations: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> Any
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_solve_polynomial_system.2a04d647f98e"></a>
+`symi.solve_polynomial_system(equations, variables)`
 
 
 Solve a multivariate polynomial system `{ equation_i = 0 }` for the named
@@ -401,14 +240,39 @@ place.
 
 ### verdict
 
-*Not exposed by the Python bindings. Available as [`UniffiPolynomialSystemSolution.verdict`](/symi/kotlin/solving#verdict) in Kotlin, [`UniffiPolynomialSystemSolution.verdict`](/symi/swift/solving#verdict) in Swift, [`api::results::PolynomialSystemSolution::verdict`](/symi/rust/solving#verdict) in Rust.*
+<a id="placement-placement.python.python_class.definiteintegrationresult_verdict.be0b21cf7d5e"></a>
+`DefiniteIntegrationResult.verdict`
+
+<a id="placement-placement.python.python_class.ordinarydifferentialequationsolveresult_verdict.592a8fe7421b"></a>
+`OrdinaryDifferentialEquationSolveResult.verdict`
+
+<a id="placement-placement.python.python_class.ordinarydifferentialequationsystemsolveresult_verdict.ee565ebcb9d3"></a>
+`OrdinaryDifferentialEquationSystemSolveResult.verdict`
+
+<a id="placement-placement.python.python_class.ordinarydifferentialequationsystemverificationreport_verdict.c3b045f19390"></a>
+`OrdinaryDifferentialEquationSystemVerificationReport.verdict`
+
+<a id="placement-placement.python.python_class.partialdifferentialequationsecondorderclassification_verdict.b16642fd9fa2"></a>
+`PartialDifferentialEquationSecondOrderClassification.verdict`
+
+<a id="placement-placement.python.python_class.partialdifferentialequationsolveresult_verdict.a23066465fd2"></a>
+`PartialDifferentialEquationSolveResult.verdict`
+
+<a id="placement-placement.python.python_class.partialdifferentialequationtransformationverificationreport_verdict.9f9cab5a462b"></a>
+`PartialDifferentialEquationTransformationVerificationReport.verdict`
+
+<a id="placement-placement.python.python_class.partialdifferentialequationverificationreport_verdict.92b062023cbc"></a>
+`PartialDifferentialEquationVerificationReport.verdict`
+
+<a id="placement-placement.python.python_class.partialdifferentialequationverificationresidual_verdict.24f8a5481097"></a>
+`PartialDifferentialEquationVerificationResidual.verdict`
 
 Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`,
 `"empty"`, `"positive_dimensional"`, or `"declined"`.
 
 ### complete
 
-*Not exposed by the Python bindings. Available as [`UniffiPolynomialSystemSolution.complete`](/symi/kotlin/solving#complete) in Kotlin, [`UniffiPolynomialSystemSolution.complete`](/symi/swift/solving#complete) in Swift, [`api::results::PolynomialSystemSolution::complete`](/symi/rust/solving#complete) in Rust.*
+*Not exposed by the Python bindings. Available as [`UniffiOptimizationOutcome.complete`](/symi/kotlin/solving#complete) in Kotlin, [`UniffiOptimizationOutcome.complete`](/symi/swift/solving#complete) in Swift, [`api::results::OptimizationOutcome::complete`](/symi/rust/solving#complete) in Rust.*
 
 Getter on `PolynomialSystemSolution`: whether the solver certified it found
 every solution.
@@ -426,48 +290,24 @@ One solution tuple of a polynomial system, pairing each unknown with its value.
 
 ### variables
 
-*Not exposed by the Python bindings. Available as [`UniffiSystemAssignment.variables`](/symi/kotlin/solving#variables) in Kotlin, [`UniffiSystemAssignment.variables`](/symi/swift/solving#variables) in Swift, [`api::results::SystemAssignment::variables`](/symi/rust/solving#variables) in Rust.*
+*Not exposed by the Python bindings. Available as [`UniffiCriticalPoint.variables`](/symi/kotlin/solving#variables) in Kotlin, [`UniffiCriticalPoint.variables`](/symi/swift/solving#variables) in Swift, [`api::results::CriticalPoint::variables`](/symi/rust/solving#variables) in Rust.*
 
 Getter on `SystemAssignment`: the unknown names, in order.
 
 ### values
 
-*Not exposed by the Python bindings. Available as [`UniffiSystemAssignment.values`](/symi/kotlin/solving#values) in Kotlin, [`UniffiSystemAssignment.values`](/symi/swift/solving#values) in Swift, [`api::results::SystemAssignment::values`](/symi/rust/solving#values) in Rust.*
+*Not exposed by the Python bindings. Available as [`UniffiCriticalPoint.values`](/symi/kotlin/solving#values) in Kotlin, [`UniffiCriticalPoint.values`](/symi/swift/solving#values) in Swift, [`api::results::CriticalPoint::values`](/symi/rust/solving#values) in Rust.*
 
 Getter on `SystemAssignment`: the assigned value expressions, aligned with
 `variables`.
 
 ### real_root_count
 
-<a id="entry-presentation_python_api_session_real_root_count"></a>
-<a id="placement-placement.python.python_module.module_real_root_count.85194a5b19fc"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-real_root_count(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    lower: int,
-    upper: int,
-) -> Optional[int]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_real_root_count.c9cb8cec0801"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.real_root_count</code></p>
+`Context.real_root_count(input_expression, variable, lower, upper)`
 
-```python signature
-real_root_count(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    lower: int,
-    upper: int,
-) -> Optional[int]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_real_root_count.85194a5b19fc"></a>
+`symi.real_root_count(input_expression, variable, lower, upper)`
 
 
 Number of distinct real roots of a univariate polynomial in the interval
@@ -476,31 +316,11 @@ univariate polynomial over the rationals.
 
 ### count_distinct_real_roots
 
-<a id="entry-presentation_python_api_session_count_distinct_real_roots"></a>
-<a id="placement-placement.python.python_module.module_count_distinct_real_roots.a838a3619f68"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-count_distinct_real_roots(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Optional[int]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_count_distinct_real_roots.cb5e1140209d"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.count_distinct_real_roots</code></p>
+`Context.count_distinct_real_roots(input_expression, variable)`
 
-```python signature
-count_distinct_real_roots(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-) -> Optional[int]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_count_distinct_real_roots.a838a3619f68"></a>
+`symi.count_distinct_real_roots(input_expression, variable)`
 
 
 Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions as
@@ -508,33 +328,11 @@ Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions
 
 ### real_root_sign
 
-<a id="entry-presentation_python_api_session_real_root_sign"></a>
-<a id="placement-placement.python.python_module.module_real_root_sign.c8e22d8c4a52"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-real_root_sign(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    index: int,
-) -> Optional[int]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_real_root_sign.806570800d2b"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.real_root_sign</code></p>
+`Context.real_root_sign(input_expression, variable, index)`
 
-```python signature
-real_root_sign(
-    input_expression: ExpressionLike,
-    variable: VariableLike,
-    index: int,
-) -> Optional[int]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_real_root_sign.c8e22d8c4a52"></a>
+`symi.real_root_sign(input_expression, variable, index)`
 
 
 The exact sign (`-1`, `0`, or `1`) of the `index`-th smallest real root of a
@@ -545,39 +343,11 @@ is out of range.
 
 ### compare_real_roots
 
-<a id="entry-presentation_python_api_session_compare_real_roots"></a>
-<a id="placement-placement.python.python_module.module_compare_real_roots.64c6a3af0b12"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-compare_real_roots(
-    first_expression: ExpressionLike,
-    first_variable: VariableLike,
-    first_index: int,
-    second_expression: ExpressionLike,
-    second_variable: VariableLike,
-    second_index: int,
-) -> Optional[int]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_compare_real_roots.d672290897f7"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.compare_real_roots</code></p>
+`Context.compare_real_roots(first_expression, first_variable, first_index, second_expression, second_variable, second_index)`
 
-```python signature
-compare_real_roots(
-    first_expression: ExpressionLike,
-    first_variable: VariableLike,
-    first_index: int,
-    second_expression: ExpressionLike,
-    second_variable: VariableLike,
-    second_index: int,
-) -> Optional[int]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_compare_real_roots.64c6a3af0b12"></a>
+`symi.compare_real_roots(first_expression, first_variable, first_index, second_expression, second_variable, second_index)`
 
 
 Compare two real algebraic numbers exactly, each given as the `index`-th smallest
@@ -591,33 +361,11 @@ polynomial over the rationals or an index is out of range.
 
 ### eliminate_quantifiers
 
-<a id="entry-presentation_python_api_session_eliminate_quantifiers"></a>
-<a id="placement-placement.python.python_module.module_eliminate_quantifiers.671ab41c3767"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-eliminate_quantifiers(
-    matrix: ExpressionLike,
-    quantifiers: list[str],
-    variables: Iterable[VariableLike],
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_eliminate_quantifiers.a0758faf0945"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.eliminate_quantifiers</code></p>
+`Context.eliminate_quantifiers(matrix, quantifiers, variables)`
 
-```python signature
-eliminate_quantifiers(
-    matrix: ExpressionLike,
-    quantifiers: list[str],
-    variables: Iterable[VariableLike],
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_eliminate_quantifiers.671ab41c3767"></a>
+`symi.eliminate_quantifiers(matrix, quantifiers, variables)`
 
 `context.eliminate_quantifiers(matrix, quantifiers: list[str], variables: list[VariableLike])`
 
@@ -634,31 +382,11 @@ decline, or when the solution formula cannot be certified.
 
 ### solve_semialgebraic
 
-<a id="entry-presentation_python_api_session_solve_semialgebraic"></a>
-<a id="placement-placement.python.python_module.module_solve_semialgebraic.150db5c326a7"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-solve_semialgebraic(
-    matrix: ExpressionLike,
-    variables: Iterable[VariableLike],
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_solve_semialgebraic.6453846cb1b9"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.solve_semialgebraic</code></p>
+`Context.solve_semialgebraic(matrix, variables)`
 
-```python signature
-solve_semialgebraic(
-    matrix: ExpressionLike,
-    variables: Iterable[VariableLike],
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_solve_semialgebraic.150db5c326a7"></a>
+`symi.solve_semialgebraic(matrix, variables)`
 
 `context.solve_semialgebraic(matrix, variables: list[VariableLike])`
 
@@ -685,14 +413,3 @@ print(symi.solveset_in_domain(x**2 - 2, "x", symi.real_line))
 print(symi.roots_with_multiplicities(x**3 - x, "x"))
 ```
 
-
-### solve_as_set
-
-*Not exposed by the Python bindings. Available as [`api::Expression::solve_as_set`](/symi/rust/solving#solve_as_set) in Rust.*
-
-
-The solution set of an equation as a set-valued expression, rather than the
-list of solutions [`solve`](#solve) returns. A set answer can express solution
-families a list cannot — an image set over the integers, or a union of several
-families — so it is the right entry when the solution set may be infinite.
-See [Sets](sets.md) for what can be done with the result.

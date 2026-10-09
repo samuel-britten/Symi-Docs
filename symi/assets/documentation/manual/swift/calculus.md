@@ -4,92 +4,31 @@ Calculus follows a uniform construct-versus-evaluate model; the summary table
 is in [Evaluation and constants](evaluation-and-constants.md). Every variable
 parameter accepts a name or a same-context symbol expression.
 
-Each operation below is one entry with its receivers listed together: the
-default context, an explicit context, and — where the operation takes an
-expression — the expression itself all reach the same operation, and an
-assumption scope reaches it under the assumptions that scope adds. The
-collapsed *calling forms* block on each entry gives the exact signature of
-each.
-
-**Three tasks are spelled `differentiate` or `derivative`**, and they are not
-interchangeable:
-
-| Task | Entry | Page |
-|---|---|---|
-| Differentiate an expression now | `differentiate` | Below |
-| Wrap an expression in an unevaluated derivative | `derivative` | [Deferred forms](deferred-forms.md#derivative) |
-| Build a derivative of a named unknown from argument orders | `derivative` | [Undefined functions](undefined-functions.md#derivative) |
-
 ### differentiate
 
-<a id="entry-presentation_swift_api_session_differentiate"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_differentiate.4dcb32c214fb"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func differentiate(
-    target: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_differentiate.9a9eda0d1d84"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.differentiate</code></p>
+`UniffiExpression.differentiate(variable: String) -> UniffiExpression`
 
-```swift signature
-func differentiate(variable: String) -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_differentiate.4dcb32c214fb"></a>
+`UniffiSession.differentiate(target: UniffiExpression, variable: String) -> UniffiExpression`
 
 
-Symbolic derivative with respect to `variable`, evaluated now. The derivative is
-total: unknown function calls produce derivative nodes.
+Symbolic derivative with respect to `variable`. The derivative is total: unknown
+function calls produce derivative nodes.
 
 ### integrate
 
-<a id="entry-presentation_swift_api_session_integrate"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_integrate.2cb7ddd1dc4e"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func integrate(
-    target: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_integrate.8bdaf1409091"></a>
+`UniffiAssumptionScope.integrate(target: UniffiExpression, variable: String) -> UniffiExpression`
 
 <a id="placement-placement.swift.swift_object.uniffiexpression_integrate.650b842ae015"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.integrate</code></p>
+`UniffiExpression.integrate(variable: String) -> UniffiExpression`
 
-```swift signature
-func integrate(variable: String) -> UniffiExpression
-```
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_integrate.8bdaf1409091"></a>
-<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.integrate</code></p>
-
-```swift signature
-func integrate(
-    target: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_integrate.2cb7ddd1dc4e"></a>
+`UniffiSession.integrate(target: UniffiExpression, variable: String) -> UniffiExpression`
 
 
-Indefinite integration (no constant of integration). The variant on an
-[assumption scope](assumptions.md#assumption_scope) runs the same integration
-under that scope's captured assumptions, which can close a branch the durable
-context leaves open; the scope is immutable and the owning context is
-unchanged. When every symbolic
+Indefinite integration (no constant of integration). When every symbolic
 strategy fails, the result is an *unevaluated* `integral` node, never a
 guess. Real symbolic parameters can produce a `piecewise` antiderivative
 whose conditions describe the supported parameter strata. A parameter value
@@ -97,46 +36,14 @@ outside every branch is undefined rather than a hidden declined branch.
 
 ### integrate_definite
 
-<a id="entry-presentation_swift_api_session_integrate_definite"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_integratedefinite.7e00cd35f77a"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func integrateDefinite(
-    inputExpression: UniffiExpression,
-    variable: String,
-    lower: UniffiExpression,
-    upper: UniffiExpression,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_integratedefinite.8ea5c2eb647b"></a>
+`UniffiAssumptionScope.integrateDefinite(target: UniffiExpression, variable: String, lowerBound: UniffiExpression, upperBound: UniffiExpression) -> UniffiExpression`
 
 <a id="placement-placement.swift.swift_object.uniffiexpression_integratedefinite.0f61d8ee9bc0"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.integrateDefinite</code></p>
+`UniffiExpression.integrateDefinite(variable: String, lower: UniffiExpression, upper: UniffiExpression) -> UniffiExpression`
 
-```swift signature
-func integrateDefinite(
-    variable: String,
-    lower: UniffiExpression,
-    upper: UniffiExpression,
-) -> UniffiExpression
-```
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_integratedefinite.8ea5c2eb647b"></a>
-<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.integrateDefinite</code></p>
-
-```swift signature
-func integrateDefinite(
-    target: UniffiExpression,
-    variable: String,
-    lowerBound: UniffiExpression,
-    upperBound: UniffiExpression,
-) -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_integratedefinite.7e00cd35f77a"></a>
+`UniffiSession.integrateDefinite(inputExpression: UniffiExpression, variable: String, lower: UniffiExpression, upper: UniffiExpression) -> UniffiExpression`
 
 
 Definite integration over `[lower, upper]` (bounds may be infinite). Falls
@@ -154,20 +61,8 @@ divergence, a principal value, or a declared parameter region matters.
 
 ### integrate_definite_detailed
 
-<a id="entry-presentation_swift_api_session_integrate_definite_detailed"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integratedefinitedetailed.09c04ae5e760"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func integrateDefiniteDetailed(
-    target: UniffiExpression,
-    variable: String,
-    lowerBound: UniffiExpression,
-    upperBound: UniffiExpression,
-    interpretation: UniffiDefiniteIntegrationInterpretation,
-    constraint: UniffiExpression?,
-) -> UniffiDefiniteIntegrationResult
-```
+`UniffiSession.integrateDefiniteDetailed(target: UniffiExpression, variable: String, lowerBound: UniffiExpression, upperBound: UniffiExpression, interpretation: UniffiDefiniteIntegrationInterpretation, constraint: UniffiExpression?) -> UniffiDefiniteIntegrationResult`
 
 
 Definite integration that keeps its verdict distinct from its value, so a
@@ -191,85 +86,19 @@ as a typed enumeration.
 
 ### DefiniteIntegrationResult
 
-What `integrate_definite_detailed` returns. It keeps the verdict separate from
-the value, so a proved divergence is never read as a declined request, and a
-declined request never as a proved answer. Its members are:
+*Not exposed by the Swift bindings. Available as [`DefiniteIntegrationResult`](/symi/python/calculus#DefiniteIntegrationResult) in Python, [`api::DefiniteIntegrationResult`](/symi/rust/calculus#DefiniteIntegrationResult) in Rust.*
 
-| Member | Meaning | Present |
-|---|---|---|
-| `verdict` | `evaluated`, `divergent`, or `declined` | Always |
-| `interpretation` | The interpretation the request was answered under, `ordinary` or `cauchy_principal_value` | Always |
-| `value` | The exact value of the integral | Exactly when the verdict is `evaluated` |
-| `divergence_direction` | `positive_infinity` or `negative_infinity` | Only when the verdict is `divergent` **and** a single signed infinity was established; a divergence without a proved sign leaves it absent |
-| `decline_reason` | `unsupported_family`, `incomplete_singularity_analysis`, `unknown_endpoint_behavior`, `unknown_bound_order`, or `unsupported_region` | Exactly when the verdict is `declined` |
-
-Each member's exact host type and spelling follows below.
-
-<a id="entry-presentation_swift_api_definiteintegrationresult_decline_reason"></a>
-<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_declinereason.aa60e5f176db"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
-
-```swift signature
-func declineReason() -> UniffiDefiniteIntegrationDeclineReason?
-```
-
-The reason, present exactly when the verdict is `declined`.
-
-<a id="entry-presentation_swift_api_definiteintegrationresult_divergence_direction"></a>
-<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_divergencedirection.89b81cab8553"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
-
-```swift signature
-func divergenceDirection() -> UniffiDefiniteIntegrationDivergenceDirection?
-```
-
-The signed infinity of a divergent request, when a single direction was established.
-
-<a id="entry-presentation_swift_api_definiteintegrationresult_interpretation"></a>
-<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_interpretation.563835a94b44"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
-
-```swift signature
-func interpretation() -> UniffiDefiniteIntegrationInterpretation
-```
-
-The interpretation under which the request was answered.
-
-<a id="entry-presentation_swift_api_definiteintegrationresult_value"></a>
-<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_value.dd8c3d0d37a0"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
-
-```swift signature
-func value() -> UniffiExpression?
-```
-
-The exact value, present exactly when the verdict is `evaluated`.
-
-<a id="entry-presentation_swift_api_definiteintegrationresult_verdict"></a>
-<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_verdict.1fb02e380bc6"></a>
-<p class="symi-entry-owner">UniffiDefiniteIntegrationResult method</p>
-
-```swift signature
-func verdict() -> UniffiDefiniteIntegrationVerdict
-```
-
-Whether the request was evaluated, proved divergent, or declined.
+`interpretation`, `verdict` (`evaluated`, `divergent` or `declined`), `value`
+(present exactly when evaluated), `divergence_direction` (`positive_infinity`
+or `negative_infinity`, present only when a single signed infinity was
+established), and `decline_reason` (`unsupported_family`,
+`incomplete_singularity_analysis`, `unknown_endpoint_behavior`,
+`unknown_bound_order` or `unsupported_region`, present exactly when declined).
 
 ### integrate_definite_numeric
 
-<a id="entry-presentation_swift_api_session_integrate_definite_numeric"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integratedefinitenumeric.2ffa56cf5a15"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func integrateDefiniteNumeric(
-    inputExpression: UniffiExpression,
-    variable: String,
-    lower: UniffiExpression,
-    upper: UniffiExpression,
-    precisionBits: UInt64,
-) -> UniffiNumericDefiniteIntegrationResult
-```
+`UniffiSession.integrateDefiniteNumeric(inputExpression: UniffiExpression, variable: String, lower: UniffiExpression, upper: UniffiExpression, precisionBits: UInt64) -> UniffiNumericDefiniteIntegrationResult`
 
 
 Explicit finite-interval quadrature. This is separate from symbolic definite
@@ -278,83 +107,19 @@ substitutes an unevaluated symbolic integral. The requested precision is in bits
 
 ### NumericDefiniteIntegrationResult
 
-What `integrate_definite_numeric` returns. An absent `value` is the honest
-outcome of quadrature that did not converge; no symbolic integral is ever
-substituted for it. Its members are:
+*Not exposed by the Swift bindings. Available as [`NumericDefiniteIntegrationResult`](/symi/python/calculus#NumericDefiniteIntegrationResult) in Python, [`api::NumericDefiniteIntegrationResult`](/symi/rust/calculus#NumericDefiniteIntegrationResult) in Rust.*
 
-| Member | Meaning | Present |
-|---|---|---|
-| `value` | The accepted quadrature value, as a `(real, imaginary)` pair | Only when convergence was established |
-| `estimated_absolute_error` | The final difference between successive quadrature rules | With an accepted `value` |
-| `precision_bits` | The precision of the accepted rule, in bits | With an accepted `value` |
-| `node_count` | The number of nodes of the accepted rule | With an accepted `value` |
-
-Each member's exact host type and spelling follows below.
-
-<a id="entry-presentation_swift_api_numericdefiniteintegrationresult_estimated_absolute_error"></a>
-<a id="placement-placement.swift.swift_object.uniffinumericdefiniteintegrationresult_estimatedabsoluteerror.fa20c4320234"></a>
-<p class="symi-entry-owner">UniffiNumericDefiniteIntegrationResult method</p>
-
-```swift signature
-func estimatedAbsoluteError() -> Double?
-```
-
-The final difference between successive quadrature rules.
-
-<a id="entry-presentation_swift_api_numericdefiniteintegrationresult_node_count"></a>
-<a id="placement-placement.swift.swift_object.uniffinumericdefiniteintegrationresult_nodecount.7cfe01382f21"></a>
-<p class="symi-entry-owner">UniffiNumericDefiniteIntegrationResult method</p>
-
-```swift signature
-func nodeCount() -> UInt64?
-```
-
-The node count of the accepted Gauss--Legendre rule.
-
-<a id="entry-presentation_swift_api_numericdefiniteintegrationresult_precision_bits"></a>
-<a id="placement-placement.swift.swift_object.uniffinumericdefiniteintegrationresult_precisionbits.e4d43a5a94f3"></a>
-<p class="symi-entry-owner">UniffiNumericDefiniteIntegrationResult method</p>
-
-```swift signature
-func precisionBits() -> UInt64?
-```
-
-The arithmetic precision used for the result.
-
-<a id="entry-presentation_swift_api_numericdefiniteintegrationresult_value"></a>
-<a id="placement-placement.swift.swift_object.uniffinumericdefiniteintegrationresult_value.394895eca044"></a>
-<p class="symi-entry-owner">UniffiNumericDefiniteIntegrationResult method</p>
-
-```swift signature
-func value() -> UniffiFloatingPointFloatingPointTuple?
-```
-
-The complex value as real and imaginary components, when convergence was established.
+`value` is an optional `(real, imaginary)` pair. When present,
+`estimated_absolute_error` is the final difference between successive quadrature
+rules; `precision_bits` and `node_count` identify the accepted rule.
 
 ### integrate_iterated
 
-<a id="entry-presentation_swift_api_session_integrate_iterated"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_integrateiterated.56eb5e52ec72"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func integrateIterated(
-    inputExpression: UniffiExpression,
-    variables: [String],
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_integrateiterated.48a41d441e29"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.integrateIterated</code></p>
+`UniffiExpression.integrateIterated(variables: [String]) -> UniffiExpression`
 
-```swift signature
-func integrateIterated(variables: [String]) -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_integrateiterated.56eb5e52ec72"></a>
+`UniffiSession.integrateIterated(inputExpression: UniffiExpression, variables: [String]) -> UniffiExpression`
 
 
 Iterated indefinite integration, applying the single-variable pipeline once
@@ -365,80 +130,25 @@ nodes — no partial evaluation through an unclosed inner integral.
 
 ### limit
 
-<a id="entry-presentation_swift_api_session_limit"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_limit.ecfe3d60c60b"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func limit(
-    target: UniffiExpression,
-    variable: String,
-    point: UniffiExpression,
-    direction: UniffiLimitDirection,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_limit.203d10bb9d38"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.limit</code></p>
+`UniffiExpression.limit(variable: String, point: UniffiExpression, direction: UniffiLimitDirection) -> UniffiExpression`
 
-```swift signature
-func limit(
-    variable: String,
-    point: UniffiExpression,
-    direction: UniffiLimitDirection,
-) -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_limit.ecfe3d60c60b"></a>
+`UniffiSession.limit(target: UniffiExpression, variable: String, point: UniffiExpression, direction: UniffiLimitDirection) -> UniffiExpression`
 
 
 `limit(expression, variable, point, direction="two_sided")` constructs a deferred limit.
 
 ### evaluate_limit
 
-<a id="entry-presentation_swift_api_session_evaluate_limit"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_evaluatelimit.844e7fee1517"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func evaluateLimit(
-    target: UniffiExpression,
-    variable: String,
-    point: UniffiExpression,
-    direction: UniffiLimitDirection,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_evaluatelimit.7ae3b6d9dfe0"></a>
+`UniffiAssumptionScope.evaluateLimit(target: UniffiExpression, variable: String, point: UniffiExpression, direction: UniffiLimitDirection) -> UniffiExpression`
 
 <a id="placement-placement.swift.swift_object.uniffiexpression_evaluatelimit.40edaf1e9fd5"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.evaluateLimit</code></p>
+`UniffiExpression.evaluateLimit(variable: String, point: UniffiExpression, direction: UniffiLimitDirection) -> UniffiExpression`
 
-```swift signature
-func evaluateLimit(
-    variable: String,
-    point: UniffiExpression,
-    direction: UniffiLimitDirection,
-) -> UniffiExpression
-```
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_evaluatelimit.7ae3b6d9dfe0"></a>
-<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.evaluateLimit</code></p>
-
-```swift signature
-func evaluateLimit(
-    target: UniffiExpression,
-    variable: String,
-    point: UniffiExpression,
-    direction: UniffiLimitDirection,
-) -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_evaluatelimit.844e7fee1517"></a>
+`UniffiSession.evaluateLimit(target: UniffiExpression, variable: String, point: UniffiExpression, direction: UniffiLimitDirection) -> UniffiExpression`
 
 
 `evaluate_limit(expression, variable, point, direction="two_sided")` runs the eager limit engine.
@@ -527,38 +237,14 @@ exhaustion returns the unevaluated form rather than a guess.
 
 ### singularities
 
-<a id="entry-presentation_swift_api_session_singularities"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_singularities.f4ea5f254036"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func singularities(
-    target: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_singularities.ab625a156d0e"></a>
+`UniffiAssumptionScope.singularities(target: UniffiExpression, variable: String) -> UniffiExpression`
 
 <a id="placement-placement.swift.swift_object.uniffiexpression_singularities.71f0bb930b6a"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.singularities</code></p>
+`UniffiExpression.singularities(variable: String) -> UniffiExpression`
 
-```swift signature
-func singularities(variable: String) -> UniffiExpression
-```
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_singularities.ab625a156d0e"></a>
-<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.singularities</code></p>
-
-```swift signature
-func singularities(
-    target: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_singularities.f4ea5f254036"></a>
+`UniffiSession.singularities(target: UniffiExpression, variable: String) -> UniffiExpression`
 
 
 The singular points of the expression in the complex plane, as a set
@@ -570,38 +256,14 @@ point on it were singular.
 
 ### continuous_domain
 
-<a id="entry-presentation_swift_api_session_continuous_domain"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_continuousdomain.e695bde9bb07"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func continuousDomain(
-    target: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
+<a id="placement-placement.swift.swift_object.uniffiassumptionscope_continuousdomain.959fabd23724"></a>
+`UniffiAssumptionScope.continuousDomain(target: UniffiExpression, variable: String) -> UniffiExpression`
 
 <a id="placement-placement.swift.swift_object.uniffiexpression_continuousdomain.8206aae6ab5b"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.continuousDomain</code></p>
+`UniffiExpression.continuousDomain(variable: String) -> UniffiExpression`
 
-```swift signature
-func continuousDomain(variable: String) -> UniffiExpression
-```
-
-<a id="placement-placement.swift.swift_object.uniffiassumptionscope_continuousdomain.959fabd23724"></a>
-<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.continuousDomain</code></p>
-
-```swift signature
-func continuousDomain(
-    target: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_continuousdomain.e695bde9bb07"></a>
+`UniffiSession.continuousDomain(target: UniffiExpression, variable: String) -> UniffiExpression`
 
 
 The subset of the real line on which the expression is continuous in
@@ -610,6 +272,13 @@ lowered to an exact univariate semialgebraic condition when supported, so,
 for example, `sqrt(x + 1/x - 2)` has continuous real domain `(0, infinity)`.
 
 ### summation_indefinite
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_summationindefinite.89114388c93b"></a>
+`UniffiExpression.summationIndefinite(index: String) -> UniffiExpression`
+
+<a id="placement-placement.swift.swift_object.uniffisession_summationindefinite.2f706335b0f8"></a>
+`UniffiSession.summationIndefinite(summand: UniffiExpression, index: String) -> UniffiExpression`
+
 
 Anti-difference: a closed form \(F\) with \(F(\operatorname{index}+1) - F(\operatorname{index}) = \operatorname{summand}\).
 Strategy stack: constant summands, linearity, polynomial power sums, rational
@@ -641,25 +310,11 @@ unrestricted Gamma-analytic identities.
 
 ### evaluate_numeric
 
-<a id="entry-presentation_swift_api_session_evaluate_numeric"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_evaluatenumeric.3950de319d77"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func evaluateNumeric(inputExpression: UniffiExpression) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_evaluatenumeric.9177eadb23d8"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.evaluateNumeric</code></p>
+`UniffiExpression.evaluateNumeric() -> UniffiExpression`
 
-```swift signature
-func evaluateNumeric() -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_evaluatenumeric.3950de319d77"></a>
+`UniffiSession.evaluateNumeric(inputExpression: UniffiExpression) -> UniffiExpression`
 
 
 Numerically evaluate to a float and re-encode as an exact rational literal;
@@ -668,17 +323,8 @@ For direct float output use `expression.evaluate_to_float`.
 
 ### evaluate_on_grid
 
-<a id="entry-presentation_swift_api_session_evaluate_on_grid"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_evaluateongrid.654e56df9f74"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func evaluateOnGrid(
-    inputExpression: UniffiExpression,
-    variable: String,
-    grid: [Double],
-) -> [Double]
-```
+`UniffiSession.evaluateOnGrid(inputExpression: UniffiExpression, variable: String, grid: [Double]) -> [Double]`
 
 
 Evaluate at each grid point, substituting `variable`. Positions where
@@ -687,17 +333,8 @@ plotting.
 
 ### evaluate_on_grid_points
 
-<a id="entry-presentation_swift_api_session_evaluate_on_grid_points"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_evaluateongridpoints.b19cb4cb951a"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func evaluateOnGridPoints(
-    inputExpression: UniffiExpression,
-    variables: [String],
-    points: [Double],
-) -> [Double]
-```
+`UniffiSession.evaluateOnGridPoints(inputExpression: UniffiExpression, variables: [String], points: [Double]) -> [Double]`
 
 
 Multi-variable companion to `evaluate_on_grid`: evaluate at each point of a
@@ -709,25 +346,14 @@ curves.
 
 ### execute
 
-<a id="entry-presentation_swift_api_session_execute"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_execute.01ea3451df6b"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func execute(target: UniffiExpression) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_execute.2b8f6b002d16"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.execute</code></p>
+`UniffiExpression.execute() -> UniffiExpression`
 
-```swift signature
-func execute() -> UniffiExpression
-```
+<a id="placement-placement.swift.swift_object.uniffimatrix_execute.df9725c5afee"></a>
+`UniffiMatrix.execute() -> UniffiMatrix`
 
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_execute.01ea3451df6b"></a>
+`UniffiSession.execute(target: UniffiExpression) -> UniffiExpression`
 
 
 Re-dispatch every unevaluated node (integral, derivative, summation,
@@ -737,46 +363,54 @@ substitution has changed the inputs.
 ## Example
 
 
-### integrate_definite_under_constraint
+## Additional API
 
-<a id="entry-presentation_swift_api_session_integrate_definite_under_constraint"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_integratedefiniteunderconstraint.c9f35c0a4198"></a>
-<p class="symi-entry-owner">Explicit context</p>
+<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_declinereason.aa60e5f176db"></a>
+### UniffiDefiniteIntegrationResult.declineReason
 
-```swift signature
-func integrateDefiniteUnderConstraint(
-    target: UniffiExpression,
-    variable: String,
-    lowerBound: UniffiExpression,
-    upperBound: UniffiExpression,
-    constraint: UniffiExpression,
-) -> UniffiExpression
-```
+`UniffiDefiniteIntegrationResult.declineReason() -> UniffiDefiniteIntegrationDeclineReason?`
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `UniffiDefiniteIntegrationDeclineReason?`.
 
-<a id="placement-placement.swift.swift_object.uniffiexpression_integratedefiniteunderconstraint.7c97ffe7ae03"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.integrateDefiniteUnderConstraint</code></p>
+<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_divergencedirection.89b81cab8553"></a>
+### UniffiDefiniteIntegrationResult.divergenceDirection
 
-```swift signature
-func integrateDefiniteUnderConstraint(
-    variable: String,
-    lowerBound: UniffiExpression,
-    upperBound: UniffiExpression,
-    constraint: UniffiExpression,
-) -> UniffiExpression
-```
+`UniffiDefiniteIntegrationResult.divergenceDirection() -> UniffiDefiniteIntegrationDivergenceDirection?`
 
-</details>
+Returns `UniffiDefiniteIntegrationDivergenceDirection?`.
 
+<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_interpretation.563835a94b44"></a>
+### UniffiDefiniteIntegrationResult.interpretation
 
-Definite integration under a local bounded logical constraint. The constraint
-holds for this call only: it is not recorded on any symbol, so it cannot leak
-into a later operation on the same context. Use it when the integral is
-determined only on part of a parameter range — a sign condition on a parameter,
-say — without committing the context to that condition.
+`UniffiDefiniteIntegrationResult.interpretation() -> UniffiDefiniteIntegrationInterpretation`
 
-See [Assumptions](assumptions.md) for durable symbol assumptions and for
-`AssumptionScope`, which applies a set of assumptions to a whole block of
-operations rather than to one call.
+Returns `UniffiDefiniteIntegrationInterpretation`.
+
+<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_value.dd8c3d0d37a0"></a>
+### UniffiDefiniteIntegrationResult.value
+
+`UniffiDefiniteIntegrationResult.value() -> UniffiExpression?`
+
+Returns `UniffiExpression?`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_derivative.23688abd353a"></a>
+### UniffiExpression.derivative
+
+`UniffiExpression.derivative(variable: String, order: UInt64) -> UniffiExpression`
+
+Returns `UniffiExpression`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_derivative.dd3badc82f1f"></a>
+### UniffiSession.derivative
+
+`UniffiSession.derivative(target: UniffiExpression, variable: String, order: UInt64) -> UniffiExpression`
+
+Returns `UniffiExpression`.
+
+<a id="placement-placement.swift.swift_object.uniffiundefinedfunction_derivative.85027e44f996"></a>
+### UniffiUndefinedFunction.derivative
+
+`UniffiUndefinedFunction.derivative(orders: [UInt64], arguments: [UniffiExpression]) -> UniffiExpression`
+
+Returns `UniffiExpression`.
+

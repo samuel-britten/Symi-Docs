@@ -4,25 +4,11 @@ Trigonometric, logarithmic, exponential, and complex rewrites are separated from
 
 ### expand_complex
 
-<a id="entry-presentation_kotlin_api_session_expand_complex"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_expandcomplex.c4c41e64b2fe"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun expandComplex(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_expandcomplex.5f742c821508"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.expandComplex</code></p>
+`UniffiExpression.expandComplex(): UniffiExpression`
 
-```kotlin signature
-fun expandComplex(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_expandcomplex.c4c41e64b2fe"></a>
+`UniffiSession.expandComplex(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -37,25 +23,11 @@ unsupported modulus arguments remain unchanged or wrapper-bearing.
 
 ### real_part
 
-<a id="entry-presentation_kotlin_api_session_real_part"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_realpart.008210f9d744"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun realPart(target: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_realpart.431a4982549e"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.realPart</code></p>
+`UniffiExpression.realPart(): UniffiExpression`
 
-```kotlin signature
-fun realPart(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_realpart.008210f9d744"></a>
+`UniffiSession.realPart(target: UniffiExpression): UniffiExpression`
 
 
 
@@ -65,25 +37,11 @@ Return the exact real component of an expression. For example, if `y` is declare
 
 ### imaginary_part
 
-<a id="entry-presentation_kotlin_api_session_imaginary_part"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_imaginarypart.36af0d885b7d"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun imaginaryPart(target: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_imaginarypart.5cabaf2db419"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.imaginaryPart</code></p>
+`UniffiExpression.imaginaryPart(): UniffiExpression`
 
-```kotlin signature
-fun imaginaryPart(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_imaginarypart.36af0d885b7d"></a>
+`UniffiSession.imaginaryPart(target: UniffiExpression): UniffiExpression`
 
 
 
@@ -93,25 +51,11 @@ Return the exact imaginary component of an expression. For example, if `y` is de
 
 ### combine_powers
 
-<a id="entry-presentation_kotlin_api_session_combine_powers"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_combinepowers.c15f3ebd9eb7"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun combinePowers(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_combinepowers.86c2f28debfb"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.combinePowers</code></p>
+`UniffiExpression.combinePowers(): UniffiExpression`
 
-```kotlin signature
-fun combinePowers(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_combinepowers.c15f3ebd9eb7"></a>
+`UniffiSession.combinePowers(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -131,25 +75,11 @@ unchanged, and an expression with no provable site is returned as-is.
 
 ### expand_power_base
 
-<a id="entry-presentation_kotlin_api_session_expand_power_base"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_expandpowerbase.7f0dfb229244"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun expandPowerBase(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_expandpowerbase.c51a6ada8a5e"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.expandPowerBase</code></p>
+`UniffiExpression.expandPowerBase(): UniffiExpression`
 
-```kotlin signature
-fun expandPowerBase(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_expandpowerbase.7f0dfb229244"></a>
+`UniffiSession.expandPowerBase(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -164,25 +94,11 @@ product is never decomposed, so `6^x` is not split into `2^x * 3^x`.
 
 ### denest_powers
 
-<a id="entry-presentation_kotlin_api_session_denest_powers"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_denestpowers.bc64f6c4e76f"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun denestPowers(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_denestpowers.5d21c4aaaf54"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.denestPowers</code></p>
+`UniffiExpression.denestPowers(): UniffiExpression`
 
-```kotlin signature
-fun denestPowers(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_denestpowers.bc64f6c4e76f"></a>
+`UniffiSession.denestPowers(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -195,25 +111,11 @@ there is no force mode. A base that is not structurally a power is untouched.
 
 ### simplify_trigonometric
 
-<a id="entry-presentation_kotlin_api_session_simplify_trigonometric"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_simplifytrigonometric.e99f807fad14"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun simplifyTrigonometric(target: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_simplifytrigonometric.2cefa57a91b8"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.simplifyTrigonometric</code></p>
+`UniffiExpression.simplifyTrigonometric(): UniffiExpression`
 
-```kotlin signature
-fun simplifyTrigonometric(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_simplifytrigonometric.e99f807fad14"></a>
+`UniffiSession.simplifyTrigonometric(target: UniffiExpression): UniffiExpression`
 
 
 
@@ -221,25 +123,11 @@ Fu-style trigonometric simplification toward fewer/cheaper trig calls.
 
 ### expand_trigonometric
 
-<a id="entry-presentation_kotlin_api_session_expand_trigonometric"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_expandtrigonometric.24dc216ed570"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun expandTrigonometric(target: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_expandtrigonometric.ad4bd08e7e4a"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.expandTrigonometric</code></p>
+`UniffiExpression.expandTrigonometric(): UniffiExpression`
 
-```kotlin signature
-fun expandTrigonometric(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_expandtrigonometric.24dc216ed570"></a>
+`UniffiSession.expandTrigonometric(target: UniffiExpression): UniffiExpression`
 
 
 
@@ -250,25 +138,11 @@ admitted sums are expanded in the same pass.
 
 ### combine_trigonometric
 
-<a id="entry-presentation_kotlin_api_session_combine_trigonometric"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_combinetrigonometric.480105cf9ba9"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun combineTrigonometric(target: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_combinetrigonometric.8e5f9b19ceeb"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.combineTrigonometric</code></p>
+`UniffiExpression.combineTrigonometric(): UniffiExpression`
 
-```kotlin signature
-fun combineTrigonometric(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_combinetrigonometric.480105cf9ba9"></a>
+`UniffiSession.combineTrigonometric(target: UniffiExpression): UniffiExpression`
 
 
 
@@ -277,25 +151,11 @@ angle-recombination rules.
 
 ### combine_logarithm
 
-<a id="entry-presentation_kotlin_api_session_combine_logarithm"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_combinelogarithm.1d4e02eb6a8c"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun combineLogarithm(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_combinelogarithm.30a58f6b4071"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.combineLogarithm</code></p>
+`UniffiExpression.combineLogarithm(): UniffiExpression`
 
-```kotlin signature
-fun combineLogarithm(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_combinelogarithm.1d4e02eb6a8c"></a>
+`UniffiSession.combineLogarithm(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -304,25 +164,11 @@ preserves the expression's domain.
 
 ### expand_logarithm
 
-<a id="entry-presentation_kotlin_api_session_expand_logarithm"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_expandlogarithm.46c834d63414"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun expandLogarithm(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_expandlogarithm.3b9b417f29e6"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.expandLogarithm</code></p>
+`UniffiExpression.expandLogarithm(): UniffiExpression`
 
-```kotlin signature
-fun expandLogarithm(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_expandlogarithm.46c834d63414"></a>
+`UniffiSession.expandLogarithm(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -332,25 +178,11 @@ unchanged.
 
 ### rewrite_as_exponential
 
-<a id="entry-presentation_kotlin_api_session_rewrite_as_exponential"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_rewriteasexponential.fece68f381e4"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun rewriteAsExponential(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_rewriteasexponential.80694af63fc9"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rewriteAsExponential</code></p>
+`UniffiExpression.rewriteAsExponential(): UniffiExpression`
 
-```kotlin signature
-fun rewriteAsExponential(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_rewriteasexponential.fece68f381e4"></a>
+`UniffiSession.rewriteAsExponential(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -359,25 +191,11 @@ equivalent complex-exponential expression (bottom-up).
 
 ### rewrite_as_trigonometric
 
-<a id="entry-presentation_kotlin_api_session_rewrite_as_trigonometric"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_rewriteastrigonometric.20fb3b93dd27"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun rewriteAsTrigonometric(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_rewriteastrigonometric.d8d376e8fb27"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rewriteAsTrigonometric</code></p>
+`UniffiExpression.rewriteAsTrigonometric(): UniffiExpression`
 
-```kotlin signature
-fun rewriteAsTrigonometric(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_rewriteastrigonometric.20fb3b93dd27"></a>
+`UniffiSession.rewriteAsTrigonometric(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -387,28 +205,11 @@ through unchanged, so the round trip is the identity.
 
 ### rewrite_trigonometric_basis
 
-<a id="entry-presentation_kotlin_api_session_rewrite_trigonometric_basis"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_rewritetrigonometricbasis.06aa5b0441a5"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun rewriteTrigonometricBasis(
-    target: UniffiExpression,
-    basis: UniffiTrigonometricBasis,
-): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_rewritetrigonometricbasis.3a6144afe00c"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rewriteTrigonometricBasis</code></p>
+`UniffiExpression.rewriteTrigonometricBasis(basis: UniffiTrigonometricBasis): UniffiExpression`
 
-```kotlin signature
-fun rewriteTrigonometricBasis(basis: UniffiTrigonometricBasis): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_rewritetrigonometricbasis.06aa5b0441a5"></a>
+`UniffiSession.rewriteTrigonometricBasis(target: UniffiExpression, basis: UniffiTrigonometricBasis): UniffiExpression`
 
 
 

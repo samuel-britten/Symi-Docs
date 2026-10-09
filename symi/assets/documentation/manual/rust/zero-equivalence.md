@@ -2,32 +2,11 @@
 
 ### zero_equivalent
 
-<a id="entry-presentation_rust_api_session_zero_equivalent"></a>
-<a id="placement-placement.rust.native_rust.api_session_zero_equivalent.58c8fe79d263"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn zero_equivalent(
-    &self,
-    target: &Expression,
-    constraint: Option<&Expression>,
-) -> Result<crate::zero_equivalence::ZeroEquivalenceVerdict, ApiError>
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.rust.native_rust.api_expression_zero_equivalent.ff80aa751848"></a>
-<p class="symi-entry-owner">api::Expression method: <code>api::Expression::zero_equivalent</code></p>
+`symi::api::Expression — pub fn zero_equivalent(&self, constraint: Option<&Expression>) -> Result<crate::zero_equivalence::ZeroEquivalenceVerdict, ApiError>`
 
-```rust signature
-pub fn zero_equivalent(
-    &self,
-    constraint: Option<&Expression>,
-) -> Result<crate::zero_equivalence::ZeroEquivalenceVerdict, ApiError>
-```
-
-</details>
+<a id="placement-placement.rust.native_rust.api_session_zero_equivalent.58c8fe79d263"></a>
+`symi::api::Session — pub fn zero_equivalent(&self, target: &Expression, constraint: Option<&Expression>) -> Result<crate::zero_equivalence::ZeroEquivalenceVerdict, ApiError>`
 
 
 
@@ -55,19 +34,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
-
-
-## Additional API
-
-### ZeroEquivalenceVerdict
-
-<a id="entry-presentation_rust_api_zeroequivalenceverdict"></a>
-<a id="placement-placement.rust.native_rust.api_zeroequivalenceverdict.4803e7d8b36f"></a>
-<p class="symi-entry-owner">api re_export</p>
-
-```rust signature
-pub use crate::zero_equivalence::ZeroEquivalenceVerdict;
-```
-
-Re-exports the three-valued zero-equivalence verdict returned by `zero_equivalent`.
 

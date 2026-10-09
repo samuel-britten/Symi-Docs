@@ -9,761 +9,310 @@ values collapse).
 
 ### sin
 
-<a id="entry-presentation_wasm_api_session_sin"></a>
-<a id="placement-placement.wasm.wasm_module.module_sin.6bd3d48fdeac"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-sin(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.javascript_facade.context_sin.e186cd596931"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.sin</code></p>
-
-```typescript signature
-sin(value: ExpressionLike): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.context_sin.5b5f3d82ecc5"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.sin</code></p>
-
-```typescript signature
-sin(x: Expression): Expression
-```
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_sin.64ed29b5aabf"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.sin</code></p>
-
-```typescript signature
-sin(value: ExpressionLike): Expression
-```
+`Context.sin(value: ExpressionLike): Expression`
 
 <a id="placement-placement.wasm.javascript_facade.expression_sin.8da54b319d95"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.sin</code></p>
+`Expression.sin(): Expression`
 
-```typescript signature
-sin(): Expression
-```
+<a id="placement-placement.wasm.javascript_facade.symifacade_sin.64ed29b5aabf"></a>
+`SymiFacade.sin(value: ExpressionLike): Expression`
 
-</details>
+<a id="placement-placement.wasm.wasm_class.context_sin.5b5f3d82ecc5"></a>
+Raw WebAssembly: `pub fn sin(&self, x: &Expression) -> Result<Expression, JsError>`
+
+<a id="placement-placement.wasm.wasm_module.module_sin.6bd3d48fdeac"></a>
+Raw WebAssembly: `fn sin(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### cos
 
-<a id="entry-presentation_wasm_api_session_cos"></a>
-<a id="placement-placement.wasm.wasm_module.module_cos.e22dd1cddf4b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-cos(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.javascript_facade.context_cos.127007f1d3bb"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.cos</code></p>
-
-```typescript signature
-cos(value: ExpressionLike): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.context_cos.8e8798a224e7"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.cos</code></p>
-
-```typescript signature
-cos(x: Expression): Expression
-```
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_cos.08b219c1578f"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.cos</code></p>
-
-```typescript signature
-cos(value: ExpressionLike): Expression
-```
+`Context.cos(value: ExpressionLike): Expression`
 
 <a id="placement-placement.wasm.javascript_facade.expression_cos.9c05351df5a5"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.cos</code></p>
+`Expression.cos(): Expression`
 
-```typescript signature
-cos(): Expression
-```
+<a id="placement-placement.wasm.javascript_facade.symifacade_cos.08b219c1578f"></a>
+`SymiFacade.cos(value: ExpressionLike): Expression`
 
-</details>
+<a id="placement-placement.wasm.wasm_class.context_cos.8e8798a224e7"></a>
+Raw WebAssembly: `pub fn cos(&self, x: &Expression) -> Result<Expression, JsError>`
+
+<a id="placement-placement.wasm.wasm_module.module_cos.e22dd1cddf4b"></a>
+Raw WebAssembly: `fn cos(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### tan
 
-<a id="entry-presentation_wasm_api_session_tan"></a>
-<a id="placement-placement.wasm.wasm_module.module_tan.8842ce8669b1"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-tan(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_tan.96c4a114dc95"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.tan</code></p>
+Raw WebAssembly: `pub fn tan(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-tan(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_tan.8842ce8669b1"></a>
+Raw WebAssembly: `fn tan(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### sec
 
-<a id="entry-presentation_wasm_api_session_sec"></a>
-<a id="placement-placement.wasm.wasm_module.module_sec.4d68af5f0033"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-sec(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_sec.84f267f90796"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.sec</code></p>
+Raw WebAssembly: `pub fn sec(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-sec(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_sec.4d68af5f0033"></a>
+Raw WebAssembly: `fn sec(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### csc
 
-<a id="entry-presentation_wasm_api_session_csc"></a>
-<a id="placement-placement.wasm.wasm_module.module_csc.7065ea694039"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-csc(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_csc.b24c53b2bf57"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.csc</code></p>
+Raw WebAssembly: `pub fn csc(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-csc(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_csc.7065ea694039"></a>
+Raw WebAssembly: `fn csc(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### cot
 
-<a id="entry-presentation_wasm_api_session_cot"></a>
-<a id="placement-placement.wasm.wasm_module.module_cot.5f368ffa03f9"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-cot(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_cot.38747a13906c"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.cot</code></p>
+Raw WebAssembly: `pub fn cot(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-cot(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_cot.5f368ffa03f9"></a>
+Raw WebAssembly: `fn cot(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arcsin
 
-<a id="entry-presentation_wasm_api_session_arcsin"></a>
-<a id="placement-placement.wasm.wasm_module.module_arcsin.e6003a8e88b5"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arcsin(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arcsin.b32e227f2b04"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arcsin</code></p>
+Raw WebAssembly: `pub fn arcsin(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arcsin(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arcsin.e6003a8e88b5"></a>
+Raw WebAssembly: `fn arcsin(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arccos
 
-<a id="entry-presentation_wasm_api_session_arccos"></a>
-<a id="placement-placement.wasm.wasm_module.module_arccos.64eb38298d92"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arccos(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arccos.6f986d1187f1"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arccos</code></p>
+Raw WebAssembly: `pub fn arccos(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arccos(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arccos.64eb38298d92"></a>
+Raw WebAssembly: `fn arccos(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arctan
 
-<a id="entry-presentation_wasm_api_session_arctan"></a>
-<a id="placement-placement.wasm.wasm_module.module_arctan.94640543b210"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arctan(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arctan.7dadd625290a"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arctan</code></p>
+Raw WebAssembly: `pub fn arctan(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arctan(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arctan.94640543b210"></a>
+Raw WebAssembly: `fn arctan(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arcsec
 
-<a id="entry-presentation_wasm_api_session_arcsec"></a>
-<a id="placement-placement.wasm.wasm_module.module_arcsec.c8a0041cc409"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arcsec(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arcsec.3ca9b48826c7"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arcsec</code></p>
+Raw WebAssembly: `pub fn arcsec(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arcsec(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arcsec.c8a0041cc409"></a>
+Raw WebAssembly: `fn arcsec(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arccsc
 
-<a id="entry-presentation_wasm_api_session_arccsc"></a>
-<a id="placement-placement.wasm.wasm_module.module_arccsc.963a346a021c"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arccsc(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arccsc.42ee39a70f76"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arccsc</code></p>
+Raw WebAssembly: `pub fn arccsc(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arccsc(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arccsc.963a346a021c"></a>
+Raw WebAssembly: `fn arccsc(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arccot
 
-<a id="entry-presentation_wasm_api_session_arccot"></a>
-<a id="placement-placement.wasm.wasm_module.module_arccot.d67736f7d772"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arccot(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arccot.d6212e82ac65"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arccot</code></p>
+Raw WebAssembly: `pub fn arccot(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arccot(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arccot.d67736f7d772"></a>
+Raw WebAssembly: `fn arccot(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### sinh
 
-<a id="entry-presentation_wasm_api_session_sinh"></a>
-<a id="placement-placement.wasm.wasm_module.module_sinh.1ff5a391d068"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-sinh(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_sinh.5db01c5a733c"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.sinh</code></p>
+Raw WebAssembly: `pub fn sinh(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-sinh(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_sinh.1ff5a391d068"></a>
+Raw WebAssembly: `fn sinh(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### cosh
 
-<a id="entry-presentation_wasm_api_session_cosh"></a>
-<a id="placement-placement.wasm.wasm_module.module_cosh.7a957d886cb2"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-cosh(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_cosh.0d0d2c183bbe"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.cosh</code></p>
+Raw WebAssembly: `pub fn cosh(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-cosh(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_cosh.7a957d886cb2"></a>
+Raw WebAssembly: `fn cosh(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### tanh
 
-<a id="entry-presentation_wasm_api_session_tanh"></a>
-<a id="placement-placement.wasm.wasm_module.module_tanh.efb975b6dbc0"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-tanh(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_tanh.fcfd055b99f5"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.tanh</code></p>
+Raw WebAssembly: `pub fn tanh(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-tanh(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_tanh.efb975b6dbc0"></a>
+Raw WebAssembly: `fn tanh(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### sech
 
-<a id="entry-presentation_wasm_api_session_sech"></a>
-<a id="placement-placement.wasm.wasm_module.module_sech.6fb6206e0865"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-sech(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_sech.b5b9ba43e0b5"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.sech</code></p>
+Raw WebAssembly: `pub fn sech(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-sech(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_sech.6fb6206e0865"></a>
+Raw WebAssembly: `fn sech(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### csch
 
-<a id="entry-presentation_wasm_api_session_csch"></a>
-<a id="placement-placement.wasm.wasm_module.module_csch.4d44335294b8"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-csch(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_csch.f2d967560733"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.csch</code></p>
+Raw WebAssembly: `pub fn csch(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-csch(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_csch.4d44335294b8"></a>
+Raw WebAssembly: `fn csch(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### coth
 
-<a id="entry-presentation_wasm_api_session_coth"></a>
-<a id="placement-placement.wasm.wasm_module.module_coth.1dcf0ef2fba2"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-coth(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_coth.9ca2309ec1d6"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.coth</code></p>
+Raw WebAssembly: `pub fn coth(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-coth(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_coth.1dcf0ef2fba2"></a>
+Raw WebAssembly: `fn coth(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arcsinh
 
-<a id="entry-presentation_wasm_api_session_arcsinh"></a>
-<a id="placement-placement.wasm.wasm_module.module_arcsinh.93841ccf5c75"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arcsinh(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arcsinh.fa148850e60c"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arcsinh</code></p>
+Raw WebAssembly: `pub fn arcsinh(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arcsinh(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arcsinh.93841ccf5c75"></a>
+Raw WebAssembly: `fn arcsinh(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arccosh
 
-<a id="entry-presentation_wasm_api_session_arccosh"></a>
-<a id="placement-placement.wasm.wasm_module.module_arccosh.c9cc3fd80813"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arccosh(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arccosh.cb2cbcc3f028"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arccosh</code></p>
+Raw WebAssembly: `pub fn arccosh(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arccosh(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arccosh.c9cc3fd80813"></a>
+Raw WebAssembly: `fn arccosh(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arctanh
 
-<a id="entry-presentation_wasm_api_session_arctanh"></a>
-<a id="placement-placement.wasm.wasm_module.module_arctanh.9edfb410a017"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arctanh(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arctanh.446dade022fb"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arctanh</code></p>
+Raw WebAssembly: `pub fn arctanh(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arctanh(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arctanh.9edfb410a017"></a>
+Raw WebAssembly: `fn arctanh(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arcsech
 
-<a id="entry-presentation_wasm_api_session_arcsech"></a>
-<a id="placement-placement.wasm.wasm_module.module_arcsech.47496bc1390d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arcsech(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arcsech.4b7994e5ad8d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arcsech</code></p>
+Raw WebAssembly: `pub fn arcsech(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arcsech(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arcsech.47496bc1390d"></a>
+Raw WebAssembly: `fn arcsech(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arccsch
 
-<a id="entry-presentation_wasm_api_session_arccsch"></a>
-<a id="placement-placement.wasm.wasm_module.module_arccsch.24e8a1e67daf"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arccsch(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arccsch.637eb86bfbe6"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arccsch</code></p>
+Raw WebAssembly: `pub fn arccsch(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arccsch(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arccsch.24e8a1e67daf"></a>
+Raw WebAssembly: `fn arccsch(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### arccoth
 
-<a id="entry-presentation_wasm_api_session_arccoth"></a>
-<a id="placement-placement.wasm.wasm_module.module_arccoth.53ec83d35724"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-arccoth(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_arccoth.ccfaaed98446"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.arccoth</code></p>
+Raw WebAssembly: `pub fn arccoth(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-arccoth(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_arccoth.53ec83d35724"></a>
+Raw WebAssembly: `fn arccoth(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### exp
 
-<a id="entry-presentation_wasm_api_session_exp"></a>
-<a id="placement-placement.wasm.wasm_module.module_exp.8b7300d911be"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-exp(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.javascript_facade.context_exp.2ab79692a3cc"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.exp</code></p>
-
-```typescript signature
-exp(value: ExpressionLike): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.context_exp.560a294e8805"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.exp</code></p>
-
-```typescript signature
-exp(x: Expression): Expression
-```
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_exp.c26368174598"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.exp</code></p>
-
-```typescript signature
-exp(value: ExpressionLike): Expression
-```
+`Context.exp(value: ExpressionLike): Expression`
 
 <a id="placement-placement.wasm.javascript_facade.expression_exp.11a12106d9fb"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.exp</code></p>
+`Expression.exp(): Expression`
 
-```typescript signature
-exp(): Expression
-```
+<a id="placement-placement.wasm.javascript_facade.symifacade_exp.c26368174598"></a>
+`SymiFacade.exp(value: ExpressionLike): Expression`
 
-</details>
+<a id="placement-placement.wasm.wasm_class.context_exp.560a294e8805"></a>
+Raw WebAssembly: `pub fn exp(&self, x: &Expression) -> Result<Expression, JsError>`
+
+<a id="placement-placement.wasm.wasm_module.module_exp.8b7300d911be"></a>
+Raw WebAssembly: `fn exp(x: &Expression) -> Result<Expression, JsError>`
 
 
 The natural exponential.
 
 ### log
 
-<a id="entry-presentation_wasm_api_session_log"></a>
-<a id="placement-placement.wasm.wasm_module.module_log.38cd13720085"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-log(x: Expression, base?: Expression | null): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_log.70c0987461a7"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.log</code></p>
+Raw WebAssembly: `pub fn log(&self, x: &Expression, base: Option<Expression>) -> Result<Expression, JsError>`
 
-```typescript signature
-log(x: Expression, base?: Expression | null): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_log.38cd13720085"></a>
+Raw WebAssembly: `fn log(x: &Expression, base: Option<Expression>) -> Result<Expression, JsError>`
 
 
 Natural logarithm; with `base` given, `log(x)/log(base)`.
 
 ### sqrt
 
-<a id="entry-presentation_wasm_api_session_sqrt"></a>
-<a id="placement-placement.wasm.wasm_module.module_sqrt.31de3cfa5500"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-sqrt(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.javascript_facade.context_sqrt.2a25fe213571"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.sqrt</code></p>
-
-```typescript signature
-sqrt(value: ExpressionLike): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.context_sqrt.e93f423ac79b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.sqrt</code></p>
-
-```typescript signature
-sqrt(x: Expression): Expression
-```
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_sqrt.39062d897204"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.sqrt</code></p>
-
-```typescript signature
-sqrt(value: ExpressionLike): Expression
-```
+`Context.sqrt(value: ExpressionLike): Expression`
 
 <a id="placement-placement.wasm.javascript_facade.expression_sqrt.8adbabb8c608"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.sqrt</code></p>
+`Expression.sqrt(): Expression`
 
-```typescript signature
-sqrt(): Expression
-```
+<a id="placement-placement.wasm.javascript_facade.symifacade_sqrt.39062d897204"></a>
+`SymiFacade.sqrt(value: ExpressionLike): Expression`
 
-</details>
+<a id="placement-placement.wasm.wasm_class.context_sqrt.e93f423ac79b"></a>
+Raw WebAssembly: `pub fn sqrt(&self, x: &Expression) -> Result<Expression, JsError>`
+
+<a id="placement-placement.wasm.wasm_module.module_sqrt.31de3cfa5500"></a>
+Raw WebAssembly: `fn sqrt(x: &Expression) -> Result<Expression, JsError>`
 
 
 Principal square root, stored as `x^(1/2)`.
 
 ### root
 
-<a id="entry-presentation_wasm_api_session_root"></a>
-<a id="placement-placement.wasm.wasm_module.module_root.305a53c2acc8"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-root(x: Expression, n: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_root.0a936cd66ba7"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.root</code></p>
+Raw WebAssembly: `pub fn root(&self, x: &Expression, n: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-root(x: Expression, n: Expression): Expression
-```
+<a id="placement-placement.wasm.wasm_class.rootmultiplicity_root.27ae91435854"></a>
+Raw WebAssembly: `pub fn root(&self) -> Expression`
 
-</details>
+<a id="placement-placement.wasm.wasm_module.module_root.305a53c2acc8"></a>
+Raw WebAssembly: `fn root(x: &Expression, n: &Expression) -> Result<Expression, JsError>`
 
 
 Principal n-th root, stored as `x^(1/n)`.
 
 ### abs
 
-<a id="entry-presentation_wasm_api_session_abs"></a>
-<a id="placement-placement.wasm.wasm_module.module_abs.3346979e2e3e"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-abs(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_abs.8becf99ffac2"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.abs</code></p>
+Raw WebAssembly: `pub fn abs(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-abs(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_abs.3346979e2e3e"></a>
+Raw WebAssembly: `fn abs(x: &Expression) -> Result<Expression, JsError>`
 
 
 The absolute value. It folds to `x` or `-x` whenever the sign of `x` is decided by the exact real
@@ -773,169 +322,71 @@ call symbolic; `signum` folds on exactly the same reach.
 
 ### floor
 
-<a id="entry-presentation_wasm_api_session_floor"></a>
-<a id="placement-placement.wasm.wasm_module.module_floor.44548369db27"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-floor(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_floor.106fcc90d473"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.floor</code></p>
+Raw WebAssembly: `pub fn floor(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-floor(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_floor.44548369db27"></a>
+Raw WebAssembly: `fn floor(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### ceiling
 
-<a id="entry-presentation_wasm_api_session_ceiling"></a>
-<a id="placement-placement.wasm.wasm_module.module_ceiling.ea4214d28a60"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-ceiling(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_ceiling.b28033129d91"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.ceiling</code></p>
+Raw WebAssembly: `pub fn ceiling(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-ceiling(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_ceiling.ea4214d28a60"></a>
+Raw WebAssembly: `fn ceiling(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### conjugate
 
-<a id="entry-presentation_wasm_api_session_conjugate"></a>
-<a id="placement-placement.wasm.wasm_module.module_conjugate.6c7c642fd60f"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-conjugate(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_conjugate.adbaa68a1d9c"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.conjugate</code></p>
+Raw WebAssembly: `pub fn conjugate(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-conjugate(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_conjugate.6c7c642fd60f"></a>
+Raw WebAssembly: `fn conjugate(x: &Expression) -> Result<Expression, JsError>`
 
 
 Complex conjugate.
 
 ### factorial
 
-<a id="entry-presentation_wasm_api_session_factorial"></a>
-<a id="placement-placement.wasm.wasm_module.module_factorial.5a0581f6a74d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-factorial(x: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_factorial.9cd8cb495318"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.factorial</code></p>
+Raw WebAssembly: `pub fn factorial(&self, x: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-factorial(x: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_factorial.5a0581f6a74d"></a>
+Raw WebAssembly: `fn factorial(x: &Expression) -> Result<Expression, JsError>`
 
 
 ### binomial
 
-<a id="entry-presentation_wasm_api_session_binomial"></a>
-<a id="placement-placement.wasm.wasm_module.module_binomial.730ef71fff39"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-binomial(n: Expression, k: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_binomial.bff558909372"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.binomial</code></p>
+Raw WebAssembly: `pub fn binomial(&self, n: &Expression, k: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-binomial(n: Expression, k: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_binomial.730ef71fff39"></a>
+Raw WebAssembly: `fn binomial(n: &Expression, k: &Expression) -> Result<Expression, JsError>`
 
 
 Binomial coefficient C(n, k).
 
 ### min
 
-<a id="entry-presentation_wasm_api_session_min"></a>
-<a id="placement-placement.wasm.wasm_module.module_min.079bca1de077"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-min(arguments: Expression[]): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_min.4481c194c547"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.min</code></p>
+Raw WebAssembly: `pub fn min(&self, arguments: Vec<Expression>) -> Result<Expression, JsError>`
 
-```typescript signature
-min(arguments: Expression[]): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_min.079bca1de077"></a>
+Raw WebAssembly: `fn min(arguments: Vec<Expression>) -> Result<Expression, JsError>`
 
 
 Minimum of the arguments (variadic in Python; a JS array in WASM).
 
 ### max
 
-<a id="entry-presentation_wasm_api_session_max"></a>
-<a id="placement-placement.wasm.wasm_module.module_max.9ad2a66d39c5"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-max(arguments: Expression[]): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_max.c8df78797a62"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.max</code></p>
+Raw WebAssembly: `pub fn max(&self, arguments: Vec<Expression>) -> Result<Expression, JsError>`
 
-```typescript signature
-max(arguments: Expression[]): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_max.9ad2a66d39c5"></a>
+Raw WebAssembly: `fn max(arguments: Vec<Expression>) -> Result<Expression, JsError>`
 
 
 Maximum of the arguments (variadic in Python; a JS array in WASM).
@@ -953,38 +404,3 @@ console.log(symi.sqrt(symi.integer(18n)).toString());
 console.log(x.cos().power(2).add(x.sin().power(2)).toString());
 ```
 
-
-### absolute_value
-
-<a id="entry-presentation_wasm_api_session_absolute_value"></a>
-<a id="placement-placement.wasm.javascript_facade.context_absolutevalue.ef3837cbe2e9"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```typescript signature
-absoluteValue(value: ExpressionLike): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_absolutevalue.0f6b9a8f80d5"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.absoluteValue</code></p>
-
-```typescript signature
-absoluteValue(value: ExpressionLike): Expression
-```
-
-<a id="placement-placement.wasm.javascript_facade.expression_absolutevalue.d16fc61f887a"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.absoluteValue</code></p>
-
-```typescript signature
-absoluteValue(): Expression
-```
-
-</details>
-
-
-The absolute value \(|x|\), spelled in full. It is the same operation as
-[`abs`](#abs); the two names exist because `abs` is the spelling the Python and
-JavaScript hosts use for their own built-in, and the full name is the spelling
-the mobile hosts generate.

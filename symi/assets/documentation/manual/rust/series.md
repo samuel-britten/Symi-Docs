@@ -2,55 +2,14 @@
 
 ### taylor_series
 
-<a id="entry-presentation_rust_api_session_taylor_series"></a>
-<a id="placement-placement.rust.native_rust.api_session_taylor_series.6e17b9394091"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn taylor_series<'a, VariableType>(
-    &self,
-    target: &Expression,
-    variable: VariableType,
-    expansion_point: &Expression,
-    truncation_order: usize,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
+<a id="placement-placement.rust.native_rust.api_assumptionscope_taylor_series.eaf5b6e863d6"></a>
+`symi::api::AssumptionScope — pub fn taylor_series<'a, VariableType>(&self, target: &Expression, variable: VariableType, expansion_point: &Expression, truncation_order: usize) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 <a id="placement-placement.rust.native_rust.api_expression_taylor_series.7ad454aef793"></a>
-<p class="symi-entry-owner">api::Expression method: <code>api::Expression::taylor_series</code></p>
+`symi::api::Expression — pub fn taylor_series<'a, VariableType>(&self, variable: VariableType, expansion_point: &Expression, truncation_order: usize) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
 
-```rust signature
-pub fn taylor_series<'a, VariableType>(
-    &self,
-    variable: VariableType,
-    expansion_point: &Expression,
-    truncation_order: usize,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<a id="placement-placement.rust.native_rust.api_assumptionscope_taylor_series.eaf5b6e863d6"></a>
-<p class="symi-entry-owner">Variant using local assumptions — api::AssumptionScope method: <code>api::AssumptionScope::taylor_series</code></p>
-
-```rust signature
-pub fn taylor_series<'a, VariableType>(
-    &self,
-    target: &Expression,
-    variable: VariableType,
-    expansion_point: &Expression,
-    truncation_order: usize,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-</details>
+<a id="placement-placement.rust.native_rust.api_session_taylor_series.6e17b9394091"></a>
+`symi::api::Session — pub fn taylor_series<'a, VariableType>(&self, target: &Expression, variable: VariableType, expansion_point: &Expression, truncation_order: usize) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 
 Truncated Taylor expansion about `expansion_point`, keeping terms of degree
@@ -61,78 +20,22 @@ symbolic differentiation.
 
 ### maclaurin_series
 
-<a id="entry-presentation_rust_api_session_maclaurin_series"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_maclaurin_series.8c62aa60a1ab"></a>
-<p class="symi-entry-owner">api::analysis::Session method</p>
-
-```rust signature
-pub fn maclaurin_series<'a, VariableType>(
-    &self,
-    input_expression: &Expression,
-    variable: VariableType,
-    truncation_order: usize,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+`symi::api::analysis::Session — pub fn maclaurin_series<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType, truncation_order: usize) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_maclaurin_series.3d78592f7525"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::maclaurin_series</code></p>
-
-```rust signature
-pub fn maclaurin_series<'a, VariableType>(
-    &self,
-    variable: VariableType,
-    truncation_order: usize,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-</details>
+`symi::api::expression_operations::Expression — pub fn maclaurin_series<'a, VariableType>(&self, variable: VariableType, truncation_order: usize) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 
 `taylor_series` specialised to expansion point 0.
 
 ### laurent_series
 
-<a id="entry-presentation_rust_api_session_laurent_series"></a>
-<a id="placement-placement.rust.native_rust.api_session_laurent_series.504cb6a093a4"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn laurent_series<'a, VariableType>(
-    &self,
-    target: &Expression,
-    variable: VariableType,
-    center: &Expression,
-    order: usize,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.rust.native_rust.api_expression_laurent_series.a5f8c5f4ee9d"></a>
-<p class="symi-entry-owner">api::Expression method: <code>api::Expression::laurent_series</code></p>
+`symi::api::Expression — pub fn laurent_series<'a, VariableType>(&self, variable: VariableType, center: &Expression, order: usize) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
 
-```rust signature
-pub fn laurent_series<'a, VariableType>(
-    &self,
-    variable: VariableType,
-    center: &Expression,
-    order: usize,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-</details>
+<a id="placement-placement.rust.native_rust.api_session_laurent_series.504cb6a093a4"></a>
+`symi::api::Session — pub fn laurent_series<'a, VariableType>(&self, target: &Expression, variable: VariableType, center: &Expression, order: usize) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 
 Truncated Laurent expansion at `center`: every \((\operatorname{variable} - \operatorname{center})^k\) term
@@ -143,38 +46,11 @@ because no finite truncation of the principal part is correct.
 
 ### residue
 
-<a id="entry-presentation_rust_api_session_residue"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_residue.89a576bf5854"></a>
-<p class="symi-entry-owner">api::analysis::Session method</p>
-
-```rust signature
-pub fn residue<'a, VariableType>(
-    &self,
-    input_expression: &Expression,
-    variable: VariableType,
-    center: &Expression,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+`symi::api::analysis::Session — pub fn residue<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType, center: &Expression) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_residue.b2e5fa75a3d1"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::residue</code></p>
-
-```rust signature
-pub fn residue<'a, VariableType>(
-    &self,
-    variable: VariableType,
-    center: &Expression,
-) -> Result<Expression, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-</details>
+`symi::api::expression_operations::Expression — pub fn residue<'a, VariableType>(&self, variable: VariableType, center: &Expression) -> Result<Expression, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 
 Coefficient of \((\operatorname{variable} - \operatorname{center})^{-1}\) in the Laurent expansion at
@@ -186,38 +62,11 @@ explicit algebraic centers do not need to occur as structural factors.
 
 ### pole_order
 
-<a id="entry-presentation_rust_api_session_pole_order"></a>
 <a id="placement-placement.rust.native_rust.api_analysis_session_pole_order.899f204e334b"></a>
-<p class="symi-entry-owner">api::analysis::Session method</p>
-
-```rust signature
-pub fn pole_order<'a, VariableType>(
-    &self,
-    input_expression: &Expression,
-    variable: VariableType,
-    center: &Expression,
-) -> Result<Option<i64>, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+`symi::api::analysis::Session — pub fn pole_order<'a, VariableType>(&self, input_expression: &Expression, variable: VariableType, center: &Expression) -> Result<Option<i64>, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 <a id="placement-placement.rust.native_rust.api_expression_operations_expression_pole_order.b1dfb046d80a"></a>
-<p class="symi-entry-owner">api::expression_operations::Expression method: <code>api::expression_operations::Expression::pole_order</code></p>
-
-```rust signature
-pub fn pole_order<'a, VariableType>(
-    &self,
-    variable: VariableType,
-    center: &Expression,
-) -> Result<Option<i64>, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
-
-</details>
+`symi::api::expression_operations::Expression — pub fn pole_order<'a, VariableType>(&self, variable: VariableType, center: &Expression) -> Result<Option<i64>, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 
 Order of the singularity at `center`: `0` for analytic/removable points,

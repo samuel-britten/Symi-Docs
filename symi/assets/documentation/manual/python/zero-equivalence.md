@@ -2,38 +2,14 @@
 
 ### zero_equivalent
 
-<a id="entry-presentation_python_api_session_zero_equivalent"></a>
-<a id="placement-placement.python.python_module.module_zero_equivalent.aaeebc6d5dc1"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-zero_equivalent(
-    input_expression: ExpressionLike,
-    constraint: Optional[ExpressionLike] = None,
-) -> str
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_zero_equivalent.2f51d1ad2169"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.zero_equivalent</code></p>
-
-```python signature
-zero_equivalent(
-    input_expression: ExpressionLike,
-    constraint: Optional[ExpressionLike] = None,
-) -> str
-```
+`Context.zero_equivalent(input_expression, constraint=None)`
 
 <a id="placement-placement.python.python_class.expression_zero_equivalent.d00f93757677"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.zero_equivalent</code></p>
+`Expression.zero_equivalent(constraint=None)`
 
-```python signature
-zero_equivalent(constraint: Optional[ExpressionLike] = None) -> str
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_zero_equivalent.aaeebc6d5dc1"></a>
+`symi.zero_equivalent(input_expression, constraint=None)`
 
 
 

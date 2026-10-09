@@ -6,35 +6,11 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
-<a id="entry-presentation_python_api_session_integral"></a>
-<a id="placement-placement.python.python_module.module_integral.4a92f50512c2"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-integral(
-    integrand: ExpressionLike,
-    variable: Any,
-    lower: Optional[ExpressionLike] = None,
-    upper: Optional[ExpressionLike] = None,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_integral.9e5fb95348ec"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integral</code></p>
+`Context.integral(integrand, variable, lower = None, upper = None)`
 
-```python signature
-integral(
-    integrand: ExpressionLike,
-    variable: Any,
-    lower: Optional[ExpressionLike] = None,
-    upper: Optional[ExpressionLike] = None,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_integral.4a92f50512c2"></a>
+`symi.integral(integrand, variable, lower = None, upper = None)`
 
 
 Build an *unevaluated* integral node (indefinite when bounds are omitted).
@@ -43,84 +19,17 @@ the node.
 
 ### derivative
 
-<a id="entry-presentation_python_api_session_derivative"></a>
-<a id="placement-placement.python.python_module.module_derivative.08baabd8e4c8"></a>
-<p class="symi-entry-owner">Default context</p>
 
-```python signature
-derivative(
-    input_expression: ExpressionLike,
-    variable: Any,
-    order: int = 1,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.python.python_class.context_derivative.633b339a3392"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.derivative</code></p>
-
-```python signature
-derivative(
-    input_expression: ExpressionLike,
-    variable: Any,
-    order: int = 1,
-) -> Expression
-```
-
-<a id="placement-placement.python.python_class.expression_derivative.951691ecb4fa"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.derivative</code></p>
-
-```python signature
-derivative(variable: Any, order: int = 1) -> Expression
-```
-
-</details>
-
-
-
-Constructs an *unevaluated* derivative node of an arbitrary expression. The
-variable may be a name or a same-context symbol expression. Nothing is
-differentiated here: use [`execute`](evaluation-and-constants.md) on the node,
-or [`differentiate`](calculus.md#differentiate) to differentiate now.
-
-This is not the derivative of a named unknown function. An equation built from
-this placeholder is not recognised by the differential-equation classifiers,
-which read the structural derivative built by
-[`UndefinedFunction.derivative`](undefined-functions.md#derivative).
+Constructs a deferred derivative. The variable may
+be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 ### summation
 
-<a id="entry-presentation_python_api_session_summation"></a>
-<a id="placement-placement.python.python_module.module_summation.d765c39f40a8"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-summation(
-    summand: ExpressionLike,
-    index: VariableLike,
-    lower: ExpressionLike,
-    upper: ExpressionLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_summation.7f35de11ba7a"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.summation</code></p>
+`Context.summation(summand, index, lower, upper)`
 
-```python signature
-summation(
-    summand: ExpressionLike,
-    index: VariableLike,
-    lower: ExpressionLike,
-    upper: ExpressionLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_summation.d765c39f40a8"></a>
+`symi.summation(summand, index, lower, upper)`
 
 
 Build a summation node \(\sum\). `execute` evaluates it when a closed form or
@@ -213,35 +122,11 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
-<a id="entry-presentation_python_api_session_product"></a>
-<a id="placement-placement.python.python_module.module_product.c378ecc8918b"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-product(
-    multiplicand: ExpressionLike,
-    index: VariableLike,
-    lower: ExpressionLike,
-    upper: ExpressionLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_product.116ff8b1c0bd"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.product</code></p>
+`Context.product(multiplicand, index, lower, upper)`
 
-```python signature
-product(
-    multiplicand: ExpressionLike,
-    index: VariableLike,
-    lower: ExpressionLike,
-    upper: ExpressionLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_product.c378ecc8918b"></a>
+`symi.product(multiplicand, index, lower, upper)`
 
 
 Definite indexed product \(\prod_{\mathit{index}=\mathit{lower}}^{\mathit{upper}} \mathit{multiplicand}\), a first-class
@@ -300,31 +185,11 @@ placeholder rather than a guess.
 
 ### product_indefinite
 
-<a id="entry-presentation_python_api_session_product_indefinite"></a>
-<a id="placement-placement.python.python_module.module_product_indefinite.36ca96c3eab2"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-product_indefinite(
-    multiplicand: ExpressionLike,
-    index: VariableLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_product_indefinite.55b696a1a6cf"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.product_indefinite</code></p>
+`Context.product_indefinite(multiplicand, index)`
 
-```python signature
-product_indefinite(
-    multiplicand: ExpressionLike,
-    index: VariableLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_product_indefinite.36ca96c3eab2"></a>
+`symi.product_indefinite(multiplicand, index)`
 
 
 Indefinite (anti-quotient) product: the `P(k)` satisfying
@@ -340,31 +205,11 @@ form is in scope.
 
 ### piecewise
 
-<a id="entry-presentation_python_api_session_piecewise"></a>
-<a id="placement-placement.python.python_module.module_piecewise.719dafd5ae7f"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-piecewise(
-    branches: Iterable[tuple[ExpressionLike, ExpressionLike]],
-    otherwise: Optional[ExpressionLike] = None,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_piecewise.b462ccfbb1b0"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.piecewise</code></p>
+`Context.piecewise(branches, otherwise = None)`
 
-```python signature
-piecewise(
-    branches: Iterable[tuple[ExpressionLike, ExpressionLike]],
-    otherwise: Optional[ExpressionLike] = None,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_piecewise.719dafd5ae7f"></a>
+`symi.piecewise(branches, otherwise = None)`
 
 
 Build a piecewise expression from `(value, condition)` pairs with first-match
@@ -392,45 +237,3 @@ print(symi.execute(deferred_integral))
 print(symi.execute(symi.summation(k, "k", 0, n)))
 ```
 
-
-### summation_indefinite
-
-<a id="entry-presentation_python_api_session_summation_indefinite"></a>
-<a id="placement-placement.python.python_module.module_summation_indefinite.e10335856b70"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-summation_indefinite(
-    summand: ExpressionLike,
-    index: VariableLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.python.python_class.context_summation_indefinite.decc1b81d5c2"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.summation_indefinite</code></p>
-
-```python signature
-summation_indefinite(
-    summand: ExpressionLike,
-    index: VariableLike,
-) -> Expression
-```
-
-<a id="placement-placement.python.python_class.expression_summation_indefinite.36082f1ae900"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.summation_indefinite</code></p>
-
-```python signature
-summation_indefinite(index: VariableLike) -> Expression
-```
-
-</details>
-
-
-The anti-difference of `summand`: a closed form \(F\) with
-\(F(\mathrm{index}+1) - F(\mathrm{index}) = \mathrm{summand}\). It is the
-discrete counterpart of an indefinite integral, and it sits here beside
-[`product_indefinite`](#product_indefinite) for the same reason — when no closed
-form is found, the unevaluated summation is what is returned.

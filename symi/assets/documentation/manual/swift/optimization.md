@@ -5,9 +5,8 @@ them by second-order conditions. The layer is **local and exact** — it
 finds and classifies critical / Lagrange / KKT points, deciding every
 classification from exact minor signs (never numerically) and declining whenever
 a sign is undecidable or the underlying system solver cannot close the
-stationarity equations. These local operations do not claim a *global* optimum.
-The separate `global_optimum_on_semialgebraic` operation handles its documented
-CAD-backed polynomial semialgebraic domain.
+stationarity equations. It does not claim a *global* optimum; global optimization
+over a constrained region is left to a future CAD-backed layer.
 
 Each function returns a structured **outcome**: a `verdict` of `"points"` or
 `"declined"`, a `complete` flag (true only when the critical-point enumeration was
@@ -24,16 +23,8 @@ object whose getters expose the same data.
 
 ### unconstrained_critical_points
 
-<a id="entry-presentation_swift_api_session_unconstrained_critical_points"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_unconstrainedcriticalpoints.b6a6ab295c94"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func unconstrainedCriticalPoints(
-    objective: UniffiExpression,
-    variables: [String],
-) -> UniffiOptimizationOutcome
-```
+`UniffiSession.unconstrainedCriticalPoints(objective: UniffiExpression, variables: [String]) -> UniffiOptimizationOutcome`
 
 
 The critical points of `objective` as the solutions of \(\nabla f = 0\), each classified
@@ -43,18 +34,8 @@ minors). A quadratic objective yields a complete outcome; a degenerate Hessian
 
 ### classify_unconstrained
 
-<a id="entry-presentation_swift_api_session_classify_unconstrained"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_classifyunconstrained.f03aa36b26c0"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func classifyUnconstrained(
-    objective: UniffiExpression,
-    variables: [String],
-    pointVariables: [String],
-    pointValues: [UniffiExpression],
-) -> UniffiExtremumClassification
-```
+`UniffiSession.classifyUnconstrained(objective: UniffiExpression, variables: [String], pointVariables: [String], pointValues: [UniffiExpression]) -> UniffiExtremumClassification`
 
 
 Classify one given interior point — supplied as the parallel `point_variables` /
@@ -62,17 +43,8 @@ Classify one given interior point — supplied as the parallel `point_variables`
 
 ### lagrange_critical_points
 
-<a id="entry-presentation_swift_api_session_lagrange_critical_points"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_lagrangecriticalpoints.6c80f289d173"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func lagrangeCriticalPoints(
-    objective: UniffiExpression,
-    constraints: [UniffiExpression],
-    variables: [String],
-) -> UniffiOptimizationOutcome
-```
+`UniffiSession.lagrangeCriticalPoints(objective: UniffiExpression, constraints: [UniffiExpression], variables: [String]) -> UniffiOptimizationOutcome`
 
 
 The equality-constrained critical points via Lagrange multipliers: stationarity of
@@ -81,18 +53,8 @@ Hessian. The solved multiplier values appear in each point's multipliers.
 
 ### karush_kuhn_tucker_points
 
-<a id="entry-presentation_swift_api_session_karush_kuhn_tucker_points"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_karushkuhntuckerpoints.c955fb78bdce"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func karushKuhnTuckerPoints(
-    objective: UniffiExpression,
-    inequalityConstraints: [UniffiExpression],
-    equalityConstraints: [UniffiExpression],
-    variables: [String],
-) -> UniffiOptimizationOutcome
-```
+`UniffiSession.karushKuhnTuckerPoints(objective: UniffiExpression, inequalityConstraints: [UniffiExpression], equalityConstraints: [UniffiExpression], variables: [String]) -> UniffiOptimizationOutcome`
 
 
 The Karush–Kuhn–Tucker points found by active-set enumeration. Each inequality is
@@ -107,55 +69,35 @@ On WASM the outcome and its points are objects with the following getters; on
 Python the same data is returned as plain dicts.
 
 ### points
-The list of `CriticalPoint` objects in an `OptimizationOutcome` (WASM).
 
-<a id="entry-presentation_swift_api_optimizationoutcome_points"></a>
 <a id="placement-placement.swift.swift_object.uniffioptimizationoutcome_points.82c3e6eb8433"></a>
-<p class="symi-entry-owner">UniffiOptimizationOutcome method</p>
+`UniffiOptimizationOutcome.points() -> [UniffiCriticalPoint]`
 
-```swift signature
-func points() -> [UniffiCriticalPoint]
-```
-
-The list of `critical_point` objects in an `optimization_outcome` (WASM).
+The list of `CriticalPoint` objects in an `OptimizationOutcome` (WASM).
 
 ### classification
 
-<a id="entry-presentation_swift_api_criticalpoint_classification"></a>
 <a id="placement-placement.swift.swift_object.unifficriticalpoint_classification.c2bf55f4b1fd"></a>
-<p class="symi-entry-owner">UniffiCriticalPoint method</p>
+`UniffiCriticalPoint.classification() -> UniffiExtremumClassification`
 
-```swift signature
-func classification() -> UniffiExtremumClassification
-```
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationsolveresult_classification.4b964331ecbf"></a>
+`UniffiPartialDifferentialEquationSolveResult.classification() -> UniffiPartialDifferentialEquationClassification?`
 
 The verdict string of a critical point: `"local_minimum"`, `"local_maximum"`,
 `"saddle_point"`, or `"inconclusive"`.
 
 ### multiplier_variables
+
+<a id="placement-placement.swift.swift_object.unifficriticalpoint_multipliervariables.a46f5fe2919e"></a>
+`UniffiCriticalPoint.multiplierVariables() -> [String]`
+
 The names of the introduced Lagrange / KKT multipliers at a constrained critical
 point (empty for the unconstrained case).
 
-<a id="entry-presentation_swift_api_criticalpoint_multiplier_variables"></a>
-<a id="placement-placement.swift.swift_object.unifficriticalpoint_multipliervariables.a46f5fe2919e"></a>
-<p class="symi-entry-owner">UniffiCriticalPoint method</p>
-
-```swift signature
-func multiplierVariables() -> [String]
-```
-
-The names of the introduced Lagrange / KKT multipliers at a constrained critical point (empty for the unconstrained case).
-
 ### multiplier_values
-The solved values of those multipliers, in the same order as `multiplier_variables`.
 
-<a id="entry-presentation_swift_api_criticalpoint_multiplier_values"></a>
 <a id="placement-placement.swift.swift_object.unifficriticalpoint_multipliervalues.0bc87f3dcf31"></a>
-<p class="symi-entry-owner">UniffiCriticalPoint method</p>
-
-```swift signature
-func multiplierValues() -> [UniffiExpression]
-```
+`UniffiCriticalPoint.multiplierValues() -> [UniffiExpression]`
 
 The solved values of those multipliers, in the same order as `multiplier_variables`.
 
@@ -163,18 +105,8 @@ The solved values of those multipliers, in the same order as `multiplier_variabl
 
 ### global_optimum_on_semialgebraic
 
-<a id="entry-presentation_swift_api_session_global_optimum_on_semialgebraic"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_globaloptimumonsemialgebraic.771c66e25891"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func globalOptimumOnSemialgebraic(
-    objective: UniffiExpression,
-    constraints: UniffiExpression,
-    variables: [String],
-    direction: UniffiOptimizationDirection,
-) -> UniffiOptimizationOutcome
-```
+`UniffiSession.globalOptimumOnSemialgebraic(objective: UniffiExpression, constraints: UniffiExpression, variables: [String], direction: UniffiOptimizationDirection) -> UniffiOptimizationOutcome`
 
 `context.global_optimum_on_semialgebraic(objective, constraints, variables: list[VariableLike], direction: str)`
 
@@ -191,59 +123,4 @@ This closes the global-optimum-on-semialgebraic-set problem; the returned point 
 exact rationals (an irrational-algebraic optimum declines).
 
 ## Example
-
-
-## Additional API
-
-### CriticalPoint
-
-#### CriticalPoint.values
-
-<a id="entry-presentation_swift_api_criticalpoint_values"></a>
-<a id="placement-placement.swift.swift_object.unifficriticalpoint_values.0245850eedd6"></a>
-<p class="symi-entry-owner">UniffiCriticalPoint method</p>
-
-```swift signature
-func values() -> [UniffiExpression]
-```
-
-Getter on `system_assignment`: the assigned value expressions, aligned with `variables`.
-
-#### CriticalPoint.variables
-
-<a id="entry-presentation_swift_api_criticalpoint_variables"></a>
-<a id="placement-placement.swift.swift_object.unifficriticalpoint_variables.b171a28deb56"></a>
-<p class="symi-entry-owner">UniffiCriticalPoint method</p>
-
-```swift signature
-func variables() -> [String]
-```
-
-Getter on `system_assignment`: the unknown names, in order.
-
-### OptimizationOutcome
-
-#### OptimizationOutcome.complete
-
-<a id="entry-presentation_swift_api_optimizationoutcome_complete"></a>
-<a id="placement-placement.swift.swift_object.uniffioptimizationoutcome_complete.d61284d43b81"></a>
-<p class="symi-entry-owner">UniffiOptimizationOutcome method</p>
-
-```swift signature
-func complete() -> Bool
-```
-
-Getter on `polynomial_system_solution`: whether the solver certified it found every solution.
-
-#### OptimizationOutcome.verdict
-
-<a id="entry-presentation_swift_api_optimizationoutcome_verdict"></a>
-<a id="placement-placement.swift.swift_object.uniffioptimizationoutcome_verdict.b5e76d513ad8"></a>
-<p class="symi-entry-owner">UniffiOptimizationOutcome method</p>
-
-```swift signature
-func verdict() -> UniffiOptimizationVerdict
-```
-
-The optimization result classification.
 

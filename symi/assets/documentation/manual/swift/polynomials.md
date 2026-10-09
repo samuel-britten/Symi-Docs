@@ -8,16 +8,8 @@ makes the query decline — `None` for `degree`, an error for the others.
 
 ### degree
 
-<a id="entry-presentation_swift_api_session_degree"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_degree.e65c61e5d63c"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func degree(
-    inputExpression: UniffiExpression,
-    variable: String,
-) -> UInt64?
-```
+`UniffiSession.degree(inputExpression: UniffiExpression, variable: String) -> UInt64?`
 
 
 Degree in `variable`. `None` when the expression is not polynomial in
@@ -26,16 +18,8 @@ under the core convention).
 
 ### leading_coefficient
 
-<a id="entry-presentation_swift_api_session_leading_coefficient"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_leadingcoefficient.8f2fc4c0f8dd"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func leadingCoefficient(
-    inputExpression: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
+`UniffiSession.leadingCoefficient(inputExpression: UniffiExpression, variable: String) -> UniffiExpression`
 
 
 Coefficient of the highest power of `variable`; may contain the other free
@@ -43,17 +27,14 @@ variables. Errors on non-polynomial or zero input.
 
 ### coefficient
 
-<a id="entry-presentation_swift_api_session_coefficient"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_coefficient.ec55f5d254c7"></a>
-<p class="symi-entry-owner">Explicit context</p>
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationjetcoefficient_coefficient.6ba74d2c787f"></a>
+`UniffiPartialDifferentialEquationJetCoefficient.coefficient() -> UniffiExpression`
 
-```swift signature
-func coefficient(
-    inputExpression: UniffiExpression,
-    variable: String,
-    power: UInt64,
-) -> UniffiExpression
-```
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationprincipalcoefficient_coefficient.db70f03f67e2"></a>
+`UniffiPartialDifferentialEquationPrincipalCoefficient.coefficient() -> UniffiExpression`
+
+<a id="placement-placement.swift.swift_object.uniffisession_coefficient.ec55f5d254c7"></a>
+`UniffiSession.coefficient(inputExpression: UniffiExpression, variable: String, power: UInt64) -> UniffiExpression`
 
 
 Coefficient of `variable^power`; integer 0 when the term is absent. Errors
@@ -61,17 +42,8 @@ on non-polynomial input.
 
 ### polynomial_gcd
 
-<a id="entry-presentation_swift_api_session_polynomial_gcd"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_polynomialgcd.3f202a50b626"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func polynomialGcd(
-    left: UniffiExpression,
-    right: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
+`UniffiSession.polynomialGcd(left: UniffiExpression, right: UniffiExpression, variable: String) -> UniffiExpression`
 
 
 Greatest common divisor of the two expressions as polynomials in `variable`
@@ -80,17 +52,8 @@ not polynomial in `variable`.
 
 ### resultant
 
-<a id="entry-presentation_swift_api_session_resultant"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_resultant.40e15ea63790"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func resultant(
-    left: UniffiExpression,
-    right: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
+`UniffiSession.resultant(left: UniffiExpression, right: UniffiExpression, variable: String) -> UniffiExpression`
 
 
 Resultant with respect to `variable`; zero exactly when the two polynomials
@@ -98,16 +61,8 @@ share a root (over the algebraic closure). Errors on non-polynomial input.
 
 ### isolate_real_roots
 
-<a id="entry-presentation_swift_api_session_isolate_real_roots"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_isolaterealroots.a0d8a4cf5f07"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func isolateRealRoots(
-    inputExpression: UniffiExpression,
-    variable: String,
-) -> [UniffiIsolatingInterval]
-```
+`UniffiSession.isolateRealRoots(inputExpression: UniffiExpression, variable: String) -> [UniffiIsolatingInterval]`
 
 
 One `(lower, upper)` rational isolating interval per distinct real root,
@@ -120,27 +75,15 @@ getters.
 
 ### lower
 
-<a id="entry-presentation_swift_api_isolatinginterval_lower"></a>
 <a id="placement-placement.swift.swift_object.uniffiisolatinginterval_lower.d52095c5b42d"></a>
-<p class="symi-entry-owner">UniffiIsolatingInterval method</p>
+`UniffiIsolatingInterval.lower() -> UniffiExpression`
 
-```swift signature
-func lower() -> UniffiExpression
-```
-
-Lower endpoint of the isolating interval.
 
 ### upper
 
-<a id="entry-presentation_swift_api_isolatinginterval_upper"></a>
 <a id="placement-placement.swift.swift_object.uniffiisolatinginterval_upper.42681029cd3e"></a>
-<p class="symi-entry-owner">UniffiIsolatingInterval method</p>
+`UniffiIsolatingInterval.upper() -> UniffiExpression`
 
-```swift signature
-func upper() -> UniffiExpression
-```
-
-Upper endpoint of the isolating interval.
 
 ## Gröbner bases and ideals
 
@@ -167,17 +110,8 @@ no new method to call.
 
 ### groebner_basis
 
-<a id="entry-presentation_swift_api_session_groebner_basis"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_groebnerbasis.41e30f4970c9"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func groebnerBasis(
-    generators: [UniffiExpression],
-    variables: [String],
-    order: UniffiMonomialOrdering,
-) -> [UniffiExpression]?
-```
+`UniffiSession.groebnerBasis(generators: [UniffiExpression], variables: [String], order: UniffiMonomialOrdering) -> [UniffiExpression]?`
 
 
 The canonical reduced Gröbner basis of the ideal `<generators>` under the named
@@ -186,18 +120,8 @@ monomial order — monic, autoreduced, and sorted, so it is unique for the
 
 ### ideal_membership
 
-<a id="entry-presentation_swift_api_session_ideal_membership"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_idealmembership.c210256aa1ae"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func idealMembership(
-    element: UniffiExpression,
-    generators: [UniffiExpression],
-    variables: [String],
-    order: UniffiMonomialOrdering,
-) -> Bool?
-```
+`UniffiSession.idealMembership(element: UniffiExpression, generators: [UniffiExpression], variables: [String], order: UniffiMonomialOrdering) -> Bool?`
 
 
 Whether `element` lies in the ideal `<generators>`, decided by reducing it to
@@ -207,18 +131,8 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### ideal_sum
 
-<a id="entry-presentation_swift_api_session_ideal_sum"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_idealsum.f6c76cfd9b80"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func idealSum(
-    generatorsLeft: [UniffiExpression],
-    generatorsRight: [UniffiExpression],
-    variables: [String],
-    order: UniffiMonomialOrdering,
-) -> [UniffiExpression]?
-```
+`UniffiSession.idealSum(generatorsLeft: [UniffiExpression], generatorsRight: [UniffiExpression], variables: [String], order: UniffiMonomialOrdering) -> [UniffiExpression]?`
 
 
 A Gröbner basis of the ideal sum `I + J`, the ideal generated by the two
@@ -226,18 +140,8 @@ generator lists together. `None` on a non-\(\mathbb{Q}[\text{variables}]\) gener
 
 ### ideal_product
 
-<a id="entry-presentation_swift_api_session_ideal_product"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_idealproduct.fb08f53b3c6d"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func idealProduct(
-    generatorsLeft: [UniffiExpression],
-    generatorsRight: [UniffiExpression],
-    variables: [String],
-    order: UniffiMonomialOrdering,
-) -> [UniffiExpression]?
-```
+`UniffiSession.idealProduct(generatorsLeft: [UniffiExpression], generatorsRight: [UniffiExpression], variables: [String], order: UniffiMonomialOrdering) -> [UniffiExpression]?`
 
 
 A Gröbner basis of the ideal product \(I J\), generated by all pairwise
@@ -245,18 +149,8 @@ products of the two generator lists. `None` on a non-\(\mathbb{Q}[\text{variable
 
 ### ideal_intersection
 
-<a id="entry-presentation_swift_api_session_ideal_intersection"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_idealintersection.df75b54ba807"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func idealIntersection(
-    generatorsLeft: [UniffiExpression],
-    generatorsRight: [UniffiExpression],
-    variables: [String],
-    order: UniffiMonomialOrdering,
-) -> [UniffiExpression]?
-```
+`UniffiSession.idealIntersection(generatorsLeft: [UniffiExpression], generatorsRight: [UniffiExpression], variables: [String], order: UniffiMonomialOrdering) -> [UniffiExpression]?`
 
 
 A generating set of the ideal intersection \(I \cap J\), computed by the standard
@@ -265,17 +159,8 @@ non-\(\mathbb{Q}[\text{variables}]\) generator.
 
 ### elimination_ideal
 
-<a id="entry-presentation_swift_api_session_elimination_ideal"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_eliminationideal.ba376abbbe63"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func eliminationIdeal(
-    generators: [UniffiExpression],
-    variables: [String],
-    eliminate: [String],
-) -> [UniffiExpression]?
-```
+`UniffiSession.eliminationIdeal(generators: [UniffiExpression], variables: [String], eliminate: [String]) -> [UniffiExpression]?`
 
 
 A Gröbner basis of the elimination ideal \(\langle\operatorname{generators}\rangle \cap
@@ -293,18 +178,8 @@ elimination with the rational-parametrisation saturation wired in.
 
 ### change_monomial_order
 
-<a id="entry-presentation_swift_api_session_change_monomial_order"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_changemonomialorder.affdcb526086"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func changeMonomialOrder(
-    basis: [UniffiExpression],
-    variables: [String],
-    sourceOrder: UniffiMonomialOrdering,
-    targetOrder: UniffiMonomialOrdering,
-) -> [UniffiExpression]?
-```
+`UniffiSession.changeMonomialOrder(basis: [UniffiExpression], variables: [String], sourceOrder: UniffiMonomialOrdering, targetOrder: UniffiMonomialOrdering) -> [UniffiExpression]?`
 
 
 Convert a Gröbner basis of a **zero-dimensional** ideal from `source_order` to
@@ -319,17 +194,8 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### implicitize
 
-<a id="entry-presentation_swift_api_session_implicitize"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_implicitize.a9f78d345293"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func implicitize(
-    coordinates: [String],
-    parameters: [String],
-    parametricExpressions: [UniffiExpression],
-) -> [UniffiExpression]?
-```
+`UniffiSession.implicitize(coordinates: [String], parameters: [String], parametricExpressions: [UniffiExpression]) -> [UniffiExpression]?`
 
 
 The implicit ideal of a parametric curve or surface \(x_i = f_i(\operatorname{parameters})\) (the
@@ -348,31 +214,444 @@ there are no parameters. Examples: \(\{x = t^2, y = t^3\}\) returns \(y^2 - x^3\
 
 ## Additional API
 
-### cylindrical_algebraic_decomposition
+<a id="placement-placement.swift.swift_object.uniffiassumptionproposition_plaintext.33fcfe3515b2"></a>
+### UniffiAssumptionProposition.plainText
 
-<a id="entry-presentation_swift_api_session_cylindrical_algebraic_decomposition"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_cylindricalalgebraicdecomposition.848e026e0115"></a>
-<p class="symi-entry-owner">Explicit context</p>
+`UniffiAssumptionProposition.plainText() -> String`
 
-```swift signature
-func cylindricalAlgebraicDecomposition(
-    expressions: [UniffiExpression],
-    variables: [String],
-    equationalConstraints: [UInt64],
-) -> UniffiCylindricalAlgebraicDecomposition
-```
+Returns `String`.
 
-Construct the CAD of the polynomials in the given variable order \(x_1,\ldots,x_n\); projection eliminates \(x_n\) first).
+<a id="placement-placement.swift.swift_object.uniffiexpression_absolutevalue.6dd3aae9d19d"></a>
+### UniffiExpression.absoluteValue
 
-### plain_text
+`UniffiExpression.absoluteValue() -> UniffiExpression`
 
-<a id="entry-presentation_swift_api_expression_to_string"></a>
+Returns `UniffiExpression`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_add.2e029ecc008d"></a>
+### UniffiExpression.add
+
+`UniffiExpression.add(other: UniffiExpression) -> UniffiExpression`
+
+Returns `UniffiExpression`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_isalgebraic.72f4eab85a10"></a>
+### UniffiExpression.isAlgebraic
+
+`UniffiExpression.isAlgebraic() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_iscomplex.e71c8146d2ec"></a>
+### UniffiExpression.isComplex
+
+`UniffiExpression.isComplex() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_iscomposite.f7042f26b81b"></a>
+### UniffiExpression.isComposite
+
+`UniffiExpression.isComposite() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_iseven.bed013946585"></a>
+### UniffiExpression.isEven
+
+`UniffiExpression.isEven() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_isextendedreal.58bc63368ee6"></a>
+### UniffiExpression.isExtendedReal
+
+`UniffiExpression.isExtendedReal() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_isinfinite.29a4e28f3559"></a>
+### UniffiExpression.isInfinite
+
+`UniffiExpression.isInfinite() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_isirrational.a94d46360445"></a>
+### UniffiExpression.isIrrational
+
+`UniffiExpression.isIrrational() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_isnatural.6f9a6b9a4c41"></a>
+### UniffiExpression.isNatural
+
+`UniffiExpression.isNatural() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_isnonpositive.00742e6005ef"></a>
+### UniffiExpression.isNonpositive
+
+`UniffiExpression.isNonpositive() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_isodd.f6f6de227cc7"></a>
+### UniffiExpression.isOdd
+
+`UniffiExpression.isOdd() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_ispositiveinteger.b25c5fe306b0"></a>
+### UniffiExpression.isPositiveInteger
+
+`UniffiExpression.isPositiveInteger() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_istranscendental.8b5be476d346"></a>
+### UniffiExpression.isTranscendental
+
+`UniffiExpression.isTranscendental() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_iszero.ddbfc5afa668"></a>
+### UniffiExpression.isZero
+
+`UniffiExpression.isZero() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_multiply.f3d9b9955593"></a>
+### UniffiExpression.multiply
+
+`UniffiExpression.multiply(other: UniffiExpression) -> UniffiExpression`
+
+Returns `UniffiExpression`.
+
 <a id="placement-placement.swift.swift_object.uniffiexpression_plaintext.602e518f6cca"></a>
-<p class="symi-entry-owner">Expression method</p>
+### UniffiExpression.plainText
 
-```swift signature
-func plainText() -> String
-```
+`UniffiExpression.plainText() -> String`
 
-The canonical plain-text form of this expression.
+Returns `String`.
+
+<a id="placement-placement.swift.swift_object.uniffiexpression_subtract.83f9546e2830"></a>
+### UniffiExpression.subtract
+
+`UniffiExpression.subtract(other: UniffiExpression) -> UniffiExpression`
+
+Returns `UniffiExpression`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_add.613832f65527"></a>
+### UniffiMatrix.add
+
+`UniffiMatrix.add(other: UniffiMatrix) -> UniffiMatrix`
+
+Returns `UniffiMatrix`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_hascomplexentries.0eade1c68cde"></a>
+### UniffiMatrix.hasComplexEntries
+
+`UniffiMatrix.hasComplexEntries() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_hasintegerentries.a6abde96fe2f"></a>
+### UniffiMatrix.hasIntegerEntries
+
+`UniffiMatrix.hasIntegerEntries() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_hasrealentries.2454112d2884"></a>
+### UniffiMatrix.hasRealEntries
+
+`UniffiMatrix.hasRealEntries() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_isdiagonalmatrix.ea18d09ee5bc"></a>
+### UniffiMatrix.isDiagonalMatrix
+
+`UniffiMatrix.isDiagonalMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_isfullrankmatrix.5a9d9beef2f9"></a>
+### UniffiMatrix.isFullRankMatrix
+
+`UniffiMatrix.isFullRankMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_ishermitianmatrix.8462cf6ea34d"></a>
+### UniffiMatrix.isHermitianMatrix
+
+`UniffiMatrix.isHermitianMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_isidentitymatrix.903693a73d88"></a>
+### UniffiMatrix.isIdentityMatrix
+
+`UniffiMatrix.isIdentityMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_isinvertiblematrix.d1b4453361d0"></a>
+### UniffiMatrix.isInvertibleMatrix
+
+`UniffiMatrix.isInvertibleMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_isnormalmatrix.9c02bdab42e7"></a>
+### UniffiMatrix.isNormalMatrix
+
+`UniffiMatrix.isNormalMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_isorthogonalmatrix.1d4c8b67cd16"></a>
+### UniffiMatrix.isOrthogonalMatrix
+
+`UniffiMatrix.isOrthogonalMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_ispositivedefinitematrix.bcbe40ae88c7"></a>
+### UniffiMatrix.isPositiveDefiniteMatrix
+
+`UniffiMatrix.isPositiveDefiniteMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_ispositivesemidefinitematrix.cd1bbc63a9b2"></a>
+### UniffiMatrix.isPositiveSemidefiniteMatrix
+
+`UniffiMatrix.isPositiveSemidefiniteMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_issingularmatrix.a0a49c18a476"></a>
+### UniffiMatrix.isSingularMatrix
+
+`UniffiMatrix.isSingularMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_issquare.2d76800f71bb"></a>
+### UniffiMatrix.isSquare
+
+`UniffiMatrix.isSquare() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_issymmetricmatrix.271072821211"></a>
+### UniffiMatrix.isSymmetricMatrix
+
+`UniffiMatrix.isSymmetricMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_isunitarymatrix.6b8f914e2c6f"></a>
+### UniffiMatrix.isUnitaryMatrix
+
+`UniffiMatrix.isUnitaryMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_iszeromatrix.7910f4f523cb"></a>
+### UniffiMatrix.isZeroMatrix
+
+`UniffiMatrix.isZeroMatrix() -> UniffiTruthValue`
+
+Returns `UniffiTruthValue`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_multiply.8ba400c3e3b4"></a>
+### UniffiMatrix.multiply
+
+`UniffiMatrix.multiply(other: UniffiMatrix) -> UniffiMatrix`
+
+Returns `UniffiMatrix`.
+
+<a id="placement-placement.swift.swift_object.uniffimatrix_subtract.a3819adac83e"></a>
+### UniffiMatrix.subtract
+
+`UniffiMatrix.subtract(other: UniffiMatrix) -> UniffiMatrix`
+
+Returns `UniffiMatrix`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_absolutevalue.e830fae29853"></a>
+### UniffiSession.absoluteValue
+
+`UniffiSession.absoluteValue(argument: UniffiExpression) -> UniffiExpression`
+
+Returns `UniffiExpression`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_complexentries.99b7925b679e"></a>
+### UniffiSession.complexEntries
+
+`UniffiSession.complexEntries(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_cylindricalalgebraicdecomposition.848e026e0115"></a>
+### UniffiSession.cylindricalAlgebraicDecomposition
+
+`UniffiSession.cylindricalAlgebraicDecomposition(expressions: [UniffiExpression], variables: [String], equationalConstraints: [UInt64]) -> UniffiCylindricalAlgebraicDecomposition`
+
+Returns `UniffiCylindricalAlgebraicDecomposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_diagonalmatrix.23ce19207678"></a>
+### UniffiSession.diagonalMatrix
+
+`UniffiSession.diagonalMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_fullrankmatrix.55c31ae64b31"></a>
+### UniffiSession.fullRankMatrix
+
+`UniffiSession.fullRankMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_hermitianmatrix.858453b2be51"></a>
+### UniffiSession.hermitianMatrix
+
+`UniffiSession.hermitianMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_identitymatrix.796c1008fa8e"></a>
+### UniffiSession.identityMatrix
+
+`UniffiSession.identityMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_integerentries.7c1e9edc5402"></a>
+### UniffiSession.integerEntries
+
+`UniffiSession.integerEntries(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_invertiblematrix.fac62ff7dabd"></a>
+### UniffiSession.invertibleMatrix
+
+`UniffiSession.invertibleMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_lowertriangularmatrix.cc9c939311b8"></a>
+### UniffiSession.lowerTriangularMatrix
+
+`UniffiSession.lowerTriangularMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_matrixshape.5cf7d0777af7"></a>
+### UniffiSession.matrixShape
+
+`UniffiSession.matrixShape(subject: UniffiMatrix, rows: UInt64, columns: UInt64) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_nonnegativeassumption.a41710fe92e9"></a>
+### UniffiSession.nonnegativeAssumption
+
+`UniffiSession.nonnegativeAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_nonpositiveassumption.6769adc459db"></a>
+### UniffiSession.nonpositiveAssumption
+
+`UniffiSession.nonpositiveAssumption(subject: UniffiExpression) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_normalmatrix.2c35c2ffc9ab"></a>
+### UniffiSession.normalMatrix
+
+`UniffiSession.normalMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_orthogonalmatrix.9693c17657e1"></a>
+### UniffiSession.orthogonalMatrix
+
+`UniffiSession.orthogonalMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_positivedefinitematrix.ab2c7a4e0b9f"></a>
+### UniffiSession.positiveDefiniteMatrix
+
+`UniffiSession.positiveDefiniteMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_positivesemidefinitematrix.8d5eff06726d"></a>
+### UniffiSession.positiveSemidefiniteMatrix
+
+`UniffiSession.positiveSemidefiniteMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_realentries.490b89e3be20"></a>
+### UniffiSession.realEntries
+
+`UniffiSession.realEntries(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_singularmatrix.1ec8021176dc"></a>
+### UniffiSession.singularMatrix
+
+`UniffiSession.singularMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_squarematrix.1f0447943ee4"></a>
+### UniffiSession.squareMatrix
+
+`UniffiSession.squareMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_symmetricmatrix.76919b542c94"></a>
+### UniffiSession.symmetricMatrix
+
+`UniffiSession.symmetricMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_unitarymatrix.9bbcc7068ba8"></a>
+### UniffiSession.unitaryMatrix
+
+`UniffiSession.unitaryMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_uppertriangularmatrix.66284c751119"></a>
+### UniffiSession.upperTriangularMatrix
+
+`UniffiSession.upperTriangularMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
+
+<a id="placement-placement.swift.swift_object.uniffisession_zeromatrix.3cd60fff040e"></a>
+### UniffiSession.zeroMatrix
+
+`UniffiSession.zeroMatrix(subject: UniffiMatrix) -> UniffiAssumptionProposition`
+
+Returns `UniffiAssumptionProposition`.
 

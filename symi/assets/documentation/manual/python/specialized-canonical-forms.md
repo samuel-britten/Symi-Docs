@@ -12,32 +12,14 @@ Related rewrites are on [algebraic transforms](algebraic-transforms.md) and
 
 ### piecewise_fold
 
-<a id="entry-presentation_python_api_session_piecewise_fold"></a>
-<a id="placement-placement.python.python_module.module_piecewise_fold.e1827f0a9a92"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-piecewise_fold(input_expression: ExpressionLike) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_piecewise_fold.3809a811317d"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.piecewise_fold</code></p>
-
-```python signature
-piecewise_fold(input_expression: ExpressionLike) -> Expression
-```
+`Context.piecewise_fold(input_expression)`
 
 <a id="placement-placement.python.python_class.expression_piecewise_fold.e463070ebd17"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.piecewise_fold</code></p>
+`Expression.piecewise_fold()`
 
-```python signature
-piecewise_fold() -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_piecewise_fold.e1827f0a9a92"></a>
+`symi.piecewise_fold(input_expression)`
 
 
 
@@ -55,38 +37,14 @@ equality-preserving expression and may therefore return the input unchanged.
 
 ### rewrite_special_functions
 
-<a id="entry-presentation_python_api_session_rewrite_special_functions"></a>
-<a id="placement-placement.python.python_module.module_rewrite_special_functions.36605b379310"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-rewrite_special_functions(
-    input_expression: ExpressionLike,
-    basis: str,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_rewrite_special_functions.958e24eee5dd"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.rewrite_special_functions</code></p>
-
-```python signature
-rewrite_special_functions(
-    input_expression: ExpressionLike,
-    basis: str,
-) -> Expression
-```
+`Context.rewrite_special_functions(input_expression, basis)`
 
 <a id="placement-placement.python.python_class.expression_rewrite_special_functions.35eeabf2bebb"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.rewrite_special_functions</code></p>
+`Expression.rewrite_special_functions(basis)`
 
-```python signature
-rewrite_special_functions(basis: str) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_rewrite_special_functions.36605b379310"></a>
+`symi.rewrite_special_functions(input_expression, basis)`
 
 
 
@@ -107,32 +65,14 @@ force mode.
 
 ### presentation_normal_form
 
-<a id="entry-presentation_python_api_session_presentation_normal_form"></a>
-<a id="placement-placement.python.python_module.module_presentation_normal_form.f7b7b62a0b39"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-presentation_normal_form(input_expression: ExpressionLike) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_presentation_normal_form.46db54a811e3"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.presentation_normal_form</code></p>
-
-```python signature
-presentation_normal_form(input_expression: ExpressionLike) -> Expression
-```
+`Context.presentation_normal_form(input_expression)`
 
 <a id="placement-placement.python.python_class.expression_presentation_normal_form.56042dc7923e"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.presentation_normal_form</code></p>
+`Expression.presentation_normal_form()`
 
-```python signature
-presentation_normal_form() -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_presentation_normal_form.f7b7b62a0b39"></a>
+`symi.presentation_normal_form(input_expression)`
 
 
 

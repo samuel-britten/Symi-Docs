@@ -7,18 +7,8 @@ expressions page.
 
 ### interval
 
-<a id="entry-presentation_kotlin_api_session_interval"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_interval.f091d18a794c"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun interval(
-    lower: UniffiExpression,
-    upper: UniffiExpression,
-    lowerInclusive: kotlin.Boolean,
-    upperInclusive: kotlin.Boolean,
-): UniffiExpression
-```
+`UniffiSession.interval(lower: UniffiExpression, upper: UniffiExpression, lowerInclusive: kotlin.Boolean, upperInclusive: kotlin.Boolean): UniffiExpression`
 
 
 Real-line interval. Closed by default; endpoints at infinity are forced
@@ -27,26 +17,16 @@ finite set, \((-\infty, \infty)\to\) real line).
 
 ### real_line
 
-<a id="entry-presentation_kotlin_api_session_real_line"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_realline.9e872af171c9"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun realLine(): UniffiExpression
-```
+`UniffiSession.realLine(): UniffiExpression`
 
 
 The set \(\mathbb{R}\).
 
 ### complex_plane
 
-<a id="entry-presentation_kotlin_api_session_complex_plane"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_complexplane.ab266cb0b1e6"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun complexPlane(): UniffiExpression
-```
+`UniffiSession.complexPlane(): UniffiExpression`
 
 
 The set \(\mathbb{C}\) — the ambient universe, and the domain a variable ranges over when it
@@ -54,39 +34,24 @@ carries no realness assumption.
 
 ### integer_set
 
-<a id="entry-presentation_kotlin_api_session_integer_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integerset.530e3b41baed"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun integerSet(): UniffiExpression
-```
+`UniffiSession.integerSet(): UniffiExpression`
 
 
 The set \(\mathbb{Z}\).
 
 ### empty_set
 
-<a id="entry-presentation_kotlin_api_session_empty_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_emptyset.eab879e43a43"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun emptySet(): UniffiExpression
-```
+`UniffiSession.emptySet(): UniffiExpression`
 
 
 The empty set \(\varnothing\).
 
 ### finite_set
 
-<a id="entry-presentation_kotlin_api_session_finite_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_finiteset.f199387d8dba"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun finiteSet(elements: List<UniffiExpression>): UniffiExpression
-```
+`UniffiSession.finiteSet(elements: List<UniffiExpression>): UniffiExpression`
 
 
 Finite set; elements are deduplicated and canonically ordered. An empty list
@@ -94,16 +59,8 @@ gives the empty set.
 
 ### set_union
 
-<a id="entry-presentation_kotlin_api_session_set_union"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_setunion.abb99420dce4"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun setUnion(
-    left: UniffiExpression,
-    right: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.setUnion(left: UniffiExpression, right: UniffiExpression): UniffiExpression`
 
 
 Union, computed eagerly where the structural rules allow (overlapping or
@@ -112,16 +69,8 @@ otherwise the structural `set_union` node.
 
 ### set_intersection
 
-<a id="entry-presentation_kotlin_api_session_set_intersection"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_setintersection.2b93d390c913"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun setIntersection(
-    left: UniffiExpression,
-    right: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.setIntersection(left: UniffiExpression, right: UniffiExpression): UniffiExpression`
 
 
 Intersection, computed eagerly where the structural rules allow (interval
@@ -130,33 +79,16 @@ structural `set_intersection` node.
 
 ### set_complement
 
-<a id="entry-presentation_kotlin_api_session_set_complement"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_setcomplement.f08454831514"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun setComplement(
-    left: UniffiExpression,
-    right: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.setComplement(left: UniffiExpression, right: UniffiExpression): UniffiExpression`
 
 
 The relative complement \(a \setminus b\).
 
 ### image_set
 
-<a id="entry-presentation_kotlin_api_session_image_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_imageset.961ae79216f2"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun imageSet(
-    lambdaExpression: UniffiExpression,
-    variable: kotlin.String,
-    domain: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.imageSet(lambdaExpression: UniffiExpression, variable: kotlin.String, domain: UniffiExpression): UniffiExpression`
 
 
 The set \(\{\operatorname{lambda\_expression} : \operatorname{variable} \in \operatorname{domain}\}\); `variable` is a binder
@@ -165,17 +97,8 @@ construction.
 
 ### condition_set
 
-<a id="entry-presentation_kotlin_api_session_condition_set"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_conditionset.08dd194d5410"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun conditionSet(
-    variable: kotlin.String,
-    condition: UniffiExpression,
-    domain: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.conditionSet(variable: kotlin.String, condition: UniffiExpression, domain: UniffiExpression): UniffiExpression`
 
 
 The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{condition}\}\). This is also `solveset`'s honest
@@ -183,16 +106,8 @@ The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{co
 
 ### is_member
 
-<a id="entry-presentation_kotlin_api_session_is_member"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_ismember.59e399086565"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun isMember(
-    element: UniffiExpression,
-    set: UniffiExpression,
-): UniffiTruthValue
-```
+`UniffiSession.isMember(element: UniffiExpression, set: UniffiExpression): UniffiTruthValue`
 
 
 Three-valued membership: `True` only on structural proof, `False` only on a
@@ -201,16 +116,8 @@ intervals, unions, intersections, complements.
 
 ### is_subset
 
-<a id="entry-presentation_kotlin_api_session_is_subset"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_issubset.a67c3cdae226"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun isSubset(
-    smaller: UniffiExpression,
-    larger: UniffiExpression,
-): UniffiTruthValue
-```
+`UniffiSession.isSubset(smaller: UniffiExpression, larger: UniffiExpression): UniffiTruthValue`
 
 
 Three-valued subset query: \(\varnothing \subseteq\) anything, structural equality, finite-set
@@ -218,20 +125,8 @@ element checks, interval-in-interval endpoint tests; `None` otherwise.
 
 ### enumerate_set_in_interval
 
-<a id="entry-presentation_kotlin_api_session_enumerate_set_in_interval"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_enumeratesetininterval.0e608a7a6528"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun enumerateSetInInterval(
-    set: UniffiExpression,
-    lower: UniffiExpression,
-    upper: UniffiExpression,
-    lowerInclusive: kotlin.Boolean,
-    upperInclusive: kotlin.Boolean,
-    limit: kotlin.ULong?,
-): UniffiSetEnumeration
-```
+`UniffiSession.enumerateSetInInterval(set: UniffiExpression, lower: UniffiExpression, upper: UniffiExpression, lowerInclusive: kotlin.Boolean, upperInclusive: kotlin.Boolean, limit: kotlin.ULong?): UniffiSetEnumeration`
 
 
 Exact elements of a set inside \([\operatorname{lower}, \operatorname{upper}]\), in increasing
@@ -244,45 +139,4 @@ returns for a lattice too wide to materialize. `limit` defaults to 64. WASM retu
 `SetEnumeration` object with `outcome` and `elements` getters.
 
 ## Example
-
-
-## Additional API
-
-### length
-
-<a id="entry-presentation_kotlin_api_expression_length"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffiexpression_length.76de3f6676f6"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```kotlin signature
-fun length(): kotlin.ULong
-```
-
-Number of elements of a finite-set expression.
-
-### SetEnumeration
-
-#### SetEnumeration.elements
-
-<a id="entry-presentation_kotlin_api_setenumeration_elements"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisetenumeration_elements.7c49be7882fe"></a>
-<p class="symi-entry-owner">UniffiSetEnumeration method</p>
-
-```kotlin signature
-fun elements(): List<UniffiExpression>
-```
-
-The exact elements produced, in increasing order.
-
-#### SetEnumeration.outcome
-
-<a id="entry-presentation_kotlin_api_setenumeration_outcome"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisetenumeration_outcome.b2e7831363ed"></a>
-<p class="symi-entry-owner">UniffiSetEnumeration method</p>
-
-```kotlin signature
-fun outcome(): UniffiEnumerationVerdict
-```
-
-`"complete"`, `"truncated"`, or `"declined"`.
 

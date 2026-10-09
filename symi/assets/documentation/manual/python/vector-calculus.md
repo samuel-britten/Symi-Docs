@@ -6,93 +6,33 @@ component/variable count mismatches raise.
 
 ### gradient
 
-<a id="entry-presentation_python_api_session_gradient"></a>
-<a id="placement-placement.python.python_module.module_gradient.985a8845f0b7"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-gradient(
-    scalar_field: ExpressionLike,
-    variables: Iterable[VariableLike],
-) -> list[Expression]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_gradient.18e156275d2d"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.gradient</code></p>
+`Context.gradient(scalar_field, variables)`
 
-```python signature
-gradient(
-    scalar_field: ExpressionLike,
-    variables: Iterable[VariableLike],
-) -> list[Expression]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_gradient.985a8845f0b7"></a>
+`symi.gradient(scalar_field, variables)`
 
 
 \(\nabla f\): the partial derivatives in the order of `variables`.
 
 ### divergence
 
-<a id="entry-presentation_python_api_session_divergence"></a>
-<a id="placement-placement.python.python_module.module_divergence.125245034036"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-divergence(
-    vector_components: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_divergence.ecf6e1f2f1f8"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.divergence</code></p>
+`Context.divergence(vector_components, variables)`
 
-```python signature
-divergence(
-    vector_components: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_divergence.125245034036"></a>
+`symi.divergence(vector_components, variables)`
 
 
 \(\nabla\cdot F = \sum_i \partial F_i/\partial x_i\); component and variable counts must match.
 
 ### curl
 
-<a id="entry-presentation_python_api_session_curl"></a>
-<a id="placement-placement.python.python_module.module_curl.e9aa60545c09"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-curl(
-    vector_components: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> list[Expression]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_curl.3670b00adb89"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.curl</code></p>
+`Context.curl(vector_components, variables)`
 
-```python signature
-curl(
-    vector_components: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> list[Expression]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_curl.e9aa60545c09"></a>
+`symi.curl(vector_components, variables)`
 
 
 \(\nabla\times F\). **Requires exactly three components and three variables**; other
@@ -100,62 +40,28 @@ dimensions raise.
 
 ### laplacian
 
-<a id="entry-presentation_python_api_session_laplacian"></a>
-<a id="placement-placement.python.python_module.module_laplacian.09b06509e9d5"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-laplacian(
-    scalar_field: ExpressionLike,
-    variables: Iterable[VariableLike],
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_laplacian.4044f30b106a"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.laplacian</code></p>
+`Context.laplacian(scalar_field, variables)`
 
-```python signature
-laplacian(
-    scalar_field: ExpressionLike,
-    variables: Iterable[VariableLike],
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_laplacian.09b06509e9d5"></a>
+`symi.laplacian(scalar_field, variables)`
 
 
 \(\Delta f = \nabla\cdot\nabla f\).
 
 ### jacobian
 
-<a id="entry-presentation_python_api_session_jacobian"></a>
-<a id="placement-placement.python.python_module.module_jacobian.6c0a8d9d3157"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-jacobian(
-    vector_components: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> Matrix
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_jacobian.87e30f06c196"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.jacobian</code></p>
+`Context.jacobian(vector_components, variables)`
 
-```python signature
-jacobian(
-    vector_components: Iterable[ExpressionLike],
-    variables: Iterable[VariableLike],
-) -> Matrix
-```
+<a id="placement-placement.python.python_class.partialdifferentialequationcoordinatechange_jacobian.bdb804adb3d1"></a>
+`PartialDifferentialEquationCoordinateChange.jacobian`
 
-</details>
+<a id="placement-placement.python.python_class.partialdifferentialequationtransformationverificationreport_jacobian.c4f07bc2066c"></a>
+`PartialDifferentialEquationTransformationVerificationReport.jacobian`
+
+<a id="placement-placement.python.python_module.module_jacobian.6c0a8d9d3157"></a>
+`symi.jacobian(vector_components, variables)`
 
 
 The matrix with entry \((i, j) = \partial F_i/\partial x_j\) (rows index components, columns index
@@ -164,31 +70,11 @@ methods.
 
 ### hessian
 
-<a id="entry-presentation_python_api_session_hessian"></a>
-<a id="placement-placement.python.python_module.module_hessian.811dac19f650"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-hessian(
-    scalar_field: ExpressionLike,
-    variables: Iterable[VariableLike],
-) -> Matrix
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_hessian.2d3d09380b62"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.hessian</code></p>
+`Context.hessian(scalar_field, variables)`
 
-```python signature
-hessian(
-    scalar_field: ExpressionLike,
-    variables: Iterable[VariableLike],
-) -> Matrix
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_hessian.811dac19f650"></a>
+`symi.hessian(scalar_field, variables)`
 
 
 The \(n\times n\) matrix of second partials, computed as the Jacobian of the gradient;

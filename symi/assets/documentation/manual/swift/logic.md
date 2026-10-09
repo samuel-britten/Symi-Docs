@@ -18,51 +18,27 @@ Normal forms and Boolean simplification are documented in
 
 ### logical_true
 
-<a id="entry-presentation_swift_api_session_logical_true"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_logicaltrue.ea8fb89b97aa"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func logicalTrue() -> UniffiExpression
-```
+`UniffiSession.logicalTrue() -> UniffiExpression`
 
 
 The Boolean constant true (\(\top\)).
 
 ### logical_false
 
-<a id="entry-presentation_swift_api_session_logical_false"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_logicalfalse.30325dfe08df"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func logicalFalse() -> UniffiExpression
-```
+`UniffiSession.logicalFalse() -> UniffiExpression`
 
 
 The Boolean constant false (\(\bot\)).
 
 ### evaluate_truth
 
-<a id="entry-presentation_swift_api_session_evaluate_truth"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_evaluatetruth.793bd49e7d4e"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func evaluateTruth(target: UniffiExpression) -> UniffiTruthValue
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_evaluatetruth.88a628a26ac3"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.evaluateTruth</code></p>
+`UniffiExpression.evaluateTruth() -> UniffiTruthValue`
 
-```swift signature
-func evaluateTruth() -> UniffiTruthValue
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_evaluatetruth.793bd49e7d4e"></a>
+`UniffiSession.evaluateTruth(target: UniffiExpression) -> UniffiTruthValue`
 
 
 `evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or

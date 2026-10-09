@@ -6,74 +6,35 @@ Serialization is a lossless interchange format for supported mathematical object
 
 ### to_latex
 
-<a id="entry-presentation_python_api_session_to_latex"></a>
-<a id="placement-placement.python.python_module.module_to_latex.a095e60f7b7e"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-to_latex(input_expression: ExpressionLike) -> str
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
+<a id="placement-placement.python.python_class.circle2d_to_latex.efe70de1b2c3"></a>
+`Circle2d.to_latex()`
 
 <a id="placement-placement.python.python_class.context_to_latex.73b190bf3fc4"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.to_latex</code></p>
-
-```python signature
-to_latex(input_expression: ExpressionLike) -> str
-```
+`Context.to_latex(input_expression)`
 
 <a id="placement-placement.python.python_class.expression_to_latex.e9dc20d35844"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.to_latex</code></p>
-
-```python signature
-to_latex() -> str
-```
-
-<a id="placement-placement.python.python_class.circle2d_to_latex.efe70de1b2c3"></a>
-<p class="symi-entry-owner">Variant for this object — Circle2d method: <code>Circle2d.to_latex</code></p>
-
-```python signature
-to_latex() -> str
-```
+`Expression.to_latex()`
 
 <a id="placement-placement.python.python_class.matrix_to_latex.90b107e6733a"></a>
-<p class="symi-entry-owner">Variant for this object — Matrix method: <code>Matrix.to_latex</code></p>
+`Matrix.to_latex()`
 
-```python signature
-to_latex() -> str
-```
+<a id="placement-placement.python.python_class.partialdifferentialequationproblem_to_latex.c404806e4912"></a>
+`PartialDifferentialEquationProblem.to_latex()`
 
 <a id="placement-placement.python.python_class.point2d_to_latex.1fd2ddc37371"></a>
-<p class="symi-entry-owner">Variant for this object — Point2d method: <code>Point2d.to_latex</code></p>
-
-```python signature
-to_latex() -> str
-```
+`Point2d.to_latex()`
 
 <a id="placement-placement.python.python_class.polygon2d_to_latex.815f587a7564"></a>
-<p class="symi-entry-owner">Variant for this object — Polygon2d method: <code>Polygon2d.to_latex</code></p>
-
-```python signature
-to_latex() -> str
-```
+`Polygon2d.to_latex()`
 
 <a id="placement-placement.python.python_class.segment2d_to_latex.9f28261e9a69"></a>
-<p class="symi-entry-owner">Variant for this object — Segment2d method: <code>Segment2d.to_latex</code></p>
-
-```python signature
-to_latex() -> str
-```
+`Segment2d.to_latex()`
 
 <a id="placement-placement.python.python_class.triangle2d_to_latex.b2372ec98eca"></a>
-<p class="symi-entry-owner">Variant for this object — Triangle2d method: <code>Triangle2d.to_latex</code></p>
+`Triangle2d.to_latex()`
 
-```python signature
-to_latex() -> str
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_to_latex.a095e60f7b7e"></a>
+`symi.to_latex(input_expression)`
 
 
 Render an expression as LaTeX. Matrices and geometry objects have their own
@@ -81,46 +42,14 @@ Render an expression as LaTeX. Matrices and geometry objects have their own
 
 ### to_latex_with_options
 
-<a id="entry-presentation_python_api_session_to_latex_with_options"></a>
-<a id="placement-placement.python.python_module.module_to_latex_with_options.170d636f4702"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-to_latex_with_options(
-    input_expression: ExpressionLike,
-    exponential_style: str,
-    natural_logarithm_style: str,
-    multiletter_symbol_style: str,
-) -> str
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_to_latex_with_options.808365ac2597"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.to_latex_with_options</code></p>
-
-```python signature
-to_latex_with_options(
-    input_expression: ExpressionLike,
-    exponential_style: str,
-    natural_logarithm_style: str,
-    multiletter_symbol_style: str,
-) -> str
-```
+`Context.to_latex_with_options(input_expression, exponential_style, natural_logarithm_style, multiletter_symbol_style)`
 
 <a id="placement-placement.python.python_class.expression_to_latex_with_options.a846d94eb017"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.to_latex_with_options</code></p>
+`Expression.to_latex_with_options(exponential_style, natural_logarithm_style, multiletter_symbol_style)`
 
-```python signature
-to_latex_with_options(
-    exponential_style: str,
-    natural_logarithm_style: str,
-    multiletter_symbol_style: str,
-) -> str
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_to_latex_with_options.170d636f4702"></a>
+`symi.to_latex_with_options(input_expression, exponential_style, natural_logarithm_style, multiletter_symbol_style)`
 
 
 Render an expression as LaTeX with presentation flags. Each argument is a string
@@ -141,25 +70,17 @@ and re-render with the other flag value if it violates the heuristic.
 
 ### serialize_object
 
-<a id="entry-presentation_python_api_session_serialize_object"></a>
-<a id="placement-placement.python.python_module.module_serialize_object.96b1122ae355"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-serialize_object(object: Any) -> str
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_serialize_object.4db46f297a23"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.serialize_object</code></p>
+`Context.serialize_object(object)`
 
-```python signature
-serialize_object(object: Any) -> str
-```
+<a id="placement-placement.python.python_class.partialdifferentialequationcoordinatechange_serialize_object.622ee8029a68"></a>
+`PartialDifferentialEquationCoordinateChange.serialize_object()`
 
-</details>
+<a id="placement-placement.python.python_class.partialdifferentialequationproblem_serialize_object.41a1ab74e1fa"></a>
+`PartialDifferentialEquationProblem.serialize_object()`
+
+<a id="placement-placement.python.python_module.module_serialize_object.96b1122ae355"></a>
+`symi.serialize_object(object)`
 
 
 Serialize an expression, matrix, or geometry object to the stable Symi
@@ -170,25 +91,11 @@ context method cannot downcast a JsValue back to an exported Rust type.
 
 ### parse_serialized_object
 
-<a id="entry-presentation_python_api_session_parse_serialized_object"></a>
-<a id="placement-placement.python.python_module.module_parse_serialized_object.4e2ecb9bb139"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-parse_serialized_object(text: str) -> Any
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_parse_serialized_object.cdcae6e05edc"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.parse_serialized_object</code></p>
+`Context.parse_serialized_object(text)`
 
-```python signature
-parse_serialized_object(text: str) -> Any
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_parse_serialized_object.4e2ecb9bb139"></a>
+`symi.parse_serialized_object(text)`
 
 
 Inverse of `serialize_object`; returns the matching surface class.

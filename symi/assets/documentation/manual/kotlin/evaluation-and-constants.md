@@ -43,13 +43,8 @@ other former module calls must remove the parentheses.
 
 ### pi
 
-<a id="entry-presentation_kotlin_api_session_pi"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_pi.8ac479b7a6cb"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun pi(): UniffiExpression
-```
+`UniffiSession.pi(): UniffiExpression`
 
 
 The circle constant \(\pi\). Exact in every arithmetic operation; use
@@ -58,13 +53,8 @@ decimal value.
 
 ### e
 
-<a id="entry-presentation_kotlin_api_session_e"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_e.c075cc71e3b8"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun e(): UniffiExpression
-```
+`UniffiSession.e(): UniffiExpression`
 
 
 Euler's number \(e\), the base of the natural logarithm. `exp(1)` and this
@@ -72,13 +62,8 @@ constant are the same expression.
 
 ### euler_gamma
 
-<a id="entry-presentation_kotlin_api_session_euler_gamma"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_eulergamma.cc9178585ac0"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun eulerGamma(): UniffiExpression
-```
+`UniffiSession.eulerGamma(): UniffiExpression`
 
 
 The Euler–Mascheroni constant \(\gamma\). It appears in closed forms produced by
@@ -86,13 +71,8 @@ The Euler–Mascheroni constant \(\gamma\). It appears in closed forms produced 
 
 ### imaginary_unit
 
-<a id="entry-presentation_kotlin_api_session_imaginary_unit"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_imaginaryunit.1d792fe60496"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun imaginaryUnit(): UniffiExpression
-```
+`UniffiSession.imaginaryUnit(): UniffiExpression`
 
 
 The imaginary unit \(i\) with \(i^2 = -1\). Use
@@ -102,13 +82,8 @@ decompose a complex expression.
 
 ### infinity
 
-<a id="entry-presentation_kotlin_api_session_infinity"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_infinity.480009a6a6b2"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun infinity(): UniffiExpression
-```
+`UniffiSession.infinity(): UniffiExpression`
 
 
 Unsigned positive infinity \(\infty\). Negate it for \(-\infty\). Both are accepted

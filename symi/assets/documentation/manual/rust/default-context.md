@@ -44,13 +44,8 @@ Rules of the model:
 
 ### default_context
 
-<a id="entry-presentation_rust_api_session_default_context"></a>
 <a id="placement-placement.rust.native_rust.api_defaults_session_default_context.4e314f7b17d9"></a>
-<p class="symi-entry-owner">api::defaults::Session method</p>
-
-```rust signature
-pub fn default_context() -> Session
-```
+`symi::api::defaults::Session — pub fn default_context() -> Session`
 
 
 Return a handle to the thread's default context — the same context every
@@ -60,18 +55,8 @@ API. Each call returns a new handle to the same underlying context.
 
 ### clear_assumptions
 
-<a id="entry-presentation_rust_api_session_clear_assumptions"></a>
 <a id="placement-placement.rust.native_rust.api_session_clear_assumptions.168b842c0916"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn clear_assumptions<'a, VariableType>(
-    &self,
-    variable: VariableType,
-) -> Result<(), ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
+`symi::api::Session — pub fn clear_assumptions<'a, VariableType>(&self, variable: VariableType) -> Result<(), ApiError> where VariableType: Into<VariableLike<'a>>`
 
 
 Reset one symbol's assumptions to the default (complex domain, every property
@@ -82,18 +67,8 @@ a re-declaration you actually intend.
 
 ### assumptions_of
 
-<a id="entry-presentation_rust_api_session_assumptions_of"></a>
 <a id="placement-placement.rust.native_rust.api_session_assumptions_of.a6207cbce499"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn assumptions_of<'a, VariableType>(
-    &self,
-    variable: VariableType,
-) -> Result<Vec<AssumptionProposition>, ApiError>
-where
-    VariableType: Into<VariableLike<'a>>,
-```
+`symi::api::Session — pub fn assumptions_of<'a, VariableType>(&self, variable: VariableType) -> Result<Vec<AssumptionProposition>, ApiError> where VariableType: Into<VariableLike<'a>>`
 
 
 Return the symbol's current assumptions as a native Python mapping or
@@ -104,13 +79,8 @@ is one of `complex`, `real`, `rational`, `integer`, `natural`, or
 
 ### interner_length
 
-<a id="entry-presentation_rust_api_session_interner_length"></a>
 <a id="placement-placement.rust.native_rust.api_session_interner_length.f3167904a63e"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn interner_length(&self) -> usize
-```
+`symi::api::Session — pub fn interner_length(&self) -> usize`
 
 
 Number of live expressions currently interned in the context. Dead entries
@@ -132,31 +102,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
-
-
-## Additional API
-
-### api::defaults
-
-<a id="entry-presentation_rust_native_module_api_defaults"></a>
-<a id="placement-placement.rust.native_rust.api_defaults.e20fc1a31890"></a>
-<p class="symi-entry-owner">api module</p>
-
-```rust signature
-pub mod defaults;
-```
-
-The shared default session and the module-level spellings that back it.
-
-### api::prelude
-
-<a id="entry-presentation_rust_native_module_api_prelude"></a>
-<a id="placement-placement.rust.native_rust.api_prelude.d7b47ad34767"></a>
-<p class="symi-entry-owner">api module</p>
-
-```rust signature
-pub mod prelude;
-```
-
-Advanced native module for `prelude` functionality.
 

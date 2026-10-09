@@ -2,28 +2,11 @@
 
 ### solve
 
-<a id="entry-presentation_swift_api_session_solve"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_solve.807ed3270ad9"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func solve(
-    inputExpression: UniffiExpression,
-    variable: String,
-) -> [UniffiExpression]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_solve.6b9c187c4cac"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.solve</code></p>
+`UniffiExpression.solve(variable: String) -> [UniffiExpression]`
 
-```swift signature
-func solve(variable: String) -> [UniffiExpression]
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_solve.807ed3270ad9"></a>
+`UniffiSession.solve(inputExpression: UniffiExpression, variable: String) -> [UniffiExpression]`
 
 
 Solve an equation (an `equal` node, or an expression implicitly equated to
@@ -33,28 +16,11 @@ solver's reach are simply absent — prefer `solveset` when you need an honest
 
 ### solveset
 
-<a id="entry-presentation_swift_api_session_solveset"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_solveset.da46b979785b"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func solveset(
-    inputExpression: UniffiExpression,
-    variable: String,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_solveset.4fc2f7162e15"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.solveset</code></p>
+`UniffiExpression.solveset(variable: String) -> UniffiExpression`
 
-```swift signature
-func solveset(variable: String) -> UniffiExpression
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_solveset.da46b979785b"></a>
+`UniffiSession.solveset(inputExpression: UniffiExpression, variable: String) -> UniffiExpression`
 
 
 Solution **set** of the equation or inequality: a finite set, interval,
@@ -175,17 +141,8 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### solveset_in_domain
 
-<a id="entry-presentation_swift_api_session_solveset_in_domain"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_solvesetindomain.ff107f8e84d4"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func solvesetInDomain(
-    inputExpression: UniffiExpression,
-    variable: String,
-    domain: UniffiExpression,
-) -> UniffiExpression
-```
+`UniffiSession.solvesetInDomain(inputExpression: UniffiExpression, variable: String, domain: UniffiExpression) -> UniffiExpression`
 
 
 `solveset` restricted to an explicit domain set (e.g. `real_line()`,
@@ -193,28 +150,11 @@ func solvesetInDomain(
 
 ### roots_with_multiplicities
 
-<a id="entry-presentation_swift_api_session_roots_with_multiplicities"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_rootswithmultiplicities.a4c3f3bed9ab"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func rootsWithMultiplicities(
-    inputExpression: UniffiExpression,
-    variable: String,
-) -> [UniffiRootMultiplicity]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.swift.swift_object.uniffiexpression_rootswithmultiplicities.f3a60625db71"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rootsWithMultiplicities</code></p>
+`UniffiExpression.rootsWithMultiplicities(variable: String) -> [UniffiRootMultiplicity]`
 
-```swift signature
-func rootsWithMultiplicities(variable: String) -> [UniffiRootMultiplicity]
-```
-
-</details>
+<a id="placement-placement.swift.swift_object.uniffisession_rootswithmultiplicities.a4c3f3bed9ab"></a>
+`UniffiSession.rootsWithMultiplicities(inputExpression: UniffiExpression, variable: String) -> [UniffiRootMultiplicity]`
 
 
 Roots of a polynomial with their multiplicities. **Notes:** Python returns a
@@ -222,17 +162,8 @@ dict keyed by root; WASM returns an array of `RootMultiplicity` objects.
 
 ### polynomial_root
 
-<a id="entry-presentation_swift_api_session_polynomial_root"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_polynomialroot.d6dd82e2a4bf"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func polynomialRoot(
-    inputExpression: UniffiExpression,
-    variable: String,
-    index: UInt64,
-) -> UniffiExpression?
-```
+`UniffiSession.polynomialRoot(inputExpression: UniffiExpression, variable: String, index: UInt64) -> UniffiExpression?`
 
 
 Construct the zero-based `index`-th exact root of a univariate rational
@@ -249,16 +180,8 @@ explicit, separate operation.
 
 ### minimal_polynomial_of
 
-<a id="entry-presentation_swift_api_session_minimal_polynomial_of"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_minimalpolynomialof.9ce9d06c3680"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func minimalPolynomialOf(
-    inputExpression: UniffiExpression,
-    variable: String,
-) -> UniffiExpression?
-```
+`UniffiSession.minimalPolynomialOf(inputExpression: UniffiExpression, variable: String) -> UniffiExpression?`
 
 
 Return an exact polynomial in the requested variable for a first-class
@@ -271,16 +194,8 @@ Has `root` and `multiplicity` getters; see object model.
 
 ### solve_polynomial_system
 
-<a id="entry-presentation_swift_api_session_solve_polynomial_system"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_solvepolynomialsystem.de631d9ea95b"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func solvePolynomialSystem(
-    equations: [UniffiExpression],
-    variables: [String],
-) -> UniffiPolynomialSystemSolution
-```
+`UniffiSession.solvePolynomialSystem(equations: [UniffiExpression], variables: [String]) -> UniffiPolynomialSystemSolution`
 
 
 Solve a multivariate polynomial system `{ equation_i = 0 }` for the named
@@ -304,43 +219,60 @@ place.
 
 ### verdict
 
-<a id="entry-presentation_swift_api_polynomialsystemsolution_verdict"></a>
-<a id="placement-placement.swift.swift_object.uniffipolynomialsystemsolution_verdict.eeb0a1b04507"></a>
-<p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
+<a id="placement-placement.swift.swift_object.uniffidefiniteintegrationresult_verdict.1fb02e380bc6"></a>
+`UniffiDefiniteIntegrationResult.verdict() -> UniffiDefiniteIntegrationVerdict`
 
-```swift signature
-func verdict() -> UniffiSystemVerdict
-```
+<a id="placement-placement.swift.swift_object.uniffioptimizationoutcome_verdict.b5e76d513ad8"></a>
+`UniffiOptimizationOutcome.verdict() -> UniffiOptimizationVerdict`
+
+<a id="placement-placement.swift.swift_object.uniffiordinarydifferentialequationsolveresult_verdict.81cb94d2d66c"></a>
+`UniffiOrdinaryDifferentialEquationSolveResult.verdict() -> UniffiOrdinaryDifferentialEquationSolveVerdict`
+
+<a id="placement-placement.swift.swift_object.uniffiordinarydifferentialequationsystemsolveresult_verdict.117302a57408"></a>
+`UniffiOrdinaryDifferentialEquationSystemSolveResult.verdict() -> UniffiOrdinaryDifferentialEquationSolveVerdict`
+
+<a id="placement-placement.swift.swift_object.uniffiordinarydifferentialequationsystemverificationreport_verdict.7c5ee7f5ddca"></a>
+`UniffiOrdinaryDifferentialEquationSystemVerificationReport.verdict() -> UniffiOrdinaryDifferentialEquationVerificationVerdict`
+
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationsecondorderclassification_verdict.729b5a35345e"></a>
+`UniffiPartialDifferentialEquationSecondOrderClassification.verdict() -> UniffiPartialDifferentialEquationSecondOrderTypeVerdict`
+
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationsolveresult_verdict.12cdc8ab2c66"></a>
+`UniffiPartialDifferentialEquationSolveResult.verdict() -> UniffiPartialDifferentialEquationSolveVerdict`
+
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationtransformationverificationreport_verdict.271d02a40a76"></a>
+`UniffiPartialDifferentialEquationTransformationVerificationReport.verdict() -> UniffiPartialDifferentialEquationVerificationVerdict`
+
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationverificationreport_verdict.9f59c565ef60"></a>
+`UniffiPartialDifferentialEquationVerificationReport.verdict() -> UniffiPartialDifferentialEquationVerificationVerdict`
+
+<a id="placement-placement.swift.swift_object.uniffipartialdifferentialequationverificationresidual_verdict.a2cbb6427ec2"></a>
+`UniffiPartialDifferentialEquationVerificationResidual.verdict() -> UniffiPartialDifferentialEquationVerificationVerdict`
+
+<a id="placement-placement.swift.swift_object.uniffipolynomialsystemsolution_verdict.eeb0a1b04507"></a>
+`UniffiPolynomialSystemSolution.verdict() -> UniffiSystemVerdict`
 
 Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`,
 `"empty"`, `"positive_dimensional"`, or `"declined"`.
 
 ### complete
 
-<a id="entry-presentation_swift_api_polynomialsystemsolution_complete"></a>
-<a id="placement-placement.swift.swift_object.uniffipolynomialsystemsolution_complete.70709b31af7b"></a>
-<p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
+<a id="placement-placement.swift.swift_object.uniffioptimizationoutcome_complete.d61284d43b81"></a>
+`UniffiOptimizationOutcome.complete() -> Bool`
 
-```swift signature
-func complete() -> Bool
-```
+<a id="placement-placement.swift.swift_object.uniffipolynomialsystemsolution_complete.70709b31af7b"></a>
+`UniffiPolynomialSystemSolution.complete() -> Bool`
 
 Getter on `PolynomialSystemSolution`: whether the solver certified it found
 every solution.
 
 ### solutions
+
+<a id="placement-placement.swift.swift_object.uniffipolynomialsystemsolution_solutions.d568d9eb844c"></a>
+`UniffiPolynomialSystemSolution.solutions() -> [UniffiSystemAssignment]`
+
 Getter on `PolynomialSystemSolution`: the array of `SystemAssignment` tuples
 (empty for the non-finite verdicts).
-
-<a id="entry-presentation_swift_api_polynomialsystemsolution_solutions"></a>
-<a id="placement-placement.swift.swift_object.uniffipolynomialsystemsolution_solutions.d568d9eb844c"></a>
-<p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
-
-```swift signature
-func solutions() -> [UniffiSystemAssignment]
-```
-
-Getter on `polynomial_system_solution`: the array of `system_assignment` tuples (empty for the non-finite verdicts).
 
 ### system_assignment (WASM result class)
 
@@ -348,43 +280,29 @@ One solution tuple of a polynomial system, pairing each unknown with its value.
 
 ### variables
 
-<a id="entry-presentation_swift_api_systemassignment_variables"></a>
-<a id="placement-placement.swift.swift_object.uniffisystemassignment_variables.71ff36bfc65c"></a>
-<p class="symi-entry-owner">UniffiSystemAssignment method</p>
+<a id="placement-placement.swift.swift_object.unifficriticalpoint_variables.b171a28deb56"></a>
+`UniffiCriticalPoint.variables() -> [String]`
 
-```swift signature
-func variables() -> [String]
-```
+<a id="placement-placement.swift.swift_object.uniffisystemassignment_variables.71ff36bfc65c"></a>
+`UniffiSystemAssignment.variables() -> [String]`
 
 Getter on `SystemAssignment`: the unknown names, in order.
 
 ### values
 
-<a id="entry-presentation_swift_api_systemassignment_values"></a>
-<a id="placement-placement.swift.swift_object.uniffisystemassignment_values.f7d5c838b23e"></a>
-<p class="symi-entry-owner">UniffiSystemAssignment method</p>
+<a id="placement-placement.swift.swift_object.unifficriticalpoint_values.0245850eedd6"></a>
+`UniffiCriticalPoint.values() -> [UniffiExpression]`
 
-```swift signature
-func values() -> [UniffiExpression]
-```
+<a id="placement-placement.swift.swift_object.uniffisystemassignment_values.f7d5c838b23e"></a>
+`UniffiSystemAssignment.values() -> [UniffiExpression]`
 
 Getter on `SystemAssignment`: the assigned value expressions, aligned with
 `variables`.
 
 ### real_root_count
 
-<a id="entry-presentation_swift_api_session_real_root_count"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_realrootcount.e76b0567b4fa"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func realRootCount(
-    inputExpression: UniffiExpression,
-    variable: String,
-    lower: Int64,
-    upper: Int64,
-) -> UInt64?
-```
+`UniffiSession.realRootCount(inputExpression: UniffiExpression, variable: String, lower: Int64, upper: Int64) -> UInt64?`
 
 
 Number of distinct real roots of a univariate polynomial in the interval
@@ -393,16 +311,8 @@ univariate polynomial over the rationals.
 
 ### count_distinct_real_roots
 
-<a id="entry-presentation_swift_api_session_count_distinct_real_roots"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_countdistinctrealroots.746e9915fd31"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func countDistinctRealRoots(
-    inputExpression: UniffiExpression,
-    variable: String,
-) -> UInt64?
-```
+`UniffiSession.countDistinctRealRoots(inputExpression: UniffiExpression, variable: String) -> UInt64?`
 
 
 Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions as
@@ -410,17 +320,8 @@ Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions
 
 ### real_root_sign
 
-<a id="entry-presentation_swift_api_session_real_root_sign"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_realrootsign.efd61d7845dc"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func realRootSign(
-    inputExpression: UniffiExpression,
-    variable: String,
-    index: UInt64,
-) -> Int64?
-```
+`UniffiSession.realRootSign(inputExpression: UniffiExpression, variable: String, index: UInt64) -> Int64?`
 
 
 The exact sign (`-1`, `0`, or `1`) of the `index`-th smallest real root of a
@@ -431,20 +332,8 @@ is out of range.
 
 ### compare_real_roots
 
-<a id="entry-presentation_swift_api_session_compare_real_roots"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_comparerealroots.f2a28e78106c"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func compareRealRoots(
-    firstExpression: UniffiExpression,
-    firstVariable: String,
-    firstIndex: UInt64,
-    secondExpression: UniffiExpression,
-    secondVariable: String,
-    secondIndex: UInt64,
-) -> Int64?
-```
+`UniffiSession.compareRealRoots(firstExpression: UniffiExpression, firstVariable: String, firstIndex: UInt64, secondExpression: UniffiExpression, secondVariable: String, secondIndex: UInt64) -> Int64?`
 
 
 Compare two real algebraic numbers exactly, each given as the `index`-th smallest
@@ -458,17 +347,8 @@ polynomial over the rationals or an index is out of range.
 
 ### eliminate_quantifiers
 
-<a id="entry-presentation_swift_api_session_eliminate_quantifiers"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_eliminatequantifiers.166dad9757a8"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func eliminateQuantifiers(
-    matrix: UniffiExpression,
-    quantifiers: [UniffiQuantifier],
-    variables: [String],
-) -> UniffiExpression
-```
+`UniffiSession.eliminateQuantifiers(matrix: UniffiExpression, quantifiers: [UniffiQuantifier], variables: [String]) -> UniffiExpression`
 
 `context.eliminate_quantifiers(matrix, quantifiers: list[str], variables: list[VariableLike])`
 
@@ -485,16 +365,8 @@ decline, or when the solution formula cannot be certified.
 
 ### solve_semialgebraic
 
-<a id="entry-presentation_swift_api_session_solve_semialgebraic"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_solvesemialgebraic.388d55b98a04"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func solveSemialgebraic(
-    matrix: UniffiExpression,
-    variables: [String],
-) -> UniffiExpression
-```
+`UniffiSession.solveSemialgebraic(matrix: UniffiExpression, variables: [String]) -> UniffiExpression`
 
 `context.solve_semialgebraic(matrix, variables: list[VariableLike])`
 
@@ -508,14 +380,3 @@ case (for example, \(\{(x, y) : x^2 - 1 < 0 \land y^2 - 1 < 0\}\) is the open sq
 
 ## Example
 
-
-### solve_as_set
-
-*Not exposed by the Swift bindings. Available as [`api::Expression::solve_as_set`](/symi/rust/solving#solve_as_set) in Rust.*
-
-
-The solution set of an equation as a set-valued expression, rather than the
-list of solutions [`solve`](#solve) returns. A set answer can express solution
-families a list cannot — an image set over the integers, or a union of several
-families — so it is the right entry when the solution set may be infinite.
-See [Sets](sets.md) for what can be done with the result.

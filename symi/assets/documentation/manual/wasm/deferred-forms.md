@@ -6,35 +6,11 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
-<a id="entry-presentation_wasm_api_session_integral"></a>
-<a id="placement-placement.wasm.wasm_module.module_integral.eee25ebf5a0e"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-integral(
-    integrand: Expression,
-    variable: string,
-    lower?: Expression | null,
-    upper?: Expression | null,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_integral.f6129c72c596"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integral</code></p>
+Raw WebAssembly: `pub fn integral(&self, integrand: &Expression, variable: &str, lower: Option<Expression>, upper: Option<Expression>) -> Result<Expression, JsError>`
 
-```typescript signature
-integral(
-    integrand: Expression,
-    variable: string,
-    lower?: Expression | null,
-    upper?: Expression | null,
-): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_integral.eee25ebf5a0e"></a>
+Raw WebAssembly: `fn integral(integrand: &Expression, variable: &str, lower: Option<Expression>, upper: Option<Expression>) -> Result<Expression, JsError>`
 
 
 Build an *unevaluated* integral node (indefinite when bounds are omitted).
@@ -43,91 +19,17 @@ the node.
 
 ### derivative
 
-<a id="entry-presentation_wasm_api_session_derivative"></a>
-<a id="placement-placement.wasm.wasm_module.module_derivative.6c2f52be0c02"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
 
-```typescript signature
-derivative(
-    input_expression: Expression,
-    variable: string,
-    order?: number | null,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_derivative.50bdfc4c863b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.derivative</code></p>
-
-```typescript signature
-derivative(
-    input_expression: Expression,
-    variable: string,
-    order?: number | null,
-): Expression
-```
-
-<a id="placement-placement.wasm.javascript_facade.expression_derivative.71488970b451"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.derivative</code></p>
-
-```typescript signature
-derivative(variable: VariableLike, order?: number): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_derivative.5e5f3f1fdacd"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.derivative</code></p>
-
-```typescript signature
-derivative(variable: string, order?: number | null): Expression
-```
-
-</details>
-
-
-
-Constructs an *unevaluated* derivative node of an arbitrary expression. The
-variable may be a name or a same-context symbol expression. Nothing is
-differentiated here: use [`execute`](evaluation-and-constants.md) on the node,
-or [`differentiate`](calculus.md#differentiate) to differentiate now.
-
-This is not the derivative of a named unknown function. An equation built from
-this placeholder is not recognised by the differential-equation classifiers,
-which read the structural derivative built by
-[`UndefinedFunction.derivative`](undefined-functions.md#derivative).
+Constructs a deferred derivative. The variable may
+be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 ### summation
 
-<a id="entry-presentation_wasm_api_session_summation"></a>
-<a id="placement-placement.wasm.wasm_module.module_summation.49ecda1cfd0a"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-summation(
-    summand: Expression,
-    index: string,
-    lower: Expression,
-    upper: Expression,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_summation.008385ac03bb"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.summation</code></p>
+Raw WebAssembly: `pub fn summation(&self, summand: &Expression, index: &str, lower: &Expression, upper: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-summation(
-    summand: Expression,
-    index: string,
-    lower: Expression,
-    upper: Expression,
-): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_summation.49ecda1cfd0a"></a>
+Raw WebAssembly: `fn summation(summand: &Expression, index: &str, lower: &Expression, upper: &Expression) -> Result<Expression, JsError>`
 
 
 Build a summation node \(\sum\). `execute` evaluates it when a closed form or
@@ -220,35 +122,11 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
-<a id="entry-presentation_wasm_api_session_product"></a>
-<a id="placement-placement.wasm.wasm_module.module_product.4b346b85255f"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-product(
-    multiplicand: Expression,
-    index: string,
-    lower: Expression,
-    upper: Expression,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_product.37cc779e76ed"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.product</code></p>
+Raw WebAssembly: `pub fn product(&self, multiplicand: &Expression, index: &str, lower: &Expression, upper: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-product(
-    multiplicand: Expression,
-    index: string,
-    lower: Expression,
-    upper: Expression,
-): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_product.4b346b85255f"></a>
+Raw WebAssembly: `fn product(multiplicand: &Expression, index: &str, lower: &Expression, upper: &Expression) -> Result<Expression, JsError>`
 
 
 Definite indexed product \(\prod_{\mathit{index}=\mathit{lower}}^{\mathit{upper}} \mathit{multiplicand}\), a first-class
@@ -323,45 +201,17 @@ form is in scope.
 
 ### piecewise
 
-<a id="entry-presentation_wasm_api_session_piecewise"></a>
-<a id="placement-placement.wasm.wasm_module.module_piecewise.c246b4400df8"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-piecewise(
-    branches: Expression[],
-    otherwise?: Expression | null,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.javascript_facade.context_piecewise.2001a04b252e"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.piecewise</code></p>
-
-```typescript signature
-piecewise(branches: Iterable<PiecewiseBranch>): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.context_piecewise.9a8f7205a7fd"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.piecewise</code></p>
-
-```typescript signature
-piecewise(
-    branches: Expression[],
-    otherwise?: Expression | null,
-): Expression
-```
+`Context.piecewise(branches: Iterable<PiecewiseBranch>): Expression`
 
 <a id="placement-placement.wasm.javascript_facade.symifacade_piecewise.e54e812abd39"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.piecewise</code></p>
+`SymiFacade.piecewise(branches: Iterable<PiecewiseBranch>): Expression`
 
-```typescript signature
-piecewise(branches: Iterable<PiecewiseBranch>): Expression
-```
+<a id="placement-placement.wasm.wasm_class.context_piecewise.9a8f7205a7fd"></a>
+Raw WebAssembly: `pub fn piecewise(&self, branches: Vec<Expression>, otherwise: Option<Expression>) -> Result<Expression, JsError>`
 
-</details>
+<a id="placement-placement.wasm.wasm_module.module_piecewise.c246b4400df8"></a>
+Raw WebAssembly: `fn piecewise(branches: Vec<Expression>, otherwise: Option<Expression>) -> Result<Expression, JsError>`
 
 
 Build a piecewise expression from `(value, condition)` pairs with first-match
@@ -375,67 +225,4 @@ fails the result is the undefined sentinel.
 ## Example
 
 This family is not part of the recommended JavaScript facade in this release. Call it through the generated `symi.raw` layer, whose entries are listed with their wasm-bindgen signatures above, and read [Migration](migration.md) for the ownership rules that apply there.
-
-
-### summation_indefinite
-
-<a id="entry-presentation_wasm_api_session_summation_indefinite"></a>
-<a id="placement-placement.wasm.wasm_module.module_summationindefinite.45acee68c513"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-summationIndefinite(summand: Expression, index: string): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_summationindefinite.1d9f974c7467"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.summationIndefinite</code></p>
-
-```typescript signature
-summationIndefinite(summand: Expression, index: string): Expression
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_summationindefinite.98722b7aa268"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.summationIndefinite</code></p>
-
-```typescript signature
-summationIndefinite(index: string): Expression
-```
-
-</details>
-
-
-The anti-difference of `summand`: a closed form \(F\) with
-\(F(\mathrm{index}+1) - F(\mathrm{index}) = \mathrm{summand}\). It is the
-discrete counterpart of an indefinite integral, and it sits here beside
-[`product_indefinite`](#product_indefinite) for the same reason — when no closed
-form is found, the unevaluated summation is what is returned.
-
-## Additional API
-
-### productIndefinite
-
-<a id="entry-presentation_wasm_api_session_product_indefinite"></a>
-<a id="placement-placement.wasm.wasm_module.module_productindefinite.fd08393adc04"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-productIndefinite(multiplicand: Expression, index: string): Expression
-```
-
-Indefinite (anti-quotient) product: the `P(k)` satisfying `P(k+1)/P(k) = multiplicand(k)`, the multiplicative analogue of `summation_indefinite`.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_productindefinite.dac6a64f8b80"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.productIndefinite</code></p>
-
-```typescript signature
-productIndefinite(multiplicand: Expression, index: string): Expression
-```
-
-</details>
 

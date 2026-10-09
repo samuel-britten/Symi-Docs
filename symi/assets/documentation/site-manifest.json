@@ -2,82 +2,66 @@
   "categories": [
     {
       "category_identifier": "introduction",
-      "short_title": "Getting started",
       "title": "Introduction and getting started"
     },
     {
       "category_identifier": "contexts",
-      "short_title": "Contexts and objects",
       "title": "Contexts, sessions, objects, conversions, evaluation, and diagnostics"
     },
     {
       "category_identifier": "construction",
-      "short_title": "Construction and output",
       "title": "Construction, parsing, serialization, and output"
     },
     {
       "category_identifier": "constants",
-      "short_title": "Constants and evaluation",
       "title": "Constants and numeric evaluation"
     },
     {
       "category_identifier": "elementary-functions",
-      "short_title": "Elementary functions",
       "title": "Elementary functions"
     },
     {
       "category_identifier": "special-functions",
-      "short_title": "Special functions",
       "title": "Special functions"
     },
     {
       "category_identifier": "expression-transformations",
-      "short_title": "Simplification and rewriting",
       "title": "Expression inspection, transformation, and simplification"
     },
     {
       "category_identifier": "calculus",
-      "short_title": "Calculus",
       "title": "Calculus, series, residues, and integral transforms"
     },
     {
       "category_identifier": "numeric_definite_integration",
-      "short_title": "Numerical integration",
       "title": "Numerical definite integration"
     },
     {
       "category_identifier": "equations",
-      "short_title": "Equations and optimization",
       "title": "Equations, differential equations, recurrence equations, and optimization"
     },
     {
       "category_identifier": "algebra",
-      "short_title": "Algebra and matrices",
       "title": "Polynomials, algebra, matrices, and cylindrical algebraic decomposition"
     },
     {
       "category_identifier": "discrete-mathematics",
-      "short_title": "Discrete mathematics",
       "title": "Sets, logic, number theory, and combinatorics"
     },
     {
       "category_identifier": "probability",
-      "short_title": "Probability and statistics",
       "title": "Probability and statistics"
     },
     {
       "category_identifier": "geometry",
-      "short_title": "Geometry",
       "title": "Geometry"
     },
     {
       "category_identifier": "vector-calculus",
-      "short_title": "Vector calculus",
       "title": "Vector calculus"
     },
     {
       "category_identifier": "reference",
-      "short_title": "Reference and indexes",
       "title": "Complete API reference and indexes"
     }
   ],
@@ -116,499 +100,6 @@
   "pages": [
     {
       "canonical_urls": {
-        "kotlin": "/symi/kotlin/introduction",
-        "python": "/symi/python/introduction",
-        "rust": "/symi/rust/introduction",
-        "swift": "/symi/swift/introduction",
-        "wasm": "/symi/wasm/introduction"
-      },
-      "category_identifier": "introduction",
-      "entry_counts": {},
-      "language_paths": {
-        "kotlin": "manual/kotlin/introduction.md",
-        "python": "manual/python/introduction.md",
-        "rust": "manual/rust/introduction.md",
-        "swift": "manual/swift/introduction.md",
-        "wasm": "manual/wasm/introduction.md"
-      },
-      "page_identifier": "introduction",
-      "title": "Symi language APIs"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/getting-started-python",
-        "python": "/symi/python/getting-started-python",
-        "rust": "/symi/rust/getting-started-python",
-        "swift": "/symi/swift/getting-started-python",
-        "wasm": "/symi/wasm/getting-started-python"
-      },
-      "category_identifier": "introduction",
-      "entry_counts": {},
-      "language_paths": {
-        "kotlin": "manual/kotlin/getting-started-python.md",
-        "python": "manual/python/getting-started-python.md",
-        "rust": "manual/rust/getting-started-python.md",
-        "swift": "manual/swift/getting-started-python.md",
-        "wasm": "manual/wasm/getting-started-python.md"
-      },
-      "page_identifier": "getting-started-python",
-      "title": "Getting started: Python"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/getting-started-javascript",
-        "python": "/symi/python/getting-started-javascript",
-        "rust": "/symi/rust/getting-started-javascript",
-        "swift": "/symi/swift/getting-started-javascript",
-        "wasm": "/symi/wasm/getting-started-javascript"
-      },
-      "category_identifier": "introduction",
-      "entry_counts": {},
-      "language_paths": {
-        "kotlin": "manual/kotlin/getting-started-javascript.md",
-        "python": "manual/python/getting-started-javascript.md",
-        "rust": "manual/rust/getting-started-javascript.md",
-        "swift": "manual/swift/getting-started-javascript.md",
-        "wasm": "manual/wasm/getting-started-javascript.md"
-      },
-      "page_identifier": "getting-started-javascript",
-      "title": "Getting started: JavaScript / WASM"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/getting-started-rust",
-        "python": "/symi/python/getting-started-rust",
-        "rust": "/symi/rust/getting-started-rust",
-        "swift": "/symi/swift/getting-started-rust",
-        "wasm": "/symi/wasm/getting-started-rust"
-      },
-      "category_identifier": "introduction",
-      "entry_counts": {},
-      "language_paths": {
-        "kotlin": "manual/kotlin/getting-started-rust.md",
-        "python": "manual/python/getting-started-rust.md",
-        "rust": "manual/rust/getting-started-rust.md",
-        "swift": "manual/swift/getting-started-rust.md",
-        "wasm": "manual/wasm/getting-started-rust.md"
-      },
-      "page_identifier": "getting-started-rust",
-      "title": "Getting started: Rust"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/getting-started-kotlin",
-        "python": "/symi/python/getting-started-kotlin",
-        "rust": "/symi/rust/getting-started-kotlin",
-        "swift": "/symi/swift/getting-started-kotlin",
-        "wasm": "/symi/wasm/getting-started-kotlin"
-      },
-      "category_identifier": "introduction",
-      "entry_counts": {},
-      "language_paths": {
-        "kotlin": "manual/kotlin/getting-started-kotlin.md",
-        "python": "manual/python/getting-started-kotlin.md",
-        "rust": "manual/rust/getting-started-kotlin.md",
-        "swift": "manual/swift/getting-started-kotlin.md",
-        "wasm": "manual/wasm/getting-started-kotlin.md"
-      },
-      "page_identifier": "getting-started-kotlin",
-      "title": "Getting started: Kotlin"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/getting-started-swift",
-        "python": "/symi/python/getting-started-swift",
-        "rust": "/symi/rust/getting-started-swift",
-        "swift": "/symi/swift/getting-started-swift",
-        "wasm": "/symi/wasm/getting-started-swift"
-      },
-      "category_identifier": "introduction",
-      "entry_counts": {},
-      "language_paths": {
-        "kotlin": "manual/kotlin/getting-started-swift.md",
-        "python": "manual/python/getting-started-swift.md",
-        "rust": "manual/rust/getting-started-swift.md",
-        "swift": "manual/swift/getting-started-swift.md",
-        "wasm": "manual/wasm/getting-started-swift.md"
-      },
-      "page_identifier": "getting-started-swift",
-      "title": "Getting started: Swift"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/default-context",
-        "python": "/symi/python/default-context",
-        "rust": "/symi/rust/default-context",
-        "swift": "/symi/swift/default-context",
-        "wasm": "/symi/wasm/default-context"
-      },
-      "category_identifier": "contexts",
-      "entry_counts": {
-        "kotlin": 3,
-        "python": 4,
-        "rust": 6,
-        "swift": 3,
-        "wasm": 4
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/default-context.md",
-        "python": "manual/python/default-context.md",
-        "rust": "manual/rust/default-context.md",
-        "swift": "manual/swift/default-context.md",
-        "wasm": "manual/wasm/default-context.md"
-      },
-      "page_identifier": "default-context",
-      "title": "The default context and module-level functions"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/object-model",
-        "python": "/symi/python/object-model",
-        "rust": "/symi/rust/object-model",
-        "swift": "/symi/swift/object-model",
-        "wasm": "/symi/wasm/object-model"
-      },
-      "category_identifier": "contexts",
-      "entry_counts": {
-        "python": 1,
-        "rust": 1,
-        "wasm": 1
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/object-model.md",
-        "python": "manual/python/object-model.md",
-        "rust": "manual/rust/object-model.md",
-        "swift": "manual/swift/object-model.md",
-        "wasm": "manual/wasm/object-model.md"
-      },
-      "page_identifier": "object-model",
-      "title": "Object model"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/conversion-rules",
-        "python": "/symi/python/conversion-rules",
-        "rust": "/symi/rust/conversion-rules",
-        "swift": "/symi/swift/conversion-rules",
-        "wasm": "/symi/wasm/conversion-rules"
-      },
-      "category_identifier": "contexts",
-      "entry_counts": {
-        "rust": 10
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/conversion-rules.md",
-        "python": "manual/python/conversion-rules.md",
-        "rust": "manual/rust/conversion-rules.md",
-        "swift": "manual/swift/conversion-rules.md",
-        "wasm": "manual/wasm/conversion-rules.md"
-      },
-      "page_identifier": "conversion-rules",
-      "title": "Conversions and collections"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/context-safety",
-        "python": "/symi/python/context-safety",
-        "rust": "/symi/rust/context-safety",
-        "swift": "/symi/swift/context-safety",
-        "wasm": "/symi/wasm/context-safety"
-      },
-      "category_identifier": "contexts",
-      "entry_counts": {
-        "python": 10,
-        "rust": 106,
-        "wasm": 32
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/context-safety.md",
-        "python": "manual/python/context-safety.md",
-        "rust": "manual/rust/context-safety.md",
-        "swift": "manual/swift/context-safety.md",
-        "wasm": "manual/wasm/context-safety.md"
-      },
-      "page_identifier": "context-safety",
-      "title": "Context safety"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/diagnostics",
-        "python": "/symi/python/diagnostics",
-        "rust": "/symi/rust/diagnostics",
-        "swift": "/symi/swift/diagnostics",
-        "wasm": "/symi/wasm/diagnostics"
-      },
-      "category_identifier": "contexts",
-      "entry_counts": {
-        "rust": 35,
-        "wasm": 7
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/diagnostics.md",
-        "python": "manual/python/diagnostics.md",
-        "rust": "manual/rust/diagnostics.md",
-        "swift": "manual/swift/diagnostics.md",
-        "wasm": "manual/wasm/diagnostics.md"
-      },
-      "page_identifier": "diagnostics",
-      "title": "Diagnostics and outcomes"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/migration",
-        "python": "/symi/python/migration",
-        "rust": "/symi/rust/migration",
-        "swift": "/symi/swift/migration",
-        "wasm": "/symi/wasm/migration"
-      },
-      "category_identifier": "contexts",
-      "entry_counts": {},
-      "language_paths": {
-        "kotlin": "manual/kotlin/migration.md",
-        "python": "manual/python/migration.md",
-        "rust": "manual/rust/migration.md",
-        "swift": "manual/swift/migration.md",
-        "wasm": "manual/wasm/migration.md"
-      },
-      "page_identifier": "migration",
-      "title": "Migration"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/construction-and-parsing",
-        "python": "/symi/python/construction-and-parsing",
-        "rust": "/symi/rust/construction-and-parsing",
-        "swift": "/symi/swift/construction-and-parsing",
-        "wasm": "/symi/wasm/construction-and-parsing"
-      },
-      "category_identifier": "construction",
-      "entry_counts": {
-        "kotlin": 9,
-        "python": 9,
-        "rust": 23,
-        "swift": 9,
-        "wasm": 9
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/construction-and-parsing.md",
-        "python": "manual/python/construction-and-parsing.md",
-        "rust": "manual/rust/construction-and-parsing.md",
-        "swift": "manual/swift/construction-and-parsing.md",
-        "wasm": "manual/wasm/construction-and-parsing.md"
-      },
-      "page_identifier": "construction-and-parsing",
-      "title": "Construction and parsing"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/serialization-and-output",
-        "python": "/symi/python/serialization-and-output",
-        "rust": "/symi/rust/serialization-and-output",
-        "swift": "/symi/swift/serialization-and-output",
-        "wasm": "/symi/wasm/serialization-and-output"
-      },
-      "category_identifier": "construction",
-      "entry_counts": {
-        "kotlin": 4,
-        "python": 4,
-        "rust": 26,
-        "swift": 4,
-        "wasm": 4
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/serialization-and-output.md",
-        "python": "manual/python/serialization-and-output.md",
-        "rust": "manual/rust/serialization-and-output.md",
-        "swift": "manual/swift/serialization-and-output.md",
-        "wasm": "manual/wasm/serialization-and-output.md"
-      },
-      "page_identifier": "serialization-and-output",
-      "title": "Serialization and output"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/deferred-forms",
-        "python": "/symi/python/deferred-forms",
-        "rust": "/symi/rust/deferred-forms",
-        "swift": "/symi/swift/deferred-forms",
-        "wasm": "/symi/wasm/deferred-forms"
-      },
-      "category_identifier": "construction",
-      "entry_counts": {
-        "kotlin": 6,
-        "python": 7,
-        "rust": 7,
-        "swift": 6,
-        "wasm": 7
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/deferred-forms.md",
-        "python": "manual/python/deferred-forms.md",
-        "rust": "manual/rust/deferred-forms.md",
-        "swift": "manual/swift/deferred-forms.md",
-        "wasm": "manual/wasm/deferred-forms.md"
-      },
-      "page_identifier": "deferred-forms",
-      "title": "Deferred forms"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/evaluation-and-constants",
-        "python": "/symi/python/evaluation-and-constants",
-        "rust": "/symi/rust/evaluation-and-constants",
-        "swift": "/symi/swift/evaluation-and-constants",
-        "wasm": "/symi/wasm/evaluation-and-constants"
-      },
-      "category_identifier": "constants",
-      "entry_counts": {
-        "kotlin": 5,
-        "python": 5,
-        "rust": 6,
-        "swift": 5,
-        "wasm": 5
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/evaluation-and-constants.md",
-        "python": "manual/python/evaluation-and-constants.md",
-        "rust": "manual/rust/evaluation-and-constants.md",
-        "swift": "manual/swift/evaluation-and-constants.md",
-        "wasm": "manual/wasm/evaluation-and-constants.md"
-      },
-      "page_identifier": "evaluation-and-constants",
-      "title": "Evaluation and constants"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/elementary-functions",
-        "python": "/symi/python/elementary-functions",
-        "rust": "/symi/rust/elementary-functions",
-        "swift": "/symi/swift/elementary-functions",
-        "wasm": "/symi/wasm/elementary-functions"
-      },
-      "category_identifier": "elementary-functions",
-      "entry_counts": {
-        "kotlin": 37,
-        "python": 36,
-        "rust": 41,
-        "swift": 37,
-        "wasm": 37
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/elementary-functions.md",
-        "python": "manual/python/elementary-functions.md",
-        "rust": "manual/rust/elementary-functions.md",
-        "swift": "manual/swift/elementary-functions.md",
-        "wasm": "manual/wasm/elementary-functions.md"
-      },
-      "page_identifier": "elementary-functions",
-      "title": "Elementary functions"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/relations",
-        "python": "/symi/python/relations",
-        "rust": "/symi/rust/relations",
-        "swift": "/symi/swift/relations",
-        "wasm": "/symi/wasm/relations"
-      },
-      "category_identifier": "elementary-functions",
-      "entry_counts": {
-        "kotlin": 6,
-        "python": 6,
-        "rust": 6,
-        "swift": 6,
-        "wasm": 6
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/relations.md",
-        "python": "manual/python/relations.md",
-        "rust": "manual/rust/relations.md",
-        "swift": "manual/swift/relations.md",
-        "wasm": "manual/wasm/relations.md"
-      },
-      "page_identifier": "relations",
-      "title": "Relations and predicates"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/special-functions",
-        "python": "/symi/python/special-functions",
-        "rust": "/symi/rust/special-functions",
-        "swift": "/symi/swift/special-functions",
-        "wasm": "/symi/wasm/special-functions"
-      },
-      "category_identifier": "special-functions",
-      "entry_counts": {
-        "kotlin": 41,
-        "python": 41,
-        "rust": 84,
-        "swift": 41,
-        "wasm": 41
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/special-functions.md",
-        "python": "manual/python/special-functions.md",
-        "rust": "manual/rust/special-functions.md",
-        "swift": "manual/swift/special-functions.md",
-        "wasm": "manual/wasm/special-functions.md"
-      },
-      "page_identifier": "special-functions",
-      "title": "Special functions"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/expressions",
-        "python": "/symi/python/expressions",
-        "rust": "/symi/rust/expressions",
-        "swift": "/symi/swift/expressions",
-        "wasm": "/symi/wasm/expressions"
-      },
-      "category_identifier": "expression-transformations",
-      "entry_counts": {
-        "kotlin": 61,
-        "python": 74,
-        "rust": 70,
-        "swift": 61,
-        "wasm": 65
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/expressions.md",
-        "python": "manual/python/expressions.md",
-        "rust": "manual/rust/expressions.md",
-        "swift": "manual/swift/expressions.md",
-        "wasm": "manual/wasm/expressions.md"
-      },
-      "page_identifier": "expressions",
-      "title": "Expression methods"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/simplification-general",
-        "python": "/symi/python/simplification-general",
-        "rust": "/symi/rust/simplification-general",
-        "swift": "/symi/swift/simplification-general",
-        "wasm": "/symi/wasm/simplification-general"
-      },
-      "category_identifier": "expression-transformations",
-      "entry_counts": {
-        "kotlin": 4,
-        "python": 4,
-        "rust": 4,
-        "swift": 4,
-        "wasm": 4
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/simplification-general.md",
-        "python": "manual/python/simplification-general.md",
-        "rust": "manual/rust/simplification-general.md",
-        "swift": "manual/swift/simplification-general.md",
-        "wasm": "manual/wasm/simplification-general.md"
-      },
-      "page_identifier": "simplification-general",
-      "title": "General simplification"
-    },
-    {
-      "canonical_urls": {
         "kotlin": "/symi/kotlin/algebraic-transforms",
         "python": "/symi/python/algebraic-transforms",
         "rust": "/symi/rust/algebraic-transforms",
@@ -616,13 +107,6 @@
         "wasm": "/symi/wasm/algebraic-transforms"
       },
       "category_identifier": "expression-transformations",
-      "entry_counts": {
-        "kotlin": 9,
-        "python": 9,
-        "rust": 9,
-        "swift": 9,
-        "wasm": 9
-      },
       "language_paths": {
         "kotlin": "manual/kotlin/algebraic-transforms.md",
         "python": "manual/python/algebraic-transforms.md",
@@ -635,467 +119,22 @@
     },
     {
       "canonical_urls": {
-        "kotlin": "/symi/kotlin/trigonometric-complex-rewrites",
-        "python": "/symi/python/trigonometric-complex-rewrites",
-        "rust": "/symi/rust/trigonometric-complex-rewrites",
-        "swift": "/symi/swift/trigonometric-complex-rewrites",
-        "wasm": "/symi/wasm/trigonometric-complex-rewrites"
+        "kotlin": "/symi/kotlin/assumptions",
+        "python": "/symi/python/assumptions",
+        "rust": "/symi/rust/assumptions",
+        "swift": "/symi/swift/assumptions",
+        "wasm": "/symi/wasm/assumptions"
       },
-      "category_identifier": "expression-transformations",
-      "entry_counts": {
-        "kotlin": 14,
-        "python": 14,
-        "rust": 23,
-        "swift": 14,
-        "wasm": 14
-      },
+      "category_identifier": "reference",
       "language_paths": {
-        "kotlin": "manual/kotlin/trigonometric-complex-rewrites.md",
-        "python": "manual/python/trigonometric-complex-rewrites.md",
-        "rust": "manual/rust/trigonometric-complex-rewrites.md",
-        "swift": "manual/swift/trigonometric-complex-rewrites.md",
-        "wasm": "manual/wasm/trigonometric-complex-rewrites.md"
+        "kotlin": "manual/kotlin/assumptions.md",
+        "python": "manual/python/assumptions.md",
+        "rust": "manual/rust/assumptions.md",
+        "swift": "manual/swift/assumptions.md",
+        "wasm": "manual/wasm/assumptions.md"
       },
-      "page_identifier": "trigonometric-complex-rewrites",
-      "title": "Trigonometric and complex rewrites"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/specialized-canonical-forms",
-        "python": "/symi/python/specialized-canonical-forms",
-        "rust": "/symi/rust/specialized-canonical-forms",
-        "swift": "/symi/swift/specialized-canonical-forms",
-        "wasm": "/symi/wasm/specialized-canonical-forms"
-      },
-      "category_identifier": "expression-transformations",
-      "entry_counts": {
-        "kotlin": 3,
-        "python": 3,
-        "rust": 11,
-        "swift": 3,
-        "wasm": 3
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/specialized-canonical-forms.md",
-        "python": "manual/python/specialized-canonical-forms.md",
-        "rust": "manual/rust/specialized-canonical-forms.md",
-        "swift": "manual/swift/specialized-canonical-forms.md",
-        "wasm": "manual/wasm/specialized-canonical-forms.md"
-      },
-      "page_identifier": "specialized-canonical-forms",
-      "title": "Specialized canonical forms"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/calculus",
-        "python": "/symi/python/calculus",
-        "rust": "/symi/rust/calculus",
-        "swift": "/symi/swift/calculus",
-        "wasm": "/symi/wasm/calculus"
-      },
-      "category_identifier": "calculus",
-      "entry_counts": {
-        "kotlin": 24,
-        "python": 26,
-        "rust": 36,
-        "swift": 24,
-        "wasm": 24
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/calculus.md",
-        "python": "manual/python/calculus.md",
-        "rust": "manual/rust/calculus.md",
-        "swift": "manual/swift/calculus.md",
-        "wasm": "manual/wasm/calculus.md"
-      },
-      "page_identifier": "calculus",
-      "title": "Calculus"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/series",
-        "python": "/symi/python/series",
-        "rust": "/symi/rust/series",
-        "swift": "/symi/swift/series",
-        "wasm": "/symi/wasm/series"
-      },
-      "category_identifier": "calculus",
-      "entry_counts": {
-        "kotlin": 5,
-        "python": 5,
-        "rust": 5,
-        "swift": 5,
-        "wasm": 5
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/series.md",
-        "python": "manual/python/series.md",
-        "rust": "manual/rust/series.md",
-        "swift": "manual/swift/series.md",
-        "wasm": "manual/wasm/series.md"
-      },
-      "page_identifier": "series",
-      "title": "Series and residues"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/integral-transforms",
-        "python": "/symi/python/integral-transforms",
-        "rust": "/symi/rust/integral-transforms",
-        "swift": "/symi/swift/integral-transforms",
-        "wasm": "/symi/wasm/integral-transforms"
-      },
-      "category_identifier": "calculus",
-      "entry_counts": {
-        "kotlin": 4,
-        "python": 4,
-        "rust": 4,
-        "swift": 4,
-        "wasm": 4
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/integral-transforms.md",
-        "python": "manual/python/integral-transforms.md",
-        "rust": "manual/rust/integral-transforms.md",
-        "swift": "manual/swift/integral-transforms.md",
-        "wasm": "manual/wasm/integral-transforms.md"
-      },
-      "page_identifier": "integral-transforms",
-      "title": "Integral transforms"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/solving",
-        "python": "/symi/python/solving",
-        "rust": "/symi/rust/solving",
-        "swift": "/symi/swift/solving",
-        "wasm": "/symi/wasm/solving"
-      },
-      "category_identifier": "equations",
-      "entry_counts": {
-        "kotlin": 18,
-        "python": 13,
-        "rust": 28,
-        "swift": 18,
-        "wasm": 18
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/solving.md",
-        "python": "manual/python/solving.md",
-        "rust": "manual/rust/solving.md",
-        "swift": "manual/swift/solving.md",
-        "wasm": "manual/wasm/solving.md"
-      },
-      "page_identifier": "solving",
-      "title": "Solving"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/undefined-functions",
-        "python": "/symi/python/undefined-functions",
-        "rust": "/symi/rust/undefined-functions",
-        "swift": "/symi/swift/undefined-functions",
-        "wasm": "/symi/wasm/undefined-functions"
-      },
-      "category_identifier": "equations",
-      "entry_counts": {
-        "kotlin": 3,
-        "python": 5,
-        "rust": 8,
-        "swift": 3,
-        "wasm": 4
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/undefined-functions.md",
-        "python": "manual/python/undefined-functions.md",
-        "rust": "manual/rust/undefined-functions.md",
-        "swift": "manual/swift/undefined-functions.md",
-        "wasm": "manual/wasm/undefined-functions.md"
-      },
-      "page_identifier": "undefined-functions",
-      "title": "Undefined functions"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/differential-equations",
-        "python": "/symi/python/differential-equations",
-        "rust": "/symi/rust/differential-equations",
-        "swift": "/symi/swift/differential-equations",
-        "wasm": "/symi/wasm/differential-equations"
-      },
-      "category_identifier": "equations",
-      "entry_counts": {
-        "rust": 5
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/differential-equations.md",
-        "python": "manual/python/differential-equations.md",
-        "rust": "manual/rust/differential-equations.md",
-        "swift": "manual/swift/differential-equations.md",
-        "wasm": "manual/wasm/differential-equations.md"
-      },
-      "page_identifier": "differential-equations",
-      "title": "Differential and recurrence equations"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/ordinary-differential-equations",
-        "python": "/symi/python/ordinary-differential-equations",
-        "rust": "/symi/rust/ordinary-differential-equations",
-        "swift": "/symi/swift/ordinary-differential-equations",
-        "wasm": "/symi/wasm/ordinary-differential-equations"
-      },
-      "category_identifier": "equations",
-      "entry_counts": {
-        "kotlin": 27,
-        "python": 30,
-        "rust": 102,
-        "swift": 27,
-        "wasm": 27
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/ordinary-differential-equations.md",
-        "python": "manual/python/ordinary-differential-equations.md",
-        "rust": "manual/rust/ordinary-differential-equations.md",
-        "swift": "manual/swift/ordinary-differential-equations.md",
-        "wasm": "manual/wasm/ordinary-differential-equations.md"
-      },
-      "page_identifier": "ordinary-differential-equations",
-      "title": "Ordinary differential equations"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/partial-differential-equations",
-        "python": "/symi/python/partial-differential-equations",
-        "rust": "/symi/rust/partial-differential-equations",
-        "swift": "/symi/swift/partial-differential-equations",
-        "wasm": "/symi/wasm/partial-differential-equations"
-      },
-      "category_identifier": "equations",
-      "entry_counts": {
-        "kotlin": 19,
-        "python": 19,
-        "rust": 24,
-        "swift": 19,
-        "wasm": 19
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/partial-differential-equations.md",
-        "python": "manual/python/partial-differential-equations.md",
-        "rust": "manual/rust/partial-differential-equations.md",
-        "swift": "manual/swift/partial-differential-equations.md",
-        "wasm": "manual/wasm/partial-differential-equations.md"
-      },
-      "page_identifier": "partial-differential-equations",
-      "title": "Partial differential equations"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/partial-differential-equation-results",
-        "python": "/symi/python/partial-differential-equation-results",
-        "rust": "/symi/rust/partial-differential-equation-results",
-        "swift": "/symi/swift/partial-differential-equation-results",
-        "wasm": "/symi/wasm/partial-differential-equation-results"
-      },
-      "category_identifier": "equations",
-      "entry_counts": {
-        "kotlin": 118,
-        "python": 142,
-        "rust": 369,
-        "swift": 118,
-        "wasm": 124
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/partial-differential-equation-results.md",
-        "python": "manual/python/partial-differential-equation-results.md",
-        "rust": "manual/rust/partial-differential-equation-results.md",
-        "swift": "manual/swift/partial-differential-equation-results.md",
-        "wasm": "manual/wasm/partial-differential-equation-results.md"
-      },
-      "page_identifier": "partial-differential-equation-results",
-      "title": "Partial differential equation results"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/recurrence-equations",
-        "python": "/symi/python/recurrence-equations",
-        "rust": "/symi/rust/recurrence-equations",
-        "swift": "/symi/swift/recurrence-equations",
-        "wasm": "/symi/wasm/recurrence-equations"
-      },
-      "category_identifier": "equations",
-      "entry_counts": {
-        "kotlin": 1,
-        "python": 1,
-        "rust": 1,
-        "swift": 1,
-        "wasm": 1
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/recurrence-equations.md",
-        "python": "manual/python/recurrence-equations.md",
-        "rust": "manual/rust/recurrence-equations.md",
-        "swift": "manual/swift/recurrence-equations.md",
-        "wasm": "manual/wasm/recurrence-equations.md"
-      },
-      "page_identifier": "recurrence-equations",
-      "title": "Recurrence equations"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/optimization",
-        "python": "/symi/python/optimization",
-        "rust": "/symi/rust/optimization",
-        "swift": "/symi/swift/optimization",
-        "wasm": "/symi/wasm/optimization"
-      },
-      "category_identifier": "equations",
-      "entry_counts": {
-        "kotlin": 13,
-        "python": 5,
-        "rust": 30,
-        "swift": 13,
-        "wasm": 13
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/optimization.md",
-        "python": "manual/python/optimization.md",
-        "rust": "manual/rust/optimization.md",
-        "swift": "manual/swift/optimization.md",
-        "wasm": "manual/wasm/optimization.md"
-      },
-      "page_identifier": "optimization",
-      "title": "Optimization"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/polynomials",
-        "python": "/symi/python/polynomials",
-        "rust": "/symi/rust/polynomials",
-        "swift": "/symi/swift/polynomials",
-        "wasm": "/symi/wasm/polynomials"
-      },
-      "category_identifier": "algebra",
-      "entry_counts": {
-        "kotlin": 18,
-        "python": 14,
-        "rust": 31,
-        "swift": 18,
-        "wasm": 31
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/polynomials.md",
-        "python": "manual/python/polynomials.md",
-        "rust": "manual/rust/polynomials.md",
-        "swift": "manual/swift/polynomials.md",
-        "wasm": "manual/wasm/polynomials.md"
-      },
-      "page_identifier": "polynomials",
-      "title": "Polynomial queries"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/matrix-construction",
-        "python": "/symi/python/matrix-construction",
-        "rust": "/symi/rust/matrix-construction",
-        "swift": "/symi/swift/matrix-construction",
-        "wasm": "/symi/wasm/matrix-construction"
-      },
-      "category_identifier": "algebra",
-      "entry_counts": {
-        "kotlin": 10,
-        "python": 9,
-        "rust": 10,
-        "swift": 10,
-        "wasm": 10
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/matrix-construction.md",
-        "python": "manual/python/matrix-construction.md",
-        "rust": "manual/rust/matrix-construction.md",
-        "swift": "manual/swift/matrix-construction.md",
-        "wasm": "manual/wasm/matrix-construction.md"
-      },
-      "page_identifier": "matrix-construction",
-      "title": "Matrix construction and access"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/linear-algebra",
-        "python": "/symi/python/linear-algebra",
-        "rust": "/symi/rust/linear-algebra",
-        "swift": "/symi/swift/linear-algebra",
-        "wasm": "/symi/wasm/linear-algebra"
-      },
-      "category_identifier": "algebra",
-      "entry_counts": {
-        "kotlin": 66,
-        "python": 69,
-        "rust": 73,
-        "swift": 66,
-        "wasm": 68
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/linear-algebra.md",
-        "python": "manual/python/linear-algebra.md",
-        "rust": "manual/rust/linear-algebra.md",
-        "swift": "manual/swift/linear-algebra.md",
-        "wasm": "manual/wasm/linear-algebra.md"
-      },
-      "page_identifier": "linear-algebra",
-      "title": "Linear algebra"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/matrix-canonical-forms",
-        "python": "/symi/python/matrix-canonical-forms",
-        "rust": "/symi/rust/matrix-canonical-forms",
-        "swift": "/symi/swift/matrix-canonical-forms",
-        "wasm": "/symi/wasm/matrix-canonical-forms"
-      },
-      "category_identifier": "algebra",
-      "entry_counts": {
-        "kotlin": 22,
-        "python": 14,
-        "rust": 25,
-        "swift": 22,
-        "wasm": 22
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/matrix-canonical-forms.md",
-        "python": "manual/python/matrix-canonical-forms.md",
-        "rust": "manual/rust/matrix-canonical-forms.md",
-        "swift": "manual/swift/matrix-canonical-forms.md",
-        "wasm": "manual/wasm/matrix-canonical-forms.md"
-      },
-      "page_identifier": "matrix-canonical-forms",
-      "title": "Matrix canonical forms"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/matrix-functions",
-        "python": "/symi/python/matrix-functions",
-        "rust": "/symi/rust/matrix-functions",
-        "swift": "/symi/swift/matrix-functions",
-        "wasm": "/symi/wasm/matrix-functions"
-      },
-      "category_identifier": "algebra",
-      "entry_counts": {
-        "kotlin": 13,
-        "python": 8,
-        "rust": 16,
-        "swift": 13,
-        "wasm": 13
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/matrix-functions.md",
-        "python": "manual/python/matrix-functions.md",
-        "rust": "manual/rust/matrix-functions.md",
-        "swift": "manual/swift/matrix-functions.md",
-        "wasm": "manual/wasm/matrix-functions.md"
-      },
-      "page_identifier": "matrix-functions",
-      "title": "Matrix functions and Jordan form"
+      "page_identifier": "assumptions",
+      "title": "Assumptions"
     },
     {
       "canonical_urls": {
@@ -1106,13 +145,6 @@
         "wasm": "/symi/wasm/cad"
       },
       "category_identifier": "algebra",
-      "entry_counts": {
-        "kotlin": 6,
-        "python": 7,
-        "rust": 14,
-        "swift": 6,
-        "wasm": 10
-      },
       "language_paths": {
         "kotlin": "manual/kotlin/cad.md",
         "python": "manual/python/cad.md",
@@ -1125,29 +157,364 @@
     },
     {
       "canonical_urls": {
-        "kotlin": "/symi/kotlin/sets",
-        "python": "/symi/python/sets",
-        "rust": "/symi/rust/sets",
-        "swift": "/symi/swift/sets",
-        "wasm": "/symi/wasm/sets"
+        "kotlin": "/symi/kotlin/calculus",
+        "python": "/symi/python/calculus",
+        "rust": "/symi/rust/calculus",
+        "swift": "/symi/swift/calculus",
+        "wasm": "/symi/wasm/calculus"
+      },
+      "category_identifier": "calculus",
+      "language_paths": {
+        "kotlin": "manual/kotlin/calculus.md",
+        "python": "manual/python/calculus.md",
+        "rust": "manual/rust/calculus.md",
+        "swift": "manual/swift/calculus.md",
+        "wasm": "manual/wasm/calculus.md"
+      },
+      "page_identifier": "calculus",
+      "title": "Calculus"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/combinatorics",
+        "python": "/symi/python/combinatorics",
+        "rust": "/symi/rust/combinatorics",
+        "swift": "/symi/swift/combinatorics",
+        "wasm": "/symi/wasm/combinatorics"
       },
       "category_identifier": "discrete-mathematics",
-      "entry_counts": {
-        "kotlin": 17,
-        "python": 16,
-        "rust": 25,
-        "swift": 17,
-        "wasm": 17
-      },
       "language_paths": {
-        "kotlin": "manual/kotlin/sets.md",
-        "python": "manual/python/sets.md",
-        "rust": "manual/rust/sets.md",
-        "swift": "manual/swift/sets.md",
-        "wasm": "manual/wasm/sets.md"
+        "kotlin": "manual/kotlin/combinatorics.md",
+        "python": "manual/python/combinatorics.md",
+        "rust": "manual/rust/combinatorics.md",
+        "swift": "manual/swift/combinatorics.md",
+        "wasm": "manual/wasm/combinatorics.md"
       },
-      "page_identifier": "sets",
-      "title": "Sets"
+      "page_identifier": "combinatorics",
+      "title": "Combinatorics"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/construction-and-parsing",
+        "python": "/symi/python/construction-and-parsing",
+        "rust": "/symi/rust/construction-and-parsing",
+        "swift": "/symi/swift/construction-and-parsing",
+        "wasm": "/symi/wasm/construction-and-parsing"
+      },
+      "category_identifier": "construction",
+      "language_paths": {
+        "kotlin": "manual/kotlin/construction-and-parsing.md",
+        "python": "manual/python/construction-and-parsing.md",
+        "rust": "manual/rust/construction-and-parsing.md",
+        "swift": "manual/swift/construction-and-parsing.md",
+        "wasm": "manual/wasm/construction-and-parsing.md"
+      },
+      "page_identifier": "construction-and-parsing",
+      "title": "Construction and parsing"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/context-safety",
+        "python": "/symi/python/context-safety",
+        "rust": "/symi/rust/context-safety",
+        "swift": "/symi/swift/context-safety",
+        "wasm": "/symi/wasm/context-safety"
+      },
+      "category_identifier": "contexts",
+      "language_paths": {
+        "kotlin": "manual/kotlin/context-safety.md",
+        "python": "manual/python/context-safety.md",
+        "rust": "manual/rust/context-safety.md",
+        "swift": "manual/swift/context-safety.md",
+        "wasm": "manual/wasm/context-safety.md"
+      },
+      "page_identifier": "context-safety",
+      "title": "Context safety"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/conversion-rules",
+        "python": "/symi/python/conversion-rules",
+        "rust": "/symi/rust/conversion-rules",
+        "swift": "/symi/swift/conversion-rules",
+        "wasm": "/symi/wasm/conversion-rules"
+      },
+      "category_identifier": "contexts",
+      "language_paths": {
+        "kotlin": "manual/kotlin/conversion-rules.md",
+        "python": "manual/python/conversion-rules.md",
+        "rust": "manual/rust/conversion-rules.md",
+        "swift": "manual/swift/conversion-rules.md",
+        "wasm": "manual/wasm/conversion-rules.md"
+      },
+      "page_identifier": "conversion-rules",
+      "title": "Conversions and collections"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/default-context",
+        "python": "/symi/python/default-context",
+        "rust": "/symi/rust/default-context",
+        "swift": "/symi/swift/default-context",
+        "wasm": "/symi/wasm/default-context"
+      },
+      "category_identifier": "contexts",
+      "language_paths": {
+        "kotlin": "manual/kotlin/default-context.md",
+        "python": "manual/python/default-context.md",
+        "rust": "manual/rust/default-context.md",
+        "swift": "manual/swift/default-context.md",
+        "wasm": "manual/wasm/default-context.md"
+      },
+      "page_identifier": "default-context",
+      "title": "The default context and module-level functions"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/deferred-forms",
+        "python": "/symi/python/deferred-forms",
+        "rust": "/symi/rust/deferred-forms",
+        "swift": "/symi/swift/deferred-forms",
+        "wasm": "/symi/wasm/deferred-forms"
+      },
+      "category_identifier": "construction",
+      "language_paths": {
+        "kotlin": "manual/kotlin/deferred-forms.md",
+        "python": "manual/python/deferred-forms.md",
+        "rust": "manual/rust/deferred-forms.md",
+        "swift": "manual/swift/deferred-forms.md",
+        "wasm": "manual/wasm/deferred-forms.md"
+      },
+      "page_identifier": "deferred-forms",
+      "title": "Deferred forms"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/diagnostics",
+        "python": "/symi/python/diagnostics",
+        "rust": "/symi/rust/diagnostics",
+        "swift": "/symi/swift/diagnostics",
+        "wasm": "/symi/wasm/diagnostics"
+      },
+      "category_identifier": "contexts",
+      "language_paths": {
+        "kotlin": "manual/kotlin/diagnostics.md",
+        "python": "manual/python/diagnostics.md",
+        "rust": "manual/rust/diagnostics.md",
+        "swift": "manual/swift/diagnostics.md",
+        "wasm": "manual/wasm/diagnostics.md"
+      },
+      "page_identifier": "diagnostics",
+      "title": "Diagnostics and outcomes"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/differential-equations",
+        "python": "/symi/python/differential-equations",
+        "rust": "/symi/rust/differential-equations",
+        "swift": "/symi/swift/differential-equations",
+        "wasm": "/symi/wasm/differential-equations"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/differential-equations.md",
+        "python": "manual/python/differential-equations.md",
+        "rust": "manual/rust/differential-equations.md",
+        "swift": "manual/swift/differential-equations.md",
+        "wasm": "manual/wasm/differential-equations.md"
+      },
+      "page_identifier": "differential-equations",
+      "title": "Differential and recurrence equations"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/elementary-functions",
+        "python": "/symi/python/elementary-functions",
+        "rust": "/symi/rust/elementary-functions",
+        "swift": "/symi/swift/elementary-functions",
+        "wasm": "/symi/wasm/elementary-functions"
+      },
+      "category_identifier": "elementary-functions",
+      "language_paths": {
+        "kotlin": "manual/kotlin/elementary-functions.md",
+        "python": "manual/python/elementary-functions.md",
+        "rust": "manual/rust/elementary-functions.md",
+        "swift": "manual/swift/elementary-functions.md",
+        "wasm": "manual/wasm/elementary-functions.md"
+      },
+      "page_identifier": "elementary-functions",
+      "title": "Elementary functions"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/evaluation-and-constants",
+        "python": "/symi/python/evaluation-and-constants",
+        "rust": "/symi/rust/evaluation-and-constants",
+        "swift": "/symi/swift/evaluation-and-constants",
+        "wasm": "/symi/wasm/evaluation-and-constants"
+      },
+      "category_identifier": "constants",
+      "language_paths": {
+        "kotlin": "manual/kotlin/evaluation-and-constants.md",
+        "python": "manual/python/evaluation-and-constants.md",
+        "rust": "manual/rust/evaluation-and-constants.md",
+        "swift": "manual/swift/evaluation-and-constants.md",
+        "wasm": "manual/wasm/evaluation-and-constants.md"
+      },
+      "page_identifier": "evaluation-and-constants",
+      "title": "Evaluation and constants"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/expressions",
+        "python": "/symi/python/expressions",
+        "rust": "/symi/rust/expressions",
+        "swift": "/symi/swift/expressions",
+        "wasm": "/symi/wasm/expressions"
+      },
+      "category_identifier": "expression-transformations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/expressions.md",
+        "python": "manual/python/expressions.md",
+        "rust": "manual/rust/expressions.md",
+        "swift": "manual/swift/expressions.md",
+        "wasm": "manual/wasm/expressions.md"
+      },
+      "page_identifier": "expressions",
+      "title": "Expression methods"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/geometry",
+        "python": "/symi/python/geometry",
+        "rust": "/symi/rust/geometry",
+        "swift": "/symi/swift/geometry",
+        "wasm": "/symi/wasm/geometry"
+      },
+      "category_identifier": "geometry",
+      "language_paths": {
+        "kotlin": "manual/kotlin/geometry.md",
+        "python": "manual/python/geometry.md",
+        "rust": "manual/rust/geometry.md",
+        "swift": "manual/swift/geometry.md",
+        "wasm": "manual/wasm/geometry.md"
+      },
+      "page_identifier": "geometry",
+      "title": "Geometry"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/getting-started-javascript",
+        "python": "/symi/python/getting-started-javascript",
+        "rust": "/symi/rust/getting-started-javascript",
+        "swift": "/symi/swift/getting-started-javascript",
+        "wasm": "/symi/wasm/getting-started-javascript"
+      },
+      "category_identifier": "introduction",
+      "language_paths": {
+        "kotlin": "manual/kotlin/getting-started-javascript.md",
+        "python": "manual/python/getting-started-javascript.md",
+        "rust": "manual/rust/getting-started-javascript.md",
+        "swift": "manual/swift/getting-started-javascript.md",
+        "wasm": "manual/wasm/getting-started-javascript.md"
+      },
+      "page_identifier": "getting-started-javascript",
+      "title": "Getting started: JavaScript / WASM"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/getting-started-python",
+        "python": "/symi/python/getting-started-python",
+        "rust": "/symi/rust/getting-started-python",
+        "swift": "/symi/swift/getting-started-python",
+        "wasm": "/symi/wasm/getting-started-python"
+      },
+      "category_identifier": "introduction",
+      "language_paths": {
+        "kotlin": "manual/kotlin/getting-started-python.md",
+        "python": "manual/python/getting-started-python.md",
+        "rust": "manual/rust/getting-started-python.md",
+        "swift": "manual/swift/getting-started-python.md",
+        "wasm": "manual/wasm/getting-started-python.md"
+      },
+      "page_identifier": "getting-started-python",
+      "title": "Getting started: Python"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/getting-started-rust",
+        "python": "/symi/python/getting-started-rust",
+        "rust": "/symi/rust/getting-started-rust",
+        "swift": "/symi/swift/getting-started-rust",
+        "wasm": "/symi/wasm/getting-started-rust"
+      },
+      "category_identifier": "introduction",
+      "language_paths": {
+        "kotlin": "manual/kotlin/getting-started-rust.md",
+        "python": "manual/python/getting-started-rust.md",
+        "rust": "manual/rust/getting-started-rust.md",
+        "swift": "manual/swift/getting-started-rust.md",
+        "wasm": "manual/wasm/getting-started-rust.md"
+      },
+      "page_identifier": "getting-started-rust",
+      "title": "Getting started: Rust"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/integral-transforms",
+        "python": "/symi/python/integral-transforms",
+        "rust": "/symi/rust/integral-transforms",
+        "swift": "/symi/swift/integral-transforms",
+        "wasm": "/symi/wasm/integral-transforms"
+      },
+      "category_identifier": "calculus",
+      "language_paths": {
+        "kotlin": "manual/kotlin/integral-transforms.md",
+        "python": "manual/python/integral-transforms.md",
+        "rust": "manual/rust/integral-transforms.md",
+        "swift": "manual/swift/integral-transforms.md",
+        "wasm": "manual/wasm/integral-transforms.md"
+      },
+      "page_identifier": "integral-transforms",
+      "title": "Integral transforms"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/introduction",
+        "python": "/symi/python/introduction",
+        "rust": "/symi/rust/introduction",
+        "swift": "/symi/swift/introduction",
+        "wasm": "/symi/wasm/introduction"
+      },
+      "category_identifier": "introduction",
+      "language_paths": {
+        "kotlin": "manual/kotlin/introduction.md",
+        "python": "manual/python/introduction.md",
+        "rust": "manual/rust/introduction.md",
+        "swift": "manual/swift/introduction.md",
+        "wasm": "manual/wasm/introduction.md"
+      },
+      "page_identifier": "introduction",
+      "title": "Symi language APIs"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/linear-algebra",
+        "python": "/symi/python/linear-algebra",
+        "rust": "/symi/rust/linear-algebra",
+        "swift": "/symi/swift/linear-algebra",
+        "wasm": "/symi/wasm/linear-algebra"
+      },
+      "category_identifier": "algebra",
+      "language_paths": {
+        "kotlin": "manual/kotlin/linear-algebra.md",
+        "python": "manual/python/linear-algebra.md",
+        "rust": "manual/rust/linear-algebra.md",
+        "swift": "manual/swift/linear-algebra.md",
+        "wasm": "manual/wasm/linear-algebra.md"
+      },
+      "page_identifier": "linear-algebra",
+      "title": "Linear algebra"
     },
     {
       "canonical_urls": {
@@ -1158,13 +525,6 @@
         "wasm": "/symi/wasm/logic"
       },
       "category_identifier": "discrete-mathematics",
-      "entry_counts": {
-        "kotlin": 3,
-        "python": 3,
-        "rust": 4,
-        "swift": 3,
-        "wasm": 3
-      },
       "language_paths": {
         "kotlin": "manual/kotlin/logic.md",
         "python": "manual/python/logic.md",
@@ -1184,13 +544,6 @@
         "wasm": "/symi/wasm/logical-transforms"
       },
       "category_identifier": "discrete-mathematics",
-      "entry_counts": {
-        "kotlin": 6,
-        "python": 6,
-        "rust": 6,
-        "swift": 6,
-        "wasm": 6
-      },
       "language_paths": {
         "kotlin": "manual/kotlin/logical-transforms.md",
         "python": "manual/python/logical-transforms.md",
@@ -1203,6 +556,82 @@
     },
     {
       "canonical_urls": {
+        "kotlin": "/symi/kotlin/matrix-canonical-forms",
+        "python": "/symi/python/matrix-canonical-forms",
+        "rust": "/symi/rust/matrix-canonical-forms",
+        "swift": "/symi/swift/matrix-canonical-forms",
+        "wasm": "/symi/wasm/matrix-canonical-forms"
+      },
+      "category_identifier": "algebra",
+      "language_paths": {
+        "kotlin": "manual/kotlin/matrix-canonical-forms.md",
+        "python": "manual/python/matrix-canonical-forms.md",
+        "rust": "manual/rust/matrix-canonical-forms.md",
+        "swift": "manual/swift/matrix-canonical-forms.md",
+        "wasm": "manual/wasm/matrix-canonical-forms.md"
+      },
+      "page_identifier": "matrix-canonical-forms",
+      "title": "Matrix canonical forms"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/matrix-construction",
+        "python": "/symi/python/matrix-construction",
+        "rust": "/symi/rust/matrix-construction",
+        "swift": "/symi/swift/matrix-construction",
+        "wasm": "/symi/wasm/matrix-construction"
+      },
+      "category_identifier": "algebra",
+      "language_paths": {
+        "kotlin": "manual/kotlin/matrix-construction.md",
+        "python": "manual/python/matrix-construction.md",
+        "rust": "manual/rust/matrix-construction.md",
+        "swift": "manual/swift/matrix-construction.md",
+        "wasm": "manual/wasm/matrix-construction.md"
+      },
+      "page_identifier": "matrix-construction",
+      "title": "Matrix construction and access"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/matrix-functions",
+        "python": "/symi/python/matrix-functions",
+        "rust": "/symi/rust/matrix-functions",
+        "swift": "/symi/swift/matrix-functions",
+        "wasm": "/symi/wasm/matrix-functions"
+      },
+      "category_identifier": "algebra",
+      "language_paths": {
+        "kotlin": "manual/kotlin/matrix-functions.md",
+        "python": "manual/python/matrix-functions.md",
+        "rust": "manual/rust/matrix-functions.md",
+        "swift": "manual/swift/matrix-functions.md",
+        "wasm": "manual/wasm/matrix-functions.md"
+      },
+      "page_identifier": "matrix-functions",
+      "title": "Matrix functions and Jordan form"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/migration",
+        "python": "/symi/python/migration",
+        "rust": "/symi/rust/migration",
+        "swift": "/symi/swift/migration",
+        "wasm": "/symi/wasm/migration"
+      },
+      "category_identifier": "contexts",
+      "language_paths": {
+        "kotlin": "manual/kotlin/migration.md",
+        "python": "manual/python/migration.md",
+        "rust": "manual/rust/migration.md",
+        "swift": "manual/swift/migration.md",
+        "wasm": "manual/wasm/migration.md"
+      },
+      "page_identifier": "migration",
+      "title": "Migration"
+    },
+    {
+      "canonical_urls": {
         "kotlin": "/symi/kotlin/number-theory",
         "python": "/symi/python/number-theory",
         "rust": "/symi/rust/number-theory",
@@ -1210,13 +639,6 @@
         "wasm": "/symi/wasm/number-theory"
       },
       "category_identifier": "discrete-mathematics",
-      "entry_counts": {
-        "kotlin": 28,
-        "python": 24,
-        "rust": 35,
-        "swift": 28,
-        "wasm": 29
-      },
       "language_paths": {
         "kotlin": "manual/kotlin/number-theory.md",
         "python": "manual/python/number-theory.md",
@@ -1229,29 +651,212 @@
     },
     {
       "canonical_urls": {
-        "kotlin": "/symi/kotlin/combinatorics",
-        "python": "/symi/python/combinatorics",
-        "rust": "/symi/rust/combinatorics",
-        "swift": "/symi/swift/combinatorics",
-        "wasm": "/symi/wasm/combinatorics"
+        "kotlin": "/symi/kotlin/object-model",
+        "python": "/symi/python/object-model",
+        "rust": "/symi/rust/object-model",
+        "swift": "/symi/swift/object-model",
+        "wasm": "/symi/wasm/object-model"
+      },
+      "category_identifier": "contexts",
+      "language_paths": {
+        "kotlin": "manual/kotlin/object-model.md",
+        "python": "manual/python/object-model.md",
+        "rust": "manual/rust/object-model.md",
+        "swift": "manual/swift/object-model.md",
+        "wasm": "manual/wasm/object-model.md"
+      },
+      "page_identifier": "object-model",
+      "title": "Object model"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/optimization",
+        "python": "/symi/python/optimization",
+        "rust": "/symi/rust/optimization",
+        "swift": "/symi/swift/optimization",
+        "wasm": "/symi/wasm/optimization"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/optimization.md",
+        "python": "manual/python/optimization.md",
+        "rust": "manual/rust/optimization.md",
+        "swift": "manual/swift/optimization.md",
+        "wasm": "manual/wasm/optimization.md"
+      },
+      "page_identifier": "optimization",
+      "title": "Optimization"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/polynomials",
+        "python": "/symi/python/polynomials",
+        "rust": "/symi/rust/polynomials",
+        "swift": "/symi/swift/polynomials",
+        "wasm": "/symi/wasm/polynomials"
+      },
+      "category_identifier": "algebra",
+      "language_paths": {
+        "kotlin": "manual/kotlin/polynomials.md",
+        "python": "manual/python/polynomials.md",
+        "rust": "manual/rust/polynomials.md",
+        "swift": "manual/swift/polynomials.md",
+        "wasm": "manual/wasm/polynomials.md"
+      },
+      "page_identifier": "polynomials",
+      "title": "Polynomial queries"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/relations",
+        "python": "/symi/python/relations",
+        "rust": "/symi/rust/relations",
+        "swift": "/symi/swift/relations",
+        "wasm": "/symi/wasm/relations"
+      },
+      "category_identifier": "elementary-functions",
+      "language_paths": {
+        "kotlin": "manual/kotlin/relations.md",
+        "python": "manual/python/relations.md",
+        "rust": "manual/rust/relations.md",
+        "swift": "manual/swift/relations.md",
+        "wasm": "manual/wasm/relations.md"
+      },
+      "page_identifier": "relations",
+      "title": "Relations and predicates"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/serialization-and-output",
+        "python": "/symi/python/serialization-and-output",
+        "rust": "/symi/rust/serialization-and-output",
+        "swift": "/symi/swift/serialization-and-output",
+        "wasm": "/symi/wasm/serialization-and-output"
+      },
+      "category_identifier": "construction",
+      "language_paths": {
+        "kotlin": "manual/kotlin/serialization-and-output.md",
+        "python": "manual/python/serialization-and-output.md",
+        "rust": "manual/rust/serialization-and-output.md",
+        "swift": "manual/swift/serialization-and-output.md",
+        "wasm": "manual/wasm/serialization-and-output.md"
+      },
+      "page_identifier": "serialization-and-output",
+      "title": "Serialization and output"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/series",
+        "python": "/symi/python/series",
+        "rust": "/symi/rust/series",
+        "swift": "/symi/swift/series",
+        "wasm": "/symi/wasm/series"
+      },
+      "category_identifier": "calculus",
+      "language_paths": {
+        "kotlin": "manual/kotlin/series.md",
+        "python": "manual/python/series.md",
+        "rust": "manual/rust/series.md",
+        "swift": "manual/swift/series.md",
+        "wasm": "manual/wasm/series.md"
+      },
+      "page_identifier": "series",
+      "title": "Series and residues"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/sets",
+        "python": "/symi/python/sets",
+        "rust": "/symi/rust/sets",
+        "swift": "/symi/swift/sets",
+        "wasm": "/symi/wasm/sets"
       },
       "category_identifier": "discrete-mathematics",
-      "entry_counts": {
-        "kotlin": 9,
-        "python": 9,
-        "rust": 9,
-        "swift": 9,
-        "wasm": 9
-      },
       "language_paths": {
-        "kotlin": "manual/kotlin/combinatorics.md",
-        "python": "manual/python/combinatorics.md",
-        "rust": "manual/rust/combinatorics.md",
-        "swift": "manual/swift/combinatorics.md",
-        "wasm": "manual/wasm/combinatorics.md"
+        "kotlin": "manual/kotlin/sets.md",
+        "python": "manual/python/sets.md",
+        "rust": "manual/rust/sets.md",
+        "swift": "manual/swift/sets.md",
+        "wasm": "manual/wasm/sets.md"
       },
-      "page_identifier": "combinatorics",
-      "title": "Combinatorics"
+      "page_identifier": "sets",
+      "title": "Sets"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/simplification-general",
+        "python": "/symi/python/simplification-general",
+        "rust": "/symi/rust/simplification-general",
+        "swift": "/symi/swift/simplification-general",
+        "wasm": "/symi/wasm/simplification-general"
+      },
+      "category_identifier": "expression-transformations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/simplification-general.md",
+        "python": "manual/python/simplification-general.md",
+        "rust": "manual/rust/simplification-general.md",
+        "swift": "manual/swift/simplification-general.md",
+        "wasm": "manual/wasm/simplification-general.md"
+      },
+      "page_identifier": "simplification-general",
+      "title": "General simplification"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/solving",
+        "python": "/symi/python/solving",
+        "rust": "/symi/rust/solving",
+        "swift": "/symi/swift/solving",
+        "wasm": "/symi/wasm/solving"
+      },
+      "category_identifier": "equations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/solving.md",
+        "python": "manual/python/solving.md",
+        "rust": "manual/rust/solving.md",
+        "swift": "manual/swift/solving.md",
+        "wasm": "manual/wasm/solving.md"
+      },
+      "page_identifier": "solving",
+      "title": "Solving"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/special-functions",
+        "python": "/symi/python/special-functions",
+        "rust": "/symi/rust/special-functions",
+        "swift": "/symi/swift/special-functions",
+        "wasm": "/symi/wasm/special-functions"
+      },
+      "category_identifier": "special-functions",
+      "language_paths": {
+        "kotlin": "manual/kotlin/special-functions.md",
+        "python": "manual/python/special-functions.md",
+        "rust": "manual/rust/special-functions.md",
+        "swift": "manual/swift/special-functions.md",
+        "wasm": "manual/wasm/special-functions.md"
+      },
+      "page_identifier": "special-functions",
+      "title": "Special functions"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/specialized-canonical-forms",
+        "python": "/symi/python/specialized-canonical-forms",
+        "rust": "/symi/rust/specialized-canonical-forms",
+        "swift": "/symi/swift/specialized-canonical-forms",
+        "wasm": "/symi/wasm/specialized-canonical-forms"
+      },
+      "category_identifier": "expression-transformations",
+      "language_paths": {
+        "kotlin": "manual/kotlin/specialized-canonical-forms.md",
+        "python": "manual/python/specialized-canonical-forms.md",
+        "rust": "manual/rust/specialized-canonical-forms.md",
+        "swift": "manual/swift/specialized-canonical-forms.md",
+        "wasm": "manual/wasm/specialized-canonical-forms.md"
+      },
+      "page_identifier": "specialized-canonical-forms",
+      "title": "Specialized canonical forms"
     },
     {
       "canonical_urls": {
@@ -1262,13 +867,6 @@
         "wasm": "/symi/wasm/statistics"
       },
       "category_identifier": "probability",
-      "entry_counts": {
-        "kotlin": 12,
-        "python": 12,
-        "rust": 13,
-        "swift": 12,
-        "wasm": 12
-      },
       "language_paths": {
         "kotlin": "manual/kotlin/statistics.md",
         "python": "manual/python/statistics.md",
@@ -1281,78 +879,6 @@
     },
     {
       "canonical_urls": {
-        "kotlin": "/symi/kotlin/distribution-reference",
-        "python": "/symi/python/distribution-reference",
-        "rust": "/symi/rust/distribution-reference",
-        "swift": "/symi/swift/distribution-reference",
-        "wasm": "/symi/wasm/distribution-reference"
-      },
-      "category_identifier": "probability",
-      "entry_counts": {},
-      "language_paths": {
-        "kotlin": "manual/kotlin/distribution-reference.md",
-        "python": "manual/python/distribution-reference.md",
-        "rust": "manual/rust/distribution-reference.md",
-        "swift": "manual/swift/distribution-reference.md",
-        "wasm": "manual/wasm/distribution-reference.md"
-      },
-      "page_identifier": "distribution-reference",
-      "title": "Probability distribution registry"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/geometry",
-        "python": "/symi/python/geometry",
-        "rust": "/symi/rust/geometry",
-        "swift": "/symi/swift/geometry",
-        "wasm": "/symi/wasm/geometry"
-      },
-      "category_identifier": "geometry",
-      "entry_counts": {
-        "kotlin": 29,
-        "python": 42,
-        "rust": 57,
-        "swift": 29,
-        "wasm": 34
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/geometry.md",
-        "python": "manual/python/geometry.md",
-        "rust": "manual/rust/geometry.md",
-        "swift": "manual/swift/geometry.md",
-        "wasm": "manual/wasm/geometry.md"
-      },
-      "page_identifier": "geometry",
-      "title": "Geometry"
-    },
-    {
-      "canonical_urls": {
-        "kotlin": "/symi/kotlin/vector-calculus",
-        "python": "/symi/python/vector-calculus",
-        "rust": "/symi/rust/vector-calculus",
-        "swift": "/symi/swift/vector-calculus",
-        "wasm": "/symi/wasm/vector-calculus"
-      },
-      "category_identifier": "vector-calculus",
-      "entry_counts": {
-        "kotlin": 6,
-        "python": 6,
-        "rust": 6,
-        "swift": 6,
-        "wasm": 6
-      },
-      "language_paths": {
-        "kotlin": "manual/kotlin/vector-calculus.md",
-        "python": "manual/python/vector-calculus.md",
-        "rust": "manual/rust/vector-calculus.md",
-        "swift": "manual/swift/vector-calculus.md",
-        "wasm": "manual/wasm/vector-calculus.md"
-      },
-      "page_identifier": "vector-calculus",
-      "title": "Vector calculus"
-    },
-    {
-      "canonical_urls": {
         "kotlin": "/symi/kotlin/structured-results",
         "python": "/symi/python/structured-results",
         "rust": "/symi/rust/structured-results",
@@ -1360,9 +886,6 @@
         "wasm": "/symi/wasm/structured-results"
       },
       "category_identifier": "reference",
-      "entry_counts": {
-        "rust": 3
-      },
       "language_paths": {
         "kotlin": "manual/kotlin/structured-results.md",
         "python": "manual/python/structured-results.md",
@@ -1375,29 +898,41 @@
     },
     {
       "canonical_urls": {
-        "kotlin": "/symi/kotlin/assumptions",
-        "python": "/symi/python/assumptions",
-        "rust": "/symi/rust/assumptions",
-        "swift": "/symi/swift/assumptions",
-        "wasm": "/symi/wasm/assumptions"
+        "kotlin": "/symi/kotlin/trigonometric-complex-rewrites",
+        "python": "/symi/python/trigonometric-complex-rewrites",
+        "rust": "/symi/rust/trigonometric-complex-rewrites",
+        "swift": "/symi/swift/trigonometric-complex-rewrites",
+        "wasm": "/symi/wasm/trigonometric-complex-rewrites"
       },
-      "category_identifier": "reference",
-      "entry_counts": {
-        "kotlin": 50,
-        "python": 52,
-        "rust": 98,
-        "swift": 50,
-        "wasm": 54
-      },
+      "category_identifier": "expression-transformations",
       "language_paths": {
-        "kotlin": "manual/kotlin/assumptions.md",
-        "python": "manual/python/assumptions.md",
-        "rust": "manual/rust/assumptions.md",
-        "swift": "manual/swift/assumptions.md",
-        "wasm": "manual/wasm/assumptions.md"
+        "kotlin": "manual/kotlin/trigonometric-complex-rewrites.md",
+        "python": "manual/python/trigonometric-complex-rewrites.md",
+        "rust": "manual/rust/trigonometric-complex-rewrites.md",
+        "swift": "manual/swift/trigonometric-complex-rewrites.md",
+        "wasm": "manual/wasm/trigonometric-complex-rewrites.md"
       },
-      "page_identifier": "assumptions",
-      "title": "Assumptions"
+      "page_identifier": "trigonometric-complex-rewrites",
+      "title": "Trigonometric and complex rewrites"
+    },
+    {
+      "canonical_urls": {
+        "kotlin": "/symi/kotlin/vector-calculus",
+        "python": "/symi/python/vector-calculus",
+        "rust": "/symi/rust/vector-calculus",
+        "swift": "/symi/swift/vector-calculus",
+        "wasm": "/symi/wasm/vector-calculus"
+      },
+      "category_identifier": "vector-calculus",
+      "language_paths": {
+        "kotlin": "manual/kotlin/vector-calculus.md",
+        "python": "manual/python/vector-calculus.md",
+        "rust": "manual/rust/vector-calculus.md",
+        "swift": "manual/swift/vector-calculus.md",
+        "wasm": "manual/wasm/vector-calculus.md"
+      },
+      "page_identifier": "vector-calculus",
+      "title": "Vector calculus"
     },
     {
       "canonical_urls": {
@@ -1408,13 +943,6 @@
         "wasm": "/symi/wasm/zero-equivalence"
       },
       "category_identifier": "reference",
-      "entry_counts": {
-        "kotlin": 1,
-        "python": 1,
-        "rust": 2,
-        "swift": 1,
-        "wasm": 1
-      },
       "language_paths": {
         "kotlin": "manual/kotlin/zero-equivalence.md",
         "python": "manual/python/zero-equivalence.md",
@@ -1434,7 +962,6 @@
         "wasm": "/symi/wasm/api-reference"
       },
       "category_identifier": "reference",
-      "entry_counts": {},
       "language_paths": {
         "kotlin": "manual/kotlin/api-reference.md",
         "python": "manual/python/api-reference.md",
@@ -1447,6 +974,25 @@
     },
     {
       "canonical_urls": {
+        "kotlin": "/symi/kotlin/distribution-reference",
+        "python": "/symi/python/distribution-reference",
+        "rust": "/symi/rust/distribution-reference",
+        "swift": "/symi/swift/distribution-reference",
+        "wasm": "/symi/wasm/distribution-reference"
+      },
+      "category_identifier": "probability",
+      "language_paths": {
+        "kotlin": "manual/kotlin/distribution-reference.md",
+        "python": "manual/python/distribution-reference.md",
+        "rust": "manual/rust/distribution-reference.md",
+        "swift": "manual/swift/distribution-reference.md",
+        "wasm": "manual/wasm/distribution-reference.md"
+      },
+      "page_identifier": "distribution-reference",
+      "title": "Probability distribution registry"
+    },
+    {
+      "canonical_urls": {
         "kotlin": "/symi/kotlin/category-index",
         "python": "/symi/python/category-index",
         "rust": "/symi/rust/category-index",
@@ -1454,7 +1000,6 @@
         "wasm": "/symi/wasm/category-index"
       },
       "category_identifier": "reference",
-      "entry_counts": {},
       "language_paths": {
         "kotlin": "manual/kotlin/category-index.md",
         "python": "manual/python/category-index.md",
@@ -1474,7 +1019,6 @@
         "wasm": "/symi/wasm/alphabetical-index"
       },
       "category_identifier": "reference",
-      "entry_counts": {},
       "language_paths": {
         "kotlin": "manual/kotlin/alphabetical-index.md",
         "python": "manual/python/alphabetical-index.md",
@@ -1494,7 +1038,6 @@
         "wasm": "/symi/wasm/owner-index"
       },
       "category_identifier": "reference",
-      "entry_counts": {},
       "language_paths": {
         "kotlin": "manual/kotlin/owner-index.md",
         "python": "manual/python/owner-index.md",
@@ -1514,7 +1057,6 @@
         "wasm": "/symi/wasm/result-type-index"
       },
       "category_identifier": "reference",
-      "entry_counts": {},
       "language_paths": {
         "kotlin": "manual/kotlin/result-type-index.md",
         "python": "manual/python/result-type-index.md",
@@ -1526,33 +1068,6 @@
       "title": "Result-type index"
     }
   ],
-  "presentation_artifacts": [
-    {
-      "entry_count": 769,
-      "language": "python",
-      "path": "presentation/python.json"
-    },
-    {
-      "entry_count": 812,
-      "language": "wasm",
-      "path": "presentation/wasm.json"
-    },
-    {
-      "entry_count": 730,
-      "language": "kotlin",
-      "path": "presentation/kotlin.json"
-    },
-    {
-      "entry_count": 730,
-      "language": "swift",
-      "path": "presentation/swift.json"
-    },
-    {
-      "entry_count": 7476,
-      "language": "rust",
-      "path": "presentation/rust.json"
-    }
-  ],
-  "schema_version": 2,
+  "schema_version": 1,
   "site_root": "/symi"
 }

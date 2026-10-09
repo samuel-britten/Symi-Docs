@@ -8,50 +8,19 @@ nodes can also be built directly through `parse`.
 
 ### laplace_transform
 
-<a id="entry-presentation_kotlin_api_session_laplace_transform"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_laplacetransform.4ec84c708340"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun laplaceTransform(
-    target: UniffiExpression,
-    timeVariable: kotlin.String,
-    frequencyVariable: kotlin.String,
-): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_laplacetransform.fcef93d4ba18"></a>
-<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.laplaceTransform</code></p>
+`UniffiAssumptionScope.laplaceTransform(target: UniffiExpression, timeVariable: kotlin.String, frequencyVariable: kotlin.String): UniffiExpression`
 
-```kotlin signature
-fun laplaceTransform(
-    target: UniffiExpression,
-    timeVariable: kotlin.String,
-    frequencyVariable: kotlin.String,
-): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_laplacetransform.4ec84c708340"></a>
+`UniffiSession.laplaceTransform(target: UniffiExpression, timeVariable: kotlin.String, frequencyVariable: kotlin.String): UniffiExpression`
 
 
 Forward Laplace transform \(F(s) = \int_0^\infty f(t)e^{-st}\,dt\).
 
 ### inverse_laplace_transform
 
-<a id="entry-presentation_kotlin_api_session_inverse_laplace_transform"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_inverselaplacetransform.0e6935fbad22"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun inverseLaplaceTransform(
-    target: UniffiExpression,
-    frequencyVariable: kotlin.String,
-    timeVariable: kotlin.String,
-): UniffiExpression
-```
+`UniffiSession.inverseLaplaceTransform(target: UniffiExpression, frequencyVariable: kotlin.String, timeVariable: kotlin.String): UniffiExpression`
 
 
 Inverse Laplace transform; rational inputs route through a partial-fraction
@@ -59,33 +28,11 @@ reverse lookup.
 
 ### fourier_transform
 
-<a id="entry-presentation_kotlin_api_session_fourier_transform"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_fouriertransform.498daf530397"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun fourierTransform(
-    target: UniffiExpression,
-    timeVariable: kotlin.String,
-    frequencyVariable: kotlin.String,
-): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiassumptionscope_fouriertransform.c7f05ab6c3fd"></a>
-<p class="symi-entry-owner">Variant using local assumptions — UniffiAssumptionScope method: <code>UniffiAssumptionScope.fourierTransform</code></p>
+`UniffiAssumptionScope.fourierTransform(target: UniffiExpression, timeVariable: kotlin.String, frequencyVariable: kotlin.String): UniffiExpression`
 
-```kotlin signature
-fun fourierTransform(
-    target: UniffiExpression,
-    timeVariable: kotlin.String,
-    frequencyVariable: kotlin.String,
-): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_fouriertransform.498daf530397"></a>
+`UniffiSession.fourierTransform(target: UniffiExpression, timeVariable: kotlin.String, frequencyVariable: kotlin.String): UniffiExpression`
 
 
 Forward Fourier transform in the angular-frequency convention
@@ -93,17 +40,8 @@ Forward Fourier transform in the angular-frequency convention
 
 ### inverse_fourier_transform
 
-<a id="entry-presentation_kotlin_api_session_inverse_fourier_transform"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_inversefouriertransform.39d680254693"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun inverseFourierTransform(
-    target: UniffiExpression,
-    frequencyVariable: kotlin.String,
-    timeVariable: kotlin.String,
-): UniffiExpression
-```
+`UniffiSession.inverseFourierTransform(target: UniffiExpression, frequencyVariable: kotlin.String, timeVariable: kotlin.String): UniffiExpression`
 
 
 Inverse Fourier transform of the same convention.

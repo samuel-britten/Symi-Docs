@@ -8,25 +8,11 @@ machine integers.)
 
 ### is_prime
 
-<a id="entry-presentation_kotlin_api_session_is_prime"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_isprime.b0f36c30749a"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun isPrime(argument: UniffiExpression): kotlin.Boolean?
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_isprime.9aed864942c2"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.isPrime</code></p>
+`UniffiExpression.isPrime(): UniffiTruthValue`
 
-```kotlin signature
-fun isPrime(): UniffiTruthValue
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_isprime.b0f36c30749a"></a>
+`UniffiSession.isPrime(argument: UniffiExpression): kotlin.Boolean?`
 
 
 Deterministic primality verdict; `None` when the input is outside the
@@ -35,13 +21,8 @@ handles).
 
 ### factor_integer
 
-<a id="entry-presentation_kotlin_api_session_factor_integer"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_factorinteger.0baecae5faa4"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun factorInteger(argument: UniffiExpression): List<UniffiExpressionUnsignedIntegerTuple>
-```
+`UniffiSession.factorInteger(argument: UniffiExpression): List<UniffiExpressionUnsignedIntegerTuple>`
 
 
 Prime factorization as `(prime, multiplicity)` pairs, ascending. Errors on
@@ -58,59 +39,30 @@ as a leading `(-1, 1)` factor exactly as the core reports it.
 
 ### multiplicity
 
-<a id="entry-presentation_kotlin_api_primefactor_multiplicity"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffirootmultiplicity_multiplicity.29f288438545"></a>
-<p class="symi-entry-owner">UniffiRootMultiplicity method</p>
-
-```kotlin signature
-fun multiplicity(): kotlin.ULong
-```
+`UniffiRootMultiplicity.multiplicity(): kotlin.ULong`
 
 
 ### integer_gcd
 
-<a id="entry-presentation_kotlin_api_session_integer_gcd"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integergcd.32ddfe367a56"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun integerGcd(
-    left: UniffiExpression,
-    right: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.integerGcd(left: UniffiExpression, right: UniffiExpression): UniffiExpression`
 
 
 Greatest common divisor (non-negative).
 
 ### integer_lcm
 
-<a id="entry-presentation_kotlin_api_session_integer_lcm"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integerlcm.08067ba2d3d5"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun integerLcm(
-    left: UniffiExpression,
-    right: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.integerLcm(left: UniffiExpression, right: UniffiExpression): UniffiExpression`
 
 
 Least common multiple.
 
 ### extended_euclidean
 
-<a id="entry-presentation_kotlin_api_session_extended_euclidean"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_extendedeuclidean.70ef9fb35191"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun extendedEuclidean(
-    left: UniffiExpression,
-    right: UniffiExpression,
-): UniffiExpressionExpressionExpressionTuple
-```
+`UniffiSession.extendedEuclidean(left: UniffiExpression, right: UniffiExpression): UniffiExpressionExpressionExpressionTuple`
 
 
 `(gcd, x, y)` with \(a x + b y = \operatorname{gcd}\). **Notes:** WASM returns a 3-element
@@ -118,17 +70,8 @@ array `[gcd, x, y]`.
 
 ### modular_power
 
-<a id="entry-presentation_kotlin_api_session_modular_power"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_modularpower.fc439983a127"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun modularPower(
-    base: UniffiExpression,
-    exponent: UniffiExpression,
-    modulus: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.modularPower(base: UniffiExpression, exponent: UniffiExpression, modulus: UniffiExpression): UniffiExpression`
 
 
 `base^exponent mod modulus` by square-and-multiply; requires positive
@@ -136,16 +79,8 @@ modulus and non-negative exponent.
 
 ### modular_inverse
 
-<a id="entry-presentation_kotlin_api_session_modular_inverse"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_modularinverse.d53565e1aca8"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun modularInverse(
-    value: UniffiExpression,
-    modulus: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.modularInverse(value: UniffiExpression, modulus: UniffiExpression): UniffiExpression`
 
 
 Multiplicative inverse of `value` modulo `modulus`; errors when
@@ -153,13 +88,8 @@ Multiplicative inverse of `value` modulo `modulus`; errors when
 
 ### chinese_remainder
 
-<a id="entry-presentation_kotlin_api_session_chinese_remainder"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_chineseremainder.323db1c3013e"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun chineseRemainder(residuesAndModuli: List<UniffiExpressionExpressionTuple>): UniffiExpression
-```
+`UniffiSession.chineseRemainder(residuesAndModuli: List<UniffiExpressionExpressionTuple>): UniffiExpression`
 
 
 The smallest non-negative solution of the simultaneous congruences
@@ -169,55 +99,32 @@ raise. **Notes:** WASM passes a flat interleaved array
 
 ### euler_totient
 
-<a id="entry-presentation_kotlin_api_session_euler_totient"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_eulertotient.ea56578bd5ba"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun eulerTotient(value: UniffiExpression): UniffiExpression
-```
+`UniffiSession.eulerTotient(value: UniffiExpression): UniffiExpression`
 
 
 Euler's \(\varphi(n)\); requires a positive integer.
 
 ### mobius
 
-<a id="entry-presentation_kotlin_api_session_mobius"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_mobius.2e4d134e5ec4"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun mobius(argument: UniffiExpression): UniffiExpression
-```
+`UniffiSession.mobius(argument: UniffiExpression): UniffiExpression`
 
 
 Möbius \(\mu(n) \in \{-1, 0, 1\}\); requires a positive integer.
 
 ### divisor_count
 
-<a id="entry-presentation_kotlin_api_session_divisor_count"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_divisorcount.fbea9d0be437"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun divisorCount(argument: UniffiExpression): UniffiExpression
-```
+`UniffiSession.divisorCount(argument: UniffiExpression): UniffiExpression`
 
 
 Number of positive divisors \(\tau(n)\).
 
 ### divisor_sigma
 
-<a id="entry-presentation_kotlin_api_session_divisor_sigma"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_divisorsigma.729d0f05781a"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun divisorSigma(
-    argument: UniffiExpression,
-    power: kotlin.ULong,
-): UniffiExpression
-```
+`UniffiSession.divisorSigma(argument: UniffiExpression, power: kotlin.ULong): UniffiExpression`
 
 
 Sum of the `power`-th powers of the positive divisors \(\sigma_{\mathit{power}}(n)\);
@@ -225,16 +132,8 @@ Sum of the `power`-th powers of the positive divisors \(\sigma_{\mathit{power}}(
 
 ### jacobi_symbol
 
-<a id="entry-presentation_kotlin_api_session_jacobi_symbol"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_jacobisymbol.c98c9bdec1d6"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun jacobiSymbol(
-    numerator: UniffiExpression,
-    denominator: UniffiExpression,
-): kotlin.Long
-```
+`UniffiSession.jacobiSymbol(numerator: UniffiExpression, denominator: UniffiExpression): kotlin.Long`
 
 
 The Jacobi symbol \((n/d) \in \{-1, 0, 1\}\); the denominator must be a positive odd
@@ -242,61 +141,32 @@ integer.
 
 ### legendre_symbol
 
-<a id="entry-presentation_kotlin_api_session_legendre_symbol"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_legendresymbol.7bbe8ab3835d"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun legendreSymbol(
-    numerator: UniffiExpression,
-    prime: UniffiExpression,
-): kotlin.Long
-```
+`UniffiSession.legendreSymbol(numerator: UniffiExpression, prime: UniffiExpression): kotlin.Long`
 
 
 The Legendre symbol; the second argument must be an odd prime.
 
 ### kronecker_symbol
 
-<a id="entry-presentation_kotlin_api_session_kronecker_symbol"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_kroneckersymbol.a80ed9239c66"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun kroneckerSymbol(
-    numerator: UniffiExpression,
-    denominator: UniffiExpression,
-): kotlin.Long
-```
+`UniffiSession.kroneckerSymbol(numerator: UniffiExpression, denominator: UniffiExpression): kotlin.Long`
 
 
 The Kronecker extension of the Jacobi symbol to all integer denominators.
 
 ### integer_square_root
 
-<a id="entry-presentation_kotlin_api_session_integer_square_root"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integersquareroot.bf71f22139d3"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun integerSquareRoot(argument: UniffiExpression): UniffiExpression
-```
+`UniffiSession.integerSquareRoot(argument: UniffiExpression): UniffiExpression`
 
 
 \(\lfloor\sqrt{n}\rfloor\) for non-negative n.
 
 ### integer_nth_root
 
-<a id="entry-presentation_kotlin_api_session_integer_nth_root"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_integernthroot.fd71e8e6f8af"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun integerNthRoot(
-    argument: UniffiExpression,
-    rootIndex: kotlin.ULong,
-): UniffiExpression
-```
+`UniffiSession.integerNthRoot(argument: UniffiExpression, rootIndex: kotlin.ULong): UniffiExpression`
 
 
 \(\lfloor n^{1/\mathit{root\_index}}\rfloor\); odd indices accept negative n. Errors when no real root
@@ -304,13 +174,8 @@ exists (even index, negative n).
 
 ### continued_fraction_rational
 
-<a id="entry-presentation_kotlin_api_session_continued_fraction_rational"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_continuedfractionrational.5a71df43a4f6"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun continuedFractionRational(value: UniffiExpression): List<UniffiExpression>
-```
+`UniffiSession.continuedFractionRational(value: UniffiExpression): List<UniffiExpression>`
 
 
 Terminating continued-fraction expansion `[a0; a1, a2, ...]` of an integer
@@ -318,13 +183,8 @@ or rational expression leaf.
 
 ### continued_fraction_quadratic_irrational
 
-<a id="entry-presentation_kotlin_api_session_continued_fraction_quadratic_irrational"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_continuedfractionquadraticirrational.feb35840b853"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun continuedFractionQuadraticIrrational(value: UniffiExpression): UniffiQuadraticContinuedFractionExpansion
-```
+`UniffiSession.continuedFractionQuadraticIrrational(value: UniffiExpression): UniffiQuadraticContinuedFractionExpansion`
 
 
 Eventually-periodic expansion of \(\sqrt{d}\) for a non-negative integer d, returned
@@ -337,27 +197,15 @@ initial part and an empty period. **Notes:** WASM returns a
 
 ### initial_terms
 
-<a id="entry-presentation_kotlin_api_quadraticcontinuedfractionexpansion_initial_terms"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiquadraticcontinuedfractionexpansion_initialterms.896194d5448d"></a>
-<p class="symi-entry-owner">UniffiQuadraticContinuedFractionExpansion method</p>
+`UniffiQuadraticContinuedFractionExpansion.initialTerms(): List<UniffiExpression>`
 
-```kotlin signature
-fun initialTerms(): List<UniffiExpression>
-```
-
-The terms preceding the periodic part of the expansion.
 
 ### periodic_terms
 
-<a id="entry-presentation_kotlin_api_quadraticcontinuedfractionexpansion_periodic_terms"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffiquadraticcontinuedfractionexpansion_periodicterms.9cb7dc4ae611"></a>
-<p class="symi-entry-owner">UniffiQuadraticContinuedFractionExpansion method</p>
+`UniffiQuadraticContinuedFractionExpansion.periodicTerms(): List<UniffiExpression>`
 
-```kotlin signature
-fun periodicTerms(): List<UniffiExpression>
-```
-
-The repeating terms of the expansion.
 
 ## Diophantine equations
 
@@ -369,16 +217,8 @@ exact integers and never guess.
 
 ### solve_linear_diophantine
 
-<a id="entry-presentation_kotlin_api_session_solve_linear_diophantine"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvelineardiophantine.56568b77374c"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun solveLinearDiophantine(
-    coefficients: List<UniffiExpression>,
-    constant: UniffiExpression,
-): List<UniffiExpression>
-```
+`UniffiSession.solveLinearDiophantine(coefficients: List<UniffiExpression>, constant: UniffiExpression): List<UniffiExpression>`
 
 
 General integer solution of \(a_1 x_1 + \ldots + a_n x_n = c\), returned as the parametric
@@ -390,16 +230,8 @@ coefficients and the constant must be integer expression leaves.
 
 ### solve_linear_diophantine_system
 
-<a id="entry-presentation_kotlin_api_session_solve_linear_diophantine_system"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvelineardiophantinesystem.2b0dfecb3ae3"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun solveLinearDiophantineSystem(
-    coefficientMatrix: UniffiMatrix,
-    constants: List<UniffiExpression>,
-): List<UniffiExpression>
-```
+`UniffiSession.solveLinearDiophantineSystem(coefficientMatrix: UniffiMatrix, constants: List<UniffiExpression>): List<UniffiExpression>`
 
 
 General integer solution of the rectangular system \(A x = b\), returned as one
@@ -410,13 +242,8 @@ not an integer expression leaf, or the dimensions do not agree.
 
 ### solve_pell
 
-<a id="entry-presentation_kotlin_api_session_solve_pell"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvepell.dc24f92dcc59"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun solvePell(radicand: UniffiExpression): List<UniffiExpression>
-```
+`UniffiSession.solvePell(radicand: UniffiExpression): List<UniffiExpression>`
 
 
 Fundamental solution `[x, y]` of \(x^2 - D y^2 = 1\) for a positive non-square
@@ -427,13 +254,8 @@ solution).
 
 ### solve_negative_pell
 
-<a id="entry-presentation_kotlin_api_session_solve_negative_pell"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvenegativepell.cf4394f0c38b"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun solveNegativePell(radicand: UniffiExpression): List<UniffiExpression>
-```
+`UniffiSession.solveNegativePell(radicand: UniffiExpression): List<UniffiExpression>`
 
 
 Fundamental solution `[x, y]` of the negative-Pell equation \(x^2 - D y^2 = -1\)
@@ -442,16 +264,8 @@ and an empty list otherwise.
 
 ### pell_solutions
 
-<a id="entry-presentation_kotlin_api_session_pell_solutions"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_pellsolutions.220f97b2dcda"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun pellSolutions(
-    radicand: UniffiExpression,
-    count: kotlin.ULong,
-): List<UniffiExpression>
-```
+`UniffiSession.pellSolutions(radicand: UniffiExpression, count: kotlin.ULong): List<UniffiExpression>`
 
 
 The first `count` positive solutions of \(x^2 - D y^2 = 1\), materialised from the
@@ -459,21 +273,4 @@ fundamental solution by the Pell recurrence and returned as a flat list
 \([x_1, y_1, x_2, y_2, \ldots]\). Empty when `D` has no fundamental solution.
 
 ## Example
-
-
-## Additional API
-
-### RootMultiplicity
-
-#### RootMultiplicity.root
-
-<a id="entry-presentation_kotlin_api_rootmultiplicity_root"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffirootmultiplicity_root.0c31d2602fb2"></a>
-<p class="symi-entry-owner">UniffiRootMultiplicity method</p>
-
-```kotlin signature
-fun root(): UniffiExpression
-```
-
-Principal n-th root, stored as `x^(1/n)`.
 

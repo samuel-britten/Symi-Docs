@@ -6,18 +6,8 @@ Deferred forms preserve an operation symbolically until its variables, bounds, o
 
 ### integral
 
-<a id="entry-presentation_swift_api_session_integral"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_integral.b86a5ce3c649"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func integral(
-    integrand: UniffiExpression,
-    variable: String,
-    lower: UniffiExpression?,
-    upper: UniffiExpression?,
-) -> UniffiExpression
-```
+`UniffiSession.integral(integrand: UniffiExpression, variable: String, lower: UniffiExpression?, upper: UniffiExpression?) -> UniffiExpression`
 
 
 Build an *unevaluated* integral node (indefinite when bounds are omitted).
@@ -26,56 +16,14 @@ the node.
 
 ### derivative
 
-<a id="entry-presentation_swift_api_session_derivative"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_derivative.dd3badc82f1f"></a>
-<p class="symi-entry-owner">Explicit context</p>
 
-```swift signature
-func derivative(
-    target: UniffiExpression,
-    variable: String,
-    order: UInt64,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.swift.swift_object.uniffiexpression_derivative.23688abd353a"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.derivative</code></p>
-
-```swift signature
-func derivative(variable: String, order: UInt64) -> UniffiExpression
-```
-
-</details>
-
-
-
-Constructs an *unevaluated* derivative node of an arbitrary expression. The
-variable may be a name or a same-context symbol expression. Nothing is
-differentiated here: use [`execute`](evaluation-and-constants.md) on the node,
-or [`differentiate`](calculus.md#differentiate) to differentiate now.
-
-This is not the derivative of a named unknown function. An equation built from
-this placeholder is not recognised by the differential-equation classifiers,
-which read the structural derivative built by
-[`UndefinedFunction.derivative`](undefined-functions.md#derivative).
+Constructs a deferred derivative. The variable may
+be a name or a same-context symbol expression. Use `execute` to evaluate it.
 
 ### summation
 
-<a id="entry-presentation_swift_api_session_summation"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_summation.4a767531b0be"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func summation(
-    summand: UniffiExpression,
-    index: String,
-    lower: UniffiExpression,
-    upper: UniffiExpression,
-) -> UniffiExpression
-```
+`UniffiSession.summation(summand: UniffiExpression, index: String, lower: UniffiExpression, upper: UniffiExpression) -> UniffiExpression`
 
 
 Build a summation node \(\sum\). `execute` evaluates it when a closed form or
@@ -168,18 +116,8 @@ top — and never for a negative top argument, where the built-in is undefined.
 
 ### product
 
-<a id="entry-presentation_swift_api_session_product"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_product.2f4593fd98e4"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func product(
-    multiplicand: UniffiExpression,
-    index: String,
-    lower: UniffiExpression,
-    upper: UniffiExpression,
-) -> UniffiExpression
-```
+`UniffiSession.product(multiplicand: UniffiExpression, index: String, lower: UniffiExpression, upper: UniffiExpression) -> UniffiExpression`
 
 
 Definite indexed product \(\prod_{\mathit{index}=\mathit{lower}}^{\mathit{upper}} \mathit{multiplicand}\), a first-class
@@ -238,16 +176,8 @@ placeholder rather than a guess.
 
 ### product_indefinite
 
-<a id="entry-presentation_swift_api_session_product_indefinite"></a>
 <a id="placement-placement.swift.swift_object.uniffisession_productindefinite.705e037b04c5"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func productIndefinite(
-    multiplicand: UniffiExpression,
-    index: String,
-) -> UniffiExpression
-```
+`UniffiSession.productIndefinite(multiplicand: UniffiExpression, index: String) -> UniffiExpression`
 
 
 Indefinite (anti-quotient) product: the `P(k)` satisfying
@@ -276,35 +206,3 @@ fails the result is the undefined sentinel.
 
 ## Example
 
-
-### summation_indefinite
-
-<a id="entry-presentation_swift_api_session_summation_indefinite"></a>
-<a id="placement-placement.swift.swift_object.uniffisession_summationindefinite.2f706335b0f8"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```swift signature
-func summationIndefinite(
-    summand: UniffiExpression,
-    index: String,
-) -> UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.swift.swift_object.uniffiexpression_summationindefinite.89114388c93b"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.summationIndefinite</code></p>
-
-```swift signature
-func summationIndefinite(index: String) -> UniffiExpression
-```
-
-</details>
-
-
-The anti-difference of `summand`: a closed form \(F\) with
-\(F(\mathrm{index}+1) - F(\mathrm{index}) = \mathrm{summand}\). It is the
-discrete counterpart of an indefinite integral, and it sits here beside
-[`product_indefinite`](#product_indefinite) for the same reason — when no closed
-form is found, the unevaluated summation is what is returned.

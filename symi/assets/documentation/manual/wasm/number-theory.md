@@ -8,39 +8,7 @@ machine integers.)
 
 ### is_prime
 
-<a id="entry-presentation_wasm_api_session_is_prime"></a>
-<a id="placement-placement.wasm.wasm_module.module_isprime.2c60d7745885"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-isPrime(n: Expression): boolean | undefined
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_isprime.8164fbb41a14"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.isPrime</code></p>
-
-```typescript signature
-isPrime(n: Expression): boolean | undefined
-```
-
-<a id="placement-placement.wasm.javascript_facade.expression_isprime.988dd0cf28d7"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.isPrime</code></p>
-
-```typescript signature
-isPrime(): boolean | null
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_isprime.bea4c3dd89fc"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.isPrime</code></p>
-
-```typescript signature
-isPrime(): boolean | undefined
-```
-
-</details>
+*Not exposed by the WASM / JavaScript bindings. Available as [`Context.is_prime`](/symi/python/number-theory#is_prime) in Python, [`UniffiExpression.isPrime`](/symi/kotlin/number-theory#is_prime) in Kotlin, [`UniffiExpression.isPrime`](/symi/swift/number-theory#is_prime) in Swift, [`api::Expression::is_prime`](/symi/rust/number-theory#is_prime) in Rust.*
 
 
 Deterministic primality verdict; `None` when the input is outside the
@@ -61,37 +29,17 @@ as a leading `(-1, 1)` factor exactly as the core reports it.
 
 ### prime
 
-<a id="entry-presentation_wasm_api_primefactor_prime"></a>
 <a id="placement-placement.wasm.wasm_class.primefactor_prime.9007ad578131"></a>
-<p class="symi-entry-owner">Raw WebAssembly: PrimeFactor property</p>
+Raw WebAssembly: `pub fn prime(&self) -> Expression`
 
-```typescript signature
-readonly prime: Expression
-```
-
-The prime.
 
 ### multiplicity
 
-<a id="entry-presentation_wasm_api_primefactor_multiplicity"></a>
 <a id="placement-placement.wasm.wasm_class.primefactor_multiplicity.97bc281ba687"></a>
-<p class="symi-entry-owner">Raw WebAssembly: PrimeFactor property</p>
-
-```typescript signature
-readonly multiplicity: number
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms and variants</summary>
+Raw WebAssembly: `pub fn multiplicity(&self) -> u32`
 
 <a id="placement-placement.wasm.wasm_class.rootmultiplicity_multiplicity.38126e35ea48"></a>
-<p class="symi-entry-owner">Variant for this object — Raw WebAssembly: RootMultiplicity property: <code>RootMultiplicity.multiplicity</code></p>
-
-```typescript signature
-readonly multiplicity: number
-```
-
-</details>
+Raw WebAssembly: `pub fn multiplicity(&self) -> usize`
 
 
 ### integer_gcd
@@ -151,25 +99,11 @@ Euler's \(\varphi(n)\); requires a positive integer.
 
 ### mobius
 
-<a id="entry-presentation_wasm_api_session_mobius"></a>
-<a id="placement-placement.wasm.wasm_module.module_mobius.eb52d1e05d93"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-mobius(n: Expression): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_mobius.d9f853017575"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.mobius</code></p>
+Raw WebAssembly: `pub fn mobius(&self, n: &Expression) -> Result<Expression, JsError>`
 
-```typescript signature
-mobius(n: Expression): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_mobius.eb52d1e05d93"></a>
+Raw WebAssembly: `fn mobius(n: &Expression) -> Result<Expression, JsError>`
 
 
 Möbius \(\mu(n) \in \{-1, 0, 1\}\); requires a positive integer.
@@ -324,591 +258,171 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
-### chineseRemainder
+<a id="placement-placement.wasm.javascript_facade.expression_isprime.988dd0cf28d7"></a>
+### Expression.isPrime
 
-<a id="entry-presentation_wasm_api_session_chinese_remainder"></a>
-<a id="placement-placement.wasm.wasm_module.module_chineseremainder.f3bf8937649c"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+`Expression.isPrime(): boolean | null`
 
-```typescript signature
-chineseRemainder(residues_and_moduli: Expression[]): Expression
-```
-
-The smallest non-negative solution of the simultaneous congruences \(x \equiv r_i \pmod{m_i}\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_chineseremainder.4aebe1e8fe59"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.chineseRemainder</code></p>
-
-```typescript signature
-chineseRemainder(residues_and_moduli: Expression[]): Expression
-```
-
-</details>
-
-### continuedFractionQuadraticIrrational
-
-<a id="entry-presentation_wasm_api_session_continued_fraction_quadratic_irrational"></a>
-<a id="placement-placement.wasm.wasm_module.module_continuedfractionquadraticirrational.dcf0d429e737"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-continuedFractionQuadraticIrrational(value: Expression): QuadraticContinuedFractionExpansion
-```
-
-Eventually-periodic expansion of \(\sqrt{d}\) for a non-negative integer d, returned as `(initial_terms, periodic_part)`.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_continuedfractionquadraticirrational.4dd188c6160b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.continuedFractionQuadraticIrrational</code></p>
-
-```typescript signature
-continuedFractionQuadraticIrrational(value: Expression): QuadraticContinuedFractionExpansion
-```
-
-</details>
-
-### continuedFractionRational
-
-<a id="entry-presentation_wasm_api_session_continued_fraction_rational"></a>
-<a id="placement-placement.wasm.wasm_module.module_continuedfractionrational.c51caff08918"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-continuedFractionRational(value: Expression): Expression[]
-```
-
-Terminating continued-fraction expansion `[a0; a1, a2, ...]` of an integer or rational expression leaf.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_continuedfractionrational.cf59a95f002b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.continuedFractionRational</code></p>
-
-```typescript signature
-continuedFractionRational(value: Expression): Expression[]
-```
-
-</details>
-
-### divisorCount
-
-<a id="entry-presentation_wasm_api_session_divisor_count"></a>
-<a id="placement-placement.wasm.wasm_module.module_divisorcount.3d6aaad82ca7"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-divisorCount(n: Expression): Expression
-```
-
-Number of positive divisors \(\tau(n)\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `unknown`.
 
 <a id="placement-placement.wasm.wasm_class.context_divisorcount.51c87db41fb4"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.divisorCount</code></p>
+### Context.divisorCount
 
-```typescript signature
-divisorCount(n: Expression): Expression
-```
+`pub fn divisor_count(&self, n: &Expression) -> Result<Expression, JsError>`
 
-</details>
-
-### divisorSigma
-
-<a id="entry-presentation_wasm_api_session_divisor_sigma"></a>
-<a id="placement-placement.wasm.wasm_module.module_divisorsigma.2a53ddc533d7"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-divisorSigma(n: Expression, power: number): Expression
-```
-
-Sum of the `power`-th powers of the positive divisors \(\sigma_{\mathit{power}}(n)\); `power = 0` gives `divisor_count`, `power = 1` the divisor sum.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<expression, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_divisorsigma.189d83e734c5"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.divisorSigma</code></p>
+### Context.divisorSigma
 
-```typescript signature
-divisorSigma(n: Expression, power: number): Expression
-```
+`pub fn divisor_sigma(&self, n: &Expression, power: u32) -> Result<Expression, JsError>`
 
-</details>
-
-### eulerTotient
-
-<a id="entry-presentation_wasm_api_session_euler_totient"></a>
-<a id="placement-placement.wasm.wasm_module.module_eulertotient.4cd7de9cfaf0"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-eulerTotient(n: Expression): Expression
-```
-
-Euler's \(\varphi(n)\); requires a positive integer.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_eulertotient.0e9516a9c2bb"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.eulerTotient</code></p>
-
-```typescript signature
-eulerTotient(n: Expression): Expression
-```
-
-</details>
-
-### extendedEuclidean
-
-<a id="entry-presentation_wasm_api_session_extended_euclidean"></a>
-<a id="placement-placement.wasm.wasm_module.module_extendedeuclidean.83f8fd6d7934"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-extendedEuclidean(a: Expression, b: Expression): Expression[]
-```
-
-`(gcd, x, y)` with \(a x + b y = \operatorname{gcd}\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_extendedeuclidean.2caeb9577112"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.extendedEuclidean</code></p>
-
-```typescript signature
-extendedEuclidean(a: Expression, b: Expression): Expression[]
-```
-
-</details>
-
-### factorInteger
-
-<a id="entry-presentation_wasm_api_session_factor_integer"></a>
-<a id="placement-placement.wasm.wasm_module.module_factorinteger.7be59b319dec"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-factorInteger(n: Expression): PrimeFactor[]
-```
-
-Prime factorization as `(prime, multiplicity)` pairs, ascending. Errors on zero. Notes: WASM returns `prime_factor` objects with `prime`/`multiplicity` getters; the sign \(-1\) of a negative input is carried as a leading `(-1, 1)` factor exactly as the core reports it.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<expression, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_factorinteger.3224abb06726"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.factorInteger</code></p>
+### Context.factorInteger
 
-```typescript signature
-factorInteger(n: Expression): PrimeFactor[]
-```
+`pub fn factor_integer(&self, n: &Expression) -> Result<Vec<PrimeFactor>, JsError>`
 
-</details>
-
-### integerGcd
-
-<a id="entry-presentation_wasm_api_session_integer_gcd"></a>
-<a id="placement-placement.wasm.wasm_module.module_integergcd.880435e4defa"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-integerGcd(a: Expression, b: Expression): Expression
-```
-
-Greatest common divisor (non-negative).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<Vec<prime_factor>, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_integergcd.dd986d1b30ec"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integerGcd</code></p>
+### Context.integerGcd
 
-```typescript signature
-integerGcd(a: Expression, b: Expression): Expression
-```
+`pub fn integer_gcd(&self, a: &Expression, b: &Expression) -> Result<Expression, JsError>`
 
-</details>
-
-### integerLcm
-
-<a id="entry-presentation_wasm_api_session_integer_lcm"></a>
-<a id="placement-placement.wasm.wasm_module.module_integerlcm.da4013a527d4"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-integerLcm(a: Expression, b: Expression): Expression
-```
-
-Least common multiple.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<expression, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_integerlcm.cbbcb09e9de0"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integerLcm</code></p>
+### Context.integerLcm
 
-```typescript signature
-integerLcm(a: Expression, b: Expression): Expression
-```
+`pub fn integer_lcm(&self, a: &Expression, b: &Expression) -> Result<Expression, JsError>`
 
-</details>
-
-### integerNthRoot
-
-<a id="entry-presentation_wasm_api_session_integer_nth_root"></a>
-<a id="placement-placement.wasm.wasm_module.module_integernthroot.93c0396df8ee"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-integerNthRoot(n: Expression, root_index: bigint): Expression
-```
-
-\(\lfloor n^{1/\mathit{root\_index}}\rfloor\); odd indices accept negative n. Errors when no real root exists (even index, negative n).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<expression, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_integernthroot.937d47a1b8bd"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integerNthRoot</code></p>
+### Context.integerNthRoot
 
-```typescript signature
-integerNthRoot(n: Expression, root_index: bigint): Expression
-```
+`pub fn integer_nth_root(&self, n: &Expression, root_index: u64) -> Result<Expression, JsError>`
 
-</details>
-
-### integerSquareRoot
-
-<a id="entry-presentation_wasm_api_session_integer_square_root"></a>
-<a id="placement-placement.wasm.wasm_module.module_integersquareroot.061948d4b3be"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-integerSquareRoot(n: Expression): Expression
-```
-
-\(\lfloor\sqrt{n}\rfloor\) for non-negative n.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<expression, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_integersquareroot.a1377fb2624b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.integerSquareRoot</code></p>
+### Context.integerSquareRoot
 
-```typescript signature
-integerSquareRoot(n: Expression): Expression
-```
+`pub fn integer_square_root(&self, n: &Expression) -> Result<Expression, JsError>`
 
-</details>
+Returns `Result<expression, JsError>`.
 
-### jacobiSymbol
+<a id="placement-placement.wasm.wasm_class.context_isprime.8164fbb41a14"></a>
+### Context.isPrime
 
-<a id="entry-presentation_wasm_api_session_jacobi_symbol"></a>
-<a id="placement-placement.wasm.wasm_module.module_jacobisymbol.c3f360d8c1d2"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+`pub fn is_prime(&self, n: &Expression) -> Result<Option<bool>, JsError>`
 
-```typescript signature
-jacobiSymbol(numerator: Expression, denominator: Expression): number
-```
-
-The Jacobi symbol \((n/d) \in \{-1, 0, 1\}\); the denominator must be a positive odd integer.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_jacobisymbol.7c5f47880345"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.jacobiSymbol</code></p>
-
-```typescript signature
-jacobiSymbol(numerator: Expression, denominator: Expression): number
-```
-
-</details>
-
-### kroneckerSymbol
-
-<a id="entry-presentation_wasm_api_session_kronecker_symbol"></a>
-<a id="placement-placement.wasm.wasm_module.module_kroneckersymbol.fe2e8066bdaf"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-kroneckerSymbol(numerator: Expression, denominator: Expression): number
-```
-
-The Kronecker extension of the Jacobi symbol to all integer denominators.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_kroneckersymbol.5fb205f9197f"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.kroneckerSymbol</code></p>
-
-```typescript signature
-kroneckerSymbol(numerator: Expression, denominator: Expression): number
-```
-
-</details>
-
-### legendreSymbol
-
-<a id="entry-presentation_wasm_api_session_legendre_symbol"></a>
-<a id="placement-placement.wasm.wasm_module.module_legendresymbol.d3d4b7dcbf1d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-legendreSymbol(numerator: Expression, prime: Expression): number
-```
-
-The Legendre symbol; the second argument must be an odd prime.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_legendresymbol.573f83890b5c"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.legendreSymbol</code></p>
-
-```typescript signature
-legendreSymbol(numerator: Expression, prime: Expression): number
-```
-
-</details>
-
-### modularInverse
-
-<a id="entry-presentation_wasm_api_session_modular_inverse"></a>
-<a id="placement-placement.wasm.wasm_module.module_modularinverse.89b1fb456696"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-modularInverse(value: Expression, modulus: Expression): Expression
-```
-
-Multiplicative inverse of `value` modulo `modulus`; errors when \(\operatorname{gcd}(\operatorname{value}, \operatorname{modulus}) \ne 1\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_modularinverse.58167e0fe801"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.modularInverse</code></p>
-
-```typescript signature
-modularInverse(value: Expression, modulus: Expression): Expression
-```
-
-</details>
-
-### modularPower
-
-<a id="entry-presentation_wasm_api_session_modular_power"></a>
-<a id="placement-placement.wasm.wasm_module.module_modularpower.c5fc06c4c577"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-modularPower(
-    base: Expression,
-    exponent: Expression,
-    modulus: Expression,
-): Expression
-```
-
-`base^exponent mod modulus` by square-and-multiply; requires positive modulus and non-negative exponent.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_modularpower.f0c98dd7bb85"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.modularPower</code></p>
-
-```typescript signature
-modularPower(
-    base: Expression,
-    exponent: Expression,
-    modulus: Expression,
-): Expression
-```
-
-</details>
-
-### pellSolutions
-
-<a id="entry-presentation_wasm_api_session_pell_solutions"></a>
-<a id="placement-placement.wasm.wasm_module.module_pellsolutions.746cfa175fdd"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-pellSolutions(radicand: Expression, count: number): Expression[]
-```
-
-The first `count` positive solutions of \(x^2 - D y^2 = 1\), materialised from the fundamental solution by the Pell recurrence and returned as a flat list \([x_1, y_1, x_2, y_2, \ldots]\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<Option<bool>, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_pellsolutions.91be0218332c"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.pellSolutions</code></p>
+### Context.pellSolutions
 
-```typescript signature
-pellSolutions(radicand: Expression, count: number): Expression[]
-```
+`pub fn pell_solutions(&self, radicand: &Expression, count: usize) -> Result<Vec<Expression>, JsError>`
 
-</details>
-
-### solveLinearDiophantine
-
-<a id="entry-presentation_wasm_api_session_solve_linear_diophantine"></a>
-<a id="placement-placement.wasm.wasm_module.module_solvelineardiophantine.c44d14859433"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-solveLinearDiophantine(
-    coefficients: Expression[],
-    constant: Expression,
-): Expression[]
-```
-
-General integer solution of \(a_1 x_1 + \ldots + a_n x_n = c\), returned as the parametric coordinates — one expression per unknown, affine in fresh integer parameter symbols (`diophantine_parameter_k`) shared across the coordinates so that choosing any integers for the parameters yields a solution tuple. The list is empty when the equation has no integer solution (\(\gcd(a_i) \nmid c\)).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_solvelineardiophantine.a71e6e2e49cd"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.solveLinearDiophantine</code></p>
-
-```typescript signature
-solveLinearDiophantine(
-    coefficients: Expression[],
-    constant: Expression,
-): Expression[]
-```
-
-</details>
-
-### solveLinearDiophantineSystem
-
-<a id="entry-presentation_wasm_api_session_solve_linear_diophantine_system"></a>
-<a id="placement-placement.wasm.wasm_module.module_solvelineardiophantinesystem.f6937abefeef"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-solveLinearDiophantineSystem(
-    coefficient_matrix: Matrix,
-    constants: Expression[],
-): Expression[]
-```
-
-General integer solution of the rectangular system \(A x = b\), returned as one parametric coordinate expression per column of `A`.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_solvelineardiophantinesystem.8fa55d464929"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.solveLinearDiophantineSystem</code></p>
-
-```typescript signature
-solveLinearDiophantineSystem(
-    coefficient_matrix: Matrix,
-    constants: Expression[],
-): Expression[]
-```
-
-</details>
-
-### solveNegativePell
-
-<a id="entry-presentation_wasm_api_session_solve_negative_pell"></a>
-<a id="placement-placement.wasm.wasm_module.module_solvenegativepell.de4fc4dc84c0"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-solveNegativePell(radicand: Expression): Expression[]
-```
-
-Fundamental solution `[x, y]` of the negative-Pell equation \(x^2 - D y^2 = -1\) when it is solvable (exactly when the continued fraction of \(\sqrt{D}\) has odd period), and an empty list otherwise.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<Vec<expression>, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_solvenegativepell.eaf011c3b227"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.solveNegativePell</code></p>
+### Context.solveNegativePell
 
-```typescript signature
-solveNegativePell(radicand: Expression): Expression[]
-```
+`pub fn solve_negative_pell(&self, radicand: &Expression) -> Result<Vec<Expression>, JsError>`
 
-</details>
-
-### solvePell
-
-<a id="entry-presentation_wasm_api_session_solve_pell"></a>
-<a id="placement-placement.wasm.wasm_module.module_solvepell.e3e4a8d13447"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-solvePell(radicand: Expression): Expression[]
-```
-
-Fundamental solution `[x, y]` of \(x^2 - D y^2 = 1\) for a positive non-square integer `D`, the smallest positive solution from which all others are generated by the recurrence \(x_{k+1} = x_1 x_k + D y_1 y_k\), \(y_{k+1} = x_1 y_k + y_1 x_k\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `Result<Vec<expression>, JsError>`.
 
 <a id="placement-placement.wasm.wasm_class.context_solvepell.259181184189"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.solvePell</code></p>
+### Context.solvePell
 
-```typescript signature
-solvePell(radicand: Expression): Expression[]
-```
+`pub fn solve_pell(&self, radicand: &Expression) -> Result<Vec<Expression>, JsError>`
 
-</details>
+Returns `Result<Vec<expression>, JsError>`.
 
-### QuadraticContinuedFractionExpansion
+<a id="placement-placement.wasm.wasm_class.expression_isprime.bea4c3dd89fc"></a>
+### Expression.isPrime
 
-#### QuadraticContinuedFractionExpansion.initialTerms
+`pub fn is_prime(&self) -> Result<Option<bool>, JsError>`
 
-<a id="entry-presentation_wasm_api_quadraticcontinuedfractionexpansion_initial_terms"></a>
-<a id="placement-placement.wasm.wasm_class.quadraticcontinuedfractionexpansion_initialterms.c0053bbd2c9d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: QuadraticContinuedFractionExpansion property</p>
+Returns `Result<Option<bool>, JsError>`.
 
-```typescript signature
-readonly initialTerms: Expression[]
-```
+<a id="placement-placement.wasm.wasm_module.module_divisorcount.3d6aaad82ca7"></a>
+### module.divisorCount
 
-The terms preceding the periodic part of the expansion.
+`fn divisor_count(n: &Expression) -> Result<Expression, JsError>`
 
-#### QuadraticContinuedFractionExpansion.periodicTerms
+Returns `Result<expression, JsError>`.
 
-<a id="entry-presentation_wasm_api_quadraticcontinuedfractionexpansion_periodic_terms"></a>
-<a id="placement-placement.wasm.wasm_class.quadraticcontinuedfractionexpansion_periodicterms.c7ae5216de14"></a>
-<p class="symi-entry-owner">Raw WebAssembly: QuadraticContinuedFractionExpansion property</p>
+<a id="placement-placement.wasm.wasm_module.module_divisorsigma.2a53ddc533d7"></a>
+### module.divisorSigma
 
-```typescript signature
-readonly periodicTerms: Expression[]
-```
+`fn divisor_sigma(n: &Expression, power: u32) -> Result<Expression, JsError>`
 
-The repeating terms of the expansion.
+Returns `Result<expression, JsError>`.
 
-### RootMultiplicity
+<a id="placement-placement.wasm.wasm_module.module_factorinteger.7be59b319dec"></a>
+### module.factorInteger
 
-#### RootMultiplicity.root
+`fn factor_integer(n: &Expression) -> Result<Vec<PrimeFactor>, JsError>`
 
-<a id="entry-presentation_wasm_api_rootmultiplicity_root"></a>
-<a id="placement-placement.wasm.wasm_class.rootmultiplicity_root.27ae91435854"></a>
-<p class="symi-entry-owner">Raw WebAssembly: RootMultiplicity property</p>
+Returns `Result<Vec<prime_factor>, JsError>`.
 
-```typescript signature
-readonly root: Expression
-```
+<a id="placement-placement.wasm.wasm_module.module_integergcd.880435e4defa"></a>
+### module.integerGcd
 
-Principal n-th root, stored as `x^(1/n)`.
+`fn integer_gcd(a: &Expression, b: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_integerlcm.da4013a527d4"></a>
+### module.integerLcm
+
+`fn integer_lcm(a: &Expression, b: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_integernthroot.93c0396df8ee"></a>
+### module.integerNthRoot
+
+`fn integer_nth_root(n: &Expression, root_index: u64) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_integersquareroot.061948d4b3be"></a>
+### module.integerSquareRoot
+
+`fn integer_square_root(n: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_isprime.2c60d7745885"></a>
+### module.isPrime
+
+`fn is_prime(n: &Expression) -> Result<Option<bool>, JsError>`
+
+Returns `Result<Option<bool>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_pellsolutions.746cfa175fdd"></a>
+### module.pellSolutions
+
+`fn pell_solutions(radicand: &Expression, count: usize) -> Result<Vec<Expression>, JsError>`
+
+Returns `Result<Vec<expression>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_solvenegativepell.de4fc4dc84c0"></a>
+### module.solveNegativePell
+
+`fn solve_negative_pell(radicand: &Expression) -> Result<Vec<Expression>, JsError>`
+
+Returns `Result<Vec<expression>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_solvepell.e3e4a8d13447"></a>
+### module.solvePell
+
+`fn solve_pell(radicand: &Expression) -> Result<Vec<Expression>, JsError>`
+
+Returns `Result<Vec<expression>, JsError>`.
 

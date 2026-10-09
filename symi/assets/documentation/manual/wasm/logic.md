@@ -32,53 +32,7 @@ The Boolean constant false (\(\bot\)).
 
 ### evaluate_truth
 
-<a id="entry-presentation_wasm_api_session_evaluate_truth"></a>
-<a id="placement-placement.wasm.wasm_module.module_evaluatetruth.fb0e4e2d9223"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-evaluateTruth(input_expression: Expression): boolean | undefined
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.javascript_facade.context_evaluatetruth.a9ce02ce8752"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.evaluateTruth</code></p>
-
-```typescript signature
-evaluateTruth(predicate: ExpressionLike): boolean | null
-```
-
-<a id="placement-placement.wasm.wasm_class.context_evaluatetruth.863d04a2419d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.evaluateTruth</code></p>
-
-```typescript signature
-evaluateTruth(input_expression: Expression): boolean | undefined
-```
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_evaluatetruth.b770fcd9faa8"></a>
-<p class="symi-entry-owner">SymiFacade method: <code>SymiFacade.evaluateTruth</code></p>
-
-```typescript signature
-evaluateTruth(predicate: ExpressionLike): boolean | null
-```
-
-<a id="placement-placement.wasm.javascript_facade.expression_evaluatetruth.e2bc58e39b58"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.evaluateTruth</code></p>
-
-```typescript signature
-evaluateTruth(): boolean | null
-```
-
-<a id="placement-placement.wasm.wasm_class.expression_evaluatetruth.1071ae13c246"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.evaluateTruth</code></p>
-
-```typescript signature
-evaluateTruth(): boolean | undefined
-```
-
-</details>
+*Not exposed by the WASM / JavaScript bindings. Available as [`Context.evaluate_truth`](/symi/python/logic#evaluate_truth) in Python, [`UniffiExpression.evaluateTruth`](/symi/kotlin/logic#evaluate_truth) in Kotlin, [`UniffiExpression.evaluateTruth`](/symi/swift/logic#evaluate_truth) in Swift, [`api::Expression::evaluate_truth`](/symi/rust/logic#evaluate_truth) in Rust.*
 
 
 `evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or
@@ -117,79 +71,248 @@ console.log(symi.evaluateTruth(symi.lessThan(x, 1)));
 
 ## Additional API
 
-### logicalFalse
+<a id="placement-placement.wasm.javascript_facade.context_eliminatederivedlogicalconnectives.fbf21e222b48"></a>
+### Context.eliminateDerivedLogicalConnectives
 
-<a id="entry-presentation_wasm_api_session_logical_false"></a>
-<a id="placement-placement.wasm.wasm_module.module_logicalfalse.6aee9d3550be"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+`Context.eliminateDerivedLogicalConnectives(value: ExpressionLike): Expression`
 
-```typescript signature
-logicalFalse(): Expression
-```
+Returns `unknown`.
 
-The Boolean constant false (\(\bot\)).
+<a id="placement-placement.wasm.javascript_facade.context_evaluatetruth.a9ce02ce8752"></a>
+### Context.evaluateTruth
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+`Context.evaluateTruth(predicate: ExpressionLike): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_introducederivedlogicalconnectives.1178bb7be801"></a>
+### Context.introduceDerivedLogicalConnectives
+
+`Context.introduceDerivedLogicalConnectives(value: ExpressionLike): Expression`
+
+Returns `unknown`.
 
 <a id="placement-placement.wasm.javascript_facade.context_logicalfalse.9bc67d1ef760"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.logicalFalse</code></p>
+### Context.logicalFalse
 
-```typescript signature
-readonly logicalFalse: Expression
-```
+`Context.readonly logicalFalse: Expression`
 
-<a id="placement-placement.wasm.wasm_class.context_logicalfalse.94e8b3dd883e"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.logicalFalse</code></p>
-
-```typescript signature
-logicalFalse(): Expression
-```
-
-<a id="placement-placement.wasm.javascript_facade.symifacade_logicalfalse.2e267b20bbb1"></a>
-<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.logicalFalse</code></p>
-
-```typescript signature
-readonly logicalFalse: Expression
-```
-
-</details>
-
-### logicalTrue
-
-<a id="entry-presentation_wasm_api_session_logical_true"></a>
-<a id="placement-placement.wasm.wasm_module.module_logicaltrue.8c894af8e323"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-logicalTrue(): Expression
-```
-
-The Boolean constant true (\(\top\)).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `expression`.
 
 <a id="placement-placement.wasm.javascript_facade.context_logicaltrue.9727eb1248c1"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.logicalTrue</code></p>
+### Context.logicalTrue
 
-```typescript signature
-readonly logicalTrue: Expression
-```
+`Context.readonly logicalTrue: Expression`
 
-<a id="placement-placement.wasm.wasm_class.context_logicaltrue.e8dfff3d592b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.logicalTrue</code></p>
+Returns `expression`.
 
-```typescript signature
-logicalTrue(): Expression
-```
+<a id="placement-placement.wasm.javascript_facade.context_simplifylogical.d5a84750401d"></a>
+### Context.simplifyLogical
+
+`Context.simplifyLogical(value: ExpressionLike): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_eliminatederivedlogicalconnectives.03dbed4ef109"></a>
+### Expression.eliminateDerivedLogicalConnectives
+
+`Expression.eliminateDerivedLogicalConnectives(): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_evaluatetruth.e2bc58e39b58"></a>
+### Expression.evaluateTruth
+
+`Expression.evaluateTruth(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_introducederivedlogicalconnectives.d61df7a5125f"></a>
+### Expression.introduceDerivedLogicalConnectives
+
+`Expression.introduceDerivedLogicalConnectives(): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_simplifylogical.dce05b71d665"></a>
+### Expression.simplifyLogical
+
+`Expression.simplifyLogical(): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_eliminatederivedlogicalconnectives.ac05ca331ca5"></a>
+### SymiFacade.eliminateDerivedLogicalConnectives
+
+`SymiFacade.eliminateDerivedLogicalConnectives(value: ExpressionLike): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_evaluatetruth.b770fcd9faa8"></a>
+### SymiFacade.evaluateTruth
+
+`SymiFacade.evaluateTruth(predicate: ExpressionLike): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_introducederivedlogicalconnectives.d87c58b06818"></a>
+### SymiFacade.introduceDerivedLogicalConnectives
+
+`SymiFacade.introduceDerivedLogicalConnectives(value: ExpressionLike): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_logicalfalse.2e267b20bbb1"></a>
+### SymiFacade.logicalFalse
+
+`SymiFacade.readonly logicalFalse: Expression`
+
+Returns `expression`.
 
 <a id="placement-placement.wasm.javascript_facade.symifacade_logicaltrue.42cc56407238"></a>
-<p class="symi-entry-owner">SymiFacade property: <code>SymiFacade.logicalTrue</code></p>
+### SymiFacade.logicalTrue
 
-```typescript signature
-readonly logicalTrue: Expression
-```
+`SymiFacade.readonly logicalTrue: Expression`
 
-</details>
+Returns `expression`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_simplifylogical.7e8c3741add9"></a>
+### SymiFacade.simplifyLogical
+
+`SymiFacade.simplifyLogical(value: ExpressionLike): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.wasm_class.context_eliminatederivedlogicalconnectives.3556bcb58aec"></a>
+### Context.eliminateDerivedLogicalConnectives
+
+`pub fn eliminate_derived_logical_connectives(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_evaluatetruth.863d04a2419d"></a>
+### Context.evaluateTruth
+
+`pub fn evaluate_truth(&self, input_expression: &Expression) -> Result<Option<bool>, JsError>`
+
+Returns `Result<Option<bool>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_introducederivedlogicalconnectives.b3bbbe9c8c71"></a>
+### Context.introduceDerivedLogicalConnectives
+
+`pub fn introduce_derived_logical_connectives(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_logicalfalse.94e8b3dd883e"></a>
+### Context.logicalFalse
+
+`pub fn logical_false(&self) -> Expression`
+
+Returns `expression`.
+
+<a id="placement-placement.wasm.wasm_class.context_logicaltrue.e8dfff3d592b"></a>
+### Context.logicalTrue
+
+`pub fn logical_true(&self) -> Expression`
+
+Returns `expression`.
+
+<a id="placement-placement.wasm.wasm_class.context_minimizelogical.e8634cea64ca"></a>
+### Context.minimizeLogical
+
+`pub fn minimize_logical(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_simplifylogical.0449b898501d"></a>
+### Context.simplifyLogical
+
+`pub fn simplify_logical(&self, input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_eliminatederivedlogicalconnectives.1f7a9ae4427f"></a>
+### Expression.eliminateDerivedLogicalConnectives
+
+`pub fn eliminate_derived_logical_connectives(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_evaluatetruth.1071ae13c246"></a>
+### Expression.evaluateTruth
+
+`pub fn evaluate_truth(&self) -> Result<Option<bool>, JsError>`
+
+Returns `Result<Option<bool>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_introducederivedlogicalconnectives.174398edf818"></a>
+### Expression.introduceDerivedLogicalConnectives
+
+`pub fn introduce_derived_logical_connectives(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_minimizelogical.1eeedfe07389"></a>
+### Expression.minimizeLogical
+
+`pub fn minimize_logical(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.expression_simplifylogical.b150d8671266"></a>
+### Expression.simplifyLogical
+
+`pub fn simplify_logical(&self) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_eliminatederivedlogicalconnectives.86334ce1fe59"></a>
+### module.eliminateDerivedLogicalConnectives
+
+`fn eliminate_derived_logical_connectives(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_evaluatetruth.fb0e4e2d9223"></a>
+### module.evaluateTruth
+
+`fn evaluate_truth(input_expression: &Expression) -> Result<Option<bool>, JsError>`
+
+Returns `Result<Option<bool>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_introducederivedlogicalconnectives.83816a1b06a4"></a>
+### module.introduceDerivedLogicalConnectives
+
+`fn introduce_derived_logical_connectives(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_logicalfalse.6aee9d3550be"></a>
+### module.logicalFalse
+
+`fn logical_false() -> Expression`
+
+Returns `expression`.
+
+<a id="placement-placement.wasm.wasm_module.module_logicaltrue.8c894af8e323"></a>
+### module.logicalTrue
+
+`fn logical_true() -> Expression`
+
+Returns `expression`.
+
+<a id="placement-placement.wasm.wasm_module.module_minimizelogical.b1927e04de80"></a>
+### module.minimizeLogical
+
+`fn minimize_logical(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_simplifylogical.c91f7d3e4b36"></a>
+### module.simplifyLogical
+
+`fn simplify_logical(input_expression: &Expression) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
 

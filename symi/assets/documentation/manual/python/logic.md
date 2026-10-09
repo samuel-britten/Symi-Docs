@@ -18,82 +18,36 @@ Normal forms and Boolean simplification are documented in
 
 ### logical_true
 
-<a id="entry-presentation_python_api_session_logical_true"></a>
-<a id="placement-placement.python.python_module.module_logical_true.ef761df9ca2e"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-logical_true: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_logical_true.2245ad3a5ca6"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.logical_true</code></p>
+`Context.logical_true`
 
-```python signature
-logical_true: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_logical_true.ef761df9ca2e"></a>
+`symi.logical_true`
 
 
 The Boolean constant true (\(\top\)).
 
 ### logical_false
 
-<a id="entry-presentation_python_api_session_logical_false"></a>
-<a id="placement-placement.python.python_module.module_logical_false.35969dae5f4e"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-logical_false: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_logical_false.2a29c31f903d"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.logical_false</code></p>
+`Context.logical_false`
 
-```python signature
-logical_false: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_logical_false.35969dae5f4e"></a>
+`symi.logical_false`
 
 
 The Boolean constant false (\(\bot\)).
 
 ### evaluate_truth
 
-<a id="entry-presentation_python_api_session_evaluate_truth"></a>
-<a id="placement-placement.python.python_module.module_evaluate_truth.973391b33da4"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-evaluate_truth(input_expression: ExpressionLike) -> Optional[bool]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_evaluate_truth.a421c2b10040"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.evaluate_truth</code></p>
-
-```python signature
-evaluate_truth(input_expression: ExpressionLike) -> Optional[bool]
-```
+`Context.evaluate_truth(input_expression)`
 
 <a id="placement-placement.python.python_class.expression_evaluate_truth.2acfc1c52e62"></a>
-<p class="symi-entry-owner">Expression method: <code>Expression.evaluate_truth</code></p>
+`Expression.evaluate_truth()`
 
-```python signature
-evaluate_truth() -> Optional[bool]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_evaluate_truth.973391b33da4"></a>
+`symi.evaluate_truth(input_expression)`
 
 
 `evaluate_truth(predicate)` uses exact three-valued logic. Python returns `True`, `False`, or

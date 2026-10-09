@@ -8,31 +8,11 @@ makes the query decline — `None` for `degree`, an error for the others.
 
 ### degree
 
-<a id="entry-presentation_wasm_api_session_degree"></a>
-<a id="placement-placement.wasm.wasm_module.module_degree.b2d823ac32d1"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-degree(
-    input_expression: Expression,
-    variable: string,
-): number | undefined
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_degree.d5afc93f0991"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.degree</code></p>
+Raw WebAssembly: `pub fn degree(&self, input_expression: &Expression, variable: &str) -> Result<Option<usize>, JsError>`
 
-```typescript signature
-degree(
-    input_expression: Expression,
-    variable: string,
-): number | undefined
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_degree.b2d823ac32d1"></a>
+Raw WebAssembly: `fn degree(input_expression: &Expression, variable: &str) -> Result<Option<usize>, JsError>`
 
 
 Degree in `variable`. `None` when the expression is not polynomial in
@@ -49,33 +29,17 @@ variables. Errors on non-polynomial or zero input.
 
 ### coefficient
 
-<a id="entry-presentation_wasm_api_session_coefficient"></a>
-<a id="placement-placement.wasm.wasm_module.module_coefficient.b04c0fe2497b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-coefficient(
-    input_expression: Expression,
-    variable: string,
-    power: number,
-): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_coefficient.8facb544769d"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.coefficient</code></p>
+Raw WebAssembly: `pub fn coefficient(&self, input_expression: &Expression, variable: &str, power: usize) -> Result<Expression, JsError>`
 
-```typescript signature
-coefficient(
-    input_expression: Expression,
-    variable: string,
-    power: number,
-): Expression
-```
+<a id="placement-placement.wasm.wasm_class.partialdifferentialequationjetcoefficient_coefficient.517fdfbfa0c1"></a>
+Raw WebAssembly: `pub fn coefficient(&self) -> Expression`
 
-</details>
+<a id="placement-placement.wasm.wasm_class.partialdifferentialequationprincipalcoefficient_coefficient.c6dd1d226399"></a>
+Raw WebAssembly: `pub fn coefficient(&self) -> Expression`
+
+<a id="placement-placement.wasm.wasm_module.module_coefficient.b04c0fe2497b"></a>
+Raw WebAssembly: `fn coefficient(input_expression: &Expression, variable: &str, power: usize) -> Result<Expression, JsError>`
 
 
 Coefficient of `variable^power`; integer 0 when the term is absent. Errors
@@ -92,25 +56,11 @@ not polynomial in `variable`.
 
 ### resultant
 
-<a id="entry-presentation_wasm_api_session_resultant"></a>
-<a id="placement-placement.wasm.wasm_module.module_resultant.fd887f886ff7"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-resultant(a: Expression, b: Expression, variable: string): Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_resultant.a85ac4158e89"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.resultant</code></p>
+Raw WebAssembly: `pub fn resultant(&self, a: &Expression, b: &Expression, variable: &str) -> Result<Expression, JsError>`
 
-```typescript signature
-resultant(a: Expression, b: Expression, variable: string): Expression
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_resultant.fd887f886ff7"></a>
+Raw WebAssembly: `fn resultant(a: &Expression, b: &Expression, variable: &str) -> Result<Expression, JsError>`
 
 
 Resultant with respect to `variable`; zero exactly when the two polynomials
@@ -118,31 +68,7 @@ share a root (over the algebraic closure). Errors on non-polynomial input.
 
 ### isolate_real_roots
 
-<a id="entry-presentation_wasm_api_session_isolate_real_roots"></a>
-<a id="placement-placement.wasm.wasm_module.module_isolaterealroots.fdc9ee498713"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-isolateRealRoots(
-    input_expression: Expression,
-    variable: string,
-): IsolatingInterval[]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_isolaterealroots.67ba1eadfe31"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.isolateRealRoots</code></p>
-
-```typescript signature
-isolateRealRoots(
-    input_expression: Expression,
-    variable: string,
-): IsolatingInterval[]
-```
-
-</details>
+*Not exposed by the WASM / JavaScript bindings. Available as [`Context.isolate_real_roots`](/symi/python/polynomials#isolate_real_roots) in Python, [`UniffiSession.isolateRealRoots`](/symi/kotlin/polynomials#isolate_real_roots) in Kotlin, [`UniffiSession.isolateRealRoots`](/symi/swift/polynomials#isolate_real_roots) in Swift, [`api::expression_operations::Expression::isolate_real_roots`](/symi/rust/polynomials#isolate_real_roots) in Rust.*
 
 
 One `(lower, upper)` rational isolating interval per distinct real root,
@@ -155,27 +81,15 @@ getters.
 
 ### lower
 
-<a id="entry-presentation_wasm_api_isolatinginterval_lower"></a>
 <a id="placement-placement.wasm.wasm_class.isolatinginterval_lower.fbc0bf3f0386"></a>
-<p class="symi-entry-owner">Raw WebAssembly: IsolatingInterval property</p>
+Raw WebAssembly: `pub fn lower(&self) -> Expression`
 
-```typescript signature
-readonly lower: Expression
-```
-
-Lower endpoint of the isolating interval.
 
 ### upper
 
-<a id="entry-presentation_wasm_api_isolatinginterval_upper"></a>
 <a id="placement-placement.wasm.wasm_class.isolatinginterval_upper.c137d742d426"></a>
-<p class="symi-entry-owner">Raw WebAssembly: IsolatingInterval property</p>
+Raw WebAssembly: `pub fn upper(&self) -> Expression`
 
-```typescript signature
-readonly upper: Expression
-```
-
-Upper endpoint of the isolating interval.
 
 ## Gröbner bases and ideals
 
@@ -279,33 +193,11 @@ is outside \(\mathbb{Q}[\text{variables}]\).
 
 ### implicitize
 
-<a id="entry-presentation_wasm_api_session_implicitize"></a>
-<a id="placement-placement.wasm.wasm_module.module_implicitize.a997715b9750"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-implicitize(
-    coordinates: string[],
-    parameters: string[],
-    parametric_expressions: Expression[],
-): Expression[] | undefined
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.wasm.wasm_class.context_implicitize.05ec5f6bd5e5"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.implicitize</code></p>
+Raw WebAssembly: `pub fn implicitize(&self, coordinates: Vec<String>, parameters: Vec<String>, parametric_expressions: Vec<Expression>) -> Result<Option<Vec<Expression>>, JsError>`
 
-```typescript signature
-implicitize(
-    coordinates: string[],
-    parameters: string[],
-    parametric_expressions: Expression[],
-): Expression[] | undefined
-```
-
-</details>
+<a id="placement-placement.wasm.wasm_module.module_implicitize.a997715b9750"></a>
+Raw WebAssembly: `fn implicitize(coordinates: Vec<String>, parameters: Vec<String>, parametric_expressions: Vec<Expression>) -> Result<Option<Vec<Expression>>, JsError>`
 
 
 The implicit ideal of a parametric curve or surface \(x_i = f_i(\operatorname{parameters})\) (the
@@ -326,491 +218,1634 @@ This family is not part of the recommended JavaScript facade in this release. Ca
 
 ## Additional API
 
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition.b30925c7b0d9"></a>
+### AssumptionProposition
+
+`export class AssumptionProposition {`
+
+Returns `assumption_proposition`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_congruencemodulus.958e75bacc16"></a>
+### AssumptionProposition.congruenceModulus
+
+`AssumptionProposition.congruenceModulus(): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_free.3aac53fe6166"></a>
+### AssumptionProposition.free
+
+`AssumptionProposition.free(): void`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_leftoperand.1cd6f2d84196"></a>
+### AssumptionProposition.leftOperand
+
+`AssumptionProposition.leftOperand(): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_membershipelement.e669e2bb3843"></a>
+### AssumptionProposition.membershipElement
+
+`AssumptionProposition.membershipElement(): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_membershipset.56fd05efb36b"></a>
+### AssumptionProposition.membershipSet
+
+`AssumptionProposition.membershipSet(): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_relationkind.077f50cc3ca4"></a>
+### AssumptionProposition.relationKind
+
+`AssumptionProposition.relationKind(): "equal" | "not_equal" | "less" | "less_or_equal" | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_rightoperand.cd1d8db9f940"></a>
+### AssumptionProposition.rightOperand
+
+`AssumptionProposition.rightOperand(): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionproposition_tostring.1bef2e8fdf8b"></a>
+### AssumptionProposition.toString
+
+`AssumptionProposition.toString(): string`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionscope.6062700f9779"></a>
+### AssumptionScope
+
+`export class AssumptionScope {`
+
+Returns `assumption_scope`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_couldhold.cd0ffcddc4c7"></a>
+### AssumptionScope.couldHold
+
+`AssumptionScope.couldHold(proposition: AssumptionProposition): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.assumptionscope_free.0065977a775c"></a>
+### AssumptionScope.free
+
+`AssumptionScope.free(): void`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context.63263e1ca6f7"></a>
 ### Context
 
-<a id="entry-presentation_wasm_host_wasm_symifacade_context"></a>
-<a id="placement-placement.wasm.javascript_facade.symifacade_context.8eb8851d9fac"></a>
-<p class="symi-entry-owner">SymiFacade property</p>
+`export interface Context {`
 
-```typescript signature
-Context: ContextConstructor
-```
+Returns `context`.
 
-Public property placement for Context.
+<a id="placement-placement.wasm.javascript_facade.context_absolutevalue.ef3837cbe2e9"></a>
+### Context.absoluteValue
 
+`Context.absoluteValue(value: ExpressionLike): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_addassumptions.bd466d03ca25"></a>
+### Context.addAssumptions
+
+`Context.addAssumptions(proposition: AssumptionProposition): void`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_algebraicassumption.13f584dcd297"></a>
+### Context.algebraicAssumption
+
+`Context.algebraicAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_assumptionpropositionfromlogicalexpression.2634b9a120ce"></a>
+### Context.assumptionPropositionFromLogicalExpression
+
+`Context.assumptionPropositionFromLogicalExpression(logicalExpression: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_clearallassumptions.a0d7b8978517"></a>
+### Context.clearAllAssumptions
+
+`Context.clearAllAssumptions(): void`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_complexassumption.de9b2d0d5a6b"></a>
+### Context.complexAssumption
+
+`Context.complexAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_complexentries.8ea406d31c90"></a>
+### Context.complexEntries
+
+`Context.complexEntries(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_compositeassumption.7fafa23ed771"></a>
+### Context.compositeAssumption
+
+`Context.compositeAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_congruentassumption.ba23c40226c0"></a>
+### Context.congruentAssumption
+
+`Context.congruentAssumption(left: ExpressionLike, right: ExpressionLike, modulus: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_couldhold.07dbc6c95fcb"></a>
+### Context.couldHold
+
+`Context.couldHold(proposition: AssumptionProposition): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_definedassumption.a6b8cd5e249d"></a>
+### Context.definedAssumption
+
+`Context.definedAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_deserializeassumptionproposition.a3cd68aa2883"></a>
+### Context.deserializeAssumptionProposition
+
+`Context.deserializeAssumptionProposition(text: string): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_diagonalmatrix.4a508bb260ba"></a>
+### Context.diagonalMatrix
+
+`Context.diagonalMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_equalassumption.e2385c0eb338"></a>
+### Context.equalAssumption
+
+`Context.equalAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_evenassumption.e7be2f22f2fa"></a>
+### Context.evenAssumption
+
+`Context.evenAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_extendedrealassumption.24a10286e28a"></a>
+### Context.extendedRealAssumption
+
+`Context.extendedRealAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_finiteassumption.53a61f54e11a"></a>
+### Context.finiteAssumption
+
+`Context.finiteAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_fullrankmatrix.9ea5686dda2d"></a>
+### Context.fullRankMatrix
+
+`Context.fullRankMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_greaterassumption.b5c7e745dc87"></a>
+### Context.greaterAssumption
+
+`Context.greaterAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_greaterorequalassumption.533a8f9c54be"></a>
+### Context.greaterOrEqualAssumption
+
+`Context.greaterOrEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_hermitianmatrix.b40f37562f34"></a>
+### Context.hermitianMatrix
+
+`Context.hermitianMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_identitymatrix.a1cf6abb115b"></a>
+### Context.identityMatrix
+
+`Context.identityMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_infiniteassumption.1f8d8206b5d4"></a>
+### Context.infiniteAssumption
+
+`Context.infiniteAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_integerassumption.cf3033b261f3"></a>
+### Context.integerAssumption
+
+`Context.integerAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_integerentries.1bfe48d4d7e5"></a>
+### Context.integerEntries
+
+`Context.integerEntries(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_invertiblematrix.3f2a5f363550"></a>
+### Context.invertibleMatrix
+
+`Context.invertibleMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_irrationalassumption.55887270e7fd"></a>
+### Context.irrationalAssumption
+
+`Context.irrationalAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_lessassumption.c8f4215c1aeb"></a>
+### Context.lessAssumption
+
+`Context.lessAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_lessorequalassumption.54b87c34ad81"></a>
+### Context.lessOrEqualAssumption
+
+`Context.lessOrEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_lowertriangularmatrix.f6b8f881e801"></a>
+### Context.lowerTriangularMatrix
+
+`Context.lowerTriangularMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_matrixshape.36881a4eaa96"></a>
+### Context.matrixShape
+
+`Context.matrixShape(value: Matrix, rows: number, columns: number): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_memberassumption.4bb9ab611722"></a>
+### Context.memberAssumption
+
+`Context.memberAssumption(element: ExpressionLike, setExpression: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_naturalassumption.19c46f121eb7"></a>
+### Context.naturalAssumption
+
+`Context.naturalAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_negativeassumption.4f548122612d"></a>
+### Context.negativeAssumption
+
+`Context.negativeAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_nonnegativeassumption.d5fe84f63a4f"></a>
+### Context.nonnegativeAssumption
+
+`Context.nonnegativeAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_nonpositiveassumption.bbd2f123adaa"></a>
+### Context.nonpositiveAssumption
+
+`Context.nonpositiveAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_nonzeroassumption.13c24e7f7a6e"></a>
+### Context.nonzeroAssumption
+
+`Context.nonzeroAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_normalmatrix.1dab2bd7e17a"></a>
+### Context.normalMatrix
+
+`Context.normalMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_notequalassumption.67d2e7f5e08e"></a>
+### Context.notEqualAssumption
+
+`Context.notEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_oddassumption.4c7823e1efdb"></a>
+### Context.oddAssumption
+
+`Context.oddAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_orthogonalmatrix.d64d9afbebcd"></a>
+### Context.orthogonalMatrix
+
+`Context.orthogonalMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_positiveassumption.78c5b78a1489"></a>
+### Context.positiveAssumption
+
+`Context.positiveAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_positivedefinitematrix.7dbac73d84be"></a>
+### Context.positiveDefiniteMatrix
+
+`Context.positiveDefiniteMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_positiveintegerassumption.18b9666cbeb9"></a>
+### Context.positiveIntegerAssumption
+
+`Context.positiveIntegerAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_positivesemidefinitematrix.c0dc57765934"></a>
+### Context.positiveSemidefiniteMatrix
+
+`Context.positiveSemidefiniteMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_primeassumption.c38a13dbad3a"></a>
+### Context.primeAssumption
+
+`Context.primeAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_rationalassumption.bd30ce74bea3"></a>
+### Context.rationalAssumption
+
+`Context.rationalAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_realassumption.9a2fc4517edb"></a>
+### Context.realAssumption
+
+`Context.realAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_realentries.bdb9034606ef"></a>
+### Context.realEntries
+
+`Context.realEntries(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_singularmatrix.4d8f48a378b9"></a>
+### Context.singularMatrix
+
+`Context.singularMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_squarematrix.ca6d22aeb8ae"></a>
+### Context.squareMatrix
+
+`Context.squareMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_symmetricmatrix.29a86f11f324"></a>
+### Context.symmetricMatrix
+
+`Context.symmetricMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_transcendentalassumption.0a4b799a5b1c"></a>
+### Context.transcendentalAssumption
+
+`Context.transcendentalAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_unitarymatrix.0d68d571cdb5"></a>
+### Context.unitaryMatrix
+
+`Context.unitaryMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_uppertriangularmatrix.fa854937bbdc"></a>
+### Context.upperTriangularMatrix
+
+`Context.upperTriangularMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_zeroassumption.e6f179fd3a86"></a>
+### Context.zeroAssumption
+
+`Context.zeroAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_zeroequivalent.4c2cfbd43500"></a>
+### Context.zeroEquivalent
+
+`Context.zeroEquivalent(value: ExpressionLike, constraint?: ExpressionLike | null): "true" | "false" | "unknown"`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.context_zeromatrix.a94420588464"></a>
+### Context.zeroMatrix
+
+`Context.zeroMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.contextconstructor.1350f1ba4da2"></a>
+### ContextConstructor
+
+`export interface ContextConstructor {`
+
+Returns `context_constructor`.
+
+<a id="placement-placement.wasm.javascript_facade.contextconstructor_new.0f9094d96686"></a>
+### ContextConstructor.new
+
+`ContextConstructor.new(): Context`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression.41c8e859d914"></a>
 ### Expression
 
-<a id="entry-presentation_wasm_host_wasm_symifacade_expression"></a>
-<a id="placement-placement.wasm.javascript_facade.symifacade_expression.93094cdfa844"></a>
-<p class="symi-entry-owner">SymiFacade property</p>
+`export interface Expression {`
 
-```typescript signature
-Expression: unknown
-```
+Returns `expression`.
 
-Public property placement for Expression.
+<a id="placement-placement.wasm.javascript_facade.expression_absolutevalue.d16fc61f887a"></a>
+### Expression.absoluteValue
 
+`Expression.absoluteValue(): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_add.d9aaa9c8c688"></a>
+### Expression.add
+
+`Expression.add(other: ExpressionLike): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_free.04d9e93ee17b"></a>
+### Expression.free
+
+`Expression.free(): void`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_isalgebraic.166881d40821"></a>
+### Expression.isAlgebraic
+
+`Expression.isAlgebraic(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_iscomplex.cf239ae130b6"></a>
+### Expression.isComplex
+
+`Expression.isComplex(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_iscomposite.acede8711f42"></a>
+### Expression.isComposite
+
+`Expression.isComposite(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_iseven.c8395efaf78a"></a>
+### Expression.isEven
+
+`Expression.isEven(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_isextendedreal.8b90e63c733a"></a>
+### Expression.isExtendedReal
+
+`Expression.isExtendedReal(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_isinfinite.baee2508c4d8"></a>
+### Expression.isInfinite
+
+`Expression.isInfinite(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_isirrational.f90590ac06dc"></a>
+### Expression.isIrrational
+
+`Expression.isIrrational(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_isnatural.c7d8ac466cd4"></a>
+### Expression.isNatural
+
+`Expression.isNatural(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_isnonpositive.15bf64f03f4c"></a>
+### Expression.isNonpositive
+
+`Expression.isNonpositive(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_isodd.9cef0c32b06d"></a>
+### Expression.isOdd
+
+`Expression.isOdd(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_ispositiveinteger.d958deb107ee"></a>
+### Expression.isPositiveInteger
+
+`Expression.isPositiveInteger(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_istranscendental.54d40bab7088"></a>
+### Expression.isTranscendental
+
+`Expression.isTranscendental(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_iszero.4743ee8492f4"></a>
+### Expression.isZero
+
+`Expression.isZero(): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_multiply.6129ea2e7a04"></a>
+### Expression.multiply
+
+`Expression.multiply(other: ExpressionLike): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_subtract.01fa19892c94"></a>
+### Expression.subtract
+
+`Expression.subtract(other: ExpressionLike): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_tostring.f0177b10aa8c"></a>
+### Expression.toString
+
+`Expression.toString(): string`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.expression_zeroequivalent.03483f9201c5"></a>
+### Expression.zeroEquivalent
+
+`Expression.zeroEquivalent(constraint?: ExpressionLike | null): "true" | "false" | "unknown"`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.matrix.75a04eacf90d"></a>
 ### Matrix
 
-<a id="entry-presentation_wasm_host_wasm_symifacade_matrix"></a>
-<a id="placement-placement.wasm.javascript_facade.symifacade_matrix.7fe47f8c649d"></a>
-<p class="symi-entry-owner">SymiFacade property</p>
+`export interface Matrix {`
 
-```typescript signature
-Matrix: unknown
-```
+Returns `matrix`.
 
-Public property placement for Matrix.
+<a id="placement-placement.wasm.javascript_facade.matrix_add.b4cbe00e9031"></a>
+### Matrix.add
 
-### SymiContextError
+`Matrix.add(other: Matrix): Matrix`
 
-<a id="entry-presentation_wasm_host_wasm_module_symicontexterror"></a>
-<a id="placement-placement.wasm.javascript_facade.symicontexterror.8a9c0b29d21a"></a>
-<p class="symi-entry-owner">Type</p>
+Returns `unknown`.
 
-```typescript signature
-class SymiContextError extends SymiError {}
-```
+<a id="placement-placement.wasm.javascript_facade.matrix_free.26db4cf3b6c5"></a>
+### Matrix.free
 
-Public type placement for SymiContextError.
+`Matrix.free(): void`
 
-### SymiDomainError
+Returns `unknown`.
 
-<a id="entry-presentation_wasm_host_wasm_module_symidomainerror"></a>
-<a id="placement-placement.wasm.javascript_facade.symidomainerror.ca3777e8db87"></a>
-<p class="symi-entry-owner">Type</p>
+<a id="placement-placement.wasm.javascript_facade.matrix_hascomplexentries.e62108844da5"></a>
+### Matrix.hasComplexEntries
 
-```typescript signature
-class SymiDomainError extends SymiError {}
-```
+`Matrix.hasComplexEntries(): boolean | null`
 
-Public type placement for SymiDomainError.
+Returns `unknown`.
 
-### SymiError
+<a id="placement-placement.wasm.javascript_facade.matrix_hasintegerentries.2146ac2809b2"></a>
+### Matrix.hasIntegerEntries
 
-<a id="entry-presentation_wasm_host_wasm_module_symierror"></a>
-<a id="placement-placement.wasm.javascript_facade.symierror.4dd8ef89912f"></a>
-<p class="symi-entry-owner">Type</p>
+`Matrix.hasIntegerEntries(): boolean | null`
 
-```typescript signature
-class SymiError extends Error
-```
+Returns `unknown`.
 
-Public type placement for SymiError.
+<a id="placement-placement.wasm.javascript_facade.matrix_hasrealentries.b42db7a5a2d1"></a>
+### Matrix.hasRealEntries
 
-### SymiInternalError
+`Matrix.hasRealEntries(): boolean | null`
 
-<a id="entry-presentation_wasm_host_wasm_module_symiinternalerror"></a>
-<a id="placement-placement.wasm.javascript_facade.symiinternalerror.9f964e7b647d"></a>
-<p class="symi-entry-owner">Type</p>
+Returns `unknown`.
 
-```typescript signature
-class SymiInternalError extends SymiError {}
-```
+<a id="placement-placement.wasm.javascript_facade.matrix_isdiagonalmatrix.415747dbf667"></a>
+### Matrix.isDiagonalMatrix
 
-Public type placement for SymiInternalError.
+`Matrix.isDiagonalMatrix(): boolean | null`
 
-### SymiResourceError
+Returns `unknown`.
 
-<a id="entry-presentation_wasm_host_wasm_module_symiresourceerror"></a>
-<a id="placement-placement.wasm.javascript_facade.symiresourceerror.e63a87983441"></a>
-<p class="symi-entry-owner">Type</p>
+<a id="placement-placement.wasm.javascript_facade.matrix_isfullrankmatrix.c1348883d7c3"></a>
+### Matrix.isFullRankMatrix
 
-```typescript signature
-class SymiResourceError extends SymiError {}
-```
+`Matrix.isFullRankMatrix(): boolean | null`
 
-Public type placement for SymiResourceError.
+Returns `unknown`.
 
-### SymiTypeError
+<a id="placement-placement.wasm.javascript_facade.matrix_ishermitianmatrix.5c0a1b02c764"></a>
+### Matrix.isHermitianMatrix
 
-<a id="entry-presentation_wasm_host_wasm_module_symitypeerror"></a>
-<a id="placement-placement.wasm.javascript_facade.symitypeerror.f73719bf5950"></a>
-<p class="symi-entry-owner">Type</p>
+`Matrix.isHermitianMatrix(): boolean | null`
 
-```typescript signature
-class SymiTypeError extends SymiError {}
-```
+Returns `unknown`.
 
-Public type placement for SymiTypeError.
+<a id="placement-placement.wasm.javascript_facade.matrix_isidentitymatrix.cae24290fdfb"></a>
+### Matrix.isIdentityMatrix
 
-### changeMonomialOrder
+`Matrix.isIdentityMatrix(): boolean | null`
 
-<a id="entry-presentation_wasm_api_session_change_monomial_order"></a>
-<a id="placement-placement.wasm.wasm_module.module_changemonomialorder.fd8d2e8526b4"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+Returns `unknown`.
 
-```typescript signature
-changeMonomialOrder(
-    basis: Expression[],
-    variables: string[],
-    source_order: string,
-    target_order: string,
-): Expression[] | undefined
-```
+<a id="placement-placement.wasm.javascript_facade.matrix_isinvertiblematrix.505c014c37f1"></a>
+### Matrix.isInvertibleMatrix
 
-Convert a Gröbner basis of a zero-dimensional ideal from `source_order` to `target_order` by FGLM (Faugère–Gianni–Lazard–Mora) — linear algebra in the finite-dimensional quotient ring \(\mathbb{Q}[\text{variables}]/I\), far cheaper than computing the target basis directly (the msolve route to a lexicographic basis is a cheap `degrevlex` basis followed by this conversion).
+`Matrix.isInvertibleMatrix(): boolean | null`
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `unknown`.
 
-<a id="placement-placement.wasm.wasm_class.context_changemonomialorder.e2a57ba75287"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.changeMonomialOrder</code></p>
+<a id="placement-placement.wasm.javascript_facade.matrix_isnormalmatrix.98b51d7166e5"></a>
+### Matrix.isNormalMatrix
 
-```typescript signature
-changeMonomialOrder(
-    basis: Expression[],
-    variables: string[],
-    source_order: string,
-    target_order: string,
-): Expression[] | undefined
-```
+`Matrix.isNormalMatrix(): boolean | null`
 
-</details>
+Returns `unknown`.
 
-### eliminationIdeal
+<a id="placement-placement.wasm.javascript_facade.matrix_isorthogonalmatrix.eda747c0fc34"></a>
+### Matrix.isOrthogonalMatrix
 
-<a id="entry-presentation_wasm_api_session_elimination_ideal"></a>
-<a id="placement-placement.wasm.wasm_module.module_eliminationideal.99af73451cd1"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-eliminationIdeal(
-    generators: Expression[],
-    variables: string[],
-    eliminate: string[],
-): Expression[] | undefined
-```
+`Matrix.isOrthogonalMatrix(): boolean | null`
 
-A Gröbner basis of the elimination ideal \(\langle\operatorname{generators}\rangle \cap \mathbb{Q}[\text{surviving variables}]\), projecting away the variables named in `eliminate` via the Elimination Theorem (a block order ranks the eliminated variables high and the generators free of them are kept).
+Returns `unknown`.
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+<a id="placement-placement.wasm.javascript_facade.matrix_ispositivedefinitematrix.e2669501e27d"></a>
+### Matrix.isPositiveDefiniteMatrix
 
-<a id="placement-placement.wasm.wasm_class.context_eliminationideal.04f94bd7d8f1"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.eliminationIdeal</code></p>
-
-```typescript signature
-eliminationIdeal(
-    generators: Expression[],
-    variables: string[],
-    eliminate: string[],
-): Expression[] | undefined
-```
-
-</details>
+`Matrix.isPositiveDefiniteMatrix(): boolean | null`
 
-### free
+Returns `unknown`.
 
-<a id="entry-presentation_wasm_host_wasm_expression_free"></a>
-<a id="placement-placement.wasm.javascript_facade.expression_free.04d9e93ee17b"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-free(): void
-```
-
-Public method placement for free.
-
-### groebnerBasis
-
-<a id="entry-presentation_wasm_api_session_groebner_basis"></a>
-<a id="placement-placement.wasm.wasm_module.module_groebnerbasis.5de4c9b11109"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-groebnerBasis(
-    generators: Expression[],
-    variables: string[],
-    order?: string | null,
-): Expression[] | undefined
-```
-
-The canonical reduced Gröbner basis of the ideal `<generators>` under the named monomial order — monic, autoreduced, and sorted, so it is unique for the `(ideal, order)` pair. `None` when any generator is outside \(\mathbb{Q}[\text{variables}]\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_groebnerbasis.888872534bf7"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.groebnerBasis</code></p>
-
-```typescript signature
-groebnerBasis(
-    generators: Expression[],
-    variables: string[],
-    order?: string | null,
-): Expression[] | undefined
-```
-
-</details>
-
-### idealIntersection
-
-<a id="entry-presentation_wasm_api_session_ideal_intersection"></a>
-<a id="placement-placement.wasm.wasm_module.module_idealintersection.6e49de3034aa"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-idealIntersection(
-    generators_left: Expression[],
-    generators_right: Expression[],
-    variables: string[],
-    order?: string | null,
-): Expression[] | undefined
-```
-
-A generating set of the ideal intersection \(I \cap J\), computed by the standard tag-variable elimination construction \(t I + (1-t) J\).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_idealintersection.acbee9138efd"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.idealIntersection</code></p>
-
-```typescript signature
-idealIntersection(
-    generators_left: Expression[],
-    generators_right: Expression[],
-    variables: string[],
-    order?: string | null,
-): Expression[] | undefined
-```
-
-</details>
-
-### idealMembership
-
-<a id="entry-presentation_wasm_api_session_ideal_membership"></a>
-<a id="placement-placement.wasm.wasm_module.module_idealmembership.c719b9f17e53"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-idealMembership(
-    element: Expression,
-    generators: Expression[],
-    variables: string[],
-    order?: string | null,
-): boolean | undefined
-```
-
-Whether `element` lies in the ideal `<generators>`, decided by reducing it to its normal form modulo the Gröbner basis (zero exactly when it is a member).
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_idealmembership.c32c85f3e675"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.idealMembership</code></p>
-
-```typescript signature
-idealMembership(
-    element: Expression,
-    generators: Expression[],
-    variables: string[],
-    order?: string | null,
-): boolean | undefined
-```
-
-</details>
-
-### idealProduct
-
-<a id="entry-presentation_wasm_api_session_ideal_product"></a>
-<a id="placement-placement.wasm.wasm_module.module_idealproduct.fe3132e266f0"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-idealProduct(
-    generators_left: Expression[],
-    generators_right: Expression[],
-    variables: string[],
-    order?: string | null,
-): Expression[] | undefined
-```
-
-A Gröbner basis of the ideal product \(I J\), generated by all pairwise products of the two generator lists. `None` on a non-\(\mathbb{Q}[\text{variables}]\) generator.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.context_idealproduct.a99fc7e4c6bf"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.idealProduct</code></p>
-
-```typescript signature
-idealProduct(
-    generators_left: Expression[],
-    generators_right: Expression[],
-    variables: string[],
-    order?: string | null,
-): Expression[] | undefined
-```
-
-</details>
-
-### idealSum
-
-<a id="entry-presentation_wasm_api_session_ideal_sum"></a>
-<a id="placement-placement.wasm.wasm_module.module_idealsum.0fe68881ed36"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
-
-```typescript signature
-idealSum(
-    generators_left: Expression[],
-    generators_right: Expression[],
-    variables: string[],
-    order?: string | null,
-): Expression[] | undefined
-```
+<a id="placement-placement.wasm.javascript_facade.matrix_ispositivesemidefinitematrix.772c2ae7ee0e"></a>
+### Matrix.isPositiveSemidefiniteMatrix
 
-A Gröbner basis of the ideal sum `I + J`, the ideal generated by the two generator lists together. `None` on a non-\(\mathbb{Q}[\text{variables}]\) generator.
+`Matrix.isPositiveSemidefiniteMatrix(): boolean | null`
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+Returns `unknown`.
 
-<a id="placement-placement.wasm.wasm_class.context_idealsum.cd86d2191b7e"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.idealSum</code></p>
+<a id="placement-placement.wasm.javascript_facade.matrix_issingularmatrix.873fe293b8c3"></a>
+### Matrix.isSingularMatrix
 
-```typescript signature
-idealSum(
-    generators_left: Expression[],
-    generators_right: Expression[],
-    variables: string[],
-    order?: string | null,
-): Expression[] | undefined
-```
+`Matrix.isSingularMatrix(): boolean | null`
 
-</details>
+Returns `unknown`.
 
-### leadingCoefficient
+<a id="placement-placement.wasm.javascript_facade.matrix_issquare.efcc71c65d6c"></a>
+### Matrix.isSquare
 
-<a id="entry-presentation_wasm_api_session_leading_coefficient"></a>
-<a id="placement-placement.wasm.wasm_module.module_leadingcoefficient.612cd4c6aaf2"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+`Matrix.isSquare(): boolean | null`
 
-```typescript signature
-leadingCoefficient(
-    input_expression: Expression,
-    variable: string,
-): Expression
-```
+Returns `unknown`.
 
-Coefficient of the highest power of `variable`; may contain the other free variables. Errors on non-polynomial or zero input.
+<a id="placement-placement.wasm.javascript_facade.matrix_issymmetricmatrix.c48f740a1f98"></a>
+### Matrix.isSymmetricMatrix
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+`Matrix.isSymmetricMatrix(): boolean | null`
 
-<a id="placement-placement.wasm.wasm_class.context_leadingcoefficient.fa8ae548276b"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.leadingCoefficient</code></p>
+Returns `unknown`.
 
-```typescript signature
-leadingCoefficient(
-    input_expression: Expression,
-    variable: string,
-): Expression
-```
+<a id="placement-placement.wasm.javascript_facade.matrix_isunitarymatrix.53b189737152"></a>
+### Matrix.isUnitaryMatrix
 
-</details>
+`Matrix.isUnitaryMatrix(): boolean | null`
 
-### polynomialGcd
+Returns `unknown`.
 
-<a id="entry-presentation_wasm_api_session_polynomial_gcd"></a>
-<a id="placement-placement.wasm.wasm_module.module_polynomialgcd.5dff4635a3c4"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Default context</p>
+<a id="placement-placement.wasm.javascript_facade.matrix_iszeromatrix.311afbe0ef29"></a>
+### Matrix.isZeroMatrix
 
-```typescript signature
-polynomialGcd(
-    a: Expression,
-    b: Expression,
-    variable: string,
-): Expression
-```
+`Matrix.isZeroMatrix(): boolean | null`
 
-Greatest common divisor of the two expressions as polynomials in `variable` (primitive, with the core's sign normalisation).
+Returns `unknown`.
 
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
+<a id="placement-placement.wasm.javascript_facade.matrix_multiply.2820cc1c77f6"></a>
+### Matrix.multiply
 
-<a id="placement-placement.wasm.wasm_class.context_polynomialgcd.32c4a46fd180"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Explicit context: <code>Context.polynomialGcd</code></p>
+`Matrix.multiply(other: Matrix): Matrix`
 
-```typescript signature
-polynomialGcd(
-    a: Expression,
-    b: Expression,
-    variable: string,
-): Expression
-```
+Returns `unknown`.
 
-</details>
+<a id="placement-placement.wasm.javascript_facade.matrix_tostring.afeb8a997d5b"></a>
+### Matrix.toString
 
-### raw
+`Matrix.toString(): string`
 
-<a id="entry-presentation_wasm_host_wasm_symifacade_raw"></a>
-<a id="placement-placement.wasm.javascript_facade.symifacade_raw.aef6294b0f07"></a>
-<p class="symi-entry-owner">SymiFacade property</p>
+Returns `unknown`.
 
-```typescript signature
-readonly raw: unknown
-```
-
-Public property placement for raw.
-
-### toString
-
-<a id="entry-presentation_wasm_api_expression_to_string"></a>
-<a id="placement-placement.wasm.javascript_facade.expression_tostring.f0177b10aa8c"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```typescript signature
-toString(): string
-```
-
-The mathematical text of the expression.
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
-<a id="placement-placement.wasm.wasm_class.expression_tostring.f64870e2f750"></a>
-<p class="symi-entry-owner">Raw WebAssembly: Expression method: <code>Expression.toString</code></p>
-
-```typescript signature
-toString(): string
-```
-
-</details>
-
+<a id="placement-placement.wasm.javascript_facade.piecewisebranch.d690830b18b4"></a>
 ### PiecewiseBranch
 
-<a id="entry-presentation_wasm_api_piecewisebranch"></a>
-<a id="placement-placement.wasm.javascript_facade.piecewisebranch.d690830b18b4"></a>
-<p class="symi-entry-owner">Type</p>
+`export interface PiecewiseBranch {`
 
-```typescript signature
-interface PiecewiseBranch
-```
+Returns `piecewise_branch`.
 
-Public type placement for PiecewiseBranch.
-
-#### PiecewiseBranch.condition
-
-<a id="entry-presentation_wasm_api_piecewisebranch_condition"></a>
 <a id="placement-placement.wasm.javascript_facade.piecewisebranch_condition.64f74fb11773"></a>
-<p class="symi-entry-owner">PiecewiseBranch property</p>
+### PiecewiseBranch.condition
 
-```typescript signature
-condition: ExpressionLike
-```
+`PiecewiseBranch.condition: ExpressionLike`
 
-Public property placement for condition.
+Returns `expression_like`.
 
-#### PiecewiseBranch.value
-
-<a id="entry-presentation_wasm_api_piecewisebranch_value"></a>
 <a id="placement-placement.wasm.javascript_facade.piecewisebranch_value.801f7c3c6459"></a>
-<p class="symi-entry-owner">PiecewiseBranch property</p>
+### PiecewiseBranch.value
 
-```typescript signature
-value: ExpressionLike
-```
+`PiecewiseBranch.value: ExpressionLike`
 
-Public property placement for value.
+Returns `expression_like`.
+
+<a id="placement-placement.wasm.javascript_facade.symicontexterror.8a9c0b29d21a"></a>
+### SymiContextError
+
+`export class SymiContextError extends SymiError {}`
+
+Returns `SymiContextError`.
+
+<a id="placement-placement.wasm.javascript_facade.symidomainerror.ca3777e8db87"></a>
+### SymiDomainError
+
+`export class SymiDomainError extends SymiError {}`
+
+Returns `SymiDomainError`.
+
+<a id="placement-placement.wasm.javascript_facade.symierror.4dd8ef89912f"></a>
+### SymiError
+
+`export class SymiError extends Error {`
+
+Returns `SymiError`.
+
+<a id="placement-placement.wasm.javascript_facade.symierror_category.6b54a640412f"></a>
+### SymiError.category
+
+`SymiError.readonly category: DiagnosticCategory`
+
+Returns `diagnostic_category`.
+
+<a id="placement-placement.wasm.javascript_facade.symierror_code.30f9d8518f8d"></a>
+### SymiError.code
+
+`SymiError.readonly code: DiagnosticCategory`
+
+Returns `diagnostic_category`.
+
+<a id="placement-placement.wasm.javascript_facade.symierror_expected.a59eda760e94"></a>
+### SymiError.expected
+
+`SymiError.readonly expected: string | null`
+
+Returns `string | null`.
+
+<a id="placement-placement.wasm.javascript_facade.symierror_hint.dc290abb816b"></a>
+### SymiError.hint
+
+`SymiError.readonly hint: string | null`
+
+Returns `string | null`.
+
+<a id="placement-placement.wasm.javascript_facade.symierror_operation.27d0151a414d"></a>
+### SymiError.operation
+
+`SymiError.readonly operation: string | null`
+
+Returns `string | null`.
+
+<a id="placement-placement.wasm.javascript_facade.symierror_parameterpath.4560085cfcfd"></a>
+### SymiError.parameterPath
+
+`SymiError.readonly parameterPath: string | null`
+
+Returns `string | null`.
+
+<a id="placement-placement.wasm.javascript_facade.symierror_received.ae703f25576e"></a>
+### SymiError.received
+
+`SymiError.readonly received: string | null`
+
+Returns `string | null`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_context.8eb8851d9fac"></a>
+### SymiFacade.Context
+
+`SymiFacade.Context: ContextConstructor`
+
+Returns `context_constructor`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_expression.93094cdfa844"></a>
+### SymiFacade.Expression
+
+`SymiFacade.Expression: unknown`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_matrix.7fe47f8c649d"></a>
+### SymiFacade.Matrix
+
+`SymiFacade.Matrix: unknown`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_absolutevalue.0f6b9a8f80d5"></a>
+### SymiFacade.absoluteValue
+
+`SymiFacade.absoluteValue(value: ExpressionLike): Expression`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_addassumptions.73e3352ec9e9"></a>
+### SymiFacade.addAssumptions
+
+`SymiFacade.addAssumptions(proposition: AssumptionProposition): void`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_algebraicassumption.f4ce6f6c9968"></a>
+### SymiFacade.algebraicAssumption
+
+`SymiFacade.algebraicAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_assumptionpropositionfromlogicalexpression.296cef2c3834"></a>
+### SymiFacade.assumptionPropositionFromLogicalExpression
+
+`SymiFacade.assumptionPropositionFromLogicalExpression(logicalExpression: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_clearallassumptions.759cb89d46d9"></a>
+### SymiFacade.clearAllAssumptions
+
+`SymiFacade.clearAllAssumptions(): void`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_complexassumption.6e9580247a40"></a>
+### SymiFacade.complexAssumption
+
+`SymiFacade.complexAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_complexentries.7d80eaa5cce4"></a>
+### SymiFacade.complexEntries
+
+`SymiFacade.complexEntries(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_compositeassumption.c21be76bc301"></a>
+### SymiFacade.compositeAssumption
+
+`SymiFacade.compositeAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_congruencemodulus.5433d54422f2"></a>
+### SymiFacade.congruenceModulus
+
+`SymiFacade.congruenceModulus(proposition: AssumptionProposition): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_congruentassumption.cc5d155981f1"></a>
+### SymiFacade.congruentAssumption
+
+`SymiFacade.congruentAssumption(left: ExpressionLike, right: ExpressionLike, modulus: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_couldhold.c5541088e29c"></a>
+### SymiFacade.couldHold
+
+`SymiFacade.couldHold(proposition: AssumptionProposition): boolean | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_definedassumption.d16c9ffedf97"></a>
+### SymiFacade.definedAssumption
+
+`SymiFacade.definedAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_deserializeassumptionproposition.baf0e5199161"></a>
+### SymiFacade.deserializeAssumptionProposition
+
+`SymiFacade.deserializeAssumptionProposition(text: string): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_diagonalmatrix.bdd963190e9d"></a>
+### SymiFacade.diagonalMatrix
+
+`SymiFacade.diagonalMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_equalassumption.24f0c321944b"></a>
+### SymiFacade.equalAssumption
+
+`SymiFacade.equalAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_evenassumption.d98feb706c03"></a>
+### SymiFacade.evenAssumption
+
+`SymiFacade.evenAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_extendedrealassumption.13b9ce694b78"></a>
+### SymiFacade.extendedRealAssumption
+
+`SymiFacade.extendedRealAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_finiteassumption.d74e89873ec3"></a>
+### SymiFacade.finiteAssumption
+
+`SymiFacade.finiteAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_fullrankmatrix.661d3f99feb1"></a>
+### SymiFacade.fullRankMatrix
+
+`SymiFacade.fullRankMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_greaterassumption.5d34c5df780d"></a>
+### SymiFacade.greaterAssumption
+
+`SymiFacade.greaterAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_greaterorequalassumption.71bfbd4b9653"></a>
+### SymiFacade.greaterOrEqualAssumption
+
+`SymiFacade.greaterOrEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_hermitianmatrix.75fe3584e710"></a>
+### SymiFacade.hermitianMatrix
+
+`SymiFacade.hermitianMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_identitymatrix.a0eea0b9ad1a"></a>
+### SymiFacade.identityMatrix
+
+`SymiFacade.identityMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_infiniteassumption.c08c0dd8e0f7"></a>
+### SymiFacade.infiniteAssumption
+
+`SymiFacade.infiniteAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_integerassumption.8d164e5dcee5"></a>
+### SymiFacade.integerAssumption
+
+`SymiFacade.integerAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_integerentries.177ca0ebd539"></a>
+### SymiFacade.integerEntries
+
+`SymiFacade.integerEntries(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_invertiblematrix.2a836dfb9d2c"></a>
+### SymiFacade.invertibleMatrix
+
+`SymiFacade.invertibleMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_irrationalassumption.cb191b491b47"></a>
+### SymiFacade.irrationalAssumption
+
+`SymiFacade.irrationalAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_leftoperand.7b6a1f8eac18"></a>
+### SymiFacade.leftOperand
+
+`SymiFacade.leftOperand(proposition: AssumptionProposition): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_lessassumption.208b6241d635"></a>
+### SymiFacade.lessAssumption
+
+`SymiFacade.lessAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_lessorequalassumption.9a7358375559"></a>
+### SymiFacade.lessOrEqualAssumption
+
+`SymiFacade.lessOrEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_lowertriangularmatrix.17896f244489"></a>
+### SymiFacade.lowerTriangularMatrix
+
+`SymiFacade.lowerTriangularMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_matrixshape.ba060181fcb1"></a>
+### SymiFacade.matrixShape
+
+`SymiFacade.matrixShape(value: Matrix, rows: number, columns: number): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_memberassumption.faafe5efd4c4"></a>
+### SymiFacade.memberAssumption
+
+`SymiFacade.memberAssumption(element: ExpressionLike, setExpression: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_membershipelement.0fc6fd43e584"></a>
+### SymiFacade.membershipElement
+
+`SymiFacade.membershipElement(proposition: AssumptionProposition): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_membershipset.4cc3c059c77b"></a>
+### SymiFacade.membershipSet
+
+`SymiFacade.membershipSet(proposition: AssumptionProposition): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_naturalassumption.545c396a1a8a"></a>
+### SymiFacade.naturalAssumption
+
+`SymiFacade.naturalAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_negativeassumption.a1faca33e449"></a>
+### SymiFacade.negativeAssumption
+
+`SymiFacade.negativeAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_nonnegativeassumption.fc8db15a6f1a"></a>
+### SymiFacade.nonnegativeAssumption
+
+`SymiFacade.nonnegativeAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_nonpositiveassumption.48fdc398654b"></a>
+### SymiFacade.nonpositiveAssumption
+
+`SymiFacade.nonpositiveAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_nonzeroassumption.dab21ea932d8"></a>
+### SymiFacade.nonzeroAssumption
+
+`SymiFacade.nonzeroAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_normalmatrix.ab26f6537ccc"></a>
+### SymiFacade.normalMatrix
+
+`SymiFacade.normalMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_notequalassumption.7f22dc0529bc"></a>
+### SymiFacade.notEqualAssumption
+
+`SymiFacade.notEqualAssumption(left: ExpressionLike, right: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_oddassumption.31a0bcf1ea66"></a>
+### SymiFacade.oddAssumption
+
+`SymiFacade.oddAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_orthogonalmatrix.5479e2dfb83c"></a>
+### SymiFacade.orthogonalMatrix
+
+`SymiFacade.orthogonalMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_positiveassumption.88eeb1edfead"></a>
+### SymiFacade.positiveAssumption
+
+`SymiFacade.positiveAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_positivedefinitematrix.5fa32eb988b6"></a>
+### SymiFacade.positiveDefiniteMatrix
+
+`SymiFacade.positiveDefiniteMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_positiveintegerassumption.fa356b4ace52"></a>
+### SymiFacade.positiveIntegerAssumption
+
+`SymiFacade.positiveIntegerAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_positivesemidefinitematrix.06f230347a8f"></a>
+### SymiFacade.positiveSemidefiniteMatrix
+
+`SymiFacade.positiveSemidefiniteMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_primeassumption.20ac88ea9ecd"></a>
+### SymiFacade.primeAssumption
+
+`SymiFacade.primeAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_rationalassumption.50a8e1879939"></a>
+### SymiFacade.rationalAssumption
+
+`SymiFacade.rationalAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_raw.aef6294b0f07"></a>
+### SymiFacade.raw
+
+`SymiFacade.readonly raw: unknown`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_realassumption.a407a99bc207"></a>
+### SymiFacade.realAssumption
+
+`SymiFacade.realAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_realentries.0dc13fbd48dc"></a>
+### SymiFacade.realEntries
+
+`SymiFacade.realEntries(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_relationkind.bb3ed2b1488e"></a>
+### SymiFacade.relationKind
+
+`SymiFacade.relationKind(proposition: AssumptionProposition): "equal" | "not_equal" | "less" | "less_or_equal" | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_rightoperand.48bc4bcc6b14"></a>
+### SymiFacade.rightOperand
+
+`SymiFacade.rightOperand(proposition: AssumptionProposition): Expression | null`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_singularmatrix.5c788f7b7710"></a>
+### SymiFacade.singularMatrix
+
+`SymiFacade.singularMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_squarematrix.07006ba57e12"></a>
+### SymiFacade.squareMatrix
+
+`SymiFacade.squareMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_symmetricmatrix.72efdbcc7ebb"></a>
+### SymiFacade.symmetricMatrix
+
+`SymiFacade.symmetricMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_transcendentalassumption.59b1bbba7112"></a>
+### SymiFacade.transcendentalAssumption
+
+`SymiFacade.transcendentalAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_unitarymatrix.a1c207d3bd64"></a>
+### SymiFacade.unitaryMatrix
+
+`SymiFacade.unitaryMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_uppertriangularmatrix.7fc7c36b3f9a"></a>
+### SymiFacade.upperTriangularMatrix
+
+`SymiFacade.upperTriangularMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_zeroassumption.750741382236"></a>
+### SymiFacade.zeroAssumption
+
+`SymiFacade.zeroAssumption(value: ExpressionLike): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_zeroequivalent.5b941b0c7ab2"></a>
+### SymiFacade.zeroEquivalent
+
+`SymiFacade.zeroEquivalent(value: ExpressionLike, constraint?: ExpressionLike | null): "true" | "false" | "unknown"`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symifacade_zeromatrix.c57cdcbf6784"></a>
+### SymiFacade.zeroMatrix
+
+`SymiFacade.zeroMatrix(value: Matrix): AssumptionProposition`
+
+Returns `unknown`.
+
+<a id="placement-placement.wasm.javascript_facade.symiinternalerror.9f964e7b647d"></a>
+### SymiInternalError
+
+`export class SymiInternalError extends SymiError {}`
+
+Returns `SymiInternalError`.
+
+<a id="placement-placement.wasm.javascript_facade.symiresourceerror.e63a87983441"></a>
+### SymiResourceError
+
+`export class SymiResourceError extends SymiError {}`
+
+Returns `SymiResourceError`.
+
+<a id="placement-placement.wasm.javascript_facade.symitypeerror.f73719bf5950"></a>
+### SymiTypeError
+
+`export class SymiTypeError extends SymiError {}`
+
+Returns `SymiTypeError`.
+
+<a id="placement-placement.wasm.wasm_class.context_changemonomialorder.e2a57ba75287"></a>
+### Context.changeMonomialOrder
+
+`pub fn change_monomial_order(&self, basis: Vec<Expression>, variables: Vec<String>, source_order: String, target_order: String) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_eliminationideal.04f94bd7d8f1"></a>
+### Context.eliminationIdeal
+
+`pub fn elimination_ideal(&self, generators: Vec<Expression>, variables: Vec<String>, eliminate: Vec<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_groebnerbasis.888872534bf7"></a>
+### Context.groebnerBasis
+
+`pub fn groebner_basis(&self, generators: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_idealintersection.acbee9138efd"></a>
+### Context.idealIntersection
+
+`pub fn ideal_intersection(&self, generators_left: Vec<Expression>, generators_right: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_idealmembership.c32c85f3e675"></a>
+### Context.idealMembership
+
+`pub fn ideal_membership(&self, element: &Expression, generators: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<bool>, JsError>`
+
+Returns `Result<Option<bool>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_idealproduct.a99fc7e4c6bf"></a>
+### Context.idealProduct
+
+`pub fn ideal_product(&self, generators_left: Vec<Expression>, generators_right: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_idealsum.cd86d2191b7e"></a>
+### Context.idealSum
+
+`pub fn ideal_sum(&self, generators_left: Vec<Expression>, generators_right: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_isolaterealroots.67ba1eadfe31"></a>
+### Context.isolateRealRoots
+
+`pub fn isolate_real_roots(&self, input_expression: &Expression, variable: &str) -> Result<Vec<IsolatingInterval>, JsError>`
+
+Returns `Result<Vec<isolating_interval>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_leadingcoefficient.fa8ae548276b"></a>
+### Context.leadingCoefficient
+
+`pub fn leading_coefficient(&self, input_expression: &Expression, variable: &str) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_matrixdiagonal.dba54c60749f"></a>
+### Context.matrixDiagonal
+
+`pub fn matrix_diagonal(&self, entries: Vec<Expression>) -> Result<Matrix, JsError>`
+
+Returns `Result<matrix, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_matrixidentity.843c4412d2b9"></a>
+### Context.matrixIdentity
+
+`pub fn matrix_identity(&self, size: usize) -> Result<Matrix, JsError>`
+
+Returns `Result<matrix, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_matrixzero.3576687a68ef"></a>
+### Context.matrixZero
+
+`pub fn matrix_zero(&self, rows: usize, columns: usize) -> Result<Matrix, JsError>`
+
+Returns `Result<matrix, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.context_polynomialgcd.32c4a46fd180"></a>
+### Context.polynomialGcd
+
+`pub fn polynomial_gcd(&self, a: &Expression, b: &Expression, variable: &str) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition.8d211ca9a1c3"></a>
+### CylindricalAlgebraicDecomposition
+
+`pub fn new(expressions: Vec<Expression>, variables: Vec<String>, equational_constraints: Option<Vec<usize>>) -> Result<CylindricalAlgebraicDecomposition, JsError>`
+
+Returns `Result<cylindrical_algebraic_decomposition, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_cellcount.2a3856c631ae"></a>
+### CylindricalAlgebraicDecomposition.cellCount
+
+`pub fn cell_count(&self) -> Result<usize, JsError>`
+
+Returns `Result<usize, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_celldimension.58941abd698b"></a>
+### CylindricalAlgebraicDecomposition.cellDimension
+
+`pub fn cell_dimension(&self, index: usize) -> Result<usize, JsError>`
+
+Returns `Result<usize, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_cellkind.b0d16f9fc18f"></a>
+### CylindricalAlgebraicDecomposition.cellKind
+
+`pub fn cell_kind(&self, index: usize) -> Result<String, JsError>`
+
+Returns `Result<String, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_cellsamplepoint.fb99fcd53a5b"></a>
+### CylindricalAlgebraicDecomposition.cellSamplePoint
+
+`pub fn cell_sample_point(&self, index: usize) -> Result<Vec<f64>, JsError>`
+
+Returns `Result<Vec<f64>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_cellsignvector.1dd5b1c2f6cd"></a>
+### CylindricalAlgebraicDecomposition.cellSignVector
+
+`pub fn cell_sign_vector(&self, index: usize) -> Result<Vec<i32>, JsError>`
+
+Returns `Result<Vec<i32>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_class.cylindricalalgebraicdecomposition_projectionoperatorused.34f87e17828d"></a>
+### CylindricalAlgebraicDecomposition.projectionOperatorUsed
+
+`pub fn projection_operator_used(&self) -> Result<String, JsError>`
+
+Returns `Result<String, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_changemonomialorder.fd8d2e8526b4"></a>
+### module.changeMonomialOrder
+
+`fn change_monomial_order(basis: Vec<Expression>, variables: Vec<String>, source_order: String, target_order: String) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_eliminationideal.99af73451cd1"></a>
+### module.eliminationIdeal
+
+`fn elimination_ideal(generators: Vec<Expression>, variables: Vec<String>, eliminate: Vec<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_groebnerbasis.5de4c9b11109"></a>
+### module.groebnerBasis
+
+`fn groebner_basis(generators: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_idealintersection.6e49de3034aa"></a>
+### module.idealIntersection
+
+`fn ideal_intersection(generators_left: Vec<Expression>, generators_right: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_idealmembership.c719b9f17e53"></a>
+### module.idealMembership
+
+`fn ideal_membership(element: &Expression, generators: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<bool>, JsError>`
+
+Returns `Result<Option<bool>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_idealproduct.fe3132e266f0"></a>
+### module.idealProduct
+
+`fn ideal_product(generators_left: Vec<Expression>, generators_right: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_idealsum.0fe68881ed36"></a>
+### module.idealSum
+
+`fn ideal_sum(generators_left: Vec<Expression>, generators_right: Vec<Expression>, variables: Vec<String>, order: Option<String>) -> Result<Option<Vec<Expression>>, JsError>`
+
+Returns `Result<Option<Vec<expression>>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_isolaterealroots.fdc9ee498713"></a>
+### module.isolateRealRoots
+
+`fn isolate_real_roots(input_expression: &Expression, variable: &str) -> Result<Vec<IsolatingInterval>, JsError>`
+
+Returns `Result<Vec<isolating_interval>, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_leadingcoefficient.612cd4c6aaf2"></a>
+### module.leadingCoefficient
+
+`fn leading_coefficient(input_expression: &Expression, variable: &str) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_matrixdiagonal.05ae03868956"></a>
+### module.matrixDiagonal
+
+`fn matrix_diagonal(entries: Vec<Expression>) -> Result<Matrix, JsError>`
+
+Returns `Result<matrix, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_matrixidentity.80b062f41bf7"></a>
+### module.matrixIdentity
+
+`fn matrix_identity(size: usize) -> Result<Matrix, JsError>`
+
+Returns `Result<matrix, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_matrixzero.47364d1ef8a0"></a>
+### module.matrixZero
+
+`fn matrix_zero(rows: usize, columns: usize) -> Result<Matrix, JsError>`
+
+Returns `Result<matrix, JsError>`.
+
+<a id="placement-placement.wasm.wasm_module.module_polynomialgcd.5dff4635a3c4"></a>
+### module.polynomialGcd
+
+`fn polynomial_gcd(a: &Expression, b: &Expression, variable: &str) -> Result<Expression, JsError>`
+
+Returns `Result<expression, JsError>`.
 

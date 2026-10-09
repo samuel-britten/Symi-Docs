@@ -43,25 +43,11 @@ other former module calls must remove the parentheses.
 
 ### pi
 
-<a id="entry-presentation_python_api_session_pi"></a>
-<a id="placement-placement.python.python_module.module_pi.b74b97bbdd43"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-pi: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_pi.93793c5ebb94"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.pi</code></p>
+`Context.pi`
 
-```python signature
-pi: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_pi.b74b97bbdd43"></a>
+`symi.pi`
 
 
 The circle constant \(\pi\). Exact in every arithmetic operation; use
@@ -70,25 +56,11 @@ decimal value.
 
 ### e
 
-<a id="entry-presentation_python_api_session_e"></a>
-<a id="placement-placement.python.python_module.module_e.ca9b49b3b5c4"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-e: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_e.0b54eb1f2bd4"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.e</code></p>
+`Context.e`
 
-```python signature
-e: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_e.ca9b49b3b5c4"></a>
+`symi.e`
 
 
 Euler's number \(e\), the base of the natural logarithm. `exp(1)` and this
@@ -96,25 +68,11 @@ constant are the same expression.
 
 ### euler_gamma
 
-<a id="entry-presentation_python_api_session_euler_gamma"></a>
-<a id="placement-placement.python.python_module.module_euler_gamma.4e84cb2dd7bd"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-euler_gamma: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_euler_gamma.8bc94932469c"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.euler_gamma</code></p>
+`Context.euler_gamma`
 
-```python signature
-euler_gamma: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_euler_gamma.4e84cb2dd7bd"></a>
+`symi.euler_gamma`
 
 
 The Euler–Mascheroni constant \(\gamma\). It appears in closed forms produced by
@@ -122,25 +80,11 @@ The Euler–Mascheroni constant \(\gamma\). It appears in closed forms produced 
 
 ### imaginary_unit
 
-<a id="entry-presentation_python_api_session_imaginary_unit"></a>
-<a id="placement-placement.python.python_module.module_imaginary_unit.be4f2bad8c68"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-imaginary_unit: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_imaginary_unit.5b7cac4e8c05"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.imaginary_unit</code></p>
+`Context.imaginary_unit`
 
-```python signature
-imaginary_unit: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_imaginary_unit.be4f2bad8c68"></a>
+`symi.imaginary_unit`
 
 
 The imaginary unit \(i\) with \(i^2 = -1\). Use
@@ -150,25 +94,11 @@ decompose a complex expression.
 
 ### infinity
 
-<a id="entry-presentation_python_api_session_infinity"></a>
-<a id="placement-placement.python.python_module.module_infinity.078e1f396c68"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-infinity: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_infinity.ee6849fe5746"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.infinity</code></p>
+`Context.infinity`
 
-```python signature
-infinity: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_infinity.078e1f396c68"></a>
+`symi.infinity`
 
 
 Unsigned positive infinity \(\infty\). Negate it for \(-\infty\). Both are accepted

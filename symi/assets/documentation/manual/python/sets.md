@@ -7,35 +7,11 @@ expressions page.
 
 ### interval
 
-<a id="entry-presentation_python_api_session_interval"></a>
-<a id="placement-placement.python.python_module.module_interval.321e53c8b2dc"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-interval(
-    lower: ExpressionLike,
-    upper: ExpressionLike,
-    lower_open: bool = False,
-    upper_open: bool = False,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_interval.b521c8b318eb"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.interval</code></p>
+`Context.interval(lower, upper, lower_open = False, upper_open = False)`
 
-```python signature
-interval(
-    lower: ExpressionLike,
-    upper: ExpressionLike,
-    lower_open: bool = False,
-    upper_open: bool = False,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_interval.321e53c8b2dc"></a>
+`symi.interval(lower, upper, lower_open = False, upper_open = False)`
 
 
 Real-line interval. Closed by default; endpoints at infinity are forced
@@ -44,50 +20,22 @@ finite set, \((-\infty, \infty)\to\) real line).
 
 ### real_line
 
-<a id="entry-presentation_python_api_session_real_line"></a>
-<a id="placement-placement.python.python_module.module_real_line.db620c0c71e9"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-real_line: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_real_line.5cf887e6a01d"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.real_line</code></p>
+`Context.real_line`
 
-```python signature
-real_line: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_real_line.db620c0c71e9"></a>
+`symi.real_line`
 
 
 The set \(\mathbb{R}\).
 
 ### complex_plane
 
-<a id="entry-presentation_python_api_session_complex_plane"></a>
-<a id="placement-placement.python.python_module.module_complex_plane.aad43e847872"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-complex_plane: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_complex_plane.69efb1c1c303"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.complex_plane</code></p>
+`Context.complex_plane`
 
-```python signature
-complex_plane: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_complex_plane.aad43e847872"></a>
+`symi.complex_plane`
 
 
 The set \(\mathbb{C}\) — the ambient universe, and the domain a variable ranges over when it
@@ -95,75 +43,33 @@ carries no realness assumption.
 
 ### integer_set
 
-<a id="entry-presentation_python_api_session_integer_set"></a>
-<a id="placement-placement.python.python_module.module_integer_set.612a8761539e"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-integer_set: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_integer_set.95cf130dd07a"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.integer_set</code></p>
+`Context.integer_set`
 
-```python signature
-integer_set: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_integer_set.612a8761539e"></a>
+`symi.integer_set`
 
 
 The set \(\mathbb{Z}\).
 
 ### empty_set
 
-<a id="entry-presentation_python_api_session_empty_set"></a>
-<a id="placement-placement.python.python_module.module_empty_set.031dbed53002"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-empty_set: expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_empty_set.039059383aa5"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.empty_set</code></p>
+`Context.empty_set`
 
-```python signature
-empty_set: Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_empty_set.031dbed53002"></a>
+`symi.empty_set`
 
 
 The empty set \(\varnothing\).
 
 ### finite_set
 
-<a id="entry-presentation_python_api_session_finite_set"></a>
-<a id="placement-placement.python.python_module.module_finite_set.36a203ac265d"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-finite_set(elements: Any) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_finite_set.2461ab4bb6d2"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.finite_set</code></p>
+`Context.finite_set(elements)`
 
-```python signature
-finite_set(elements: Any) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_finite_set.36a203ac265d"></a>
+`symi.finite_set(elements)`
 
 
 Finite set; elements are deduplicated and canonically ordered. An empty list
@@ -171,25 +77,11 @@ gives the empty set.
 
 ### set_union
 
-<a id="entry-presentation_python_api_session_set_union"></a>
-<a id="placement-placement.python.python_module.module_set_union.d504e85aca47"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-set_union(set_a: ExpressionLike, set_b: ExpressionLike) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_set_union.ec45d9337ffd"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.set_union</code></p>
+`Context.set_union(set_a, set_b)`
 
-```python signature
-set_union(set_a: ExpressionLike, set_b: ExpressionLike) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_set_union.d504e85aca47"></a>
+`symi.set_union(set_a, set_b)`
 
 
 Union, computed eagerly where the structural rules allow (overlapping or
@@ -198,31 +90,11 @@ otherwise the structural `set_union` node.
 
 ### set_intersection
 
-<a id="entry-presentation_python_api_session_set_intersection"></a>
-<a id="placement-placement.python.python_module.module_set_intersection.6b4737780adb"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-set_intersection(
-    set_a: ExpressionLike,
-    set_b: ExpressionLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_set_intersection.472a09b9587f"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.set_intersection</code></p>
+`Context.set_intersection(set_a, set_b)`
 
-```python signature
-set_intersection(
-    set_a: ExpressionLike,
-    set_b: ExpressionLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_set_intersection.6b4737780adb"></a>
+`symi.set_intersection(set_a, set_b)`
 
 
 Intersection, computed eagerly where the structural rules allow (interval
@@ -231,64 +103,22 @@ structural `set_intersection` node.
 
 ### set_complement
 
-<a id="entry-presentation_python_api_session_set_complement"></a>
-<a id="placement-placement.python.python_module.module_set_complement.f606e0cf50e3"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-set_complement(
-    set_a: ExpressionLike,
-    set_b: ExpressionLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_set_complement.e014b0241cf8"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.set_complement</code></p>
+`Context.set_complement(set_a, set_b)`
 
-```python signature
-set_complement(
-    set_a: ExpressionLike,
-    set_b: ExpressionLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_set_complement.f606e0cf50e3"></a>
+`symi.set_complement(set_a, set_b)`
 
 
 The relative complement \(a \setminus b\).
 
 ### image_set
 
-<a id="entry-presentation_python_api_session_image_set"></a>
-<a id="placement-placement.python.python_module.module_image_set.55f32b042201"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-image_set(
-    lambda_expression: ExpressionLike,
-    variable: VariableLike,
-    domain: ExpressionLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_image_set.dfa323774f39"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.image_set</code></p>
+`Context.image_set(lambda_expression, variable, domain)`
 
-```python signature
-image_set(
-    lambda_expression: ExpressionLike,
-    variable: VariableLike,
-    domain: ExpressionLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_image_set.55f32b042201"></a>
+`symi.image_set(lambda_expression, variable, domain)`
 
 
 The set \(\{\operatorname{lambda\_expression} : \operatorname{variable} \in \operatorname{domain}\}\); `variable` is a binder
@@ -297,33 +127,11 @@ construction.
 
 ### condition_set
 
-<a id="entry-presentation_python_api_session_condition_set"></a>
-<a id="placement-placement.python.python_module.module_condition_set.44c87329a459"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-condition_set(
-    variable: VariableLike,
-    condition: ExpressionLike,
-    domain: ExpressionLike,
-) -> Expression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_condition_set.c049b7dcd734"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.condition_set</code></p>
+`Context.condition_set(variable, condition, domain)`
 
-```python signature
-condition_set(
-    variable: VariableLike,
-    condition: ExpressionLike,
-    domain: ExpressionLike,
-) -> Expression
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_condition_set.44c87329a459"></a>
+`symi.condition_set(variable, condition, domain)`
 
 
 The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{condition}\}\). This is also `solveset`'s honest
@@ -331,31 +139,11 @@ The set \(\{\operatorname{variable} \in \operatorname{domain} : \operatorname{co
 
 ### is_member
 
-<a id="entry-presentation_python_api_session_is_member"></a>
-<a id="placement-placement.python.python_module.module_is_member.7226309c7029"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-is_member(
-    element: ExpressionLike,
-    set: ExpressionLike,
-) -> Optional[bool]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_is_member.db3842495732"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.is_member</code></p>
+`Context.is_member(element, set)`
 
-```python signature
-is_member(
-    element: ExpressionLike,
-    set: ExpressionLike,
-) -> Optional[bool]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_is_member.7226309c7029"></a>
+`symi.is_member(element, set)`
 
 
 Three-valued membership: `True` only on structural proof, `False` only on a
@@ -364,31 +152,11 @@ intervals, unions, intersections, complements.
 
 ### is_subset
 
-<a id="entry-presentation_python_api_session_is_subset"></a>
-<a id="placement-placement.python.python_module.module_is_subset.c736daad2ea6"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-is_subset(
-    set_a: ExpressionLike,
-    set_b: ExpressionLike,
-) -> Optional[bool]
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_is_subset.bb5f672f5888"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.is_subset</code></p>
+`Context.is_subset(set_a, set_b)`
 
-```python signature
-is_subset(
-    set_a: ExpressionLike,
-    set_b: ExpressionLike,
-) -> Optional[bool]
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_is_subset.c736daad2ea6"></a>
+`symi.is_subset(set_a, set_b)`
 
 
 Three-valued subset query: \(\varnothing \subseteq\) anything, structural equality, finite-set
@@ -396,39 +164,11 @@ element checks, interval-in-interval endpoint tests; `None` otherwise.
 
 ### enumerate_set_in_interval
 
-<a id="entry-presentation_python_api_session_enumerate_set_in_interval"></a>
-<a id="placement-placement.python.python_module.module_enumerate_set_in_interval.abc35f2617b9"></a>
-<p class="symi-entry-owner">Default context</p>
-
-```python signature
-enumerate_set_in_interval(
-    set: ExpressionLike,
-    lower: ExpressionLike,
-    upper: ExpressionLike,
-    lower_inclusive: bool = True,
-    upper_inclusive: bool = True,
-    limit: Optional[int] = None,
-) -> Any
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.python.python_class.context_enumerate_set_in_interval.6f907bbd66be"></a>
-<p class="symi-entry-owner">Explicit context: <code>Context.enumerate_set_in_interval</code></p>
+`Context.enumerate_set_in_interval(set, lower, upper, lower_inclusive=True, upper_inclusive=True, limit=None)`
 
-```python signature
-enumerate_set_in_interval(
-    set: ExpressionLike,
-    lower: ExpressionLike,
-    upper: ExpressionLike,
-    lower_inclusive: bool = True,
-    upper_inclusive: bool = True,
-    limit: Optional[int] = None,
-) -> Any
-```
-
-</details>
+<a id="placement-placement.python.python_module.module_enumerate_set_in_interval.abc35f2617b9"></a>
+`symi.enumerate_set_in_interval(set, lower, upper, lower_inclusive=True, upper_inclusive=True, limit=None)`
 
 
 Exact elements of a set inside \([\operatorname{lower}, \operatorname{upper}]\), in increasing
@@ -456,31 +196,4 @@ print(symi.set_intersection(left, right))
 print(symi.is_member(2, left))
 print(symi.solveset(symi.sin(x), "x"))
 ```
-
-
-## Additional API
-
-### __iter__
-
-<a id="entry-presentation_python_host_python_expression_iter"></a>
-<a id="placement-placement.python.python_class.expression_iter.f81354937f72"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```python signature
-__iter__() -> Any
-```
-
-Iterate the elements of a `finite_set` expression.
-
-### __len__
-
-<a id="entry-presentation_python_host_python_expression_len"></a>
-<a id="placement-placement.python.python_class.expression_len.d43139256aa0"></a>
-<p class="symi-entry-owner">Expression method</p>
-
-```python signature
-__len__() -> int
-```
-
-Number of elements of a `finite_set` expression.
 

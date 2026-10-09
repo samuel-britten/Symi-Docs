@@ -2,28 +2,11 @@
 
 ### zero_equivalent
 
-<a id="entry-presentation_kotlin_api_session_zero_equivalent"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_zeroequivalent.86ef8fbb442e"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun zeroEquivalent(
-    target: UniffiExpression,
-    constraint: UniffiExpression?,
-): UniffiZeroEquivalenceVerdict
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_zeroequivalent.2023a1153ee4"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.zeroEquivalent</code></p>
+`UniffiExpression.zeroEquivalent(constraint: UniffiExpression?): UniffiZeroEquivalenceVerdict`
 
-```kotlin signature
-fun zeroEquivalent(constraint: UniffiExpression?): UniffiZeroEquivalenceVerdict
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_zeroequivalent.86ef8fbb442e"></a>
+`UniffiSession.zeroEquivalent(target: UniffiExpression, constraint: UniffiExpression?): UniffiZeroEquivalenceVerdict`
 
 
 

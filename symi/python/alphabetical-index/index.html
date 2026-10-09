@@ -1,872 +1,101 @@
 <!DOCTYPE html>
-<html lang="en" data-language="python">
+<html id="doc" class="h-full w-full" lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Alphabetical index — Symi Python documentation</title>
-        <meta name="description" content="One link per documented entry, in name order. An entry owned by an object is spelled with its owner." />
-        <link rel="canonical" href="/symi/python/alphabetical-index/" />
-        <meta name="color-scheme" content="light dark" />
-        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png" />
-        <link rel="stylesheet" href="/symi/assets/site/vendor/katex/katex.min.css" />
-        <link rel="stylesheet" href="/symi/assets/site/styles.css" />
-        <script>
-            document.documentElement.classList.add("symi-scripted");
-            try {
-                const stored_theme = localStorage.getItem("symi-documentation-theme");
-                if (stored_theme === "light" || stored_theme === "dark") {
-                    document.documentElement.dataset.theme = stored_theme;
-                }
-            } catch (error) {}
-        </script>
-        <script type="module" src="/symi/assets/site/documentation.js"></script>
-    </head>
-    <body data-page="alphabetical-index" data-default-page="introduction" data-route-kind="page">
-        <a class="symi-skip-link" href="#documentation_content">Skip to content</a>
-        <header class="symi-header">
-            <button type="button" class="symi-icon-button symi-menu-button" aria-controls="documentation_sidebar" aria-expanded="false" aria-label="Open topics" hidden>
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
-            </button>
-            <a class="symi-brand" href="/symi/python/introduction/">
-                <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="" width="32" height="32" />
-                <span class="symi-brand-name">Symi <span class="symi-brand-suffix">Docs</span></span>
-            </a>
-            <div class="symi-header-tools">
-                <div class="symi-search" role="search" hidden>
-                    <label class="symi-visually-hidden" for="symi-search-input">Search the Python documentation</label>
-                    <input id="symi-search-input" class="symi-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search" aria-controls="symi-search-panel" aria-expanded="false" />
-                    <kbd class="symi-search-shortcut" aria-hidden="true">/</kbd>
-                    <div id="symi-search-panel" class="symi-search-panel" hidden>
-                        <div class="symi-search-toolbar">
-                            <span class="symi-search-scope-label" id="symi-search-scope-label">Scope</span>
-                            <div class="symi-segmented" role="group" aria-labelledby="symi-search-scope-label">
-                                <button type="button" class="symi-search-scope" data-scope="language" aria-pressed="true">Python</button>
-                                <button type="button" class="symi-search-scope" data-scope="all" aria-pressed="false">All languages</button>
-                            </div>
-                        </div>
-                        <p class="symi-search-status" role="status" aria-live="polite"></p>
-                        <ul class="symi-search-results"></ul>
-                    </div>
-                </div>
-                <button type="button" class="symi-icon-button symi-search-button" aria-label="Search" aria-expanded="false" hidden>
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
-                </button>
-                <details class="symi-language-menu">
-                    <summary class="symi-language-summary" aria-label="Language: Python"><span>Python</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg></summary>
-                    <ul class="symi-language-list"><li><a class="symi-language-option" href="/symi/python/alphabetical-index/" data-language="python" hreflang="en" aria-current="true"><span class="symi-language-check" aria-hidden="true">✓</span>Python</a></li><li><a class="symi-language-option" href="/symi/wasm/alphabetical-index/" data-language="wasm" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>WASM / JavaScript</a></li><li><a class="symi-language-option" href="/symi/kotlin/alphabetical-index/" data-language="kotlin" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Kotlin</a></li><li><a class="symi-language-option" href="/symi/swift/alphabetical-index/" data-language="swift" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Swift</a></li><li><a class="symi-language-option" href="/symi/rust/alphabetical-index/" data-language="rust" hreflang="en"><span class="symi-language-check" aria-hidden="true"></span>Rust</a></li></ul>
-                </details>
-                <button type="button" class="symi-icon-button symi-theme-button" aria-label="Colour theme: match system" hidden>
-                    <svg class="symi-theme-icon-system" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="symi-icon-fill" /></svg>
-                    <svg class="symi-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
-                    <svg class="symi-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>
-                </button>
-            </div>
-        </header>
-        <div class="symi-layout">
-            <nav id="documentation_sidebar" class="symi-sidebar" aria-label="Documentation topics">
-                <div class="symi-sidebar-header">
-                    <span class="symi-sidebar-title">Topics</span>
-                    <button type="button" class="symi-icon-button symi-sidebar-close" aria-label="Close topics">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
-                    </button>
-                </div>
-                <ul class="symi-nav-categories"><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Introduction and getting started">Getting started</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/introduction/">Symi language APIs</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/getting-started-python/">Getting started: Python</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Contexts, sessions, objects, conversions, evaluation, and diagnostics">Contexts and objects</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/default-context/">The default context and module-level functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-default-context" data-page="default-context"><span class="symi-visually-hidden">Show entries in The default context and module-level functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-default-context" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/object-model/">Object model</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-object-model" data-page="object-model"><span class="symi-visually-hidden">Show entries in Object model</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-object-model" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/conversion-rules/">Conversions and collections</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/context-safety/">Context safety</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-context-safety" data-page="context-safety"><span class="symi-visually-hidden">Show entries in Context safety</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-context-safety" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/diagnostics/">Diagnostics and outcomes</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/migration/">Migration</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Construction, parsing, serialization, and output">Construction and output</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/construction-and-parsing/">Construction and parsing</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-construction-and-parsing" data-page="construction-and-parsing"><span class="symi-visually-hidden">Show entries in Construction and parsing</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-construction-and-parsing" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/serialization-and-output/">Serialization and output</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-serialization-and-output" data-page="serialization-and-output"><span class="symi-visually-hidden">Show entries in Serialization and output</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-serialization-and-output" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/deferred-forms/">Deferred forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-deferred-forms" data-page="deferred-forms"><span class="symi-visually-hidden">Show entries in Deferred forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-deferred-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Constants and numeric evaluation">Constants and evaluation</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/evaluation-and-constants/">Evaluation and constants</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-evaluation-and-constants" data-page="evaluation-and-constants"><span class="symi-visually-hidden">Show entries in Evaluation and constants</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-evaluation-and-constants" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Elementary functions">Elementary functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/elementary-functions/">Elementary functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-elementary-functions" data-page="elementary-functions"><span class="symi-visually-hidden">Show entries in Elementary functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-elementary-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/relations/">Relations and predicates</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-relations" data-page="relations"><span class="symi-visually-hidden">Show entries in Relations and predicates</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-relations" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Special functions">Special functions</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/special-functions/">Special functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-special-functions" data-page="special-functions"><span class="symi-visually-hidden">Show entries in Special functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-special-functions" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Expression inspection, transformation, and simplification">Simplification and rewriting</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/expressions/">Expression methods</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-expressions" data-page="expressions"><span class="symi-visually-hidden">Show entries in Expression methods</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-expressions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/simplification-general/">General simplification</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-simplification-general" data-page="simplification-general"><span class="symi-visually-hidden">Show entries in General simplification</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-simplification-general" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/algebraic-transforms/">Algebraic transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-algebraic-transforms" data-page="algebraic-transforms"><span class="symi-visually-hidden">Show entries in Algebraic transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-algebraic-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/trigonometric-complex-rewrites/">Trigonometric and complex rewrites</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-trigonometric-complex-rewrites" data-page="trigonometric-complex-rewrites"><span class="symi-visually-hidden">Show entries in Trigonometric and complex rewrites</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-trigonometric-complex-rewrites" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/specialized-canonical-forms/">Specialized canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-specialized-canonical-forms" data-page="specialized-canonical-forms"><span class="symi-visually-hidden">Show entries in Specialized canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-specialized-canonical-forms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Calculus, series, residues, and integral transforms">Calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/calculus/">Calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-calculus" data-page="calculus"><span class="symi-visually-hidden">Show entries in Calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-calculus" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/series/">Series and residues</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-series" data-page="series"><span class="symi-visually-hidden">Show entries in Series and residues</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-series" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/integral-transforms/">Integral transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-integral-transforms" data-page="integral-transforms"><span class="symi-visually-hidden">Show entries in Integral transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-integral-transforms" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Equations, differential equations, recurrence equations, and optimization">Equations and optimization</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/solving/">Solving</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-solving" data-page="solving"><span class="symi-visually-hidden">Show entries in Solving</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-solving" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/undefined-functions/">Undefined functions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-undefined-functions" data-page="undefined-functions"><span class="symi-visually-hidden">Show entries in Undefined functions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-undefined-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/differential-equations/">Differential and recurrence equations</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/ordinary-differential-equations/">Ordinary differential equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-ordinary-differential-equations" data-page="ordinary-differential-equations"><span class="symi-visually-hidden">Show entries in Ordinary differential equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-ordinary-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/partial-differential-equations/">Partial differential equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-partial-differential-equations" data-page="partial-differential-equations"><span class="symi-visually-hidden">Show entries in Partial differential equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-partial-differential-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/partial-differential-equation-results/">Partial differential equation results</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-partial-differential-equation-results" data-page="partial-differential-equation-results"><span class="symi-visually-hidden">Show entries in Partial differential equation results</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-partial-differential-equation-results" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/recurrence-equations/">Recurrence equations</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-recurrence-equations" data-page="recurrence-equations"><span class="symi-visually-hidden">Show entries in Recurrence equations</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-recurrence-equations" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/optimization/">Optimization</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-optimization" data-page="optimization"><span class="symi-visually-hidden">Show entries in Optimization</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-optimization" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Polynomials, algebra, matrices, and cylindrical algebraic decomposition">Algebra and matrices</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/polynomials/">Polynomial queries</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-polynomials" data-page="polynomials"><span class="symi-visually-hidden">Show entries in Polynomial queries</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-polynomials" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-construction/">Matrix construction and access</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-construction" data-page="matrix-construction"><span class="symi-visually-hidden">Show entries in Matrix construction and access</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-construction" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/linear-algebra/">Linear algebra</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-linear-algebra" data-page="linear-algebra"><span class="symi-visually-hidden">Show entries in Linear algebra</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-linear-algebra" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-canonical-forms/">Matrix canonical forms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-canonical-forms" data-page="matrix-canonical-forms"><span class="symi-visually-hidden">Show entries in Matrix canonical forms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-canonical-forms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/matrix-functions/">Matrix functions and Jordan form</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-matrix-functions" data-page="matrix-functions"><span class="symi-visually-hidden">Show entries in Matrix functions and Jordan form</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-matrix-functions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/cad/">Cylindrical algebraic decomposition</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-cad" data-page="cad"><span class="symi-visually-hidden">Show entries in Cylindrical algebraic decomposition</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-cad" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Sets, logic, number theory, and combinatorics">Discrete mathematics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/sets/">Sets</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-sets" data-page="sets"><span class="symi-visually-hidden">Show entries in Sets</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-sets" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logic/">Boolean algebra and logic</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logic" data-page="logic"><span class="symi-visually-hidden">Show entries in Boolean algebra and logic</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logic" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/logical-transforms/">Logical transforms</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-logical-transforms" data-page="logical-transforms"><span class="symi-visually-hidden">Show entries in Logical transforms</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-logical-transforms" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/number-theory/">Integer number theory</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-number-theory" data-page="number-theory"><span class="symi-visually-hidden">Show entries in Integer number theory</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-number-theory" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/combinatorics/">Combinatorics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-combinatorics" data-page="combinatorics"><span class="symi-visually-hidden">Show entries in Combinatorics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-combinatorics" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Probability and statistics">Probability and statistics</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/statistics/">Statistics</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-statistics" data-page="statistics"><span class="symi-visually-hidden">Show entries in Statistics</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-statistics" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/distribution-reference/">Probability distribution registry</a></div></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Geometry">Geometry</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/geometry/">Geometry</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-geometry" data-page="geometry"><span class="symi-visually-hidden">Show entries in Geometry</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-geometry" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details><summary class="symi-nav-category-title" title="Vector calculus">Vector calculus</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/vector-calculus/">Vector calculus</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-vector-calculus" data-page="vector-calculus"><span class="symi-visually-hidden">Show entries in Vector calculus</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-vector-calculus" hidden></ul></li></ul></details></li><li class="symi-nav-category"><details open><summary class="symi-nav-category-title" title="Complete API reference and indexes">Reference and indexes</summary><ul class="symi-nav-pages"><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/structured-results/">Structured results</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/assumptions/">Assumptions</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-assumptions" data-page="assumptions"><span class="symi-visually-hidden">Show entries in Assumptions</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-assumptions" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/zero-equivalence/">Zero equivalence</a><button type="button" class="symi-nav-expand" aria-expanded="false" aria-controls="symi-nav-entries-zero-equivalence" data-page="zero-equivalence"><span class="symi-visually-hidden">Show entries in Zero equivalence</span></button></div><ul class="symi-nav-entries" id="symi-nav-entries-zero-equivalence" hidden></ul></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/api-reference/">Complete placement index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/category-index/">Category index</a></div></li><li class="symi-nav-page symi-nav-page-current"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/alphabetical-index/" aria-current="page">Alphabetical index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/owner-index/">Owner index</a></div></li><li class="symi-nav-page"><div class="symi-nav-page-row"><a class="symi-nav-page-link" href="/symi/python/result-type-index/">Result-type index</a></div></li></ul></details></li></ul>
-            </nav>
-            <div class="symi-drawer-backdrop" hidden></div>
-            <main id="documentation_main" class="symi-main">
-                <nav class="symi-breadcrumbs" aria-label="Breadcrumb"><ol class="symi-breadcrumb-list"><li><a href="/symi/python/introduction/">Python</a></li><li>Reference and indexes</li><li><span aria-current="page">Alphabetical index</span></li></ol></nav>
-                
-                <p id="symi-unavailable-notice" class="symi-notice symi-notice-warning" hidden></p>
-                <div id="symi-retired-anchor-notice" class="symi-notice symi-notice-warning" hidden></div>
-                <details class="symi-page-contents" hidden>
-                    <summary>On this page</summary>
-                    
-                </details>
-                <article id="documentation_content" class="symi-article" tabindex="-1">
-<h1 id="page-title">Alphabetical index</h1>
-<p>One link per documented entry, in name order. An entry owned by an object is spelled with its owner.</p>
-<h2 id="all_entries">All entries<a class="symi-heading-permalink" href="#all_entries" aria-label="Link to this section: All entries">#</a></h2>
-<ul>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_add"><code>__add__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_bool"><code>__bool__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_eq"><code>__eq__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_getattribute"><code>__getattribute__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_hash"><code>__hash__</code></a> — Expression method</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_host_python_expression_iter"><code>__iter__</code></a> — Expression method</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_host_python_expression_len"><code>__len__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_mul"><code>__mul__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_ne"><code>__ne__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_neg"><code>__neg__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_pow"><code>__pow__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_radd"><code>__radd__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_repr"><code>__repr__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_rmul"><code>__rmul__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_rpow"><code>__rpow__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_rsub"><code>__rsub__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_rtruediv"><code>__rtruediv__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_str"><code>__str__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_sub"><code>__sub__</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_host_python_expression_truediv"><code>__truediv__</code></a> — Expression method</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_abs"><code>abs</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_add_assumptions"><code>add_assumptions</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_algebraic_assumption"><code>algebraic_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arccos"><code>arccos</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arccosh"><code>arccosh</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arccot"><code>arccot</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arccoth"><code>arccoth</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arccsc"><code>arccsc</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arccsch"><code>arccsch</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arcsec"><code>arcsec</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arcsech"><code>arcsech</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arcsin"><code>arcsin</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arcsinh"><code>arcsinh</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arctan"><code>arctan</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_arctanh"><code>arctanh</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_ask"><code>ask</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_assuming"><code>assuming</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_assumption_proposition_from_logical_expression"><code>assumption_proposition_from_logical_expression</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition"><code>AssumptionProposition</code></a> — Type</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_host_python_assumptionproposition_str"><code>AssumptionProposition.__str__</code></a> — AssumptionProposition method</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_and"><code>AssumptionProposition.and</code></a> — AssumptionProposition method</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_congruence_modulus"><code>AssumptionProposition.congruence_modulus</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_left_operand"><code>AssumptionProposition.left_operand</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_membership_element"><code>AssumptionProposition.membership_element</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_membership_set"><code>AssumptionProposition.membership_set</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_not"><code>AssumptionProposition.not</code></a> — AssumptionProposition method</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_or"><code>AssumptionProposition.or</code></a> — AssumptionProposition method</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_relation_kind"><code>AssumptionProposition.relation_kind</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_right_operand"><code>AssumptionProposition.right_operand</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionproposition_serialize"><code>AssumptionProposition.serialize</code></a> — Default context</li>
-<li><a href="/symi/python/default-context/#entry-presentation_python_api_session_assumptions_of"><code>assumptions_of</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_assumptionscope"><code>AssumptionScope</code></a> — Type</li>
-<li><a href="/symi/python/combinatorics/#entry-presentation_python_api_session_bell_number"><code>bell_number</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_beta"><code>beta</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_binomial"><code>binomial</code></a> — Default context</li>
-<li><a href="/symi/python/simplification-general/#entry-presentation_python_api_session_cancel"><code>cancel</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_canonicalize_partial_differential_equation"><code>canonicalize_partial_differential_equation</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_carlson_rc"><code>carlson_rc</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_carlson_rd"><code>carlson_rd</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_carlson_rf"><code>carlson_rf</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_carlson_rj"><code>carlson_rj</code></a> — Default context</li>
-<li><a href="/symi/python/combinatorics/#entry-presentation_python_api_session_catalan_number"><code>catalan_number</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_ceiling"><code>ceiling</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_change_monomial_order"><code>change_monomial_order</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_change_partial_differential_equation_variables"><code>change_partial_differential_equation_variables</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_characteristic_function"><code>characteristic_function</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_chebyshev_polynomial_first_kind"><code>chebyshev_polynomial_first_kind</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_chebyshev_polynomial_second_kind"><code>chebyshev_polynomial_second_kind</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_chinese_remainder"><code>chinese_remainder</code></a> — Default context</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_circle2d"><code>Circle2d</code></a> — Circle2d constructor</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_circle2d_getattribute"><code>Circle2d.__getattribute__</code></a> — Circle2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_circle2d_repr"><code>Circle2d.__repr__</code></a> — Circle2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_circle2d_area"><code>Circle2d.area</code></a> — Circle2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_circle2d_center"><code>Circle2d.center</code></a> — Circle2d property</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_circle2d_circumference"><code>Circle2d.circumference</code></a> — Circle2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_circle2d_equation"><code>Circle2d.equation</code></a> — Circle2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_circle2d_is_stale"><code>Circle2d.is_stale</code></a> — Circle2d property</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_circle2d_radius"><code>Circle2d.radius</code></a> — Circle2d property</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_session_circle_2d"><code>circle_2d</code></a> — Explicit context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_classify_partial_differential_equation"><code>classify_partial_differential_equation</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_classify_second_order_partial_differential_equation"><code>classify_second_order_partial_differential_equation</code></a> — Default context</li>
-<li><a href="/symi/python/optimization/#entry-presentation_python_api_session_classify_unconstrained"><code>classify_unconstrained</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_clear_all_assumptions"><code>clear_all_assumptions</code></a> — Default context</li>
-<li><a href="/symi/python/default-context/#entry-presentation_python_api_session_clear_assumptions"><code>clear_assumptions</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_coefficient"><code>coefficient</code></a> — Default context</li>
-<li><a href="/symi/python/algebraic-transforms/#entry-presentation_python_api_session_collect"><code>collect</code></a> — Default context</li>
-<li><a href="/symi/python/algebraic-transforms/#entry-presentation_python_api_session_collect_radicals"><code>collect_radicals</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_combine_logarithm"><code>combine_logarithm</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_combine_powers"><code>combine_powers</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_combine_trigonometric"><code>combine_trigonometric</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_compare_real_roots"><code>compare_real_roots</code></a> — Default context</li>
-<li><a href="/symi/python/algebraic-transforms/#entry-presentation_python_api_session_complete_the_square"><code>complete_the_square</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_complex_assumption"><code>complex_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_complex_entries"><code>complex_entries</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_complex_plane"><code>complex_plane</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_composite_assumption"><code>composite_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_condition_set"><code>condition_set</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_congruent_assumption"><code>congruent_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_conjugate"><code>conjugate</code></a> — Default context</li>
-<li><a href="/symi/python/logical-transforms/#entry-presentation_python_api_session_conjunctive_normal_form"><code>conjunctive_normal_form</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_construct_partial_differential_equation_point_symmetry_action"><code>construct_partial_differential_equation_point_symmetry_action</code></a> — Default context</li>
-<li><a href="/symi/python/object-model/#entry-presentation_python_api_session"><code>Context</code></a> — Context constructor</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_continued_fraction_quadratic_irrational"><code>continued_fraction_quadratic_irrational</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_continued_fraction_rational"><code>continued_fraction_rational</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_continuous_domain"><code>continuous_domain</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_cos"><code>cos</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_cosh"><code>cosh</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_cot"><code>cot</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_coth"><code>coth</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_could_hold"><code>could_hold</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_count_distinct_real_roots"><code>count_distinct_real_roots</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_covariance"><code>covariance</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_csc"><code>csc</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_csch"><code>csch</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_cumulant"><code>cumulant</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_cumulative_distribution"><code>cumulative_distribution</code></a> — Default context</li>
-<li><a href="/symi/python/vector-calculus/#entry-presentation_python_api_session_curl"><code>curl</code></a> — Default context</li>
-<li><a href="/symi/python/cad/#entry-presentation_python_api_cylindricalalgebraicdecomposition"><code>CylindricalAlgebraicDecomposition</code></a> — CylindricalAlgebraicDecomposition constructor</li>
-<li><a href="/symi/python/cad/#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_count"><code>CylindricalAlgebraicDecomposition.cell_count</code></a> — CylindricalAlgebraicDecomposition method</li>
-<li><a href="/symi/python/cad/#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_dimension"><code>CylindricalAlgebraicDecomposition.cell_dimension</code></a> — CylindricalAlgebraicDecomposition method</li>
-<li><a href="/symi/python/cad/#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_kind"><code>CylindricalAlgebraicDecomposition.cell_kind</code></a> — CylindricalAlgebraicDecomposition method</li>
-<li><a href="/symi/python/cad/#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_sample_point"><code>CylindricalAlgebraicDecomposition.cell_sample_point</code></a> — CylindricalAlgebraicDecomposition method</li>
-<li><a href="/symi/python/cad/#entry-presentation_python_api_cylindricalalgebraicdecomposition_cell_sign_vector"><code>CylindricalAlgebraicDecomposition.cell_sign_vector</code></a> — CylindricalAlgebraicDecomposition method</li>
-<li><a href="/symi/python/cad/#entry-presentation_python_api_cylindricalalgebraicdecomposition_projection_operator_used"><code>CylindricalAlgebraicDecomposition.projection_operator_used</code></a> — CylindricalAlgebraicDecomposition method</li>
-<li><a href="/symi/python/default-context/#entry-presentation_python_api_session_default_context"><code>default_context</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_defined_assumption"><code>defined_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_definiteintegrationresult"><code>DefiniteIntegrationResult</code></a> — Type</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_definiteintegrationresult_decline_reason"><code>DefiniteIntegrationResult.decline_reason</code></a> — DefiniteIntegrationResult property</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_definiteintegrationresult_divergence_direction"><code>DefiniteIntegrationResult.divergence_direction</code></a> — DefiniteIntegrationResult property</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_definiteintegrationresult_interpretation"><code>DefiniteIntegrationResult.interpretation</code></a> — DefiniteIntegrationResult property</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_definiteintegrationresult_value"><code>DefiniteIntegrationResult.value</code></a> — DefiniteIntegrationResult property</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_definiteintegrationresult_verdict"><code>DefiniteIntegrationResult.verdict</code></a> — DefiniteIntegrationResult property</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_degree"><code>degree</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_denest_powers"><code>denest_powers</code></a> — Default context</li>
-<li><a href="/symi/python/algebraic-transforms/#entry-presentation_python_api_session_denest_radicals"><code>denest_radicals</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_denominator"><code>denominator</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_density"><code>density</code></a> — Default context</li>
-<li><a href="/symi/python/deferred-forms/#entry-presentation_python_api_session_derivative"><code>derivative</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_derive_partial_differential_equation_point_symmetries"><code>derive_partial_differential_equation_point_symmetries</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_deserialize_assumption_proposition"><code>deserialize_assumption_proposition</code></a> — Default context</li>
-<li><a href="/symi/python/matrix-construction/#entry-presentation_python_api_session_diagonal_matrix"><code>diagonal_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_differentiate"><code>differentiate</code></a> — Default context</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_differentiate_bulk"><code>differentiate_bulk</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_digamma"><code>digamma</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_discover_partial_differential_equation"><code>discover_partial_differential_equation</code></a> — Default context</li>
-<li><a href="/symi/python/logical-transforms/#entry-presentation_python_api_session_disjunctive_normal_form"><code>disjunctive_normal_form</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_distribution"><code>distribution</code></a> — Default context</li>
-<li><a href="/symi/python/vector-calculus/#entry-presentation_python_api_session_divergence"><code>divergence</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_divisor_count"><code>divisor_count</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_divisor_sigma"><code>divisor_sigma</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_duplicate"><code>duplicate</code></a> — Expression method</li>
-<li><a href="/symi/python/evaluation-and-constants/#entry-presentation_python_api_session_e"><code>e</code></a> — Default context</li>
-<li><a href="/symi/python/logical-transforms/#entry-presentation_python_api_session_eliminate_derived_logical_connectives"><code>eliminate_derived_logical_connectives</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_eliminate_quantifiers"><code>eliminate_quantifiers</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_elimination_ideal"><code>elimination_ideal</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_elliptic_e"><code>elliptic_e</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_elliptic_e_incomplete"><code>elliptic_e_incomplete</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_elliptic_f"><code>elliptic_f</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_elliptic_k"><code>elliptic_k</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_elliptic_pi"><code>elliptic_pi</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_elliptic_pi_incomplete"><code>elliptic_pi_incomplete</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_empty_set"><code>empty_set</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_enumerate_set_in_interval"><code>enumerate_set_in_interval</code></a> — Default context</li>
-<li><a href="/symi/python/relations/#entry-presentation_python_api_session_equal"><code>equal</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_equal_assumption"><code>equal_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_equals"><code>equals</code></a> — Expression method</li>
-<li><a href="/symi/python/evaluation-and-constants/#entry-presentation_python_api_session_euler_gamma"><code>euler_gamma</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_euler_totient"><code>euler_totient</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_evaluate_limit"><code>evaluate_limit</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_evaluate_numeric"><code>evaluate_numeric</code></a> — Default context</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_evaluate_numeric_bulk"><code>evaluate_numeric_bulk</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_evaluate_on_grid"><code>evaluate_on_grid</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_evaluate_on_grid_points"><code>evaluate_on_grid_points</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_evaluate_to_complex_inexact"><code>evaluate_to_complex_inexact</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_evaluate_to_complex_inexact_at_precision"><code>evaluate_to_complex_inexact_at_precision</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_evaluate_to_float"><code>evaluate_to_float</code></a> — Expression method</li>
-<li><a href="/symi/python/logic/#entry-presentation_python_api_session_evaluate_truth"><code>evaluate_truth</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_even_assumption"><code>even_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_execute"><code>execute</code></a> — Default context</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_execution_mode"><code>execution_mode</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_exp"><code>exp</code></a> — Default context</li>
-<li><a href="/symi/python/algebraic-transforms/#entry-presentation_python_api_session_expand"><code>expand</code></a> — Default context</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_expand_bulk"><code>expand_bulk</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_expand_complex"><code>expand_complex</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_expand_logarithm"><code>expand_logarithm</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_expand_power_base"><code>expand_power_base</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_expand_trigonometric"><code>expand_trigonometric</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_expectation"><code>expectation</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_explicit_partial_differential_equation_solution"><code>explicit_partial_differential_equation_solution</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression"><code>Expression</code></a> — Type</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_expression_type"><code>expression_type</code></a> — Expression method</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_extended_euclidean"><code>extended_euclidean</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_extended_real_assumption"><code>extended_real_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/algebraic-transforms/#entry-presentation_python_api_session_factor"><code>factor</code></a> — Default context</li>
-<li><a href="/symi/python/algebraic-transforms/#entry-presentation_python_api_session_factor_common_terms"><code>factor_common_terms</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_factor_integer"><code>factor_integer</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_factorial"><code>factorial</code></a> — Default context</li>
-<li><a href="/symi/python/combinatorics/#entry-presentation_python_api_session_falling_factorial"><code>falling_factorial</code></a> — Default context</li>
-<li><a href="/symi/python/combinatorics/#entry-presentation_python_api_session_fibonacci_number"><code>fibonacci_number</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_finite_assumption"><code>finite_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_finite_set"><code>finite_set</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_floor"><code>floor</code></a> — Default context</li>
-<li><a href="/symi/python/integral-transforms/#entry-presentation_python_api_session_fourier_transform"><code>fourier_transform</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_free_variables"><code>free_variables</code></a> — Expression method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_full_rank_matrix"><code>full_rank_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_gamma"><code>gamma</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_gegenbauer_polynomial"><code>gegenbauer_polynomial</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_generalized_laguerre_polynomial"><code>generalized_laguerre_polynomial</code></a> — Default context</li>
-<li><a href="/symi/python/optimization/#entry-presentation_python_api_session_global_optimum_on_semialgebraic"><code>global_optimum_on_semialgebraic</code></a> — Default context</li>
-<li><a href="/symi/python/vector-calculus/#entry-presentation_python_api_session_gradient"><code>gradient</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_greater_assumption"><code>greater_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_greater_or_equal_assumption"><code>greater_or_equal_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/relations/#entry-presentation_python_api_session_greater_than"><code>greater_than</code></a> — Default context</li>
-<li><a href="/symi/python/relations/#entry-presentation_python_api_session_greater_than_or_equal"><code>greater_than_or_equal</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_groebner_basis"><code>groebner_basis</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_hermite_polynomial"><code>hermite_polynomial</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_hermitian_matrix"><code>hermitian_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/vector-calculus/#entry-presentation_python_api_session_hessian"><code>hessian</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_hurwitz_zeta"><code>hurwitz_zeta</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_hypergeometric_0f1"><code>hypergeometric_0f1</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_hypergeometric_1f1"><code>hypergeometric_1f1</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_hypergeometric_2f1"><code>hypergeometric_2f1</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_hypergeometric_pfq"><code>hypergeometric_pfq</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_ideal_intersection"><code>ideal_intersection</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_ideal_membership"><code>ideal_membership</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_ideal_product"><code>ideal_product</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_ideal_sum"><code>ideal_sum</code></a> — Default context</li>
-<li><a href="/symi/python/matrix-construction/#entry-presentation_python_api_session_identity_matrix"><code>identity_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_image_set"><code>image_set</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_image_set_domain"><code>image_set_domain</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_image_set_lambda_expression"><code>image_set_lambda_expression</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_image_set_variable"><code>image_set_variable</code></a> — Expression method</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_imaginary_part"><code>imaginary_part</code></a> — Default context</li>
-<li><a href="/symi/python/evaluation-and-constants/#entry-presentation_python_api_session_imaginary_unit"><code>imaginary_unit</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_implicit_partial_differential_equation_solution"><code>implicit_partial_differential_equation_solution</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_implicitize"><code>implicitize</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_infinite_assumption"><code>infinite_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/evaluation-and-constants/#entry-presentation_python_api_session_infinity"><code>infinity</code></a> — Default context</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_initialize_parallelism"><code>initialize_parallelism</code></a> — Default context</li>
-<li><a href="/symi/python/construction-and-parsing/#entry-presentation_python_api_session_integer"><code>integer</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_integer_assumption"><code>integer_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_integer_entries"><code>integer_entries</code></a> — Default context</li>
-<li><a href="/symi/python/construction-and-parsing/#entry-presentation_python_api_session_integer_from_string"><code>integer_from_string</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_integer_gcd"><code>integer_gcd</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_integer_lcm"><code>integer_lcm</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_integer_nth_root"><code>integer_nth_root</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_integer_set"><code>integer_set</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_integer_square_root"><code>integer_square_root</code></a> — Default context</li>
-<li><a href="/symi/python/deferred-forms/#entry-presentation_python_api_session_integral"><code>integral</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_integral_integrand"><code>integral_integrand</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_integral_lower_bound"><code>integral_lower_bound</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_integral_upper_bound"><code>integral_upper_bound</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_integral_variable"><code>integral_variable</code></a> — Expression method</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_integrate"><code>integrate</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_integrate_definite"><code>integrate_definite</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_integrate_definite_detailed"><code>integrate_definite_detailed</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_integrate_definite_numeric"><code>integrate_definite_numeric</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_integrate_definite_under_constraint"><code>integrate_definite_under_constraint</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_integrate_iterated"><code>integrate_iterated</code></a> — Default context</li>
-<li><a href="/symi/python/default-context/#entry-presentation_python_api_session_interner_length"><code>interner_length</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_interval"><code>interval</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_interval_lower"><code>interval_lower</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_interval_upper"><code>interval_upper</code></a> — Expression method</li>
-<li><a href="/symi/python/logical-transforms/#entry-presentation_python_api_session_introduce_derived_logical_connectives"><code>introduce_derived_logical_connectives</code></a> — Default context</li>
-<li><a href="/symi/python/integral-transforms/#entry-presentation_python_api_session_inverse_fourier_transform"><code>inverse_fourier_transform</code></a> — Default context</li>
-<li><a href="/symi/python/integral-transforms/#entry-presentation_python_api_session_inverse_laplace_transform"><code>inverse_laplace_transform</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_invertible_matrix"><code>invertible_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_irrational_assumption"><code>irrational_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_algebraic"><code>is_algebraic</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_complex"><code>is_complex</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_composite"><code>is_composite</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_defined"><code>is_defined</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_equality"><code>is_equality</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_even"><code>is_even</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_extended_real"><code>is_extended_real</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_finite"><code>is_finite</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_finite_set"><code>is_finite_set</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_image_set"><code>is_image_set</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_infinite"><code>is_infinite</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_integer"><code>is_integer</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_integral"><code>is_integral</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_interval"><code>is_interval</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_irrational"><code>is_irrational</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_matrix"><code>is_matrix</code></a> — Expression method</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_is_member"><code>is_member</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_natural"><code>is_natural</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_negative"><code>is_negative</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_is_nonnegative"><code>is_nonnegative</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_is_nonpositive"><code>is_nonpositive</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_nonzero"><code>is_nonzero</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_odd"><code>is_odd</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_positive"><code>is_positive</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_positive_integer"><code>is_positive_integer</code></a> — Expression method</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_is_prime"><code>is_prime</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_rational"><code>is_rational</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_real"><code>is_real</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_stale"><code>is_stale</code></a> — Expression method</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_is_subset"><code>is_subset</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_transcendental"><code>is_transcendental</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_union"><code>is_union</code></a> — Expression method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_is_zero"><code>is_zero</code></a> — Expression method</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_isolate_real_roots"><code>isolate_real_roots</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_jacobi_amplitude"><code>jacobi_amplitude</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_jacobi_cn"><code>jacobi_cn</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_jacobi_dn"><code>jacobi_dn</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_jacobi_polynomial"><code>jacobi_polynomial</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_jacobi_sn"><code>jacobi_sn</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_jacobi_symbol"><code>jacobi_symbol</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_jacobi_theta_1"><code>jacobi_theta_1</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_jacobi_theta_2"><code>jacobi_theta_2</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_jacobi_theta_3"><code>jacobi_theta_3</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_jacobi_theta_4"><code>jacobi_theta_4</code></a> — Default context</li>
-<li><a href="/symi/python/vector-calculus/#entry-presentation_python_api_session_jacobian"><code>jacobian</code></a> — Default context</li>
-<li><a href="/symi/python/optimization/#entry-presentation_python_api_session_karush_kuhn_tucker_points"><code>karush_kuhn_tucker_points</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_kronecker_symbol"><code>kronecker_symbol</code></a> — Default context</li>
-<li><a href="/symi/python/optimization/#entry-presentation_python_api_session_lagrange_critical_points"><code>lagrange_critical_points</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_laguerre_polynomial"><code>laguerre_polynomial</code></a> — Default context</li>
-<li><a href="/symi/python/integral-transforms/#entry-presentation_python_api_session_laplace_transform"><code>laplace_transform</code></a> — Default context</li>
-<li><a href="/symi/python/vector-calculus/#entry-presentation_python_api_session_laplacian"><code>laplacian</code></a> — Default context</li>
-<li><a href="/symi/python/series/#entry-presentation_python_api_session_laurent_series"><code>laurent_series</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_leading_coefficient"><code>leading_coefficient</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_legendre_polynomial"><code>legendre_polynomial</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_legendre_symbol"><code>legendre_symbol</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_lerch_phi"><code>lerch_phi</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_less_assumption"><code>less_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_less_or_equal_assumption"><code>less_or_equal_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/relations/#entry-presentation_python_api_session_less_than"><code>less_than</code></a> — Default context</li>
-<li><a href="/symi/python/relations/#entry-presentation_python_api_session_less_than_or_equal"><code>less_than_or_equal</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_limit"><code>limit</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_log"><code>log</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_log_gamma"><code>log_gamma</code></a> — Default context</li>
-<li><a href="/symi/python/logic/#entry-presentation_python_api_session_logical_false"><code>logical_false</code></a> — Default context</li>
-<li><a href="/symi/python/logic/#entry-presentation_python_api_session_logical_true"><code>logical_true</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_lower_triangular_matrix"><code>lower_triangular_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/series/#entry-presentation_python_api_session_maclaurin_series"><code>maclaurin_series</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix"><code>Matrix</code></a> — Matrix constructor</li>
-<li><a href="/symi/python/matrix-construction/#entry-presentation_python_api_session_matrix"><code>matrix</code></a> — Explicit context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_host_python_matrix_add"><code>Matrix.__add__</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_host_python_matrix_getattribute"><code>Matrix.__getattribute__</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_host_python_matrix_getitem"><code>Matrix.__getitem__</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_host_python_matrix_mul"><code>Matrix.__mul__</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_host_python_matrix_repr"><code>Matrix.__repr__</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_host_python_matrix_sub"><code>Matrix.__sub__</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_add"><code>Matrix.add</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_adjugate"><code>Matrix.adjugate</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_characteristic_polynomial"><code>Matrix.characteristic_polynomial</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_cofactor_matrix"><code>Matrix.cofactor_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_matrix_column_hermite_normal_form"><code>Matrix.column_hermite_normal_form</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-construction/#entry-presentation_python_api_matrix_columns"><code>Matrix.columns</code></a> — Matrix property</li>
-<li><a href="/symi/python/matrix-functions/#entry-presentation_python_api_matrix_cosine"><code>Matrix.cosine</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_determinant"><code>Matrix.determinant</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_eigenvalues"><code>Matrix.eigenvalues</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_eigenvectors"><code>Matrix.eigenvectors</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_execute"><code>Matrix.execute</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-functions/#entry-presentation_python_api_matrix_exponential"><code>Matrix.exponential</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_has_complex_entries"><code>Matrix.has_complex_entries</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_has_integer_entries"><code>Matrix.has_integer_entries</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_has_real_entries"><code>Matrix.has_real_entries</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_matrix_hermite_normal_form"><code>Matrix.hermite_normal_form</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-functions/#entry-presentation_python_api_matrix_hyperbolic_cosine"><code>Matrix.hyperbolic_cosine</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-functions/#entry-presentation_python_api_matrix_hyperbolic_sine"><code>Matrix.hyperbolic_sine</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_matrix_integer_cokernel_structure"><code>Matrix.integer_cokernel_structure</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_matrix_integer_image_lattice_basis"><code>Matrix.integer_image_lattice_basis</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_matrix_integer_kernel_basis"><code>Matrix.integer_kernel_basis</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_matrix_integer_row_lattice_basis"><code>Matrix.integer_row_lattice_basis</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_inverse"><code>Matrix.inverse</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_diagonal_matrix"><code>Matrix.is_diagonal_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_equality"><code>Matrix.is_equality</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_finite_set"><code>Matrix.is_finite_set</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_full_rank_matrix"><code>Matrix.is_full_rank_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_hermitian_matrix"><code>Matrix.is_hermitian_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_identity_matrix"><code>Matrix.is_identity_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_image_set"><code>Matrix.is_image_set</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_integral"><code>Matrix.is_integral</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_invertible_matrix"><code>Matrix.is_invertible_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_matrix"><code>Matrix.is_matrix</code></a> — Matrix property</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_normal_matrix"><code>Matrix.is_normal_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_orthogonal_matrix"><code>Matrix.is_orthogonal_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_positive"><code>Matrix.is_positive</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_positive_definite_matrix"><code>Matrix.is_positive_definite_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_positive_semidefinite_matrix"><code>Matrix.is_positive_semidefinite_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_real"><code>Matrix.is_real</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_singular_matrix"><code>Matrix.is_singular_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_square"><code>Matrix.is_square</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_stale"><code>Matrix.is_stale</code></a> — Matrix property</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_symmetric_matrix"><code>Matrix.is_symmetric_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_union"><code>Matrix.is_union</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_unitary_matrix"><code>Matrix.is_unitary_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_is_zero_matrix"><code>Matrix.is_zero_matrix</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-functions/#entry-presentation_python_api_matrix_jordan_decomposition"><code>Matrix.jordan_decomposition</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-functions/#entry-presentation_python_api_matrix_logarithm"><code>Matrix.logarithm</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_lower_upper_decomposition"><code>Matrix.lower_upper_decomposition</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_minimal_polynomial"><code>Matrix.minimal_polynomial</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_multiply"><code>Matrix.multiply</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_nullspace_basis"><code>Matrix.nullspace_basis</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_rank"><code>Matrix.rank</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_matrix_rational_canonical_form"><code>Matrix.rational_canonical_form</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_row_reduce"><code>Matrix.row_reduce</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-construction/#entry-presentation_python_api_matrix_rows"><code>Matrix.rows</code></a> — Matrix property</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_scalar_multiply"><code>Matrix.scalar_multiply</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-functions/#entry-presentation_python_api_matrix_sine"><code>Matrix.sine</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_matrix_smith_normal_form"><code>Matrix.smith_normal_form</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-functions/#entry-presentation_python_api_matrix_square_root"><code>Matrix.square_root</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_subtract"><code>Matrix.subtract</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_trace"><code>Matrix.trace</code></a> — Matrix method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_matrix_transpose"><code>Matrix.transpose</code></a> — Matrix method</li>
-<li><a href="/symi/python/matrix-construction/#entry-presentation_python_api_session_matrix_diagonal"><code>matrix_diagonal</code></a> — Default context</li>
-<li><a href="/symi/python/matrix-construction/#entry-presentation_python_api_session_matrix_identity"><code>matrix_identity</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_matrix_shape"><code>matrix_shape</code></a> — Default context</li>
-<li><a href="/symi/python/matrix-construction/#entry-presentation_python_api_session_matrix_zero"><code>matrix_zero</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_max"><code>max</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_meijer_g"><code>meijer_g</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_member_assumption"><code>member_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_min"><code>min</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_minimal_polynomial_of"><code>minimal_polynomial_of</code></a> — Default context</li>
-<li><a href="/symi/python/logical-transforms/#entry-presentation_python_api_session_minimize_logical"><code>minimize_logical</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_mobius"><code>mobius</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_modular_inverse"><code>modular_inverse</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_modular_power"><code>modular_power</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_moment"><code>moment</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_moment_generating_function"><code>moment_generating_function</code></a> — Default context</li>
-<li><a href="/symi/python/combinatorics/#entry-presentation_python_api_session_multinomial"><code>multinomial</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_natural_assumption"><code>natural_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_negative_assumption"><code>negative_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_node_count"><code>node_count</code></a> — Expression method</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_nonnegative_assumption"><code>nonnegative_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_nonpositive_assumption"><code>nonpositive_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_nonzero_assumption"><code>nonzero_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_normal_matrix"><code>normal_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/relations/#entry-presentation_python_api_session_not_equal"><code>not_equal</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_not_equal_assumption"><code>not_equal_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_numerator"><code>numerator</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_numerator_denominator"><code>numerator_denominator</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_numericdefiniteintegrationresult"><code>NumericDefiniteIntegrationResult</code></a> — Type</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_numericdefiniteintegrationresult_estimated_absolute_error"><code>NumericDefiniteIntegrationResult.estimated_absolute_error</code></a> — NumericDefiniteIntegrationResult property</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_numericdefiniteintegrationresult_node_count"><code>NumericDefiniteIntegrationResult.node_count</code></a> — NumericDefiniteIntegrationResult property</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_numericdefiniteintegrationresult_precision_bits"><code>NumericDefiniteIntegrationResult.precision_bits</code></a> — NumericDefiniteIntegrationResult property</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_numericdefiniteintegrationresult_value"><code>NumericDefiniteIntegrationResult.value</code></a> — NumericDefiniteIntegrationResult property</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_odd_assumption"><code>odd_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult"><code>OrdinaryDifferentialEquationSolveResult</code></a> — Type</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_decline"><code>OrdinaryDifferentialEquationSolveResult.decline</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_form"><code>OrdinaryDifferentialEquationSolveResult.form</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_frequency_domain_equation"><code>OrdinaryDifferentialEquationSolveResult.frequency_domain_equation</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_generality"><code>OrdinaryDifferentialEquationSolveResult.generality</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_generated_constants"><code>OrdinaryDifferentialEquationSolveResult.generated_constants</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_image"><code>OrdinaryDifferentialEquationSolveResult.image</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_method"><code>OrdinaryDifferentialEquationSolveResult.method</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_solution"><code>OrdinaryDifferentialEquationSolveResult.solution</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_verdict"><code>OrdinaryDifferentialEquationSolveResult.verdict</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsolveresult_verification"><code>OrdinaryDifferentialEquationSolveResult.verification</code></a> — OrdinaryDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult"><code>OrdinaryDifferentialEquationSystemSolveResult</code></a> — Type</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_components"><code>OrdinaryDifferentialEquationSystemSolveResult.components</code></a> — OrdinaryDifferentialEquationSystemSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_decline"><code>OrdinaryDifferentialEquationSystemSolveResult.decline</code></a> — OrdinaryDifferentialEquationSystemSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_generality"><code>OrdinaryDifferentialEquationSystemSolveResult.generality</code></a> — OrdinaryDifferentialEquationSystemSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_generated_constants"><code>OrdinaryDifferentialEquationSystemSolveResult.generated_constants</code></a> — OrdinaryDifferentialEquationSystemSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_method"><code>OrdinaryDifferentialEquationSystemSolveResult.method</code></a> — OrdinaryDifferentialEquationSystemSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_route"><code>OrdinaryDifferentialEquationSystemSolveResult.route</code></a> — OrdinaryDifferentialEquationSystemSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_verdict"><code>OrdinaryDifferentialEquationSystemSolveResult.verdict</code></a> — OrdinaryDifferentialEquationSystemSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemsolveresult_verification"><code>OrdinaryDifferentialEquationSystemSolveResult.verification</code></a> — OrdinaryDifferentialEquationSystemSolveResult property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemverificationreport"><code>OrdinaryDifferentialEquationSystemVerificationReport</code></a> — Type</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemverificationreport_generality"><code>OrdinaryDifferentialEquationSystemVerificationReport.generality</code></a> — OrdinaryDifferentialEquationSystemVerificationReport property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemverificationreport_required_rank"><code>OrdinaryDifferentialEquationSystemVerificationReport.required_rank</code></a> — OrdinaryDifferentialEquationSystemVerificationReport property</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_ordinarydifferentialequationsystemverificationreport_verdict"><code>OrdinaryDifferentialEquationSystemVerificationReport.verdict</code></a> — OrdinaryDifferentialEquationSystemVerificationReport property</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_orthogonal_matrix"><code>orthogonal_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_parallelism_capability"><code>parallelism_capability</code></a> — Default context</li>
-<li><a href="/symi/python/construction-and-parsing/#entry-presentation_python_api_session_parse"><code>parse</code></a> — Default context</li>
-<li><a href="/symi/python/construction-and-parsing/#entry-presentation_python_api_session_parse_latex"><code>parse_latex</code></a> — Default context</li>
-<li><a href="/symi/python/construction-and-parsing/#entry-presentation_python_api_session_parse_latex_with_environment"><code>parse_latex_with_environment</code></a> — Default context</li>
-<li><a href="/symi/python/serialization-and-output/#entry-presentation_python_api_session_parse_serialized_object"><code>parse_serialized_object</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_partial_differential_equation"><code>partial_differential_equation</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_partial_differential_equation_arbitrary_function"><code>partial_differential_equation_arbitrary_function</code></a> — Explicit context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_partial_differential_equation_point_symmetry_generator"><code>partial_differential_equation_point_symmetry_generator</code></a> — Default context</li>
-<li><a href="/symi/python/algebraic-transforms/#entry-presentation_python_api_session_partial_fractions"><code>partial_fractions</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationarbitraryfunction"><code>PartialDifferentialEquationArbitraryFunction</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationarbitraryfunction_arity"><code>PartialDifferentialEquationArbitraryFunction.arity</code></a> — PartialDifferentialEquationArbitraryFunction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationarbitraryfunction_name"><code>PartialDifferentialEquationArbitraryFunction.name</code></a> — PartialDifferentialEquationArbitraryFunction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult"><code>PartialDifferentialEquationCanonicalizationResult</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_canonicalized"><code>PartialDifferentialEquationCanonicalizationResult.canonicalized</code></a> — PartialDifferentialEquationCanonicalizationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_decline"><code>PartialDifferentialEquationCanonicalizationResult.decline</code></a> — PartialDifferentialEquationCanonicalizationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_principal_form"><code>PartialDifferentialEquationCanonicalizationResult.principal_form</code></a> — PartialDifferentialEquationCanonicalizationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_transformation"><code>PartialDifferentialEquationCanonicalizationResult.transformation</code></a> — PartialDifferentialEquationCanonicalizationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcanonicalizationresult_transformation_decline"><code>PartialDifferentialEquationCanonicalizationResult.transformation_decline</code></a> — PartialDifferentialEquationCanonicalizationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationclassification"><code>PartialDifferentialEquationClassification</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationclassification_coefficient_data"><code>PartialDifferentialEquationClassification.coefficient_data</code></a> — PartialDifferentialEquationClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationclassification_linearity"><code>PartialDifferentialEquationClassification.linearity</code></a> — PartialDifferentialEquationClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationclassification_method_candidates"><code>PartialDifferentialEquationClassification.method_candidates</code></a> — PartialDifferentialEquationClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationclassification_order"><code>PartialDifferentialEquationClassification.order</code></a> — PartialDifferentialEquationClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationclassification_second_order_principal_part"><code>PartialDifferentialEquationClassification.second_order_principal_part</code></a> — PartialDifferentialEquationClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoefficientdata_full_coefficients"><code>PartialDifferentialEquationCoefficientData.full_coefficients</code></a> — PartialDifferentialEquationCoefficientData property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoefficientdata_highest_order_coefficients"><code>PartialDifferentialEquationCoefficientData.highest_order_coefficients</code></a> — PartialDifferentialEquationCoefficientData property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoefficientdata_homogeneous"><code>PartialDifferentialEquationCoefficientData.homogeneous</code></a> — PartialDifferentialEquationCoefficientData property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoefficientdata_remainder"><code>PartialDifferentialEquationCoefficientData.remainder</code></a> — PartialDifferentialEquationCoefficientData property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoordinatechange"><code>PartialDifferentialEquationCoordinateChange</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoordinatechange_forward_coordinates"><code>PartialDifferentialEquationCoordinateChange.forward_coordinates</code></a> — PartialDifferentialEquationCoordinateChange property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoordinatechange_inverse_coordinates"><code>PartialDifferentialEquationCoordinateChange.inverse_coordinates</code></a> — PartialDifferentialEquationCoordinateChange property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoordinatechange_jacobian"><code>PartialDifferentialEquationCoordinateChange.jacobian</code></a> — PartialDifferentialEquationCoordinateChange property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoordinatechange_serialize_object"><code>PartialDifferentialEquationCoordinateChange.serialize_object</code></a> — PartialDifferentialEquationCoordinateChange method</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoordinatechange_source_variables"><code>PartialDifferentialEquationCoordinateChange.source_variables</code></a> — PartialDifferentialEquationCoordinateChange property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoordinatechange_target_dependent_function"><code>PartialDifferentialEquationCoordinateChange.target_dependent_function</code></a> — PartialDifferentialEquationCoordinateChange property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationcoordinatechange_target_variables"><code>PartialDifferentialEquationCoordinateChange.target_variables</code></a> — PartialDifferentialEquationCoordinateChange property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationjetcoefficient_coefficient"><code>PartialDifferentialEquationJetCoefficient.coefficient</code></a> — PartialDifferentialEquationJetCoefficient property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_host_python_partialdifferentialequationjetcoefficient_derivative_orders"><code>PartialDifferentialEquationJetCoefficient.derivative_orders</code></a> — PartialDifferentialEquationJetCoefficient property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationmethodcandidate_method"><code>PartialDifferentialEquationMethodCandidate.method</code></a> — PartialDifferentialEquationMethodCandidate property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationmethodcandidate_proof_obligations"><code>PartialDifferentialEquationMethodCandidate.proof_obligations</code></a> — PartialDifferentialEquationMethodCandidate property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction"><code>PartialDifferentialEquationPointSymmetryAction</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_admits_additive_solution_symmetry"><code>PartialDifferentialEquationPointSymmetryAction.admits_additive_solution_symmetry</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_amplitude"><code>PartialDifferentialEquationPointSymmetryAction.amplitude</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_applied_to_seed"><code>PartialDifferentialEquationPointSymmetryAction.applied_to_seed</code></a> — PartialDifferentialEquationPointSymmetryAction method</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_applied_to_seed_with_additive_solution"><code>PartialDifferentialEquationPointSymmetryAction.applied_to_seed_with_additive_solution</code></a> — PartialDifferentialEquationPointSymmetryAction method</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_decline"><code>PartialDifferentialEquationPointSymmetryAction.decline</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_intertwining"><code>PartialDifferentialEquationPointSymmetryAction.intertwining</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_invertibility"><code>PartialDifferentialEquationPointSymmetryAction.invertibility</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_multiplier"><code>PartialDifferentialEquationPointSymmetryAction.multiplier</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_outstanding_obligations"><code>PartialDifferentialEquationPointSymmetryAction.outstanding_obligations</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_parameters"><code>PartialDifferentialEquationPointSymmetryAction.parameters</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_point_symmetry_decline"><code>PartialDifferentialEquationPointSymmetryAction.point_symmetry_decline</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryaction_transformed_coordinates"><code>PartialDifferentialEquationPointSymmetryAction.transformed_coordinates</code></a> — PartialDifferentialEquationPointSymmetryAction property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra"><code>PartialDifferentialEquationPointSymmetryAlgebra</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_admits_additive_solution_symmetry"><code>PartialDifferentialEquationPointSymmetryAlgebra.admits_additive_solution_symmetry</code></a> — PartialDifferentialEquationPointSymmetryAlgebra property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_basis"><code>PartialDifferentialEquationPointSymmetryAlgebra.basis</code></a> — PartialDifferentialEquationPointSymmetryAlgebra property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_decline"><code>PartialDifferentialEquationPointSymmetryAlgebra.decline</code></a> — PartialDifferentialEquationPointSymmetryAlgebra property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_determining_equations"><code>PartialDifferentialEquationPointSymmetryAlgebra.determining_equations</code></a> — PartialDifferentialEquationPointSymmetryAlgebra property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_general_generator"><code>PartialDifferentialEquationPointSymmetryAlgebra.general_generator</code></a> — PartialDifferentialEquationPointSymmetryAlgebra property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_outstanding_obligations"><code>PartialDifferentialEquationPointSymmetryAlgebra.outstanding_obligations</code></a> — PartialDifferentialEquationPointSymmetryAlgebra property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetryalgebra_parameters"><code>PartialDifferentialEquationPointSymmetryAlgebra.parameters</code></a> — PartialDifferentialEquationPointSymmetryAlgebra property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetrygenerator"><code>PartialDifferentialEquationPointSymmetryGenerator</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetrygenerator_coordinate_infinitesimals"><code>PartialDifferentialEquationPointSymmetryGenerator.coordinate_infinitesimals</code></a> — PartialDifferentialEquationPointSymmetryGenerator property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationpointsymmetrygenerator_dependent_infinitesimal"><code>PartialDifferentialEquationPointSymmetryGenerator.dependent_infinitesimal</code></a> — PartialDifferentialEquationPointSymmetryGenerator property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationprincipalcoefficient_coefficient"><code>PartialDifferentialEquationPrincipalCoefficient.coefficient</code></a> — PartialDifferentialEquationPrincipalCoefficient property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_host_python_partialdifferentialequationprincipalcoefficient_derivative_orders"><code>PartialDifferentialEquationPrincipalCoefficient.derivative_orders</code></a> — PartialDifferentialEquationPrincipalCoefficient property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationprincipalpart_derivative_coefficients"><code>PartialDifferentialEquationPrincipalPart.derivative_coefficients</code></a> — PartialDifferentialEquationPrincipalPart property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationprincipalpart_matrix"><code>PartialDifferentialEquationPrincipalPart.matrix</code></a> — PartialDifferentialEquationPrincipalPart property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationproblem"><code>PartialDifferentialEquationProblem</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_host_python_partialdifferentialequationproblem_repr"><code>PartialDifferentialEquationProblem.__repr__</code></a> — PartialDifferentialEquationProblem method</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_host_python_partialdifferentialequationproblem_str"><code>PartialDifferentialEquationProblem.__str__</code></a> — PartialDifferentialEquationProblem method</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationproblem_boundary_conditions"><code>PartialDifferentialEquationProblem.boundary_conditions</code></a> — PartialDifferentialEquationProblem property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationproblem_dependent_function"><code>PartialDifferentialEquationProblem.dependent_function</code></a> — PartialDifferentialEquationProblem property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationproblem_equation"><code>PartialDifferentialEquationProblem.equation</code></a> — PartialDifferentialEquationProblem property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationproblem_independent_variables"><code>PartialDifferentialEquationProblem.independent_variables</code></a> — PartialDifferentialEquationProblem property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationproblem_initial_conditions"><code>PartialDifferentialEquationProblem.initial_conditions</code></a> — PartialDifferentialEquationProblem property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationproblem_serialize_object"><code>PartialDifferentialEquationProblem.serialize_object</code></a> — PartialDifferentialEquationProblem method</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationproblem_to_latex"><code>PartialDifferentialEquationProblem.to_latex</code></a> — PartialDifferentialEquationProblem method</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondorderclassification"><code>PartialDifferentialEquationSecondOrderClassification</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_cases"><code>PartialDifferentialEquationSecondOrderClassification.cases</code></a> — PartialDifferentialEquationSecondOrderClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_decline"><code>PartialDifferentialEquationSecondOrderClassification.decline</code></a> — PartialDifferentialEquationSecondOrderClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_discriminant"><code>PartialDifferentialEquationSecondOrderClassification.discriminant</code></a> — PartialDifferentialEquationSecondOrderClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_equation_type"><code>PartialDifferentialEquationSecondOrderClassification.equation_type</code></a> — PartialDifferentialEquationSecondOrderClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_principal_matrix"><code>PartialDifferentialEquationSecondOrderClassification.principal_matrix</code></a> — PartialDifferentialEquationSecondOrderClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_proof_obligations"><code>PartialDifferentialEquationSecondOrderClassification.proof_obligations</code></a> — PartialDifferentialEquationSecondOrderClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondorderclassification_verdict"><code>PartialDifferentialEquationSecondOrderClassification.verdict</code></a> — PartialDifferentialEquationSecondOrderClassification property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondordertypecase"><code>PartialDifferentialEquationSecondOrderTypeCase</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondordertypecase_condition"><code>PartialDifferentialEquationSecondOrderTypeCase.condition</code></a> — PartialDifferentialEquationSecondOrderTypeCase property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsecondordertypecase_equation_type"><code>PartialDifferentialEquationSecondOrderTypeCase.equation_type</code></a> — PartialDifferentialEquationSecondOrderTypeCase property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparatedequation"><code>PartialDifferentialEquationSeparatedEquation</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparatedequation_independent_variable_name"><code>PartialDifferentialEquationSeparatedEquation.independent_variable_name</code></a> — PartialDifferentialEquationSeparatedEquation property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparatedequation_residual"><code>PartialDifferentialEquationSeparatedEquation.residual</code></a> — PartialDifferentialEquationSeparatedEquation property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparationresult"><code>PartialDifferentialEquationSeparationResult</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparationresult_first_equation"><code>PartialDifferentialEquationSeparationResult.first_equation</code></a> — PartialDifferentialEquationSeparationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparationresult_reconstruction"><code>PartialDifferentialEquationSeparationResult.reconstruction</code></a> — PartialDifferentialEquationSeparationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparationresult_second_equation"><code>PartialDifferentialEquationSeparationResult.second_equation</code></a> — PartialDifferentialEquationSeparationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparationresult_separation_constant"><code>PartialDifferentialEquationSeparationResult.separation_constant</code></a> — PartialDifferentialEquationSeparationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparationresult_strategy"><code>PartialDifferentialEquationSeparationResult.strategy</code></a> — PartialDifferentialEquationSeparationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationseparationresult_verification"><code>PartialDifferentialEquationSeparationResult.verification</code></a> — PartialDifferentialEquationSeparationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution"><code>PartialDifferentialEquationSimilaritySolution</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_decline"><code>PartialDifferentialEquationSimilaritySolution.decline</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_invariant"><code>PartialDifferentialEquationSimilaritySolution.invariant</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_lifted_constants"><code>PartialDifferentialEquationSimilaritySolution.lifted_constants</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_lifted_family"><code>PartialDifferentialEquationSimilaritySolution.lifted_family</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_lifted_family_verification"><code>PartialDifferentialEquationSimilaritySolution.lifted_family_verification</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_multiplier"><code>PartialDifferentialEquationSimilaritySolution.multiplier</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_outstanding_obligations"><code>PartialDifferentialEquationSimilaritySolution.outstanding_obligations</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_reduced_equation"><code>PartialDifferentialEquationSimilaritySolution.reduced_equation</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_similarity_variable"><code>PartialDifferentialEquationSimilaritySolution.similarity_variable</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsimilaritysolution_weight"><code>PartialDifferentialEquationSimilaritySolution.weight</code></a> — PartialDifferentialEquationSimilaritySolution property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolutionfamily"><code>PartialDifferentialEquationSolutionFamily</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolutionfamily_arbitrary_functions"><code>PartialDifferentialEquationSolutionFamily.arbitrary_functions</code></a> — PartialDifferentialEquationSolutionFamily property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolutionfamily_establishes_completeness"><code>PartialDifferentialEquationSolutionFamily.establishes_completeness</code></a> — PartialDifferentialEquationSolutionFamily property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_host_python_partialdifferentialequationsolutionfamily_expression"><code>PartialDifferentialEquationSolutionFamily.expression</code></a> — PartialDifferentialEquationSolutionFamily property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolutionfamily_form"><code>PartialDifferentialEquationSolutionFamily.form</code></a> — PartialDifferentialEquationSolutionFamily property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolutionfamily_proof_obligations"><code>PartialDifferentialEquationSolutionFamily.proof_obligations</code></a> — PartialDifferentialEquationSolutionFamily property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolutionprovenance_discharged_obligations"><code>PartialDifferentialEquationSolutionProvenance.discharged_obligations</code></a> — PartialDifferentialEquationSolutionProvenance property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolutionprovenance_linearity"><code>PartialDifferentialEquationSolutionProvenance.linearity</code></a> — PartialDifferentialEquationSolutionProvenance property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolutionprovenance_method"><code>PartialDifferentialEquationSolutionProvenance.method</code></a> — PartialDifferentialEquationSolutionProvenance property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolutionprovenance_order"><code>PartialDifferentialEquationSolutionProvenance.order</code></a> — PartialDifferentialEquationSolutionProvenance property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolveresult"><code>PartialDifferentialEquationSolveResult</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolveresult_classification"><code>PartialDifferentialEquationSolveResult.classification</code></a> — PartialDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolveresult_decline"><code>PartialDifferentialEquationSolveResult.decline</code></a> — PartialDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolveresult_method"><code>PartialDifferentialEquationSolveResult.method</code></a> — PartialDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolveresult_provenance"><code>PartialDifferentialEquationSolveResult.provenance</code></a> — PartialDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolveresult_solution"><code>PartialDifferentialEquationSolveResult.solution</code></a> — PartialDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolveresult_verdict"><code>PartialDifferentialEquationSolveResult.verdict</code></a> — PartialDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationsolveresult_verification"><code>PartialDifferentialEquationSolveResult.verification</code></a> — PartialDifferentialEquationSolveResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationresult"><code>PartialDifferentialEquationTransformationResult</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationresult_coordinate_change"><code>PartialDifferentialEquationTransformationResult.coordinate_change</code></a> — PartialDifferentialEquationTransformationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationresult_decline"><code>PartialDifferentialEquationTransformationResult.decline</code></a> — PartialDifferentialEquationTransformationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationresult_normalization_multiplier"><code>PartialDifferentialEquationTransformationResult.normalization_multiplier</code></a> — PartialDifferentialEquationTransformationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationresult_target_problem"><code>PartialDifferentialEquationTransformationResult.target_problem</code></a> — PartialDifferentialEquationTransformationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationresult_transformed"><code>PartialDifferentialEquationTransformationResult.transformed</code></a> — PartialDifferentialEquationTransformationResult property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport"><code>PartialDifferentialEquationTransformationVerificationReport</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_claimed_governing_residual"><code>PartialDifferentialEquationTransformationVerificationReport.claimed_governing_residual</code></a> — PartialDifferentialEquationTransformationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_composition_residuals"><code>PartialDifferentialEquationTransformationVerificationReport.composition_residuals</code></a> — PartialDifferentialEquationTransformationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_jacobian"><code>PartialDifferentialEquationTransformationVerificationReport.jacobian</code></a> — PartialDifferentialEquationTransformationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_principal_congruence_residuals"><code>PartialDifferentialEquationTransformationVerificationReport.principal_congruence_residuals</code></a> — PartialDifferentialEquationTransformationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_transformed_governing_residual"><code>PartialDifferentialEquationTransformationVerificationReport.transformed_governing_residual</code></a> — PartialDifferentialEquationTransformationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationtransformationverificationreport_verdict"><code>PartialDifferentialEquationTransformationVerificationReport.verdict</code></a> — PartialDifferentialEquationTransformationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationreport"><code>PartialDifferentialEquationVerificationReport</code></a> — Type</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationreport_boundary_condition_residuals"><code>PartialDifferentialEquationVerificationReport.boundary_condition_residuals</code></a> — PartialDifferentialEquationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationreport_explicit_branch"><code>PartialDifferentialEquationVerificationReport.explicit_branch</code></a> — PartialDifferentialEquationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationreport_governing_residual"><code>PartialDifferentialEquationVerificationReport.governing_residual</code></a> — PartialDifferentialEquationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationreport_inconclusive_reason"><code>PartialDifferentialEquationVerificationReport.inconclusive_reason</code></a> — PartialDifferentialEquationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationreport_initial_condition_residuals"><code>PartialDifferentialEquationVerificationReport.initial_condition_residuals</code></a> — PartialDifferentialEquationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationreport_proof_obligations"><code>PartialDifferentialEquationVerificationReport.proof_obligations</code></a> — PartialDifferentialEquationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationreport_verdict"><code>PartialDifferentialEquationVerificationReport.verdict</code></a> — PartialDifferentialEquationVerificationReport property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationresidual_residual"><code>PartialDifferentialEquationVerificationResidual.residual</code></a> — PartialDifferentialEquationVerificationResidual property</li>
-<li><a href="/symi/python/partial-differential-equation-results/#entry-presentation_python_api_partialdifferentialequationverificationresidual_verdict"><code>PartialDifferentialEquationVerificationResidual.verdict</code></a> — PartialDifferentialEquationVerificationResidual property</li>
-<li><a href="/symi/python/combinatorics/#entry-presentation_python_api_session_partition_count"><code>partition_count</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_pell_solutions"><code>pell_solutions</code></a> — Default context</li>
-<li><a href="/symi/python/evaluation-and-constants/#entry-presentation_python_api_session_pi"><code>pi</code></a> — Default context</li>
-<li><a href="/symi/python/deferred-forms/#entry-presentation_python_api_session_piecewise"><code>piecewise</code></a> — Default context</li>
-<li><a href="/symi/python/specialized-canonical-forms/#entry-presentation_python_api_session_piecewise_fold"><code>piecewise_fold</code></a> — Default context</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_point2d"><code>Point2d</code></a> — Point2d constructor</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_point2d_getattribute"><code>Point2d.__getattribute__</code></a> — Point2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_point2d_repr"><code>Point2d.__repr__</code></a> — Point2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_point2d_coordinates"><code>Point2d.coordinates</code></a> — Point2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_point2d_distance_to"><code>Point2d.distance_to</code></a> — Point2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_point2d_intersection"><code>Point2d.intersection</code></a> — Point2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_point2d_is_stale"><code>Point2d.is_stale</code></a> — Point2d property</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_point2d_x"><code>Point2d.x</code></a> — Point2d property</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_point2d_y"><code>Point2d.y</code></a> — Point2d property</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_session_point_2d"><code>point_2d</code></a> — Explicit context</li>
-<li><a href="/symi/python/series/#entry-presentation_python_api_session_pole_order"><code>pole_order</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_polygamma"><code>polygamma</code></a> — Default context</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_polygon2d"><code>Polygon2d</code></a> — Polygon2d constructor</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_polygon2d_getattribute"><code>Polygon2d.__getattribute__</code></a> — Polygon2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_polygon2d_repr"><code>Polygon2d.__repr__</code></a> — Polygon2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_polygon2d_area"><code>Polygon2d.area</code></a> — Polygon2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_polygon2d_centroid"><code>Polygon2d.centroid</code></a> — Polygon2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_polygon2d_interior_angles"><code>Polygon2d.interior_angles</code></a> — Polygon2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_polygon2d_is_stale"><code>Polygon2d.is_stale</code></a> — Polygon2d property</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_polygon2d_perimeter"><code>Polygon2d.perimeter</code></a> — Polygon2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_session_polygon_2d"><code>polygon_2d</code></a> — Explicit context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_polylogarithm"><code>polylogarithm</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_polynomial_gcd"><code>polynomial_gcd</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_polynomial_root"><code>polynomial_root</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_positive_assumption"><code>positive_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_positive_definite_matrix"><code>positive_definite_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_positive_integer_assumption"><code>positive_integer_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_positive_semidefinite_matrix"><code>positive_semidefinite_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/specialized-canonical-forms/#entry-presentation_python_api_session_presentation_normal_form"><code>presentation_normal_form</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_prime_assumption"><code>prime_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_probability"><code>probability</code></a> — Default context</li>
-<li><a href="/symi/python/deferred-forms/#entry-presentation_python_api_session_product"><code>product</code></a> — Default context</li>
-<li><a href="/symi/python/deferred-forms/#entry-presentation_python_api_session_product_indefinite"><code>product_indefinite</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_random_variable"><code>random_variable</code></a> — Default context</li>
-<li><a href="/symi/python/construction-and-parsing/#entry-presentation_python_api_session_rational"><code>rational</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_rational_assumption"><code>rational_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/construction-and-parsing/#entry-presentation_python_api_session_rational_from_float"><code>rational_from_float</code></a> — Default context</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_rationalcanonicalform"><code>RationalCanonicalForm</code></a> — Type</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_rationalcanonicalform_canonical_form"><code>RationalCanonicalForm.canonical_form</code></a> — RationalCanonicalForm property</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_rationalcanonicalform_characteristic_polynomial"><code>RationalCanonicalForm.characteristic_polynomial</code></a> — RationalCanonicalForm property</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_rationalcanonicalform_invariant_factors"><code>RationalCanonicalForm.invariant_factors</code></a> — RationalCanonicalForm property</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_rationalcanonicalform_minimal_polynomial"><code>RationalCanonicalForm.minimal_polynomial</code></a> — RationalCanonicalForm property</li>
-<li><a href="/symi/python/matrix-canonical-forms/#entry-presentation_python_api_rationalcanonicalform_similarity"><code>RationalCanonicalForm.similarity</code></a> — RationalCanonicalForm property</li>
-<li><a href="/symi/python/algebraic-transforms/#entry-presentation_python_api_session_rationalize_denominator"><code>rationalize_denominator</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_real_assumption"><code>real_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_real_entries"><code>real_entries</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_real_line"><code>real_line</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_real_part"><code>real_part</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_real_root_count"><code>real_root_count</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_real_root_sign"><code>real_root_sign</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_refine"><code>refine</code></a> — Default context</li>
-<li><a href="/symi/python/construction-and-parsing/#entry-presentation_python_api_session_reset_context"><code>reset_context</code></a> — Explicit context</li>
-<li><a href="/symi/python/series/#entry-presentation_python_api_session_residue"><code>residue</code></a> — Default context</li>
-<li><a href="/symi/python/polynomials/#entry-presentation_python_api_session_resultant"><code>resultant</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_rewrite_as_exponential"><code>rewrite_as_exponential</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_rewrite_as_trigonometric"><code>rewrite_as_trigonometric</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_rewrite_in_terms_of"><code>rewrite_in_terms_of</code></a> — Default context</li>
-<li><a href="/symi/python/specialized-canonical-forms/#entry-presentation_python_api_session_rewrite_special_functions"><code>rewrite_special_functions</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_rewrite_trigonometric_basis"><code>rewrite_trigonometric_basis</code></a> — Default context</li>
-<li><a href="/symi/python/combinatorics/#entry-presentation_python_api_session_rising_factorial"><code>rising_factorial</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_root"><code>root</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_roots_with_multiplicities"><code>roots_with_multiplicities</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_sec"><code>sec</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_sech"><code>sech</code></a> — Default context</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_segment2d"><code>Segment2d</code></a> — Segment2d constructor</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_segment2d_getattribute"><code>Segment2d.__getattribute__</code></a> — Segment2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_segment2d_repr"><code>Segment2d.__repr__</code></a> — Segment2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_segment2d_is_stale"><code>Segment2d.is_stale</code></a> — Segment2d property</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_segment2d_length"><code>Segment2d.length</code></a> — Segment2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_segment2d_midpoint"><code>Segment2d.midpoint</code></a> — Segment2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_segment2d_perpendicular_bisector_equation"><code>Segment2d.perpendicular_bisector_equation</code></a> — Segment2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_session_segment_2d"><code>segment_2d</code></a> — Explicit context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_separate_partial_differential_equation"><code>separate_partial_differential_equation</code></a> — Default context</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_serialize_bulk"><code>serialize_bulk</code></a> — Default context</li>
-<li><a href="/symi/python/serialization-and-output/#entry-presentation_python_api_session_serialize_object"><code>serialize_object</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_set_complement"><code>set_complement</code></a> — Default context</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_set_execution_mode"><code>set_execution_mode</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_set_intersection"><code>set_intersection</code></a> — Default context</li>
-<li><a href="/symi/python/sets/#entry-presentation_python_api_session_set_union"><code>set_union</code></a> — Default context</li>
-<li><a href="/symi/python/simplification-general/#entry-presentation_python_api_session_simplify"><code>simplify</code></a> — Default context</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_simplify_bulk"><code>simplify_bulk</code></a> — Default context</li>
-<li><a href="/symi/python/logical-transforms/#entry-presentation_python_api_session_simplify_logical"><code>simplify_logical</code></a> — Default context</li>
-<li><a href="/symi/python/trigonometric-complex-rewrites/#entry-presentation_python_api_session_simplify_trigonometric"><code>simplify_trigonometric</code></a> — Default context</li>
-<li><a href="/symi/python/simplification-general/#entry-presentation_python_api_session_simplify_under_constraint"><code>simplify_under_constraint</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_sin"><code>sin</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_singular_matrix"><code>singular_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/calculus/#entry-presentation_python_api_session_singularities"><code>singularities</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_sinh"><code>sinh</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_solve"><code>solve</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_solve_linear_diophantine"><code>solve_linear_diophantine</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_solve_linear_diophantine_system"><code>solve_linear_diophantine_system</code></a> — Default context</li>
-<li><a href="/symi/python/recurrence-equations/#entry-presentation_python_api_session_solve_linear_recurrence"><code>solve_linear_recurrence</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_solve_negative_pell"><code>solve_negative_pell</code></a> — Default context</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_session_solve_ordinary_differential_equation"><code>solve_ordinary_differential_equation</code></a> — Default context</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_session_solve_ordinary_differential_equation_request"><code>solve_ordinary_differential_equation_request</code></a> — Default context</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_session_solve_ordinary_differential_equation_system_request"><code>solve_ordinary_differential_equation_system_request</code></a> — Default context</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_session_solve_ordinary_differential_equation_with_history"><code>solve_ordinary_differential_equation_with_history</code></a> — Default context</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_session_solve_ordinary_differential_equation_with_particular_solution"><code>solve_ordinary_differential_equation_with_particular_solution</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_solve_partial_differential_equation"><code>solve_partial_differential_equation</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_solve_partial_differential_equation_by_similarity_reduction"><code>solve_partial_differential_equation_by_similarity_reduction</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_solve_partial_differential_equation_request"><code>solve_partial_differential_equation_request</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_solve_partial_differential_equation_with_transform_axis_specifications"><code>solve_partial_differential_equation_with_transform_axis_specifications</code></a> — Default context</li>
-<li><a href="/symi/python/number-theory/#entry-presentation_python_api_session_solve_pell"><code>solve_pell</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_solve_polynomial_system"><code>solve_polynomial_system</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_solve_semialgebraic"><code>solve_semialgebraic</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_solveset"><code>solveset</code></a> — Default context</li>
-<li><a href="/symi/python/solving/#entry-presentation_python_api_session_solveset_in_domain"><code>solveset_in_domain</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_sqrt"><code>sqrt</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_square_matrix"><code>square_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/combinatorics/#entry-presentation_python_api_session_stirling_first_signed"><code>stirling_first_signed</code></a> — Default context</li>
-<li><a href="/symi/python/combinatorics/#entry-presentation_python_api_session_stirling_second"><code>stirling_second</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_session_substitute"><code>substitute</code></a> — Expression method</li>
-<li><a href="/symi/python/context-safety/#entry-presentation_python_api_session_substitute_bulk"><code>substitute_bulk</code></a> — Default context</li>
-<li><a href="/symi/python/deferred-forms/#entry-presentation_python_api_session_summation"><code>summation</code></a> — Default context</li>
-<li><a href="/symi/python/deferred-forms/#entry-presentation_python_api_session_summation_indefinite"><code>summation_indefinite</code></a> — Default context</li>
-<li><a href="/symi/python/construction-and-parsing/#entry-presentation_python_api_session_symbol"><code>symbol</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_symbol_name"><code>symbol_name</code></a> — Expression method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_symmetric_matrix"><code>symmetric_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_tan"><code>tan</code></a> — Default context</li>
-<li><a href="/symi/python/elementary-functions/#entry-presentation_python_api_session_tanh"><code>tanh</code></a> — Default context</li>
-<li><a href="/symi/python/series/#entry-presentation_python_api_session_taylor_series"><code>taylor_series</code></a> — Default context</li>
-<li><a href="/symi/python/serialization-and-output/#entry-presentation_python_api_session_to_latex"><code>to_latex</code></a> — Default context</li>
-<li><a href="/symi/python/serialization-and-output/#entry-presentation_python_api_session_to_latex_with_options"><code>to_latex_with_options</code></a> — Default context</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_to_list"><code>to_list</code></a> — Expression method</li>
-<li><a href="/symi/python/simplification-general/#entry-presentation_python_api_session_together"><code>together</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_transcendental_assumption"><code>transcendental_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_triangle2d"><code>Triangle2d</code></a> — Triangle2d constructor</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_triangle2d_getattribute"><code>Triangle2d.__getattribute__</code></a> — Triangle2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_host_python_triangle2d_repr"><code>Triangle2d.__repr__</code></a> — Triangle2d method</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_triangle2d_is_stale"><code>Triangle2d.is_stale</code></a> — Triangle2d property</li>
-<li><a href="/symi/python/geometry/#entry-presentation_python_api_session_triangle_2d"><code>triangle_2d</code></a> — Explicit context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_ultraspherical_polynomial"><code>ultraspherical_polynomial</code></a> — Default context</li>
-<li><a href="/symi/python/optimization/#entry-presentation_python_api_session_unconstrained_critical_points"><code>unconstrained_critical_points</code></a> — Default context</li>
-<li><a href="/symi/python/undefined-functions/#entry-presentation_python_api_session_undefined_function"><code>undefined_function</code></a> — Explicit context</li>
-<li><a href="/symi/python/undefined-functions/#entry-presentation_python_api_undefinedfunction"><code>UndefinedFunction</code></a> — Type</li>
-<li><a href="/symi/python/undefined-functions/#entry-presentation_python_api_undefinedfunction_call"><code>UndefinedFunction.__call__</code></a> — UndefinedFunction method</li>
-<li><a href="/symi/python/undefined-functions/#entry-presentation_python_host_python_undefinedfunction_repr"><code>UndefinedFunction.__repr__</code></a> — UndefinedFunction method</li>
-<li><a href="/symi/python/undefined-functions/#entry-presentation_python_api_undefinedfunction_derivative"><code>UndefinedFunction.derivative</code></a> — UndefinedFunction method</li>
-<li><a href="/symi/python/expressions/#entry-presentation_python_api_expression_union_components"><code>union_components</code></a> — Expression method</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_unitary_matrix"><code>unitary_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/linear-algebra/#entry-presentation_python_api_session_upper_triangular_matrix"><code>upper_triangular_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/statistics/#entry-presentation_python_api_session_variance"><code>variance</code></a> — Default context</li>
-<li><a href="/symi/python/ordinary-differential-equations/#entry-presentation_python_api_session_verify_ordinary_differential_equation_system_solution"><code>verify_ordinary_differential_equation_system_solution</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_verify_partial_differential_equation_coordinate_transformation"><code>verify_partial_differential_equation_coordinate_transformation</code></a> — Default context</li>
-<li><a href="/symi/python/partial-differential-equations/#entry-presentation_python_api_session_verify_partial_differential_equation_solution"><code>verify_partial_differential_equation_solution</code></a> — Default context</li>
-<li><a href="/symi/python/assumptions/#entry-presentation_python_api_session_zero_assumption"><code>zero_assumption</code></a> — Default context</li>
-<li><a href="/symi/python/zero-equivalence/#entry-presentation_python_api_session_zero_equivalent"><code>zero_equivalent</code></a> — Default context</li>
-<li><a href="/symi/python/matrix-construction/#entry-presentation_python_api_session_zero_matrix"><code>zero_matrix</code></a> — Default context</li>
-<li><a href="/symi/python/special-functions/#entry-presentation_python_api_session_zeta"><code>zeta</code></a> — Default context</li>
-</ul>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Symi Documentation</title>
+        <link rel="icon" type="image/png" href="/symi/assets/site/logo_bright.png">
+        <link href="/symi/assets/site/styles.css" rel="stylesheet" />
+        <link href="/symi/assets/site/vendor/katex/katex.min.css" rel="stylesheet" />
+        <script src="/symi/assets/site/vendor/marked/marked.umd.js"></script>
+        <script src="/symi/assets/site/vendor/katex/katex.min.js"></script>
+        <script src="/symi/assets/site/vendor/katex/auto-render.min.js"></script>
 
-                </article>
-                <aside class="symi-related" aria-label="Related pages"><h2 class="symi-related-title">More in Reference and indexes</h2><ul class="symi-related-list"><li><a href="/symi/python/structured-results/">Structured results</a></li><li><a href="/symi/python/assumptions/">Assumptions</a></li><li><a href="/symi/python/zero-equivalence/">Zero equivalence</a></li><li><a href="/symi/python/api-reference/">Complete placement index</a></li><li><a href="/symi/python/category-index/">Category index</a></li><li><a href="/symi/python/owner-index/">Owner index</a></li><li><a href="/symi/python/result-type-index/">Result-type index</a></li></ul></aside>
-                <nav class="symi-pager" aria-label="Previous and next pages"><a class="symi-pager-link symi-pager-previous" href="/symi/python/category-index/" rel="prev"><span class="symi-pager-direction">Previous</span><span class="symi-pager-title">Category index</span></a><a class="symi-pager-link symi-pager-next" href="/symi/python/owner-index/" rel="next"><span class="symi-pager-direction">Next</span><span class="symi-pager-title">Owner index</span></a></nav>
-                <footer class="symi-footer"><p>Symi documentation · Python</p></footer>
+        <template id="documentation-language-selector_">
+            <div class="symi-documentation-language-selector relative">
+                <button type="button" class="symi-documentation-language-button flex w-full items-center justify-between rounded-md border border-symi-lowlight px-3 py-2 text-left" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="symi-documentation-language-label"></span>
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="symi-documentation-language-list absolute left-0 right-0 z-20 mt-1 hidden rounded-md border border-symi-lowlight bg-symi-bg-secondary p-1 shadow-lg" role="listbox"></ul>
+            </div>
+        </template>
+
+        <template id="documentation-language-option_">
+            <li role="option"><a class="symi-documentation-language-option block rounded px-2 py-1" tabindex="-1"><span class="symi-documentation-language-selected mr-1" aria-hidden="true"></span></a></li>
+        </template>
+
+        <template id="documentation-search_">
+            <section class="symi-documentation-search mb-6" aria-label="Search documentation">
+                <label class="mb-1 block text-xs opacity-70" for="symi-documentation-search-input">Search</label>
+                <div class="flex gap-1">
+                    <input id="symi-documentation-search-input" class="min-w-0 grow rounded-md border border-symi-lowlight bg-symi-bg-tertiary px-2 py-1" type="search" autocomplete="off" placeholder="Search capabilities" />
+                    <button type="button" class="symi-documentation-search-scope rounded-md border border-symi-lowlight px-2 py-1 text-xs" aria-pressed="false">All</button>
+                </div>
+                <div class="symi-documentation-search-status mt-1 text-xs opacity-70" role="status" aria-live="polite"></div>
+                <ul class="symi-documentation-search-results mt-2 hidden" role="listbox"></ul>
+            </section>
+        </template>
+
+        <template id="documentation-search-result_">
+            <li role="option" class="symi-documentation-search-result rounded-md px-2 py-1">
+                <a class="symi-documentation-search-result-link block">
+                    <span class="symi-documentation-search-result-name block font-['katex-code']"></span>
+                    <span class="symi-documentation-search-result-meta block text-xs opacity-60"></span>
+                </a>
+            </li>
+        </template>
+
+        <template id="documentation-navigation-section_">
+            <li class="symi-documentation-section">
+                <button type="button" class="symi-documentation-section-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
+                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
+                    <span class="symi-documentation-section-label"></span>
+                </button>
+                <ul class="symi-documentation-section-entries hidden"></ul>
+            </li>
+        </template>
+
+        <template id="documentation-navigation-category_">
+            <li class="symi-documentation-category mb-3">
+                <h2 class="mb-1 text-sm font-semibold">
+                    <button type="button" class="symi-documentation-category-toggle flex w-full items-center gap-1 text-left" aria-expanded="false">
+                        <span class="symi-documentation-chevron" aria-hidden="true">▸</span>
+                        <span class="symi-documentation-category-label"></span>
+                    </button>
+                </h2>
+                <ul class="symi-documentation-category-sections space-y-1"></ul>
+            </li>
+        </template>
+
+        <template id="documentation-navigation-entry_">
+            <li><a class="symi-documentation-entry-link text-sm font-['katex-code']"></a></li>
+        </template>
+
+        <template id="documentation-navigation-plain_">
+            <li class="pl-4"><a class="symi-documentation-plain-link"></a></li>
+        </template>
+
+        <template id="documentation-navigation-list_">
+            <ul></ul>
+        </template>
+    </head>
+    <body id="body" class="bg-symi-bg-tertiary text-symi-text h-full overflow-hidden">
+        <div id="documentation_layout" class="flex h-full">
+            <nav id="documentation_sidebar" class="relative w-72 shrink-0 h-full overflow-y-auto bg-symi-bg-secondary p-6">
+                <a href="/symi/" class="mb-6 flex items-center gap-3">
+                    <img src="/symi/assets/site/logo_slightly_bright_bordered_mid.png" alt="Symi" style="width: 40px; height: 40px;">
+                    <span class="text-symi-highlight text-lg font-semibold">Symi Docs</span>
+                </a>
+                <div id="documentation_language_selector" class="mb-5"></div>
+                <div id="documentation_search"></div>
+                <div id="documentation_navigation" class="symi-documentation-navigation"></div>
+            </nav>
+            <main id="documentation_main" class="relative grow h-full overflow-y-auto">
+                <div id="documentation_layer_notice" class="mx-auto max-w-3xl px-8 pt-5 text-sm"><p id="documentation_layer_text"></p><p id="documentation-unavailable-notice" class="hidden"></p></div>
+                <article id="documentation_content" class="symi-documentation-content max-w-3xl mx-auto px-8 py-10"></article>
             </main>
-            <aside class="symi-outline" aria-labelledby="symi-outline-title" hidden>
-                <p class="symi-outline-title" id="symi-outline-title">On this page</p>
-                
-            </aside>
         </div>
+        <script type="module" src="/symi/assets/site/documentation.js"></script>
     </body>
 </html>

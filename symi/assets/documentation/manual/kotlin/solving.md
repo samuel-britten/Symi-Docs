@@ -2,28 +2,11 @@
 
 ### solve
 
-<a id="entry-presentation_kotlin_api_session_solve"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_solve.6f896305e47e"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun solve(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-): List<UniffiExpression>
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_solve.a09ec4f065d9"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.solve</code></p>
+`UniffiExpression.solve(variable: kotlin.String): List<UniffiExpression>`
 
-```kotlin signature
-fun solve(variable: kotlin.String): List<UniffiExpression>
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_solve.6f896305e47e"></a>
+`UniffiSession.solve(inputExpression: UniffiExpression, variable: kotlin.String): List<UniffiExpression>`
 
 
 Solve an equation (an `equal` node, or an expression implicitly equated to
@@ -33,28 +16,11 @@ solver's reach are simply absent — prefer `solveset` when you need an honest
 
 ### solveset
 
-<a id="entry-presentation_kotlin_api_session_solveset"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_solveset.03d4bfbf04f7"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun solveset(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_solveset.d8e8e661cefd"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.solveset</code></p>
+`UniffiExpression.solveset(variable: kotlin.String): UniffiExpression`
 
-```kotlin signature
-fun solveset(variable: kotlin.String): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_solveset.03d4bfbf04f7"></a>
+`UniffiSession.solveset(inputExpression: UniffiExpression, variable: kotlin.String): UniffiExpression`
 
 
 Solution **set** of the equation or inequality: a finite set, interval,
@@ -175,17 +141,8 @@ set, image set, union, or `empty_set` is a completeness claim, and a
 
 ### solveset_in_domain
 
-<a id="entry-presentation_kotlin_api_session_solveset_in_domain"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvesetindomain.75a22b19ab27"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun solvesetInDomain(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-    domain: UniffiExpression,
-): UniffiExpression
-```
+`UniffiSession.solvesetInDomain(inputExpression: UniffiExpression, variable: kotlin.String, domain: UniffiExpression): UniffiExpression`
 
 
 `solveset` restricted to an explicit domain set (e.g. `real_line()`,
@@ -193,28 +150,11 @@ fun solvesetInDomain(
 
 ### roots_with_multiplicities
 
-<a id="entry-presentation_kotlin_api_session_roots_with_multiplicities"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_rootswithmultiplicities.851ee65113f9"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun rootsWithMultiplicities(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-): List<UniffiRootMultiplicity>
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_rootswithmultiplicities.a9c69445f1dc"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rootsWithMultiplicities</code></p>
+`UniffiExpression.rootsWithMultiplicities(variable: kotlin.String): List<UniffiRootMultiplicity>`
 
-```kotlin signature
-fun rootsWithMultiplicities(variable: kotlin.String): List<UniffiRootMultiplicity>
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_rootswithmultiplicities.851ee65113f9"></a>
+`UniffiSession.rootsWithMultiplicities(inputExpression: UniffiExpression, variable: kotlin.String): List<UniffiRootMultiplicity>`
 
 
 Roots of a polynomial with their multiplicities. **Notes:** Python returns a
@@ -222,17 +162,8 @@ dict keyed by root; WASM returns an array of `RootMultiplicity` objects.
 
 ### polynomial_root
 
-<a id="entry-presentation_kotlin_api_session_polynomial_root"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_polynomialroot.28a1d3f80945"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun polynomialRoot(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-    index: kotlin.ULong,
-): UniffiExpression?
-```
+`UniffiSession.polynomialRoot(inputExpression: UniffiExpression, variable: kotlin.String, index: kotlin.ULong): UniffiExpression?`
 
 
 Construct the zero-based `index`-th exact root of a univariate rational
@@ -249,16 +180,8 @@ explicit, separate operation.
 
 ### minimal_polynomial_of
 
-<a id="entry-presentation_kotlin_api_session_minimal_polynomial_of"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_minimalpolynomialof.73c4186d1d09"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun minimalPolynomialOf(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-): UniffiExpression?
-```
+`UniffiSession.minimalPolynomialOf(inputExpression: UniffiExpression, variable: kotlin.String): UniffiExpression?`
 
 
 Return an exact polynomial in the requested variable for a first-class
@@ -271,16 +194,8 @@ Has `root` and `multiplicity` getters; see object model.
 
 ### solve_polynomial_system
 
-<a id="entry-presentation_kotlin_api_session_solve_polynomial_system"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvepolynomialsystem.e15e3e3f80ff"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun solvePolynomialSystem(
-    equations: List<UniffiExpression>,
-    variables: List<kotlin.String>,
-): UniffiPolynomialSystemSolution
-```
+`UniffiSession.solvePolynomialSystem(equations: List<UniffiExpression>, variables: List<kotlin.String>): UniffiPolynomialSystemSolution`
 
 
 Solve a multivariate polynomial system `{ equation_i = 0 }` for the named
@@ -304,43 +219,60 @@ place.
 
 ### verdict
 
-<a id="entry-presentation_kotlin_api_polynomialsystemsolution_verdict"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_verdict.0006e878b626"></a>
-<p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
+<a id="placement-placement.kotlin.kotlin_object.uniffidefiniteintegrationresult_verdict.bc7ac20ebf03"></a>
+`UniffiDefiniteIntegrationResult.verdict(): UniffiDefiniteIntegrationVerdict`
 
-```kotlin signature
-fun verdict(): UniffiSystemVerdict
-```
+<a id="placement-placement.kotlin.kotlin_object.uniffioptimizationoutcome_verdict.9c78434af28a"></a>
+`UniffiOptimizationOutcome.verdict(): UniffiOptimizationVerdict`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiordinarydifferentialequationsolveresult_verdict.0d23ba9d0f60"></a>
+`UniffiOrdinaryDifferentialEquationSolveResult.verdict(): UniffiOrdinaryDifferentialEquationSolveVerdict`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiordinarydifferentialequationsystemsolveresult_verdict.2c67b3f08685"></a>
+`UniffiOrdinaryDifferentialEquationSystemSolveResult.verdict(): UniffiOrdinaryDifferentialEquationSolveVerdict`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffiordinarydifferentialequationsystemverificationreport_verdict.abcdeef14376"></a>
+`UniffiOrdinaryDifferentialEquationSystemVerificationReport.verdict(): UniffiOrdinaryDifferentialEquationVerificationVerdict`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationsecondorderclassification_verdict.71cdcf74ce9b"></a>
+`UniffiPartialDifferentialEquationSecondOrderClassification.verdict(): UniffiPartialDifferentialEquationSecondOrderTypeVerdict`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationsolveresult_verdict.dd4ffb3f5665"></a>
+`UniffiPartialDifferentialEquationSolveResult.verdict(): UniffiPartialDifferentialEquationSolveVerdict`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationtransformationverificationreport_verdict.59700689f2b8"></a>
+`UniffiPartialDifferentialEquationTransformationVerificationReport.verdict(): UniffiPartialDifferentialEquationVerificationVerdict`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationverificationreport_verdict.dfa129499b75"></a>
+`UniffiPartialDifferentialEquationVerificationReport.verdict(): UniffiPartialDifferentialEquationVerificationVerdict`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffipartialdifferentialequationverificationresidual_verdict.870b43826104"></a>
+`UniffiPartialDifferentialEquationVerificationResidual.verdict(): UniffiPartialDifferentialEquationVerificationVerdict`
+
+<a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_verdict.0006e878b626"></a>
+`UniffiPolynomialSystemSolution.verdict(): UniffiSystemVerdict`
 
 Getter on `PolynomialSystemSolution`: the verdict string, one of `"finite"`,
 `"empty"`, `"positive_dimensional"`, or `"declined"`.
 
 ### complete
 
-<a id="entry-presentation_kotlin_api_polynomialsystemsolution_complete"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_complete.f70c3c1d9eb9"></a>
-<p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
+<a id="placement-placement.kotlin.kotlin_object.uniffioptimizationoutcome_complete.e62e6866c7ec"></a>
+`UniffiOptimizationOutcome.complete(): kotlin.Boolean`
 
-```kotlin signature
-fun complete(): kotlin.Boolean
-```
+<a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_complete.f70c3c1d9eb9"></a>
+`UniffiPolynomialSystemSolution.complete(): kotlin.Boolean`
 
 Getter on `PolynomialSystemSolution`: whether the solver certified it found
 every solution.
 
 ### solutions
+
+<a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_solutions.a689a872e0cd"></a>
+`UniffiPolynomialSystemSolution.solutions(): List<UniffiSystemAssignment>`
+
 Getter on `PolynomialSystemSolution`: the array of `SystemAssignment` tuples
 (empty for the non-finite verdicts).
-
-<a id="entry-presentation_kotlin_api_polynomialsystemsolution_solutions"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffipolynomialsystemsolution_solutions.a689a872e0cd"></a>
-<p class="symi-entry-owner">UniffiPolynomialSystemSolution method</p>
-
-```kotlin signature
-fun solutions(): List<UniffiSystemAssignment>
-```
-
-Getter on `polynomial_system_solution`: the array of `system_assignment` tuples (empty for the non-finite verdicts).
 
 ### system_assignment (WASM result class)
 
@@ -348,43 +280,29 @@ One solution tuple of a polynomial system, pairing each unknown with its value.
 
 ### variables
 
-<a id="entry-presentation_kotlin_api_systemassignment_variables"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisystemassignment_variables.14a2fe9b3e80"></a>
-<p class="symi-entry-owner">UniffiSystemAssignment method</p>
+<a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_variables.533ae8b1b140"></a>
+`UniffiCriticalPoint.variables(): List<kotlin.String>`
 
-```kotlin signature
-fun variables(): List<kotlin.String>
-```
+<a id="placement-placement.kotlin.kotlin_object.uniffisystemassignment_variables.14a2fe9b3e80"></a>
+`UniffiSystemAssignment.variables(): List<kotlin.String>`
 
 Getter on `SystemAssignment`: the unknown names, in order.
 
 ### values
 
-<a id="entry-presentation_kotlin_api_systemassignment_values"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisystemassignment_values.1aff50b38568"></a>
-<p class="symi-entry-owner">UniffiSystemAssignment method</p>
+<a id="placement-placement.kotlin.kotlin_object.unifficriticalpoint_values.3dbc6f02bd77"></a>
+`UniffiCriticalPoint.values(): List<UniffiExpression>`
 
-```kotlin signature
-fun values(): List<UniffiExpression>
-```
+<a id="placement-placement.kotlin.kotlin_object.uniffisystemassignment_values.1aff50b38568"></a>
+`UniffiSystemAssignment.values(): List<UniffiExpression>`
 
 Getter on `SystemAssignment`: the assigned value expressions, aligned with
 `variables`.
 
 ### real_root_count
 
-<a id="entry-presentation_kotlin_api_session_real_root_count"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_realrootcount.5662ae54196a"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun realRootCount(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-    lower: kotlin.Long,
-    upper: kotlin.Long,
-): kotlin.ULong?
-```
+`UniffiSession.realRootCount(inputExpression: UniffiExpression, variable: kotlin.String, lower: kotlin.Long, upper: kotlin.Long): kotlin.ULong?`
 
 
 Number of distinct real roots of a univariate polynomial in the interval
@@ -393,16 +311,8 @@ univariate polynomial over the rationals.
 
 ### count_distinct_real_roots
 
-<a id="entry-presentation_kotlin_api_session_count_distinct_real_roots"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_countdistinctrealroots.6ba1de8ecf81"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun countDistinctRealRoots(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-): kotlin.ULong?
-```
+`UniffiSession.countDistinctRealRoots(inputExpression: UniffiExpression, variable: kotlin.String): kotlin.ULong?`
 
 
 Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions as
@@ -410,17 +320,8 @@ Number of distinct real roots over all of \(\mathbb{R}\). Same `None` conditions
 
 ### real_root_sign
 
-<a id="entry-presentation_kotlin_api_session_real_root_sign"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_realrootsign.d4d8626c99cb"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun realRootSign(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-    index: kotlin.ULong,
-): kotlin.Long?
-```
+`UniffiSession.realRootSign(inputExpression: UniffiExpression, variable: kotlin.String, index: kotlin.ULong): kotlin.Long?`
 
 
 The exact sign (`-1`, `0`, or `1`) of the `index`-th smallest real root of a
@@ -431,20 +332,8 @@ is out of range.
 
 ### compare_real_roots
 
-<a id="entry-presentation_kotlin_api_session_compare_real_roots"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_comparerealroots.a4792011d011"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun compareRealRoots(
-    firstExpression: UniffiExpression,
-    firstVariable: kotlin.String,
-    firstIndex: kotlin.ULong,
-    secondExpression: UniffiExpression,
-    secondVariable: kotlin.String,
-    secondIndex: kotlin.ULong,
-): kotlin.Long?
-```
+`UniffiSession.compareRealRoots(firstExpression: UniffiExpression, firstVariable: kotlin.String, firstIndex: kotlin.ULong, secondExpression: UniffiExpression, secondVariable: kotlin.String, secondIndex: kotlin.ULong): kotlin.Long?`
 
 
 Compare two real algebraic numbers exactly, each given as the `index`-th smallest
@@ -458,17 +347,8 @@ polynomial over the rationals or an index is out of range.
 
 ### eliminate_quantifiers
 
-<a id="entry-presentation_kotlin_api_session_eliminate_quantifiers"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_eliminatequantifiers.130b76207fde"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun eliminateQuantifiers(
-    matrix: UniffiExpression,
-    quantifiers: List<UniffiQuantifier>,
-    variables: List<kotlin.String>,
-): UniffiExpression
-```
+`UniffiSession.eliminateQuantifiers(matrix: UniffiExpression, quantifiers: List<UniffiQuantifier>, variables: List<kotlin.String>): UniffiExpression`
 
 `context.eliminate_quantifiers(matrix, quantifiers: list[str], variables: list[VariableLike])`
 
@@ -485,16 +365,8 @@ decline, or when the solution formula cannot be certified.
 
 ### solve_semialgebraic
 
-<a id="entry-presentation_kotlin_api_session_solve_semialgebraic"></a>
 <a id="placement-placement.kotlin.kotlin_object.uniffisession_solvesemialgebraic.0ee8355fa7b2"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun solveSemialgebraic(
-    matrix: UniffiExpression,
-    variables: List<kotlin.String>,
-): UniffiExpression
-```
+`UniffiSession.solveSemialgebraic(matrix: UniffiExpression, variables: List<kotlin.String>): UniffiExpression`
 
 `context.solve_semialgebraic(matrix, variables: list[VariableLike])`
 
@@ -508,14 +380,3 @@ case (for example, \(\{(x, y) : x^2 - 1 < 0 \land y^2 - 1 < 0\}\) is the open sq
 
 ## Example
 
-
-### solve_as_set
-
-*Not exposed by the Kotlin bindings. Available as [`api::Expression::solve_as_set`](/symi/rust/solving#solve_as_set) in Rust.*
-
-
-The solution set of an equation as a set-valued expression, rather than the
-list of solutions [`solve`](#solve) returns. A set answer can express solution
-families a list cannot — an image set over the integers, or a union of several
-families — so it is the right entry when the solution set may be infinite.
-See [Sets](sets.md) for what can be done with the result.

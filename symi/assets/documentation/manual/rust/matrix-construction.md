@@ -6,19 +6,11 @@ Construct matrices from ordered rows or from identity, zero, and diagonal famili
 
 ### matrix
 
-<a id="entry-presentation_rust_api_session_matrix"></a>
 <a id="placement-placement.rust.native_rust.api_session_matrix.d13bbbee86c8"></a>
-<p class="symi-entry-owner">api::Session method</p>
+`symi::api::Session — pub fn matrix<RowsIterator, RowIterator>(&self, rows: RowsIterator) -> Result<Matrix, ApiError> where RowsIterator: IntoIterator<Item = RowIterator>, RowIterator: IntoIterator<Item = Expression>`
 
-```rust signature
-pub fn matrix<RowsIterator, RowIterator>(
-    &self,
-    rows: RowsIterator,
-) -> Result<Matrix, ApiError>
-where
-    RowsIterator: IntoIterator<Item = RowIterator>,
-    RowIterator: IntoIterator<Item = Expression>,
-```
+<a id="placement-placement.rust.native_rust.api_partial_differential_equations_partialdifferentialequationprincipalpart_matrix.89a26f5a0c0b"></a>
+`symi::api::partial_differential_equations::PartialDifferentialEquationPrincipalPart — pub fn matrix(&self) -> Matrix`
 
 
 
@@ -30,48 +22,24 @@ code should use the nested facade form.
 
 ### matrix_identity
 
-<a id="entry-presentation_rust_api_session_matrix_identity"></a>
 <a id="placement-placement.rust.native_rust.api_session_matrix_identity.65c23949077d"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn matrix_identity(&self, size: usize) -> Result<Matrix, ApiError>
-```
+`symi::api::Session — pub fn matrix_identity(&self, size: usize) -> Result<Matrix, ApiError>`
 
 
 The \(\mathit{size}\times\mathit{size}\) identity; size 0 raises.
 
 ### matrix_zero
 
-<a id="entry-presentation_rust_api_session_matrix_zero"></a>
 <a id="placement-placement.rust.native_rust.api_session_matrix_zero.bd99a851ae3d"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn matrix_zero(
-    &self,
-    rows: usize,
-    columns: usize,
-) -> Result<Matrix, ApiError>
-```
+`symi::api::Session — pub fn matrix_zero(&self, rows: usize, columns: usize) -> Result<Matrix, ApiError>`
 
 
 The \(\mathit{rows}\times\mathit{columns}\) zero matrix.
 
 ### matrix_diagonal
 
-<a id="entry-presentation_rust_api_session_matrix_diagonal"></a>
 <a id="placement-placement.rust.native_rust.api_session_matrix_diagonal.3bc09915f562"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn matrix_diagonal<'a, IteratorType>(
-    &self,
-    entries: IteratorType,
-) -> Result<Matrix, ApiError>
-where
-    IteratorType: IntoIterator<Item = &'a Expression>,
-```
+`symi::api::Session — pub fn matrix_diagonal<'a, IteratorType>(&self, entries: IteratorType) -> Result<Matrix, ApiError> where IteratorType: IntoIterator<Item = &'a Expression>`
 
 
 Square matrix with the given main diagonal and zeros elsewhere; the empty
@@ -81,39 +49,20 @@ list raises.
 
 ### rows
 
-<a id="entry-presentation_rust_api_matrix_rows"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_rows.15283dbbfdb7"></a>
-<p class="symi-entry-owner">api::Matrix method</p>
-
-```rust signature
-pub fn rows(&self) -> usize
-```
+`symi::api::Matrix — pub fn rows(&self) -> usize`
 
 
 ### columns
 
-<a id="entry-presentation_rust_api_matrix_columns"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_columns.8b0f61863dc2"></a>
-<p class="symi-entry-owner">api::Matrix method</p>
-
-```rust signature
-pub fn columns(&self) -> usize
-```
+`symi::api::Matrix — pub fn columns(&self) -> usize`
 
 
 ### entry
 
-<a id="entry-presentation_rust_api_matrix_entry"></a>
 <a id="placement-placement.rust.native_rust.api_matrix_entry.3ffd9f4d1e96"></a>
-<p class="symi-entry-owner">api::Matrix method</p>
-
-```rust signature
-pub fn entry(
-    &self,
-    row: usize,
-    column: usize,
-) -> Result<Expression, ApiError>
-```
+`symi::api::Matrix — pub fn entry(&self, row: usize, column: usize) -> Result<Expression, ApiError>`
 
 
 Element access. **Notes:** Python uses indexing `m[row, column]` instead.
@@ -138,52 +87,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
-
-
-## Additional API
-
-### diagonal_matrix
-
-<a id="entry-presentation_rust_api_session_diagonal_matrix"></a>
-<a id="placement-placement.rust.native_rust.api_session_diagonal_matrix.b17dbb2a54b5"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn diagonal_matrix(
-    &self,
-    subject: &Matrix,
-) -> Result<AssumptionProposition, ApiError>
-```
-
-Construct a diagonal-matrix proposition.
-
-### identity_matrix
-
-<a id="entry-presentation_rust_api_session_identity_matrix"></a>
-<a id="placement-placement.rust.native_rust.api_session_identity_matrix.933d2213969f"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn identity_matrix(
-    &self,
-    subject: &Matrix,
-) -> Result<AssumptionProposition, ApiError>
-```
-
-Construct an identity-matrix proposition.
-
-### zero_matrix
-
-<a id="entry-presentation_rust_api_session_zero_matrix"></a>
-<a id="placement-placement.rust.native_rust.api_session_zero_matrix.a2c72f8dc46d"></a>
-<p class="symi-entry-owner">api::Session method</p>
-
-```rust signature
-pub fn zero_matrix(
-    &self,
-    subject: &Matrix,
-) -> Result<AssumptionProposition, ApiError>
-```
-
-Construct a zero-matrix proposition.
 

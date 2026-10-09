@@ -8,25 +8,11 @@ the search-based ladder see
 
 ### expand
 
-<a id="entry-presentation_kotlin_api_session_expand"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_expand.da532704e086"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun expand(target: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_expand.422487fa6eb9"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.expand</code></p>
+`UniffiExpression.expand(): UniffiExpression`
 
-```kotlin signature
-fun expand(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_expand.da532704e086"></a>
+`UniffiSession.expand(target: UniffiExpression): UniffiExpression`
 
 
 
@@ -34,28 +20,11 @@ Expand products, integer powers, and supported algebraic forms.
 
 ### partial_fractions
 
-<a id="entry-presentation_kotlin_api_session_partial_fractions"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_partialfractions.5f8aaf403de5"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun partialFractions(
-    inputExpression: UniffiExpression,
-    variable: kotlin.String,
-): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_partialfractions.37badf8d446a"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.partialFractions</code></p>
+`UniffiExpression.partialFractions(variable: kotlin.String): UniffiExpression`
 
-```kotlin signature
-fun partialFractions(variable: kotlin.String): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_partialfractions.5f8aaf403de5"></a>
+`UniffiSession.partialFractions(inputExpression: UniffiExpression, variable: kotlin.String): UniffiExpression`
 
 
 
@@ -69,25 +38,11 @@ For factorization, cancellation, collection, and radical operations, use
 
 ### factor
 
-<a id="entry-presentation_kotlin_api_session_factor"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_factor.1b442ebdb1ff"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun factor(target: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_factor.55dedc5f6079"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.factor</code></p>
+`UniffiExpression.factor(): UniffiExpression`
 
-```kotlin signature
-fun factor(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_factor.1b442ebdb1ff"></a>
+`UniffiSession.factor(target: UniffiExpression): UniffiExpression`
 
 
 
@@ -97,28 +52,11 @@ Polynomial factorization over the rationals (full multivariate). With
 
 ### collect
 
-<a id="entry-presentation_kotlin_api_session_collect"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_collect.2571e76f2ee4"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun collect(
-    inputExpression: UniffiExpression,
-    generator: UniffiExpression,
-): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_collect.c4efd231ab7d"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.collect</code></p>
+`UniffiExpression.collect(generator: UniffiExpression): UniffiExpression`
 
-```kotlin signature
-fun collect(generator: UniffiExpression): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_collect.2571e76f2ee4"></a>
+`UniffiSession.collect(inputExpression: UniffiExpression, generator: UniffiExpression): UniffiExpression`
 
 
 
@@ -132,28 +70,11 @@ generator that appears with only a single power, returns the input unchanged.
 
 ### complete_the_square
 
-<a id="entry-presentation_kotlin_api_session_complete_the_square"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_completethesquare.b3c47f503e7b"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun completeTheSquare(
-    inputExpression: UniffiExpression,
-    variable: UniffiExpression,
-): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_completethesquare.35974729f836"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.completeTheSquare</code></p>
+`UniffiExpression.completeTheSquare(variable: UniffiExpression): UniffiExpression`
 
-```kotlin signature
-fun completeTheSquare(variable: UniffiExpression): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_completethesquare.b3c47f503e7b"></a>
+`UniffiSession.completeTheSquare(inputExpression: UniffiExpression, variable: UniffiExpression): UniffiExpression`
 
 
 
@@ -181,25 +102,11 @@ unrestricted `a` and completes when `a` is assumed positive.
 
 ### factor_common_terms
 
-<a id="entry-presentation_kotlin_api_session_factor_common_terms"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_factorcommonterms.164047906815"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun factorCommonTerms(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_factorcommonterms.72c3d3249a82"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.factorCommonTerms</code></p>
+`UniffiExpression.factorCommonTerms(): UniffiExpression`
 
-```kotlin signature
-fun factorCommonTerms(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_factorcommonterms.164047906815"></a>
+`UniffiSession.factorCommonTerms(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -220,25 +127,11 @@ further — that is `factor`'s job.
 
 ### rationalize_denominator
 
-<a id="entry-presentation_kotlin_api_session_rationalize_denominator"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_rationalizedenominator.696b26f4302d"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun rationalizeDenominator(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_rationalizedenominator.ddc2dfd61639"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.rationalizeDenominator</code></p>
+`UniffiExpression.rationalizeDenominator(): UniffiExpression`
 
-```kotlin signature
-fun rationalizeDenominator(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_rationalizedenominator.696b26f4302d"></a>
+`UniffiSession.rationalizeDenominator(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -251,25 +144,11 @@ bounded supported radical class or the exact remultiplication check fails.
 
 ### collect_radicals
 
-<a id="entry-presentation_kotlin_api_session_collect_radicals"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_collectradicals.0abe4246adf2"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun collectRadicals(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_collectradicals.34ef590c8524"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.collectRadicals</code></p>
+`UniffiExpression.collectRadicals(): UniffiExpression`
 
-```kotlin signature
-fun collectRadicals(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_collectradicals.0abe4246adf2"></a>
+`UniffiSession.collectRadicals(inputExpression: UniffiExpression): UniffiExpression`
 
 
 
@@ -279,25 +158,11 @@ distinct kernels are considered; inputs beyond that bound return unchanged.
 
 ### denest_radicals
 
-<a id="entry-presentation_kotlin_api_session_denest_radicals"></a>
-<a id="placement-placement.kotlin.kotlin_object.uniffisession_denestradicals.d919ebce059a"></a>
-<p class="symi-entry-owner">Explicit context</p>
-
-```kotlin signature
-fun denestRadicals(inputExpression: UniffiExpression): UniffiExpression
-```
-
-<details class="symi-calling-forms">
-<summary>Calling forms</summary>
-
 <a id="placement-placement.kotlin.kotlin_object.uniffiexpression_denestradicals.7c4576295d2c"></a>
-<p class="symi-entry-owner">Expression method: <code>UniffiExpression.denestRadicals</code></p>
+`UniffiExpression.denestRadicals(): UniffiExpression`
 
-```kotlin signature
-fun denestRadicals(): UniffiExpression
-```
-
-</details>
+<a id="placement-placement.kotlin.kotlin_object.uniffisession_denestradicals.d919ebce059a"></a>
+`UniffiSession.denestRadicals(inputExpression: UniffiExpression): UniffiExpression`
 
 
 

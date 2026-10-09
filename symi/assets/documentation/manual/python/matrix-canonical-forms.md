@@ -14,13 +14,8 @@ listed in [structured results](structured-results.md) and the generated
 
 ### rational_canonical_form
 
-<a id="entry-presentation_python_api_matrix_rational_canonical_form"></a>
 <a id="placement-placement.python.python_class.matrix_rational_canonical_form.a83bbc378fda"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-rational_canonical_form(variable: VariableLike) -> RationalCanonicalForm
-```
+`Matrix.rational_canonical_form(variable)`
 
 
 Returns the certified Frobenius canonical form over the rationals. Its invariant factors are
@@ -29,41 +24,29 @@ monic and ordered by divisibility, and `similarity` satisfies
 
 ### rational_canonical_form (result class)
 
-<a id="entry-presentation_python_api_matrix_rational_canonical_form"></a>
 <a id="placement-placement.python.python_class.matrix_rational_canonical_form.a83bbc378fda"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-rational_canonical_form(variable: VariableLike) -> RationalCanonicalForm
-```
+`Matrix.rational_canonical_form(variable)`
 
 
 ### canonical_form
 
-<a id="entry-presentation_python_api_rationalcanonicalform_canonical_form"></a>
 <a id="placement-placement.python.python_class.rationalcanonicalform_canonical_form.c95066d8356a"></a>
-<p class="symi-entry-owner">RationalCanonicalForm property</p>
+`RationalCanonicalForm.canonical_form`
 
-```python signature
-canonical_form: Matrix
-```
-
-The Frobenius canonical form of the decomposed matrix.
 
 ### invariant_factors
+
+<a id="placement-placement.python.python_class.rationalcanonicalform_invariant_factors.e2626e62fc61"></a>
+`RationalCanonicalForm.invariant_factors`
+
 
 The `similarity`, `minimal_polynomial`, and `characteristic_polynomial` getters return the
 corresponding certified fields documented by their shared headings above.
 
 ### hermite_normal_form
 
-<a id="entry-presentation_python_api_matrix_hermite_normal_form"></a>
 <a id="placement-placement.python.python_class.matrix_hermite_normal_form.6e0943f7cb13"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-hermite_normal_form() -> tuple[Matrix, Matrix, int, list[int]]
-```
+`Matrix.hermite_normal_form()`
 
 
 Returns the canonical row-oriented Hermite normal form `H`, a unimodular
@@ -75,13 +58,8 @@ getters documented below.
 
 ### column_hermite_normal_form
 
-<a id="entry-presentation_python_api_matrix_column_hermite_normal_form"></a>
 <a id="placement-placement.python.python_class.matrix_column_hermite_normal_form.494657fe3753"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-column_hermite_normal_form() -> tuple[Matrix, Matrix, int, list[int]]
-```
+`Matrix.column_hermite_normal_form()`
 
 
 The transpose-dual column form, returning `H`, a unimodular `V` satisfying
@@ -90,13 +68,8 @@ The transpose-dual column form, returning `H`, a unimodular `V` satisfying
 
 ### smith_normal_form
 
-<a id="entry-presentation_python_api_matrix_smith_normal_form"></a>
 <a id="placement-placement.python.python_class.matrix_smith_normal_form.5e31028e67eb"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-smith_normal_form() -> tuple[Matrix, Matrix, Matrix, int, list[Expression]]
-```
+`Matrix.smith_normal_form()`
 
 
 Returns the canonical integer Smith normal form `D`, unimodular transformations
@@ -108,13 +81,8 @@ unimodularity of both transformations before return. **Notes:** WASM returns a
 
 ### integer_cokernel_structure
 
-<a id="entry-presentation_python_api_matrix_integer_cokernel_structure"></a>
 <a id="placement-placement.python.python_class.matrix_integer_cokernel_structure.46ed9149d406"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-integer_cokernel_structure() -> tuple[int, list[Expression]]
-```
+`Matrix.integer_cokernel_structure()`
 
 
 Returns the free rank and nontrivial torsion invariant factors of
@@ -139,17 +107,18 @@ Returns the free rank and nontrivial torsion invariant factors of
 
 ### free_rank
 
+*Not exposed by the Python bindings. Available as [`UniffiIntegerCokernelData.freeRank`](/symi/kotlin/matrix-canonical-forms#free_rank) in Kotlin, [`UniffiIntegerCokernelData.freeRank`](/symi/swift/matrix-canonical-forms#free_rank) in Swift, [`api::results::IntegerCokernelData::free_rank`](/symi/rust/matrix-canonical-forms#free_rank) in Rust.*
+
+
 ### torsion_invariant_factors
+
+*Not exposed by the Python bindings. Available as [`UniffiIntegerCokernelData.torsionInvariantFactors`](/symi/kotlin/matrix-canonical-forms#torsion_invariant_factors) in Kotlin, [`UniffiIntegerCokernelData.torsionInvariantFactors`](/symi/swift/matrix-canonical-forms#torsion_invariant_factors) in Swift, [`api::results::IntegerCokernelData::torsion_invariant_factors`](/symi/rust/matrix-canonical-forms#torsion_invariant_factors) in Rust.*
+
 
 ### integer_kernel_basis
 
-<a id="entry-presentation_python_api_matrix_integer_kernel_basis"></a>
 <a id="placement-placement.python.python_class.matrix_integer_kernel_basis.39ab05072ba4"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-integer_kernel_basis() -> list[Matrix]
-```
+`Matrix.integer_kernel_basis()`
 
 
 A canonical basis of the integer kernel \(\{x \in \mathbb{Z}^n : M x = 0\}\), returned as
@@ -157,13 +126,8 @@ column matrices.
 
 ### integer_row_lattice_basis
 
-<a id="entry-presentation_python_api_matrix_integer_row_lattice_basis"></a>
 <a id="placement-placement.python.python_class.matrix_integer_row_lattice_basis.256b909cfbed"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-integer_row_lattice_basis() -> list[Matrix]
-```
+`Matrix.integer_row_lattice_basis()`
 
 
 The nonzero rows of the row Hermite form, returned as row matrices; these form
@@ -171,13 +135,8 @@ the canonical basis of the integer row lattice.
 
 ### integer_image_lattice_basis
 
-<a id="entry-presentation_python_api_matrix_integer_image_lattice_basis"></a>
 <a id="placement-placement.python.python_class.matrix_integer_image_lattice_basis.8445cfbcb469"></a>
-<p class="symi-entry-owner">Matrix method</p>
-
-```python signature
-integer_image_lattice_basis() -> list[Matrix]
-```
+`Matrix.integer_image_lattice_basis()`
 
 
 The nonzero columns of the column Hermite form, returned as column matrices;
@@ -190,7 +149,8 @@ these form the canonical basis of `M Z^n`.
 
 ### transformation
 
-*Not exposed by the Python bindings. Available as [`UniffiHermiteNormalFormDecomposition.transformation`](/symi/kotlin/matrix-canonical-forms#transformation) in Kotlin, [`UniffiHermiteNormalFormDecomposition.transformation`](/symi/swift/matrix-canonical-forms#transformation) in Swift, [`api::results::HermiteNormalFormDecomposition::transformation`](/symi/rust/matrix-canonical-forms#transformation) in Rust.*
+<a id="placement-placement.python.python_class.partialdifferentialequationcanonicalizationresult_transformation.d064b2135ddc"></a>
+`PartialDifferentialEquationCanonicalizationResult.transformation`
 
 
 ### pivot_columns
@@ -217,67 +177,4 @@ print(rank)
 print(invariant_factors)
 print(integer_matrix.integer_cokernel_structure())
 ```
-
-
-## Additional API
-
-### RationalCanonicalForm
-
-<a id="entry-presentation_python_api_rationalcanonicalform"></a>
-<a id="placement-placement.python.python_class.rationalcanonicalform.5ca9682302fa"></a>
-<p class="symi-entry-owner">Type</p>
-
-```python signature
-class RationalCanonicalForm
-```
-
-Returns the certified Frobenius canonical form over the rationals. Its invariant factors are monic and ordered by divisibility, and `similarity` satisfies \(\operatorname{matrix}\,\operatorname{similarity} = \operatorname{similarity}\,\operatorname{canonical\_form}\) exactly.
-
-#### RationalCanonicalForm.characteristic_polynomial
-
-<a id="entry-presentation_python_api_rationalcanonicalform_characteristic_polynomial"></a>
-<a id="placement-placement.python.python_class.rationalcanonicalform_characteristic_polynomial.826282413414"></a>
-<p class="symi-entry-owner">RationalCanonicalForm property</p>
-
-```python signature
-characteristic_polynomial: Expression
-```
-
-\(\det(\lambda I - M)\) as a polynomial in the named variable.
-
-#### RationalCanonicalForm.invariant_factors
-
-<a id="entry-presentation_python_api_rationalcanonicalform_invariant_factors"></a>
-<a id="placement-placement.python.python_class.rationalcanonicalform_invariant_factors.e2626e62fc61"></a>
-<p class="symi-entry-owner">RationalCanonicalForm property</p>
-
-```python signature
-invariant_factors: list[Expression]
-```
-
-The certified invariant factors, monic and ordered by divisibility.
-
-#### RationalCanonicalForm.minimal_polynomial
-
-<a id="entry-presentation_python_api_rationalcanonicalform_minimal_polynomial"></a>
-<a id="placement-placement.python.python_class.rationalcanonicalform_minimal_polynomial.cb3f7ef16a61"></a>
-<p class="symi-entry-owner">RationalCanonicalForm property</p>
-
-```python signature
-minimal_polynomial: Expression
-```
-
-The monic minimal polynomial over the rationals. The matrix must have rational entries.
-
-#### RationalCanonicalForm.similarity
-
-<a id="entry-presentation_python_api_rationalcanonicalform_similarity"></a>
-<a id="placement-placement.python.python_class.rationalcanonicalform_similarity.40c9ac5f68c3"></a>
-<p class="symi-entry-owner">RationalCanonicalForm property</p>
-
-```python signature
-similarity: Matrix
-```
-
-The certified change of basis `S`, satisfying `matrix * S == S * canonical_form`.
 
